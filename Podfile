@@ -1,0 +1,15 @@
+pod "SDWebImage"
+pod "FMDB"
+pod 'MBProgressHUD'
+pod 'IQKeyboardManager'
+pod 'AFNetworking'
+pod 'MJRefresh'
+pod 'ShareSDK3'
+pod 'MOBFoundation'
+pod 'ShareSDK3/ShareSDKUI'
+pod 'ShareSDK3/ShareSDKPlatforms/QQ'
+pod 'ShareSDK3/ShareSDKPlatforms/SinaWeibo'
+pod 'ShareSDK3/ShareSDKPlatforms/WeChat'
+pod 'MojoDatabase'
+pod 'RMMapper'
+pod 'MWPhotoBrowser'
