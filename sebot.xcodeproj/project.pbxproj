@@ -7,22 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		345565121D10EF1300B6E562 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 345565111D10EF1300B6E562 /* Localizable.strings */; };
+		345565181D10F10700B6E562 /* AppDelegate+Launcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565171D10F10700B6E562 /* AppDelegate+Launcher.m */; };
+		3455651B1D10F13200B6E562 /* AppDelegate+ShareSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 3455651A1D10F13200B6E562 /* AppDelegate+ShareSDK.m */; };
+		3455651E1D10F14800B6E562 /* AppDelegate+Sephone.m in Sources */ = {isa = PBXBuildFile; fileRef = 3455651D1D10F14800B6E562 /* AppDelegate+Sephone.m */; };
 		57D1E5F71CFED25900BEDFF6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D1E5F61CFED25900BEDFF6 /* main.m */; };
 		57D1E6001CFED25900BEDFF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D1E5FE1CFED25900BEDFF6 /* Main.storyboard */; };
 		57D1E6021CFED25900BEDFF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57D1E6011CFED25900BEDFF6 /* Assets.xcassets */; };
-		57D1E6051CFED25900BEDFF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D1E6031CFED25900BEDFF6 /* LaunchScreen.storyboard */; };
 		7DD7D1D11D0FE21B0002CD2E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD7D1D01D0FE21B0002CD2E /* AppDelegate.m */; };
 		CEB33C3D282E7125878CD13F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47642F05A36B917D69532A10 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0C7D6F536A9CD3F96AA3AF20 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		345565111D10EF1300B6E562 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		345565151D10F06700B6E562 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		345565161D10F10700B6E562 /* AppDelegate+Launcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Launcher.h"; sourceTree = "<group>"; };
+		345565171D10F10700B6E562 /* AppDelegate+Launcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Launcher.m"; sourceTree = "<group>"; };
+		345565191D10F13200B6E562 /* AppDelegate+ShareSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+ShareSDK.h"; sourceTree = "<group>"; };
+		3455651A1D10F13200B6E562 /* AppDelegate+ShareSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+ShareSDK.m"; sourceTree = "<group>"; };
+		3455651C1D10F14800B6E562 /* AppDelegate+Sephone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Sephone.h"; sourceTree = "<group>"; };
+		3455651D1D10F14800B6E562 /* AppDelegate+Sephone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Sephone.m"; sourceTree = "<group>"; };
 		47642F05A36B917D69532A10 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D1E5F21CFED25900BEDFF6 /* sebot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sebot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D1E5F61CFED25900BEDFF6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		57D1E5FF1CFED25900BEDFF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		57D1E6011CFED25900BEDFF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		57D1E6041CFED25900BEDFF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57D1E6061CFED25900BEDFF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DD7D1CF1D0FE21B0002CD2E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7DD7D1D01D0FE21B0002CD2E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -41,6 +51,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3455650E1D10EDC800B6E562 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3455650F1D10EDC800B6E562 /* Images */,
+				345565101D10EDC800B6E562 /* Strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3455650F1D10EDC800B6E562 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		345565101D10EDC800B6E562 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				345565111D10EF1300B6E562 /* Localizable.strings */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
 		4E791E3A15D0184E81952149 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -71,10 +105,8 @@
 			isa = PBXGroup;
 			children = (
 				7DD7D1C91D0FDE5A0002CD2E /* Classes */,
-				7DD7D1CA1D0FDE5A0002CD2E /* Resources */,
 				57D1E5FE1CFED25900BEDFF6 /* Main.storyboard */,
 				57D1E6011CFED25900BEDFF6 /* Assets.xcassets */,
-				57D1E6031CFED25900BEDFF6 /* LaunchScreen.storyboard */,
 				57D1E6061CFED25900BEDFF6 /* Info.plist */,
 				57D1E5F51CFED25900BEDFF6 /* Supporting Files */,
 			);
@@ -85,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				57D1E5F61CFED25900BEDFF6 /* main.m */,
+				345565151D10F06700B6E562 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -93,15 +126,9 @@
 			isa = PBXGroup;
 			children = (
 				7DD7D1CE1D0FE21B0002CD2E /* AppDelegate */,
+				3455650E1D10EDC800B6E562 /* Resources */,
 			);
 			path = Classes;
-			sourceTree = "<group>";
-		};
-		7DD7D1CA1D0FDE5A0002CD2E /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		7DD7D1CE1D0FE21B0002CD2E /* AppDelegate */ = {
@@ -109,6 +136,12 @@
 			children = (
 				7DD7D1CF1D0FE21B0002CD2E /* AppDelegate.h */,
 				7DD7D1D01D0FE21B0002CD2E /* AppDelegate.m */,
+				345565161D10F10700B6E562 /* AppDelegate+Launcher.h */,
+				345565171D10F10700B6E562 /* AppDelegate+Launcher.m */,
+				345565191D10F13200B6E562 /* AppDelegate+ShareSDK.h */,
+				3455651A1D10F13200B6E562 /* AppDelegate+ShareSDK.m */,
+				3455651C1D10F14800B6E562 /* AppDelegate+Sephone.h */,
+				3455651D1D10F14800B6E562 /* AppDelegate+Sephone.m */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -182,7 +215,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57D1E6051CFED25900BEDFF6 /* LaunchScreen.storyboard in Resources */,
+				345565121D10EF1300B6E562 /* Localizable.strings in Resources */,
 				57D1E6021CFED25900BEDFF6 /* Assets.xcassets in Resources */,
 				57D1E6001CFED25900BEDFF6 /* Main.storyboard in Resources */,
 			);
@@ -243,6 +276,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				345565181D10F10700B6E562 /* AppDelegate+Launcher.m in Sources */,
+				3455651E1D10F14800B6E562 /* AppDelegate+Sephone.m in Sources */,
+				3455651B1D10F13200B6E562 /* AppDelegate+ShareSDK.m in Sources */,
 				7DD7D1D11D0FE21B0002CD2E /* AppDelegate.m in Sources */,
 				57D1E5F71CFED25900BEDFF6 /* main.m in Sources */,
 			);
@@ -257,14 +293,6 @@
 				57D1E5FF1CFED25900BEDFF6 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		57D1E6031CFED25900BEDFF6 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				57D1E6041CFED25900BEDFF6 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
