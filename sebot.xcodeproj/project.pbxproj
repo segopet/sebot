@@ -11,6 +11,24 @@
 		345565181D10F10700B6E562 /* AppDelegate+Launcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565171D10F10700B6E562 /* AppDelegate+Launcher.m */; };
 		3455651B1D10F13200B6E562 /* AppDelegate+ShareSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 3455651A1D10F13200B6E562 /* AppDelegate+ShareSDK.m */; };
 		3455651E1D10F14800B6E562 /* AppDelegate+Sephone.m in Sources */ = {isa = PBXBuildFile; fileRef = 3455651D1D10F14800B6E562 /* AppDelegate+Sephone.m */; };
+		345565331D10F8A600B6E562 /* AppUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565301D10F8A600B6E562 /* AppUtil.m */; };
+		345565341D10F8A600B6E562 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565321D10F8A600B6E562 /* Reachability.m */; };
+		345565361D10F90000B6E562 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 345565351D10F8FF00B6E562 /* CoreGraphics.framework */; };
+		345565381D10F9B200B6E562 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 345565371D10F9B200B6E562 /* UIKit.framework */; };
+		3455653A1D10F9B900B6E562 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 345565391D10F9B900B6E562 /* AVFoundation.framework */; };
+		3455653F1D10FE3E00B6E562 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 3455653C1D10FE3E00B6E562 /* NSString+URLEncoding.m */; };
+		345565401D10FE3E00B6E562 /* QFTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3455653E1D10FE3E00B6E562 /* QFTableView.m */; };
+		3455654D1D10FE4800B6E562 /* UIActionSheet+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565431D10FE4800B6E562 /* UIActionSheet+Blocks.m */; };
+		3455654E1D10FE4800B6E562 /* UIAlertView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565461D10FE4800B6E562 /* UIAlertView+Blocks.m */; };
+		3455654F1D10FE4800B6E562 /* UIButton+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565491D10FE4800B6E562 /* UIButton+Blocks.m */; };
+		345565501D10FE4800B6E562 /* UIImage-Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3455654C1D10FE4800B6E562 /* UIImage-Extensions.m */; };
+		345565531D10FE5C00B6E562 /* UIViewController+HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565521D10FE5C00B6E562 /* UIViewController+HUD.m */; };
+		345565561D10FE6400B6E562 /* UIView+Sizes.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565551D10FE6400B6E562 /* UIView+Sizes.m */; };
+		3455655A1D10FE6C00B6E562 /* UIView+TapBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565591D10FE6C00B6E562 /* UIView+TapBlocks.m */; };
+		345565601D10FF0700B6E562 /* UITableView+SDAutoTableViewCellHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 3455655D1D10FF0700B6E562 /* UITableView+SDAutoTableViewCellHeight.m */; };
+		345565611D10FF0700B6E562 /* UIView+SDAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3455655F1D10FF0700B6E562 /* UIView+SDAutoLayout.m */; };
+		345565681D10FFED00B6E562 /* AccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565671D10FFED00B6E562 /* AccountManager.m */; };
+		3455656B1D11008300B6E562 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3455656A1D11008300B6E562 /* BaseModel.m */; };
 		57D1E5F71CFED25900BEDFF6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D1E5F61CFED25900BEDFF6 /* main.m */; };
 		57D1E6001CFED25900BEDFF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D1E5FE1CFED25900BEDFF6 /* Main.storyboard */; };
 		57D1E6021CFED25900BEDFF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57D1E6011CFED25900BEDFF6 /* Assets.xcassets */; };
@@ -28,6 +46,41 @@
 		3455651A1D10F13200B6E562 /* AppDelegate+ShareSDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+ShareSDK.m"; sourceTree = "<group>"; };
 		3455651C1D10F14800B6E562 /* AppDelegate+Sephone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Sephone.h"; sourceTree = "<group>"; };
 		3455651D1D10F14800B6E562 /* AppDelegate+Sephone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Sephone.m"; sourceTree = "<group>"; };
+		3455652D1D10F7E600B6E562 /* Definition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Definition.h; sourceTree = "<group>"; };
+		3455652E1D10F81C00B6E562 /* Notification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Notification.h; sourceTree = "<group>"; };
+		3455652F1D10F8A600B6E562 /* AppUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppUtil.h; sourceTree = "<group>"; };
+		345565301D10F8A600B6E562 /* AppUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppUtil.m; sourceTree = "<group>"; };
+		345565311D10F8A600B6E562 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		345565321D10F8A600B6E562 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		345565351D10F8FF00B6E562 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		345565371D10F9B200B6E562 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		345565391D10F9B900B6E562 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		3455653B1D10FE3E00B6E562 /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
+		3455653C1D10FE3E00B6E562 /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncoding.m"; sourceTree = "<group>"; };
+		3455653D1D10FE3E00B6E562 /* QFTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFTableView.h; sourceTree = "<group>"; };
+		3455653E1D10FE3E00B6E562 /* QFTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFTableView.m; sourceTree = "<group>"; };
+		345565421D10FE4800B6E562 /* UIActionSheet+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+Blocks.h"; sourceTree = "<group>"; };
+		345565431D10FE4800B6E562 /* UIActionSheet+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+Blocks.m"; sourceTree = "<group>"; };
+		345565451D10FE4800B6E562 /* UIAlertView+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Blocks.h"; sourceTree = "<group>"; };
+		345565461D10FE4800B6E562 /* UIAlertView+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Blocks.m"; sourceTree = "<group>"; };
+		345565481D10FE4800B6E562 /* UIButton+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Blocks.h"; sourceTree = "<group>"; };
+		345565491D10FE4800B6E562 /* UIButton+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Blocks.m"; sourceTree = "<group>"; };
+		3455654B1D10FE4800B6E562 /* UIImage-Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage-Extensions.h"; sourceTree = "<group>"; };
+		3455654C1D10FE4800B6E562 /* UIImage-Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage-Extensions.m"; sourceTree = "<group>"; };
+		345565511D10FE5C00B6E562 /* UIViewController+HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+HUD.h"; sourceTree = "<group>"; };
+		345565521D10FE5C00B6E562 /* UIViewController+HUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HUD.m"; sourceTree = "<group>"; };
+		345565541D10FE6400B6E562 /* UIView+Sizes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Sizes.h"; sourceTree = "<group>"; };
+		345565551D10FE6400B6E562 /* UIView+Sizes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Sizes.m"; sourceTree = "<group>"; };
+		345565581D10FE6C00B6E562 /* UIView+TapBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TapBlocks.h"; sourceTree = "<group>"; };
+		345565591D10FE6C00B6E562 /* UIView+TapBlocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TapBlocks.m"; sourceTree = "<group>"; };
+		3455655C1D10FF0700B6E562 /* UITableView+SDAutoTableViewCellHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+SDAutoTableViewCellHeight.h"; sourceTree = "<group>"; };
+		3455655D1D10FF0700B6E562 /* UITableView+SDAutoTableViewCellHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+SDAutoTableViewCellHeight.m"; sourceTree = "<group>"; };
+		3455655E1D10FF0700B6E562 /* UIView+SDAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDAutoLayout.h"; sourceTree = "<group>"; };
+		3455655F1D10FF0700B6E562 /* UIView+SDAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDAutoLayout.m"; sourceTree = "<group>"; };
+		345565661D10FFED00B6E562 /* AccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountManager.h; sourceTree = "<group>"; };
+		345565671D10FFED00B6E562 /* AccountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountManager.m; sourceTree = "<group>"; };
+		345565691D11008300B6E562 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
+		3455656A1D11008300B6E562 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 		47642F05A36B917D69532A10 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D1E5F21CFED25900BEDFF6 /* sebot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sebot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D1E5F61CFED25900BEDFF6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -44,6 +97,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3455653A1D10F9B900B6E562 /* AVFoundation.framework in Frameworks */,
+				345565381D10F9B200B6E562 /* UIKit.framework in Frameworks */,
+				345565361D10F90000B6E562 /* CoreGraphics.framework in Frameworks */,
 				CEB33C3D282E7125878CD13F /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -75,9 +131,206 @@
 			path = Strings;
 			sourceTree = "<group>";
 		};
+		3455651F1D10F3B700B6E562 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				3455652C1D10F78200B6E562 /* Macro */,
+				3455652B1D10F75900B6E562 /* Categories */,
+				3455652A1D10F73100B6E562 /* Utils */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		345565201D10F3B700B6E562 /* Mangers */ = {
+			isa = PBXGroup;
+			children = (
+				345565651D10FFED00B6E562 /* Account */,
+			);
+			path = Mangers;
+			sourceTree = "<group>";
+		};
+		345565211D10F3B700B6E562 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				345565691D11008300B6E562 /* BaseModel.h */,
+				3455656A1D11008300B6E562 /* BaseModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		345565221D10F3B700B6E562 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		345565231D10F3C400B6E562 /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				3455655B1D10FF0700B6E562 /* SDAutoLayout */,
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
+		345565241D10F3C400B6E562 /* ViewControlls */ = {
+			isa = PBXGroup;
+			children = (
+				345565291D10F66E00B6E562 /* InCall */,
+				345565281D10F46000B6E562 /* Base */,
+				345565261D10F41C00B6E562 /* Login */,
+				345565271D10F41C00B6E562 /* MainTab */,
+				345565251D10F3C400B6E562 /* Guide */,
+			);
+			path = ViewControlls;
+			sourceTree = "<group>";
+		};
+		345565251D10F3C400B6E562 /* Guide */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Guide;
+			sourceTree = "<group>";
+		};
+		345565261D10F41C00B6E562 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		345565271D10F41C00B6E562 /* MainTab */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MainTab;
+			sourceTree = "<group>";
+		};
+		345565281D10F46000B6E562 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		345565291D10F66E00B6E562 /* InCall */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = InCall;
+			sourceTree = "<group>";
+		};
+		3455652A1D10F73100B6E562 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3455652F1D10F8A600B6E562 /* AppUtil.h */,
+				345565301D10F8A600B6E562 /* AppUtil.m */,
+				345565311D10F8A600B6E562 /* Reachability.h */,
+				345565321D10F8A600B6E562 /* Reachability.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		3455652B1D10F75900B6E562 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				345565571D10FE6C00B6E562 /* UIView+TapBlocks */,
+				345565541D10FE6400B6E562 /* UIView+Sizes.h */,
+				345565551D10FE6400B6E562 /* UIView+Sizes.m */,
+				345565511D10FE5C00B6E562 /* UIViewController+HUD.h */,
+				345565521D10FE5C00B6E562 /* UIViewController+HUD.m */,
+				3455653B1D10FE3E00B6E562 /* NSString+URLEncoding.h */,
+				3455653C1D10FE3E00B6E562 /* NSString+URLEncoding.m */,
+				3455653D1D10FE3E00B6E562 /* QFTableView.h */,
+				3455653E1D10FE3E00B6E562 /* QFTableView.m */,
+				345565411D10FE4800B6E562 /* UIActionSheet+Blocks */,
+				345565441D10FE4800B6E562 /* UIAlertView+Blocks */,
+				345565471D10FE4800B6E562 /* UIButton+Blocks */,
+				3455654A1D10FE4800B6E562 /* UIImage-Extensions */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		3455652C1D10F78200B6E562 /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				3455652D1D10F7E600B6E562 /* Definition.h */,
+				3455652E1D10F81C00B6E562 /* Notification.h */,
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
+		345565411D10FE4800B6E562 /* UIActionSheet+Blocks */ = {
+			isa = PBXGroup;
+			children = (
+				345565421D10FE4800B6E562 /* UIActionSheet+Blocks.h */,
+				345565431D10FE4800B6E562 /* UIActionSheet+Blocks.m */,
+			);
+			path = "UIActionSheet+Blocks";
+			sourceTree = "<group>";
+		};
+		345565441D10FE4800B6E562 /* UIAlertView+Blocks */ = {
+			isa = PBXGroup;
+			children = (
+				345565451D10FE4800B6E562 /* UIAlertView+Blocks.h */,
+				345565461D10FE4800B6E562 /* UIAlertView+Blocks.m */,
+			);
+			path = "UIAlertView+Blocks";
+			sourceTree = "<group>";
+		};
+		345565471D10FE4800B6E562 /* UIButton+Blocks */ = {
+			isa = PBXGroup;
+			children = (
+				345565481D10FE4800B6E562 /* UIButton+Blocks.h */,
+				345565491D10FE4800B6E562 /* UIButton+Blocks.m */,
+			);
+			path = "UIButton+Blocks";
+			sourceTree = "<group>";
+		};
+		3455654A1D10FE4800B6E562 /* UIImage-Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3455654B1D10FE4800B6E562 /* UIImage-Extensions.h */,
+				3455654C1D10FE4800B6E562 /* UIImage-Extensions.m */,
+			);
+			path = "UIImage-Extensions";
+			sourceTree = "<group>";
+		};
+		345565571D10FE6C00B6E562 /* UIView+TapBlocks */ = {
+			isa = PBXGroup;
+			children = (
+				345565581D10FE6C00B6E562 /* UIView+TapBlocks.h */,
+				345565591D10FE6C00B6E562 /* UIView+TapBlocks.m */,
+			);
+			path = "UIView+TapBlocks";
+			sourceTree = "<group>";
+		};
+		3455655B1D10FF0700B6E562 /* SDAutoLayout */ = {
+			isa = PBXGroup;
+			children = (
+				3455655C1D10FF0700B6E562 /* UITableView+SDAutoTableViewCellHeight.h */,
+				3455655D1D10FF0700B6E562 /* UITableView+SDAutoTableViewCellHeight.m */,
+				3455655E1D10FF0700B6E562 /* UIView+SDAutoLayout.h */,
+				3455655F1D10FF0700B6E562 /* UIView+SDAutoLayout.m */,
+			);
+			path = SDAutoLayout;
+			sourceTree = "<group>";
+		};
+		345565651D10FFED00B6E562 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				345565661D10FFED00B6E562 /* AccountManager.h */,
+				345565671D10FFED00B6E562 /* AccountManager.m */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
 		4E791E3A15D0184E81952149 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				345565391D10F9B900B6E562 /* AVFoundation.framework */,
+				345565371D10F9B200B6E562 /* UIKit.framework */,
+				345565351D10F8FF00B6E562 /* CoreGraphics.framework */,
 				47642F05A36B917D69532A10 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -126,6 +379,12 @@
 			isa = PBXGroup;
 			children = (
 				7DD7D1CE1D0FE21B0002CD2E /* AppDelegate */,
+				345565231D10F3C400B6E562 /* Vendors */,
+				345565241D10F3C400B6E562 /* ViewControlls */,
+				3455651F1D10F3B700B6E562 /* Common */,
+				345565201D10F3B700B6E562 /* Mangers */,
+				345565211D10F3B700B6E562 /* Models */,
+				345565221D10F3B700B6E562 /* Network */,
 				3455650E1D10EDC800B6E562 /* Resources */,
 			);
 			path = Classes;
@@ -279,7 +538,22 @@
 				345565181D10F10700B6E562 /* AppDelegate+Launcher.m in Sources */,
 				3455651E1D10F14800B6E562 /* AppDelegate+Sephone.m in Sources */,
 				3455651B1D10F13200B6E562 /* AppDelegate+ShareSDK.m in Sources */,
+				3455656B1D11008300B6E562 /* BaseModel.m in Sources */,
+				3455654D1D10FE4800B6E562 /* UIActionSheet+Blocks.m in Sources */,
+				3455655A1D10FE6C00B6E562 /* UIView+TapBlocks.m in Sources */,
+				345565341D10F8A600B6E562 /* Reachability.m in Sources */,
+				345565401D10FE3E00B6E562 /* QFTableView.m in Sources */,
+				3455654E1D10FE4800B6E562 /* UIAlertView+Blocks.m in Sources */,
+				3455654F1D10FE4800B6E562 /* UIButton+Blocks.m in Sources */,
+				345565601D10FF0700B6E562 /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
+				345565681D10FFED00B6E562 /* AccountManager.m in Sources */,
+				345565331D10F8A600B6E562 /* AppUtil.m in Sources */,
 				7DD7D1D11D0FE21B0002CD2E /* AppDelegate.m in Sources */,
+				3455653F1D10FE3E00B6E562 /* NSString+URLEncoding.m in Sources */,
+				345565501D10FE4800B6E562 /* UIImage-Extensions.m in Sources */,
+				345565611D10FF0700B6E562 /* UIView+SDAutoLayout.m in Sources */,
+				345565531D10FE5C00B6E562 /* UIViewController+HUD.m in Sources */,
+				345565561D10FE6400B6E562 /* UIView+Sizes.m in Sources */,
 				57D1E5F71CFED25900BEDFF6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,6 +659,8 @@
 			baseConfigurationReference = 0C7D6F536A9CD3F96AA3AF20 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/sebot/PrefixHeader.pch";
 				INFOPLIST_FILE = sebot/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -398,6 +674,8 @@
 			baseConfigurationReference = 8FD84F7D3505BA6C0FF1433D /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/sebot/PrefixHeader.pch";
 				INFOPLIST_FILE = sebot/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
