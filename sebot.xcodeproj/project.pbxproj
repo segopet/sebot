@@ -29,6 +29,13 @@
 		345565611D10FF0700B6E562 /* UIView+SDAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3455655F1D10FF0700B6E562 /* UIView+SDAutoLayout.m */; };
 		345565681D10FFED00B6E562 /* AccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565671D10FFED00B6E562 /* AccountManager.m */; };
 		3455656B1D11008300B6E562 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3455656A1D11008300B6E562 /* BaseModel.m */; };
+		345565741D1134E500B6E562 /* MainTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565731D1134E500B6E562 /* MainTabViewController.m */; };
+		3455657A1D11371800B6E562 /* MydeviceViewcontroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565791D11371800B6E562 /* MydeviceViewcontroller.m */; };
+		3455657D1D11374500B6E562 /* PersonCenterViewcontroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 3455657C1D11374500B6E562 /* PersonCenterViewcontroller.m */; };
+		345565801D11376500B6E562 /* FamilySpaceViewcontroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 3455657F1D11376500B6E562 /* FamilySpaceViewcontroller.m */; };
+		345565831D1139F200B6E562 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565821D1139F200B6E562 /* LoginViewController.m */; };
+		345565861D113A7900B6E562 /* PopStartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565851D113A7900B6E562 /* PopStartView.m */; };
+		345565891D113B5A00B6E562 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565881D113B5A00B6E562 /* ViewController.m */; };
 		57D1E5F71CFED25900BEDFF6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D1E5F61CFED25900BEDFF6 /* main.m */; };
 		57D1E6001CFED25900BEDFF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D1E5FE1CFED25900BEDFF6 /* Main.storyboard */; };
 		57D1E6021CFED25900BEDFF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57D1E6011CFED25900BEDFF6 /* Assets.xcassets */; };
@@ -81,6 +88,20 @@
 		345565671D10FFED00B6E562 /* AccountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountManager.m; sourceTree = "<group>"; };
 		345565691D11008300B6E562 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
 		3455656A1D11008300B6E562 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
+		345565721D1134E500B6E562 /* MainTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabViewController.h; sourceTree = "<group>"; };
+		345565731D1134E500B6E562 /* MainTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabViewController.m; sourceTree = "<group>"; };
+		345565781D11371800B6E562 /* MydeviceViewcontroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MydeviceViewcontroller.h; sourceTree = "<group>"; };
+		345565791D11371800B6E562 /* MydeviceViewcontroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MydeviceViewcontroller.m; sourceTree = "<group>"; };
+		3455657B1D11374500B6E562 /* PersonCenterViewcontroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonCenterViewcontroller.h; sourceTree = "<group>"; };
+		3455657C1D11374500B6E562 /* PersonCenterViewcontroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonCenterViewcontroller.m; sourceTree = "<group>"; };
+		3455657E1D11376500B6E562 /* FamilySpaceViewcontroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FamilySpaceViewcontroller.h; sourceTree = "<group>"; };
+		3455657F1D11376500B6E562 /* FamilySpaceViewcontroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FamilySpaceViewcontroller.m; sourceTree = "<group>"; };
+		345565811D1139F200B6E562 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		345565821D1139F200B6E562 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		345565841D113A7900B6E562 /* PopStartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopStartView.h; sourceTree = "<group>"; };
+		345565851D113A7900B6E562 /* PopStartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopStartView.m; sourceTree = "<group>"; };
+		345565871D113B5A00B6E562 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		345565881D113B5A00B6E562 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		47642F05A36B917D69532A10 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D1E5F21CFED25900BEDFF6 /* sebot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sebot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D1E5F61CFED25900BEDFF6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -188,6 +209,8 @@
 		345565251D10F3C400B6E562 /* Guide */ = {
 			isa = PBXGroup;
 			children = (
+				345565841D113A7900B6E562 /* PopStartView.h */,
+				345565851D113A7900B6E562 /* PopStartView.m */,
 			);
 			path = Guide;
 			sourceTree = "<group>";
@@ -195,6 +218,8 @@
 		345565261D10F41C00B6E562 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				345565811D1139F200B6E562 /* LoginViewController.h */,
+				345565821D1139F200B6E562 /* LoginViewController.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -202,6 +227,11 @@
 		345565271D10F41C00B6E562 /* MainTab */ = {
 			isa = PBXGroup;
 			children = (
+				345565761D1136BF00B6E562 /* MyDevice */,
+				345565771D1136BF00B6E562 /* PersonCenter */,
+				345565751D1136B200B6E562 /* FamilySpace */,
+				345565721D1134E500B6E562 /* MainTabViewController.h */,
+				345565731D1134E500B6E562 /* MainTabViewController.m */,
 			);
 			path = MainTab;
 			sourceTree = "<group>";
@@ -325,6 +355,33 @@
 			path = Account;
 			sourceTree = "<group>";
 		};
+		345565751D1136B200B6E562 /* FamilySpace */ = {
+			isa = PBXGroup;
+			children = (
+				3455657E1D11376500B6E562 /* FamilySpaceViewcontroller.h */,
+				3455657F1D11376500B6E562 /* FamilySpaceViewcontroller.m */,
+			);
+			path = FamilySpace;
+			sourceTree = "<group>";
+		};
+		345565761D1136BF00B6E562 /* MyDevice */ = {
+			isa = PBXGroup;
+			children = (
+				345565781D11371800B6E562 /* MydeviceViewcontroller.h */,
+				345565791D11371800B6E562 /* MydeviceViewcontroller.m */,
+			);
+			path = MyDevice;
+			sourceTree = "<group>";
+		};
+		345565771D1136BF00B6E562 /* PersonCenter */ = {
+			isa = PBXGroup;
+			children = (
+				3455657B1D11374500B6E562 /* PersonCenterViewcontroller.h */,
+				3455657C1D11374500B6E562 /* PersonCenterViewcontroller.m */,
+			);
+			path = PersonCenter;
+			sourceTree = "<group>";
+		};
 		4E791E3A15D0184E81952149 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -362,6 +419,8 @@
 				57D1E6011CFED25900BEDFF6 /* Assets.xcassets */,
 				57D1E6061CFED25900BEDFF6 /* Info.plist */,
 				57D1E5F51CFED25900BEDFF6 /* Supporting Files */,
+				345565871D113B5A00B6E562 /* ViewController.h */,
+				345565881D113B5A00B6E562 /* ViewController.m */,
 			);
 			path = sebot;
 			sourceTree = "<group>";
@@ -538,9 +597,14 @@
 				345565181D10F10700B6E562 /* AppDelegate+Launcher.m in Sources */,
 				3455651E1D10F14800B6E562 /* AppDelegate+Sephone.m in Sources */,
 				3455651B1D10F13200B6E562 /* AppDelegate+ShareSDK.m in Sources */,
+				345565801D11376500B6E562 /* FamilySpaceViewcontroller.m in Sources */,
+				345565831D1139F200B6E562 /* LoginViewController.m in Sources */,
+				3455657D1D11374500B6E562 /* PersonCenterViewcontroller.m in Sources */,
 				3455656B1D11008300B6E562 /* BaseModel.m in Sources */,
 				3455654D1D10FE4800B6E562 /* UIActionSheet+Blocks.m in Sources */,
 				3455655A1D10FE6C00B6E562 /* UIView+TapBlocks.m in Sources */,
+				345565891D113B5A00B6E562 /* ViewController.m in Sources */,
+				3455657A1D11371800B6E562 /* MydeviceViewcontroller.m in Sources */,
 				345565341D10F8A600B6E562 /* Reachability.m in Sources */,
 				345565401D10FE3E00B6E562 /* QFTableView.m in Sources */,
 				3455654E1D10FE4800B6E562 /* UIAlertView+Blocks.m in Sources */,
@@ -548,7 +612,9 @@
 				345565601D10FF0700B6E562 /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
 				345565681D10FFED00B6E562 /* AccountManager.m in Sources */,
 				345565331D10F8A600B6E562 /* AppUtil.m in Sources */,
+				345565741D1134E500B6E562 /* MainTabViewController.m in Sources */,
 				7DD7D1D11D0FE21B0002CD2E /* AppDelegate.m in Sources */,
+				345565861D113A7900B6E562 /* PopStartView.m in Sources */,
 				3455653F1D10FE3E00B6E562 /* NSString+URLEncoding.m in Sources */,
 				345565501D10FE4800B6E562 /* UIImage-Extensions.m in Sources */,
 				345565611D10FF0700B6E562 /* UIView+SDAutoLayout.m in Sources */,
