@@ -10,4 +10,13 @@
 
 @implementation PersonCenterViewcontroller
 
+
+
+- (void)viewDidLoad{
+    [super viewDidLoad];
+    self.title = NSLocalizedString(@"tabPerson", nil);
+    self.view.backgroundColor = LIGHT_GRAY_COLOR;
+    
+}
+
 @end

@@ -10,4 +10,13 @@
 
 @implementation FamilySpaceViewcontroller
 
+
+- (void)viewDidLoad{
+    [super viewDidLoad];
+    self.title = NSLocalizedString(@"tabFamily", nil);
+    self.view.backgroundColor = LIGHT_GRAY_COLOR;
+    
+}
+
+
 @end

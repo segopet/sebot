@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MydeviceViewcontroller : UIViewController
+@interface MydeviceViewcontroller : BaseViewController
 
 @end
