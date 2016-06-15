@@ -6,3 +6,7 @@
   Copyright © 2016年 sego. All rights reserved.
 */
 
+//tab
+"tabFamily" = "家庭圈";
+"tabDevice" = "我的设备";
+"tabPerson" = "个人中心";

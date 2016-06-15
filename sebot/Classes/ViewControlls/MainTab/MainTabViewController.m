@@ -69,9 +69,9 @@
         
         FamilySpaceViewcontroller* vc = [[FamilySpaceViewcontroller alloc] init];
         vc.tabBarItem =
-        [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"tabSquare", nil)
-                                      image:[[UIImage imageNamed:@"tab_square_normal"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
-                              selectedImage:[[UIImage imageNamed:@"tab_square_press"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+        [[UITabBarItem alloc] initWithTitle:nil
+                                      image:[[UIImage imageNamed:@"家庭圈1.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
+                              selectedImage:[[UIImage imageNamed:@"家庭圈.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
         
         _navFamilyVC = [[UINavigationController alloc]initWithRootViewController:vc];
     }
@@ -85,9 +85,9 @@
         
         MydeviceViewcontroller* vc = [[MydeviceViewcontroller alloc] init];
         vc.tabBarItem =
-        [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"tabNear", nil)
-                                      image:[[UIImage imageNamed:@"tab_near_normal"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
-                              selectedImage:[[UIImage imageNamed:@"tab_near_press"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+        [[UITabBarItem alloc] initWithTitle:nil
+                                      image:[[UIImage imageNamed:@"我的设备1.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
+                              selectedImage:[[UIImage imageNamed:@"我的设备.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
         
         _navMyDeviceVC = [[UINavigationController alloc]initWithRootViewController:vc];
     }
@@ -102,9 +102,9 @@
         PersonCenterViewcontroller* vc = [[PersonCenterViewcontroller alloc] init];
         
         vc.tabBarItem =
-        [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"tabEgg", nil)
-                                      image:[[UIImage imageNamed:@"tab_egg_normal"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
-                              selectedImage:[[UIImage imageNamed:@"tab_egg_press"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+        [[UITabBarItem alloc] initWithTitle:nil
+                                      image:[[UIImage imageNamed:@"个人中心1.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
+                              selectedImage:[[UIImage imageNamed:@"个人中心.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
         
         _navPersonCenterVC = [[UINavigationController alloc]initWithRootViewController:vc];
     }
