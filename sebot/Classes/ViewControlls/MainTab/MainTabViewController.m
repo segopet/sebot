@@ -61,6 +61,13 @@
     self.tabBar.layer.shadowOpacity = 0.4;
     self.tabBar.layer.shadowRadius = 2;
     
+    
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:GREEN_COLOR, UITextAttributeTextColor,
+                                                       nil] forState:UIControlStateNormal];
+    UIColor *titleHighlightedColor = [UIColor colorWithRed:237/255.0 green:92/255.0 blue:73/255.0 alpha:1];
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                       titleHighlightedColor, UITextAttributeTextColor,
+                                                       nil] forState:UIControlStateSelected];
 }
 
 //家庭圈
@@ -68,10 +75,12 @@
     if (!_navFamilyVC) {
         
         FamilySpaceViewcontroller* vc = [[FamilySpaceViewcontroller alloc] init];
+        
+
         vc.tabBarItem =
-        [[UITabBarItem alloc] initWithTitle:nil
-                                      image:[[UIImage imageNamed:@"家庭圈1.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
-                              selectedImage:[[UIImage imageNamed:@"家庭圈.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+        [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"tabFamily", nil)
+                                      image:[[UIImage imageNamed:@"tab_square_normal"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
+                              selectedImage:[[UIImage imageNamed:@"tab_square_press"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
         
         _navFamilyVC = [[UINavigationController alloc]initWithRootViewController:vc];
     }
@@ -85,9 +94,9 @@
         
         MydeviceViewcontroller* vc = [[MydeviceViewcontroller alloc] init];
         vc.tabBarItem =
-        [[UITabBarItem alloc] initWithTitle:nil
-                                      image:[[UIImage imageNamed:@"我的设备1.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
-                              selectedImage:[[UIImage imageNamed:@"我的设备.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+        [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"tabDevice", nil)
+                                      image:[[UIImage imageNamed:@"tab_near_normal"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
+                              selectedImage:[[UIImage imageNamed:@"tab_near_press"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
         
         _navMyDeviceVC = [[UINavigationController alloc]initWithRootViewController:vc];
     }
@@ -102,9 +111,9 @@
         PersonCenterViewcontroller* vc = [[PersonCenterViewcontroller alloc] init];
         
         vc.tabBarItem =
-        [[UITabBarItem alloc] initWithTitle:nil
-                                      image:[[UIImage imageNamed:@"个人中心1.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
-                              selectedImage:[[UIImage imageNamed:@"个人中心.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+        [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"tabPerson", nil)
+                                      image:[[UIImage imageNamed:@"tab_egg_normal"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
+                              selectedImage:[[UIImage imageNamed:@"tab_egg_press"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
         
         _navPersonCenterVC = [[UINavigationController alloc]initWithRootViewController:vc];
     }

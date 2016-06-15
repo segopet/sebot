@@ -10,4 +10,13 @@
 
 @implementation MydeviceViewcontroller
 
+
+- (void)viewDidLoad{
+    [super viewDidLoad];
+    self.title = NSLocalizedString(@"tabDevice", nil);
+    self.view.backgroundColor = LIGHT_GRAY_COLOR;
+    
+}
+
+
 @end

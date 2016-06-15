@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FamilySpaceViewcontroller : UIViewController
+@interface FamilySpaceViewcontroller : BaseViewController
 
 @end

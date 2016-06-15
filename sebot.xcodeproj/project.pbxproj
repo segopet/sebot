@@ -36,12 +36,18 @@
 		345565831D1139F200B6E562 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565821D1139F200B6E562 /* LoginViewController.m */; };
 		345565861D113A7900B6E562 /* PopStartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565851D113A7900B6E562 /* PopStartView.m */; };
 		345565891D113B5A00B6E562 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565881D113B5A00B6E562 /* ViewController.m */; };
-		345565901D11404900B6E562 /* 个人中心.png in Resources */ = {isa = PBXBuildFile; fileRef = 3455658A1D11404900B6E562 /* 个人中心.png */; };
-		345565911D11404900B6E562 /* 个人中心1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3455658B1D11404900B6E562 /* 个人中心1.png */; };
-		345565921D11404900B6E562 /* 家庭圈.png in Resources */ = {isa = PBXBuildFile; fileRef = 3455658C1D11404900B6E562 /* 家庭圈.png */; };
-		345565931D11404900B6E562 /* 家庭圈1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3455658D1D11404900B6E562 /* 家庭圈1.png */; };
-		345565941D11404900B6E562 /* 我的设备.png in Resources */ = {isa = PBXBuildFile; fileRef = 3455658E1D11404900B6E562 /* 我的设备.png */; };
-		345565951D11404900B6E562 /* 我的设备1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3455658F1D11404900B6E562 /* 我的设备1.png */; };
+		345565A01D11478200B6E562 /* tab_egg_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 345565961D11478200B6E562 /* tab_egg_normal@3x.png */; };
+		345565A11D11478200B6E562 /* tab_egg_press@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 345565971D11478200B6E562 /* tab_egg_press@3x.png */; };
+		345565A21D11478200B6E562 /* tab_near_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 345565981D11478200B6E562 /* tab_near_normal@3x.png */; };
+		345565A31D11478200B6E562 /* tab_near_press@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 345565991D11478200B6E562 /* tab_near_press@3x.png */; };
+		345565A41D11478200B6E562 /* tab_personal_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3455659A1D11478200B6E562 /* tab_personal_normal@3x.png */; };
+		345565A51D11478200B6E562 /* tab_personal_press@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3455659B1D11478200B6E562 /* tab_personal_press@3x.png */; };
+		345565A81D11478300B6E562 /* tab_square_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3455659E1D11478200B6E562 /* tab_square_normal@3x.png */; };
+		345565A91D11478300B6E562 /* tab_square_press@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3455659F1D11478200B6E562 /* tab_square_press@3x.png */; };
+		345565B01D114C5400B6E562 /* launguide.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 345565AF1D114C5400B6E562 /* launguide.jpg */; };
+		345565B21D114CFA00B6E562 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 345565B11D114CFA00B6E562 /* Launch Screen.storyboard */; };
+		345565B51D11500F00B6E562 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565B41D11500F00B6E562 /* BaseViewController.m */; };
+		345565B81D11505E00B6E562 /* UITabBar+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565B71D11505E00B6E562 /* UITabBar+Badge.m */; };
 		57D1E5F71CFED25900BEDFF6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D1E5F61CFED25900BEDFF6 /* main.m */; };
 		57D1E6001CFED25900BEDFF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D1E5FE1CFED25900BEDFF6 /* Main.storyboard */; };
 		57D1E6021CFED25900BEDFF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57D1E6011CFED25900BEDFF6 /* Assets.xcassets */; };
@@ -108,12 +114,20 @@
 		345565851D113A7900B6E562 /* PopStartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopStartView.m; sourceTree = "<group>"; };
 		345565871D113B5A00B6E562 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		345565881D113B5A00B6E562 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		3455658A1D11404900B6E562 /* 个人中心.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "个人中心.png"; sourceTree = "<group>"; };
-		3455658B1D11404900B6E562 /* 个人中心1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "个人中心1.png"; sourceTree = "<group>"; };
-		3455658C1D11404900B6E562 /* 家庭圈.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "家庭圈.png"; sourceTree = "<group>"; };
-		3455658D1D11404900B6E562 /* 家庭圈1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "家庭圈1.png"; sourceTree = "<group>"; };
-		3455658E1D11404900B6E562 /* 我的设备.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的设备.png"; sourceTree = "<group>"; };
-		3455658F1D11404900B6E562 /* 我的设备1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的设备1.png"; sourceTree = "<group>"; };
+		345565961D11478200B6E562 /* tab_egg_normal@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tab_egg_normal@3x.png"; path = "../tab_egg_normal@3x.png"; sourceTree = "<group>"; };
+		345565971D11478200B6E562 /* tab_egg_press@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tab_egg_press@3x.png"; path = "../tab_egg_press@3x.png"; sourceTree = "<group>"; };
+		345565981D11478200B6E562 /* tab_near_normal@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tab_near_normal@3x.png"; path = "../tab_near_normal@3x.png"; sourceTree = "<group>"; };
+		345565991D11478200B6E562 /* tab_near_press@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tab_near_press@3x.png"; path = "../tab_near_press@3x.png"; sourceTree = "<group>"; };
+		3455659A1D11478200B6E562 /* tab_personal_normal@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tab_personal_normal@3x.png"; path = "../tab_personal_normal@3x.png"; sourceTree = "<group>"; };
+		3455659B1D11478200B6E562 /* tab_personal_press@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tab_personal_press@3x.png"; path = "../tab_personal_press@3x.png"; sourceTree = "<group>"; };
+		3455659E1D11478200B6E562 /* tab_square_normal@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tab_square_normal@3x.png"; path = "../tab_square_normal@3x.png"; sourceTree = "<group>"; };
+		3455659F1D11478200B6E562 /* tab_square_press@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tab_square_press@3x.png"; path = "../tab_square_press@3x.png"; sourceTree = "<group>"; };
+		345565AF1D114C5400B6E562 /* launguide.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = launguide.jpg; sourceTree = "<group>"; };
+		345565B11D114CFA00B6E562 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "../Launch Screen.storyboard"; sourceTree = "<group>"; };
+		345565B31D11500F00B6E562 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		345565B41D11500F00B6E562 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		345565B61D11505E00B6E562 /* UITabBar+Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBar+Badge.h"; sourceTree = "<group>"; };
+		345565B71D11505E00B6E562 /* UITabBar+Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBar+Badge.m"; sourceTree = "<group>"; };
 		47642F05A36B917D69532A10 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D1E5F21CFED25900BEDFF6 /* sebot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sebot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D1E5F61CFED25900BEDFF6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -152,12 +166,11 @@
 		3455650F1D10EDC800B6E562 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				3455658A1D11404900B6E562 /* 个人中心.png */,
-				3455658B1D11404900B6E562 /* 个人中心1.png */,
-				3455658C1D11404900B6E562 /* 家庭圈.png */,
-				3455658D1D11404900B6E562 /* 家庭圈1.png */,
-				3455658E1D11404900B6E562 /* 我的设备.png */,
-				3455658F1D11404900B6E562 /* 我的设备1.png */,
+				345565AE1D114C3B00B6E562 /* tabImage */,
+				345565AA1D114C3100B6E562 /* buttonImage */,
+				345565AB1D114C3100B6E562 /* guideImage */,
+				345565AC1D114C3100B6E562 /* luangeImage */,
+				345565AD1D114C3100B6E562 /* navImage */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -257,6 +270,10 @@
 		345565281D10F46000B6E562 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				345565B61D11505E00B6E562 /* UITabBar+Badge.h */,
+				345565B71D11505E00B6E562 /* UITabBar+Badge.m */,
+				345565B31D11500F00B6E562 /* BaseViewController.h */,
+				345565B41D11500F00B6E562 /* BaseViewController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -400,6 +417,50 @@
 			path = PersonCenter;
 			sourceTree = "<group>";
 		};
+		345565AA1D114C3100B6E562 /* buttonImage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = buttonImage;
+			sourceTree = "<group>";
+		};
+		345565AB1D114C3100B6E562 /* guideImage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = guideImage;
+			sourceTree = "<group>";
+		};
+		345565AC1D114C3100B6E562 /* luangeImage */ = {
+			isa = PBXGroup;
+			children = (
+				345565AF1D114C5400B6E562 /* launguide.jpg */,
+			);
+			path = luangeImage;
+			sourceTree = "<group>";
+		};
+		345565AD1D114C3100B6E562 /* navImage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = navImage;
+			sourceTree = "<group>";
+		};
+		345565AE1D114C3B00B6E562 /* tabImage */ = {
+			isa = PBXGroup;
+			children = (
+				345565961D11478200B6E562 /* tab_egg_normal@3x.png */,
+				345565971D11478200B6E562 /* tab_egg_press@3x.png */,
+				345565981D11478200B6E562 /* tab_near_normal@3x.png */,
+				345565991D11478200B6E562 /* tab_near_press@3x.png */,
+				3455659A1D11478200B6E562 /* tab_personal_normal@3x.png */,
+				3455659B1D11478200B6E562 /* tab_personal_press@3x.png */,
+				3455659E1D11478200B6E562 /* tab_square_normal@3x.png */,
+				3455659F1D11478200B6E562 /* tab_square_press@3x.png */,
+			);
+			path = tabImage;
+			sourceTree = "<group>";
+		};
 		4E791E3A15D0184E81952149 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -434,6 +495,7 @@
 			children = (
 				7DD7D1C91D0FDE5A0002CD2E /* Classes */,
 				57D1E5FE1CFED25900BEDFF6 /* Main.storyboard */,
+				345565B11D114CFA00B6E562 /* Launch Screen.storyboard */,
 				57D1E6011CFED25900BEDFF6 /* Assets.xcassets */,
 				57D1E6061CFED25900BEDFF6 /* Info.plist */,
 				57D1E5F51CFED25900BEDFF6 /* Supporting Files */,
@@ -553,13 +615,17 @@
 			files = (
 				345565121D10EF1300B6E562 /* Localizable.strings in Resources */,
 				57D1E6021CFED25900BEDFF6 /* Assets.xcassets in Resources */,
-				345565951D11404900B6E562 /* 我的设备1.png in Resources */,
 				57D1E6001CFED25900BEDFF6 /* Main.storyboard in Resources */,
-				345565921D11404900B6E562 /* 家庭圈.png in Resources */,
-				345565911D11404900B6E562 /* 个人中心1.png in Resources */,
-				345565941D11404900B6E562 /* 我的设备.png in Resources */,
-				345565931D11404900B6E562 /* 家庭圈1.png in Resources */,
-				345565901D11404900B6E562 /* 个人中心.png in Resources */,
+				345565A01D11478200B6E562 /* tab_egg_normal@3x.png in Resources */,
+				345565B21D114CFA00B6E562 /* Launch Screen.storyboard in Resources */,
+				345565A41D11478200B6E562 /* tab_personal_normal@3x.png in Resources */,
+				345565A91D11478300B6E562 /* tab_square_press@3x.png in Resources */,
+				345565B01D114C5400B6E562 /* launguide.jpg in Resources */,
+				345565A81D11478300B6E562 /* tab_square_normal@3x.png in Resources */,
+				345565A21D11478200B6E562 /* tab_near_normal@3x.png in Resources */,
+				345565A51D11478200B6E562 /* tab_personal_press@3x.png in Resources */,
+				345565A11D11478200B6E562 /* tab_egg_press@3x.png in Resources */,
+				345565A31D11478200B6E562 /* tab_near_press@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,8 +687,10 @@
 				345565181D10F10700B6E562 /* AppDelegate+Launcher.m in Sources */,
 				3455651E1D10F14800B6E562 /* AppDelegate+Sephone.m in Sources */,
 				3455651B1D10F13200B6E562 /* AppDelegate+ShareSDK.m in Sources */,
+				345565B81D11505E00B6E562 /* UITabBar+Badge.m in Sources */,
 				345565801D11376500B6E562 /* FamilySpaceViewcontroller.m in Sources */,
 				345565831D1139F200B6E562 /* LoginViewController.m in Sources */,
+				345565B51D11500F00B6E562 /* BaseViewController.m in Sources */,
 				3455657D1D11374500B6E562 /* PersonCenterViewcontroller.m in Sources */,
 				3455656B1D11008300B6E562 /* BaseModel.m in Sources */,
 				3455654D1D10FE4800B6E562 /* UIActionSheet+Blocks.m in Sources */,
