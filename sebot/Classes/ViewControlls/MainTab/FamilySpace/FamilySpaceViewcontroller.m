@@ -13,10 +13,24 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-    self.title = NSLocalizedString(@"tabFamily", nil);
+    [self setNavTitle: NSLocalizedString(@"tabFamily", nil)];
     self.view.backgroundColor = LIGHT_GRAY_COLOR;
+    UIButton * updateImageBtn =[UIButton buttonWithType:UIButtonTypeCustom];
+    updateImageBtn.frame=CGRectMake(0, 0, 60, 18) ;
+    [updateImageBtn setTitle:NSLocalizedString(@"navUpdateimage", nil) forState:UIControlStateNormal];
+    updateImageBtn.titleLabel.font =[UIFont systemFontOfSize:13];
+    [updateImageBtn addTarget:self action:@selector(updateImage:) forControlEvents:UIControlEventTouchUpInside];
+    [updateImageBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    
+    UIBarButtonItem * settings =[[UIBarButtonItem alloc]initWithCustomView:updateImageBtn];
+    self.navigationItem.rightBarButtonItem = settings;
     
 }
 
 
+- (void)updateImage:(UIButton *)sender
+{
+    
+    
+}
 @end

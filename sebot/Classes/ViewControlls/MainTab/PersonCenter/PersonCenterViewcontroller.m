@@ -14,7 +14,7 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-    self.title = NSLocalizedString(@"tabPerson", nil);
+    [self setNavTitle: NSLocalizedString(@"tabPerson", nil)];
     self.view.backgroundColor = LIGHT_GRAY_COLOR;
     
 }
