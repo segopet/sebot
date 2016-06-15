@@ -8,6 +8,11 @@
 
 #import "LoginViewController.h"
 
+@interface LoginViewController ()
+
+@end
+
+
 @implementation LoginViewController
 
 
