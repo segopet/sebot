@@ -21,3 +21,7 @@
 "loginIn" = "登陆";
 "newUser" = "新用户注册";
 "forgetPassword" = "忘记密码?";
+
+// device
+"DVaddDevice" = "添加设备";
+"DVDevicenum" = "设备号:";
