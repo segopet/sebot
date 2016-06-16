@@ -14,3 +14,10 @@
 // nav
 "navUpdateimage" = "上传照片";
 "navAddDev" = "添加";
+
+//login
+"accountPlaceholder" = "请输入账号";
+"passwordPlaceholder" = "请输入密码";
+"loginIn" = "登陆";
+"newUser" = "新用户注册";
+"forgetPassword" = "忘记密码?";
