@@ -23,7 +23,7 @@
 //    updateImageBtn.titleLabel.font =[UIFont systemFontOfSize:13];
 //    [updateImageBtn addTarget:self action:@selector(updateImage:) forControlEvents:UIControlEventTouchUpInside];
 //    [updateImageBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-//    
+//
 //    UIBarButtonItem * settings =[[UIBarButtonItem alloc]initWithCustomView:updateImageBtn];
 //    self.navigationItem.rightBarButtonItem = settings;
     [self showBarButton:NAV_RIGHT title:@"添加照片" fontColor:[UIColor redColor]];
