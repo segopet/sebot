@@ -48,6 +48,7 @@
 		345565B21D114CFA00B6E562 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 345565B11D114CFA00B6E562 /* Launch Screen.storyboard */; };
 		345565B51D11500F00B6E562 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565B41D11500F00B6E562 /* BaseViewController.m */; };
 		345565B81D11505E00B6E562 /* UITabBar+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565B71D11505E00B6E562 /* UITabBar+Badge.m */; };
+		572DEE5D1D1162E100035228 /* AFHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 572DEE5C1D1162E100035228 /* AFHttpClient.m */; };
 		345565BB1D1246B900B6E562 /* BaseTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565BA1D1246B900B6E562 /* BaseTabViewController.m */; };
 		345565BF1D12533C00B6E562 /* PromptboxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565BE1D12533C00B6E562 /* PromptboxView.m */; };
 		345565C21D125B4500B6E562 /* PopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565C11D125B4500B6E562 /* PopView.m */; };
@@ -138,6 +139,8 @@
 		345565C01D125B4500B6E562 /* PopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopView.h; sourceTree = "<group>"; };
 		345565C11D125B4500B6E562 /* PopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopView.m; sourceTree = "<group>"; };
 		47642F05A36B917D69532A10 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		572DEE5B1D1162E100035228 /* AFHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHttpClient.h; sourceTree = "<group>"; };
+		572DEE5C1D1162E100035228 /* AFHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHttpClient.m; sourceTree = "<group>"; };
 		57D1E5F21CFED25900BEDFF6 /* sebot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sebot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D1E5F61CFED25900BEDFF6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		57D1E5FF1CFED25900BEDFF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -223,6 +226,8 @@
 		345565221D10F3B700B6E562 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				572DEE5B1D1162E100035228 /* AFHttpClient.h */,
+				572DEE5C1D1162E100035228 /* AFHttpClient.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -712,6 +717,7 @@
 				3455651B1D10F13200B6E562 /* AppDelegate+ShareSDK.m in Sources */,
 				345565B81D11505E00B6E562 /* UITabBar+Badge.m in Sources */,
 				345565801D11376500B6E562 /* FamilySpaceViewcontroller.m in Sources */,
+				572DEE5D1D1162E100035228 /* AFHttpClient.m in Sources */,
 				345565831D1139F200B6E562 /* LoginViewController.m in Sources */,
 				345565B51D11500F00B6E562 /* BaseViewController.m in Sources */,
 				3455657D1D11374500B6E562 /* PersonCenterViewcontroller.m in Sources */,

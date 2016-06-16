@@ -34,6 +34,7 @@
      //[self checkLogin];
     [self enterMainTabVC];
 
+    [[AFHttpClient sharedAFHttpClient] test];
 }
 
 // 检查登录
