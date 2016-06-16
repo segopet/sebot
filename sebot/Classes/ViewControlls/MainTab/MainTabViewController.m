@@ -64,12 +64,12 @@
     
     [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:GREEN_COLOR, UITextAttributeTextColor,
                                                        nil] forState:UIControlStateNormal];
-    UIColor *titleHighlightedColor = [UIColor colorWithRed:237/255.0 green:92/255.0 blue:73/255.0 alpha:1];
+    UIColor *titleHighlightedColor =RED_COLOR;
     [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                                        titleHighlightedColor, UITextAttributeTextColor,
                                                        nil] forState:UIControlStateSelected];
     
-    [UINavigationBar appearance].barTintColor=[UIColor colorWithRed:237/255.0  green:92/255.0  blue:73/255.0 alpha:1];
+    [UINavigationBar appearance].barTintColor=RED_COLOR;
     
     
 }
