@@ -29,7 +29,7 @@
     self.dataSource =[NSMutableArray array];
     introduceArr =[NSMutableArray array];
     NSArray * arrName1 =@[@"9001",@"我的设备",@""];
-    NSArray * arrName =@[@"设备号码",@"修改备注",@"家庭成员"];
+    NSArray * arrName =@[NSLocalizedString(@"tabDevice", nil),NSLocalizedString(@"deviceNumber", nil),NSLocalizedString(@"familyTeam", nil)];
     [self.dataSource addObjectsFromArray:arrName];
     [introduceArr addObjectsFromArray:arrName1];
 
@@ -174,8 +174,8 @@
     if (indexPath.row ==1) {
         // 修改备注
         
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"修改备注" message:nil preferredStyle:UIAlertControllerStyleAlert];
-        [alertController addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"repairName", nil) message:nil preferredStyle:UIAlertControllerStyleAlert];
+        [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Sure", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             //获取第1个输入框；
             UITextField *userNameTextField = alertController.textFields.firstObject;
             
@@ -184,10 +184,10 @@
             
         }]];
         
-        [alertController addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil]];
+        [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleDefault handler:nil]];
         
         [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
-            textField.placeholder = @"我的设备";
+            textField.placeholder = NSLocalizedString(@"tabDevice", nil);
         }];
        
         
