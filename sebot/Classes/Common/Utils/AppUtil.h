@@ -43,6 +43,7 @@
 #define REQUEST_PAGE_SIZE           10
 #define START_PAGE_INDEX            1
 
+#define BASE_URL @"http://180.97.80.227:8081"
 
 @interface AppUtil : NSObject
 
