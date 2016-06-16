@@ -10,14 +10,14 @@
 
 @interface BaseModel : JSONModel
 
-@property (nonatomic, copy) NSString<Optional> *retVal;
+@property (nonatomic, copy) NSString *retVal;
 
-@property (nonatomic, copy) NSString<Optional> *content;
+@property (nonatomic, copy) NSString *content;
 
-@property (nonatomic, copy) NSString<Optional> *retDesc;
+@property (nonatomic, copy) NSString *retDesc;
 
-@property (nonatomic, copy) NSString<Optional> *retCode;
+@property (nonatomic, copy) NSString *retCode;
 
-@property (nonatomic, strong) NSArray<Optional> *list;
+@property (nonatomic, strong) NSArray *list;
 
 @end
