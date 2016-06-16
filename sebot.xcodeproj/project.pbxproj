@@ -48,10 +48,14 @@
 		345565B21D114CFA00B6E562 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 345565B11D114CFA00B6E562 /* Launch Screen.storyboard */; };
 		345565B51D11500F00B6E562 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565B41D11500F00B6E562 /* BaseViewController.m */; };
 		345565B81D11505E00B6E562 /* UITabBar+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565B71D11505E00B6E562 /* UITabBar+Badge.m */; };
-		572DEE5D1D1162E100035228 /* AFHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 572DEE5C1D1162E100035228 /* AFHttpClient.m */; };
 		345565BB1D1246B900B6E562 /* BaseTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565BA1D1246B900B6E562 /* BaseTabViewController.m */; };
 		345565BF1D12533C00B6E562 /* PromptboxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565BE1D12533C00B6E562 /* PromptboxView.m */; };
 		345565C21D125B4500B6E562 /* PopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565C11D125B4500B6E562 /* PopView.m */; };
+		345565C61D1296F700B6E562 /* MyDeviceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565C41D1296F700B6E562 /* MyDeviceTableViewCell.m */; };
+		345565C71D1296F700B6E562 /* MyDeviceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 345565C51D1296F700B6E562 /* MyDeviceTableViewCell.xib */; };
+		345565CC1D129B7300B6E562 /* DeviceInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565CA1D129B7300B6E562 /* DeviceInformationViewController.m */; };
+		345565CD1D129B7300B6E562 /* DeviceInformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 345565CB1D129B7300B6E562 /* DeviceInformationViewController.xib */; };
+		572DEE5D1D1162E100035228 /* AFHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 572DEE5C1D1162E100035228 /* AFHttpClient.m */; };
 		57D1E5F71CFED25900BEDFF6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D1E5F61CFED25900BEDFF6 /* main.m */; };
 		57D1E6001CFED25900BEDFF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D1E5FE1CFED25900BEDFF6 /* Main.storyboard */; };
 		57D1E6021CFED25900BEDFF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57D1E6011CFED25900BEDFF6 /* Assets.xcassets */; };
@@ -138,6 +142,12 @@
 		345565BE1D12533C00B6E562 /* PromptboxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PromptboxView.m; sourceTree = "<group>"; };
 		345565C01D125B4500B6E562 /* PopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopView.h; sourceTree = "<group>"; };
 		345565C11D125B4500B6E562 /* PopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopView.m; sourceTree = "<group>"; };
+		345565C31D1296F700B6E562 /* MyDeviceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDeviceTableViewCell.h; sourceTree = "<group>"; };
+		345565C41D1296F700B6E562 /* MyDeviceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDeviceTableViewCell.m; sourceTree = "<group>"; };
+		345565C51D1296F700B6E562 /* MyDeviceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyDeviceTableViewCell.xib; sourceTree = "<group>"; };
+		345565C91D129B7300B6E562 /* DeviceInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInformationViewController.h; sourceTree = "<group>"; };
+		345565CA1D129B7300B6E562 /* DeviceInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInformationViewController.m; sourceTree = "<group>"; };
+		345565CB1D129B7300B6E562 /* DeviceInformationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviceInformationViewController.xib; sourceTree = "<group>"; };
 		47642F05A36B917D69532A10 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		572DEE5B1D1162E100035228 /* AFHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHttpClient.h; sourceTree = "<group>"; };
 		572DEE5C1D1162E100035228 /* AFHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHttpClient.m; sourceTree = "<group>"; };
@@ -421,6 +431,10 @@
 			children = (
 				345565781D11371800B6E562 /* MydeviceViewcontroller.h */,
 				345565791D11371800B6E562 /* MydeviceViewcontroller.m */,
+				345565C31D1296F700B6E562 /* MyDeviceTableViewCell.h */,
+				345565C41D1296F700B6E562 /* MyDeviceTableViewCell.m */,
+				345565C51D1296F700B6E562 /* MyDeviceTableViewCell.xib */,
+				345565C81D129B3900B6E562 /* MyDeviceInformation */,
 			);
 			path = MyDevice;
 			sourceTree = "<group>";
@@ -487,6 +501,16 @@
 				345565C11D125B4500B6E562 /* PopView.m */,
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		345565C81D129B3900B6E562 /* MyDeviceInformation */ = {
+			isa = PBXGroup;
+			children = (
+				345565C91D129B7300B6E562 /* DeviceInformationViewController.h */,
+				345565CA1D129B7300B6E562 /* DeviceInformationViewController.m */,
+				345565CB1D129B7300B6E562 /* DeviceInformationViewController.xib */,
+			);
+			path = MyDeviceInformation;
 			sourceTree = "<group>";
 		};
 		4E791E3A15D0184E81952149 /* Frameworks */ = {
@@ -646,6 +670,7 @@
 				57D1E6001CFED25900BEDFF6 /* Main.storyboard in Resources */,
 				345565A01D11478200B6E562 /* tab_egg_normal@3x.png in Resources */,
 				345565B21D114CFA00B6E562 /* Launch Screen.storyboard in Resources */,
+				345565CD1D129B7300B6E562 /* DeviceInformationViewController.xib in Resources */,
 				345565A41D11478200B6E562 /* tab_personal_normal@3x.png in Resources */,
 				345565A91D11478300B6E562 /* tab_square_press@3x.png in Resources */,
 				345565B01D114C5400B6E562 /* launguide.jpg in Resources */,
@@ -654,6 +679,7 @@
 				345565A51D11478200B6E562 /* tab_personal_press@3x.png in Resources */,
 				345565A11D11478200B6E562 /* tab_egg_press@3x.png in Resources */,
 				345565A31D11478200B6E562 /* tab_near_press@3x.png in Resources */,
+				345565C71D1296F700B6E562 /* MyDeviceTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -717,6 +743,7 @@
 				3455651B1D10F13200B6E562 /* AppDelegate+ShareSDK.m in Sources */,
 				345565B81D11505E00B6E562 /* UITabBar+Badge.m in Sources */,
 				345565801D11376500B6E562 /* FamilySpaceViewcontroller.m in Sources */,
+				345565CC1D129B7300B6E562 /* DeviceInformationViewController.m in Sources */,
 				572DEE5D1D1162E100035228 /* AFHttpClient.m in Sources */,
 				345565831D1139F200B6E562 /* LoginViewController.m in Sources */,
 				345565B51D11500F00B6E562 /* BaseViewController.m in Sources */,
@@ -733,6 +760,7 @@
 				345565BF1D12533C00B6E562 /* PromptboxView.m in Sources */,
 				3455654E1D10FE4800B6E562 /* UIAlertView+Blocks.m in Sources */,
 				3455654F1D10FE4800B6E562 /* UIButton+Blocks.m in Sources */,
+				345565C61D1296F700B6E562 /* MyDeviceTableViewCell.m in Sources */,
 				345565601D10FF0700B6E562 /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
 				345565681D10FFED00B6E562 /* AccountManager.m in Sources */,
 				345565331D10F8A600B6E562 /* AppUtil.m in Sources */,
