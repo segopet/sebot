@@ -7,7 +7,11 @@
 //
 
 #import "BaseViewController.h"
+#import "BaseTabViewController.h"
+#import "PerInformationTableViewCell.h"
 
-@interface DeviceInformationViewController : BaseViewController
+@interface DeviceInformationViewController : BaseTabViewController
+@property (strong, nonatomic) IBOutlet UIButton *startBtn;
+@property (strong, nonatomic) IBOutlet UIButton *cancelBtn;
 
 @end

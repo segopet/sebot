@@ -1,19 +1,61 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DeviceInformationViewController">
             <connections>
+                <outlet property="cancelBtn" destination="TJU-lv-4Al" id="mT1-W2-juU"/>
+                <outlet property="startBtn" destination="ens-Vv-nhS" id="M1i-3n-5zR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJU-lv-4Al">
+                    <rect key="frame" x="16" y="442" width="288" height="43"/>
+                    <color key="backgroundColor" red="1" green="0.31271801760000001" blue="0.26396912760000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="43" id="kJC-XX-5FK"/>
+                    </constraints>
+                    <state key="normal" title="解绑"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="6"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="cancelDeviceBtn:" destination="-1" eventType="touchUpInside" id="1nx-AK-oQu"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ens-Vv-nhS">
+                    <rect key="frame" x="16" y="383" width="288" height="43"/>
+                    <color key="backgroundColor" red="1" green="0.31271801758935436" blue="0.26396912759267777" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="43" id="aCX-WO-TJj"/>
+                    </constraints>
+                    <state key="normal" title="开始视频"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="6"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="startVideoBtn:" destination="-1" eventType="touchUpInside" id="ZEl-KF-2WW"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="TJU-lv-4Al" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="1Z5-VZ-uBQ"/>
+                <constraint firstItem="TJU-lv-4Al" firstAttribute="trailing" secondItem="ens-Vv-nhS" secondAttribute="trailing" id="1ZZ-IJ-h7K"/>
+                <constraint firstItem="ens-Vv-nhS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="Ma6-AH-jI7"/>
+                <constraint firstItem="TJU-lv-4Al" firstAttribute="leading" secondItem="ens-Vv-nhS" secondAttribute="leading" id="NS4-7l-s6W"/>
+                <constraint firstItem="TJU-lv-4Al" firstAttribute="top" secondItem="ens-Vv-nhS" secondAttribute="bottom" constant="16" id="STj-FO-lfm"/>
+                <constraint firstAttribute="bottom" secondItem="TJU-lv-4Al" secondAttribute="bottom" constant="83" id="XPv-Fg-lja"/>
+            </constraints>
+            <point key="canvasLocation" x="253" y="213"/>
         </view>
     </objects>
 </document>
