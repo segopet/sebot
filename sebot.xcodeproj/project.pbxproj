@@ -49,6 +49,7 @@
 		345565B51D11500F00B6E562 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565B41D11500F00B6E562 /* BaseViewController.m */; };
 		345565B81D11505E00B6E562 /* UITabBar+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565B71D11505E00B6E562 /* UITabBar+Badge.m */; };
 		572DEE5D1D1162E100035228 /* AFHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 572DEE5C1D1162E100035228 /* AFHttpClient.m */; };
+		345565BB1D1246B900B6E562 /* BaseTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565BA1D1246B900B6E562 /* BaseTabViewController.m */; };
 		57D1E5F71CFED25900BEDFF6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D1E5F61CFED25900BEDFF6 /* main.m */; };
 		57D1E6001CFED25900BEDFF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D1E5FE1CFED25900BEDFF6 /* Main.storyboard */; };
 		57D1E6021CFED25900BEDFF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57D1E6011CFED25900BEDFF6 /* Assets.xcassets */; };
@@ -129,6 +130,8 @@
 		345565B41D11500F00B6E562 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		345565B61D11505E00B6E562 /* UITabBar+Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBar+Badge.h"; sourceTree = "<group>"; };
 		345565B71D11505E00B6E562 /* UITabBar+Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBar+Badge.m"; sourceTree = "<group>"; };
+		345565B91D1246B900B6E562 /* BaseTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTabViewController.h; sourceTree = "<group>"; };
+		345565BA1D1246B900B6E562 /* BaseTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTabViewController.m; sourceTree = "<group>"; };
 		47642F05A36B917D69532A10 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		572DEE5B1D1162E100035228 /* AFHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHttpClient.h; sourceTree = "<group>"; };
 		572DEE5C1D1162E100035228 /* AFHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHttpClient.m; sourceTree = "<group>"; };
@@ -279,6 +282,8 @@
 				345565B71D11505E00B6E562 /* UITabBar+Badge.m */,
 				345565B31D11500F00B6E562 /* BaseViewController.h */,
 				345565B41D11500F00B6E562 /* BaseViewController.m */,
+				345565B91D1246B900B6E562 /* BaseTabViewController.h */,
+				345565BA1D1246B900B6E562 /* BaseTabViewController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -699,6 +704,7 @@
 				345565B51D11500F00B6E562 /* BaseViewController.m in Sources */,
 				3455657D1D11374500B6E562 /* PersonCenterViewcontroller.m in Sources */,
 				3455656B1D11008300B6E562 /* BaseModel.m in Sources */,
+				345565BB1D1246B900B6E562 /* BaseTabViewController.m in Sources */,
 				3455654D1D10FE4800B6E562 /* UIActionSheet+Blocks.m in Sources */,
 				3455655A1D10FE6C00B6E562 /* UIView+TapBlocks.m in Sources */,
 				345565891D113B5A00B6E562 /* ViewController.m in Sources */,
