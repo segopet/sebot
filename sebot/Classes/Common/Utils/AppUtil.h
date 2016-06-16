@@ -15,7 +15,11 @@
 
 //灰色
 #define GRAY_COLOR RGB(205, 205, 193)
+
 #define LIGHT_GRAY_COLOR RGB(239, 242, 243)
+//新项目颜色
+#define RED_COLOR RGB(240, 96, 72)
+#define NEW_GRAY_COLOR RGB(240, 96, 72)
 
 #undef	NAV_BUTTON_MIN_WIDTH
 #define	NAV_BUTTON_MIN_WIDTH	(40.0f)
@@ -38,6 +42,7 @@
 #define W_Hight_Zoom [UIScreen mainScreen].bounds.size.height/M_Higth
 // 海之蓝
 #define AllBackColor [UIColor colorWithRed:73/255.0 green:195/255.0 blue:241/255.0 alpha:1]
+
 
 //分页请求个数
 #define REQUEST_PAGE_SIZE           10
