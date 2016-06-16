@@ -7,13 +7,15 @@
 //
 
 #import "MydeviceViewcontroller.h"
-#import "PromptboxView.h"
+#import "PopView.h"
 
-@interface MydeviceViewcontroller()
+
+@interface MydeviceViewcontroller()<PopDelegate>
 {
     
     
-    PromptboxView * popView;
+    PopView * _popView;
+    AppDelegate *app;
     
 }
 
@@ -29,70 +31,49 @@
     self.view.backgroundColor = LIGHT_GRAY_COLOR;
     [self showBarButton:NAV_RIGHT imageName:@"tab_square_press"];
     
-    
-    [self initAlertView];
-    
-    
-    
-    
-    
-}
-
-
-//初始化弹出框
-
-- (void)initAlertView
-{
-    
-    
-    UIView * viewCenter =[[UIView alloc]initWithFrame:CGRectMake(0, 0, 260, 150)];
-    viewCenter.hidden = NO;
-    viewCenter.center = self.view.center;
-    viewCenter.layer.borderColor =GRAY_COLOR.CGColor;
-    viewCenter.layer.borderWidth = 1;
-    [self.view addSubview:viewCenter];
-    
-    UILabel * handLable =[[UILabel alloc]initWithFrame:CGRectMake(0, 0, 260, 30)];
-    handLable.textAlignment = NSTextAlignmentCenter;
-    handLable.text =@"添加设备";
-    handLable.textColor =[UIColor redColor];
-    [viewCenter addSubview:handLable];
-    
-    UILabel * numberLabel =[[UILabel alloc]initWithFrame:CGRectMake(0, 30, 60, 30)];
-    numberLabel.text =@"设备号:";
-    numberLabel.textColor =[UIColor redColor];
-    [viewCenter addSubview:numberLabel];
-    
-    UITextField * numberTextFild =[[UITextField alloc]initWithFrame:CGRectMake(60, 30, 100, 30)];
-    numberTextFild.text =@"123244";
-    [viewCenter addSubview:numberTextFild];
-    
-    
-    UIButton * SaomaBtn =[[UIButton alloc]initWithFrame:CGRectMake(170, 30, 30, 30)];
-    
-    [SaomaBtn setImage:[UIImage imageNamed:@"tab_square_normal"] forState:UIControlStateNormal];
-    [SaomaBtn addTarget:self action:@selector(saomao) forControlEvents:UIControlEventTouchUpInside];
-    
-    [viewCenter addSubview:SaomaBtn];
+     app = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    _popView = [[PopView alloc] initWithFrame:CGRectMake(0, 0, 260, 150)];
+    _popView.userInteractionEnabled = YES;
+    _popView.center = self.view.center;
+    _popView.ParentView = app.window;
+    _popView.delegate = self;
+   
     
     
     
     
     
 }
-// 扫描
-- (void)saomao
-{
-    
-    
-}
 
 
-
-// 添加
 - (void)doRightButtonTouch
 {
     
+    [self.view addSubview:_popView];
+
+}
+
+
+
+
+/**
+ *  pop 代理
+ */
+
+- (void)saomaMehod
+{
+    
+    NSLog(@"11");
+    
+}
+- (void)cancelMehod
+{
+    
+    NSLog(@"22");
+}
+- (void)sureMehod
+{
+    NSLog(@"33");
     
 }
 

@@ -14,3 +14,7 @@
 // nav
 "navUpdateimage" = "上传照片";
 "navAddDev" = "添加";
+
+// device
+"DVaddDevice" = "添加设备";
+"DVDevicenum" = "设备号:";
