@@ -17,6 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    [UINavigationBar appearance].barTintColor=RED_COLOR;
+    [self setNavTitle:@"注册"];
 }
 
 

@@ -124,7 +124,7 @@
         [leftbutton setTitleEdgeInsets:UIEdgeInsetsMake(-1, -18, 0, 0)];
         [leftbutton setImageEdgeInsets:UIEdgeInsetsMake(-1, -18, 0, 0)];
 
-        [leftbutton setImage:[UIImage imageNamed:@"btn_back"] forState:UIControlStateNormal];
+        [leftbutton setImage:[UIImage imageNamed:@"back@2x.png"] forState:UIControlStateNormal];
         self.tabBarController.tabBar.hidden= YES;
         
         [self showBarButton:NAV_LEFT button:leftbutton];
@@ -193,7 +193,7 @@
     CGSize titleSize =self.navigationController.navigationBar.bounds.size;
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, titleSize.width/2,titleSize.height)];
     label.backgroundColor = [UIColor clearColor];
-    label.textColor = WHITE_FG;
+    label.textColor = [UIColor whiteColor];
     label.textAlignment = NSTextAlignmentCenter;
     label.text=navTitle;
     self.navigationItem.titleView=label;
