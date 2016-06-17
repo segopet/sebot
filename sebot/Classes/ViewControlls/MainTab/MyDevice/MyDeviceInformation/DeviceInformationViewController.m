@@ -7,6 +7,7 @@
 //
 
 #import "DeviceInformationViewController.h"
+#import "FamilyTeamViewController.h"
 
 @interface DeviceInformationViewController ()
 {
@@ -193,6 +194,14 @@
         
         [self presentViewController:alertController animated:true completion:nil];
     }
+     else if (indexPath.row == 2)
+     {
+         FamilyTeamViewController * famVC =[[FamilyTeamViewController alloc]initWithNibName:@"FamilyTeamViewController" bundle:nil];
+         [self.navigationController pushViewController:famVC animated:YES];
+         
+         
+         
+     }
     
     
 }

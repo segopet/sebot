@@ -74,4 +74,7 @@
 +(NSString *)getNowTime;
 
 +(NSString *)getCurrentTime;
+
+
+
 @end

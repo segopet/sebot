@@ -49,6 +49,12 @@
 		345565D81D129F5200B6E562 /* MyDeviceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 345565D61D129F5200B6E562 /* MyDeviceTableViewCell.xib */; };
 		345565DE1D12A5D800B6E562 /* PerInformationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565DC1D12A5D800B6E562 /* PerInformationTableViewCell.m */; };
 		345565DF1D12A5D800B6E562 /* PerInformationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 345565DD1D12A5D800B6E562 /* PerInformationTableViewCell.xib */; };
+		345565E41D139DB200B6E562 /* FamilyTeamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565E21D139DB200B6E562 /* FamilyTeamViewController.m */; };
+		345565E51D139DB200B6E562 /* FamilyTeamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 345565E31D139DB200B6E562 /* FamilyTeamViewController.xib */; };
+		345565E91D13A04100B6E562 /* FamilyTeamTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565E71D13A04100B6E562 /* FamilyTeamTableViewCell.m */; };
+		345565EA1D13A04100B6E562 /* FamilyTeamTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 345565E81D13A04100B6E562 /* FamilyTeamTableViewCell.xib */; };
+		349263551D13E5F3006C2FD9 /* PersonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 349263531D13E5F3006C2FD9 /* PersonTableViewCell.m */; };
+		349263561D13E5F3006C2FD9 /* PersonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 349263541D13E5F3006C2FD9 /* PersonTableViewCell.xib */; };
 		572DEE5D1D1162E100035228 /* AFHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 572DEE5C1D1162E100035228 /* AFHttpClient.m */; };
 		57D1E5F71CFED25900BEDFF6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D1E5F61CFED25900BEDFF6 /* main.m */; };
 		57D1E6001CFED25900BEDFF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D1E5FE1CFED25900BEDFF6 /* Main.storyboard */; };
@@ -151,6 +157,15 @@
 		345565DB1D12A5D800B6E562 /* PerInformationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerInformationTableViewCell.h; sourceTree = "<group>"; };
 		345565DC1D12A5D800B6E562 /* PerInformationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerInformationTableViewCell.m; sourceTree = "<group>"; };
 		345565DD1D12A5D800B6E562 /* PerInformationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PerInformationTableViewCell.xib; sourceTree = "<group>"; };
+		345565E11D139DB200B6E562 /* FamilyTeamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FamilyTeamViewController.h; sourceTree = "<group>"; };
+		345565E21D139DB200B6E562 /* FamilyTeamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FamilyTeamViewController.m; sourceTree = "<group>"; };
+		345565E31D139DB200B6E562 /* FamilyTeamViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FamilyTeamViewController.xib; sourceTree = "<group>"; };
+		345565E61D13A04100B6E562 /* FamilyTeamTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FamilyTeamTableViewCell.h; sourceTree = "<group>"; };
+		345565E71D13A04100B6E562 /* FamilyTeamTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FamilyTeamTableViewCell.m; sourceTree = "<group>"; };
+		345565E81D13A04100B6E562 /* FamilyTeamTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FamilyTeamTableViewCell.xib; sourceTree = "<group>"; };
+		349263521D13E5F3006C2FD9 /* PersonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonTableViewCell.h; sourceTree = "<group>"; };
+		349263531D13E5F3006C2FD9 /* PersonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonTableViewCell.m; sourceTree = "<group>"; };
+		349263541D13E5F3006C2FD9 /* PersonTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonTableViewCell.xib; sourceTree = "<group>"; };
 		47642F05A36B917D69532A10 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		572DEE5B1D1162E100035228 /* AFHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHttpClient.h; sourceTree = "<group>"; };
 		572DEE5C1D1162E100035228 /* AFHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHttpClient.m; sourceTree = "<group>"; };
@@ -460,6 +475,7 @@
 		345565761D1136BF00B6E562 /* MyDevice */ = {
 			isa = PBXGroup;
 			children = (
+				345565E01D139D7E00B6E562 /* FamilyTeam */,
 				345565D41D129F5200B6E562 /* MyDeviceTableViewCell.h */,
 				345565D51D129F5200B6E562 /* MyDeviceTableViewCell.m */,
 				345565D61D129F5200B6E562 /* MyDeviceTableViewCell.xib */,
@@ -475,6 +491,9 @@
 			children = (
 				3455657B1D11374500B6E562 /* PersonCenterViewcontroller.h */,
 				3455657C1D11374500B6E562 /* PersonCenterViewcontroller.m */,
+				349263521D13E5F3006C2FD9 /* PersonTableViewCell.h */,
+				349263531D13E5F3006C2FD9 /* PersonTableViewCell.m */,
+				349263541D13E5F3006C2FD9 /* PersonTableViewCell.xib */,
 			);
 			path = PersonCenter;
 			sourceTree = "<group>";
@@ -509,6 +528,19 @@
 				345565DD1D12A5D800B6E562 /* PerInformationTableViewCell.xib */,
 			);
 			path = MyDeviceInformation;
+			sourceTree = "<group>";
+		};
+		345565E01D139D7E00B6E562 /* FamilyTeam */ = {
+			isa = PBXGroup;
+			children = (
+				345565E11D139DB200B6E562 /* FamilyTeamViewController.h */,
+				345565E21D139DB200B6E562 /* FamilyTeamViewController.m */,
+				345565E31D139DB200B6E562 /* FamilyTeamViewController.xib */,
+				345565E71D13A04100B6E562 /* FamilyTeamTableViewCell.m */,
+				345565E81D13A04100B6E562 /* FamilyTeamTableViewCell.xib */,
+				345565E61D13A04100B6E562 /* FamilyTeamTableViewCell.h */,
+			);
+			path = FamilyTeam;
 			sourceTree = "<group>";
 		};
 		4E791E3A15D0184E81952149 /* Frameworks */ = {
@@ -707,10 +739,13 @@
 				345565DF1D12A5D800B6E562 /* PerInformationTableViewCell.xib in Resources */,
 				345565D31D129EBC00B6E562 /* DeviceInformationViewController.xib in Resources */,
 				7D4B10091D1297B10095D463 /* tab_egg_press@3x.png in Resources */,
+				345565EA1D13A04100B6E562 /* FamilyTeamTableViewCell.xib in Resources */,
 				345565121D10EF1300B6E562 /* Localizable.strings in Resources */,
 				57D1E6021CFED25900BEDFF6 /* Assets.xcassets in Resources */,
 				7D4B100C1D1297B10095D463 /* tab_personal_press@3x.png in Resources */,
 				57D1E6001CFED25900BEDFF6 /* Main.storyboard in Resources */,
+				349263561D13E5F3006C2FD9 /* PersonTableViewCell.xib in Resources */,
+				345565E51D139DB200B6E562 /* FamilyTeamViewController.xib in Resources */,
 				345565B21D114CFA00B6E562 /* Launch Screen.storyboard in Resources */,
 				7D4B10081D1297B10095D463 /* tab_egg_normal@3x.png in Resources */,
 				7D4B10251D12A6C10095D463 /* user.png in Resources */,
@@ -791,6 +826,7 @@
 				3455654D1D10FE4800B6E562 /* UIActionSheet+Blocks.m in Sources */,
 				3455655A1D10FE6C00B6E562 /* UIView+TapBlocks.m in Sources */,
 				345565891D113B5A00B6E562 /* ViewController.m in Sources */,
+				345565E41D139DB200B6E562 /* FamilyTeamViewController.m in Sources */,
 				3455657A1D11371800B6E562 /* MydeviceViewcontroller.m in Sources */,
 				345565C21D125B4500B6E562 /* PopView.m in Sources */,
 				345565341D10F8A600B6E562 /* Reachability.m in Sources */,
@@ -803,10 +839,12 @@
 				345565681D10FFED00B6E562 /* AccountManager.m in Sources */,
 				345565331D10F8A600B6E562 /* AppUtil.m in Sources */,
 				345565741D1134E500B6E562 /* MainTabViewController.m in Sources */,
+				345565E91D13A04100B6E562 /* FamilyTeamTableViewCell.m in Sources */,
 				7DD7D1D11D0FE21B0002CD2E /* AppDelegate.m in Sources */,
 				345565DE1D12A5D800B6E562 /* PerInformationTableViewCell.m in Sources */,
 				345565861D113A7900B6E562 /* PopStartView.m in Sources */,
 				3455653F1D10FE3E00B6E562 /* NSString+URLEncoding.m in Sources */,
+				349263551D13E5F3006C2FD9 /* PersonTableViewCell.m in Sources */,
 				345565501D10FE4800B6E562 /* UIImage-Extensions.m in Sources */,
 				345565611D10FF0700B6E562 /* UIView+SDAutoLayout.m in Sources */,
 				345565531D10FE5C00B6E562 /* UIViewController+HUD.m in Sources */,

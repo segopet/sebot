@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseTabViewController.h"
+#import "PersonTableViewCell.h"
 
-@interface PersonCenterViewcontroller : BaseViewController
+
+@interface PersonCenterViewcontroller : BaseTabViewController
 
 @end
