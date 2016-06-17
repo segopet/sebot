@@ -24,12 +24,13 @@
     UILabel * _handLable;
     UILabel * _numberLable;
     UITextField * _numberTextfied;
-    UIButton * _saomaBtnl;
+    
     UIButton * _cancelBtn;
     UIButton * _sureBtn;
     
 }
 @property (strong)UIView *ParentView;
+@property (nonatomic,strong)UIButton * saomaBtnl;
 @property (nonatomic,assign)id<PopDelegate>delegate;
 
 @end
