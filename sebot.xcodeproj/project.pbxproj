@@ -55,6 +55,14 @@
 		345565EA1D13A04100B6E562 /* FamilyTeamTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 345565E81D13A04100B6E562 /* FamilyTeamTableViewCell.xib */; };
 		349263551D13E5F3006C2FD9 /* PersonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 349263531D13E5F3006C2FD9 /* PersonTableViewCell.m */; };
 		349263561D13E5F3006C2FD9 /* PersonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 349263541D13E5F3006C2FD9 /* PersonTableViewCell.xib */; };
+		3492635B1D13FAC6006C2FD9 /* MyphotoAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 349263591D13FAC6006C2FD9 /* MyphotoAlbumViewController.m */; };
+		3492635C1D13FAC6006C2FD9 /* MyphotoAlbumViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3492635A1D13FAC6006C2FD9 /* MyphotoAlbumViewController.xib */; };
+		349263621D13FC72006C2FD9 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 349263601D13FC72006C2FD9 /* AboutViewController.m */; };
+		349263631D13FC72006C2FD9 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 349263611D13FC72006C2FD9 /* AboutViewController.xib */; };
+		349263671D13FC9F006C2FD9 /* RepairPwViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 349263651D13FC9F006C2FD9 /* RepairPwViewController.m */; };
+		349263681D13FC9F006C2FD9 /* RepairPwViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 349263661D13FC9F006C2FD9 /* RepairPwViewController.xib */; };
+		3492636C1D13FE8D006C2FD9 /* AboutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3492636A1D13FE8D006C2FD9 /* AboutTableViewCell.m */; };
+		3492636D1D13FE8D006C2FD9 /* AboutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3492636B1D13FE8D006C2FD9 /* AboutTableViewCell.xib */; };
 		572DEE5D1D1162E100035228 /* AFHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 572DEE5C1D1162E100035228 /* AFHttpClient.m */; };
 		57D1E5F71CFED25900BEDFF6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D1E5F61CFED25900BEDFF6 /* main.m */; };
 		57D1E6001CFED25900BEDFF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D1E5FE1CFED25900BEDFF6 /* Main.storyboard */; };
@@ -162,6 +170,18 @@
 		349263521D13E5F3006C2FD9 /* PersonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonTableViewCell.h; sourceTree = "<group>"; };
 		349263531D13E5F3006C2FD9 /* PersonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonTableViewCell.m; sourceTree = "<group>"; };
 		349263541D13E5F3006C2FD9 /* PersonTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonTableViewCell.xib; sourceTree = "<group>"; };
+		349263581D13FAC6006C2FD9 /* MyphotoAlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyphotoAlbumViewController.h; sourceTree = "<group>"; };
+		349263591D13FAC6006C2FD9 /* MyphotoAlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyphotoAlbumViewController.m; sourceTree = "<group>"; };
+		3492635A1D13FAC6006C2FD9 /* MyphotoAlbumViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyphotoAlbumViewController.xib; sourceTree = "<group>"; };
+		3492635F1D13FC72006C2FD9 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		349263601D13FC72006C2FD9 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		349263611D13FC72006C2FD9 /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
+		349263641D13FC9F006C2FD9 /* RepairPwViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepairPwViewController.h; sourceTree = "<group>"; };
+		349263651D13FC9F006C2FD9 /* RepairPwViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepairPwViewController.m; sourceTree = "<group>"; };
+		349263661D13FC9F006C2FD9 /* RepairPwViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepairPwViewController.xib; sourceTree = "<group>"; };
+		349263691D13FE8D006C2FD9 /* AboutTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutTableViewCell.h; sourceTree = "<group>"; };
+		3492636A1D13FE8D006C2FD9 /* AboutTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutTableViewCell.m; sourceTree = "<group>"; };
+		3492636B1D13FE8D006C2FD9 /* AboutTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutTableViewCell.xib; sourceTree = "<group>"; };
 		47642F05A36B917D69532A10 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		572DEE5B1D1162E100035228 /* AFHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHttpClient.h; sourceTree = "<group>"; };
 		572DEE5C1D1162E100035228 /* AFHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHttpClient.m; sourceTree = "<group>"; };
@@ -478,6 +498,9 @@
 		345565771D1136BF00B6E562 /* PersonCenter */ = {
 			isa = PBXGroup;
 			children = (
+				3492635E1D13FC4B006C2FD9 /* About */,
+				3492635D1D13FC28006C2FD9 /* RepairPw */,
+				349263571D13FA8D006C2FD9 /* MyphotoPho */,
 				3455657B1D11374500B6E562 /* PersonCenterViewcontroller.h */,
 				3455657C1D11374500B6E562 /* PersonCenterViewcontroller.m */,
 				349263521D13E5F3006C2FD9 /* PersonTableViewCell.h */,
@@ -530,6 +553,39 @@
 				345565E61D13A04100B6E562 /* FamilyTeamTableViewCell.h */,
 			);
 			path = FamilyTeam;
+			sourceTree = "<group>";
+		};
+		349263571D13FA8D006C2FD9 /* MyphotoPho */ = {
+			isa = PBXGroup;
+			children = (
+				349263581D13FAC6006C2FD9 /* MyphotoAlbumViewController.h */,
+				349263591D13FAC6006C2FD9 /* MyphotoAlbumViewController.m */,
+				3492635A1D13FAC6006C2FD9 /* MyphotoAlbumViewController.xib */,
+			);
+			path = MyphotoPho;
+			sourceTree = "<group>";
+		};
+		3492635D1D13FC28006C2FD9 /* RepairPw */ = {
+			isa = PBXGroup;
+			children = (
+				349263641D13FC9F006C2FD9 /* RepairPwViewController.h */,
+				349263651D13FC9F006C2FD9 /* RepairPwViewController.m */,
+				349263661D13FC9F006C2FD9 /* RepairPwViewController.xib */,
+			);
+			path = RepairPw;
+			sourceTree = "<group>";
+		};
+		3492635E1D13FC4B006C2FD9 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				3492635F1D13FC72006C2FD9 /* AboutViewController.h */,
+				349263601D13FC72006C2FD9 /* AboutViewController.m */,
+				349263611D13FC72006C2FD9 /* AboutViewController.xib */,
+				349263691D13FE8D006C2FD9 /* AboutTableViewCell.h */,
+				3492636A1D13FE8D006C2FD9 /* AboutTableViewCell.m */,
+				3492636B1D13FE8D006C2FD9 /* AboutTableViewCell.xib */,
+			);
+			path = About;
 			sourceTree = "<group>";
 		};
 		4E791E3A15D0184E81952149 /* Frameworks */ = {
@@ -713,6 +769,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3492635C1D13FAC6006C2FD9 /* MyphotoAlbumViewController.xib in Resources */,
 				7D4B100D1D1297B10095D463 /* tab_square_normal@3x.png in Resources */,
 				7D4B100A1D1297B10095D463 /* tab_near_normal@3x.png in Resources */,
 				7D4B100B1D1297B10095D463 /* tab_personal_normal@3x.png in Resources */,
@@ -730,8 +787,11 @@
 				349263561D13E5F3006C2FD9 /* PersonTableViewCell.xib in Resources */,
 				345565E51D139DB200B6E562 /* FamilyTeamViewController.xib in Resources */,
 				345565B21D114CFA00B6E562 /* Launch Screen.storyboard in Resources */,
+				349263681D13FC9F006C2FD9 /* RepairPwViewController.xib in Resources */,
 				7D4B10081D1297B10095D463 /* tab_egg_normal@3x.png in Resources */,
 				7D4B10111D1297B90095D463 /* tab_square_press@3x.png in Resources */,
+				3492636D1D13FE8D006C2FD9 /* AboutTableViewCell.xib in Resources */,
+				349263631D13FC72006C2FD9 /* AboutViewController.xib in Resources */,
 				345565B01D114C5400B6E562 /* launguide.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -801,6 +861,7 @@
 				345565D71D129F5200B6E562 /* MyDeviceTableViewCell.m in Sources */,
 				7D4B10011D1291C90095D463 /* RegistViewController.m in Sources */,
 				345565831D1139F200B6E562 /* LoginViewController.m in Sources */,
+				349263671D13FC9F006C2FD9 /* RepairPwViewController.m in Sources */,
 				345565B51D11500F00B6E562 /* BaseViewController.m in Sources */,
 				3455657D1D11374500B6E562 /* PersonCenterViewcontroller.m in Sources */,
 				3455656B1D11008300B6E562 /* BaseModel.m in Sources */,
@@ -815,8 +876,11 @@
 				345565401D10FE3E00B6E562 /* QFTableView.m in Sources */,
 				345565BF1D12533C00B6E562 /* PromptboxView.m in Sources */,
 				3455654E1D10FE4800B6E562 /* UIAlertView+Blocks.m in Sources */,
+				3492636C1D13FE8D006C2FD9 /* AboutTableViewCell.m in Sources */,
+				349263621D13FC72006C2FD9 /* AboutViewController.m in Sources */,
 				3455654F1D10FE4800B6E562 /* UIButton+Blocks.m in Sources */,
 				345565601D10FF0700B6E562 /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
+				3492635B1D13FAC6006C2FD9 /* MyphotoAlbumViewController.m in Sources */,
 				345565681D10FFED00B6E562 /* AccountManager.m in Sources */,
 				345565331D10F8A600B6E562 /* AppUtil.m in Sources */,
 				345565741D1134E500B6E562 /* MainTabViewController.m in Sources */,
