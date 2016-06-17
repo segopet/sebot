@@ -23,10 +23,17 @@
 
 -(void)initUserface{
     
+    UIImageView * icon = [[UIImageView alloc]initWithFrame:CGRectMake(122.5 * W_Wide_Zoom, 100 * W_Hight_Zoom, 130 * W_Wide_Zoom, 130 * W_Hight_Zoom)];
+    icon.image = [UIImage imageNamed:@"APPImgae.png"];
+    [self.view addSubview:icon];
+    
+    
+    
     UIView * centerView = [[UIView alloc]initWithFrame:CGRectMake(0 * W_Wide_Zoom, 300 * W_Hight_Zoom, 375 * W_Wide_Zoom, 100 * W_Hight_Zoom)];
     centerView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:centerView];
     
+    NSArray * imagenameArray = @[@"user.png",@"password.png"];
     for (int i = 0 ; i < 3; i++) {
         
         UILabel * lineLabel = [[UILabel alloc]initWithFrame:CGRectMake(0 * W_Wide_Zoom, 0 * W_Hight_Zoom + 50 * i * W_Hight_Zoom, 375 * W_Wide_Zoom, 1 * W_Hight_Zoom)];
@@ -36,7 +43,8 @@
         if (i < 2) {
     
         UIImageView * leftImage = [[UIImageView alloc]initWithFrame:CGRectMake(30 * W_Wide_Zoom, 12.5 *  W_Hight_Zoom + i * 50 * W_Hight_Zoom, 25 * W_Wide_Zoom, 25 * W_Hight_Zoom)];
-        leftImage.backgroundColor = [UIColor greenColor];
+        //leftImage.backgroundColor = [UIColor greenColor];
+        leftImage.image = [UIImage imageNamed:imagenameArray[i]];
         [centerView addSubview:leftImage];
         
         }

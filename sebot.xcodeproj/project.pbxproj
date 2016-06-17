@@ -57,7 +57,11 @@
 		7D4B10101D1297B90095D463 /* tab_near_press@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4B100E1D1297B90095D463 /* tab_near_press@3x.png */; };
 		7D4B10111D1297B90095D463 /* tab_square_press@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4B100F1D1297B90095D463 /* tab_square_press@3x.png */; };
 		7D4B101B1D129C860095D463 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4B101A1D129C860095D463 /* back@2x.png */; };
+		7D4B101F1D12A2950095D463 /* APPImgae.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4B101C1D12A2950095D463 /* APPImgae.png */; };
+		7D4B10241D12A6C10095D463 /* password.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4B10221D12A6C10095D463 /* password.png */; };
+		7D4B10251D12A6C10095D463 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4B10231D12A6C10095D463 /* user.png */; };
 		7DD7D1D11D0FE21B0002CD2E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD7D1D01D0FE21B0002CD2E /* AppDelegate.m */; };
+		7DE523941D13D53800C5B5EF /* ForegetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE523931D13D53800C5B5EF /* ForegetPasswordViewController.m */; };
 		CEB33C3D282E7125878CD13F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47642F05A36B917D69532A10 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -151,8 +155,13 @@
 		7D4B100E1D1297B90095D463 /* tab_near_press@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_near_press@3x.png"; sourceTree = "<group>"; };
 		7D4B100F1D1297B90095D463 /* tab_square_press@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_square_press@3x.png"; sourceTree = "<group>"; };
 		7D4B101A1D129C860095D463 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
+		7D4B101C1D12A2950095D463 /* APPImgae.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = APPImgae.png; sourceTree = "<group>"; };
+		7D4B10221D12A6C10095D463 /* password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = password.png; sourceTree = "<group>"; };
+		7D4B10231D12A6C10095D463 /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
 		7DD7D1CF1D0FE21B0002CD2E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7DD7D1D01D0FE21B0002CD2E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7DE523921D13D53800C5B5EF /* ForegetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForegetPasswordViewController.h; sourceTree = "<group>"; };
+		7DE523931D13D53800C5B5EF /* ForegetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForegetPasswordViewController.m; sourceTree = "<group>"; };
 		8FD84F7D3505BA6C0FF1433D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -281,6 +290,8 @@
 				345565821D1139F200B6E562 /* LoginViewController.m */,
 				7D4B0FFF1D1291C90095D463 /* RegistViewController.h */,
 				7D4B10001D1291C90095D463 /* RegistViewController.m */,
+				7DE523921D13D53800C5B5EF /* ForegetPasswordViewController.h */,
+				7DE523931D13D53800C5B5EF /* ForegetPasswordViewController.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -525,6 +536,9 @@
 			isa = PBXGroup;
 			children = (
 				7D4B101A1D129C860095D463 /* back@2x.png */,
+				7D4B101C1D12A2950095D463 /* APPImgae.png */,
+				7D4B10221D12A6C10095D463 /* password.png */,
+				7D4B10231D12A6C10095D463 /* user.png */,
 			);
 			path = buttonImage;
 			sourceTree = "<group>";
@@ -651,6 +665,8 @@
 			files = (
 				7D4B100D1D1297B10095D463 /* tab_square_normal@3x.png in Resources */,
 				7D4B100A1D1297B10095D463 /* tab_near_normal@3x.png in Resources */,
+				7D4B10241D12A6C10095D463 /* password.png in Resources */,
+				7D4B101F1D12A2950095D463 /* APPImgae.png in Resources */,
 				7D4B100B1D1297B10095D463 /* tab_personal_normal@3x.png in Resources */,
 				7D4B10101D1297B90095D463 /* tab_near_press@3x.png in Resources */,
 				7D4B101B1D129C860095D463 /* back@2x.png in Resources */,
@@ -661,6 +677,7 @@
 				57D1E6001CFED25900BEDFF6 /* Main.storyboard in Resources */,
 				345565B21D114CFA00B6E562 /* Launch Screen.storyboard in Resources */,
 				7D4B10081D1297B10095D463 /* tab_egg_normal@3x.png in Resources */,
+				7D4B10251D12A6C10095D463 /* user.png in Resources */,
 				7D4B10111D1297B90095D463 /* tab_square_press@3x.png in Resources */,
 				345565B01D114C5400B6E562 /* launguide.jpg in Resources */,
 			);
@@ -740,6 +757,7 @@
 				345565C21D125B4500B6E562 /* PopView.m in Sources */,
 				345565341D10F8A600B6E562 /* Reachability.m in Sources */,
 				345565401D10FE3E00B6E562 /* QFTableView.m in Sources */,
+				7DE523941D13D53800C5B5EF /* ForegetPasswordViewController.m in Sources */,
 				345565BF1D12533C00B6E562 /* PromptboxView.m in Sources */,
 				3455654E1D10FE4800B6E562 /* UIAlertView+Blocks.m in Sources */,
 				3455654F1D10FE4800B6E562 /* UIButton+Blocks.m in Sources */,
