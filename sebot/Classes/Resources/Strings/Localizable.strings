@@ -11,6 +11,7 @@
 "tabDevice" = "我的设备";
 "tabPerson" = "个人中心";
 
+
 // nav
 "navUpdateimage" = "上传照片";
 "navAddDev" = "添加";
@@ -34,3 +35,13 @@
 // device
 "DVaddDevice" = "添加设备";
 "DVDevicenum" = "设备号:";
+
+//infor
+"Cancel" = "取消";
+"Sure"   = "确认";
+"otherName" = "我的备注";
+"repairName" =  "修改备注";
+"deviceNumber" = "设备号码";
+"familyTeam" = "家庭成员";
+
+
