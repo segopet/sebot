@@ -10,6 +10,12 @@
 
 @interface RegistViewController ()
 @property (nonatomic,strong)UIButton * achieveSecurityBtn;
+@property (nonatomic,strong)UITextField * phoneNumberTextfield;
+@property (nonatomic,strong)UITextField * achieveTextfield;
+@property (nonatomic,strong)UITextField * passwordTextfield;
+@property (nonatomic,strong)UITextField * surePasswordTextfield;
+
+
 @end
 
 @implementation RegistViewController
@@ -46,6 +52,8 @@
     [_achieveSecurityBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     _achieveSecurityBtn.layer.cornerRadius = 5;
     [topView addSubview:_achieveSecurityBtn];
+    [_achieveSecurityBtn addTarget:self action:@selector(yanzhengmaTouch) forControlEvents:UIControlEventTouchUpInside];
+
     
     UIButton * registBtn = [[UIButton alloc]initWithFrame:CGRectMake(15 * W_Wide_Zoom, 300 * W_Hight_Zoom, 345 * W_Wide_Zoom, 45 * W_Hight_Zoom)];
     registBtn.backgroundColor = RED_COLOR;
@@ -53,6 +61,7 @@
     [registBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     registBtn.layer.cornerRadius = 5;
     [self.view addSubview:registBtn];
+    [registBtn addTarget:self action:@selector(registButtonTouch) forControlEvents:UIControlEventTouchUpInside];
     
     UILabel * label = [[UILabel alloc]initWithFrame:CGRectMake(65 * W_Wide_Zoom, 360 * W_Hight_Zoom, 200 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
     label.textColor = [UIColor grayColor];
@@ -66,7 +75,56 @@
     xieyiBtn.titleLabel.font = [UIFont systemFontOfSize:12];
     [self.view addSubview:xieyiBtn];
     
+    _phoneNumberTextfield = [[UITextField alloc]initWithFrame:CGRectMake(100 * W_Wide_Zoom, 11 * W_Hight_Zoom, 200 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
+    //_phoneNumberTextfield.backgroundColor = [UIColor redColor];
+    _phoneNumberTextfield.placeholder = NSLocalizedString(@"accountPlaceholder", nil);
+    _phoneNumberTextfield.tintColor = GRAY_COLOR;
+    _phoneNumberTextfield.textColor = [UIColor blackColor];
+    _phoneNumberTextfield.font = [UIFont systemFontOfSize:14];
+    [topView addSubview:_phoneNumberTextfield];
+    
+    _achieveTextfield = [[UITextField alloc]initWithFrame:CGRectMake(100 * W_Wide_Zoom, 61 * W_Hight_Zoom, 200 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
+    _achieveTextfield.placeholder = @"请输入验证码";
+    _achieveTextfield.tintColor = GRAY_COLOR;
+    _achieveTextfield.textColor = [UIColor blackColor];
+    _achieveTextfield.font = [UIFont systemFontOfSize:14];
+    [topView addSubview:_achieveTextfield];
+    
+    _passwordTextfield = [[UITextField alloc]initWithFrame:CGRectMake(100 * W_Wide_Zoom, 111 * W_Hight_Zoom, 200 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
+    _passwordTextfield.placeholder = @"请输入密码";
+    _passwordTextfield.tintColor = GRAY_COLOR;
+    _passwordTextfield.textColor = [UIColor blackColor];
+    _passwordTextfield.font = [UIFont systemFontOfSize:14];
+    [topView addSubview:_passwordTextfield];
+    
+    _surePasswordTextfield = [[UITextField alloc]initWithFrame:CGRectMake(100 * W_Wide_Zoom, 161 * W_Hight_Zoom, 200 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
+    _surePasswordTextfield.placeholder = @"请输入密码";
+    _surePasswordTextfield.tintColor = GRAY_COLOR;
+    _surePasswordTextfield.textColor= [UIColor blackColor];
+    _surePasswordTextfield.font = [UIFont systemFontOfSize:14];
+    [topView addSubview:_surePasswordTextfield];
+    
+    
 
 }
+-(void)yanzhengmaTouch{
+    
+
+
+}
+
+
+//注册
+-(void)registButtonTouch{
+    
+
+
+
+
+}
+
+
+
+
 
 @end

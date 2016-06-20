@@ -8,6 +8,8 @@
 
 #import "LoginViewController.h"
 #import "RegistViewController.h"
+#import "ForegetPasswordViewController.h"
+#import "AFHttpClient.h"
 @interface LoginViewController ()
 @property (nonatomic,strong)UITextField * accountTextfield;
 @property (nonatomic,strong)UITextField * passwordTextfield;
@@ -23,6 +25,7 @@
 
 -(void)initUserface{
     
+
     UIImageView * icon = [[UIImageView alloc]initWithFrame:CGRectMake(122.5 * W_Wide_Zoom, 100 * W_Hight_Zoom, 130 * W_Wide_Zoom, 130 * W_Hight_Zoom)];
     icon.image = [UIImage imageNamed:@"APPImgae.png"];
     [self.view addSubview:icon];
@@ -70,6 +73,7 @@
     loginBtn.layer.cornerRadius = 5;
     [loginBtn setTitle:NSLocalizedString(@"loginIn", nil) forState:UIControlStateNormal];
     [self.view addSubview:loginBtn];
+    [loginBtn addTarget:self action:@selector(loginButtonTouch) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton * newUserBtn = [[UIButton alloc]initWithFrame:CGRectMake(80 * W_Wide_Zoom, 630 * W_Hight_Zoom, 100 * W_Wide_Zoom, 20 * W_Hight_Zoom)];
     [newUserBtn setTitle:NSLocalizedString(@"newUser", nil) forState:UIControlStateNormal];
@@ -83,25 +87,33 @@
     [forgetpasswordBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     forgetpasswordBtn.titleLabel.font = [UIFont systemFontOfSize:14];
     [self.view addSubview:forgetpasswordBtn];
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    [forgetpasswordBtn addTarget:self action:@selector(forgetpasswordTouch) forControlEvents:UIControlEventTouchUpInside];
     
 
 }
+-(void)loginButtonTouch{
+    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid":@"",@"token":@"",@"objective":@"user",@"action":@"login",@"data":@{@"accountnumber":_accountTextfield.text,@"password":_passwordTextfield.text,@"model":@"6s",@"brand":@"6s",@"version":@"9.3.2",@"type":@"ios",@"channelid":@""}} result:^(id model) {
+        NSLog(@"%@",model);
+        
+    }];
+
+
+
+
+}
+
+
+
 -(void)newuserTouch{
     RegistViewController * regist = [[RegistViewController alloc]init];
     [self.navigationController pushViewController:regist animated:NO];
 
+
+}
+
+-(void)forgetpasswordTouch{
+    ForegetPasswordViewController * forVc = [[ForegetPasswordViewController alloc]init];
+    [self.navigationController pushViewController:forVc animated:NO];
 
 }
 

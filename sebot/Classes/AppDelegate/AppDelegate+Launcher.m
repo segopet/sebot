@@ -31,8 +31,8 @@
     
     
     
-    // [self enterLoginVC];
-    [self enterMainTabVC];
+     [self enterLoginVC];
+    //[self enterMainTabVC];
 
     [[AFHttpClient sharedAFHttpClient] test];
 }
