@@ -12,6 +12,8 @@
 @interface CheckDeviceModel : NSObject
 
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key;
++ (instancetype)modelWithDictionary: (NSDictionary *) data;
+
 
 @property (nonatomic,copy)NSString *activationtime;//
 @property (nonatomic,copy)NSString *channelid;
