@@ -8,6 +8,9 @@
 
 #import "AboutViewController.h"
 #import "AboutTableViewCell.h"
+#import "AgreementViewController.h"
+#import "OpinionViewController.h"
+#import "ProductionIntroducViewController.h"
 
 @interface AboutViewController ()
 {
@@ -126,9 +129,41 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
+
+    if (indexPath.row == 0) {
+        
+        ProductionIntroducViewController * proVC =[[ProductionIntroducViewController alloc]initWithNibName:@"ProductionIntroducViewController" bundle:nil];
+        [self.navigationController  pushViewController:proVC animated:YES];
+        
+        
+    }
+    else if (indexPath.row  ==1)
+    {
+        
+        OpinionViewController * opinVC =[[OpinionViewController alloc]initWithNibName:@"OpinionViewController" bundle:nil];
+        [self.navigationController pushViewController:opinVC animated:YES];
+        
+    }
+    else
+    {
+      
+        
+        AgreementViewController * aggreVC =[[AgreementViewController alloc]initWithNibName:@"AgreementViewController" bundle:nil];
+        [self.navigationController pushViewController:aggreVC animated:YES];
+
+        
+    }
+    
+
+    
+    
+    
     
     
 }
+
+
+
 
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -147,6 +182,7 @@
  *  退出
  */
 - (IBAction)exitBtn:(UIButton *)sender {
+    
     
     
 }

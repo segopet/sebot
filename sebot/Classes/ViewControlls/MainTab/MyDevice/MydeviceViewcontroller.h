@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseTabViewController.h"
-
+#import "CheckDeviceModel.h"
 @interface MydeviceViewcontroller : BaseTabViewController
 
+{
+    
+ 
+    
+}
 @end

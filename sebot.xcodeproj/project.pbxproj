@@ -53,6 +53,7 @@
 		345565E51D139DB200B6E562 /* FamilyTeamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 345565E31D139DB200B6E562 /* FamilyTeamViewController.xib */; };
 		345565E91D13A04100B6E562 /* FamilyTeamTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565E71D13A04100B6E562 /* FamilyTeamTableViewCell.m */; };
 		345565EA1D13A04100B6E562 /* FamilyTeamTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 345565E81D13A04100B6E562 /* FamilyTeamTableViewCell.xib */; };
+		34921D071D17C77000541E41 /* CheckDeviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34921D061D17C77000541E41 /* CheckDeviceModel.m */; };
 		349263551D13E5F3006C2FD9 /* PersonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 349263531D13E5F3006C2FD9 /* PersonTableViewCell.m */; };
 		349263561D13E5F3006C2FD9 /* PersonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 349263541D13E5F3006C2FD9 /* PersonTableViewCell.xib */; };
 		3492635B1D13FAC6006C2FD9 /* MyphotoAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 349263591D13FAC6006C2FD9 /* MyphotoAlbumViewController.m */; };
@@ -63,6 +64,12 @@
 		349263681D13FC9F006C2FD9 /* RepairPwViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 349263661D13FC9F006C2FD9 /* RepairPwViewController.xib */; };
 		3492636C1D13FE8D006C2FD9 /* AboutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3492636A1D13FE8D006C2FD9 /* AboutTableViewCell.m */; };
 		3492636D1D13FE8D006C2FD9 /* AboutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3492636B1D13FE8D006C2FD9 /* AboutTableViewCell.xib */; };
+		349263741D178EBC006C2FD9 /* AgreementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 349263721D178EBC006C2FD9 /* AgreementViewController.m */; };
+		349263751D178EBC006C2FD9 /* AgreementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 349263731D178EBC006C2FD9 /* AgreementViewController.xib */; };
+		349263791D178EF4006C2FD9 /* OpinionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 349263771D178EF4006C2FD9 /* OpinionViewController.m */; };
+		3492637A1D178EF4006C2FD9 /* OpinionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 349263781D178EF4006C2FD9 /* OpinionViewController.xib */; };
+		3492637E1D178F1B006C2FD9 /* ProductionIntroducViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3492637C1D178F1B006C2FD9 /* ProductionIntroducViewController.m */; };
+		3492637F1D178F1B006C2FD9 /* ProductionIntroducViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3492637D1D178F1B006C2FD9 /* ProductionIntroducViewController.xib */; };
 		572DEE5D1D1162E100035228 /* AFHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 572DEE5C1D1162E100035228 /* AFHttpClient.m */; };
 		57D1E5F71CFED25900BEDFF6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D1E5F61CFED25900BEDFF6 /* main.m */; };
 		57D1E6001CFED25900BEDFF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D1E5FE1CFED25900BEDFF6 /* Main.storyboard */; };
@@ -167,6 +174,8 @@
 		345565E61D13A04100B6E562 /* FamilyTeamTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FamilyTeamTableViewCell.h; sourceTree = "<group>"; };
 		345565E71D13A04100B6E562 /* FamilyTeamTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FamilyTeamTableViewCell.m; sourceTree = "<group>"; };
 		345565E81D13A04100B6E562 /* FamilyTeamTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FamilyTeamTableViewCell.xib; sourceTree = "<group>"; };
+		34921D051D17C77000541E41 /* CheckDeviceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckDeviceModel.h; sourceTree = "<group>"; };
+		34921D061D17C77000541E41 /* CheckDeviceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckDeviceModel.m; sourceTree = "<group>"; };
 		349263521D13E5F3006C2FD9 /* PersonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonTableViewCell.h; sourceTree = "<group>"; };
 		349263531D13E5F3006C2FD9 /* PersonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonTableViewCell.m; sourceTree = "<group>"; };
 		349263541D13E5F3006C2FD9 /* PersonTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonTableViewCell.xib; sourceTree = "<group>"; };
@@ -182,6 +191,15 @@
 		349263691D13FE8D006C2FD9 /* AboutTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutTableViewCell.h; sourceTree = "<group>"; };
 		3492636A1D13FE8D006C2FD9 /* AboutTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutTableViewCell.m; sourceTree = "<group>"; };
 		3492636B1D13FE8D006C2FD9 /* AboutTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutTableViewCell.xib; sourceTree = "<group>"; };
+		349263711D178EBC006C2FD9 /* AgreementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgreementViewController.h; sourceTree = "<group>"; };
+		349263721D178EBC006C2FD9 /* AgreementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgreementViewController.m; sourceTree = "<group>"; };
+		349263731D178EBC006C2FD9 /* AgreementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AgreementViewController.xib; sourceTree = "<group>"; };
+		349263761D178EF4006C2FD9 /* OpinionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpinionViewController.h; sourceTree = "<group>"; };
+		349263771D178EF4006C2FD9 /* OpinionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpinionViewController.m; sourceTree = "<group>"; };
+		349263781D178EF4006C2FD9 /* OpinionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OpinionViewController.xib; sourceTree = "<group>"; };
+		3492637B1D178F1B006C2FD9 /* ProductionIntroducViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductionIntroducViewController.h; sourceTree = "<group>"; };
+		3492637C1D178F1B006C2FD9 /* ProductionIntroducViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductionIntroducViewController.m; sourceTree = "<group>"; };
+		3492637D1D178F1B006C2FD9 /* ProductionIntroducViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductionIntroducViewController.xib; sourceTree = "<group>"; };
 		47642F05A36B917D69532A10 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		572DEE5B1D1162E100035228 /* AFHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHttpClient.h; sourceTree = "<group>"; };
 		572DEE5C1D1162E100035228 /* AFHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHttpClient.m; sourceTree = "<group>"; };
@@ -282,6 +300,8 @@
 			children = (
 				345565691D11008300B6E562 /* BaseModel.h */,
 				3455656A1D11008300B6E562 /* BaseModel.m */,
+				34921D051D17C77000541E41 /* CheckDeviceModel.h */,
+				34921D061D17C77000541E41 /* CheckDeviceModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -578,6 +598,9 @@
 		3492635E1D13FC4B006C2FD9 /* About */ = {
 			isa = PBXGroup;
 			children = (
+				3492636E1D178E57006C2FD9 /* Agreement */,
+				3492636F1D178E57006C2FD9 /* Opinion */,
+				349263701D178E57006C2FD9 /* ProductIntroduction */,
 				3492635F1D13FC72006C2FD9 /* AboutViewController.h */,
 				349263601D13FC72006C2FD9 /* AboutViewController.m */,
 				349263611D13FC72006C2FD9 /* AboutViewController.xib */,
@@ -586,6 +609,36 @@
 				3492636B1D13FE8D006C2FD9 /* AboutTableViewCell.xib */,
 			);
 			path = About;
+			sourceTree = "<group>";
+		};
+		3492636E1D178E57006C2FD9 /* Agreement */ = {
+			isa = PBXGroup;
+			children = (
+				349263711D178EBC006C2FD9 /* AgreementViewController.h */,
+				349263721D178EBC006C2FD9 /* AgreementViewController.m */,
+				349263731D178EBC006C2FD9 /* AgreementViewController.xib */,
+			);
+			path = Agreement;
+			sourceTree = "<group>";
+		};
+		3492636F1D178E57006C2FD9 /* Opinion */ = {
+			isa = PBXGroup;
+			children = (
+				349263761D178EF4006C2FD9 /* OpinionViewController.h */,
+				349263771D178EF4006C2FD9 /* OpinionViewController.m */,
+				349263781D178EF4006C2FD9 /* OpinionViewController.xib */,
+			);
+			path = Opinion;
+			sourceTree = "<group>";
+		};
+		349263701D178E57006C2FD9 /* ProductIntroduction */ = {
+			isa = PBXGroup;
+			children = (
+				3492637B1D178F1B006C2FD9 /* ProductionIntroducViewController.h */,
+				3492637C1D178F1B006C2FD9 /* ProductionIntroducViewController.m */,
+				3492637D1D178F1B006C2FD9 /* ProductionIntroducViewController.xib */,
+			);
+			path = ProductIntroduction;
 			sourceTree = "<group>";
 		};
 		4E791E3A15D0184E81952149 /* Frameworks */ = {
@@ -780,13 +833,16 @@
 				345565D31D129EBC00B6E562 /* DeviceInformationViewController.xib in Resources */,
 				7D4B10091D1297B10095D463 /* tab_egg_press@3x.png in Resources */,
 				345565EA1D13A04100B6E562 /* FamilyTeamTableViewCell.xib in Resources */,
+				3492637A1D178EF4006C2FD9 /* OpinionViewController.xib in Resources */,
 				345565121D10EF1300B6E562 /* Localizable.strings in Resources */,
 				57D1E6021CFED25900BEDFF6 /* Assets.xcassets in Resources */,
 				7D4B100C1D1297B10095D463 /* tab_personal_press@3x.png in Resources */,
+				349263751D178EBC006C2FD9 /* AgreementViewController.xib in Resources */,
 				57D1E6001CFED25900BEDFF6 /* Main.storyboard in Resources */,
 				349263561D13E5F3006C2FD9 /* PersonTableViewCell.xib in Resources */,
 				345565E51D139DB200B6E562 /* FamilyTeamViewController.xib in Resources */,
 				345565B21D114CFA00B6E562 /* Launch Screen.storyboard in Resources */,
+				3492637F1D178F1B006C2FD9 /* ProductionIntroducViewController.xib in Resources */,
 				349263681D13FC9F006C2FD9 /* RepairPwViewController.xib in Resources */,
 				7D4B10081D1297B10095D463 /* tab_egg_normal@3x.png in Resources */,
 				7D4B10111D1297B90095D463 /* tab_square_press@3x.png in Resources */,
@@ -856,6 +912,7 @@
 				3455651B1D10F13200B6E562 /* AppDelegate+ShareSDK.m in Sources */,
 				345565B81D11505E00B6E562 /* UITabBar+Badge.m in Sources */,
 				345565801D11376500B6E562 /* FamilySpaceViewcontroller.m in Sources */,
+				349263791D178EF4006C2FD9 /* OpinionViewController.m in Sources */,
 				345565D21D129EBC00B6E562 /* DeviceInformationViewController.m in Sources */,
 				572DEE5D1D1162E100035228 /* AFHttpClient.m in Sources */,
 				345565D71D129F5200B6E562 /* MyDeviceTableViewCell.m in Sources */,
@@ -875,7 +932,9 @@
 				345565341D10F8A600B6E562 /* Reachability.m in Sources */,
 				345565401D10FE3E00B6E562 /* QFTableView.m in Sources */,
 				345565BF1D12533C00B6E562 /* PromptboxView.m in Sources */,
+				349263741D178EBC006C2FD9 /* AgreementViewController.m in Sources */,
 				3455654E1D10FE4800B6E562 /* UIAlertView+Blocks.m in Sources */,
+				3492637E1D178F1B006C2FD9 /* ProductionIntroducViewController.m in Sources */,
 				3492636C1D13FE8D006C2FD9 /* AboutTableViewCell.m in Sources */,
 				349263621D13FC72006C2FD9 /* AboutViewController.m in Sources */,
 				3455654F1D10FE4800B6E562 /* UIButton+Blocks.m in Sources */,
@@ -892,6 +951,7 @@
 				349263551D13E5F3006C2FD9 /* PersonTableViewCell.m in Sources */,
 				345565501D10FE4800B6E562 /* UIImage-Extensions.m in Sources */,
 				345565611D10FF0700B6E562 /* UIView+SDAutoLayout.m in Sources */,
+				34921D071D17C77000541E41 /* CheckDeviceModel.m in Sources */,
 				345565531D10FE5C00B6E562 /* UIViewController+HUD.m in Sources */,
 				345565561D10FE6400B6E562 /* UIView+Sizes.m in Sources */,
 				57D1E5F71CFED25900BEDFF6 /* main.m in Sources */,
