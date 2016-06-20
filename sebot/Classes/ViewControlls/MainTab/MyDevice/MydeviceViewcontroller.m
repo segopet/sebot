@@ -12,16 +12,19 @@
 #import "DeviceInformationViewController.h"
 
 
+
 @interface MydeviceViewcontroller()<PopDelegate>
 {
     
     
     PopView * _popView;
     AppDelegate *app;
-    
+    //CheckDeviceModel * checkModel;
 }
 
+
 @end
+
 
 
 @implementation MydeviceViewcontroller
@@ -41,9 +44,26 @@
    
     
     self.dataSource =[NSMutableArray array];
-    NSArray * arrName =@[@"9001",@"9002",@"9003",@"9004",@"9005"];
-    [self.dataSource addObjectsFromArray:arrName];
+//    NSArray * arrName =@[@"9001",@"9002",@"9003",@"9004",@"9005"];
+//    [self.dataSource addObjectsFromArray:arrName];
+   
     
+    
+    [[AFHttpClient sharedAFHttpClient] POST:@"sebot/moblie/forward" parameters:@{@"userid" : @"1" , @"objective":@"device", @"token" : @"1" , @"action" : @"queryUserDeviceInfo", @"data" : @{@"userid" : @"1"}} result:^(id model) {
+        [self.dataSource addObjectsFromArray:model[@"list"]];
+        //  测试
+        /*
+        for (CheckDeviceModel * checkModel in  self.dataSource) {
+            NSLog(@"===%@",checkModel);
+            
+        }
+         */
+         
+        
+        [self.tableView reloadData];
+    }];
+    
+
 
 }
 
@@ -138,14 +158,16 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
    
+    CheckDeviceModel * checkModel = self.dataSource[indexPath.row];
     static NSString * showUserInfoCellIdentifier = @"MydeviceList";
     MyDeviceTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:showUserInfoCellIdentifier];
     if (!cell) {
-        
         cell = [[[NSBundle mainBundle]loadNibNamed:@"MyDeviceTableViewCell" owner:self options:nil]lastObject];
     }
     
-    cell.numberLable.text = self.dataSource[indexPath.row];
+   // NSLog(@"%@",checkModel.deviceno);
+    
+    cell.numberLable.text =checkModel.deviceno;
     
     
     return cell;

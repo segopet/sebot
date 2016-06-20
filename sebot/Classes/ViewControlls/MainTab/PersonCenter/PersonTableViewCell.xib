@@ -1,18 +1,64 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="PersonTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="51" id="KGk-i7-Jjw" customClass="PersonTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="51"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tab_personal_press.png" translatesAutoresizingMaskIntoConstraints="NO" id="8cm-a0-EYu">
+                        <rect key="frame" x="8" y="4" width="42" height="42"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="42" id="a3Z-Ru-djg"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sfdvdvdsv" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZuQ-SM-e3L">
+                        <rect key="frame" x="53" y="8" width="100" height="34"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="ffD-9Z-ssU"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hhahh " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCj-Dh-rtu">
+                        <rect key="frame" x="207" y="11" width="105" height="31"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ZuQ-SM-e3L" firstAttribute="baseline" secondItem="xCj-Dh-rtu" secondAttribute="baseline" id="3B0-xP-wTP"/>
+                    <constraint firstItem="ZuQ-SM-e3L" firstAttribute="centerY" secondItem="8cm-a0-EYu" secondAttribute="centerY" id="8cT-Ih-SoP"/>
+                    <constraint firstItem="8cm-a0-EYu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-4" id="A7b-x8-Lvx"/>
+                    <constraint firstItem="ZuQ-SM-e3L" firstAttribute="leading" secondItem="8cm-a0-EYu" secondAttribute="trailing" constant="3" id="D2B-3Y-MS5"/>
+                    <constraint firstItem="8cm-a0-EYu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="JSu-eg-VPY"/>
+                    <constraint firstItem="xCj-Dh-rtu" firstAttribute="leading" secondItem="ZuQ-SM-e3L" secondAttribute="trailing" constant="54" id="fEf-4n-Ojl"/>
+                    <constraint firstItem="xCj-Dh-rtu" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="fdM-HE-Rhd"/>
+                    <constraint firstItem="xCj-Dh-rtu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="3" id="jyQ-Tp-KuS"/>
+                    <constraint firstItem="ZuQ-SM-e3L" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="oRa-ap-NNg"/>
+                    <constraint firstItem="xCj-Dh-rtu" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="zHD-Q3-yFS"/>
+                </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="headImage" destination="8cm-a0-EYu" id="hcm-PR-cEn"/>
+                <outlet property="inforLable" destination="xCj-Dh-rtu" id="jXV-61-L8b"/>
+                <outlet property="introduceLable" destination="ZuQ-SM-e3L" id="g4t-oK-Vap"/>
+            </connections>
+            <point key="canvasLocation" x="190" y="216.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="tab_personal_press.png" width="24" height="24"/>
+    </resources>
 </document>

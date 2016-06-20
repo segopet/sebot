@@ -7,12 +7,18 @@
 //
 
 #import "PersonCenterViewcontroller.h"
-
+#import "MyphotoAlbumViewController.h"
+#import "AboutViewController.h"
+#import "RepairPwViewController.h"
 @interface PersonCenterViewcontroller()
 
 {
     
     UIImageView * _heandBtn;
+    NSMutableArray * arrTest;
+    UILabel *_nameLabel;
+    
+    
     
 }
 
@@ -30,6 +36,13 @@
     NSArray * arr =@[@"账号",@"昵称",@"我的相册",@"修改密码",@"关于"];
     [self.dataSource addObjectsFromArray:arr];
     
+    arrTest =[NSMutableArray array];
+    
+    NSArray * arrT =@[@"13540691705",@"Tony",@"",@"",@""];
+    
+    [arrTest addObjectsFromArray:arrT];
+    
+    
     
 }
 
@@ -38,16 +51,26 @@
 {
     [super setupView];
     
-    UIView  * _headView = [[UIView alloc]initWithFrame:CGRectMake(0* W_Wide_Zoom, 0 * W_Hight_Zoom, 375 * W_Wide_Zoom, 260 * W_Hight_Zoom)];
+    UIView  * _headView = [[UIView alloc]initWithFrame:CGRectMake(0* W_Wide_Zoom, 0 * W_Hight_Zoom, 375 * W_Wide_Zoom, 220 * W_Hight_Zoom)];
     _headView.backgroundColor =GRAY_COLOR;
     [self.view addSubview:_headView];
     
+    /**
+     点赞  名字
+     */
+    _nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 200*W_Wide_Zoom, 20*W_Hight_Zoom)];
+    _nameLabel.text = @"我是余磊";
+    _nameLabel.center = CGPointMake(self.view.center.x,_heandBtn.frame.origin.y+130*W_Hight_Zoom);
+    _nameLabel.font = [UIFont systemFontOfSize:15];
+    _nameLabel.textAlignment = NSTextAlignmentCenter;
+    _nameLabel.textColor = [UIColor redColor];
+    [_headView addSubview:_nameLabel];
+    
     // 头像
     _heandBtn =[[UIImageView alloc]initWithFrame:CGRectMake(_headView.center.x-40*W_Wide_Zoom, self.view.origin.y+30*W_Hight_Zoom, 80, 80)];
-   //  _heandBtn.image =[UIImage imageNamed:@"launguide.jpg"];
+     _heandBtn.image =[UIImage imageNamed:@"launguide.jpg"];
     _heandBtn.layer.masksToBounds = YES;
     _heandBtn.layer.cornerRadius =_heandBtn.width/2;
-    
     [_headView addSubview:_heandBtn];
 
     
@@ -107,11 +130,18 @@
     }
     
     
-    if (indexPath.row ==1 || indexPath.row ==2) {
+    if (indexPath.row ==0) {
         //显示箭头
+        
+        
+    }else
+    {
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         
     }
+    
+    cell.introduceLable.text = self.dataSource[indexPath.row];
+    cell.inforLable.text = arrTest[indexPath.row];
     
    
     
@@ -149,10 +179,29 @@
     else if (indexPath.row == 2)
     {
         
+        MyphotoAlbumViewController * Myphot0VC =[[MyphotoAlbumViewController alloc]initWithNibName:@"MyphotoAlbumViewController" bundle:nil];
+        [self.navigationController pushViewController:Myphot0VC animated:YES];
         
+    }
+    else if (indexPath.row == 3)
+    {
+        
+        RepairPwViewController  * repaVC =[[RepairPwViewController alloc]initWithNibName:@"RepairPwViewController" bundle:nil];
+        
+        [self.navigationController pushViewController:repaVC animated:YES];
         
     }
     
+    else if (indexPath.row == 4)
+        
+    {
+        
+        AboutViewController * aboutVC =[[AboutViewController alloc]initWithNibName:@"AboutViewController" bundle:nil];
+        [self.navigationController pushViewController:aboutVC animated:YES];
+        
+        
+        
+    }
     
 }
 

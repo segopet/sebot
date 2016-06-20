@@ -35,7 +35,7 @@
     
     app = (AppDelegate *)[UIApplication sharedApplication].delegate;
     _popView = [[PopView alloc] initWithFrame:CGRectMake(60, 160, 260, 150)];
-//    _popView.center = self.view.center;
+    _popView.center = self.view.center;
     _popView.saomaBtnl.hidden = YES;
     _popView.ParentView = app.window;
     _popView.delegate = self;

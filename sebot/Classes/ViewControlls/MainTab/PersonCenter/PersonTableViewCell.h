@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface PersonTableViewCell : UITableViewCell
+@property (strong, nonatomic) IBOutlet UIImageView *headImage;
+@property (strong, nonatomic) IBOutlet UILabel *introduceLable;
+@property (strong, nonatomic) IBOutlet UILabel *inforLable;
 
 @end
