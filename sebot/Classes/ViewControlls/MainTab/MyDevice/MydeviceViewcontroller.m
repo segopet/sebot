@@ -10,6 +10,7 @@
 #import "PopView.h"
 #import "MyDeviceTableViewCell.h"
 #import "DeviceInformationViewController.h"
+#import "CheckDeviceModel.h"
 
 
 
@@ -158,16 +159,18 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
    
-    CheckDeviceModel * checkModel = self.dataSource[indexPath.row];
+   
     static NSString * showUserInfoCellIdentifier = @"MydeviceList";
     MyDeviceTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:showUserInfoCellIdentifier];
     if (!cell) {
         cell = [[[NSBundle mainBundle]loadNibNamed:@"MyDeviceTableViewCell" owner:self options:nil]lastObject];
     }
-    
+     NSDictionary * dic = self.dataSource[indexPath.row];
    // NSLog(@"%@",checkModel.deviceno);
+     //= checkModel;
+   // NSString * str = checkModel.deviceno;
     
-    cell.numberLable.text =checkModel.deviceno;
+    cell.numberLable.text = dic[@"deviceno"];
     
     
     return cell;

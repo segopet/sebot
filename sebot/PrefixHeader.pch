@@ -37,5 +37,5 @@
 #import "AccountManager.h"
 #import "AFNetWorking.h"
 #import "UIImageView+WebCache.h"
-
+#import <JSONModel.h>
 #endif /* PrefixHeader_pch */
