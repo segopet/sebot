@@ -20,6 +20,9 @@
     PopView * _popView;
     AppDelegate *app;
     //CheckDeviceModel * checkModel;
+    
+    NSDictionary * dic;
+    
 }
 
 
@@ -44,12 +47,15 @@
    
     
     self.dataSource =[NSMutableArray array];
+    dic =[[NSDictionary alloc]init];
+    
 //    NSArray * arrName =@[@"9001",@"9002",@"9003",@"9004",@"9005"];
 //    [self.dataSource addObjectsFromArray:arrName];
    
     
     
     [[AFHttpClient sharedAFHttpClient] POST:@"sebot/moblie/forward" parameters:@{@"userid" : @"1" , @"objective":@"device", @"token" : @"1" , @"action" : @"queryUserDeviceInfo", @"data" : @{@"userid" : @"1"}} result:^(id model) {
+        
         [self.dataSource addObjectsFromArray:model[@"list"]];
         //  测试
         /*
@@ -58,6 +64,9 @@
             
         }
          */
+        
+        dic = model[@"list"];
+        
          
         
         [self.tableView reloadData];
@@ -158,15 +167,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
    
-    CheckDeviceModel * checkModel = self.dataSource[indexPath.row];
-    static NSString * showUserInfoCellIdentifier = @"MydeviceList";
+
+    CheckDeviceModel *checkModel = [CheckDeviceModel modelWithDictionary:(NSDictionary *)self.dataSource[indexPath.row]];
+        static NSString * showUserInfoCellIdentifier = @"MydeviceList";
     MyDeviceTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:showUserInfoCellIdentifier];
     if (!cell) {
         cell = [[[NSBundle mainBundle]loadNibNamed:@"MyDeviceTableViewCell" owner:self options:nil]lastObject];
     }
-    
-   // NSLog(@"%@",checkModel.deviceno);
-    
     cell.numberLable.text =checkModel.deviceno;
     
     
@@ -194,6 +201,8 @@
         [cell setLayoutMargins:UIEdgeInsetsZero];
     }
 }
+
+
 
 
 @end
