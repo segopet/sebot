@@ -54,6 +54,9 @@
 		345565E91D13A04100B6E562 /* FamilyTeamTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565E71D13A04100B6E562 /* FamilyTeamTableViewCell.m */; };
 		345565EA1D13A04100B6E562 /* FamilyTeamTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 345565E81D13A04100B6E562 /* FamilyTeamTableViewCell.xib */; };
 		34921D071D17C77000541E41 /* CheckDeviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34921D061D17C77000541E41 /* CheckDeviceModel.m */; };
+		34921D0A1D18DDC700541E41 /* se_saomao@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34921D091D18DDC700541E41 /* se_saomao@2x.png */; };
+		34921D0F1D191A5D00541E41 /* SaomaoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34921D0D1D191A5D00541E41 /* SaomaoViewController.m */; };
+		34921D101D191A5D00541E41 /* SaomaoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34921D0E1D191A5D00541E41 /* SaomaoViewController.xib */; };
 		349263551D13E5F3006C2FD9 /* PersonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 349263531D13E5F3006C2FD9 /* PersonTableViewCell.m */; };
 		349263561D13E5F3006C2FD9 /* PersonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 349263541D13E5F3006C2FD9 /* PersonTableViewCell.xib */; };
 		3492635B1D13FAC6006C2FD9 /* MyphotoAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 349263591D13FAC6006C2FD9 /* MyphotoAlbumViewController.m */; };
@@ -182,6 +185,10 @@
 		345565E81D13A04100B6E562 /* FamilyTeamTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FamilyTeamTableViewCell.xib; sourceTree = "<group>"; };
 		34921D051D17C77000541E41 /* CheckDeviceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckDeviceModel.h; sourceTree = "<group>"; };
 		34921D061D17C77000541E41 /* CheckDeviceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckDeviceModel.m; sourceTree = "<group>"; };
+		34921D091D18DDC700541E41 /* se_saomao@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "se_saomao@2x.png"; sourceTree = "<group>"; };
+		34921D0C1D191A5D00541E41 /* SaomaoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaomaoViewController.h; sourceTree = "<group>"; };
+		34921D0D1D191A5D00541E41 /* SaomaoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaomaoViewController.m; sourceTree = "<group>"; };
+		34921D0E1D191A5D00541E41 /* SaomaoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SaomaoViewController.xib; sourceTree = "<group>"; };
 		349263521D13E5F3006C2FD9 /* PersonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonTableViewCell.h; sourceTree = "<group>"; };
 		349263531D13E5F3006C2FD9 /* PersonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonTableViewCell.m; sourceTree = "<group>"; };
 		349263541D13E5F3006C2FD9 /* PersonTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonTableViewCell.xib; sourceTree = "<group>"; };
@@ -525,6 +532,7 @@
 		345565761D1136BF00B6E562 /* MyDevice */ = {
 			isa = PBXGroup;
 			children = (
+				34921D0B1D191A4300541E41 /* Saomao */,
 				345565E01D139D7E00B6E562 /* FamilyTeam */,
 				345565D41D129F5200B6E562 /* MyDeviceTableViewCell.h */,
 				345565D51D129F5200B6E562 /* MyDeviceTableViewCell.m */,
@@ -594,6 +602,16 @@
 				345565E61D13A04100B6E562 /* FamilyTeamTableViewCell.h */,
 			);
 			path = FamilyTeam;
+			sourceTree = "<group>";
+		};
+		34921D0B1D191A4300541E41 /* Saomao */ = {
+			isa = PBXGroup;
+			children = (
+				34921D0C1D191A5D00541E41 /* SaomaoViewController.h */,
+				34921D0D1D191A5D00541E41 /* SaomaoViewController.m */,
+				34921D0E1D191A5D00541E41 /* SaomaoViewController.xib */,
+			);
+			path = Saomao;
 			sourceTree = "<group>";
 		};
 		349263571D13FA8D006C2FD9 /* MyphotoPho */ = {
@@ -718,6 +736,7 @@
 		7D4B10121D1297F40095D463 /* buttonImage */ = {
 			isa = PBXGroup;
 			children = (
+				34921D091D18DDC700541E41 /* se_saomao@2x.png */,
 				7D4B101A1D129C860095D463 /* back@2x.png */,
 				7D4B101C1D12A2950095D463 /* APPImgae.png */,
 				7D4B10221D12A6C10095D463 /* password.png */,
@@ -853,6 +872,7 @@
 				7D4B10241D12A6C10095D463 /* password.png in Resources */,
 				7D4B101F1D12A2950095D463 /* APPImgae.png in Resources */,
 				7D4B100B1D1297B10095D463 /* tab_personal_normal@3x.png in Resources */,
+				34921D101D191A5D00541E41 /* SaomaoViewController.xib in Resources */,
 				345565D81D129F5200B6E562 /* MyDeviceTableViewCell.xib in Resources */,
 				7D4B10101D1297B90095D463 /* tab_near_press@3x.png in Resources */,
 				7D4B101B1D129C860095D463 /* back@2x.png in Resources */,
@@ -877,6 +897,7 @@
 				3492636D1D13FE8D006C2FD9 /* AboutTableViewCell.xib in Resources */,
 				349263631D13FC72006C2FD9 /* AboutViewController.xib in Resources */,
 				345565B01D114C5400B6E562 /* launguide.jpg in Resources */,
+				34921D0A1D18DDC700541E41 /* se_saomao@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -940,6 +961,7 @@
 				3455651B1D10F13200B6E562 /* AppDelegate+ShareSDK.m in Sources */,
 				345565B81D11505E00B6E562 /* UITabBar+Badge.m in Sources */,
 				345565801D11376500B6E562 /* FamilySpaceViewcontroller.m in Sources */,
+				34921D0F1D191A5D00541E41 /* SaomaoViewController.m in Sources */,
 				349263791D178EF4006C2FD9 /* OpinionViewController.m in Sources */,
 				345565D21D129EBC00B6E562 /* DeviceInformationViewController.m in Sources */,
 				572DEE5D1D1162E100035228 /* AFHttpClient.m in Sources */,

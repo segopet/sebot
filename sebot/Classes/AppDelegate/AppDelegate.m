@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "AppDelegate+Launcher.h"
+#import "AppDelegate+Sephone.h"
 
 @interface AppDelegate ()
 
@@ -19,6 +20,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
    
     [self launcherApplication:application didFinishLaunchingWithOptions:launchOptions];
+    [self initSephoneVoip:application didFinishLaunchingWithOptions:launchOptions];
+    
+    
     return YES;
 }
 

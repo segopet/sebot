@@ -10,4 +10,6 @@
 
 @interface AppDelegate (Sephone)
 
+- (void)initSephoneVoip:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions;
+
 @end
