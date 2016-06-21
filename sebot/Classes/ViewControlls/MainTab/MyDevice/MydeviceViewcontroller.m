@@ -10,6 +10,7 @@
 #import "PopView.h"
 #import "MyDeviceTableViewCell.h"
 #import "DeviceInformationViewController.h"
+#import "SaomaoViewController.h"
 
 
 
@@ -33,6 +34,23 @@
 @implementation MydeviceViewcontroller
 
 
+
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    // 接收下级界面传回来的值
+    
+    NSUserDefaults * defults =[NSUserDefaults standardUserDefaults];
+    NSString * str =[defults objectForKey:@"s_m_text"];
+    
+    
+    
+    
+    
+}
+
+
 - (void)viewDidLoad{
     [super viewDidLoad];
     [self setNavTitle: NSLocalizedString(@"tabDevice", nil)];
@@ -40,8 +58,9 @@
     [self showBarButton:NAV_RIGHT imageName:@"tab_square_press"];
     
      app = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    _popView = [[PopView alloc] initWithFrame:CGRectMake(0, 0, 260, 150)];
+    _popView = [[PopView alloc] initWithFrame:CGRectMake(0, 0,SCREEN_WIDTH ,SCREEN_HEIGHT)];
     _popView.center = self.view.center;
+    
     _popView.ParentView = app.window;
     _popView.delegate = self;
    
@@ -57,6 +76,7 @@
     [[AFHttpClient sharedAFHttpClient] POST:@"sebot/moblie/forward" parameters:@{@"userid" : @"1" , @"objective":@"device", @"token" : @"1" , @"action" : @"queryUserDeviceInfo", @"data" : @{@"userid" : @"1"}} result:^(id model) {
         
         [self.dataSource addObjectsFromArray:model[@"list"]];
+        
         //  测试
         /*
         for (CheckDeviceModel * checkModel in  self.dataSource) {
@@ -132,6 +152,9 @@
 {
     
     NSLog(@"11");
+    SaomaoViewController * saomoVC =[[SaomaoViewController alloc]initWithNibName:@"SaomaoViewController" bundle:nil];
+    [self.navigationController pushViewController:saomoVC animated:YES];
+    
     
 }
 - (void)cancelMehod
@@ -174,7 +197,20 @@
     if (!cell) {
         cell = [[[NSBundle mainBundle]loadNibNamed:@"MyDeviceTableViewCell" owner:self options:nil]lastObject];
     }
-    cell.numberLable.text =checkModel.deviceno;
+     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+     cell.numberLable.text =checkModel.deviceno;
+    // ds001 红色
+    if ([checkModel.status  isEqualToString:@"ds0001"]) {
+        // 可以去开启视频
+        
+        [cell.VideoStateBtn setImage:[UIImage imageNamed:@"launguide.jpg"] forState:UIControlStateNormal];
+        
+    }else
+    {
+        // 灰色  不能开启
+        
+    }
+    
     
     
     return cell;
@@ -185,6 +221,7 @@
 {
     
     DeviceInformationViewController * inforationVC =[[DeviceInformationViewController alloc]initWithNibName:@"DeviceInformationViewController" bundle:nil];
+    
     [self.navigationController pushViewController:inforationVC animated:YES];
     
 }

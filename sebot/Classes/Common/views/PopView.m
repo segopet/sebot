@@ -8,6 +8,13 @@
 
 #import "PopView.h"
 
+
+@interface PopView()
+{
+    
+}
+@end
+
 @implementation PopView
 {
     
@@ -20,54 +27,70 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent: 0.75f];
+        
+        
+      
+        self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent: 0.55f];
        // self.layer.cornerRadius = 5.0f;
         self.layer.borderColor =GRAY_COLOR.CGColor;
         self.layer.borderWidth = 1;
         
+        
+        UIView * viewBG =[[UIView alloc]initWithFrame:CGRectMake(0, 80, 300, 160)];
+        viewBG.center = self.center;
+        viewBG.backgroundColor =[UIColor whiteColor];
+        viewBG.layer.masksToBounds = YES;
+        viewBG.layer.cornerRadius = 6;
+        [self addSubview:viewBG];
+        
+        
         // 添加设备
-        _handLable = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 260, 30)];
+        _handLable = [[UILabel alloc] initWithFrame:CGRectMake(100, 5, 100, 30)];
         _handLable.numberOfLines = 0;
         _handLable.textAlignment = NSTextAlignmentCenter;
-        _handLable.font = [UIFont systemFontOfSize:14];
-        _handLable.textColor = [UIColor whiteColor];
+        _handLable.font = [UIFont systemFontOfSize:19];
+        _handLable.textColor = [UIColor redColor];
         _handLable.backgroundColor = [UIColor clearColor];
         _handLable.text =NSLocalizedString(@"DVaddDevice", nil);
-        [self addSubview:_handLable];
+        [viewBG addSubview:_handLable];
         
         // 设备号
-        _numberLable =[[UILabel alloc]initWithFrame:CGRectMake(0, 30, 60, 30)];
+        _numberLable =[[UILabel alloc]initWithFrame:CGRectMake(20, 50, 60, 30)];
         _numberLable.text =NSLocalizedString(@"DVDevicenum", nil);
+        _numberLable.font =[UIFont systemFontOfSize:17];
+//        _numberLable.textAlignment = NSTextAlignmentCenter;
         _numberLable.textColor =[UIColor redColor];
-        [self addSubview:_numberLable];
+        [viewBG addSubview:_numberLable];
         
         // 设备号数字
-        _numberTextfied =[[UITextField alloc]initWithFrame:CGRectMake(60, 30, 100, 30)];
-        _numberTextfied.text =@"123244";
-        [self addSubview:_numberTextfied];
+        _numberTextfied =[[UITextField alloc]initWithFrame:CGRectMake(90, 50, 100, 30)];
+        _numberTextfied.placeholder = @"输入设备号";
+        _numberLable.font =[UIFont systemFontOfSize:17];
+        [viewBG addSubview:_numberTextfied];
         
         
-        _saomaBtnl =[[UIButton alloc]initWithFrame:CGRectMake(220, 30, 30, 30)];
+        _saomaBtnl =[[UIButton alloc]initWithFrame:CGRectMake(260, 0, 30, 30)];
         
-        [_saomaBtnl setImage:[UIImage imageNamed:@"tab_square_normal"] forState:UIControlStateNormal];
+        [_saomaBtnl setImage:[UIImage imageNamed:@"se_saomao"] forState:UIControlStateNormal];
         [_saomaBtnl addTarget:self action:@selector(saomao) forControlEvents:UIControlEventTouchUpInside];
         
-        [self addSubview:_saomaBtnl];
+        [viewBG addSubview:_saomaBtnl];
         
-        _cancelBtn =[[UIButton alloc]initWithFrame:CGRectMake(0, 60, 130, 30)];
+        _cancelBtn =[[UIButton alloc]initWithFrame:CGRectMake(0, viewBG.bounds.origin.y+110, 150, 50)];
         [_cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
         _cancelBtn.layer.borderWidth =1;
-        _cancelBtn.layer.borderColor =[UIColor blackColor].CGColor;
+        _cancelBtn.layer.borderColor =GRAY_COLOR.CGColor;
         [_cancelBtn addTarget:self action:@selector(cancelBtn) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:_cancelBtn];
+        [_cancelBtn setTitleColor:GRAY_COLOR forState:UIControlStateNormal];
+        [viewBG addSubview:_cancelBtn];
         
-        _sureBtn =[[UIButton alloc]initWithFrame:CGRectMake(130, 60, 130, 30)];
-        [_sureBtn setTitle:@"确认" forState:UIControlStateNormal];
+        _sureBtn =[[UIButton alloc]initWithFrame:CGRectMake(150, viewBG.bounds.origin.y+110, 150, 50)];
+        [_sureBtn setTitle:@"绑定" forState:UIControlStateNormal];
+        [_sureBtn  setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
         _sureBtn.layer.borderWidth =1;
         [_sureBtn addTarget:self action:@selector(surebtn) forControlEvents:UIControlEventTouchUpInside];
-        
-        _sureBtn.layer.borderColor =[UIColor blackColor].CGColor;
-        [self addSubview:_sureBtn];
+        _sureBtn.layer.borderColor =GRAY_COLOR.CGColor;
+        [viewBG addSubview:_sureBtn];
         
         
         
@@ -76,6 +99,12 @@
     }
     return self;
 }
+
+
+
+
+
+
 
 /**
  *  扫码
@@ -90,6 +119,9 @@
     
     
 }
+
+#pragma mark - saomaoMethod
+
 
 
 - (void)cancelBtn
