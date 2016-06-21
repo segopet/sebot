@@ -30,23 +30,23 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginStateChange:) name:NotificationLoginStateChange object:nil];
     
     
-    
-     [self enterLoginVC];
-    //[self enterMainTabVC];
-
+//    
+//     [self enterLoginVC];
+//    [self enterMainTabVC];
+    [self checkLogin];
     [[AFHttpClient sharedAFHttpClient] test];
 }
 
 // 检查登录
 - (void)checkLogin{
-//    if ([AccountManager sharedAccountManager].isLogin) {
-//        [[NSNotificationCenter defaultCenter] postNotificationName:NotificationLoginStateChange object:@YES];
-//    }else{
-//        [[NSNotificationCenter defaultCenter] postNotificationName:NotificationLoginStateChange object:@NO];
-//    }
+    if ([AccountManager sharedAccountManager].isLogin) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:NotificationLoginStateChange object:@YES];
+    }else{
+        [[NSNotificationCenter defaultCenter] postNotificationName:NotificationLoginStateChange object:@NO];
+    }
 }
 
-// 登录状态
+// 登录状态s
 
 -(void)loginStateChange:(NSNotification *)notification{
     

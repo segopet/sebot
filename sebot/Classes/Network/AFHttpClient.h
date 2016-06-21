@@ -7,7 +7,8 @@
 //
 
 #import <AFNetworking/AFNetworking.h>
-
+#import "BaseModel.h"
+#import "LoginModel.h"
 @interface AFHttpClient : AFHTTPSessionManager
 
 singleton_interface(AFHttpClient)

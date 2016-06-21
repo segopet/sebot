@@ -10,6 +10,7 @@
 #import "RegistViewController.h"
 #import "ForegetPasswordViewController.h"
 #import "AFHttpClient.h"
+#import "LoginModel.h"
 @interface LoginViewController ()
 @property (nonatomic,strong)UITextField * accountTextfield;
 @property (nonatomic,strong)UITextField * passwordTextfield;
@@ -93,8 +94,12 @@
 }
 -(void)loginButtonTouch{
     [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid":@"",@"token":@"",@"objective":@"user",@"action":@"login",@"data":@{@"accountnumber":_accountTextfield.text,@"password":_passwordTextfield.text,@"model":@"6s",@"brand":@"6s",@"version":@"9.3.2",@"type":@"ios",@"channelid":@""}} result:^(id model) {
-        NSLog(@"%@",model);
+    
+        LoginModel * loginmodel = [LoginModel modelWithDictionary:model[@"retVal"]];
         
+        [[AccountManager sharedAccountManager] login:loginmodel];
+        [[NSNotificationCenter defaultCenter] postNotificationName:NotificationLoginStateChange object:@YES];
+        NSLog(@"%@",loginmodel);
     }];
 
 

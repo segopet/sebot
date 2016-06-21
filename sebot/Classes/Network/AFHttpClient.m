@@ -43,7 +43,7 @@ singleton_implementation(AFHttpClient)
 }
 
 
-- (void)POST:(NSString *)URLString parameters:(id)parameters result:(void (^)(id model))result {
+- (void)POST:(NSString *)URLString parameters:(id)parameters result:(void (^)( id model))result {
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
@@ -84,7 +84,7 @@ singleton_implementation(AFHttpClient)
 
 - (void)test {
     
-    [self POST:@"sebot/moblie/forward" parameters:@{@"userid" : @"1" , @"token" : @"1" , @"objective" : @"user" , @"action" : @"queryUser", @"data" : @{@"userid" : @"1"}} result:^(id model) {
+    [self POST:@"sebot/moblie/forward" parameters:@{@"userid" : @"1" , @"token" : @"1" , @"objective" : @"user" , @"action" : @"queryUser", @"data" : @{@"userid" : @"1"}} result:^(BaseModel * model) {
         
         NSLog(@"%@", model);
         

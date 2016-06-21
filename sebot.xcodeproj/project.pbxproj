@@ -74,6 +74,8 @@
 		57D1E5F71CFED25900BEDFF6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D1E5F61CFED25900BEDFF6 /* main.m */; };
 		57D1E6001CFED25900BEDFF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D1E5FE1CFED25900BEDFF6 /* Main.storyboard */; };
 		57D1E6021CFED25900BEDFF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57D1E6011CFED25900BEDFF6 /* Assets.xcassets */; };
+		7D2ECE7A1D191C11003181A9 /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2ECE791D191C11003181A9 /* LoginModel.m */; };
+		7D2ECE801D192022003181A9 /* AFHttpClient+Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2ECE7F1D192022003181A9 /* AFHttpClient+Account.m */; };
 		7D4B10011D1291C90095D463 /* RegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D4B10001D1291C90095D463 /* RegistViewController.m */; };
 		7D4B10081D1297B10095D463 /* tab_egg_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4B10021D1297B10095D463 /* tab_egg_normal@3x.png */; };
 		7D4B10091D1297B10095D463 /* tab_egg_press@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4B10031D1297B10095D463 /* tab_egg_press@3x.png */; };
@@ -212,6 +214,10 @@
 		57D1E5FF1CFED25900BEDFF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		57D1E6011CFED25900BEDFF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57D1E6061CFED25900BEDFF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D2ECE781D191C11003181A9 /* LoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginModel.h; sourceTree = "<group>"; };
+		7D2ECE791D191C11003181A9 /* LoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginModel.m; sourceTree = "<group>"; };
+		7D2ECE7E1D192022003181A9 /* AFHttpClient+Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+Account.h"; sourceTree = "<group>"; };
+		7D2ECE7F1D192022003181A9 /* AFHttpClient+Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+Account.m"; sourceTree = "<group>"; };
 		7D4B0FFF1D1291C90095D463 /* RegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistViewController.h; sourceTree = "<group>"; };
 		7D4B10001D1291C90095D463 /* RegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistViewController.m; sourceTree = "<group>"; };
 		7D4B10021D1297B10095D463 /* tab_egg_normal@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_egg_normal@3x.png"; sourceTree = "<group>"; };
@@ -309,6 +315,8 @@
 			children = (
 				345565691D11008300B6E562 /* BaseModel.h */,
 				3455656A1D11008300B6E562 /* BaseModel.m */,
+				7D2ECE781D191C11003181A9 /* LoginModel.h */,
+				7D2ECE791D191C11003181A9 /* LoginModel.m */,
 				34921D051D17C77000541E41 /* CheckDeviceModel.h */,
 				34921D061D17C77000541E41 /* CheckDeviceModel.m */,
 			);
@@ -320,6 +328,8 @@
 			children = (
 				572DEE5B1D1162E100035228 /* AFHttpClient.h */,
 				572DEE5C1D1162E100035228 /* AFHttpClient.m */,
+				7D2ECE7E1D192022003181A9 /* AFHttpClient+Account.h */,
+				7D2ECE7F1D192022003181A9 /* AFHttpClient+Account.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -934,6 +944,7 @@
 				345565D21D129EBC00B6E562 /* DeviceInformationViewController.m in Sources */,
 				572DEE5D1D1162E100035228 /* AFHttpClient.m in Sources */,
 				345565D71D129F5200B6E562 /* MyDeviceTableViewCell.m in Sources */,
+				7D2ECE801D192022003181A9 /* AFHttpClient+Account.m in Sources */,
 				7D4B10011D1291C90095D463 /* RegistViewController.m in Sources */,
 				345565831D1139F200B6E562 /* LoginViewController.m in Sources */,
 				349263671D13FC9F006C2FD9 /* RepairPwViewController.m in Sources */,
@@ -974,6 +985,7 @@
 				345565531D10FE5C00B6E562 /* UIViewController+HUD.m in Sources */,
 				345565561D10FE6400B6E562 /* UIView+Sizes.m in Sources */,
 				57D1E5F71CFED25900BEDFF6 /* main.m in Sources */,
+				7D2ECE7A1D191C11003181A9 /* LoginModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
