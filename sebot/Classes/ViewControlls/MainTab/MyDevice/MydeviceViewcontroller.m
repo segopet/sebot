@@ -11,6 +11,7 @@
 #import "MyDeviceTableViewCell.h"
 #import "DeviceInformationViewController.h"
 #import "SaomaoViewController.h"
+#import "CheckDeviceModel.h"
 
 
 
@@ -163,9 +164,19 @@
     NSLog(@"22");
     [_popView removeFromSuperview];
 }
+/**
+ *  绑定
+ */
 - (void)sureMehod
 {
-    NSLog(@"33");
+
+    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : @"1" , @"objective":@"device", @"token" : @"1",@"action":@"requestBinding",@"data":@{@"userid":@"1",@"deviceno":@"9000000006"}} result:^(id model) {
+        NSLog(@"%@",model[@"retDesc"]);
+        
+    }];
+    
+    
+    
     
 }
 
