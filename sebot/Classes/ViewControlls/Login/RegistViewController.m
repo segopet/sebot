@@ -7,13 +7,15 @@
 //
 
 #import "RegistViewController.h"
-
+#import "AFHttpClient.h"
 @interface RegistViewController ()
 @property (nonatomic,strong)UIButton * achieveSecurityBtn;
 @property (nonatomic,strong)UITextField * phoneNumberTextfield;
 @property (nonatomic,strong)UITextField * achieveTextfield;
 @property (nonatomic,strong)UITextField * passwordTextfield;
 @property (nonatomic,strong)UITextField * surePasswordTextfield;
+@property (nonatomic,copy)NSString * achieveString;
+@property (nonatomic,copy)NSString * surePhonenumber;
 
 
 @end
@@ -73,7 +75,7 @@
     [xieyiBtn setTitle:@"注册协议" forState:UIControlStateNormal];
     [xieyiBtn setTitleColor:RED_COLOR forState:UIControlStateNormal];
     xieyiBtn.titleLabel.font = [UIFont systemFontOfSize:12];
-    [self.view addSubview:xieyiBtn];
+    [self.view  addSubview:xieyiBtn];
     
     _phoneNumberTextfield = [[UITextField alloc]initWithFrame:CGRectMake(100 * W_Wide_Zoom, 11 * W_Hight_Zoom, 200 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
     //_phoneNumberTextfield.backgroundColor = [UIColor redColor];
@@ -83,7 +85,7 @@
     _phoneNumberTextfield.font = [UIFont systemFontOfSize:14];
     [topView addSubview:_phoneNumberTextfield];
     
-    _achieveTextfield = [[UITextField alloc]initWithFrame:CGRectMake(100 * W_Wide_Zoom, 61 * W_Hight_Zoom, 200 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
+    _achieveTextfield = [[UITextField alloc]initWithFrame:CGRectMake(100 * W_Wide_Zoom, 61 * W_Hight_Zoom, 150 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
     _achieveTextfield.placeholder = @"请输入验证码";
     _achieveTextfield.tintColor = GRAY_COLOR;
     _achieveTextfield.textColor = [UIColor blackColor];
@@ -105,7 +107,7 @@
     [topView addSubview:_surePasswordTextfield];
     
     
-
+    
 }
 -(void)yanzhengmaTouch{
     if ([AppUtil isBlankString:_phoneNumberTextfield.text]) {
@@ -116,22 +118,66 @@
         [[AppUtil appTopViewController] showHint:@"请输入正确格式的手机号码"];
         return;
     }
-
-
-    
-    
-    
+    [self provied];
+}
+-(void)provied{
+    [self timeout];
+    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid":@"",@"token":@"",@"objective":@"user",@"action":@"getCode",@"data":@{@"phone":_phoneNumberTextfield.text,@"type":@"register"}} result:^(id model) {
+        NSLog(@"%@",model);
+        if ([model[@"retCode"] isEqualToString:@"SUCCESS"]) {
+            _achieveString = model[@"content"];
+            _surePhonenumber = model[@"retVal"];
+            [[AppUtil appTopViewController] showHint:model[@"retDesc"]];
+        }else{
+            [[AppUtil appTopViewController] showHint:model[@"retDesc"]];
+        }
+        
+    }];
     
     
 }
 
 
+
+
 //注册
 -(void)registButtonTouch{
+    if ([AppUtil isBlankString:_phoneNumberTextfield.text]) {
+        [[AppUtil appTopViewController] showHint:@"请输入帐号"];
+        return;
+    }
+    if (![AppUtil isValidateMobile:_phoneNumberTextfield.text]) {
+        [[AppUtil appTopViewController] showHint:@"请输入正确格式的手机号码"];
+        return;
+    }
+    if ([AppUtil isBlankString:_achieveTextfield.text]) {
+        [[AppUtil appTopViewController] showHint:@"请输入验证码"];
+        return;
+    }
+    if ([AppUtil isBlankString:_passwordTextfield.text]) {
+        [[AppUtil appTopViewController] showHint:@"请输入密码"];
+        return;
+    }
+    if (![_passwordTextfield.text isEqualToString:_surePasswordTextfield.text]) {
+        [[AppUtil appTopViewController] showHint:@"两次输入密码不一致"];
+        return;
+    }
+    if (![_achieveTextfield.text isEqualToString:_achieveString]) {
+        [[AppUtil appTopViewController] showHint:@"请输入正确的验证码"];
+        return;
+    }
+    if (![_phoneNumberTextfield.text isEqualToString:_surePhonenumber]) {
+        [[AppUtil appTopViewController] showHint:@"手机号码错误"];
+        return;
+    }
+
+    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid":@"",@"token":@"",@"objective":@"user",@"action":@"register",@"data":@{@"phone":_phoneNumberTextfield.text,@"password":_passwordTextfield.text}} result:^(id model) {
+        NSLog(@"%@",model);
+    }];
     
-
-
-
+    
+    
+    
 
 }
 
@@ -145,21 +191,21 @@
         if(timeout<=0){ //倒计时结束，关闭
             dispatch_source_cancel(_timer);
             dispatch_async(dispatch_get_main_queue(), ^{
-//                [_securityButton setTitle:@"发送验证码" forState:UIControlStateNormal];
-//                _securityButton.userInteractionEnabled = YES;
-//                _securityButton.backgroundColor = GREEN_COLOR;
+                [_achieveSecurityBtn setTitle:@"获取验证码" forState:UIControlStateNormal];
+                _achieveSecurityBtn.userInteractionEnabled = YES;
+                _achieveSecurityBtn.backgroundColor = RED_COLOR;
             });
         }else{
             int seconds = timeout % 60;
             NSString *strTime = [NSString stringWithFormat:@"%.2d", seconds];
             dispatch_async(dispatch_get_main_queue(), ^{
-                NSLog(@"————————%@",strTime);
+              //  NSLog(@"————————%@",strTime);
                 [UIView beginAnimations:nil context:nil];
                 [UIView setAnimationDuration:1];
-//                [_securityButton setTitle:[NSString stringWithFormat:@"%@秒后重新发送",strTime] forState:UIControlStateNormal];
-//                [UIView commitAnimations];
-//                _securityButton.userInteractionEnabled = NO;
-//                    _securityButton.backgroundColor = [UIColor grayColor];
+                [_achieveSecurityBtn setTitle:[NSString stringWithFormat:@"%@秒后重新发送",strTime] forState:UIControlStateNormal];
+                [UIView commitAnimations];
+                _achieveSecurityBtn.userInteractionEnabled = NO;
+                    _achieveSecurityBtn.backgroundColor = [UIColor grayColor];
             });
             timeout--;
         }
