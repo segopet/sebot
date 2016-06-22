@@ -94,9 +94,9 @@
  */
 - (void)enterMainTabVC{
     
-//    if (self.loginVC) {
-//        self.loginVC = nil;
-//    }
+    if (self.loginVC) {
+        self.loginVC = nil;
+    }
     
     self.mainTabVC = [[MainTabViewController alloc]init];
     
