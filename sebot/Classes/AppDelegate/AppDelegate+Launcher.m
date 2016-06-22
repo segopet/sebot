@@ -32,18 +32,18 @@
     
     
     // [self enterLoginVC];
-    [self enterMainTabVC];
-
+    //[self enterMainTabVC];
+    [self checkLogin];
     [[AFHttpClient sharedAFHttpClient] test];
 }
 
 // 检查登录
 - (void)checkLogin{
-//    if ([AccountManager sharedAccountManager].isLogin) {
-//        [[NSNotificationCenter defaultCenter] postNotificationName:NotificationLoginStateChange object:@YES];
-//    }else{
-//        [[NSNotificationCenter defaultCenter] postNotificationName:NotificationLoginStateChange object:@NO];
-//    }
+    if ([AccountManager sharedAccountManager].isLogin) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:NotificationLoginStateChange object:@YES];
+    }else{
+        [[NSNotificationCenter defaultCenter] postNotificationName:NotificationLoginStateChange object:@NO];
+    }
 }
 
 // 登录状态
@@ -94,9 +94,9 @@
  */
 - (void)enterMainTabVC{
     
-//    if (self.loginVC) {
-//        self.loginVC = nil;
-//    }
+    if (self.loginVC) {
+        self.loginVC = nil;
+    }
     
     self.mainTabVC = [[MainTabViewController alloc]init];
     
