@@ -183,6 +183,8 @@
  */
 - (IBAction)exitBtn:(UIButton *)sender {
     
+    [[NSNotificationCenter defaultCenter] postNotificationName:NotificationLoginStateChange object:@NO];
+    [[AccountManager sharedAccountManager]logout];
     
     
 }
