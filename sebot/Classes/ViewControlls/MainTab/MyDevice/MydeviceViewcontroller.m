@@ -171,7 +171,11 @@
 {
 
     [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : @"1" , @"objective":@"device", @"token" : @"1",@"action":@"requestBinding",@"data":@{@"userid":@"1",@"deviceno":@"9000000006"}} result:^(id model) {
+        
         NSLog(@"%@",model[@"retDesc"]);
+        [_popView removeFromSuperview];
+        [self showSuccessHudWithHint:model[@"retDesc"]];
+        
         
     }];
     

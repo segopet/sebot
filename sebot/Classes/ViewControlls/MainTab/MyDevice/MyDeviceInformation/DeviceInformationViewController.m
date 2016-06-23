@@ -72,6 +72,14 @@
         [self.tableView setLayoutMargins:UIEdgeInsetsMake(0,0,0,0)];
     }
     
+    // 查询设备信息
+    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : @"1" , @"objective":@"device", @"token" : @"1",@"action":@"queryByIdDeviceInfo",@"data":@{@"userid":@"1",@"did":@"ds002"}} result:^(id model) {
+        
+        NSLog(@"%@",model);
+        
+      
+        
+    }];
     
     
 }
@@ -108,6 +116,11 @@
 
 - (IBAction)cancelDeviceBtn:(UIButton *)sender {
     
+    
+    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : @"1" , @"objective":@"device", @"token" : @"1",@"action":@"unbundling",@"data":@{@"userid":@"1",@"did":@"ds002"}} result:^(id model) {
+        NSLog(@"%@",model);
+    }];
+
     
 }
 
@@ -179,9 +192,18 @@
         [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Sure", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             //获取第1个输入框；
             UITextField *userNameTextField = alertController.textFields.firstObject;
-            
             // 确认之后这里会获取到 然后更正数组里的备注 要上传服务器
             NSLog(@"备注名 = %@",userNameTextField.text);
+            
+            [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : @"1" , @"objective":@"device", @"token" : @"1",@"action":@"modifyDeviceRemark",@"data":@{@"userid":@"1",@"did":@"ds002",@"remark":@"我是余磊"}} result:^(id model) {
+    
+                NSLog(@"======%@",model);
+                
+                
+                
+            }];
+
+            
             
         }]];
         

@@ -44,7 +44,7 @@ static BOOL isBackGroundActivateApplication;
     // 应用在前台，不跳转页面，让用户选择。
     if (application.applicationState == UIApplicationStateActive) {
         NSLog(@"acitve ");
-        UIAlertView *alertView =[[UIAlertView alloc]initWithTitle:@"收到一条消息" message:userInfo[@"aps"][@"alert"] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        UIAlertView *alertView =[[UIAlertView alloc]initWithTitle:@"收到一条消息" message:userInfo[@"desc"] delegate:self cancelButtonTitle:nil otherButtonTitles:@"我知道了", nil];
         [alertView show];
     }
     //杀死状态下，直接跳转到跳转页面。
@@ -115,7 +115,7 @@ static BOOL isBackGroundActivateApplication;
     // 应用在前台 或者后台开启状态下，不跳转页面，让用户选择。
     if (application.applicationState == UIApplicationStateActive || application.applicationState == UIApplicationStateBackground) {
         NSLog(@"acitve or background");
-        UIAlertView *alertView =[[UIAlertView alloc]initWithTitle:@"收到一条消息" message:userInfo[@"aps"][@"alert"] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        UIAlertView *alertView =[[UIAlertView alloc]initWithTitle:@"收到一条消息" message:userInfo[@"aps"][@"desc"] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
         [alertView show];
     }
     else//杀死状态下，直接跳转到跳转页面。
