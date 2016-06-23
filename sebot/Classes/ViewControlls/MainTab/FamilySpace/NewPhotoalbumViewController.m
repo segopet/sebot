@@ -34,7 +34,7 @@
 //配置UICollectionView的每个section的item数
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 3;
+    return 10;
 }
 //配置section数
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -48,6 +48,14 @@
     static NSString *cellID = @"myCell";
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellID forIndexPath:indexPath];
     cell.backgroundColor = [UIColor redColor];
+    UIImageView * image = [[UIImageView alloc]initWithFrame:cell.bounds];
+    image.backgroundColor = [UIColor blueColor];
+   
+    [cell addSubview:image];
+    
+    
+    
+    
     return cell;
 }
 
