@@ -8,6 +8,7 @@
 
 #import "DeviceInformationViewController.h"
 #import "FamilyTeamViewController.h"
+#import "InCallViewController.h"
 
 @interface DeviceInformationViewController ()
 {
@@ -45,11 +46,10 @@
     
     UIView  * _headView = [[UIView alloc]initWithFrame:CGRectMake(0* W_Wide_Zoom, 0 * W_Hight_Zoom, 375 * W_Wide_Zoom, 260 * W_Hight_Zoom)];
     _headView.backgroundColor =GRAY_COLOR;
-    
     [self.view addSubview:_headView];
     
     // 头像
-    _heandBtn =[[UIImageView alloc]initWithFrame:CGRectMake(40, 80, 300, 180)];
+    _heandBtn =[[UIImageView alloc]initWithFrame:CGRectMake(0, 80, 375, 150)];
     _heandBtn.image =[UIImage imageNamed:@"on_line"];
     
     [_headView addSubview:_heandBtn];
@@ -73,7 +73,7 @@
     }
     
     // 查询设备信息
-    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : @"1" , @"objective":@"device", @"token" : @"1",@"action":@"queryByIdDeviceInfo",@"data":@{@"userid":@"1",@"did":@"ds002"}} result:^(id model) {
+    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : @"1" , @"objective":@"device", @"token" : @"1",@"action":@"queryByIdDeviceInfo",@"data":@{@"userid":@"1",@"did":@"1"}} result:^(id model) {
         
         NSLog(@"%@",model);
         
@@ -107,6 +107,29 @@
 
 - (IBAction)startVideoBtn:(UIButton *)sender {
     
+    InCallViewController * InCallVC =[[InCallViewController alloc
+                                       ]initWithNibName:@"InCallViewController" bundle:nil];
+    [self.navigationController pushViewController:InCallVC  animated:YES];
+    
+    
+}
+
+
+/**
+ * 添加设备使用记录
+ */
+
+- (void)addDeviceUseMember
+
+{
+    
+   // "object": "主叫对象(mobile 移动客户端/device 设备端)"
+    
+    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : @"1" , @"objective":@"device", @"token" : @"1",@"action":@"addCallRecords",@"data":@{@"calling":@"1001",@"called":@"ds002",@"object":@""}} result:^(id model) {
+        
+        NSLog(@"%@",model);
+        
+    }];
     
 }
 

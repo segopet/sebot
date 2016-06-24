@@ -55,7 +55,7 @@
         [viewBG addSubview:_handLable];
         
         // 设备号
-        _numberLable =[[UILabel alloc]initWithFrame:CGRectMake(20, 50, 60, 30)];
+        _numberLable =[[UILabel alloc]initWithFrame:CGRectMake(20, 50, 90, 30)];
         _numberLable.text =NSLocalizedString(@"DVDevicenum", nil);
         _numberLable.font =[UIFont systemFontOfSize:17];
 //        _numberLable.textAlignment = NSTextAlignmentCenter;
@@ -63,7 +63,7 @@
         [viewBG addSubview:_numberLable];
         
         // 设备号数字
-        _numberTextfied =[[UITextField alloc]initWithFrame:CGRectMake(90, 50, 100, 30)];
+        _numberTextfied =[[UITextField alloc]initWithFrame:CGRectMake(110, 50, 180, 30)];
         _numberTextfied.placeholder = @"输入设备号";
         _numberLable.font =[UIFont systemFontOfSize:17];
         [viewBG addSubview:_numberTextfied];

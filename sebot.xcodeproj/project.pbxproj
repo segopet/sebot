@@ -79,6 +79,8 @@
 		34F4D29B1D1A8C9E005963CA /* off_line.png in Resources */ = {isa = PBXBuildFile; fileRef = 34F4D2981D1A8C9E005963CA /* off_line.png */; };
 		34F4D29C1D1A8C9E005963CA /* on_connection.png in Resources */ = {isa = PBXBuildFile; fileRef = 34F4D2991D1A8C9E005963CA /* on_connection.png */; };
 		34F4D29D1D1A8C9E005963CA /* on_line.png in Resources */ = {isa = PBXBuildFile; fileRef = 34F4D29A1D1A8C9E005963CA /* on_line.png */; };
+		34F4D2A11D1CCDE9005963CA /* InCallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F4D29F1D1CCDE9005963CA /* InCallViewController.m */; };
+		34F4D2A21D1CCDE9005963CA /* InCallViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34F4D2A01D1CCDE9005963CA /* InCallViewController.xib */; };
 		572DEE5D1D1162E100035228 /* AFHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 572DEE5C1D1162E100035228 /* AFHttpClient.m */; };
 		57D1E5F71CFED25900BEDFF6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D1E5F61CFED25900BEDFF6 /* main.m */; };
 		57D1E6001CFED25900BEDFF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D1E5FE1CFED25900BEDFF6 /* Main.storyboard */; };
@@ -230,6 +232,9 @@
 		34F4D2981D1A8C9E005963CA /* off_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = off_line.png; sourceTree = "<group>"; };
 		34F4D2991D1A8C9E005963CA /* on_connection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = on_connection.png; sourceTree = "<group>"; };
 		34F4D29A1D1A8C9E005963CA /* on_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = on_line.png; sourceTree = "<group>"; };
+		34F4D29E1D1CCDE9005963CA /* InCallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InCallViewController.h; sourceTree = "<group>"; };
+		34F4D29F1D1CCDE9005963CA /* InCallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InCallViewController.m; sourceTree = "<group>"; };
+		34F4D2A01D1CCDE9005963CA /* InCallViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InCallViewController.xib; sourceTree = "<group>"; };
 		47642F05A36B917D69532A10 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		572DEE5B1D1162E100035228 /* AFHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHttpClient.h; sourceTree = "<group>"; };
 		572DEE5C1D1162E100035228 /* AFHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHttpClient.m; sourceTree = "<group>"; };
@@ -435,6 +440,9 @@
 		345565291D10F66E00B6E562 /* InCall */ = {
 			isa = PBXGroup;
 			children = (
+				34F4D29E1D1CCDE9005963CA /* InCallViewController.h */,
+				34F4D29F1D1CCDE9005963CA /* InCallViewController.m */,
+				34F4D2A01D1CCDE9005963CA /* InCallViewController.xib */,
 			);
 			path = InCall;
 			sourceTree = "<group>";
@@ -901,7 +909,7 @@
 				TargetAttributes = {
 					57D1E5F11CFED25900BEDFF6 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = ZMFX8728A9;
+						DevelopmentTeam = 454LPD78S8;
 					};
 				};
 			};
@@ -952,6 +960,7 @@
 				349263751D178EBC006C2FD9 /* AgreementViewController.xib in Resources */,
 				57D1E6001CFED25900BEDFF6 /* Main.storyboard in Resources */,
 				349263561D13E5F3006C2FD9 /* PersonTableViewCell.xib in Resources */,
+				34F4D2A21D1CCDE9005963CA /* InCallViewController.xib in Resources */,
 				345565E51D139DB200B6E562 /* FamilyTeamViewController.xib in Resources */,
 				345565B21D114CFA00B6E562 /* Launch Screen.storyboard in Resources */,
 				3492637F1D178F1B006C2FD9 /* ProductionIntroducViewController.xib in Resources */,
@@ -1076,6 +1085,7 @@
 				34921D071D17C77000541E41 /* CheckDeviceModel.m in Sources */,
 				345565531D10FE5C00B6E562 /* UIViewController+HUD.m in Sources */,
 				345565561D10FE6400B6E562 /* UIView+Sizes.m in Sources */,
+				34F4D2A11D1CCDE9005963CA /* InCallViewController.m in Sources */,
 				57D1E5F71CFED25900BEDFF6 /* main.m in Sources */,
 				7D2ECE7A1D191C11003181A9 /* LoginModel.m in Sources */,
 			);
@@ -1193,7 +1203,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/sebot/Classes/3rd/normalversion",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sego.sebot;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sego.sebo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1215,7 +1225,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/sebot/Classes/3rd/normalversion",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sego.sebot;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sego.sebo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
