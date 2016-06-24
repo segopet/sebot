@@ -99,6 +99,8 @@
 		7D4B101F1D12A2950095D463 /* APPImgae.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4B101C1D12A2950095D463 /* APPImgae.png */; };
 		7D4B10241D12A6C10095D463 /* password.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4B10221D12A6C10095D463 /* password.png */; };
 		7D4B10251D12A6C10095D463 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4B10231D12A6C10095D463 /* user.png */; };
+		7D509D7D1D1B86A2004E3059 /* NewInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D509D7C1D1B86A2004E3059 /* NewInformationViewController.m */; };
+		7D509D811D1BB685004E3059 /* NewAlumbleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D509D801D1BB685004E3059 /* NewAlumbleTableViewCell.m */; };
 		7DD7D1D11D0FE21B0002CD2E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD7D1D01D0FE21B0002CD2E /* AppDelegate.m */; };
 		7DE523941D13D53800C5B5EF /* ForegetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE523931D13D53800C5B5EF /* ForegetPasswordViewController.m */; };
 		CEB33C3D282E7125878CD13F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47642F05A36B917D69532A10 /* libPods.a */; };
@@ -256,6 +258,10 @@
 		7D4B101C1D12A2950095D463 /* APPImgae.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = APPImgae.png; sourceTree = "<group>"; };
 		7D4B10221D12A6C10095D463 /* password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = password.png; sourceTree = "<group>"; };
 		7D4B10231D12A6C10095D463 /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
+		7D509D7B1D1B86A2004E3059 /* NewInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewInformationViewController.h; sourceTree = "<group>"; };
+		7D509D7C1D1B86A2004E3059 /* NewInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewInformationViewController.m; sourceTree = "<group>"; };
+		7D509D7F1D1BB685004E3059 /* NewAlumbleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewAlumbleTableViewCell.h; sourceTree = "<group>"; };
+		7D509D801D1BB685004E3059 /* NewAlumbleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewAlumbleTableViewCell.m; sourceTree = "<group>"; };
 		7DD7D1CF1D0FE21B0002CD2E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7DD7D1D01D0FE21B0002CD2E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7DE523921D13D53800C5B5EF /* ForegetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForegetPasswordViewController.h; sourceTree = "<group>"; };
@@ -541,10 +547,13 @@
 		345565751D1136B200B6E562 /* FamilySpace */ = {
 			isa = PBXGroup;
 			children = (
+				7D509D7E1D1BB663004E3059 /* Views */,
 				3455657E1D11376500B6E562 /* FamilySpaceViewcontroller.h */,
 				3455657F1D11376500B6E562 /* FamilySpaceViewcontroller.m */,
 				7D1AAC731D1A617800B4297E /* NewPhotoalbumViewController.h */,
 				7D1AAC741D1A617800B4297E /* NewPhotoalbumViewController.m */,
+				7D509D7B1D1B86A2004E3059 /* NewInformationViewController.h */,
+				7D509D7C1D1B86A2004E3059 /* NewInformationViewController.m */,
 			);
 			path = FamilySpace;
 			sourceTree = "<group>";
@@ -807,6 +816,15 @@
 			path = tabImage;
 			sourceTree = "<group>";
 		};
+		7D509D7E1D1BB663004E3059 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7D509D7F1D1BB685004E3059 /* NewAlumbleTableViewCell.h */,
+				7D509D801D1BB685004E3059 /* NewAlumbleTableViewCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		7DD7D1C91D0FDE5A0002CD2E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -883,7 +901,7 @@
 				TargetAttributes = {
 					57D1E5F11CFED25900BEDFF6 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 454LPD78S8;
+						DevelopmentTeam = ZMFX8728A9;
 					};
 				};
 			};
@@ -1015,9 +1033,11 @@
 				572DEE5D1D1162E100035228 /* AFHttpClient.m in Sources */,
 				345565D71D129F5200B6E562 /* MyDeviceTableViewCell.m in Sources */,
 				7D2ECE801D192022003181A9 /* AFHttpClient+Account.m in Sources */,
+				7D509D811D1BB685004E3059 /* NewAlumbleTableViewCell.m in Sources */,
 				7D4B10011D1291C90095D463 /* RegistViewController.m in Sources */,
 				345565831D1139F200B6E562 /* LoginViewController.m in Sources */,
 				349263671D13FC9F006C2FD9 /* RepairPwViewController.m in Sources */,
+				7D509D7D1D1B86A2004E3059 /* NewInformationViewController.m in Sources */,
 				345565B51D11500F00B6E562 /* BaseViewController.m in Sources */,
 				3455657D1D11374500B6E562 /* PersonCenterViewcontroller.m in Sources */,
 				3455656B1D11008300B6E562 /* BaseModel.m in Sources */,
@@ -1173,7 +1193,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/sebot/Classes/3rd/normalversion",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sego.sebo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sego.sebot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1195,7 +1215,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/sebot/Classes/3rd/normalversion",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sego.sebo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sego.sebot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
