@@ -7,6 +7,7 @@
 //
 
 #import "NewPhotoalbumViewController.h"
+#import "NewInformationViewController.h"
 
 @interface NewPhotoalbumViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
@@ -21,6 +22,15 @@
     self.view.backgroundColor = NEW_GRAY_COLOR;
     [self initUserface];
 }
+-(void)request{
+    //查询接口
+    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid":@"",@"token":@"",@"objective":@"album",@"action":@"queryAlbum",@"data":@{@"userid":@""}} result:^(id model) {
+        
+    }];
+
+
+}
+
 -(void)initUserface{
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     UICollectionView *colView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
@@ -71,7 +81,16 @@
     return UIEdgeInsetsMake(9, 9, 0, 9);
 }
 
-
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"您点击了item:%ld",indexPath.row);
+    if (indexPath.row == 0) {
+        NewInformationViewController * haha = [[NewInformationViewController alloc]init];
+        [self.navigationController pushViewController:haha animated:NO];
+    }
+    
+    
+}
 
 
 
