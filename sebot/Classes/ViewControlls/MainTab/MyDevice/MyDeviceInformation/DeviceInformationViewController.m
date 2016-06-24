@@ -49,8 +49,8 @@
     [self.view addSubview:_headView];
     
     // 头像
-    _heandBtn =[[UIImageView alloc]initWithFrame:CGRectMake(_headView.center.x-40*W_Wide_Zoom, self.view.origin.y+30*W_Hight_Zoom, 80, 80)];
-   // _heandBtn.image =[UIImage imageNamed:@""];
+    _heandBtn =[[UIImageView alloc]initWithFrame:CGRectMake(40, 80, 300, 180)];
+    _heandBtn.image =[UIImage imageNamed:@"on_line"];
     
     [_headView addSubview:_heandBtn];
     
@@ -117,9 +117,11 @@
 - (IBAction)cancelDeviceBtn:(UIButton *)sender {
     
     
-    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : @"1" , @"objective":@"device", @"token" : @"1",@"action":@"unbundling",@"data":@{@"userid":@"1",@"did":@"ds002"}} result:^(id model) {
-        NSLog(@"%@",model);
+    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : @"1" , @"objective":@"device", @"token" : @"1",@"action":@"unbundling",@"data":@{@"userid":@"1001",@"did":@"ds002"}} result:^(id model) {
+         NSLog(@"%@",model);
     }];
+
+    
 
     
 }
