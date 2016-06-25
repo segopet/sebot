@@ -109,9 +109,9 @@
     
     InCallViewController * InCallVC =[[InCallViewController alloc
                                        ]initWithNibName:@"InCallViewController" bundle:nil];
-    [self.navigationController pushViewController:InCallVC  animated:YES];
+   // [self.navigationController pushViewController:InCallVC  animated:YES];
     
-    
+    [self presentViewController:InCallVC animated:YES completion:nil];
 }
 
 

@@ -17,14 +17,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self setNavTitle: NSLocalizedString(@"tabDevice", nil)];
+  //  [self setNavTitle: NSLocalizedString(@"tabDevice", nil)];
     
     self.view.backgroundColor =[UIColor whiteColor];
   //  [self.ActView startAnimating];
     
+   
+    
     
 }
 
+- (IBAction)backBtn:(UIButton *)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
 
 /**
  *  继承base
@@ -38,9 +45,20 @@
 - (void)setupView
 {
     [super setupView];
+     [self prefersStatusBarHidden];
+    
+    
     
 }
 
+
+// 重写
+- (BOOL)prefersStatusBarHidden
+{
+    // iOS7后,[[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationFade];
+    // 已经不起作用了
+    return YES;
+}
 
 - (void)viewWillAppear:(BOOL)animated
 {

@@ -13,9 +13,5 @@
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *ActView;
 @property (strong, nonatomic) IBOutlet UIButton *leftBtn;
 @property (strong, nonatomic) IBOutlet UIButton *RightBtn;
-// 上下左右(轮子)
-@property (strong, nonatomic) IBOutlet UIButton *LeftMoveBtn;
-// 头部（前后）
-@property (strong, nonatomic) IBOutlet UIButton *RightMove;
 
 @end
