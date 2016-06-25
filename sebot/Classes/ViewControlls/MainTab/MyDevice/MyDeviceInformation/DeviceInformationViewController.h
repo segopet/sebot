@@ -13,5 +13,7 @@
 @interface DeviceInformationViewController : BaseTabViewController
 @property (strong, nonatomic) IBOutlet UIButton *startBtn;
 @property (strong, nonatomic) IBOutlet UIButton *cancelBtn;
+@property (nonatomic,strong)NSString * didNumber;
+
 
 @end

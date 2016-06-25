@@ -22,6 +22,7 @@
 
 - (void)setupData{
     _dataSource = [NSMutableArray array];
+    _dicSource =[[NSMutableArray alloc]init];
     
 }
 

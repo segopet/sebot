@@ -23,8 +23,7 @@
     AppDelegate *app;
     //CheckDeviceModel * checkModel;
     
-    NSDictionary * dic;
-    
+
 }
 
 
@@ -67,12 +66,7 @@
    
     
     self.dataSource =[NSMutableArray array];
-    dic =[[NSDictionary alloc]init];
-    
-//    NSArray * arrName =@[@"9001",@"9002",@"9003",@"9004",@"9005"];
-//    [self.dataSource addObjectsFromArray:arrName];
-   
-    
+    //[AccountManager sharedAccountManager].loginModel.userid
     
     [[AFHttpClient sharedAFHttpClient] POST:@"sebot/moblie/forward" parameters:@{@"userid" : @"1" , @"objective":@"device", @"token" : @"1" , @"action" : @"queryUserDeviceInfo", @"data" : @{@"userid" : @"1"}} result:^(id model) {
         
@@ -86,9 +80,6 @@
         }
          */
         
-        dic = model[@"list"];
-        
-         
         
         [self.tableView reloadData];
     }];
@@ -224,6 +215,8 @@
     {
         // 灰色  不能开启
         
+       // [cell.VideoStateBtn setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
+        
     }
     
     
@@ -235,8 +228,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
+    CheckDeviceModel *checkModel = [CheckDeviceModel modelWithDictionary:(NSDictionary *)self.dataSource[indexPath.row]];
     DeviceInformationViewController * inforationVC =[[DeviceInformationViewController alloc]initWithNibName:@"DeviceInformationViewController" bundle:nil];
-    
+    inforationVC.didNumber = checkModel.did;
     [self.navigationController pushViewController:inforationVC animated:YES];
     
 }

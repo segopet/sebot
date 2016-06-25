@@ -151,7 +151,7 @@
         
         cell = [[[NSBundle mainBundle]loadNibNamed:@"FamilyTeamTableViewCell" owner:self options:nil]lastObject];
     }
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.nameLable.text = self.dataSource[indexPath.row];
     cell.moveBtn.tag = 1000+indexPath.row;
     cell.transferBtn.tag = 2000+indexPath.row;

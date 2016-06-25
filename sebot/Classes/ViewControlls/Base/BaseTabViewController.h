@@ -13,6 +13,7 @@
 @property (nonatomic, strong) UITableView* tableView;
 //资源数组
 @property (nonatomic, strong) NSMutableArray* dataSource;
+@property (nonatomic,strong)NSMutableArray * dicSource;
 @property (nonatomic, assign) BOOL bGroupView;
 
 @end
