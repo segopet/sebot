@@ -62,7 +62,7 @@
     self.tabBar.layer.shadowRadius = 2;
     
     
-    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:GREEN_COLOR, UITextAttributeTextColor,
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:GRAY_COLOR, UITextAttributeTextColor,
                                                        nil] forState:UIControlStateNormal];
     UIColor *titleHighlightedColor =RED_COLOR;
     [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
@@ -83,8 +83,8 @@
 
         vc.tabBarItem =
         [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"tabFamily", nil)
-                                      image:[[UIImage imageNamed:@"tab_square_normal"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
-                              selectedImage:[[UIImage imageNamed:@"tab_square_press"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+                                      image:[[UIImage imageNamed:@"tab_family_normal"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
+                              selectedImage:[[UIImage imageNamed:@"tab_family_press"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
         
         _navFamilyVC = [[UINavigationController alloc]initWithRootViewController:vc];
     }
@@ -99,8 +99,8 @@
         MydeviceViewcontroller* vc = [[MydeviceViewcontroller alloc] init];
         vc.tabBarItem =
         [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"tabDevice", nil)
-                                      image:[[UIImage imageNamed:@"tab_near_normal"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
-                              selectedImage:[[UIImage imageNamed:@"tab_near_press"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+                                      image:[[UIImage imageNamed:@"tab_device_normal"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
+                              selectedImage:[[UIImage imageNamed:@"tab_device_press"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
         
         _navMyDeviceVC = [[UINavigationController alloc]initWithRootViewController:vc];
     }
@@ -116,8 +116,8 @@
         
         vc.tabBarItem =
         [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"tabPerson", nil)
-                                      image:[[UIImage imageNamed:@"tab_egg_normal"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
-                              selectedImage:[[UIImage imageNamed:@"tab_egg_press"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+                                      image:[[UIImage imageNamed:@"tab_person_normal"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
+                              selectedImage:[[UIImage imageNamed:@"tab_person_press"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
         
         _navPersonCenterVC = [[UINavigationController alloc]initWithRootViewController:vc];
     }

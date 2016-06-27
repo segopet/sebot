@@ -50,29 +50,30 @@
     [super setupView];
     
     UIView  * _headView = [[UIView alloc]initWithFrame:CGRectMake(0* W_Wide_Zoom, 0 * W_Hight_Zoom, 375 * W_Wide_Zoom, 220 * W_Hight_Zoom)];
-    _headView.backgroundColor =GRAY_COLOR;
+    _headView.backgroundColor =LIGHT_GRAY_COLOR;
     [self.view addSubview:_headView];
     
     /**
      点赞  名字
      */
-    _nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 200*W_Wide_Zoom, 20*W_Hight_Zoom)];
+    _nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 200, 20)];
     _nameLabel.text = @"V1.0";
-    _nameLabel.center = CGPointMake(_headView.center.x,_heandBtn.frame.origin.y+130*W_Hight_Zoom);
+    _nameLabel.center = CGPointMake(_headView.center.x,_heandBtn.frame.origin.y+200);
     _nameLabel.font = [UIFont systemFontOfSize:15];
     _nameLabel.textAlignment = NSTextAlignmentCenter;
     _nameLabel.textColor = [UIColor redColor];
     [_headView addSubview:_nameLabel];
     
     // 头像
-    _heandBtn =[[UIImageView alloc]initWithFrame:CGRectMake(_headView.center.x-40*W_Wide_Zoom, self.view.origin.y+30*W_Hight_Zoom, 80, 80)];
-    _heandBtn.image =[UIImage imageNamed:@"launguide.jpg"];
+    _heandBtn =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 130, 130)];
+    _heandBtn.center =_headView.center;
+    _heandBtn.image =[UIImage imageNamed:@"APPImgae"];
     _heandBtn.layer.masksToBounds = YES;
     _heandBtn.layer.cornerRadius =_heandBtn.width/2;
     [_headView addSubview:_heandBtn];
     
     
-    self.tableView.frame = CGRectMake(0, 60, SCREEN_WIDTH, 500);
+    self.tableView.frame = CGRectMake(0, 60, SCREEN_WIDTH, 430);
     self.tableView.scrollEnabled = NO;
     
     self.tableView.tableHeaderView =_headView;
@@ -118,7 +119,7 @@
     }
     
     
-
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.nameLable.text =self.dataSource[indexPath.row];
     
     

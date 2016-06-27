@@ -55,7 +55,7 @@
     [super viewDidLoad];
     [self setNavTitle: NSLocalizedString(@"tabDevice", nil)];
     self.view.backgroundColor = LIGHT_GRAY_COLOR;
-    [self showBarButton:NAV_RIGHT imageName:@"tab_square_press"];
+    [self showBarButton:NAV_RIGHT imageName:@"sebot_add"];
     
      app = (AppDelegate *)[UIApplication sharedApplication].delegate;
     _popView = [[PopView alloc] initWithFrame:CGRectMake(0, 0,SCREEN_WIDTH ,SCREEN_HEIGHT)];
@@ -205,17 +205,18 @@
     }
      cell.selectionStyle = UITableViewCellSelectionStyleNone;
      cell.numberLable.text =checkModel.deviceno;
-    // ds001 红色
+    // 设备不存在：ds000,在线：ds001,离线：ds002,通话中：ds003
+    
     if ([checkModel.status  isEqualToString:@"ds0001"]) {
         // 可以去开启视频
         
-        [cell.VideoStateBtn setImage:[UIImage imageNamed:@"launguide.jpg"] forState:UIControlStateNormal];
+        [cell.VideoStateBtn setImage:[UIImage imageNamed:@"sebot_start_on"] forState:UIControlStateNormal];
         
     }else
     {
         // 灰色  不能开启
         
-       // [cell.VideoStateBtn setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
+        [cell.VideoStateBtn setImage:[UIImage imageNamed:@"sebot_start_off"] forState:UIControlStateNormal];
         
     }
     
