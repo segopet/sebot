@@ -87,6 +87,12 @@
 		34E49D991D20D06400CF5CCB /* person_number@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49D941D20D06300CF5CCB /* person_number@3x.png */; };
 		34E49D9A1D20D06400CF5CCB /* person_paword@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49D951D20D06300CF5CCB /* person_paword@3x.png */; };
 		34E49D9B1D20D06400CF5CCB /* person_photo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49D961D20D06400CF5CCB /* person_photo@3x.png */; };
+		34E49D9D1D20FF0F00CF5CCB /* about.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49D9C1D20FF0F00CF5CCB /* about.png */; };
+		34E49D9F1D20FFB600CF5CCB /* acount.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49D9E1D20FFB600CF5CCB /* acount.png */; };
+		34E49DA11D20FFDC00CF5CCB /* number.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49DA01D20FFDC00CF5CCB /* number.png */; };
+		34E49DA31D21000900CF5CCB /* photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49DA21D21000900CF5CCB /* photo.png */; };
+		34E49DA51D21002400CF5CCB /* paword.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49DA41D21002400CF5CCB /* paword.png */; };
+		34E49DA71D21074900CF5CCB /* test11.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49DA61D21074900CF5CCB /* test11.png */; };
 		34F4D2931D1A673C005963CA /* libBPush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34F4D2911D1A673C005963CA /* libBPush.a */; };
 		34F4D2941D1A673C005963CA /* test.caf in Resources */ = {isa = PBXBuildFile; fileRef = 34F4D2921D1A673C005963CA /* test.caf */; };
 		34F4D2971D1A679A005963CA /* AppDelegate+BaiduPush.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F4D2961D1A679A005963CA /* AppDelegate+BaiduPush.m */; };
@@ -254,6 +260,12 @@
 		34E49D941D20D06300CF5CCB /* person_number@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "person_number@3x.png"; sourceTree = "<group>"; };
 		34E49D951D20D06300CF5CCB /* person_paword@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "person_paword@3x.png"; sourceTree = "<group>"; };
 		34E49D961D20D06400CF5CCB /* person_photo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "person_photo@3x.png"; sourceTree = "<group>"; };
+		34E49D9C1D20FF0F00CF5CCB /* about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about.png; sourceTree = "<group>"; };
+		34E49D9E1D20FFB600CF5CCB /* acount.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = acount.png; sourceTree = "<group>"; };
+		34E49DA01D20FFDC00CF5CCB /* number.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = number.png; sourceTree = "<group>"; };
+		34E49DA21D21000900CF5CCB /* photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo.png; sourceTree = "<group>"; };
+		34E49DA41D21002400CF5CCB /* paword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paword.png; sourceTree = "<group>"; };
+		34E49DA61D21074900CF5CCB /* test11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test11.png; sourceTree = "<group>"; };
 		34F4D2901D1A673C005963CA /* BPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPush.h; sourceTree = "<group>"; };
 		34F4D2911D1A673C005963CA /* libBPush.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBPush.a; sourceTree = "<group>"; };
 		34F4D2921D1A673C005963CA /* test.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.caf; sourceTree = "<group>"; };
@@ -815,6 +827,12 @@
 		7D4B10121D1297F40095D463 /* buttonImage */ = {
 			isa = PBXGroup;
 			children = (
+				34E49DA61D21074900CF5CCB /* test11.png */,
+				34E49DA41D21002400CF5CCB /* paword.png */,
+				34E49DA21D21000900CF5CCB /* photo.png */,
+				34E49DA01D20FFDC00CF5CCB /* number.png */,
+				34E49D9E1D20FFB600CF5CCB /* acount.png */,
+				34E49D9C1D20FF0F00CF5CCB /* about.png */,
 				34E49D921D20D06300CF5CCB /* person_about@3x.png */,
 				34E49D931D20D06300CF5CCB /* person_acount@3x.png */,
 				34E49D941D20D06300CF5CCB /* person_number@3x.png */,
@@ -1007,6 +1025,7 @@
 				345565D31D129EBC00B6E562 /* DeviceInformationViewController.xib in Resources */,
 				34F4D2AF1D1D234D005963CA /* behand_off.png in Resources */,
 				345565EA1D13A04100B6E562 /* FamilyTeamTableViewCell.xib in Resources */,
+				34E49D9F1D20FFB600CF5CCB /* acount.png in Resources */,
 				34F4D29B1D1A8C9E005963CA /* off_line.png in Resources */,
 				3492637A1D178EF4006C2FD9 /* OpinionViewController.xib in Resources */,
 				34E49D841D20C4A700CF5CCB /* sebot_start_off@2x.png in Resources */,
@@ -1021,21 +1040,26 @@
 				34E49D911D20C7A100CF5CCB /* tab_person_press@2x.png in Resources */,
 				34F4D2A21D1CCDE9005963CA /* InCallViewController.xib in Resources */,
 				345565E51D139DB200B6E562 /* FamilyTeamViewController.xib in Resources */,
+				34E49DA11D20FFDC00CF5CCB /* number.png in Resources */,
+				34E49DA71D21074900CF5CCB /* test11.png in Resources */,
 				345565B21D114CFA00B6E562 /* Launch Screen.storyboard in Resources */,
 				3492637F1D178F1B006C2FD9 /* ProductionIntroducViewController.xib in Resources */,
 				34F4D2A41D1D21B8005963CA /* round.png in Resources */,
 				349263681D13FC9F006C2FD9 /* RepairPwViewController.xib in Resources */,
 				34F4D2B11D1D234D005963CA /* left_off.png in Resources */,
+				34E49DA31D21000900CF5CCB /* photo.png in Resources */,
 				7D4B10251D12A6C10095D463 /* user.png in Resources */,
 				3492636D1D13FE8D006C2FD9 /* AboutTableViewCell.xib in Resources */,
 				349263631D13FC72006C2FD9 /* AboutViewController.xib in Resources */,
 				34F4D29C1D1A8C9E005963CA /* on_connection.png in Resources */,
 				345565B01D114C5400B6E562 /* launguide.jpg in Resources */,
+				34E49D9D1D20FF0F00CF5CCB /* about.png in Resources */,
 				34E49D851D20C4A700CF5CCB /* sebot_start_on@2x.png in Resources */,
 				34E49D9B1D20D06400CF5CCB /* person_photo@3x.png in Resources */,
 				34921D0A1D18DDC700541E41 /* se_saomao@2x.png in Resources */,
 				34F4D2B41D1D234D005963CA /* right_on.png in Resources */,
 				34F4D2B01D1D234D005963CA /* behand_on.png in Resources */,
+				34E49DA51D21002400CF5CCB /* paword.png in Resources */,
 				34F4D2AE1D1D234D005963CA /* before_on.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

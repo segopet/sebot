@@ -40,9 +40,18 @@
     NSArray * arrT =@[@"13540691705",@"Tony",@"",@"",@""];
     [arrTest addObjectsFromArray:arrT];
     arrImage =[NSMutableArray array];
-    NSArray * arrI =@[@"person_acount",@"person_number",@"person_photo",@"person_paword",@"person_about"];
+    NSArray * arrI =@[@"acount",@"test11",@"photo",@"paword",@"about"];
     [arrImage addObjectsFromArray:arrI];
     
+    
+    
+    [[AFHttpClient sharedAFHttpClient] POST:@"sebot/moblie/forward" parameters:@{@"userid" : @"1" , @"objective":@"user", @"token" : @"1" , @"action" : @"queryUser", @"data" : @{@"userid" : @"1"}} result:^(id model) {
+        
+        //[self.dataSource addObjectsFromArray:model[@"list"]];
+        
+        [self.tableView reloadData];
+    }];
+
     
 }
 
