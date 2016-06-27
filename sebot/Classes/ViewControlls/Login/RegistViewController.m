@@ -173,6 +173,7 @@
 
     [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid":@"",@"token":@"",@"objective":@"user",@"action":@"register",@"data":@{@"phone":_phoneNumberTextfield.text,@"password":_passwordTextfield.text}} result:^(id model) {
         NSLog(@"%@",model);
+        [self.navigationController popViewControllerAnimated:NO];
     }];
     
     

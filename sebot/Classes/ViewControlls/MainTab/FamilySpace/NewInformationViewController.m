@@ -23,6 +23,23 @@ static NSString * cellId = @"newAllubmtabeleviewwcellid";
     self.view.backgroundColor = [UIColor whiteColor];
     [self initUserface];
 }
+//新建按钮
+-(void)doRightButtonTouch{
+    [[AFHttpClient sharedAFHttpClient]POST:@"" parameters:@{} result:^(id model) {
+        
+    }];
+
+
+}
+-(void)setupData{
+    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid":[AccountManager sharedAccountManager].loginModel.userid,@"token":[AccountManager sharedAccountManager].loginModel.userid} result:^(id model) {
+        
+    }];
+
+
+
+}
+
 
 -(void)setupView{
     [super  setupView];
@@ -88,11 +105,19 @@ static NSString * cellId = @"newAllubmtabeleviewwcellid";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NewAlumbleTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-
+    
+    
+    
+    cell.rightBtn.tag = indexPath.row + 12;
+    [cell.rightBtn addTarget:self action:@selector(doRightButtonTouch:) forControlEvents:UIControlEventTouchUpInside];
     
     return cell;
 }
+-(void)doRightButtonTouch:(UIButton *)sender{
+    
 
+
+}
 
 
 

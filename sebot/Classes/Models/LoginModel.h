@@ -10,6 +10,7 @@
 
 @interface LoginModel : JSONModel
 @property (nonatomic, copy) NSString<Optional> *accountnumber;
+@property (nonatomic, copy) NSString<Optional> *channelid;
 @property (nonatomic, copy) NSString<Optional> *headportrait;
 @property (nonatomic, copy) NSString<Optional> *nickname;
 @property (nonatomic, copy) NSString<Optional> *nowcity;
