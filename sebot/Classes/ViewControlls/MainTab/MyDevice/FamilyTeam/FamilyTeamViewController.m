@@ -34,11 +34,22 @@
     [self.dataSource addObjectsFromArray:arrName];
     
     app = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    _popView = [[PopView alloc] initWithFrame:CGRectMake(60, 160, 260, 150)];
-    _popView.center = self.view.center;
+    _popView = [[PopView alloc] initWithFrame:CGRectMake(0, 0,SCREEN_WIDTH ,SCREEN_HEIGHT)];
+    [_popView.sureBtn setTitle:@"邀请" forState:UIControlStateNormal];
+     _popView.handLable.text = @"邀请绑定";
+     _popView.numberLable.text = @"手机号码:";
+     _popView.numberTextfied.placeholder = @"输入对方的手机号码";
     _popView.saomaBtnl.hidden = YES;
     _popView.ParentView = app.window;
     _popView.delegate = self;
+    
+    // 家庭成员接口
+    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : @"1" , @"objective":@"device", @"token" : @"1",@"action":@"queryFamilyMember",@"data":@{@"did":@""}} result:^(id model) {
+        
+        NSLog(@"%@",model[@"retDesc"]);
+       
+    }];
+
     
     
 }
@@ -85,6 +96,7 @@
     // 提示框
     [self.view addSubview:_popView];
     
+    
 }
 
 
@@ -99,6 +111,15 @@
 - (void)sureMehod
 {
     NSLog(@"33");
+    
+    // 管理员邀请接口
+    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : @"1" , @"objective":@"device", @"token" : @"1",@"action":@"inviteRequest",@"data":@{@"userid":@"1",@"phone":@"9000000006",@"deviceno":@""}} result:^(id model) {
+        
+        NSLog(@"%@",model[@"retDesc"]);
+        [_popView removeFromSuperview];
+        
+    }];
+
     
 }
 
@@ -130,7 +151,7 @@
         
         cell = [[[NSBundle mainBundle]loadNibNamed:@"FamilyTeamTableViewCell" owner:self options:nil]lastObject];
     }
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.nameLable.text = self.dataSource[indexPath.row];
     cell.moveBtn.tag = 1000+indexPath.row;
     cell.transferBtn.tag = 2000+indexPath.row;
@@ -160,6 +181,14 @@
     
     NSLog(@"======%ld",sender.tag-1000);
     
+   // 管理员移除用户
+    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : @"1" , @"objective":@"device", @"token" : @"1",@"action":@"remove",@"data":@{@"admin":@"1",@"usrid":@"9000000006",@"did":@""}} result:^(id model) {
+        
+        NSLog(@"%@",model[@"retDesc"]);
+       
+    }];
+    
+    
     
 }
 
@@ -170,6 +199,17 @@
 
 - (void)transferMethod:(UIButton *)sender
 {
+    
+    // 转让接口
+    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : @"1" , @"objective":@"device", @"token" : @"1",@"action":@"transfer",@"data":@{@"admin":@"1",@"usrid":@"9000000006",@"did":@""}} result:^(id model) {
+        
+        NSLog(@"%@",model[@"retDesc"]);
+        
+    }];
+
+    
+    
+    
     
     // 提示框 操作
      NSLog(@"======%ld",sender.tag-2000);

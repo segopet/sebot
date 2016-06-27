@@ -63,7 +63,6 @@ singleton_implementation(AFHttpClient)
                 result(responseObject);
             }
         }else{
-
             [[AppUtil appTopViewController] showHint:responseObject[@"retDesc"]];
             
             if (result) {

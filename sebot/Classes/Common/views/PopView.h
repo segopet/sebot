@@ -21,16 +21,18 @@
 @interface PopView : UIView
 {
     
-    UILabel * _handLable;
-    UILabel * _numberLable;
-    UITextField * _numberTextfied;
-    
+
     UIButton * _cancelBtn;
-    UIButton * _sureBtn;
     
 }
 @property (strong)UIView *ParentView;
 @property (nonatomic,strong)UIButton * saomaBtnl;
+@property (nonatomic,strong)UIButton * sureBtn;
+@property (nonatomic,strong)UITextField * numberTextfied;
+@property (nonatomic,strong)UILabel * handLable;
+@property (nonatomic,strong) UILabel * numberLable;
+
+
 @property (nonatomic,assign)id<PopDelegate>delegate;
 
 @end

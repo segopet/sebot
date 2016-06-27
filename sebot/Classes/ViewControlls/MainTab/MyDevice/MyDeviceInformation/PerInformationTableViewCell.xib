@@ -24,10 +24,10 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9001" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQL-ud-RH6">
-                        <rect key="frame" x="213" y="12" width="93" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQL-ud-RH6">
+                        <rect key="frame" x="161" y="22" width="151" height="0.0"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="93" id="B0k-ws-Nhv"/>
+                            <constraint firstAttribute="width" constant="151" id="B0k-ws-Nhv"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -35,7 +35,7 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailingMargin" secondItem="gQL-ud-RH6" secondAttribute="trailing" constant="6" id="HqB-2N-r2V"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="gQL-ud-RH6" secondAttribute="trailing" id="HqB-2N-r2V"/>
                     <constraint firstItem="xw2-Um-Zqi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Ozf-AG-kSj"/>
                     <constraint firstItem="xw2-Um-Zqi" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="P0E-XP-k8a"/>
                     <constraint firstItem="xw2-Um-Zqi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="3" id="UdO-wl-fkg"/>

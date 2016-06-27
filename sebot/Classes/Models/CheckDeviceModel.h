@@ -27,5 +27,7 @@
 @property (nonatomic,copy)NSString * sippw;
 @property (nonatomic,copy)NSString * status;
 @property (nonatomic,copy)NSString * termid;
+@property (nonatomic,copy)NSString * type;
+
 
 @end

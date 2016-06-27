@@ -17,11 +17,13 @@
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p9n-Mi-YFs">
                     <rect key="frame" x="16" y="455" width="288" height="43"/>
-                    <color key="backgroundColor" red="1" green="0.31271801760000001" blue="0.26396912760000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="43" id="sDb-na-t74"/>
                     </constraints>
-                    <state key="normal" title="退出"/>
+                    <state key="normal" title="退出">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="6"/>
                     </userDefinedRuntimeAttributes>

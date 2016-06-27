@@ -16,6 +16,7 @@
     
     UIImageView * _heandBtn;
     NSMutableArray * arrTest;
+    NSMutableArray * arrImage;
     UILabel *_nameLabel;
     
     
@@ -35,13 +36,12 @@
     self.dataSource =[NSMutableArray array];
     NSArray * arr =@[@"账号",@"昵称",@"我的相册",@"修改密码",@"关于"];
     [self.dataSource addObjectsFromArray:arr];
-    
     arrTest =[NSMutableArray array];
-    
     NSArray * arrT =@[@"13540691705",@"Tony",@"",@"",@""];
-    
     [arrTest addObjectsFromArray:arrT];
-    
+    arrImage =[NSMutableArray array];
+    NSArray * arrI =@[@"person_acount",@"person_number",@"person_photo",@"person_paword",@"person_about"];
+    [arrImage addObjectsFromArray:arrI];
     
     
 }
@@ -51,24 +51,25 @@
 {
     [super setupView];
     
-    UIView  * _headView = [[UIView alloc]initWithFrame:CGRectMake(0* W_Wide_Zoom, 0 * W_Hight_Zoom, 375 * W_Wide_Zoom, 220 * W_Hight_Zoom)];
-    _headView.backgroundColor =GRAY_COLOR;
+    UIView  * _headView = [[UIView alloc]initWithFrame:CGRectMake(0, 0 , SCREEN_WIDTH, 220 * W_Hight_Zoom)];
+    _headView.backgroundColor =LIGHT_GRAY_COLOR;
     [self.view addSubview:_headView];
     
     /**
      点赞  名字
      */
-    _nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 200*W_Wide_Zoom, 20*W_Hight_Zoom)];
+    _nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 200, 20)];
     _nameLabel.text = @"我是余磊";
-    _nameLabel.center = CGPointMake(self.view.center.x,_heandBtn.frame.origin.y+130*W_Hight_Zoom);
+    _nameLabel.center = CGPointMake(_headView.center.x,_headView.center.y+60);
     _nameLabel.font = [UIFont systemFontOfSize:15];
     _nameLabel.textAlignment = NSTextAlignmentCenter;
     _nameLabel.textColor = [UIColor redColor];
     [_headView addSubview:_nameLabel];
     
     // 头像
-    _heandBtn =[[UIImageView alloc]initWithFrame:CGRectMake(_headView.center.x-40*W_Wide_Zoom, self.view.origin.y+30*W_Hight_Zoom, 80, 80)];
-     _heandBtn.image =[UIImage imageNamed:@"launguide.jpg"];
+    _heandBtn =[[UIImageView alloc]initWithFrame:CGRectMake(0,0,130, 130)];
+    _heandBtn.center = CGPointMake(_headView.center.x, _headView.center.y-20);
+     _heandBtn.image =[UIImage imageNamed:@"APPImgae.png"];
     _heandBtn.layer.masksToBounds = YES;
     _heandBtn.layer.cornerRadius =_heandBtn.width/2;
     [_headView addSubview:_heandBtn];
@@ -129,7 +130,7 @@
         cell = [[[NSBundle mainBundle]loadNibNamed:@"PersonTableViewCell" owner:self options:nil]lastObject];
     }
     
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     if (indexPath.row ==0) {
         //显示箭头
         
@@ -142,7 +143,7 @@
     
     cell.introduceLable.text = self.dataSource[indexPath.row];
     cell.inforLable.text = arrTest[indexPath.row];
-    
+    cell.headImage.image =[UIImage imageNamed:arrImage[indexPath.row]];
    
     
     

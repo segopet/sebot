@@ -23,8 +23,7 @@
     AppDelegate *app;
     //CheckDeviceModel * checkModel;
     
-    NSDictionary * dic;
-    
+
 }
 
 
@@ -56,7 +55,7 @@
     [super viewDidLoad];
     [self setNavTitle: NSLocalizedString(@"tabDevice", nil)];
     self.view.backgroundColor = LIGHT_GRAY_COLOR;
-    [self showBarButton:NAV_RIGHT imageName:@"tab_square_press"];
+    [self showBarButton:NAV_RIGHT imageName:@"sebot_add"];
     
      app = (AppDelegate *)[UIApplication sharedApplication].delegate;
     _popView = [[PopView alloc] initWithFrame:CGRectMake(0, 0,SCREEN_WIDTH ,SCREEN_HEIGHT)];
@@ -67,12 +66,7 @@
    
     
     self.dataSource =[NSMutableArray array];
-    dic =[[NSDictionary alloc]init];
-    
-//    NSArray * arrName =@[@"9001",@"9002",@"9003",@"9004",@"9005"];
-//    [self.dataSource addObjectsFromArray:arrName];
-   
-    
+    //[AccountManager sharedAccountManager].loginModel.userid
     
     [[AFHttpClient sharedAFHttpClient] POST:@"sebot/moblie/forward" parameters:@{@"userid" : @"1" , @"objective":@"device", @"token" : @"1" , @"action" : @"queryUserDeviceInfo", @"data" : @{@"userid" : @"1"}} result:^(id model) {
         
@@ -86,9 +80,6 @@
         }
          */
         
-        dic = model[@"list"];
-        
-         
         
         [self.tableView reloadData];
     }];
@@ -214,15 +205,18 @@
     }
      cell.selectionStyle = UITableViewCellSelectionStyleNone;
      cell.numberLable.text =checkModel.deviceno;
-    // ds001 红色
+    // 设备不存在：ds000,在线：ds001,离线：ds002,通话中：ds003
+    
     if ([checkModel.status  isEqualToString:@"ds0001"]) {
         // 可以去开启视频
         
-        [cell.VideoStateBtn setImage:[UIImage imageNamed:@"launguide.jpg"] forState:UIControlStateNormal];
+        [cell.VideoStateBtn setImage:[UIImage imageNamed:@"sebot_start_on"] forState:UIControlStateNormal];
         
     }else
     {
         // 灰色  不能开启
+        
+        [cell.VideoStateBtn setImage:[UIImage imageNamed:@"sebot_start_off"] forState:UIControlStateNormal];
         
     }
     
@@ -235,8 +229,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
+    CheckDeviceModel *checkModel = [CheckDeviceModel modelWithDictionary:(NSDictionary *)self.dataSource[indexPath.row]];
     DeviceInformationViewController * inforationVC =[[DeviceInformationViewController alloc]initWithNibName:@"DeviceInformationViewController" bundle:nil];
-    
+    inforationVC.didNumber = checkModel.did;
     [self.navigationController pushViewController:inforationVC animated:YES];
     
 }
