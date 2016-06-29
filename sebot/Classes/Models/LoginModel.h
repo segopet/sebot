@@ -6,19 +6,22 @@
 //  Copyright © 2016年 sego. All rights reserved.
 //
 
-#import <MojoDatabase/MojoDatabase.h>
+//#import <MojoDatabase/MojoDatabase.h>
+#import <Foundation/Foundation.h>
 
-@interface LoginModel : JSONModel
-@property (nonatomic, copy) NSString<Optional> *accountnumber;
-@property (nonatomic, copy) NSString<Optional> *channelid;
-@property (nonatomic, copy) NSString<Optional> *headportrait;
-@property (nonatomic, copy) NSString<Optional> *nickname;
-@property (nonatomic, copy) NSString<Optional> *nowcity;
-@property (nonatomic, copy) NSString<Optional> *password;
-@property (nonatomic, copy) NSString<Optional> *phone;
-@property (nonatomic, copy) NSString<Optional> *registertime;
-@property (nonatomic, copy) NSString<Optional> *sipno;
-@property (nonatomic, copy) NSString<Optional> *sippw;
-@property (nonatomic, copy) NSString<Optional> *userid;
+@interface LoginModel : NSObject
 + (instancetype)modelWithDictionary: (NSDictionary *) data;
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key;
+@property (nonatomic, copy) NSString * accountnumber;
+@property (nonatomic, copy) NSString * channelid;
+@property (nonatomic, copy) NSString * headportrait;
+@property (nonatomic, copy) NSString * nickname;
+@property (nonatomic, copy) NSString * nowcity;
+@property (nonatomic, copy) NSString * password;
+@property (nonatomic, copy) NSString * phone;
+@property (nonatomic, copy) NSString * registertime;
+@property (nonatomic, copy) NSString * sipno;
+@property (nonatomic, copy) NSString * sippw;
+@property (nonatomic, copy) NSString * userid;
+
 @end

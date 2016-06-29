@@ -112,6 +112,9 @@
 		7D1AAC751D1A617800B4297E /* NewPhotoalbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D1AAC741D1A617800B4297E /* NewPhotoalbumViewController.m */; };
 		7D2ECE7A1D191C11003181A9 /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2ECE791D191C11003181A9 /* LoginModel.m */; };
 		7D2ECE801D192022003181A9 /* AFHttpClient+Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2ECE7F1D192022003181A9 /* AFHttpClient+Account.m */; };
+		7D3211731D210B5E00890F34 /* baiquan.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D3211711D210B5E00890F34 /* baiquan.png */; };
+		7D3211741D210B5E00890F34 /* gouquan.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D3211721D210B5E00890F34 /* gouquan.png */; };
+		7D3211771D21118600890F34 /* NewalumbModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3211761D21118600890F34 /* NewalumbModel.m */; };
 		7D4B10011D1291C90095D463 /* RegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D4B10001D1291C90095D463 /* RegistViewController.m */; };
 		7D4B101B1D129C860095D463 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4B101A1D129C860095D463 /* back@2x.png */; };
 		7D4B101F1D12A2950095D463 /* APPImgae.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4B101C1D12A2950095D463 /* APPImgae.png */; };
@@ -289,6 +292,10 @@
 		7D2ECE791D191C11003181A9 /* LoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginModel.m; sourceTree = "<group>"; };
 		7D2ECE7E1D192022003181A9 /* AFHttpClient+Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+Account.h"; sourceTree = "<group>"; };
 		7D2ECE7F1D192022003181A9 /* AFHttpClient+Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+Account.m"; sourceTree = "<group>"; };
+		7D3211711D210B5E00890F34 /* baiquan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = baiquan.png; sourceTree = "<group>"; };
+		7D3211721D210B5E00890F34 /* gouquan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gouquan.png; sourceTree = "<group>"; };
+		7D3211751D21118600890F34 /* NewalumbModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewalumbModel.h; sourceTree = "<group>"; };
+		7D3211761D21118600890F34 /* NewalumbModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewalumbModel.m; sourceTree = "<group>"; };
 		7D4B0FFF1D1291C90095D463 /* RegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistViewController.h; sourceTree = "<group>"; };
 		7D4B10001D1291C90095D463 /* RegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistViewController.m; sourceTree = "<group>"; };
 		7D4B101A1D129C860095D463 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
@@ -379,6 +386,8 @@
 				7D2ECE791D191C11003181A9 /* LoginModel.m */,
 				34921D051D17C77000541E41 /* CheckDeviceModel.h */,
 				34921D061D17C77000541E41 /* CheckDeviceModel.m */,
+				7D3211751D21118600890F34 /* NewalumbModel.h */,
+				7D3211761D21118600890F34 /* NewalumbModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -815,6 +824,8 @@
 		7D4B10121D1297F40095D463 /* buttonImage */ = {
 			isa = PBXGroup;
 			children = (
+				7D3211711D210B5E00890F34 /* baiquan.png */,
+				7D3211721D210B5E00890F34 /* gouquan.png */,
 				34E49D921D20D06300CF5CCB /* person_about@3x.png */,
 				34E49D931D20D06300CF5CCB /* person_acount@3x.png */,
 				34E49D941D20D06300CF5CCB /* person_number@3x.png */,
@@ -957,7 +968,7 @@
 				TargetAttributes = {
 					57D1E5F11CFED25900BEDFF6 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 454LPD78S8;
+						DevelopmentTeam = ZMFX8728A9;
 					};
 				};
 			};
@@ -996,6 +1007,7 @@
 				34E49D811D20C37100CF5CCB /* sebot_add@3x.png in Resources */,
 				7D4B10241D12A6C10095D463 /* password.png in Resources */,
 				7D4B101F1D12A2950095D463 /* APPImgae.png in Resources */,
+				7D3211741D210B5E00890F34 /* gouquan.png in Resources */,
 				34F4D2AD1D1D234D005963CA /* before_off.png in Resources */,
 				34E49D981D20D06400CF5CCB /* person_acount@3x.png in Resources */,
 				34E49D901D20C7A100CF5CCB /* tab_person_normal@2x.png in Resources */,
@@ -1003,6 +1015,7 @@
 				345565D81D129F5200B6E562 /* MyDeviceTableViewCell.xib in Resources */,
 				7D4B101B1D129C860095D463 /* back@2x.png in Resources */,
 				345565DF1D12A5D800B6E562 /* PerInformationTableViewCell.xib in Resources */,
+				7D3211731D210B5E00890F34 /* baiquan.png in Resources */,
 				34E49D971D20D06400CF5CCB /* person_about@3x.png in Resources */,
 				345565D31D129EBC00B6E562 /* DeviceInformationViewController.xib in Resources */,
 				34F4D2AF1D1D234D005963CA /* behand_off.png in Resources */,
@@ -1147,6 +1160,7 @@
 				345565501D10FE4800B6E562 /* UIImage-Extensions.m in Sources */,
 				345565611D10FF0700B6E562 /* UIView+SDAutoLayout.m in Sources */,
 				34921D071D17C77000541E41 /* CheckDeviceModel.m in Sources */,
+				7D3211771D21118600890F34 /* NewalumbModel.m in Sources */,
 				345565531D10FE5C00B6E562 /* UIViewController+HUD.m in Sources */,
 				345565561D10FE6400B6E562 /* UIView+Sizes.m in Sources */,
 				34F4D2A11D1CCDE9005963CA /* InCallViewController.m in Sources */,
@@ -1267,7 +1281,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/sebot/Classes/3rd/normalversion",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sego.sebo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sego.sebott;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1289,7 +1303,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/sebot/Classes/3rd/normalversion",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sego.sebo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sego.sebott;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

@@ -12,6 +12,9 @@
 #import "AFHttpClient.h"
 #import "LoginModel.h"
 @interface LoginViewController ()
+{
+    NSMutableArray * datasouce;
+}
 @property (nonatomic,strong)UITextField * accountTextfield;
 @property (nonatomic,strong)UITextField * passwordTextfield;
 @end
@@ -21,6 +24,7 @@
 
 -(void)viewDidLoad{
     self.view.backgroundColor = NEW_GRAY_COLOR;
+        datasouce = [NSMutableArray array];
     [self initUserface];
 }
 
@@ -93,24 +97,36 @@
 
 }
 -(void)loginButtonTouch{
+    
     [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid":@"",@"token":@"",@"objective":@"user",@"action":@"login",@"data":@{@"accountnumber":_accountTextfield.text,@"password":_passwordTextfield.text,@"model":@"6s",@"brand":@"6s",@"version":@"9.3.2",@"type":@"ios",@"channelid":@""}} result:^(id model) {
+       // datasouce = model[@"retVal"];
+//        if ([model[@"retCode"] isEqualToString:@"SUCCESS"]) {
+//           // [self hahaah];
+//            
+//        }
+        LoginModel * loginmodel = [LoginModel modelWithDictionary:model[@"retVal"]];
         
-        if (![AppUtil isBlankString:model[@"retVal"]]) {
-            LoginModel * loginmodel = [LoginModel modelWithDictionary:model[@"retVal"]];
-            
-            [[AccountManager sharedAccountManager] login:loginmodel];
-
-        }
+        [[AccountManager sharedAccountManager] login:loginmodel];
+        
+        // }
         [[NSNotificationCenter defaultCenter] postNotificationName:NotificationLoginStateChange object:@YES];
-       // NSLog(@"%@",loginmodel);
-    }];
+        
+        
+       
+}];
+    
 
 
 
 
 }
 
-
+//-(void)hahaah{
+//
+//    LoginModel * loginModel11 = [LoginModel modelWithDictionary:(NSDictionary *)datasouce];
+//    [[AccountManager sharedAccountManager] login:loginModel11];
+//
+//}
 
 -(void)newuserTouch{
     RegistViewController * regist = [[RegistViewController alloc]init];

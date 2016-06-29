@@ -21,10 +21,14 @@
     [UINavigationBar appearance].barTintColor=RED_COLOR;
     self.view.backgroundColor = NEW_GRAY_COLOR;
     [self initUserface];
+    [self request];
 }
 -(void)request{
     //查询接口
-    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid":@"",@"token":@"",@"objective":@"album",@"action":@"queryAlbum",@"data":@{@"userid":@""}} result:^(id model) {
+    NSLog(@"%@",[AccountManager sharedAccountManager].loginModel.userid);
+    
+    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid":[AccountManager sharedAccountManager].loginModel.userid,@"token":[AccountManager sharedAccountManager].loginModel.userid,@"objective":@"album",@"action":@"queryAlbum",@"data":@{@"userid":[AccountManager sharedAccountManager].loginModel.userid}} result:^(id model) {
+        
         
     }];
 

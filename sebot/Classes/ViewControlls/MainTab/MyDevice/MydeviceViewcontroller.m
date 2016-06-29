@@ -198,6 +198,7 @@
    
     
     CheckDeviceModel *checkModel = [CheckDeviceModel modelWithDictionary:(NSDictionary *)self.dataSource[indexPath.row]];
+    
         static NSString * showUserInfoCellIdentifier = @"MydeviceList";
     MyDeviceTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:showUserInfoCellIdentifier];
     if (!cell) {
