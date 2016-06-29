@@ -44,6 +44,8 @@
     [arrImage addObjectsFromArray:arrI];
     
     
+   NSString * str =  [AccountManager sharedAccountManager].loginModel.userid;
+    
     
     [[AFHttpClient sharedAFHttpClient] POST:@"sebot/moblie/forward" parameters:@{@"userid" : @"1" , @"objective":@"user", @"token" : @"1" , @"action" : @"queryUser", @"data" : @{@"userid" : @"1"}} result:^(id model) {
         

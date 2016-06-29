@@ -31,18 +31,18 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.png" translatesAutoresizingMaskIntoConstraints="NO" id="8cm-a0-EYu">
-                        <rect key="frame" x="14" y="19" width="16" height="14"/>
+                        <rect key="frame" x="14" y="19" width="21" height="16"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="14" id="Gn1-Tv-vdK"/>
-                            <constraint firstAttribute="width" constant="16" id="a3Z-Ru-djg"/>
+                            <constraint firstAttribute="height" constant="16" id="Gn1-Tv-vdK"/>
+                            <constraint firstAttribute="width" constant="21" id="a3Z-Ru-djg"/>
                         </constraints>
                     </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="ZuQ-SM-e3L" firstAttribute="baseline" secondItem="xCj-Dh-rtu" secondAttribute="baseline" id="3B0-xP-wTP"/>
-                    <constraint firstItem="ZuQ-SM-e3L" firstAttribute="centerY" secondItem="8cm-a0-EYu" secondAttribute="centerY" constant="-1" id="8cT-Ih-SoP"/>
+                    <constraint firstItem="ZuQ-SM-e3L" firstAttribute="centerY" secondItem="8cm-a0-EYu" secondAttribute="centerY" constant="-2" id="8cT-Ih-SoP"/>
                     <constraint firstItem="8cm-a0-EYu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="11" id="A7b-x8-Lvx"/>
-                    <constraint firstItem="ZuQ-SM-e3L" firstAttribute="leading" secondItem="8cm-a0-EYu" secondAttribute="trailing" constant="23" id="D2B-3Y-MS5"/>
+                    <constraint firstItem="ZuQ-SM-e3L" firstAttribute="leading" secondItem="8cm-a0-EYu" secondAttribute="trailing" constant="18" id="D2B-3Y-MS5"/>
                     <constraint firstItem="8cm-a0-EYu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="6" id="JSu-eg-VPY"/>
                     <constraint firstItem="xCj-Dh-rtu" firstAttribute="leading" secondItem="ZuQ-SM-e3L" secondAttribute="trailing" constant="54" id="fEf-4n-Ojl"/>
                     <constraint firstItem="xCj-Dh-rtu" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="fdM-HE-Rhd"/>
