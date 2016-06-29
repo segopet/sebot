@@ -49,6 +49,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="sebot_start_off.png" width="59" height="39"/>
+        <image name="sebot_start_off.png" width="29" height="19"/>
     </resources>
 </document>
