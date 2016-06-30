@@ -25,7 +25,7 @@
 
 
 
--(void)doRightButtonTouch{
+-(void)doRightButtonTouch{ 
     NewPhotoalbumViewController * newVc = [[NewPhotoalbumViewController alloc]init];
     [self.navigationController pushViewController:newVc animated:NO];
 

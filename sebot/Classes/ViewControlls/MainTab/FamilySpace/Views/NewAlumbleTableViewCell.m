@@ -26,7 +26,9 @@
         
         _rightBtn = [[UIButton alloc]initWithFrame:CGRectMake(350 * W_Wide_Zoom, 20 * W_Hight_Zoom, 20 * W_Wide_Zoom, 20 * W_Hight_Zoom)];
         _rightBtn.layer.cornerRadius = _rightBtn.width/2;
-        _rightBtn.backgroundColor = [UIColor blueColor];
+        //_rightBtn.backgroundColor = [UIColor blueColor];
+        [_rightBtn setImage:[UIImage imageNamed:@"baiquan.png"] forState:UIControlStateNormal];
+        [_rightBtn setImage:[UIImage imageNamed:@"gouquan.png"] forState:UIControlStateSelected];
         [self addSubview:_rightBtn];
         
         

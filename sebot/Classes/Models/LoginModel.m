@@ -11,6 +11,13 @@
 @implementation LoginModel
 #pragma  mark --  测试  测试
 
+
+
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key
+{
+    
+    
+}
 #pragma mark -- 通过字符串来创建该字符串的Setter方法，并返回
 - (SEL) creatSetterWithPropertyName: (NSString *) propertyName{
     
