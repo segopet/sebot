@@ -32,11 +32,11 @@
     self.dicSource =[NSMutableArray array];
     
    
-    NSArray * arrName =@[NSLocalizedString(@"tabDevice", nil),NSLocalizedString(@"deviceNumber", nil),NSLocalizedString(@"familyTeam", nil)];
+    NSArray * arrName =@[NSLocalizedString(@"deviceNumber", nil),NSLocalizedString(@"repairName", nil),NSLocalizedString(@"familyTeam", nil)];
     [self.dicSource addObjectsFromArray:arrName];
 
     // 查询设备信息
-    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : @"1" , @"objective":@"device", @"token" : @"1",@"action":@"queryByIdDeviceInfo",@"data":@{@"userid":@"1",@"did":self.didNumber}} result:^(id model) {
+    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : [AccountManager sharedAccountManager].loginModel.userid , @"objective":@"device", @"token" : @"1",@"action":@"queryByIdDeviceInfo",@"data":@{@"userid":[AccountManager sharedAccountManager].loginModel.userid,@"did":self.didNumber}} result:^(id model) {
         
         self.dataSource =model[@"retVal"];
     
@@ -163,7 +163,7 @@
     
    // "object": "主叫对象(mobile 移动客户端/device 设备端)"
     
-    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : @"1" , @"objective":@"device", @"token" : @"1",@"action":@"addCallRecords",@"data":@{@"calling":@"1001",@"called":@"ds002",@"object":@""}} result:^(id model) {
+    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : [AccountManager sharedAccountManager].loginModel.userid , @"objective":@"device", @"token" : @"1",@"action":@"addCallRecords",@"data":@{@"calling":@"1001",@"called":@"ds002",@"object":@""}} result:^(id model) {
         
         NSLog(@"%@",model);
         
@@ -178,7 +178,7 @@
 - (IBAction)cancelDeviceBtn:(UIButton *)sender {
     
     
-    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : @"1" , @"objective":@"device", @"token" : @"1",@"action":@"unbundling",@"data":@{@"userid":@"1001",@"did":@"ds002"}} result:^(id model) {
+    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : [AccountManager sharedAccountManager].loginModel.userid , @"objective":@"device", @"token" : @"1",@"action":@"unbundling",@"data":@{@"userid":[AccountManager sharedAccountManager].loginModel.userid,@"did":@"ds002"}} result:^(id model) {
          NSLog(@"%@",model);
     }];
 
@@ -261,13 +261,14 @@
         // 修改备注
         
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"repairName", nil) message:nil preferredStyle:UIAlertControllerStyleAlert];
-        [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Sure", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Sure", nil) style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
             //获取第1个输入框；
             UITextField *userNameTextField = alertController.textFields.firstObject;
+            
             // 确认之后这里会获取到 然后更正数组里的备注 要上传服务器
             NSLog(@"备注名 = %@",userNameTextField.text);
             
-            [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : @"1" , @"objective":@"device", @"token" : @"1",@"action":@"modifyDeviceRemark",@"data":@{@"userid":@"1",@"did":checkModel.did,@"remark":userNameTextField.text}} result:^(id model) {
+            [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : [AccountManager sharedAccountManager].loginModel.userid , @"objective":@"device", @"token" : @"1",@"action":@"modifyDeviceRemark",@"data":@{@"userid":[AccountManager sharedAccountManager].loginModel.userid,@"did":checkModel.did,@"remark":userNameTextField.text}} result:^(id model) {
     
                 NSLog(@"======%@",model);
                 
@@ -283,6 +284,8 @@
         
         [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
             textField.placeholder = NSLocalizedString(@"tabDevice", nil);
+           // textField.borderStyle =UITextBorderStyleBezel;
+            
         }];
        
         

@@ -108,7 +108,7 @@
 }
 -(void)provied{
     [self timeout];
-    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid":@"",@"token":@"",@"objective":@"user",@"action":@"getCode",@"data":@{@"phone":_phoneNumberTextfield.text,@"type":@"modifypassword"}} result:^(id model) {
+    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid":[AccountManager sharedAccountManager].loginModel.userid,@"token":@"",@"objective":@"user",@"action":@"getCode",@"data":@{@"phone":_phoneNumberTextfield.text,@"type":@"modifypassword"}} result:^(id model) {
         NSLog(@"%@",model);
         if ([model[@"retCode"] isEqualToString:@"SUCCESS"]) {
             _achieveString = model[@"content"];
@@ -157,7 +157,7 @@
         return;
     }
     
-    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid":@"",@"token":@"",@"objective":@"user",@"action":@"register",@"data":@{@"phone":_phoneNumberTextfield.text,@"password":_passwordTextfield.text}} result:^(id model) {
+    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid":[AccountManager sharedAccountManager].loginModel.userid,@"token":@"",@"objective":@"user",@"action":@"register",@"data":@{@"phone":_phoneNumberTextfield.text,@"password":_passwordTextfield.text}} result:^(id model) {
         NSLog(@"%@",model);
     }];
     

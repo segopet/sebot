@@ -47,7 +47,7 @@
    NSString * str =  [AccountManager sharedAccountManager].loginModel.userid;
     
     
-    [[AFHttpClient sharedAFHttpClient] POST:@"sebot/moblie/forward" parameters:@{@"userid" : @"1" , @"objective":@"user", @"token" : @"1" , @"action" : @"queryUser", @"data" : @{@"userid" : @"1"}} result:^(id model) {
+    [[AFHttpClient sharedAFHttpClient] POST:@"sebot/moblie/forward" parameters:@{@"userid" : str , @"objective":@"user", @"token" : @"1" , @"action" : @"queryUser", @"data" : @{@"userid" : str}} result:^(id model) {
         
         //[self.dataSource addObjectsFromArray:model[@"list"]];
         

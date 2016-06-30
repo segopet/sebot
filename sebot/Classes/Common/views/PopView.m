@@ -36,7 +36,7 @@
         self.layer.borderWidth = 1;
         
         
-        UIView * viewBG =[[UIView alloc]initWithFrame:CGRectMake(0, 80, 300, 160)];
+        UIView * viewBG =[[UIView alloc]initWithFrame:CGRectMake(0, 80, 300, 150)];
         viewBG.center = self.center;
         viewBG.backgroundColor =[UIColor whiteColor];
         viewBG.layer.masksToBounds = YES;
@@ -45,38 +45,38 @@
         
         
         // 添加设备
-        _handLable = [[UILabel alloc] initWithFrame:CGRectMake(100, 5, 100, 30)];
+        _handLable = [[UILabel alloc] initWithFrame:CGRectMake(100, 15, 100, 30)];
         _handLable.numberOfLines = 0;
         _handLable.textAlignment = NSTextAlignmentCenter;
-        _handLable.font = [UIFont systemFontOfSize:19];
-        _handLable.textColor = [UIColor redColor];
+        _handLable.font = [UIFont systemFontOfSize:20];
+        _handLable.textColor = [UIColor blackColor];
         _handLable.backgroundColor = [UIColor clearColor];
         _handLable.text =NSLocalizedString(@"DVaddDevice", nil);
         [viewBG addSubview:_handLable];
         
         // 设备号
-        _numberLable =[[UILabel alloc]initWithFrame:CGRectMake(20, 50, 90, 30)];
+        _numberLable =[[UILabel alloc]initWithFrame:CGRectMake(20, 55, 70, 30)];
         _numberLable.text =NSLocalizedString(@"DVDevicenum", nil);
-        _numberLable.font =[UIFont systemFontOfSize:17];
-//        _numberLable.textAlignment = NSTextAlignmentCenter;
-        _numberLable.textColor =[UIColor redColor];
+        _numberLable.font =[UIFont systemFontOfSize:18];
+        _numberLable.textColor =[UIColor blackColor];
         [viewBG addSubview:_numberLable];
         
         // 设备号数字
-        _numberTextfied =[[UITextField alloc]initWithFrame:CGRectMake(110, 50, 180, 30)];
+        _numberTextfied =[[UITextField alloc]initWithFrame:CGRectMake(90, 55, 180, 30)];
         _numberTextfied.placeholder = @"输入设备号";
-        _numberLable.font =[UIFont systemFontOfSize:17];
+        _numberTextfied.textAlignment =NSTextAlignmentLeft;
+        _numberLable.font =[UIFont systemFontOfSize:18];
         [viewBG addSubview:_numberTextfied];
         
         
-        _saomaBtnl =[[UIButton alloc]initWithFrame:CGRectMake(260, 0, 30, 30)];
+        _saomaBtnl =[[UIButton alloc]initWithFrame:CGRectMake(260, 5, 30, 30)];
         
         [_saomaBtnl setImage:[UIImage imageNamed:@"se_saomao"] forState:UIControlStateNormal];
         [_saomaBtnl addTarget:self action:@selector(saomao) forControlEvents:UIControlEventTouchUpInside];
         
         [viewBG addSubview:_saomaBtnl];
         
-        _cancelBtn =[[UIButton alloc]initWithFrame:CGRectMake(0, viewBG.bounds.origin.y+110, 150, 50)];
+        _cancelBtn =[[UIButton alloc]initWithFrame:CGRectMake(0, viewBG.bounds.origin.y+100, 150, 50)];
         [_cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
         _cancelBtn.layer.borderWidth =1;
         _cancelBtn.layer.borderColor =GRAY_COLOR.CGColor;
@@ -84,7 +84,7 @@
         [_cancelBtn setTitleColor:GRAY_COLOR forState:UIControlStateNormal];
         [viewBG addSubview:_cancelBtn];
         
-        _sureBtn =[[UIButton alloc]initWithFrame:CGRectMake(150, viewBG.bounds.origin.y+110, 150, 50)];
+        _sureBtn =[[UIButton alloc]initWithFrame:CGRectMake(150, viewBG.bounds.origin.y+100, 150, 50)];
         [_sureBtn setTitle:@"绑定" forState:UIControlStateNormal];
         [_sureBtn  setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
         _sureBtn.layer.borderWidth =1;

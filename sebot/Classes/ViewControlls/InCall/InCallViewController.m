@@ -92,7 +92,7 @@
 {
     // 结束通话 更新设备使用记录
     // "object": "主叫对象(mobile 移动客户端/device 设备端)"
-    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : @"1" , @"objective":@"device", @"token" : @"1",@"action":@"addCallRecords",@"data":@{@"calling":@"1",@"called":@"9000000006",@"object":@""}} result:^(id model) {
+    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : [AccountManager sharedAccountManager].loginModel.userid , @"objective":@"device", @"token" : @"1",@"action":@"addCallRecords",@"data":@{@"calling":@"1",@"called":@"9000000006",@"object":@""}} result:^(id model) {
         
         NSLog(@"%@",model[@"retDesc"]);
         
