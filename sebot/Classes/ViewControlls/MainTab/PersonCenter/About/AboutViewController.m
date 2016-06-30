@@ -32,7 +32,7 @@
     self.view.backgroundColor = LIGHT_GRAY_COLOR;
     
     self.dataSource =[NSMutableArray array];
-    NSArray * arr =@[@"产品简介",@"意见反馈",@"注册协议"];
+    NSArray * arr =@[@"意见反馈",@"注册协议"];
     [self.dataSource addObjectsFromArray:arr];
     
 }
@@ -133,34 +133,16 @@
 
     if (indexPath.row == 0) {
         
-        ProductionIntroducViewController * proVC =[[ProductionIntroducViewController alloc]initWithNibName:@"ProductionIntroducViewController" bundle:nil];
-        [self.navigationController  pushViewController:proVC animated:YES];
-        
-        
+        OpinionViewController * opinVC =[[OpinionViewController alloc]initWithNibName:@"OpinionViewController" bundle:nil];
+        [self.navigationController pushViewController:opinVC animated:YES];
     }
     else if (indexPath.row  ==1)
     {
-        
-        OpinionViewController * opinVC =[[OpinionViewController alloc]initWithNibName:@"OpinionViewController" bundle:nil];
-        [self.navigationController pushViewController:opinVC animated:YES];
-        
-    }
-    else
-    {
-      
-        
         AgreementViewController * aggreVC =[[AgreementViewController alloc]initWithNibName:@"AgreementViewController" bundle:nil];
         [self.navigationController pushViewController:aggreVC animated:YES];
-
+        
         
     }
-    
-
-    
-    
-    
-    
-    
 }
 
 

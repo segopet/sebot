@@ -93,6 +93,8 @@
 		34E49DA31D21000900CF5CCB /* photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49DA21D21000900CF5CCB /* photo.png */; };
 		34E49DA51D21002400CF5CCB /* paword.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49DA41D21002400CF5CCB /* paword.png */; };
 		34E49DA71D21074900CF5CCB /* test11.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49DA61D21074900CF5CCB /* test11.png */; };
+		34E49DAA1D24BDA700CF5CCB /* NewalumbModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E49DA91D24BDA700CF5CCB /* NewalumbModel.m */; };
+		34E49DAD1D24FBC800CF5CCB /* PersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E49DAC1D24FBC800CF5CCB /* PersonModel.m */; };
 		34F4D2931D1A673C005963CA /* libBPush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34F4D2911D1A673C005963CA /* libBPush.a */; };
 		34F4D2941D1A673C005963CA /* test.caf in Resources */ = {isa = PBXBuildFile; fileRef = 34F4D2921D1A673C005963CA /* test.caf */; };
 		34F4D2971D1A679A005963CA /* AppDelegate+BaiduPush.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F4D2961D1A679A005963CA /* AppDelegate+BaiduPush.m */; };
@@ -118,10 +120,6 @@
 		7D1AAC751D1A617800B4297E /* NewPhotoalbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D1AAC741D1A617800B4297E /* NewPhotoalbumViewController.m */; };
 		7D2ECE7A1D191C11003181A9 /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2ECE791D191C11003181A9 /* LoginModel.m */; };
 		7D2ECE801D192022003181A9 /* AFHttpClient+Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2ECE7F1D192022003181A9 /* AFHttpClient+Account.m */; };
-		7D300AD91D23A48600AF6E59 /* NewAlbumModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D300AD81D23A48600AF6E59 /* NewAlbumModel.m */; };
-		7D300ADC1D23CE3700AF6E59 /* baiquan.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D300ADA1D23CE3700AF6E59 /* baiquan.png */; };
-		7D300ADD1D23CE3700AF6E59 /* gouquan.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D300ADB1D23CE3700AF6E59 /* gouquan.png */; };
-		7D3812FD1D24F9A700C583DD /* NewAlbumAdviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3812FC1D24F9A700C583DD /* NewAlbumAdviceModel.m */; };
 		7D4B10011D1291C90095D463 /* RegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D4B10001D1291C90095D463 /* RegistViewController.m */; };
 		7D4B101B1D129C860095D463 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4B101A1D129C860095D463 /* back@2x.png */; };
 		7D4B101F1D12A2950095D463 /* APPImgae.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4B101C1D12A2950095D463 /* APPImgae.png */; };
@@ -270,6 +268,10 @@
 		34E49DA21D21000900CF5CCB /* photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo.png; sourceTree = "<group>"; };
 		34E49DA41D21002400CF5CCB /* paword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paword.png; sourceTree = "<group>"; };
 		34E49DA61D21074900CF5CCB /* test11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test11.png; sourceTree = "<group>"; };
+		34E49DA81D24BDA700CF5CCB /* NewalumbModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewalumbModel.h; sourceTree = "<group>"; };
+		34E49DA91D24BDA700CF5CCB /* NewalumbModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewalumbModel.m; sourceTree = "<group>"; };
+		34E49DAB1D24FBC800CF5CCB /* PersonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonModel.h; sourceTree = "<group>"; };
+		34E49DAC1D24FBC800CF5CCB /* PersonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonModel.m; sourceTree = "<group>"; };
 		34F4D2901D1A673C005963CA /* BPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPush.h; sourceTree = "<group>"; };
 		34F4D2911D1A673C005963CA /* libBPush.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBPush.a; sourceTree = "<group>"; };
 		34F4D2921D1A673C005963CA /* test.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.caf; sourceTree = "<group>"; };
@@ -305,12 +307,6 @@
 		7D2ECE791D191C11003181A9 /* LoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginModel.m; sourceTree = "<group>"; };
 		7D2ECE7E1D192022003181A9 /* AFHttpClient+Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+Account.h"; sourceTree = "<group>"; };
 		7D2ECE7F1D192022003181A9 /* AFHttpClient+Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+Account.m"; sourceTree = "<group>"; };
-		7D300AD71D23A48600AF6E59 /* NewAlbumModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewAlbumModel.h; sourceTree = "<group>"; };
-		7D300AD81D23A48600AF6E59 /* NewAlbumModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewAlbumModel.m; sourceTree = "<group>"; };
-		7D300ADA1D23CE3700AF6E59 /* baiquan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = baiquan.png; sourceTree = "<group>"; };
-		7D300ADB1D23CE3700AF6E59 /* gouquan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gouquan.png; sourceTree = "<group>"; };
-		7D3812FB1D24F9A700C583DD /* NewAlbumAdviceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewAlbumAdviceModel.h; sourceTree = "<group>"; };
-		7D3812FC1D24F9A700C583DD /* NewAlbumAdviceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewAlbumAdviceModel.m; sourceTree = "<group>"; };
 		7D4B0FFF1D1291C90095D463 /* RegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistViewController.h; sourceTree = "<group>"; };
 		7D4B10001D1291C90095D463 /* RegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistViewController.m; sourceTree = "<group>"; };
 		7D4B101A1D129C860095D463 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
@@ -395,16 +391,16 @@
 		345565211D10F3B700B6E562 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				34E49DA81D24BDA700CF5CCB /* NewalumbModel.h */,
+				34E49DA91D24BDA700CF5CCB /* NewalumbModel.m */,
 				345565691D11008300B6E562 /* BaseModel.h */,
 				3455656A1D11008300B6E562 /* BaseModel.m */,
 				7D2ECE781D191C11003181A9 /* LoginModel.h */,
 				7D2ECE791D191C11003181A9 /* LoginModel.m */,
 				34921D051D17C77000541E41 /* CheckDeviceModel.h */,
 				34921D061D17C77000541E41 /* CheckDeviceModel.m */,
-				7D300AD71D23A48600AF6E59 /* NewAlbumModel.h */,
-				7D300AD81D23A48600AF6E59 /* NewAlbumModel.m */,
-				7D3812FB1D24F9A700C583DD /* NewAlbumAdviceModel.h */,
-				7D3812FC1D24F9A700C583DD /* NewAlbumAdviceModel.m */,
+				34E49DAB1D24FBC800CF5CCB /* PersonModel.h */,
+				34E49DAC1D24FBC800CF5CCB /* PersonModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -842,8 +838,6 @@
 			isa = PBXGroup;
 			children = (
 				34E49DA61D21074900CF5CCB /* test11.png */,
-				7D300ADA1D23CE3700AF6E59 /* baiquan.png */,
-				7D300ADB1D23CE3700AF6E59 /* gouquan.png */,
 				34E49DA41D21002400CF5CCB /* paword.png */,
 				34E49DA21D21000900CF5CCB /* photo.png */,
 				34E49DA01D20FFDC00CF5CCB /* number.png */,
@@ -991,7 +985,7 @@
 				TargetAttributes = {
 					57D1E5F11CFED25900BEDFF6 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = ZMFX8728A9;
+						DevelopmentTeam = 454LPD78S8;
 					};
 				};
 			};
@@ -1025,7 +1019,6 @@
 				34E49D8E1D20C7A100CF5CCB /* tab_family_normal@2x.png in Resources */,
 				3492635C1D13FAC6006C2FD9 /* MyphotoAlbumViewController.xib in Resources */,
 				34E49D991D20D06400CF5CCB /* person_number@3x.png in Resources */,
-				7D300ADC1D23CE3700AF6E59 /* baiquan.png in Resources */,
 				34F4D2B61D1D265A005963CA /* shuping.png in Resources */,
 				34E49D8F1D20C7A100CF5CCB /* tab_family_press@2x.png in Resources */,
 				34E49D811D20C37100CF5CCB /* sebot_add@3x.png in Resources */,
@@ -1068,7 +1061,6 @@
 				7D4B10251D12A6C10095D463 /* user.png in Resources */,
 				3492636D1D13FE8D006C2FD9 /* AboutTableViewCell.xib in Resources */,
 				349263631D13FC72006C2FD9 /* AboutViewController.xib in Resources */,
-				7D300ADD1D23CE3700AF6E59 /* gouquan.png in Resources */,
 				34F4D29C1D1A8C9E005963CA /* on_connection.png in Resources */,
 				345565B01D114C5400B6E562 /* launguide.jpg in Resources */,
 				34E49D9D1D20FF0F00CF5CCB /* about.png in Resources */,
@@ -1155,7 +1147,6 @@
 				7D509D7D1D1B86A2004E3059 /* NewInformationViewController.m in Sources */,
 				345565B51D11500F00B6E562 /* BaseViewController.m in Sources */,
 				3455657D1D11374500B6E562 /* PersonCenterViewcontroller.m in Sources */,
-				7D300AD91D23A48600AF6E59 /* NewAlbumModel.m in Sources */,
 				3455656B1D11008300B6E562 /* BaseModel.m in Sources */,
 				345565BB1D1246B900B6E562 /* BaseTabViewController.m in Sources */,
 				7D1AAC751D1A617800B4297E /* NewPhotoalbumViewController.m in Sources */,
@@ -1181,6 +1172,7 @@
 				345565681D10FFED00B6E562 /* AccountManager.m in Sources */,
 				345565331D10F8A600B6E562 /* AppUtil.m in Sources */,
 				345565741D1134E500B6E562 /* MainTabViewController.m in Sources */,
+				34E49DAD1D24FBC800CF5CCB /* PersonModel.m in Sources */,
 				345565E91D13A04100B6E562 /* FamilyTeamTableViewCell.m in Sources */,
 				7DD7D1D11D0FE21B0002CD2E /* AppDelegate.m in Sources */,
 				345565DE1D12A5D800B6E562 /* PerInformationTableViewCell.m in Sources */,
@@ -1190,8 +1182,8 @@
 				345565501D10FE4800B6E562 /* UIImage-Extensions.m in Sources */,
 				345565611D10FF0700B6E562 /* UIView+SDAutoLayout.m in Sources */,
 				34921D071D17C77000541E41 /* CheckDeviceModel.m in Sources */,
+				34E49DAA1D24BDA700CF5CCB /* NewalumbModel.m in Sources */,
 				345565531D10FE5C00B6E562 /* UIViewController+HUD.m in Sources */,
-				7D3812FD1D24F9A700C583DD /* NewAlbumAdviceModel.m in Sources */,
 				345565561D10FE6400B6E562 /* UIView+Sizes.m in Sources */,
 				34F4D2A11D1CCDE9005963CA /* InCallViewController.m in Sources */,
 				57D1E5F71CFED25900BEDFF6 /* main.m in Sources */,
@@ -1311,7 +1303,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/sebot/Classes/3rd/normalversion",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sego.sebott;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sego.sebo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1333,7 +1325,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/sebot/Classes/3rd/normalversion",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sego.sebott;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sego.sebo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

@@ -23,6 +23,9 @@
                         <constraint firstAttribute="height" constant="51" id="lJY-7F-O1B"/>
                     </constraints>
                     <state key="normal" title="扫码"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="6"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="saomaoBtn:" destination="-1" eventType="touchUpInside" id="mBh-gW-KoX"/>
                     </connections>

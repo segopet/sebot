@@ -66,9 +66,9 @@
    
     
     self.dataSource =[NSMutableArray array];
-    //[AccountManager sharedAccountManager].loginModel.userid
+   
     
-    [[AFHttpClient sharedAFHttpClient] POST:@"sebot/moblie/forward" parameters:@{@"userid" : @"1" , @"objective":@"device", @"token" : @"1" , @"action" : @"queryUserDeviceInfo", @"data" : @{@"userid" : @"1"}} result:^(id model) {
+    [[AFHttpClient sharedAFHttpClient] POST:@"sebot/moblie/forward" parameters:@{@"userid" :  [AccountManager sharedAccountManager].loginModel.userid , @"objective":@"device", @"token" : @"1" , @"action" : @"queryUserDeviceInfo", @"data" : @{@"userid" :  [AccountManager sharedAccountManager].loginModel.userid}} result:^(id model) {
         
         [self.dataSource addObjectsFromArray:model[@"list"]];
         
@@ -161,7 +161,7 @@
 - (void)sureMehod
 {
 
-    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : @"1" , @"objective":@"device", @"token" : @"1",@"action":@"requestBinding",@"data":@{@"userid":@"1",@"deviceno":@"9000000006"}} result:^(id model) {
+    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : [AccountManager sharedAccountManager].loginModel.userid , @"objective":@"device", @"token" : @"1",@"action":@"requestBinding",@"data":@{@"userid":[AccountManager sharedAccountManager].loginModel.userid,@"deviceno":@"9000000006"}} result:^(id model) {
         
         NSLog(@"%@",model[@"retDesc"]);
         [_popView removeFromSuperview];

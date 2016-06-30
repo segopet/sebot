@@ -38,13 +38,13 @@
     [_popView.sureBtn setTitle:@"邀请" forState:UIControlStateNormal];
      _popView.handLable.text = @"邀请绑定";
      _popView.numberLable.text = @"手机号码:";
-     _popView.numberTextfied.placeholder = @"输入对方的手机号码";
+     _popView.numberTextfied.placeholder = @"输入对方手机号";
     _popView.saomaBtnl.hidden = YES;
     _popView.ParentView = app.window;
     _popView.delegate = self;
     
     // 家庭成员接口
-    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : @"1" , @"objective":@"device", @"token" : @"1",@"action":@"queryFamilyMember",@"data":@{@"did":@""}} result:^(id model) {
+    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : [AccountManager sharedAccountManager].loginModel.userid , @"objective":@"device", @"token" : @"1",@"action":@"queryFamilyMember",@"data":@{@"did":@""}} result:^(id model) {
         
         NSLog(@"%@",model[@"retDesc"]);
        
@@ -113,7 +113,7 @@
     NSLog(@"33");
     
     // 管理员邀请接口
-    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : @"1" , @"objective":@"device", @"token" : @"1",@"action":@"inviteRequest",@"data":@{@"userid":@"1",@"phone":@"9000000006",@"deviceno":@""}} result:^(id model) {
+    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : [AccountManager sharedAccountManager].loginModel.userid , @"objective":@"device", @"token" : @"1",@"action":@"inviteRequest",@"data":@{@"userid":[AccountManager sharedAccountManager].loginModel.userid,@"phone":@"9000000006",@"deviceno":@""}} result:^(id model) {
         
         NSLog(@"%@",model[@"retDesc"]);
         [_popView removeFromSuperview];
@@ -182,7 +182,7 @@
     NSLog(@"======%ld",sender.tag-1000);
     
    // 管理员移除用户
-    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : @"1" , @"objective":@"device", @"token" : @"1",@"action":@"remove",@"data":@{@"admin":@"1",@"usrid":@"9000000006",@"did":@""}} result:^(id model) {
+    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : [AccountManager sharedAccountManager].loginModel.userid , @"objective":@"device", @"token" : @"1",@"action":@"remove",@"data":@{@"admin":@"1",@"usrid":@"9000000006",@"did":@""}} result:^(id model) {
         
         NSLog(@"%@",model[@"retDesc"]);
        
@@ -201,7 +201,7 @@
 {
     
     // 转让接口
-    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : @"1" , @"objective":@"device", @"token" : @"1",@"action":@"transfer",@"data":@{@"admin":@"1",@"usrid":@"9000000006",@"did":@""}} result:^(id model) {
+    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : [AccountManager sharedAccountManager].loginModel.userid , @"objective":@"device", @"token" : @"1",@"action":@"transfer",@"data":@{@"admin":@"1",@"usrid":@"9000000006",@"did":@""}} result:^(id model) {
         
         NSLog(@"%@",model[@"retDesc"]);
         
