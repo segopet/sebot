@@ -22,6 +22,7 @@
     NSMutableArray * arrImage;
     UILabel *_nameLabel;
     
+    PersonModel *checkModel;
     
     
 }
@@ -54,9 +55,12 @@
         
         [arrTest removeAllObjects];
          arrTest = model[@"retVal"];
-         PersonModel *checkModel = [PersonModel modelWithDictionary:(NSDictionary *)arrTest];
+        checkModel = [PersonModel modelWithDictionary:(NSDictionary *)arrTest];
         
+        [_heandBtn sd_setImageWithURL:[NSURL URLWithString:checkModel.headportrait] placeholderImage:nil];
+        _nameLabel.text = checkModel.nickname;
         
+        NSLog(@"======%@",checkModel.headportrait);
         
         [self.tableView reloadData];
     }];
@@ -77,7 +81,6 @@
      点赞  名字
      */
     _nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 200, 20)];
-    _nameLabel.text = @"我是余磊";
     _nameLabel.center = CGPointMake(_headView.center.x,_headView.center.y+60);
     _nameLabel.font = [UIFont systemFontOfSize:15];
     _nameLabel.textAlignment = NSTextAlignmentCenter;
@@ -87,12 +90,14 @@
     // 头像
     _heandBtn =[[UIImageView alloc]initWithFrame:CGRectMake(0,0,130, 130)];
     _heandBtn.center = CGPointMake(_headView.center.x, _headView.center.y-20);
-    [_heandBtn sd_setImageWithURL:[NSURL URLWithString:arrTest[0][@"headportrait"]] placeholderImage:[UIImage imageNamed:@"APPImgae.png"]];
-    
-    NSLog(@"======%@",arrTest[0][@"headportrait"]);
     _heandBtn.layer.masksToBounds = YES;
+    _heandBtn.userInteractionEnabled = YES;
     _heandBtn.layer.cornerRadius =_heandBtn.width/2;
-    [_headView addSubview:_heandBtn];
+    UITapGestureRecognizer* singleRecognizer;
+    singleRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleSingleTapFrom:)];
+       [_headView addSubview:_heandBtn];
+    [_heandBtn addGestureRecognizer:singleRecognizer];
+
 
     
     self.tableView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
@@ -119,6 +124,19 @@
 - (void)setupData
 {
     [super setupData];
+    
+}
+
+
+
+// 头像点击事件
+
+
+- (void)handleSingleTapFrom:(UITapGestureRecognizer *)sender
+{
+    
+    
+    NSLog(@"111");
     
 }
 
@@ -162,7 +180,20 @@
     }
     
     cell.introduceLable.text = self.dataSource[indexPath.row];
-   // cell.inforLable.text = arrTest[indexPath.row];
+    if (indexPath.row == 0) {
+        cell.inforLable.text = checkModel.phone;
+        
+    }else if (indexPath.row == 1)
+
+    {
+        cell.inforLable.text = checkModel.phone;
+        
+        
+    }else
+    {
+        
+        cell.inforLable.text = @"";
+    }
     cell.headImage.image =[UIImage imageNamed:arrImage[indexPath.row]];
    
     

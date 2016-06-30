@@ -18,7 +18,7 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sfdvdvdsv" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZuQ-SM-e3L">
                         <rect key="frame" x="53" y="8" width="100" height="34"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="100" id="ffD-9Z-ssU"/>
+                            <constraint firstAttribute="width" constant="100" id="N38-bT-oI1"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -33,22 +33,21 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.png" translatesAutoresizingMaskIntoConstraints="NO" id="8cm-a0-EYu">
                         <rect key="frame" x="14" y="19" width="21" height="16"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="16" id="Gn1-Tv-vdK"/>
-                            <constraint firstAttribute="width" constant="21" id="a3Z-Ru-djg"/>
+                            <constraint firstAttribute="width" constant="21" id="5EG-rP-YI4"/>
                         </constraints>
                     </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="ZuQ-SM-e3L" firstAttribute="baseline" secondItem="xCj-Dh-rtu" secondAttribute="baseline" id="3B0-xP-wTP"/>
-                    <constraint firstItem="ZuQ-SM-e3L" firstAttribute="centerY" secondItem="8cm-a0-EYu" secondAttribute="centerY" constant="-2" id="8cT-Ih-SoP"/>
-                    <constraint firstItem="8cm-a0-EYu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="11" id="A7b-x8-Lvx"/>
-                    <constraint firstItem="ZuQ-SM-e3L" firstAttribute="leading" secondItem="8cm-a0-EYu" secondAttribute="trailing" constant="18" id="D2B-3Y-MS5"/>
-                    <constraint firstItem="8cm-a0-EYu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="6" id="JSu-eg-VPY"/>
-                    <constraint firstItem="xCj-Dh-rtu" firstAttribute="leading" secondItem="ZuQ-SM-e3L" secondAttribute="trailing" constant="54" id="fEf-4n-Ojl"/>
-                    <constraint firstItem="xCj-Dh-rtu" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="fdM-HE-Rhd"/>
-                    <constraint firstItem="xCj-Dh-rtu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="3" id="jyQ-Tp-KuS"/>
-                    <constraint firstItem="ZuQ-SM-e3L" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="oRa-ap-NNg"/>
-                    <constraint firstItem="xCj-Dh-rtu" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="zHD-Q3-yFS"/>
+                    <constraint firstItem="8cm-a0-EYu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="6" id="20R-k6-HdH"/>
+                    <constraint firstItem="ZuQ-SM-e3L" firstAttribute="leading" secondItem="8cm-a0-EYu" secondAttribute="trailing" constant="18" id="Kb1-2k-0kb"/>
+                    <constraint firstItem="xCj-Dh-rtu" firstAttribute="baseline" secondItem="ZuQ-SM-e3L" secondAttribute="baseline" id="LRD-KJ-J4b"/>
+                    <constraint firstItem="ZuQ-SM-e3L" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="a4t-35-4bg"/>
+                    <constraint firstItem="xCj-Dh-rtu" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="aDY-82-96i"/>
+                    <constraint firstItem="xCj-Dh-rtu" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="bFh-gW-PpX"/>
+                    <constraint firstItem="8cm-a0-EYu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="11" id="iDa-OX-hi2"/>
+                    <constraint firstItem="xCj-Dh-rtu" firstAttribute="leading" secondItem="ZuQ-SM-e3L" secondAttribute="trailing" constant="54" id="kSk-o3-rld"/>
+                    <constraint firstItem="xCj-Dh-rtu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="3" id="oMZ-qU-qbF"/>
+                    <constraint firstItem="8cm-a0-EYu" firstAttribute="centerY" secondItem="xCj-Dh-rtu" secondAttribute="centerY" id="ohX-3X-Kqn"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
