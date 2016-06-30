@@ -8,9 +8,11 @@
 
 #import "NewPhotoalbumViewController.h"
 #import "NewInformationViewController.h"
+#import "NewAlbumModel.h"
 
 @interface NewPhotoalbumViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
-
+@property (nonatomic,strong)NSMutableArray * datasouce;
+@property (nonatomic,strong) UICollectionView *colView;
 @end
 
 @implementation NewPhotoalbumViewController
@@ -18,6 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setNavTitle:@"选择相册"];
+    _datasouce  = [NSMutableArray array];
     [UINavigationBar appearance].barTintColor=RED_COLOR;
     self.view.backgroundColor = NEW_GRAY_COLOR;
     [self initUserface];
@@ -28,8 +31,14 @@
     NSLog(@"%@",[AccountManager sharedAccountManager].loginModel.userid);
     
     [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid":[AccountManager sharedAccountManager].loginModel.userid,@"token":[AccountManager sharedAccountManager].loginModel.userid,@"objective":@"album",@"action":@"queryAlbum",@"data":@{@"userid":[AccountManager sharedAccountManager].loginModel.userid}} result:^(id model) {
+        NSLog(@"%@",model);
         
+        NSArray * array = model[@"list"];
         
+        [_datasouce addObject:array[0]];
+        [_datasouce addObjectsFromArray:model[@"list"]];
+       
+        [_colView reloadData];
     }];
 
 
@@ -37,18 +46,22 @@
 
 -(void)initUserface{
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    UICollectionView *colView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
-    [colView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"myCell"];
-    colView.backgroundColor = [UIColor whiteColor];
-    colView.delegate = self;
-    colView.dataSource = self;
-    [self.view addSubview:colView];
+    _colView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
+    [_colView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"myCell"];
+    _colView.backgroundColor = [UIColor whiteColor];
+    _colView.delegate = self;
+    _colView.dataSource = self;
+    [self.view addSubview:_colView];
+    
 }
 
 //配置UICollectionView的每个section的item数
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 10;
+
+  
+    return self.datasouce.count;
+    
 }
 //配置section数
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -59,14 +72,29 @@
 //呈现数据
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
+
+    NewAlbumModel * model = [NewAlbumModel modelWithDictionary:(NSDictionary *)_datasouce[indexPath.row ]];
     static NSString *cellID = @"myCell";
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellID forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor redColor];
+//    if (indexPath.row < 1) {
+//        cell.backgroundColor = [UIColor redColor];
+//    }else{
+//        cell.backgroundColor = [UIColor blueColor];
+//    }
+//
+    if (indexPath.row < 1) {
+        UIImageView * image = [[UIImageView alloc]initWithFrame:cell.bounds];
+        image.backgroundColor = [UIColor blueColor];
+      //  [image sd_setImageWithURL:imageUrl placeholderImage:nil];
+        [cell addSubview:image];
+
+    }else{
+    NSString * imageStr = [NSString stringWithFormat:@"%@",model.cover];
+    NSURL * imageUrl = [NSURL URLWithString:imageStr];
     UIImageView * image = [[UIImageView alloc]initWithFrame:cell.bounds];
-    image.backgroundColor = [UIColor blueColor];
-   
+    [image sd_setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:@"APPImgae.png"]];
     [cell addSubview:image];
-    
+    }
     
     
     
@@ -88,9 +116,11 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"您点击了item:%ld",indexPath.row);
-    if (indexPath.row == 0) {
+    if (indexPath.row < 1) {
         NewInformationViewController * haha = [[NewInformationViewController alloc]init];
         [self.navigationController pushViewController:haha animated:NO];
+    }else{
+        NSLog(@"%ld",indexPath.row);
     }
     
     
