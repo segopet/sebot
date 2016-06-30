@@ -93,6 +93,8 @@
 		34E49DA31D21000900CF5CCB /* photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49DA21D21000900CF5CCB /* photo.png */; };
 		34E49DA51D21002400CF5CCB /* paword.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49DA41D21002400CF5CCB /* paword.png */; };
 		34E49DA71D21074900CF5CCB /* test11.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49DA61D21074900CF5CCB /* test11.png */; };
+		34E49DAA1D24BDA700CF5CCB /* NewalumbModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E49DA91D24BDA700CF5CCB /* NewalumbModel.m */; };
+		34E49DAD1D24FBC800CF5CCB /* PersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E49DAC1D24FBC800CF5CCB /* PersonModel.m */; };
 		34F4D2931D1A673C005963CA /* libBPush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34F4D2911D1A673C005963CA /* libBPush.a */; };
 		34F4D2941D1A673C005963CA /* test.caf in Resources */ = {isa = PBXBuildFile; fileRef = 34F4D2921D1A673C005963CA /* test.caf */; };
 		34F4D2971D1A679A005963CA /* AppDelegate+BaiduPush.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F4D2961D1A679A005963CA /* AppDelegate+BaiduPush.m */; };
@@ -266,6 +268,10 @@
 		34E49DA21D21000900CF5CCB /* photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo.png; sourceTree = "<group>"; };
 		34E49DA41D21002400CF5CCB /* paword.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paword.png; sourceTree = "<group>"; };
 		34E49DA61D21074900CF5CCB /* test11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test11.png; sourceTree = "<group>"; };
+		34E49DA81D24BDA700CF5CCB /* NewalumbModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewalumbModel.h; sourceTree = "<group>"; };
+		34E49DA91D24BDA700CF5CCB /* NewalumbModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewalumbModel.m; sourceTree = "<group>"; };
+		34E49DAB1D24FBC800CF5CCB /* PersonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonModel.h; sourceTree = "<group>"; };
+		34E49DAC1D24FBC800CF5CCB /* PersonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonModel.m; sourceTree = "<group>"; };
 		34F4D2901D1A673C005963CA /* BPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPush.h; sourceTree = "<group>"; };
 		34F4D2911D1A673C005963CA /* libBPush.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBPush.a; sourceTree = "<group>"; };
 		34F4D2921D1A673C005963CA /* test.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.caf; sourceTree = "<group>"; };
@@ -385,12 +391,16 @@
 		345565211D10F3B700B6E562 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				34E49DA81D24BDA700CF5CCB /* NewalumbModel.h */,
+				34E49DA91D24BDA700CF5CCB /* NewalumbModel.m */,
 				345565691D11008300B6E562 /* BaseModel.h */,
 				3455656A1D11008300B6E562 /* BaseModel.m */,
 				7D2ECE781D191C11003181A9 /* LoginModel.h */,
 				7D2ECE791D191C11003181A9 /* LoginModel.m */,
 				34921D051D17C77000541E41 /* CheckDeviceModel.h */,
 				34921D061D17C77000541E41 /* CheckDeviceModel.m */,
+				34E49DAB1D24FBC800CF5CCB /* PersonModel.h */,
+				34E49DAC1D24FBC800CF5CCB /* PersonModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1162,6 +1172,7 @@
 				345565681D10FFED00B6E562 /* AccountManager.m in Sources */,
 				345565331D10F8A600B6E562 /* AppUtil.m in Sources */,
 				345565741D1134E500B6E562 /* MainTabViewController.m in Sources */,
+				34E49DAD1D24FBC800CF5CCB /* PersonModel.m in Sources */,
 				345565E91D13A04100B6E562 /* FamilyTeamTableViewCell.m in Sources */,
 				7DD7D1D11D0FE21B0002CD2E /* AppDelegate.m in Sources */,
 				345565DE1D12A5D800B6E562 /* PerInformationTableViewCell.m in Sources */,
@@ -1171,6 +1182,7 @@
 				345565501D10FE4800B6E562 /* UIImage-Extensions.m in Sources */,
 				345565611D10FF0700B6E562 /* UIView+SDAutoLayout.m in Sources */,
 				34921D071D17C77000541E41 /* CheckDeviceModel.m in Sources */,
+				34E49DAA1D24BDA700CF5CCB /* NewalumbModel.m in Sources */,
 				345565531D10FE5C00B6E562 /* UIViewController+HUD.m in Sources */,
 				345565561D10FE6400B6E562 /* UIView+Sizes.m in Sources */,
 				34F4D2A11D1CCDE9005963CA /* InCallViewController.m in Sources */,

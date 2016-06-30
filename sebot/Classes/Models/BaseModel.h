@@ -19,5 +19,5 @@
 @property (nonatomic, copy) NSString *retCode;
 
 @property (nonatomic, strong) NSArray *list;
-
++ (instancetype)modelWithDictionary: (NSDictionary *) data;
 @end

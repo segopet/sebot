@@ -38,7 +38,7 @@
     [_popView.sureBtn setTitle:@"邀请" forState:UIControlStateNormal];
      _popView.handLable.text = @"邀请绑定";
      _popView.numberLable.text = @"手机号码:";
-     _popView.numberTextfied.placeholder = @"输入对方的手机号码";
+     _popView.numberTextfied.placeholder = @"输入对方手机号";
     _popView.saomaBtnl.hidden = YES;
     _popView.ParentView = app.window;
     _popView.delegate = self;

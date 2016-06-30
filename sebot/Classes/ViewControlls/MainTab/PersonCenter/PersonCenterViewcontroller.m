@@ -10,6 +10,9 @@
 #import "MyphotoAlbumViewController.h"
 #import "AboutViewController.h"
 #import "RepairPwViewController.h"
+#import "UIImageView+WebCache.h"
+#import "PersonModel.h"
+#import "UIImage-Extensions.h"
 @interface PersonCenterViewcontroller()
 
 {
@@ -49,7 +52,11 @@
     
     [[AFHttpClient sharedAFHttpClient] POST:@"sebot/moblie/forward" parameters:@{@"userid" : str , @"objective":@"user", @"token" : @"1" , @"action" : @"queryUser", @"data" : @{@"userid" : str}} result:^(id model) {
         
-        //[self.dataSource addObjectsFromArray:model[@"list"]];
+        [arrTest removeAllObjects];
+         arrTest = model[@"retVal"];
+         PersonModel *checkModel = [PersonModel modelWithDictionary:(NSDictionary *)arrTest];
+        
+        
         
         [self.tableView reloadData];
     }];
@@ -80,7 +87,9 @@
     // 头像
     _heandBtn =[[UIImageView alloc]initWithFrame:CGRectMake(0,0,130, 130)];
     _heandBtn.center = CGPointMake(_headView.center.x, _headView.center.y-20);
-     _heandBtn.image =[UIImage imageNamed:@"APPImgae.png"];
+    [_heandBtn sd_setImageWithURL:[NSURL URLWithString:arrTest[0][@"headportrait"]] placeholderImage:[UIImage imageNamed:@"APPImgae.png"]];
+    
+    NSLog(@"======%@",arrTest[0][@"headportrait"]);
     _heandBtn.layer.masksToBounds = YES;
     _heandBtn.layer.cornerRadius =_heandBtn.width/2;
     [_headView addSubview:_heandBtn];
@@ -153,7 +162,7 @@
     }
     
     cell.introduceLable.text = self.dataSource[indexPath.row];
-    cell.inforLable.text = arrTest[indexPath.row];
+   // cell.inforLable.text = arrTest[indexPath.row];
     cell.headImage.image =[UIImage imageNamed:arrImage[indexPath.row]];
    
     

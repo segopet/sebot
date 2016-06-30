@@ -12,8 +12,8 @@
 static NSString * cellId = @"newAllubmtabeleviewwcellid";
 @interface NewInformationViewController ()
 {
-    BOOL * ischange;
-    BOOL * firstBtn;
+    BOOL  ischange;
+    BOOL  firstBtn;
 }
 @property (nonatomic,strong)UITextField * alumbnameTextfield;
 

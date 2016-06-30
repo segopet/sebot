@@ -10,4 +10,11 @@
 
 @interface RepairPwViewController : BaseViewController
 
+
+@property (strong, nonatomic) IBOutlet UITextField *ageinNewPsTx;
+
+@property (strong, nonatomic) IBOutlet UITextField *NewPsTx;
+
+@property (strong, nonatomic) IBOutlet UITextField *oldPsTx;
+@property (strong, nonatomic) IBOutlet UIButton *updateBtn;
 @end

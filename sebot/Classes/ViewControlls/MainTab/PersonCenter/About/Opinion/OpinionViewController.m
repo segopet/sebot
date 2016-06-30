@@ -109,15 +109,13 @@
     [self showHudInView:self.view hint:@"正在发送..."];
     
     
-    /*
-    [[AFHttpClient sharedAFHttpClient]addFeedbackWithMid:[AccountManager sharedAccountManager].loginModel.mid fconcent:_topTextfield.text fphone:_downTextfield.text complete:^(BaseModel *model) {
-        if (model) {
-            [self hideHud];
-            [[AppUtil appTopViewController] showHint:model.retDesc];
-            [self.navigationController popViewControllerAnimated:YES];
-        }
+    [[AFHttpClient sharedAFHttpClient] POST:@"sebot/moblie/forward" parameters:@{@"userid" :  [AccountManager sharedAccountManager].loginModel.userid , @"objective":@"user", @"token" : @"1" , @"action" : @"feedback", @"data" : @{@"userid" :  [AccountManager sharedAccountManager].loginModel.userid,@"fcontent":_topTextfield.text,@"type":@"iphone",@"fphone":_downTextfield.text}} result:^(id model) {
+        
+        [self showSuccessHudWithHint:model[@""]];
+        [self.navigationController popViewControllerAnimated:YES];
+        
     }];
-    */
+
     
     
 }
