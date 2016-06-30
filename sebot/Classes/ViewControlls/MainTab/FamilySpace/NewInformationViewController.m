@@ -8,7 +8,7 @@
 
 #import "NewInformationViewController.h"
 #import "NewAlumbleTableViewCell.h"
-#import "NewalumbModel.h"
+
 static NSString * cellId = @"newAllubmtabeleviewwcellid";
 @interface NewInformationViewController ()
 {
@@ -27,8 +27,7 @@ static NSString * cellId = @"newAllubmtabeleviewwcellid";
     [UINavigationBar appearance].barTintColor=RED_COLOR;
     [self showBarButton:NAV_RIGHT title:@"新建" fontColor:[UIColor whiteColor]];
     self.view.backgroundColor = [UIColor whiteColor];
-    ischange = NO;
-    firstBtn = NO;
+   
     [self initUserface];
     self.automaticallyAdjustsScrollViewInsets = NO;
 }
@@ -40,8 +39,8 @@ static NSString * cellId = @"newAllubmtabeleviewwcellid";
 
 }
 -(void)setupData{
-    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid":[AccountManager sharedAccountManager].loginModel.userid,@"token":[AccountManager sharedAccountManager].loginModel.userid,@"objective":@"album",@"action":@"albumdetail",@"data":@{@"aid":@"",@"userid":[AccountManager sharedAccountManager].loginModel.userid}} result:^(id model) {
-        
+    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid":[AccountManager sharedAccountManager].loginModel.userid,@"token":[AccountManager sharedAccountManager].loginModel.userid,@"objective":@"album",@"action":@"mydevices",@"data":@{@"userid":[AccountManager sharedAccountManager].loginModel.userid}} result:^(id model) {
+        [self.dataSource addObjectsFromArray:model];
     }];
 
 
@@ -74,7 +73,7 @@ static NSString * cellId = @"newAllubmtabeleviewwcellid";
     zhidingLabel.textColor = [UIColor blackColor];
     zhidingLabel.font = [UIFont systemFontOfSize:13];
     [self.view addSubview:zhidingLabel];    
-
+    
     self.tableView.frame = CGRectMake(0, 180 * W_Hight_Zoom, self.view.width, self.view.height- 180);
     [self.tableView registerClass:[NewAlumbleTableViewCell class] forCellReuseIdentifier:cellId];
     self.tableView.backgroundColor = [UIColor whiteColor];
@@ -83,8 +82,6 @@ static NSString * cellId = @"newAllubmtabeleviewwcellid";
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
 }
-
-
 
 -(void)initUserface{
     
@@ -117,16 +114,16 @@ static NSString * cellId = @"newAllubmtabeleviewwcellid";
     NewAlumbleTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellId];
    // NewalumbModel * model = [[NewalumbModel alloc]init];
    // model.isChange = NO;
-    if (ischange == YES) {
-        cell.rightBtn.selected = YES;
-    }else{
-        cell.rightBtn.selected = NO;
-    }
-    if (firstBtn == YES) {
-        if (indexPath.row == 0) {
-            cell.rightBtn.selected = NO;
-        }
-    }
+//    if (ischange == YES) {
+//        cell.rightBtn.selected = YES;
+//    }else{
+//        cell.rightBtn.selected = NO;
+//    }
+//    if (firstBtn == YES) {
+//        if (indexPath.row == 0) {
+//            cell.rightBtn.selected = NO;
+//        }
+//    }
     
     
     cell.rightBtn.tag = indexPath.row + 12;
@@ -140,11 +137,11 @@ static NSString * cellId = @"newAllubmtabeleviewwcellid";
 //        NewalumbModel * model = [[NewalumbModel alloc]init];
 //       
 //        model.isChange = !model.isChange;
-        ischange = !ischange;
+       // ischange = !ischange;
         [self.tableView reloadData];
     }else{
        // sender.selected = !sender.selected;
-        firstBtn = YES;
+      //  firstBtn = YES;
         [self.tableView reloadData];
         sender.selected = !sender.selected;
     }

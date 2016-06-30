@@ -199,7 +199,7 @@
     
     CheckDeviceModel *checkModel = [CheckDeviceModel modelWithDictionary:(NSDictionary *)self.dataSource[indexPath.row]];
     
-        static NSString * showUserInfoCellIdentifier = @"MydeviceList";
+    static NSString * showUserInfoCellIdentifier = @"MydeviceList";
     MyDeviceTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:showUserInfoCellIdentifier];
     if (!cell) {
         cell = [[[NSBundle mainBundle]loadNibNamed:@"MyDeviceTableViewCell" owner:self options:nil]lastObject];
