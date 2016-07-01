@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-//新建相册
-@interface NewAlbumAdviceModel : NSObject
+
+//新建相册里面设备列表
+@interface NewAlbumAdviceModel : BaseModel
 @property (nonatomic,copy)NSString * aid;
 @property (nonatomic,copy)NSString * albumname;
 @property (nonatomic,copy)NSString * chose;
