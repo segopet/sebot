@@ -17,6 +17,7 @@ static NSString * cellId = @"newAllubmtabeleviewwcellid";
     BOOL  firstBtn;
 }
 @property (nonatomic,strong)UITextField * alumbnameTextfield;
+@property (nonatomic,strong)NSMutableArray * adviceArray;
 
 @end
 
@@ -26,15 +27,20 @@ static NSString * cellId = @"newAllubmtabeleviewwcellid";
     [super viewDidLoad];
     [self setNavTitle:@"新建相册"];
     [UINavigationBar appearance].barTintColor=RED_COLOR;
+    _adviceArray = [NSMutableArray array];
     [self showBarButton:NAV_RIGHT title:@"新建" fontColor:[UIColor whiteColor]];
     self.view.backgroundColor = [UIColor whiteColor];
-   
+    
     [self initUserface];
     self.automaticallyAdjustsScrollViewInsets = NO;
 }
 //新建按钮
 -(void)doRightButtonTouch{
-    [[AFHttpClient sharedAFHttpClient]POST:@"" parameters:@{} result:^(id model) {
+    
+    NSString * str = [_adviceArray componentsJoinedByString:@","];
+    
+    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid":[AccountManager sharedAccountManager].loginModel.userid,@"token":[AccountManager sharedAccountManager].loginModel.userid,@"objective":@"album",@"action":@"add",@"data":@{@"albumname":_alumbnameTextfield.text,@"userid":[AccountManager sharedAccountManager].loginModel.userid,@"dids":str}} result:^(id model) {
+        
         
     }];
 
@@ -42,7 +48,7 @@ static NSString * cellId = @"newAllubmtabeleviewwcellid";
 -(void)setupData{
     [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid":[AccountManager sharedAccountManager].loginModel.userid,@"token":[AccountManager sharedAccountManager].loginModel.userid,@"objective":@"album",@"action":@"mydevices",@"data":@{@"userid":[AccountManager sharedAccountManager].loginModel.userid}} result:^(id model) {
         self.dataSource = model[@"list"];
-
+        
         [self.tableView reloadData];
     }];
 
@@ -115,39 +121,29 @@ static NSString * cellId = @"newAllubmtabeleviewwcellid";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
+    
+    NewAlbumAdviceModel * model = [NewAlbumAdviceModel modelWithDictionary:(NSDictionary *)self.dataSource[indexPath.row]];
+    
     NewAlumbleTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-   // NewalumbModel * model = [[NewalumbModel alloc]init];
-   // model.isChange = NO;
-//    if (ischange == YES) {
-//        cell.rightBtn.selected = YES;
-//    }else{
-//        cell.rightBtn.selected = NO;
-//    }
-//    if (firstBtn == YES) {
-//        if (indexPath.row == 0) {
-//            cell.rightBtn.selected = NO;
-//        }
-//    }
     
-    
+    cell.nameLabel.text = model.deviceremark;
     cell.rightBtn.tag = indexPath.row + 12;
+    cell.rightBtn.selected = NO;
     [cell.rightBtn addTarget:self action:@selector(doRightButtonTouch:) forControlEvents:UIControlEventTouchUpInside];
     
     return cell;
 }
 -(void)doRightButtonTouch:(UIButton *)sender{
     NSInteger i = sender.tag - 12;
-    if (i == 0) {
-//        NewalumbModel * model = [[NewalumbModel alloc]init];
-//       
-//        model.isChange = !model.isChange;
-       // ischange = !ischange;
-        [self.tableView reloadData];
+    NewAlbumAdviceModel * model = [NewAlbumAdviceModel modelWithDictionary:(NSDictionary *)self.dataSource[i]];
+    if (sender.selected == YES) {
+        sender.selected = NO;
+        [_adviceArray removeObject:model.did];
+        
     }else{
-       // sender.selected = !sender.selected;
-      //  firstBtn = YES;
-        [self.tableView reloadData];
-        sender.selected = !sender.selected;
+        sender.selected = YES;
+        [_adviceArray addObject:model.did];
+        
     }
     
 }
