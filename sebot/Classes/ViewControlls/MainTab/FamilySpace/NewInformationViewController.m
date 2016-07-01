@@ -8,6 +8,7 @@
 
 #import "NewInformationViewController.h"
 #import "NewAlumbleTableViewCell.h"
+#import "NewAlbumAdviceModel.h"
 
 static NSString * cellId = @"newAllubmtabeleviewwcellid";
 @interface NewInformationViewController ()
@@ -40,7 +41,9 @@ static NSString * cellId = @"newAllubmtabeleviewwcellid";
 }
 -(void)setupData{
     [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid":[AccountManager sharedAccountManager].loginModel.userid,@"token":[AccountManager sharedAccountManager].loginModel.userid,@"objective":@"album",@"action":@"mydevices",@"data":@{@"userid":[AccountManager sharedAccountManager].loginModel.userid}} result:^(id model) {
-        [self.dataSource addObjectsFromArray:model];
+        self.dataSource = model[@"list"];
+
+        [self.tableView reloadData];
     }];
 
 
@@ -99,7 +102,7 @@ static NSString * cellId = @"newAllubmtabeleviewwcellid";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return self.dataSource.count;
 }
 
 
@@ -111,6 +114,7 @@ static NSString * cellId = @"newAllubmtabeleviewwcellid";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     NewAlumbleTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellId];
    // NewalumbModel * model = [[NewalumbModel alloc]init];
    // model.isChange = NO;
