@@ -9,6 +9,7 @@
 #import "FamilyTeamViewController.h"
 #import "FamilyTeamTableViewCell.h"
 #import "PopView.h"
+#import "FamilyTeamModel.h"
 
 @interface FamilyTeamViewController ()<PopDelegate>
 
@@ -16,6 +17,8 @@
     
     PopView * _popView;
     AppDelegate *app;
+    FamilyTeamModel * famModel;
+    
 }
 
 @end
@@ -30,8 +33,6 @@
     [self showBarButton:NAV_RIGHT title:NSLocalizedString(@"invitation", nil) fontColor:[UIColor redColor]];
     
     self.dataSource =[NSMutableArray array];
-    NSArray * arrName =@[@"Tony",@"Mer",@"Tina"];
-    [self.dataSource addObjectsFromArray:arrName];
     
     app = (AppDelegate *)[UIApplication sharedApplication].delegate;
     _popView = [[PopView alloc] initWithFrame:CGRectMake(0, 0,SCREEN_WIDTH ,SCREEN_HEIGHT)];
@@ -44,10 +45,14 @@
     _popView.delegate = self;
     
     // 家庭成员接口
-    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : [AccountManager sharedAccountManager].loginModel.userid , @"objective":@"device", @"token" : @"1",@"action":@"queryFamilyMember",@"data":@{@"did":@""}} result:^(id model) {
+    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : [AccountManager sharedAccountManager].loginModel.userid , @"objective":@"device", @"token" : @"1",@"action":@"queryFamilyMember",@"data":@{@"did":self.did}} result:^(id model) {
         
-        NSLog(@"%@",model[@"retDesc"]);
-       
+        
+         [self.dataSource addObjectsFromArray:model[@"list"]];
+        
+         NSLog(@"%@",model[@"retDesc"]);
+        
+        [self.tableView reloadData];
     }];
 
     
@@ -58,14 +63,6 @@
 - (void)setupData
 {
     [super setupData];
-    
-}
-
-
-- (void)setupView
-{
-    [super setupView];
-    
     
     self.tableView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     // self.tableView.scrollEnabled = NO;
@@ -85,6 +82,17 @@
         [self.tableView setLayoutMargins:UIEdgeInsetsMake(0,0,0,0)];
     }
 
+}
+
+
+- (void)setupView
+{
+    [super setupView];
+    
+    
+   
+    
+    
     
 }
 
@@ -113,7 +121,7 @@
     NSLog(@"33");
     
     // 管理员邀请接口
-    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : [AccountManager sharedAccountManager].loginModel.userid , @"objective":@"device", @"token" : @"1",@"action":@"inviteRequest",@"data":@{@"userid":[AccountManager sharedAccountManager].loginModel.userid,@"phone":@"9000000006",@"deviceno":@""}} result:^(id model) {
+    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : [AccountManager sharedAccountManager].loginModel.userid , @"objective":@"device", @"token" : @"1",@"action":@"inviteRequest",@"data":@{@"userid":[AccountManager sharedAccountManager].loginModel.userid,@"phone": _popView.numberLable.text,@"deviceno":self.deviceNum}} result:^(id model) {
         
         NSLog(@"%@",model[@"retDesc"]);
         [_popView removeFromSuperview];
@@ -145,6 +153,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
+    famModel =[FamilyTeamModel modelWithDictionary:(NSDictionary *)self.dataSource[indexPath.row]];
+
     static NSString * showUserInfoCellIdentifier = @"MyFamilyList";
     FamilyTeamTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:showUserInfoCellIdentifier];
     if (!cell) {
@@ -152,7 +162,9 @@
         cell = [[[NSBundle mainBundle]loadNibNamed:@"FamilyTeamTableViewCell" owner:self options:nil]lastObject];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.nameLable.text = self.dataSource[indexPath.row];
+    cell.nameLable.text = famModel.nickname;
+    [cell.headImage sd_setImageWithURL:[NSURL URLWithString:famModel.headportrait] placeholderImage:[UIImage imageNamed:@"APPImgae"]];
+    
     cell.moveBtn.tag = 1000+indexPath.row;
     cell.transferBtn.tag = 2000+indexPath.row;
     [cell.moveBtn addTarget:self  action:@selector(moveMetod:) forControlEvents:UIControlEventTouchUpInside];
@@ -180,13 +192,27 @@
 {
     
     NSLog(@"======%ld",sender.tag-1000);
-    
+    NSInteger num = sender.tag -1000;
+    famModel =[FamilyTeamModel modelWithDictionary:(NSDictionary *)self.dataSource[num]];
    // 管理员移除用户
-    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : [AccountManager sharedAccountManager].loginModel.userid , @"objective":@"device", @"token" : @"1",@"action":@"remove",@"data":@{@"admin":@"1",@"usrid":@"9000000006",@"did":@""}} result:^(id model) {
+     NSString * str =[NSString stringWithFormat:@"你确认移除成员%@吗",famModel.accountnumber];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"成员移除" message:str preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Sure", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         
-        NSLog(@"%@",model[@"retDesc"]);
-       
-    }];
+        // 操作为更改权限
+        
+        [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : [AccountManager sharedAccountManager].loginModel.userid , @"objective":@"device", @"token" : @"1",@"action":@"remove",@"data":@{@"admin":[AccountManager sharedAccountManager].loginModel.userid,@"usrid":self.dataSource[0][@"userid"],@"did":famModel.did}} result:^(id model) {
+            
+            [self showSuccessHudWithHint:model[@"retDesc"]];
+            [self.tableView reloadData];
+            
+        }];
+        
+        
+    }]];
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleDefault handler:nil]];
+    [self presentViewController:alertController animated:true completion:nil];
     
     
     
@@ -199,21 +225,8 @@
 
 - (void)transferMethod:(UIButton *)sender
 {
-    
-    // 转让接口
-    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : [AccountManager sharedAccountManager].loginModel.userid , @"objective":@"device", @"token" : @"1",@"action":@"transfer",@"data":@{@"admin":@"1",@"usrid":@"9000000006",@"did":@""}} result:^(id model) {
-        
-        NSLog(@"%@",model[@"retDesc"]);
-        
-    }];
-
-    
-    
-    
-    
-    // 提示框 操作
-     NSLog(@"======%ld",sender.tag-2000);
-    [self mesaggTitle:nil informationTitle:nil];
+    NSInteger  num  = sender.tag -2000;
+    [self mesaggTitle:nil informationTitle:nil terger:num];
     
     
 }
@@ -256,23 +269,29 @@
  *  @param title 提示副本
  */
 
-- (void)mesaggTitle:(NSString *)title informationTitle:(NSString *)title1
+- (void)mesaggTitle:(NSString *)title informationTitle:(NSString *)title1 terger:(NSInteger)sender
 {
+    famModel =[FamilyTeamModel modelWithDictionary:(NSDictionary *)self.dataSource[sender]];
     
+    NSString * str =[NSString stringWithFormat:@"你确认把管理员转让给%@吗",famModel.accountnumber];
     
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"管理员转让" message:@"你确定将管理员权限转让给余磊吗" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"管理员转让" message:str preferredStyle:UIAlertControllerStyleAlert];
     [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Sure", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         
         // 操作为更改权限
-        NSLog(@"223232");
+
+            // 转让接口
+            [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : [AccountManager sharedAccountManager].loginModel.userid , @"objective":@"device", @"token" : @"1",@"action":@"transfer",@"data":@{@"admin":self.dataSource[0][@"userid"],@"userid":famModel.userid,@"did":famModel.did}} result:^(id model) {
+        
+
+                [self showSuccessHudWithHint:model[@"retDesc"]];
+                [self.tableView reloadData];
+                
+            }];
         
     }]];
     
     [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleDefault handler:nil]];
-    
-
-    
-    
     [self presentViewController:alertController animated:true completion:nil];
     
 }

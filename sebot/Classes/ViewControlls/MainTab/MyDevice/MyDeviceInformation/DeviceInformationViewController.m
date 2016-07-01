@@ -294,6 +294,8 @@
      else if (indexPath.row == 2)
      {
          FamilyTeamViewController * famVC =[[FamilyTeamViewController alloc]initWithNibName:@"FamilyTeamViewController" bundle:nil];
+         famVC.deviceNum = checkModel.deviceno;
+         famVC.did = checkModel.did;
          [self.navigationController pushViewController:famVC animated:YES];
          
          

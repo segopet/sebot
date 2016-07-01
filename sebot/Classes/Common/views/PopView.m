@@ -55,7 +55,7 @@
         [viewBG addSubview:_handLable];
         
         // 设备号
-        _numberLable =[[UILabel alloc]initWithFrame:CGRectMake(20, 55, 80, 30)];
+        _numberLable =[[UILabel alloc]initWithFrame:CGRectMake(10, 55, 80, 30)];
         _numberLable.text =NSLocalizedString(@"DVDevicenum", nil);
         _numberLable.font =[UIFont systemFontOfSize:18];
         _numberLable.textColor =[UIColor blackColor];
