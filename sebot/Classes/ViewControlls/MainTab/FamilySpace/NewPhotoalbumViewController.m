@@ -13,6 +13,9 @@
 @interface NewPhotoalbumViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic,strong)NSMutableArray * datasouce;
 @property (nonatomic,strong) UICollectionView *colView;
+@property (nonatomic,strong)UIView * downView;
+
+
 @end
 
 @implementation NewPhotoalbumViewController
@@ -114,19 +117,35 @@
         NewInformationViewController * haha = [[NewInformationViewController alloc]init];
         [self.navigationController pushViewController:haha animated:NO];
     }else{
-        NSLog(@"%ld",indexPath.row);
+        [self takePhoto];
         
     }
-    
-    
 }
 
 -(void)takePhoto{
+    UIButton * bigBtn = [[UIButton alloc]initWithFrame:self.view.frame];
+    bigBtn.backgroundColor = [UIColor lightGrayColor];
+    bigBtn.alpha = 0.6;
+    [[UIApplication sharedApplication].keyWindow addSubview:bigBtn];
+    [bigBtn addTarget:self action:@selector(bigButtonHiddin:) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    
+    
+    
+}
 
+-(void)bigButtonHiddin:(UIButton *)sender{
+    sender.hidden = YES;
     
 
-
 }
+
+
+
+
+
+
 
 
 @end

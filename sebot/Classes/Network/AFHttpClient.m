@@ -43,7 +43,7 @@ singleton_implementation(AFHttpClient)
 }
 
 
-- (void)POST:(NSString *)URLString parameters:(id)parameters result:(void (^)( id model))result {
+- (void)POST:(NSString *)URLString parameters:(id)parameters result:(void (^)(BaseModel * model))result {
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     

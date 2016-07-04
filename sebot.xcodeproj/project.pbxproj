@@ -130,6 +130,7 @@
 		7D4B10251D12A6C10095D463 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4B10231D12A6C10095D463 /* user.png */; };
 		7D509D7D1D1B86A2004E3059 /* NewInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D509D7C1D1B86A2004E3059 /* NewInformationViewController.m */; };
 		7D509D811D1BB685004E3059 /* NewAlumbleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D509D801D1BB685004E3059 /* NewAlumbleTableViewCell.m */; };
+		7D72F5761D2A36060076AE67 /* AFHttpClient+Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D72F5751D2A36060076AE67 /* AFHttpClient+Test.m */; };
 		7DC627681D26086400EB2EB5 /* BSModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DC627671D26086400EB2EB5 /* BSModel.m */; };
 		7DD7D1D11D0FE21B0002CD2E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD7D1D01D0FE21B0002CD2E /* AppDelegate.m */; };
 		7DE523941D13D53800C5B5EF /* ForegetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE523931D13D53800C5B5EF /* ForegetPasswordViewController.m */; };
@@ -325,6 +326,8 @@
 		7D509D7C1D1B86A2004E3059 /* NewInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewInformationViewController.m; sourceTree = "<group>"; };
 		7D509D7F1D1BB685004E3059 /* NewAlumbleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewAlumbleTableViewCell.h; sourceTree = "<group>"; };
 		7D509D801D1BB685004E3059 /* NewAlumbleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewAlumbleTableViewCell.m; sourceTree = "<group>"; };
+		7D72F5741D2A36060076AE67 /* AFHttpClient+Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+Test.h"; sourceTree = "<group>"; };
+		7D72F5751D2A36060076AE67 /* AFHttpClient+Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+Test.m"; sourceTree = "<group>"; };
 		7DC627661D26086400EB2EB5 /* BSModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSModel.h; sourceTree = "<group>"; };
 		7DC627671D26086400EB2EB5 /* BSModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSModel.m; sourceTree = "<group>"; };
 		7DD7D1CF1D0FE21B0002CD2E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -426,6 +429,8 @@
 				572DEE5C1D1162E100035228 /* AFHttpClient.m */,
 				7D2ECE7E1D192022003181A9 /* AFHttpClient+Account.h */,
 				7D2ECE7F1D192022003181A9 /* AFHttpClient+Account.m */,
+				7D72F5741D2A36060076AE67 /* AFHttpClient+Test.h */,
+				7D72F5751D2A36060076AE67 /* AFHttpClient+Test.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1198,6 +1203,7 @@
 				345565DE1D12A5D800B6E562 /* PerInformationTableViewCell.m in Sources */,
 				345565861D113A7900B6E562 /* PopStartView.m in Sources */,
 				3455653F1D10FE3E00B6E562 /* NSString+URLEncoding.m in Sources */,
+				7D72F5761D2A36060076AE67 /* AFHttpClient+Test.m in Sources */,
 				349263551D13E5F3006C2FD9 /* PersonTableViewCell.m in Sources */,
 				345565501D10FE4800B6E562 /* UIImage-Extensions.m in Sources */,
 				345565611D10FF0700B6E562 /* UIView+SDAutoLayout.m in Sources */,

@@ -9,6 +9,7 @@
 #import "NewInformationViewController.h"
 #import "NewAlumbleTableViewCell.h"
 #import "NewAlbumAdviceModel.h"
+#import "AFHttpClient+Test.h"
 
 static NSString * cellId = @"newAllubmtabeleviewwcellid";
 @interface NewInformationViewController ()
@@ -46,11 +47,15 @@ static NSString * cellId = @"newAllubmtabeleviewwcellid";
 
 }
 -(void)setupData{
-    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid":[AccountManager sharedAccountManager].loginModel.userid,@"token":[AccountManager sharedAccountManager].loginModel.userid,@"objective":@"album",@"action":@"mydevices",@"data":@{@"userid":[AccountManager sharedAccountManager].loginModel.userid}} result:^(id model) {
-        self.dataSource = model[@"list"];
+    [[AFHttpClient sharedAFHttpClient]testWithuserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid complete:^(BaseModel *model) {
+        [self.dataSource addObjectsFromArray:model.list];
         
-        [self.tableView reloadData];
     }];
+//    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid":[AccountManager sharedAccountManager].loginModel.userid,@"token":[AccountManager sharedAccountManager].loginModel.userid,@"objective":@"album",@"action":@"mydevices",@"data":@{@"userid":[AccountManager sharedAccountManager].loginModel.userid}} result:^(id model) {
+//        self.dataSource = model[@"list"];
+//        
+//        [self.tableView reloadData];
+//    }];
 
 
 
@@ -122,11 +127,11 @@ static NSString * cellId = @"newAllubmtabeleviewwcellid";
 {
     
     
-    NewAlbumAdviceModel * model = [NewAlbumAdviceModel modelWithDictionary:(NSDictionary *)self.dataSource[indexPath.row]];
+    //NewAlbumAdviceModel * model = [NewAlbumAdviceModel modelWithDictionary:(NSDictionary *)self.dataSource[indexPath.row]];
     
     NewAlumbleTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     
-    cell.nameLabel.text = model.deviceremark;
+    //cell.nameLabel.text = model.deviceremark;
     cell.rightBtn.tag = indexPath.row + 12;
     cell.rightBtn.selected = NO;
     [cell.rightBtn addTarget:self action:@selector(doRightButtonTouch:) forControlEvents:UIControlEventTouchUpInside];
@@ -135,16 +140,16 @@ static NSString * cellId = @"newAllubmtabeleviewwcellid";
 }
 -(void)doRightButtonTouch:(UIButton *)sender{
     NSInteger i = sender.tag - 12;
-    NewAlbumAdviceModel * model = [NewAlbumAdviceModel modelWithDictionary:(NSDictionary *)self.dataSource[i]];
-    if (sender.selected == YES) {
-        sender.selected = NO;
-        [_adviceArray removeObject:model.did];
-        
-    }else{
-        sender.selected = YES;
-        [_adviceArray addObject:model.did];
-        
-    }
+  //  NewAlbumAdviceModel * model = [NewAlbumAdviceModel modelWithDictionary:(NSDictionary *)self.dataSource[i]];
+//    if (sender.selected == YES) {
+//        sender.selected = NO;
+//        [_adviceArray removeObject:model.did];
+//        
+//    }else{
+//        sender.selected = YES;
+//        [_adviceArray addObject:model.did];
+//        
+//    }
     
 }
 
