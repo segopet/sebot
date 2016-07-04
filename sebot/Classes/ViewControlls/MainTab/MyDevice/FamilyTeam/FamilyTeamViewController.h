@@ -10,4 +10,7 @@
 
 @interface FamilyTeamViewController : BaseTabViewController
 
+@property (nonatomic,strong)NSString * deviceNum;
+@property (nonatomic,strong)NSString * did;
+
 @end

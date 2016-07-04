@@ -18,6 +18,8 @@
 #import "Definition.h"
 #import "Notification.h"
 #import "AppUtil.h"
+#import "SephoneManager.h"
+#include "sephone/sephonecore.h"
 
 #import "UIView+Sizes.h"
 #import "UIView+SDAutoLayout.h"

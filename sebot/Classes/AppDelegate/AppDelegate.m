@@ -10,6 +10,7 @@
 #import "AppDelegate+Launcher.h"
 #import "AppDelegate+Sephone.h"
 #import "AppDelegate+BaiduPush.h"
+#import "IQKeyboardManager.h"
 
 static BOOL isBackGroundActivateApplication;
 @interface AppDelegate ()
@@ -20,6 +21,12 @@ static BOOL isBackGroundActivateApplication;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    
+    //点击背景收起键盘
+    [[IQKeyboardManager sharedManager]setShouldResignOnTouchOutside:YES];
+    //影藏键盘上的自定义工具栏
+    [[IQKeyboardManager sharedManager]setEnableAutoToolbar:NO];
     
     // 百度
     [self BaiduPush:application didFinishLaunchingWithOptions:launchOptions];

@@ -17,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="323" height="59"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tab_personal_press.png" translatesAutoresizingMaskIntoConstraints="NO" id="0uV-iX-9WR">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="APPImgae.png" translatesAutoresizingMaskIntoConstraints="NO" id="0uV-iX-9WR">
                         <rect key="frame" x="8" y="4" width="51" height="51"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="51" id="dmN-mO-D0s"/>
@@ -89,6 +89,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="tab_personal_press.png" width="24" height="24"/>
+        <image name="APPImgae.png" width="268" height="259"/>
     </resources>
 </document>
