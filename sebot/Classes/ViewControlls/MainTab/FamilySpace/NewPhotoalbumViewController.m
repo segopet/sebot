@@ -129,7 +129,9 @@
     [[UIApplication sharedApplication].keyWindow addSubview:bigBtn];
     [bigBtn addTarget:self action:@selector(bigButtonHiddin:) forControlEvents:UIControlEventTouchUpInside];
     
-    
+    _downView = [[UIView alloc]initWithFrame:CGRectMake(CGRectGetMinX(self.view.frame), CGRectGetMaxY(self.view.frame) - 120, 375 * W_Wide_Zoom, 100 * W_Hight_Zoom)];
+    _downView.backgroundColor = [UIColor blueColor];
+    [[UIApplication sharedApplication].keyWindow addSubview:_downView];
     
     
     
@@ -137,7 +139,7 @@
 
 -(void)bigButtonHiddin:(UIButton *)sender{
     sender.hidden = YES;
-    
+    _downView.hidden = YES;
 
 }
 
