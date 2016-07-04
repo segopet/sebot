@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "BSModel.h"
 //新建相册里面设备列表
-@interface NewAlbumAdviceModel : BaseModel
+@interface NewAlbumAdviceModel : JSONModel
 @property (nonatomic,copy)NSString * aid;
 @property (nonatomic,copy)NSString * albumname;
 @property (nonatomic,copy)NSString * chose;
