@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "BSModel.h"
 //新建相册里面设备列表
 @interface NewAlbumAdviceModel : BaseModel
 @property (nonatomic,copy)NSString * aid;
 @property (nonatomic,copy)NSString * albumname;
 @property (nonatomic,copy)NSString * chose;
-@property (nonatomic,copy)NSString * devicermark;
+@property (nonatomic,copy)NSString * deviceremark;
 @property (nonatomic,copy)NSString * did;
 
 

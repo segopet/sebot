@@ -37,7 +37,7 @@
         
         [_datasouce addObject:array[0]];
         [_datasouce addObjectsFromArray:model[@"list"]];
-       
+        
         [_colView reloadData];
     }];
 
@@ -76,16 +76,10 @@
     NewAlbumModel * model = [NewAlbumModel modelWithDictionary:(NSDictionary *)_datasouce[indexPath.row ]];
     static NSString *cellID = @"myCell";
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellID forIndexPath:indexPath];
-//    if (indexPath.row < 1) {
-//        cell.backgroundColor = [UIColor redColor];
-//    }else{
-//        cell.backgroundColor = [UIColor blueColor];
-//    }
-//
+    
     if (indexPath.row < 1) {
         UIImageView * image = [[UIImageView alloc]initWithFrame:cell.bounds];
         image.backgroundColor = [UIColor blueColor];
-      //  [image sd_setImageWithURL:imageUrl placeholderImage:nil];
         [cell addSubview:image];
 
     }else{
@@ -121,11 +115,18 @@
         [self.navigationController pushViewController:haha animated:NO];
     }else{
         NSLog(@"%ld",indexPath.row);
+        
     }
     
     
 }
 
+-(void)takePhoto{
+
+    
+
+
+}
 
 
 @end

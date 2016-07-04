@@ -13,7 +13,8 @@
 #import "UIImageView+WebCache.h"
 #import "PersonModel.h"
 #import "UIImage-Extensions.h"
-@interface PersonCenterViewcontroller()
+
+@interface PersonCenterViewcontroller()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 {
     
@@ -26,7 +27,7 @@
     
     
 }
-
+@property(nonatomic,strong)UIImagePickerController * imagePicker;
 @end
 
 @implementation PersonCenterViewcontroller
@@ -37,6 +38,9 @@
     [super viewDidLoad];
     [self setNavTitle: NSLocalizedString(@"tabPerson", nil)];
     self.view.backgroundColor = LIGHT_GRAY_COLOR;
+    _imagePicker =[[UIImagePickerController alloc]init];
+    _imagePicker.delegate= self;
+    
     self.dataSource =[NSMutableArray array];
     NSArray * arr =@[@"账号",@"昵称",@"我的相册",@"修改密码",@"关于"];
     [self.dataSource addObjectsFromArray:arr];
@@ -135,11 +139,111 @@
 - (void)handleSingleTapFrom:(UITapGestureRecognizer *)sender
 {
     
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"修改头像" message:nil preferredStyle:  UIAlertControllerStyleActionSheet];
     
-    NSLog(@"111");
+    [alert addAction:[UIAlertAction actionWithTitle:@"相册中选择" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        //点击按钮的响应事件；
+        
+        [self openPhotoPram];
+        
+    }]];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        //点击按钮的响应事件；
+       
+        [self getPhoto];
+        
+    }]];
+    [self presentViewController:alert animated:true completion:nil];
     
 }
 
+/**
+ *  相册
+ */
+- (void)openPhotoPram
+{
+    NSArray * mediaTypers = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
+        _imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        _imagePicker.mediaTypes = @[mediaTypers[0],mediaTypers[1]];
+        _imagePicker.allowsEditing = YES;
+    }
+    [self presentViewController:_imagePicker animated:YES completion:nil];
+    
+    
+}
+
+
+/**
+ *  拍照
+ */
+- (void)getPhoto
+{
+    
+    NSArray * mediaty = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera];
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        _imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        _imagePicker.mediaTypes = @[mediaty[0]];
+        //设置相机模式：1摄像2录像
+        _imagePicker.cameraCaptureMode = UIImagePickerControllerCameraCaptureModePhoto;
+        //使用前置还是后置摄像头
+        _imagePicker.cameraDevice = UIImagePickerControllerCameraDeviceRear;
+        //闪光模式
+        _imagePicker.cameraFlashMode = UIImagePickerControllerCameraFlashModeAuto;
+        _imagePicker.allowsEditing = YES;
+    }else
+    {
+        NSLog(@"打开摄像头失败");
+    }
+    [self presentViewController:_imagePicker animated:YES completion:nil];
+}
+
+#pragma Marr ------ UIImagePickerControllerDelegate
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+
+    UIImage * showImage = info[UIImagePickerControllerEditedImage];
+    NSLog(@"wocaocao:%@",showImage);
+    _heandBtn.image = showImage;
+    [self updateHeadImage:showImage];
+    [self dismissViewControllerAnimated:YES completion:nil];
+
+
+
+}
+
+
+/**
+ * 上传头像
+ */
+
+- (void)updateHeadImage:(UIImage *)source
+{
+    NSDateFormatter * formater =[[NSDateFormatter alloc]init];
+    NSData * data = UIImageJPEGRepresentation(source,1.0f);
+    
+    [formater setDateFormat:@"yyyy-MM-dd-HH:mm:ss"];
+    [formater stringFromDate:[NSDate date]];
+    NSString *picname1 = [NSString stringWithFormat:@"%@.jpg",[formater stringFromDate:[NSDate date]]];
+    
+    
+    NSString * pictureDataString = [data base64EncodedStringWithOptions:0];
+    // NSLog(@"%@",pictureDataString);
+    
+    NSString *  picstr = [NSString stringWithFormat:@"[{\"%@\":\"%@\",\"%@\":\"%@\"}]",@"name",picname1,@"content",pictureDataString];
+    
+    NSString * str =  [AccountManager sharedAccountManager].loginModel.userid;
+    [[AFHttpClient sharedAFHttpClient] POST:@"sebot/moblie/forward" parameters:@{@"userid" : str , @"objective":@"user", @"token" : @"1" , @"action" : @"modifyHeadportrait", @"data" : @{@"userid" : str,@"images":picstr}} result:^(id model) {
+        
+        NSLog(@"%@",model);
+    
+    }];
+
+    
+    
+}
 
 #pragma Marr ------ UITableViewDelegate
 
