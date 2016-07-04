@@ -58,12 +58,15 @@ singleton_implementation(AFHttpClient)
        
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         
-        if ([responseObject[@"retCode"] isEqualToString:@"SUCCESS"]) {
+        BaseModel* model = [[BaseModel alloc] initWithDictionary:responseObject error:nil];
+        
+        if ([model.retCode isEqualToString:@"SUCCESS"]) {
+            
             if (result) {
-                result(responseObject);
+                result(model);
             }
         }else{
-            [[AppUtil appTopViewController] showHint:responseObject[@"retDesc"]];
+            [[AppUtil appTopViewController] showHint:model.retDesc];
             
             if (result) {
                 result(nil);

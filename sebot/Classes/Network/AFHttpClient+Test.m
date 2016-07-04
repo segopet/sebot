@@ -20,7 +20,13 @@
     parms[@"data"] =dataparms;
     
     [self POST:@"sebot/moblie/forward" parameters:parms result:^(BaseModel * model) {
+        
         model.list = [NewAlbumAdviceModel arrayOfModelsFromDictionaries:model.list];
+        
+        if (model) {
+            completeBlock(model);
+        }
+        
     }];
     
     
