@@ -68,18 +68,9 @@
     self.dataSource =[NSMutableArray array];
    
     
-    [[AFHttpClient sharedAFHttpClient] POST:@"sebot/moblie/forward" parameters:@{@"userid" :  [AccountManager sharedAccountManager].loginModel.userid , @"objective":@"device", @"token" : @"1" , @"action" : @"queryUserDeviceInfo", @"data" : @{@"userid" :  [AccountManager sharedAccountManager].loginModel.userid}} result:^(id model) {
+    [[AFHttpClient sharedAFHttpClient] POST:@"sebot/moblie/forward" parameters:@{@"userid" :  [AccountManager sharedAccountManager].loginModel.userid , @"objective":@"device", @"token" : @"1" , @"action" : @"queryUserDeviceInfo", @"data" : @{@"userid" :  [AccountManager sharedAccountManager].loginModel.userid}} result:^(BaseModel * model) {
         
-        [self.dataSource addObjectsFromArray:model[@"list"]];
-        
-        //  测试
-        /*
-        for (CheckDeviceModel * checkModel in  self.dataSource) {
-            NSLog(@"===%@",checkModel);
-            
-        }
-         */
-        
+        [self.dataSource addObjectsFromArray:model.list];
         
         [self.tableView reloadData];
     }];

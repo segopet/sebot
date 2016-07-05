@@ -92,6 +92,9 @@
                         <constraint firstAttribute="height" constant="40" id="Tpp-Dt-OQh"/>
                     </constraints>
                     <state key="normal" backgroundImage="left_off.png"/>
+                    <connections>
+                        <action selector="leftBtn:" destination="-1" eventType="touchUpInside" id="WBr-hU-fkV"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YEb-rF-qaJ">
                     <rect key="frame" x="177" y="395" width="16" height="40"/>

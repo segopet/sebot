@@ -42,11 +42,11 @@
     [self.dicSource addObjectsFromArray:arrName];
 
     // 查询设备信息
-    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : [AccountManager sharedAccountManager].loginModel.userid , @"objective":@"device", @"token" : @"1",@"action":@"queryByIdDeviceInfo",@"data":@{@"userid":[AccountManager sharedAccountManager].loginModel.userid,@"did":self.didNumber}} result:^(id model) {
+    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : [AccountManager sharedAccountManager].loginModel.userid , @"objective":@"device", @"token" : @"1",@"action":@"queryByIdDeviceInfo",@"data":@{@"userid":[AccountManager sharedAccountManager].loginModel.userid,@"did":self.didNumber}} result:^(BaseModel * model) {
         
-        self.dataSource =model[@"retVal"];
+        self.dataSource =model.retVal;
     
-        NSString * str = model[@"retVal"][@"status"];
+        NSString * str = model.retVal[@"status"];
         
         
         // 设备状态 UIbutton
@@ -237,11 +237,11 @@
  */
 
 - (IBAction)startVideoBtn:(UIButton *)sender {
+
+    CheckDeviceModel *checkModel = [CheckDeviceModel modelWithDictionary:(NSDictionary *)self.dataSource];
+
+   [self sipCall:checkModel.deviceno sipName:nil];
     
-//    InCallViewController * InCallVC =[[InCallViewController alloc
-//                                       ]initWithNibName:@"InCallViewController" bundle:nil];
-//
-//    [self presentViewController:InCallVC animated:YES completion:nil];
     
 }
 
@@ -411,5 +411,21 @@
     }
 }
 
+#pragma mark - Event Functions
+
+//  call
+//
+/*
+ @dialerNumber 别人的账号
+ @sipName 自己的账号
+ @ 视频通话
+ */
+- (void)sipCall:(NSString*)dialerNumber sipName:(NSString *)sipName
+{
+    
+    NSString *  displayName  =nil;
+    [[SephoneManager instance] call:dialerNumber displayName:displayName transfer:FALSE];
+    
+}
 
 @end
