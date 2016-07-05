@@ -10,38 +10,58 @@
 
 @implementation AFHttpClient (Account)
 
+-(void)loginWithUserName:(NSString *)userName password:(NSString *)password userid:(NSString *)userid complete:(void (^)(ResponseModel *))completeBlock{
 
-
--(void)loginWithUserName:(NSString *)userName password:(NSString *)password complete:(void (^)(BaseModel *))completeBlock{
+//     [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid":@"",@"token":@"",@"objective":@"user",@"action":@"login",@"data":@{@"accountnumber":_accountTextfield.text,@"password":_passwordTextfield.text,@"model":@"6s",@"brand":@"6s",@"version":@"9.3.2",@"type":@"ios",@"channelid":@""}} result:^(BaseModel * model) {
+    NSMutableDictionary * params = [[NSMutableDictionary alloc]init];
+    params[@"userid"] = userid;
+    params[@"token"] = userid;
+    params[@"objective"] = @"user";
+    params[@"action"] = @"login";
+    //data里面传的东西
+    NSMutableDictionary * dataParams = [[NSMutableDictionary alloc]init];
+    dataParams[@"accountnumber"] = userName;
+    dataParams[@"password"] = password;
+    dataParams[@"model"] = @"6s";
+    dataParams[@"brand"] = @"6s";
+    dataParams[@"version"] = @"9.3";
+    dataParams[@"type"] = @"ios";
+    dataParams[@"channelid"] = @"";
     
-    NSMutableDictionary* params = [NSMutableDictionary dictionary];
+    params[@"data"] = dataParams;
     
-    params[@"common"] = @"memberLogin";
-    
-    params[@"accountnumber"] = userName;
-    params[@"password"] = password;
-    
-    params[@"model"] = [[UIDevice currentDevice] model];
-    params[@"brand"] = @"iphone";
-    params[@"version"] = [[UIDevice currentDevice] systemVersion];
-    params[@"imei"] = @"";
-    params[@"imsi"] = @"";
-    params[@"type"] = @"ios";
-
-    [self POST:@"clientAction.do" parameters:@{@"userid":@"",@"token":@"",@"objective":@"user",@"action":@"login",@"data":@{@"accountnumber":userName,@"password":password,@"model":@"6s",@"brand":@"6s",@"version":@"9.3.2",@"type":@"ios",@"channelid":@""}} result:^(BaseModel *model) {
-        if (model){
-            model.list = [LoginModel arrayOfModelsFromDictionaries:model.list];
-        }
-        if (completeBlock) {
+    [self POST:@"sebot/moblie/forward" parameters:params result:^(ResponseModel *model) {
+       
+        
+        if (model) {
             completeBlock(model);
         }
+
+        
     }];
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
 
 
 
 
 
 }
+
+
 
 
 

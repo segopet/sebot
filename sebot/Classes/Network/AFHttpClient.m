@@ -43,7 +43,7 @@ singleton_implementation(AFHttpClient)
 }
 
 
-- (void)POST:(NSString *)URLString parameters:(id)parameters result:(void (^)(BaseModel * model))result {
+- (void)POST:(NSString *)URLString parameters:(id)parameters result:(void (^)(ResponseModel * model))result {
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
@@ -58,7 +58,7 @@ singleton_implementation(AFHttpClient)
        
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         
-        BaseModel* model = [[BaseModel alloc] initWithDictionary:responseObject error:nil];
+        ResponseModel* model = [[ResponseModel alloc] initWithDictionary:responseObject error:nil];
         
         if ([model.retCode isEqualToString:@"SUCCESS"]) {
             
@@ -86,7 +86,7 @@ singleton_implementation(AFHttpClient)
 
 - (void)test {
     
-    [self POST:@"sebot/moblie/forward" parameters:@{@"userid" : @"1" , @"token" : @"1" , @"objective" : @"user" , @"action" : @"queryUser", @"data" : @{@"userid" : @"1"}} result:^(BaseModel * model) {
+    [self POST:@"sebot/moblie/forward" parameters:@{@"userid" : @"1" , @"token" : @"1" , @"objective" : @"user" , @"action" : @"queryUser", @"data" : @{@"userid" : @"1"}} result:^(ResponseModel * model) {
         
         NSLog(@"%@", model);
         

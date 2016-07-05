@@ -9,6 +9,11 @@
 #import "NewAlbumModel.h"
 
 @implementation NewAlbumModel
+
++ (BOOL)propertyIsOptional:(NSString *)propertyName {
+    return YES;
+}
+
 #pragma  mark --  测试  测试
 
 #pragma mark -- 通过字符串来创建该字符串的Setter方法，并返回

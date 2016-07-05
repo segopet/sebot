@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface FamilyTeamModel : BaseModel
+@interface FamilyTeamModel : ResponseModel
 
 @property (nonatomic,copy)NSString *accountnumber;//
 @property (nonatomic,copy)NSString *deviceno;
