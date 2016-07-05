@@ -13,5 +13,6 @@
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *ActView;
 @property (strong, nonatomic) IBOutlet UIButton *leftBtn;
 @property (strong, nonatomic) IBOutlet UIButton *RightBtn;
+- (void)setCall:(SephoneCall *)acall;
 
 @end
