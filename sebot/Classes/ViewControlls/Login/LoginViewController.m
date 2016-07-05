@@ -11,6 +11,7 @@
 #import "ForegetPasswordViewController.h"
 #import "AFHttpClient.h"
 #import "LoginModel.h"
+#import "AFHttpClient+Account.h"
 @interface LoginViewController ()
 {
     NSMutableArray * datasouce;
@@ -97,24 +98,22 @@
 
 }
 -(void)loginButtonTouch{
-    
+//    
     [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid":@"",@"token":@"",@"objective":@"user",@"action":@"login",@"data":@{@"accountnumber":_accountTextfield.text,@"password":_passwordTextfield.text,@"model":@"6s",@"brand":@"6s",@"version":@"9.3.2",@"type":@"ios",@"channelid":@""}} result:^(BaseModel * model) {
         
         if ([model.retCode isEqualToString:@"SUCCESS"]) {
             LoginModel * loginmodel = [LoginModel modelWithDictionary:model.retVal];
+           // LoginModel * loginmodel = model.retVal;
             
             [[AccountManager sharedAccountManager] login:loginmodel];
               [[NSNotificationCenter defaultCenter] postNotificationName:NotificationLoginStateChange object:@YES];
         }
-      
-        
-        
-       
-}];
     
-
-
-
+}];
+//    [[AFHttpClient sharedAFHttpClient]loginWithUserName:_accountTextfield.text password:_passwordTextfield.text userid:@"" complete:^(BaseModel *model) {
+//        
+//    }];
+//
 
 }
 

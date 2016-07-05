@@ -6,9 +6,9 @@
 //  Copyright © 2016年 sego. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <MojoDatabase/MojoDatabase.h>
 //相册列表model
-@interface NewAlbumModel : NSObject
+@interface NewAlbumModel : JSONModel
 + (instancetype)modelWithDictionary: (NSDictionary *) data;
 @property (nonatomic,strong)NSString * aid;
 @property (nonatomic,strong)NSString * albumname;

@@ -9,6 +9,7 @@
 #import "NewPhotoalbumViewController.h"
 #import "NewInformationViewController.h"
 #import "NewAlbumModel.h"
+#import "AFHttpClient+Test.h"
 
 @interface NewPhotoalbumViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic,strong)NSMutableArray * datasouce;
@@ -31,19 +32,29 @@
 }
 -(void)request{
     //查询接口
-    NSLog(@"%@",[AccountManager sharedAccountManager].loginModel.userid);
-    
-    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid":[AccountManager sharedAccountManager].loginModel.userid,@"token":[AccountManager sharedAccountManager].loginModel.userid,@"objective":@"album",@"action":@"queryAlbum",@"data":@{@"userid":[AccountManager sharedAccountManager].loginModel.userid}} result:^(id model) {
-        NSLog(@"%@",model);
-        
-        NSArray * array = model[@"list"];
-        
-        [_datasouce addObject:array[0]];
-        [_datasouce addObjectsFromArray:model[@"list"]];
-        
-        [_colView reloadData];
-    }];
+//    NSLog(@"%@",[AccountManager sharedAccountManager].loginModel.userid);
+//    
+//    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid":[AccountManager sharedAccountManager].loginModel.userid,@"token":[AccountManager sharedAccountManager].loginModel.userid,@"objective":@"album",@"action":@"queryAlbum",@"data":@{@"userid":[AccountManager sharedAccountManager].loginModel.userid}} result:^(id model) {
+//        NSLog(@"%@",model);
+//        
+//        NSArray * array = model[@"list"];
+//        
+//        [_datasouce addObject:array[0]];
+//        [_datasouce addObjectsFromArray:model[@"list"]];
+//        
+//        [_colView reloadData];
+//    }];
 
+    [[AFHttpClient sharedAFHttpClient]newphotoWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid complete:^(BaseModel *model) {
+        
+        [self.datasouce addObjectsFromArray:model.list];
+        
+    }];
+    
+    
+    
+    
+    
 
 }
 

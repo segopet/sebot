@@ -10,6 +10,7 @@
 #import "BaseModel.h"
 #import "LoginModel.h"
 #import "NewAlbumAdviceModel.h"
+#import "NewAlbumModel.h"
 @interface AFHttpClient : AFHTTPSessionManager
 
 singleton_interface(AFHttpClient)
