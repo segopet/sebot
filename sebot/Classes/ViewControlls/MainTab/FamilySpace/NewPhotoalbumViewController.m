@@ -14,8 +14,10 @@
 @interface NewPhotoalbumViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic,strong)NSMutableArray * datasouce;
 @property (nonatomic,strong) UICollectionView *colView;
-@property (nonatomic,strong)UIView * downView;
 
+@property (nonatomic,strong)UIView * downView;
+@property (nonatomic,strong)UIButton * bigBtn;
+@property (nonatomic,strong)UIView * downwitheView;
 
 @end
 
@@ -32,19 +34,6 @@
 }
 -(void)request{
     //查询接口
-//    NSLog(@"%@",[AccountManager sharedAccountManager].loginModel.userid);
-//    
-//    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid":[AccountManager sharedAccountManager].loginModel.userid,@"token":[AccountManager sharedAccountManager].loginModel.userid,@"objective":@"album",@"action":@"queryAlbum",@"data":@{@"userid":[AccountManager sharedAccountManager].loginModel.userid}} result:^(id model) {
-//        NSLog(@"%@",model);
-//        
-//        NSArray * array = model[@"list"];
-//        
-//        [_datasouce addObject:array[0]];
-//        [_datasouce addObjectsFromArray:model[@"list"]];
-//        
-//
-//    }];
-
     [[AFHttpClient sharedAFHttpClient]newphotoWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid complete:^(ResponseModel *model) {
         
         NSArray * array = model.list;
@@ -52,12 +41,6 @@
         [self.datasouce addObjectsFromArray:model.list];
          [_colView reloadData];
     }];
-    
-    
-    
-    
-    
-
 }
 
 -(void)initUserface{
@@ -136,15 +119,29 @@
 }
 
 -(void)takePhoto{
-    UIButton * bigBtn = [[UIButton alloc]initWithFrame:self.view.frame];
-    bigBtn.backgroundColor = [UIColor lightGrayColor];
-    bigBtn.alpha = 0.6;
-    [[UIApplication sharedApplication].keyWindow addSubview:bigBtn];
-    [bigBtn addTarget:self action:@selector(bigButtonHiddin:) forControlEvents:UIControlEventTouchUpInside];
+    _bigBtn = [[UIButton alloc]initWithFrame:self.view.frame];
+    _bigBtn.backgroundColor = [UIColor lightGrayColor];
+    _bigBtn.alpha = 0.6;
+    [[UIApplication sharedApplication].keyWindow addSubview:_bigBtn];
+    [_bigBtn addTarget:self action:@selector(bigButtonHiddin:) forControlEvents:UIControlEventTouchUpInside];
+   //两个按键的view
+    _downView = [[UIView alloc]initWithFrame:CGRectMake(CGRectGetMinX(self.view.frame), 667 * W_Hight_Zoom, 375 * W_Wide_Zoom, 80 * W_Hight_Zoom)];
+    //取消按键 
+    _downwitheView = [[UIView alloc]initWithFrame:CGRectMake(0 * W_Wide_Zoom, 667 * W_Hight_Zoom, 375 * W_Wide_Zoom, 40 * W_Hight_Zoom)];
     
-    _downView = [[UIView alloc]initWithFrame:CGRectMake(CGRectGetMinX(self.view.frame), CGRectGetMaxY(self.view.frame) - 120, 375 * W_Wide_Zoom, 100 * W_Hight_Zoom)];
-    _downView.backgroundColor = [UIColor blueColor];
-    [[UIApplication sharedApplication].keyWindow addSubview:_downView];
+    [UIView animateWithDuration:0.3 animations:^{
+        _downView.frame = CGRectMake(0 * W_Wide_Zoom, 527 * W_Hight_Zoom, 375 * W_Wide_Zoom, 80 * W_Hight_Zoom);
+        _downView.backgroundColor = [UIColor blueColor];
+        [[UIApplication sharedApplication].keyWindow addSubview:_downView];
+
+        _downwitheView.frame = CGRectMake(0 * W_Wide_Zoom, 627 * W_Hight_Zoom, 375 * W_Wide_Zoom, 40 * W_Hight_Zoom);
+        _downwitheView.backgroundColor = [UIColor blueColor];
+        [[UIApplication sharedApplication].keyWindow addSubview:_downwitheView];
+     }];
+
+    
+    
+    
     
     
     
@@ -152,15 +149,12 @@
 
 -(void)bigButtonHiddin:(UIButton *)sender{
     sender.hidden = YES;
-    _downView.hidden = YES;
+    [UIView animateWithDuration:0.3 animations:^{
+        _downView.frame = CGRectMake(0 * W_Wide_Zoom, 667 * W_Hight_Zoom, 375 * W_Wide_Zoom, 80 * W_Hight_Zoom);
+        
+        _downwitheView.frame = CGRectMake(0 * W_Wide_Zoom, 667 * W_Hight_Zoom, 375 * W_Wide_Zoom, 40 * W_Hight_Zoom);
+    }];
 
 }
-
-
-
-
-
-
-
 
 @end

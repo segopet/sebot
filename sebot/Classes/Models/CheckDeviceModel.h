@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "JSONModel.h"
 
-@interface CheckDeviceModel : BSModel
+@interface CheckDeviceModel : BaseJSONModel
 
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key;
 + (instancetype)modelWithDictionary: (NSDictionary *) data;

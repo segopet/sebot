@@ -12,6 +12,8 @@
 #import "LoginModel.h"
 #import "NewAlbumAdviceModel.h"
 #import "NewAlbumModel.h"
+#import "CheckDeviceModel.h"
+
 
 @interface AFHttpClient : AFHTTPSessionManager
 

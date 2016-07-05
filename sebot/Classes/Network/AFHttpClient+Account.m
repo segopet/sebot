@@ -31,38 +31,12 @@
     params[@"data"] = dataParams;
     
     [self POST:@"sebot/moblie/forward" parameters:params result:^(ResponseModel *model) {
-       
         
         if (model) {
             completeBlock(model);
         }
 
-        
     }];
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-
-
-
-
-
 }
-
-
-
-
 
 @end
