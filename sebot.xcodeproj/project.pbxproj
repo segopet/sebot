@@ -28,7 +28,7 @@
 		345565601D10FF0700B6E562 /* UITableView+SDAutoTableViewCellHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 3455655D1D10FF0700B6E562 /* UITableView+SDAutoTableViewCellHeight.m */; };
 		345565611D10FF0700B6E562 /* UIView+SDAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3455655F1D10FF0700B6E562 /* UIView+SDAutoLayout.m */; };
 		345565681D10FFED00B6E562 /* AccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565671D10FFED00B6E562 /* AccountManager.m */; };
-		3455656B1D11008300B6E562 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3455656A1D11008300B6E562 /* BaseModel.m */; };
+		3455656B1D11008300B6E562 /* ResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3455656A1D11008300B6E562 /* ResponseModel.m */; };
 		345565741D1134E500B6E562 /* MainTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565731D1134E500B6E562 /* MainTabViewController.m */; };
 		3455657A1D11371800B6E562 /* MydeviceViewcontroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565791D11371800B6E562 /* MydeviceViewcontroller.m */; };
 		3455657D1D11374500B6E562 /* PersonCenterViewcontroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 3455657C1D11374500B6E562 /* PersonCenterViewcontroller.m */; };
@@ -231,6 +231,7 @@
 		34F4D2B31D1D234D005963CA /* right_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 34F4D2AB1D1D234D005963CA /* right_off.png */; };
 		34F4D2B41D1D234D005963CA /* right_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 34F4D2AC1D1D234D005963CA /* right_on.png */; };
 		34F4D2B61D1D265A005963CA /* shuping.png in Resources */ = {isa = PBXBuildFile; fileRef = 34F4D2B51D1D265A005963CA /* shuping.png */; };
+		572204BA1D2B57A60007942A /* BaseJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 572204B91D2B57A60007942A /* BaseJSONModel.m */; };
 		572DEE5D1D1162E100035228 /* AFHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 572DEE5C1D1162E100035228 /* AFHttpClient.m */; };
 		57D1E5F71CFED25900BEDFF6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D1E5F61CFED25900BEDFF6 /* main.m */; };
 		57D1E6001CFED25900BEDFF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D1E5FE1CFED25900BEDFF6 /* Main.storyboard */; };
@@ -299,8 +300,8 @@
 		3455655F1D10FF0700B6E562 /* UIView+SDAutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDAutoLayout.m"; sourceTree = "<group>"; };
 		345565661D10FFED00B6E562 /* AccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountManager.h; sourceTree = "<group>"; };
 		345565671D10FFED00B6E562 /* AccountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountManager.m; sourceTree = "<group>"; };
-		345565691D11008300B6E562 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
-		3455656A1D11008300B6E562 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
+		345565691D11008300B6E562 /* ResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseModel.h; sourceTree = "<group>"; };
+		3455656A1D11008300B6E562 /* ResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseModel.m; sourceTree = "<group>"; };
 		345565721D1134E500B6E562 /* MainTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabViewController.h; sourceTree = "<group>"; };
 		345565731D1134E500B6E562 /* MainTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabViewController.m; sourceTree = "<group>"; };
 		345565781D11371800B6E562 /* MydeviceViewcontroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MydeviceViewcontroller.h; sourceTree = "<group>"; };
@@ -959,6 +960,8 @@
 		34F4D2AC1D1D234D005963CA /* right_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right_on.png; sourceTree = "<group>"; };
 		34F4D2B51D1D265A005963CA /* shuping.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shuping.png; sourceTree = "<group>"; };
 		47642F05A36B917D69532A10 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		572204B81D2B57A60007942A /* BaseJSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseJSONModel.h; sourceTree = "<group>"; };
+		572204B91D2B57A60007942A /* BaseJSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseJSONModel.m; sourceTree = "<group>"; };
 		572DEE5B1D1162E100035228 /* AFHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHttpClient.h; sourceTree = "<group>"; };
 		572DEE5C1D1162E100035228 /* AFHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHttpClient.m; sourceTree = "<group>"; };
 		57D1E5F21CFED25900BEDFF6 /* sebot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sebot.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1118,8 +1121,10 @@
 		345565211D10F3B700B6E562 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				345565691D11008300B6E562 /* BaseModel.h */,
-				3455656A1D11008300B6E562 /* BaseModel.m */,
+				345565691D11008300B6E562 /* ResponseModel.h */,
+				3455656A1D11008300B6E562 /* ResponseModel.m */,
+				572204B81D2B57A60007942A /* BaseJSONModel.h */,
+				572204B91D2B57A60007942A /* BaseJSONModel.m */,
 				7DC627661D26086400EB2EB5 /* BSModel.h */,
 				7DC627671D26086400EB2EB5 /* BSModel.m */,
 				7D3813011D25006000C583DD /* NewAlbumModel.h */,
@@ -2575,7 +2580,7 @@
 				TargetAttributes = {
 					57D1E5F11CFED25900BEDFF6 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 454LPD78S8;
+						DevelopmentTeam = EQW5GMLWDZ;
 					};
 				};
 			};
@@ -2806,7 +2811,7 @@
 				7D509D7D1D1B86A2004E3059 /* NewInformationViewController.m in Sources */,
 				345565B51D11500F00B6E562 /* BaseViewController.m in Sources */,
 				3455657D1D11374500B6E562 /* PersonCenterViewcontroller.m in Sources */,
-				3455656B1D11008300B6E562 /* BaseModel.m in Sources */,
+				3455656B1D11008300B6E562 /* ResponseModel.m in Sources */,
 				345565BB1D1246B900B6E562 /* BaseTabViewController.m in Sources */,
 				7D1AAC751D1A617800B4297E /* NewPhotoalbumViewController.m in Sources */,
 				3455654D1D10FE4800B6E562 /* UIActionSheet+Blocks.m in Sources */,
@@ -2845,6 +2850,7 @@
 				345565611D10FF0700B6E562 /* UIView+SDAutoLayout.m in Sources */,
 				34921D071D17C77000541E41 /* CheckDeviceModel.m in Sources */,
 				345565531D10FE5C00B6E562 /* UIViewController+HUD.m in Sources */,
+				572204BA1D2B57A60007942A /* BaseJSONModel.m in Sources */,
 				345565561D10FE6400B6E562 /* UIView+Sizes.m in Sources */,
 				34F4D2A11D1CCDE9005963CA /* InCallViewController.m in Sources */,
 				7DC627681D26086400EB2EB5 /* BSModel.m in Sources */,

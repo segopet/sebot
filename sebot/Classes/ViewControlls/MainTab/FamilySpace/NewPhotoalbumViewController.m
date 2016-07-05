@@ -45,7 +45,7 @@
 //        [_colView reloadData];
 //    }];
 
-    [[AFHttpClient sharedAFHttpClient]newphotoWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid complete:^(BaseModel *model) {
+    [[AFHttpClient sharedAFHttpClient]newphotoWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid complete:^(ResponseModel *model) {
         
         [self.datasouce addObjectsFromArray:model.list];
         

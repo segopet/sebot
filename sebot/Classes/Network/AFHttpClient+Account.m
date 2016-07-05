@@ -10,7 +10,7 @@
 
 @implementation AFHttpClient (Account)
 
--(void)loginWithUserName:(NSString *)userName password:(NSString *)password userid:(NSString *)userid complete:(void (^)(BaseModel *))completeBlock{
+-(void)loginWithUserName:(NSString *)userName password:(NSString *)password userid:(NSString *)userid complete:(void (^)(ResponseModel *))completeBlock{
 
 //     [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid":@"",@"token":@"",@"objective":@"user",@"action":@"login",@"data":@{@"accountnumber":_accountTextfield.text,@"password":_passwordTextfield.text,@"model":@"6s",@"brand":@"6s",@"version":@"9.3.2",@"type":@"ios",@"channelid":@""}} result:^(BaseModel * model) {
     NSMutableDictionary * params = [[NSMutableDictionary alloc]init];
@@ -30,7 +30,7 @@
     
     params[@"data"] = dataParams;
     
-    [self POST:@"sebot/moblie/forward" parameters:params result:^(BaseModel *model) {
+    [self POST:@"sebot/moblie/forward" parameters:params result:^(ResponseModel *model) {
        // model.retVal = [LoginModel modelWithDictionary:model.retVal];
         
     }];

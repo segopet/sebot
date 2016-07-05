@@ -9,9 +9,9 @@
 #import "AFHttpClient.h"
 
 @interface AFHttpClient (Test)
--(void)testWithuserid:(NSString *)userid token:(NSString *)token complete:(void(^)(BaseModel *model))completeBlock;
+-(void)testWithuserid:(NSString *)userid token:(NSString *)token complete:(void(^)(ResponseModel *model))completeBlock;
 
--(void)newphotoWithUserid:(NSString *)userid token:(NSString *)token complete:(void(^)(BaseModel *model))completeBlock;
+-(void)newphotoWithUserid:(NSString *)userid token:(NSString *)token complete:(void(^)(ResponseModel *model))completeBlock;
 
 
 @end

@@ -6,9 +6,9 @@
 //  Copyright © 2016年 sego. All rights reserved.
 //
 
-#import "JSONModel.h"
+#import "BaseJSONModel.h"
 
-@interface BaseModel : JSONModel
+@interface ResponseModel : BaseJSONModel
 
 @property (nonatomic, strong) NSDictionary *retVal;
 
@@ -19,5 +19,7 @@
 @property (nonatomic, copy) NSString *retCode;
 
 @property (nonatomic, strong) NSArray *list;
+
 + (instancetype)modelWithDictionary: (NSDictionary *) data;
+
 @end

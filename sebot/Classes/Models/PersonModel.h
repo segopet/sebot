@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PersonModel : BaseModel
+@interface PersonModel : ResponseModel
 
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key;
 @property (nonatomic,copy)NSString *activationtime;//

@@ -47,7 +47,7 @@ static NSString * cellId = @"newAllubmtabeleviewwcellid";
 
 }
 -(void)setupData{
-    [[AFHttpClient sharedAFHttpClient]testWithuserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid complete:^(BaseModel *model) {
+    [[AFHttpClient sharedAFHttpClient]testWithuserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid complete:^(ResponseModel *model) {
         [self.dataSource addObjectsFromArray:model.list];
         
     }];
