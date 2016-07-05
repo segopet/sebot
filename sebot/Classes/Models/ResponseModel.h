@@ -20,6 +20,6 @@
 
 @property (nonatomic, strong) NSArray *list;
 
-+ (instancetype)modelWithDictionary: (NSDictionary *) data;
+
 
 @end

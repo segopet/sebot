@@ -115,8 +115,10 @@
     [[AFHttpClient sharedAFHttpClient]loginWithUserName:_accountTextfield.text password:_passwordTextfield.text userid:@"" complete:^(ResponseModel *model) {
         
         LoginModel * loginModel = [[LoginModel alloc]initWithDictionary:model.retVal error:nil];
+        NSLog(@"%@",loginModel);
+        [[AccountManager sharedAccountManager] login:loginModel];
+        [[NSNotificationCenter defaultCenter] postNotificationName:NotificationLoginStateChange object:@YES];
 
-        
     }];
     //
 
