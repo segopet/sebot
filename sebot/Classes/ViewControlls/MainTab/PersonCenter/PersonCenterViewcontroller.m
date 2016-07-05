@@ -58,8 +58,8 @@
     [[AFHttpClient sharedAFHttpClient] POST:@"sebot/moblie/forward" parameters:@{@"userid" : str , @"objective":@"user", @"token" : @"1" , @"action" : @"queryUser", @"data" : @{@"userid" : str}} result:^(id model) {
         
         [arrTest removeAllObjects];
-         arrTest = model[@"retVal"];
-        checkModel = [PersonModel modelWithDictionary:(NSDictionary *)arrTest];
+       //  arrTest = model[@"retVal"];
+    //    checkModel = [PersonModel modelWithDictionary:(NSDictionary *)arrTest];
         
         [_heandBtn sd_setImageWithURL:[NSURL URLWithString:checkModel.headportrait] placeholderImage:nil];
         _nameLabel.text = checkModel.nickname;
