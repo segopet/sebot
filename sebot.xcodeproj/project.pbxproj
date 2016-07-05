@@ -237,6 +237,7 @@
 		57D1E6001CFED25900BEDFF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D1E5FE1CFED25900BEDFF6 /* Main.storyboard */; };
 		57D1E6021CFED25900BEDFF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57D1E6011CFED25900BEDFF6 /* Assets.xcassets */; };
 		7D1AAC751D1A617800B4297E /* NewPhotoalbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D1AAC741D1A617800B4297E /* NewPhotoalbumViewController.m */; };
+		7D2C471B1D2BB93400D57C86 /* AFHttpClient+MyDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C471A1D2BB93400D57C86 /* AFHttpClient+MyDevice.m */; };
 		7D2ECE7A1D191C11003181A9 /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2ECE791D191C11003181A9 /* LoginModel.m */; };
 		7D2ECE801D192022003181A9 /* AFHttpClient+Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2ECE7F1D192022003181A9 /* AFHttpClient+Account.m */; };
 		7D3813001D25003200C583DD /* NewAlbumAdviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3812FF1D25003200C583DD /* NewAlbumAdviceModel.m */; };
@@ -971,6 +972,8 @@
 		57D1E6061CFED25900BEDFF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D1AAC731D1A617800B4297E /* NewPhotoalbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPhotoalbumViewController.h; sourceTree = "<group>"; };
 		7D1AAC741D1A617800B4297E /* NewPhotoalbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPhotoalbumViewController.m; sourceTree = "<group>"; };
+		7D2C47191D2BB93400D57C86 /* AFHttpClient+MyDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+MyDevice.h"; sourceTree = "<group>"; };
+		7D2C471A1D2BB93400D57C86 /* AFHttpClient+MyDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+MyDevice.m"; sourceTree = "<group>"; };
 		7D2ECE781D191C11003181A9 /* LoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginModel.h; sourceTree = "<group>"; };
 		7D2ECE791D191C11003181A9 /* LoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginModel.m; sourceTree = "<group>"; };
 		7D2ECE7E1D192022003181A9 /* AFHttpClient+Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+Account.h"; sourceTree = "<group>"; };
@@ -1152,6 +1155,8 @@
 				7D2ECE7F1D192022003181A9 /* AFHttpClient+Account.m */,
 				7D72F5741D2A36060076AE67 /* AFHttpClient+Test.h */,
 				7D72F5751D2A36060076AE67 /* AFHttpClient+Test.m */,
+				7D2C47191D2BB93400D57C86 /* AFHttpClient+MyDevice.h */,
+				7D2C471A1D2BB93400D57C86 /* AFHttpClient+MyDevice.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -2817,6 +2822,7 @@
 				3455654D1D10FE4800B6E562 /* UIActionSheet+Blocks.m in Sources */,
 				3455655A1D10FE6C00B6E562 /* UIView+TapBlocks.m in Sources */,
 				345565891D113B5A00B6E562 /* ViewController.m in Sources */,
+				7D2C471B1D2BB93400D57C86 /* AFHttpClient+MyDevice.m in Sources */,
 				345565E41D139DB200B6E562 /* FamilyTeamViewController.m in Sources */,
 				3455657A1D11371800B6E562 /* MydeviceViewcontroller.m in Sources */,
 				345565C21D125B4500B6E562 /* PopView.m in Sources */,

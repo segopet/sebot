@@ -12,7 +12,7 @@
 #import "DeviceInformationViewController.h"
 #import "SaomaoViewController.h"
 #import "CheckDeviceModel.h"
-
+#import "AFHttpClient+MyDevice.h"
 
 
 @interface MydeviceViewcontroller()<PopDelegate>
