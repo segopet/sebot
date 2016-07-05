@@ -21,7 +21,7 @@
     
     PopView * _popView;
     AppDelegate *app;
-    //CheckDeviceModel * checkModel;
+   // CheckDeviceModel * checkModel;
     
 
 }
@@ -67,22 +67,17 @@
     
     self.dataSource =[NSMutableArray array];
    
+
     
-    [[AFHttpClient sharedAFHttpClient] POST:@"sebot/moblie/forward" parameters:@{@"userid" :  [AccountManager sharedAccountManager].loginModel.userid , @"objective":@"device", @"token" : @"1" , @"action" : @"queryUserDeviceInfo", @"data" : @{@"userid" :  [AccountManager sharedAccountManager].loginModel.userid}} result:^(id model) {
-        
-        [self.dataSource addObjectsFromArray:model[@"list"]];
-        
-        //  测试
-        /*
-        for (CheckDeviceModel * checkModel in  self.dataSource) {
-            NSLog(@"===%@",checkModel);
-            
-        }
-         */
-        
-        
+    NSString * str =[AccountManager sharedAccountManager].loginModel.userid;
+    
+    [[AFHttpClient sharedAFHttpClient]checkmoel:str token:str complete:^(ResponseModel * model) {
+      
+        [self.dataSource addObjectsFromArray:model.list];
         [self.tableView reloadData];
-    }];
+        
+    } ];
+    
     
 
 
@@ -197,7 +192,7 @@
 {
    
     
-    CheckDeviceModel *checkModel = [CheckDeviceModel modelWithDictionary:(NSDictionary *)self.dataSource[indexPath.row]];
+    CheckDeviceModel *checkModel = self.dataSource[indexPath.row];
     
     static NSString * showUserInfoCellIdentifier = @"MydeviceList";
     MyDeviceTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:showUserInfoCellIdentifier];

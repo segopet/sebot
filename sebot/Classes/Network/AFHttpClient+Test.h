@@ -13,5 +13,10 @@
 
 -(void)newphotoWithUserid:(NSString *)userid token:(NSString *)token complete:(void(^)(ResponseModel *model))completeBlock;
 
+/**
+ *  我的设备
+ */
+-(void)checkmoel:(NSString *)userid token:(NSString *)token complete:(void (^)(ResponseModel *))completeBlock;
+
 
 @end

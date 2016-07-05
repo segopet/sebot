@@ -153,7 +153,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    //famModel =[FamilyTeamModel modelWithDictionary:(NSDictionary *)self.dataSource[indexPath.row]];
+    famModel =self.dataSource[indexPath.row];
 
     static NSString * showUserInfoCellIdentifier = @"MyFamilyList";
     FamilyTeamTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:showUserInfoCellIdentifier];
@@ -193,7 +193,7 @@
     
     NSLog(@"======%ld",sender.tag-1000);
     NSInteger num = sender.tag -1000;
-   // famModel =[FamilyTeamModel modelWithDictionary:(NSDictionary *)self.dataSource[num]];
+    famModel =self.dataSource[num];
    // 管理员移除用户
      NSString * str =[NSString stringWithFormat:@"你确认移除成员%@吗",famModel.accountnumber];
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"成员移除" message:str preferredStyle:UIAlertControllerStyleAlert];
@@ -271,7 +271,7 @@
 
 - (void)mesaggTitle:(NSString *)title informationTitle:(NSString *)title1 terger:(NSInteger)sender
 {
-    //famModel =[FamilyTeamModel modelWithDictionary:(NSDictionary *)self.dataSource[sender]];
+    famModel =self.dataSource[sender];
     
     NSString * str =[NSString stringWithFormat:@"你确认把管理员转让给%@吗",famModel.accountnumber];
     

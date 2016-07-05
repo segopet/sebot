@@ -11,6 +11,7 @@
 #import "InCallViewController.h"
 #import "CheckDeviceModel.h"
 
+
 @interface DeviceInformationViewController ()
 {
     
@@ -45,7 +46,7 @@
     [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : [AccountManager sharedAccountManager].loginModel.userid , @"objective":@"device", @"token" : @"1",@"action":@"queryByIdDeviceInfo",@"data":@{@"userid":[AccountManager sharedAccountManager].loginModel.userid,@"did":self.didNumber}} result:^(id model) {
         
         self.dataSource =model[@"retVal"];
-    
+        
         NSString * str = model[@"retVal"][@"status"];
         
         
@@ -57,11 +58,11 @@
             _startBtn.backgroundColor =RED_COLOR;
             
         }else if ([str isEqualToString:@"ds002"])
-       
+            
         {
             _heandBtn.image =[UIImage imageNamed:@"off_line"];
             _startBtn.enabled = YES;
-
+            
             
             
         }else
@@ -76,7 +77,6 @@
         
         
     }];
-
 
     
 }
@@ -237,11 +237,11 @@
  */
 
 - (IBAction)startVideoBtn:(UIButton *)sender {
+
+    CheckDeviceModel *checkModel = [CheckDeviceModel modelWithDictionary:(NSDictionary *)self.dataSource];
+
+   [self sipCall:checkModel.deviceno sipName:nil];
     
-//    InCallViewController * InCallVC =[[InCallViewController alloc
-//                                       ]initWithNibName:@"InCallViewController" bundle:nil];
-//
-//    [self presentViewController:InCallVC animated:YES completion:nil];
     
 }
 
@@ -411,5 +411,21 @@
     }
 }
 
+#pragma mark - Event Functions
+
+//  call
+//
+/*
+ @dialerNumber 别人的账号
+ @sipName 自己的账号
+ @ 视频通话
+ */
+- (void)sipCall:(NSString*)dialerNumber sipName:(NSString *)sipName
+{
+    
+    NSString *  displayName  =nil;
+    [[SephoneManager instance] call:dialerNumber displayName:displayName transfer:FALSE];
+    
+}
 
 @end
