@@ -31,7 +31,12 @@
     params[@"data"] = dataParams;
     
     [self POST:@"sebot/moblie/forward" parameters:params result:^(ResponseModel *model) {
-       //model.retVal = [LoginModel ？？];
+       
+        
+        if (model) {
+            completeBlock(model);
+        }
+
         
     }];
     

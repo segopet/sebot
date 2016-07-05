@@ -9,7 +9,7 @@
 //#import <MojoDatabase/MojoDatabase.h>
 #import <Foundation/Foundation.h>
 
-@interface LoginModel : JSONModel
+@interface LoginModel : BaseJSONModel
 + (instancetype)modelWithDictionary: (NSDictionary *) data;
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key;
 @property (nonatomic, copy) NSString * accountnumber;
