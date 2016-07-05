@@ -25,6 +25,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    
+    // sip登陆。
+    
+    [SephoneManager addProxyConfig:[AccountManager sharedAccountManager].loginModel.sipno password:[AccountManager sharedAccountManager].loginModel.sippw domain:@"www.segosip001.cn"];
+    
 
     [self setNavTitle: NSLocalizedString(@"tabDevice", nil)];
     self.view.backgroundColor = LIGHT_GRAY_COLOR;
@@ -75,7 +81,93 @@
     
 }
 
+/**
+ *  通知  内存 处理
+ *
+ *  @param animated diss
+ */
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super  viewWillAppear:animated];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(callUpdate:) name:kSephoneCallUpdate object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(registrationUpdate:) name:kSephoneRegistrationUpdate object:nil];
+    
 
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kSephoneCallUpdate object:nil];
+    
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:kSephoneRegistrationUpdate object:nil];
+    
+    
+}
+
+// 注册消息处理
+- (void)registrationUpdate:(NSNotification *)notif {
+    SephoneRegistrationState state = [[notif.userInfo objectForKey:@"state"] intValue];
+    SephoneProxyConfig *cfg = [[notif.userInfo objectForKey:@"cfg"] pointerValue];
+    // Only report bad credential issue
+    
+    
+    
+    
+    
+    switch (state) {
+            
+        case SephoneRegistrationNone:
+            
+            NSLog(@"======开始");
+            break;
+        case SephoneRegistrationProgress:
+            NSLog(@"=====注册进行");
+            break;
+        case SephoneRegistrationOk:
+            
+            NSLog(@"=======成功");
+            break;
+        case SephoneRegistrationCleared:
+            NSLog(@"======注销成功")
+            break;
+        case SephoneRegistrationFailed:
+            NSLog(@"========OK 以外都是失败");
+            break;
+            
+        default:
+            break;
+    }
+    
+}
+
+
+// 通话状态处理
+- (void)callUpdate:(NSNotification *)notif {
+    SephoneCall *call = [[notif.userInfo objectForKey:@"call"] pointerValue];
+    SephoneCallState state = [[notif.userInfo objectForKey:@"state"] intValue];
+    
+    switch (state) {
+        case SephoneCallOutgoingInit:{
+            // 成功
+         InCallViewController *   _incallVC =[[InCallViewController alloc]initWithNibName:@"InCallViewController" bundle:nil];
+            [_incallVC setCall:call];
+            [self presentViewController:_incallVC animated:YES completion:nil];
+            break;
+        }
+            
+        case SephoneCallStreamsRunning: {
+            break;
+        }
+        case SephoneCallUpdatedByRemote: {
+            break;
+        }
+            
+        default:
+            break;
+    }
+}
 
 
 
@@ -146,10 +238,11 @@
 
 - (IBAction)startVideoBtn:(UIButton *)sender {
     
-    InCallViewController * InCallVC =[[InCallViewController alloc
-                                       ]initWithNibName:@"InCallViewController" bundle:nil];
-
-    [self presentViewController:InCallVC animated:YES completion:nil];
+//    InCallViewController * InCallVC =[[InCallViewController alloc
+//                                       ]initWithNibName:@"InCallViewController" bundle:nil];
+//
+//    [self presentViewController:InCallVC animated:YES completion:nil];
+    
 }
 
 

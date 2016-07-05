@@ -9,10 +9,21 @@
 #import "InCallViewController.h"
 
 @interface InCallViewController ()
+{
+    
+}
+@property (nonatomic, assign) SephoneCall *call;
 
 @end
 
 @implementation InCallViewController
+@synthesize call;
+
+- (void)setCall:(SephoneCall *)acall {
+    call = acall;
+    
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -20,7 +31,7 @@
   //  [self setNavTitle: NSLocalizedString(@"tabDevice", nil)];
     
     self.view.backgroundColor =[UIColor whiteColor];
-  //  [self.ActView startAnimating];
+    [self.ActView startAnimating];
     
    
     
