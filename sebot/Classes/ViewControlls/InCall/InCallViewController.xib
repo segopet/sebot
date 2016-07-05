@@ -94,19 +94,32 @@
                     <state key="normal" backgroundImage="left_off.png"/>
                     <connections>
                         <action selector="leftBtn:" destination="-1" eventType="touchUpInside" id="WBr-hU-fkV"/>
+                        <action selector="left_Start_btn:" destination="-1" eventType="touchDown" id="ZzY-IH-awF"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YEb-rF-qaJ">
                     <rect key="frame" x="177" y="395" width="16" height="40"/>
                     <state key="normal" backgroundImage="right_off.png"/>
+                    <connections>
+                        <action selector="rightBtn:" destination="-1" eventType="touchUpInside" id="WPk-xN-iHi"/>
+                        <action selector="right_start_btn:" destination="-1" eventType="touchDown" id="lLd-ZD-BPW"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHl-TC-ONA">
                     <rect key="frame" x="243" y="331" width="40" height="16"/>
                     <state key="normal" backgroundImage="before_off.png"/>
+                    <connections>
+                        <action selector="upTopBtn:" destination="-1" eventType="touchUpInside" id="CAz-Nn-t0r"/>
+                        <action selector="uptop_start_btn:" destination="-1" eventType="touchDown" id="zjr-xk-wa2"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76J-wo-Y2k">
                     <rect key="frame" x="243" y="482" width="40" height="16"/>
                     <state key="normal" backgroundImage="behand_off.png"/>
+                    <connections>
+                        <action selector="upDownBtn:" destination="-1" eventType="touchUpInside" id="V4o-kS-Nkf"/>
+                        <action selector="up_start_btn:" destination="-1" eventType="touchDown" id="2MF-ZY-ku5"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0E9-fd-LQy">
                     <rect key="frame" x="86" y="475" width="40" height="16"/>
@@ -114,6 +127,10 @@
                         <constraint firstAttribute="height" constant="16" id="1ar-sV-h8E"/>
                     </constraints>
                     <state key="normal" backgroundImage="behand_off.png"/>
+                    <connections>
+                        <action selector="upBtn:" destination="-1" eventType="touchUpInside" id="aDo-Fg-MTQ"/>
+                        <action selector="updown_start_btn:" destination="-1" eventType="touchDown" id="Tlz-hO-c5n"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vur-lj-MuI">
                     <rect key="frame" x="86" y="331" width="40" height="16"/>
@@ -121,6 +138,10 @@
                         <constraint firstAttribute="height" constant="16" id="1Xp-IO-4Qv"/>
                     </constraints>
                     <state key="normal" backgroundImage="before_off.png"/>
+                    <connections>
+                        <action selector="topBtn:" destination="-1" eventType="touchUpInside" id="kc0-SW-TRN"/>
+                        <action selector="top_start_btn:" destination="-1" eventType="touchDown" id="gNq-jG-XBE"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

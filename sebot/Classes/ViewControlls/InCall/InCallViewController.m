@@ -12,6 +12,7 @@
 
 {
     NSTimer *updateTimer;
+    NSTimer * moveTimer;
     
 }
 @property (nonatomic, assign) SephoneCall *call;
@@ -232,17 +233,100 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 
 #pragma mark -- 硬件控制
 
+
+/**
+ * 上下左右
+ */
 - (IBAction)leftBtn:(UIButton *)sender {
+      [self overTime];
+   
+}
+- (IBAction)left_Start_btn:(UIButton *)sender {
+    
+     [self moveRobot:@"2"];
+}
+
+- (IBAction)rightBtn:(UIButton *)sender {
+      [self overTime];
+}
+
+
+- (IBAction)right_start_btn:(UIButton *)sender {
+    
+     [self moveRobot:@"1"];
+}
+
+- (IBAction)topBtn:(UIButton *)sender {
+      [self overTime];
+    
+}
+- (IBAction)top_start_btn:(UIButton *)sender {
+     [self moveRobot:@"4"];
+}
+
+
+- (IBAction)upBtn:(UIButton *)sender {
+    
+      [self overTime];
+}
+- (IBAction)up_start_btn:(UIButton *)sender {
+     [self moveRobot:@"3"];
+}
+
+
+// 头部
+
+- (IBAction)upTopBtn:(UIButton *)sender {
+}
+- (IBAction)uptop_start_btn:(UIButton *)sender {
+}
+
+- (IBAction)upDownBtn:(UIButton *)sender {
+}
+- (IBAction)updown_start_btn:(UIButton *)sender {
+}
+
+- (void)overTime
+{
+    if (moveTimer != nil) {
+        [moveTimer invalidate];
+        moveTimer = nil;
+    }
+    
+    
+}
+
+#pragma sendMessageTest wjb
+
+
+- (void)moveRobot:(NSString *)str
+{
+    
+    if (moveTimer != nil) {
+        [moveTimer invalidate];
+        moveTimer = nil;
+    }else{
+        moveTimer = [NSTimer scheduledTimerWithTimeInterval:1.0*0.2 target:self selector:@selector(sendInfomation:) userInfo:str repeats:YES];
+    }
+    
+}
+
+- (void)sendInfomation:(NSTimer *)sender
+{
+    
+    NSString * msg =[NSString stringWithFormat:@"control_servo,0,0,1,%d,200",[sender.userInfo intValue]];
+    [self sendMessage:msg];
+    
     
 }
 
 
-
-
-
-
-
-
+-(void) sendMessage:(NSString *)mess{
+    
+    const char * message =[mess UTF8String];
+    sephone_core_send_user_message([SephoneManager getLc], message);
+    
+}
 
 
 - (void)didReceiveMemoryWarning {

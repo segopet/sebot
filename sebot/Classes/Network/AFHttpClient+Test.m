@@ -7,6 +7,7 @@
 //
 
 #import "AFHttpClient+Test.h"
+#import "CheckDeviceModel.h"
 
 @implementation AFHttpClient (Test)
 -(void)testWithuserid:(NSString *)userid token:(NSString *)token complete:(void (^)(ResponseModel *))completeBlock{
@@ -56,14 +57,31 @@
         
     }];
 
-
-
-
-
-
-
 }
 
+
+-(void)checkmoel:(NSString *)userid token:(NSString *)token complete:(void (^)(ResponseModel *))completeBlock{
+    
+    NSMutableDictionary * parms = [[NSMutableDictionary alloc]init];
+    parms[@"userid"] = userid;
+    parms[@"token"] = token;
+    parms[@"objective"] = @"device";
+    parms[@"action"] = @"queryUserDeviceInfo";
+    NSMutableDictionary * dataparms = [[NSMutableDictionary alloc]init];
+    dataparms[@"userid"] = userid;
+    parms[@"data"] =dataparms;
+    
+    [self POST:@"sebot/moblie/forward" parameters:parms result:^(ResponseModel * model) {
+        
+        model.list = [CheckDeviceModel arrayOfModelsFromDictionaries:model.list];
+        
+        if (model) {
+            completeBlock(model);
+        }
+        
+    }];
+    
+}
 
 
 

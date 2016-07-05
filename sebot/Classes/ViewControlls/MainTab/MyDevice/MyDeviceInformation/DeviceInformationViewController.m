@@ -11,6 +11,7 @@
 #import "InCallViewController.h"
 #import "CheckDeviceModel.h"
 
+
 @interface DeviceInformationViewController ()
 {
     
@@ -42,11 +43,11 @@
     [self.dicSource addObjectsFromArray:arrName];
 
     // 查询设备信息
-    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : [AccountManager sharedAccountManager].loginModel.userid , @"objective":@"device", @"token" : @"1",@"action":@"queryByIdDeviceInfo",@"data":@{@"userid":[AccountManager sharedAccountManager].loginModel.userid,@"did":self.didNumber}} result:^(BaseModel * model) {
+    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : [AccountManager sharedAccountManager].loginModel.userid , @"objective":@"device", @"token" : @"1",@"action":@"queryByIdDeviceInfo",@"data":@{@"userid":[AccountManager sharedAccountManager].loginModel.userid,@"did":self.didNumber}} result:^(id model) {
         
-        self.dataSource =model.retVal;
-    
-        NSString * str = model.retVal[@"status"];
+        self.dataSource =model[@"retVal"];
+        
+        NSString * str = model[@"retVal"][@"status"];
         
         
         // 设备状态 UIbutton
@@ -57,11 +58,11 @@
             _startBtn.backgroundColor =RED_COLOR;
             
         }else if ([str isEqualToString:@"ds002"])
-       
+            
         {
             _heandBtn.image =[UIImage imageNamed:@"off_line"];
             _startBtn.enabled = YES;
-
+            
             
             
         }else
@@ -76,7 +77,6 @@
         
         
     }];
-
 
     
 }
