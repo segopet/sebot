@@ -267,11 +267,15 @@
     
    // "object": "主叫对象(mobile 移动客户端/device 设备端)"
     
-    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : [AccountManager sharedAccountManager].loginModel.userid , @"objective":@"device", @"token" : @"1",@"action":@"addCallRecords",@"data":@{@"calling":@"1001",@"called":@"ds002",@"object":@""}} result:^(id model) {
+    NSString  * str = [AccountManager sharedAccountManager].loginModel.userid;
+    
+    [[AFHttpClient sharedAFHttpClient]solvDevice:str token:str call:str called:checkmodel.did object:@"mobile" complete:^(ResponseModel *model) {
         
         NSLog(@"%@",model);
         
     }];
+    
+    
     
 }
 
@@ -281,11 +285,13 @@
 
 - (IBAction)cancelDeviceBtn:(UIButton *)sender {
     
-    
-    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : [AccountManager sharedAccountManager].loginModel.userid , @"objective":@"device", @"token" : @"1",@"action":@"unbundling",@"data":@{@"userid":[AccountManager sharedAccountManager].loginModel.userid,@"did":@"ds002"}} result:^(id model) {
-         NSLog(@"%@",model);
+    NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
+  
+    [[AFHttpClient sharedAFHttpClient]solvDevice:str token:str did:checkmodel.did complete:^(ResponseModel * model) {
+        
+        NSLog(@"%@",model);
+        
     }];
-
     
 
     
@@ -357,7 +363,6 @@
 {
     
     
-    CheckDeviceModel *checkModel = [CheckDeviceModel modelWithDictionary:(NSDictionary *)self.dataSource];
     
     if (indexPath.row ==1) {
         // 修改备注
@@ -369,14 +374,13 @@
             
             // 确认之后这里会获取到 然后更正数组里的备注 要上传服务器
             NSLog(@"备注名 = %@",userNameTextField.text);
+            NSString * str= [AccountManager sharedAccountManager].loginModel.userid;
             
-            [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : [AccountManager sharedAccountManager].loginModel.userid , @"objective":@"device", @"token" : @"1",@"action":@"modifyDeviceRemark",@"data":@{@"userid":[AccountManager sharedAccountManager].loginModel.userid,@"did":checkModel.did,@"remark":userNameTextField.text}} result:^(id model) {
-    
-                NSLog(@"======%@",model);
+            [[AFHttpClient sharedAFHttpClient]repairName:str token:str did:checkmodel.did remark:userNameTextField.text complete:^(ResponseModel * model) {
                 
-                
-                
+                  NSLog(@"======%@",model);
             }];
+            
 
             
             
@@ -396,8 +400,8 @@
      else if (indexPath.row == 2)
      {
          FamilyTeamViewController * famVC =[[FamilyTeamViewController alloc]initWithNibName:@"FamilyTeamViewController" bundle:nil];
-         famVC.deviceNum = checkModel.deviceno;
-         famVC.did = checkModel.did;
+         famVC.deviceNum = checkmodel.deviceno;
+         famVC.did = checkmodel.did;
          [self.navigationController pushViewController:famVC animated:YES];
          
          

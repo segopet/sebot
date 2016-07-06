@@ -1,30 +1,32 @@
 //
-//  AFHttpClient+DeviceInformation.m
+//  AFHttpClient+FamilyTeam.m
 //  sebot
 //
-//  Created by yulei on 16/7/5.
+//  Created by yulei on 16/7/6.
 //  Copyright © 2016年 sego. All rights reserved.
 //
 
-#import "AFHttpClient+DeviceInformation.h"
+#import "AFHttpClient+FamilyTeam.h"
+#import "FamilyTeamModel.h"
 
-@implementation AFHttpClient (DeviceInformation)
+@implementation AFHttpClient (FamilyTeam)
 
--(void)deciveInforamtion:(NSString *)userid token:(NSString *)token did:(NSString *)did complete:(void (^)(ResponseModel *))completeBlock
+-(void)familyteam:(NSString *)userid token:(NSString *)token  did:(NSString *)did complete:(void (^)(ResponseModel *))completeBlock
 {
+    
     NSMutableDictionary * parms = [[NSMutableDictionary alloc]init];
     parms[@"userid"] = userid;
     parms[@"token"] = token;
     parms[@"objective"] = @"device";
-    parms[@"action"] = @"queryByIdDeviceInfo";
+    parms[@"action"] = @"queryFamilyMember";
     NSMutableDictionary * dataparms = [[NSMutableDictionary alloc]init];
     dataparms[@"userid"] = userid;
-    dataparms[@"did"] =did;
+    dataparms[@"did"]= did;
     parms[@"data"] =dataparms;
     
     [self POST:@"sebot/moblie/forward" parameters:parms result:^(ResponseModel * model) {
         
-        model.list = [CheckDeviceModel arrayOfModelsFromDictionaries:model.list];
+        model.list = [FamilyTeamModel arrayOfModelsFromDictionaries:model.list];
         
         if (model) {
             completeBlock(model);
@@ -32,26 +34,26 @@
         
     }];
 
-    
 }
 
--(void)repairName:(NSString *)userid token:(NSString *)token did:(NSString *)did remark:(NSString *)remark complete:(void (^)(ResponseModel *))completeBlock
+
+-(void)givePowr:(NSString *)userid token:(NSString *)token  admin:(NSString *)admin usr:(NSString* )usr did:(NSString *)did complete:(void (^)(ResponseModel *))completeBlock
 {
     
     NSMutableDictionary * parms = [[NSMutableDictionary alloc]init];
     parms[@"userid"] = userid;
     parms[@"token"] = token;
     parms[@"objective"] = @"device";
-    parms[@"action"] = @"modifyDeviceRemark";
+    parms[@"action"] = @"transfer";
     NSMutableDictionary * dataparms = [[NSMutableDictionary alloc]init];
-    dataparms[@"userid"] = userid;
-    dataparms[@"did"] =did;
-    dataparms[@"remark"]= remark;
+    dataparms[@"admin"] = admin;
+    dataparms[@"userid"]= usr;
+    dataparms[@"did"]= did;
     parms[@"data"] =dataparms;
     
     [self POST:@"sebot/moblie/forward" parameters:parms result:^(ResponseModel * model) {
         
-        model.list = [CheckDeviceModel arrayOfModelsFromDictionaries:model.list];
+        model.list = [FamilyTeamModel arrayOfModelsFromDictionaries:model.list];
         
         if (model) {
             completeBlock(model);
@@ -60,50 +62,55 @@
     }];
 
     
+    
 }
 
--(void)solvDevice:(NSString *)userid token:(NSString *)token did:(NSString *)did  complete:(void (^)(ResponseModel *))completeBlock
+-(void)move:(NSString *)userid token:(NSString *)token  admin:(NSString *)admin usr:(NSString* )usr did:(NSString *)did complete:(void (^)(ResponseModel *))completeBlock
 {
     
     NSMutableDictionary * parms = [[NSMutableDictionary alloc]init];
     parms[@"userid"] = userid;
     parms[@"token"] = token;
     parms[@"objective"] = @"device";
-    parms[@"action"] = @"unbundling";
+    parms[@"action"] = @"remove";
     NSMutableDictionary * dataparms = [[NSMutableDictionary alloc]init];
-    dataparms[@"userid"] = userid;
-    dataparms[@"did"] =did;
+    dataparms[@"admin"] = admin;
+    dataparms[@"userid"]= usr;
+    dataparms[@"did"]= did;
     parms[@"data"] =dataparms;
     
     [self POST:@"sebot/moblie/forward" parameters:parms result:^(ResponseModel * model) {
         
-        model.list = [CheckDeviceModel arrayOfModelsFromDictionaries:model.list];
+        model.list = [FamilyTeamModel arrayOfModelsFromDictionaries:model.list];
         
         if (model) {
             completeBlock(model);
         }
         
     }];
+
     
 }
 
--(void)solvDevice:(NSString *)userid token:(NSString *)token call:(NSString *)calling  called:(NSString *)called object:(NSString *)object complete:(void (^)(ResponseModel *))completeBlock
+
+-(void)invate:(NSString *)userid token:(NSString *)token  admin:(NSString *)admin phone:(NSString* )phone deviceno:(NSString *)deviceno complete:(void (^)(ResponseModel *))completeBlock
+
 {
     
     NSMutableDictionary * parms = [[NSMutableDictionary alloc]init];
     parms[@"userid"] = userid;
     parms[@"token"] = token;
     parms[@"objective"] = @"device";
-    parms[@"action"] = @"addCallRecords";
+    parms[@"action"] = @"inviteRequest";
     NSMutableDictionary * dataparms = [[NSMutableDictionary alloc]init];
-    dataparms[@"called"] = called;
-    dataparms[@"calling"] =calling;
-    dataparms[@"object"] = object;
+    dataparms[@"userid"] = admin;
+    dataparms[@"phone"]= phone;
+    dataparms[@"deviceno"]= deviceno;
     parms[@"data"] =dataparms;
     
     [self POST:@"sebot/moblie/forward" parameters:parms result:^(ResponseModel * model) {
         
-        model.list = [CheckDeviceModel arrayOfModelsFromDictionaries:model.list];
+        model.list = [FamilyTeamModel arrayOfModelsFromDictionaries:model.list];
         
         if (model) {
             completeBlock(model);
@@ -112,5 +119,7 @@
     }];
 
     
+    
 }
+
 @end

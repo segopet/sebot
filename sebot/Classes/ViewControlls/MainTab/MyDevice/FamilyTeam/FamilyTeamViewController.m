@@ -10,6 +10,7 @@
 #import "FamilyTeamTableViewCell.h"
 #import "PopView.h"
 #import "FamilyTeamModel.h"
+#import "AFHttpClient+FamilyTeam.h"
 
 @interface FamilyTeamViewController ()<PopDelegate>
 
@@ -45,15 +46,15 @@
     _popView.delegate = self;
     
     // 家庭成员接口
-    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : [AccountManager sharedAccountManager].loginModel.userid , @"objective":@"device", @"token" : @"1",@"action":@"queryFamilyMember",@"data":@{@"did":self.did}} result:^(id model) {
+       
+    NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
+    
+    [[AFHttpClient sharedAFHttpClient]familyteam:str token:str did:self.did complete:^(ResponseModel * model) {
         
-        
-         [self.dataSource addObjectsFromArray:model[@"list"]];
-        
-         NSLog(@"%@",model[@"retDesc"]);
-        
-        [self.tableView reloadData];
+        [self.dataSource addObjectsFromArray:model.list];
+        [self.tableView  reloadData];
     }];
+    
 
     
     
@@ -121,12 +122,12 @@
     NSLog(@"33");
     
     // 管理员邀请接口
-    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : [AccountManager sharedAccountManager].loginModel.userid , @"objective":@"device", @"token" : @"1",@"action":@"inviteRequest",@"data":@{@"userid":[AccountManager sharedAccountManager].loginModel.userid,@"phone": _popView.numberLable.text,@"deviceno":self.deviceNum}} result:^(id model) {
+    NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
+    [[AFHttpClient sharedAFHttpClient]invate:str token:str admin:str phone:_popView.numberLable.text deviceno:self.deviceNum complete:^(ResponseModel *model) {
         
-        NSLog(@"%@",model[@"retDesc"]);
         [_popView removeFromSuperview];
-        
     }];
+    
 
     
 }
@@ -200,13 +201,13 @@
     [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Sure", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         
         // 操作为更改权限
-        
-        [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : [AccountManager sharedAccountManager].loginModel.userid , @"objective":@"device", @"token" : @"1",@"action":@"remove",@"data":@{@"admin":[AccountManager sharedAccountManager].loginModel.userid,@"usrid":self.dataSource[0][@"userid"],@"did":famModel.did}} result:^(id model) {
-            
-            [self showSuccessHudWithHint:model[@"retDesc"]];
+        NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
+        [[AFHttpClient sharedAFHttpClient]move:str token:str admin:self.dataSource[0][@"userid"] usr:famModel.userid did:famModel.did complete:^(ResponseModel * model) {
+            [self showSuccessHudWithHint:model.retDesc];
             [self.tableView reloadData];
-            
         }];
+
+        
         
         
     }]];
@@ -281,13 +282,12 @@
         // 操作为更改权限
 
             // 转让接口
-            [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : [AccountManager sharedAccountManager].loginModel.userid , @"objective":@"device", @"token" : @"1",@"action":@"transfer",@"data":@{@"admin":self.dataSource[0][@"userid"],@"userid":famModel.userid,@"did":famModel.did}} result:^(id model) {
-        
-
-                [self showSuccessHudWithHint:model[@"retDesc"]];
+        NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
+            [[AFHttpClient sharedAFHttpClient]givePowr:str token:str admin:self.dataSource[0][@"userid"] usr:famModel.userid did:famModel.did complete:^(ResponseModel * model) {
+                [self showSuccessHudWithHint:model.retDesc];
                 [self.tableView reloadData];
-                
             }];
+        
         
     }]];
     
