@@ -15,4 +15,5 @@
 @property (strong, nonatomic) IBOutlet UIButton *RightBtn;
 - (void)setCall:(SephoneCall *)acall;
 
+@property (strong, nonatomic) IBOutlet UIButton *updownBtn;
 @end

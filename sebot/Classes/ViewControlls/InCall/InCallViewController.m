@@ -7,7 +7,7 @@
 //
 
 #import "InCallViewController.h"
-
+#import "UIButton+EnlargeTouchArea.h"
 @interface InCallViewController ()
 
 {
@@ -195,6 +195,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 - (void)setupView
 {
     [super setupView];
+   // [self.updownBtn setEnlargeEdgeWithTop:40 right:40 bottom:40 left:40];
      [self prefersStatusBarHidden];
     
     
@@ -244,16 +245,20 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 - (IBAction)left_Start_btn:(UIButton *)sender {
     
      [self moveRobot:@"2"];
+     NSLog(@"这是在往左走");
 }
 
 - (IBAction)rightBtn:(UIButton *)sender {
       [self overTime];
+    
 }
 
 
 - (IBAction)right_start_btn:(UIButton *)sender {
     
      [self moveRobot:@"1"];
+     NSLog(@"这是在往右走");
+    
 }
 
 - (IBAction)topBtn:(UIButton *)sender {
@@ -262,17 +267,19 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 }
 - (IBAction)top_start_btn:(UIButton *)sender {
      [self moveRobot:@"4"];
+     NSLog(@"这是在往上走");
 }
 
 
-- (IBAction)upBtn:(UIButton *)sender {
+- (IBAction)test:(UIButton *)sender {
     
-      [self overTime];
-}
-- (IBAction)up_start_btn:(UIButton *)sender {
-     [self moveRobot:@"3"];
+    [self moveRobot:@"3"];
 }
 
+
+- (IBAction)test1:(UIButton *)sender {
+    [self overTime];
+}
 
 // 头部
 

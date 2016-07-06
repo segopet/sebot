@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34012DA31D2BBC7600C97E1E /* AFHttpClient+DeviceInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 34012DA21D2BBC7600C97E1E /* AFHttpClient+DeviceInformation.m */; };
+		34012DA61D2CAD9700C97E1E /* UIButton+EnlargeTouchArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 34012DA51D2CAD9700C97E1E /* UIButton+EnlargeTouchArea.m */; };
 		345565121D10EF1300B6E562 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 345565111D10EF1300B6E562 /* Localizable.strings */; };
 		345565181D10F10700B6E562 /* AppDelegate+Launcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565171D10F10700B6E562 /* AppDelegate+Launcher.m */; };
 		3455651B1D10F13200B6E562 /* AppDelegate+ShareSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 3455651A1D10F13200B6E562 /* AppDelegate+ShareSDK.m */; };
@@ -260,6 +262,10 @@
 
 /* Begin PBXFileReference section */
 		0C7D6F536A9CD3F96AA3AF20 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		34012DA11D2BBC7600C97E1E /* AFHttpClient+DeviceInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+DeviceInformation.h"; sourceTree = "<group>"; };
+		34012DA21D2BBC7600C97E1E /* AFHttpClient+DeviceInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+DeviceInformation.m"; sourceTree = "<group>"; };
+		34012DA41D2CAD9700C97E1E /* UIButton+EnlargeTouchArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+EnlargeTouchArea.h"; sourceTree = "<group>"; };
+		34012DA51D2CAD9700C97E1E /* UIButton+EnlargeTouchArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+EnlargeTouchArea.m"; sourceTree = "<group>"; };
 		345565111D10EF1300B6E562 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		345565151D10F06700B6E562 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		345565161D10F10700B6E562 /* AppDelegate+Launcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Launcher.h"; sourceTree = "<group>"; };
@@ -1157,6 +1163,8 @@
 				7D72F5751D2A36060076AE67 /* AFHttpClient+Test.m */,
 				7D2C47191D2BB93400D57C86 /* AFHttpClient+MyDevice.h */,
 				7D2C471A1D2BB93400D57C86 /* AFHttpClient+MyDevice.m */,
+				34012DA11D2BBC7600C97E1E /* AFHttpClient+DeviceInformation.h */,
+				34012DA21D2BBC7600C97E1E /* AFHttpClient+DeviceInformation.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1265,6 +1273,8 @@
 				345565441D10FE4800B6E562 /* UIAlertView+Blocks */,
 				345565471D10FE4800B6E562 /* UIButton+Blocks */,
 				3455654A1D10FE4800B6E562 /* UIImage-Extensions */,
+				34012DA41D2CAD9700C97E1E /* UIButton+EnlargeTouchArea.h */,
+				34012DA51D2CAD9700C97E1E /* UIButton+EnlargeTouchArea.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -2812,6 +2822,7 @@
 				7D4B10011D1291C90095D463 /* RegistViewController.m in Sources */,
 				34E49FE81D261EF100CF5CCB /* SephoneManager.m in Sources */,
 				345565831D1139F200B6E562 /* LoginViewController.m in Sources */,
+				34012DA61D2CAD9700C97E1E /* UIButton+EnlargeTouchArea.m in Sources */,
 				349263671D13FC9F006C2FD9 /* RepairPwViewController.m in Sources */,
 				7D509D7D1D1B86A2004E3059 /* NewInformationViewController.m in Sources */,
 				345565B51D11500F00B6E562 /* BaseViewController.m in Sources */,
@@ -2819,6 +2830,7 @@
 				3455656B1D11008300B6E562 /* ResponseModel.m in Sources */,
 				345565BB1D1246B900B6E562 /* BaseTabViewController.m in Sources */,
 				7D1AAC751D1A617800B4297E /* NewPhotoalbumViewController.m in Sources */,
+				34012DA31D2BBC7600C97E1E /* AFHttpClient+DeviceInformation.m in Sources */,
 				3455654D1D10FE4800B6E562 /* UIActionSheet+Blocks.m in Sources */,
 				3455655A1D10FE6C00B6E562 /* UIView+TapBlocks.m in Sources */,
 				345565891D113B5A00B6E562 /* ViewController.m in Sources */,

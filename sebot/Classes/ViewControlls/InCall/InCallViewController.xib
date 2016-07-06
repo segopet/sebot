@@ -15,6 +15,7 @@
                 <outlet property="RightBtn" destination="C7v-6O-lXf" id="jYJ-pK-duK"/>
                 <outlet property="leftBtn" destination="NlX-H6-Grr" id="Oij-me-HFt"/>
                 <outlet property="otherView" destination="dP5-cU-Jb3" id="RF9-xJ-sGH"/>
+                <outlet property="updownBtn" destination="0E9-fd-LQy" id="QTH-I0-8HH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -105,6 +106,17 @@
                         <action selector="right_start_btn:" destination="-1" eventType="touchDown" id="lLd-ZD-BPW"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vur-lj-MuI">
+                    <rect key="frame" x="86" y="331" width="40" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="16" id="1Xp-IO-4Qv"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="before_off.png"/>
+                    <connections>
+                        <action selector="topBtn:" destination="-1" eventType="touchUpInside" id="kc0-SW-TRN"/>
+                        <action selector="top_start_btn:" destination="-1" eventType="touchDown" id="gNq-jG-XBE"/>
+                    </connections>
+                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHl-TC-ONA">
                     <rect key="frame" x="243" y="331" width="40" height="16"/>
                     <state key="normal" backgroundImage="before_off.png"/>
@@ -122,25 +134,14 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0E9-fd-LQy">
-                    <rect key="frame" x="86" y="475" width="40" height="16"/>
+                    <rect key="frame" x="86" y="482" width="40" height="16"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="16" id="1ar-sV-h8E"/>
                     </constraints>
                     <state key="normal" backgroundImage="behand_off.png"/>
                     <connections>
-                        <action selector="upBtn:" destination="-1" eventType="touchUpInside" id="aDo-Fg-MTQ"/>
-                        <action selector="updown_start_btn:" destination="-1" eventType="touchDown" id="Tlz-hO-c5n"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vur-lj-MuI">
-                    <rect key="frame" x="86" y="331" width="40" height="16"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="16" id="1Xp-IO-4Qv"/>
-                    </constraints>
-                    <state key="normal" backgroundImage="before_off.png"/>
-                    <connections>
-                        <action selector="topBtn:" destination="-1" eventType="touchUpInside" id="kc0-SW-TRN"/>
-                        <action selector="top_start_btn:" destination="-1" eventType="touchDown" id="gNq-jG-XBE"/>
+                        <action selector="test1:" destination="-1" eventType="touchUpInside" id="6m7-ta-Tq2"/>
+                        <action selector="test:" destination="-1" eventType="touchDown" id="oGU-F1-dPK"/>
                     </connections>
                 </button>
             </subviews>
@@ -159,7 +160,7 @@
                 <constraint firstItem="76J-wo-Y2k" firstAttribute="width" secondItem="0E9-fd-LQy" secondAttribute="width" id="Hxo-xH-8F6"/>
                 <constraint firstItem="C7v-6O-lXf" firstAttribute="height" secondItem="NlX-H6-Grr" secondAttribute="height" id="Jkx-QA-aOu"/>
                 <constraint firstItem="WwM-Xz-fcU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="24" id="KX3-zg-7ys"/>
-                <constraint firstAttribute="bottom" secondItem="0E9-fd-LQy" secondAttribute="bottom" constant="77" id="Nac-GK-rhC"/>
+                <constraint firstAttribute="bottom" secondItem="0E9-fd-LQy" secondAttribute="bottom" constant="70" id="Nac-GK-rhC"/>
                 <constraint firstAttribute="trailing" secondItem="dP5-cU-Jb3" secondAttribute="trailing" id="Q2c-8j-bYy"/>
                 <constraint firstItem="YEb-rF-qaJ" firstAttribute="height" secondItem="WwM-Xz-fcU" secondAttribute="height" id="Rdd-5R-jC9"/>
                 <constraint firstAttribute="bottom" secondItem="76J-wo-Y2k" secondAttribute="bottom" constant="70" id="Rns-oo-6qG"/>

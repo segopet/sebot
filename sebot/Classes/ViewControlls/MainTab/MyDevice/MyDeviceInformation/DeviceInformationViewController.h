@@ -9,6 +9,7 @@
 #import "BaseViewController.h"
 #import "BaseTabViewController.h"
 #import "PerInformationTableViewCell.h"
+#import "AFHttpClient+DeviceInformation.h"
 
 
 @interface DeviceInformationViewController : BaseTabViewController

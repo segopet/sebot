@@ -16,6 +16,7 @@
 {
     
      UIImageView * _heandBtn;
+    CheckDeviceModel * checkmodel;
     
 }
 
@@ -42,41 +43,52 @@
     NSArray * arrName =@[NSLocalizedString(@"deviceNumber", nil),NSLocalizedString(@"repairName", nil),NSLocalizedString(@"familyTeam", nil)];
     [self.dicSource addObjectsFromArray:arrName];
 
+   
+        
+    
+   
     // 查询设备信息
-    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : [AccountManager sharedAccountManager].loginModel.userid , @"objective":@"device", @"token" : @"1",@"action":@"queryByIdDeviceInfo",@"data":@{@"userid":[AccountManager sharedAccountManager].loginModel.userid,@"did":self.didNumber}} result:^(id model) {
+        NSString * str1 =[AccountManager sharedAccountManager].loginModel.userid;
+        [[AFHttpClient sharedAFHttpClient]deciveInforamtion:str1 token:str1 did:self.didNumber complete:^(ResponseModel * model) {
+            
+          checkmodel =[[CheckDeviceModel alloc]initWithDictionary:model.retVal error:nil];
+            
         
-        self.dataSource =model[@"retVal"];
-        
-        NSString * str = model[@"retVal"][@"status"];
-        
-        
-        // 设备状态 UIbutton
-        if ([str isEqualToString:@"ds001"]) {
+            NSString * str = model.retVal[@"status"];
+
+            // 设备状态 UIbutton
+            if ([str isEqualToString:@"ds001"]) {
+                
+                _heandBtn.image =[UIImage imageNamed:@"on_line"];
+                _startBtn.enabled = YES;
+                _startBtn.backgroundColor =RED_COLOR;
+                
+            }else if ([str isEqualToString:@"ds002"])
+                
+            {
+                _heandBtn.image =[UIImage imageNamed:@"off_line"];
+                _startBtn.enabled = YES;
+                
+                
+                
+            }else
+            {
+                _heandBtn.image =[UIImage imageNamed:@"on_connection"];
+                
+                _startBtn.enabled = YES;
+                
+            }
+            [self.tableView reloadData];
             
-            _heandBtn.image =[UIImage imageNamed:@"on_line"];
-            _startBtn.enabled = YES;
-            _startBtn.backgroundColor =RED_COLOR;
-            
-        }else if ([str isEqualToString:@"ds002"])
-            
-        {
-            _heandBtn.image =[UIImage imageNamed:@"off_line"];
-            _startBtn.enabled = YES;
-            
-            
-            
-        }else
-        {
-            _heandBtn.image =[UIImage imageNamed:@"on_connection"];
-            
-            _startBtn.enabled = YES;
-            
-        }
-        [self.tableView reloadData];
-        
+        }];
         
         
-    }];
+        
+      
+        
+        
+        
+  
 
     
 }
@@ -238,9 +250,8 @@
 
 - (IBAction)startVideoBtn:(UIButton *)sender {
 
-    CheckDeviceModel *checkModel = [CheckDeviceModel modelWithDictionary:(NSDictionary *)self.dataSource];
 
-   [self sipCall:checkModel.deviceno sipName:nil];
+   [self sipCall:checkmodel.deviceno sipName:nil];
     
     
 }
@@ -300,7 +311,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.dataSource.count-10;
+    return self.dataSource.count+3;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -309,8 +320,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-     CheckDeviceModel *checkModel = [CheckDeviceModel modelWithDictionary:(NSDictionary *)self.dataSource];
     
     static NSString * showUserInfoCellIdentifier = @"PerInformation";
     PerInformationTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:showUserInfoCellIdentifier];
@@ -331,7 +340,7 @@
     }
     
     if (indexPath.row  ==0) {
-        cell.inforLable.text =checkModel.deviceno;
+        cell.inforLable.text =checkmodel.deviceno;
         
     }else if (indexPath.row ==1)
     {
