@@ -60,7 +60,6 @@
      app = (AppDelegate *)[UIApplication sharedApplication].delegate;
     _popView = [[PopView alloc] initWithFrame:CGRectMake(0, 0,SCREEN_WIDTH ,SCREEN_HEIGHT)];
     _popView.center = self.view.center;
-    
     _popView.ParentView = app.window;
     _popView.delegate = self;
    
@@ -156,14 +155,17 @@
 - (void)sureMehod
 {
 
-    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : [AccountManager sharedAccountManager].loginModel.userid , @"objective":@"device", @"token" : @"1",@"action":@"requestBinding",@"data":@{@"userid":[AccountManager sharedAccountManager].loginModel.userid,@"deviceno":@"9000000006"}} result:^(id model) {
+   
+    NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
+    
+    [[AFHttpClient sharedAFHttpClient]addDevide:str token:str deviceno:_popView.numberTextfied.text complete:^(ResponseModel * model) {
         
-        NSLog(@"%@",model[@"retDesc"]);
         [_popView removeFromSuperview];
-        [self showSuccessHudWithHint:model[@"retDesc"]];
-        
+        [self showSuccessHudWithHint:model.retDesc];
         
     }];
+    
+    
     
     
     
@@ -203,7 +205,7 @@
      cell.numberLable.text =checkModel.deviceno;
     // 设备不存在：ds000,在线：ds001,离线：ds002,通话中：ds003
     
-    if ([checkModel.status  isEqualToString:@"ds0001"]) {
+    if ([checkModel.status  isEqualToString:@"ds001"]) {
         // 可以去开启视频
         
         [cell.VideoStateBtn setImage:[UIImage imageNamed:@"sebot_start_on"] forState:UIControlStateNormal];

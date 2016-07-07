@@ -13,4 +13,10 @@
  *  我的设备
  */
 -(void)checkmoel:(NSString *)userid token:(NSString *)token complete:(void (^)(ResponseModel *))completeBlock;
+
+/**
+ *  添加设备
+ */
+-(void)addDevide:(NSString *)userid token:(NSString *)token deviceno:(NSString *)deviceno complete:(void (^)(ResponseModel *))completeBlock;
+
 @end

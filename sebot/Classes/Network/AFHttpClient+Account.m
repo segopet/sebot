@@ -39,4 +39,33 @@
     }];
 }
 
+
+
+-(void)updatephone:(NSString *)userid token:(NSString *)token  channelid:(NSString *)channelid type:(NSString *)type complete:(void (^)(ResponseModel *))completeBlock
+{
+    
+    
+    NSMutableDictionary * parms = [[NSMutableDictionary alloc]init];
+    parms[@"userid"] = userid;
+    parms[@"token"] = token;
+    parms[@"objective"] = @"user";
+    parms[@"action"] = @"updateChannelid";
+    NSMutableDictionary * dataparms = [[NSMutableDictionary alloc]init];
+    dataparms[@"userid"] = userid;
+    dataparms[@"channelid"]= channelid;
+    dataparms[@"type"] = type;
+    parms[@"data"] =dataparms;
+    
+    [self POST:@"sebot/moblie/forward" parameters:parms result:^(ResponseModel * model) {
+
+        if (model) {
+            completeBlock(model);
+        }
+        
+    }];
+
+    
+    
+}
+
 @end

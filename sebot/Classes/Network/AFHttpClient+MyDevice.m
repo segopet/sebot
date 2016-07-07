@@ -32,4 +32,29 @@
     
 }
 
+-(void)addDevide:(NSString *)userid token:(NSString *)token deviceno:(NSString *)deviceno complete:(void (^)(ResponseModel *))completeBlock
+{
+    
+    
+    NSMutableDictionary * parms = [[NSMutableDictionary alloc]init];
+    parms[@"userid"] = userid;
+    parms[@"token"] = token;
+    parms[@"objective"] = @"device";
+    parms[@"action"] = @"requestBinding";
+    NSMutableDictionary * dataparms = [[NSMutableDictionary alloc]init];
+    dataparms[@"userid"] = userid;
+    dataparms[@"deviceno"] = deviceno;
+    parms[@"data"] =dataparms;
+    
+    [self POST:@"sebot/moblie/forward" parameters:parms result:^(ResponseModel * model) {
+        
+        model.list = [CheckDeviceModel arrayOfModelsFromDictionaries:model.list];
+        
+        if (model) {
+            completeBlock(model);
+        }
+        
+    }];
+    
+}
 @end
