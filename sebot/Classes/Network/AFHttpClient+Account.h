@@ -17,4 +17,10 @@
 
 
 
+/**
+ *  更新手机推送标识
+ */
+
+-(void)updatephone:(NSString *)userid token:(NSString *)token  channelid:(NSString *)channelid type:(NSString *)type complete:(void (^)(ResponseModel *))completeBlock;
+
 @end

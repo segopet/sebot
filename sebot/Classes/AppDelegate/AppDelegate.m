@@ -100,7 +100,9 @@ static BOOL isBackGroundActivateApplication;
             }
             // 获取channel_id
             NSString *myChannel_id = [BPush getChannelId];
-            
+            [[NSUserDefaults standardUserDefaults] setObject:myChannel_id forKey:@"changeid"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+
             NSLog(@"==%@",myChannel_id);
             
             [BPush listTagsWithCompleteHandler:^(id result, NSError *error) {
