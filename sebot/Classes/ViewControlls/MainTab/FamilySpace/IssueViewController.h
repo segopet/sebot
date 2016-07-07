@@ -10,4 +10,5 @@
 
 @interface IssueViewController : BaseViewController
 @property (nonatomic,strong)UIImage * firstImage;
+@property (nonatomic,strong)NSString * aidstr;
 @end

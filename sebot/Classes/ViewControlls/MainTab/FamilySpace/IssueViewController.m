@@ -7,6 +7,7 @@
 //
 
 #import "IssueViewController.h"
+#import "AFHttpClient+Alumb.h"
 
 @interface IssueViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextViewDelegate>
 @property (nonatomic,strong)UITextView * topTextView;
@@ -76,11 +77,54 @@
 //        sender.userInteractionEnabled = YES;
 //    }];
     
+    [[AFHttpClient sharedAFHttpClient]issueWithuserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid aid:_aidstr coneten:_topTextView.text  photos:stingArr complete:^(ResponseModel *model) {
+         [self hideHud];
+        if (model) {
+            
+        }
+        
+        
+    }];
+    
+    
+    
+    
 }
 
 
 -(void)setupView{
     [super setupData];
+    //back@2x.png
+    UIView * topView = [[UIView alloc]initWithFrame:CGRectMake(0 * W_Wide_Zoom, 0 * W_Hight_Zoom, 375 * W_Wide_Zoom, 60 * W_Hight_Zoom)];
+    topView.backgroundColor = RED_COLOR;
+    [self.view addSubview:topView];
+    
+    
+    UIButton * backBtn = [[UIButton alloc]initWithFrame:CGRectMake(10 * W_Wide_Zoom, 30 * W_Hight_Zoom, 15 * W_Wide_Zoom, 15 * W_Hight_Zoom  )];
+    [backBtn setImage:[UIImage imageNamed:@"back@2x.png"] forState:UIControlStateNormal];
+    [topView addSubview:backBtn];
+    
+    UILabel * centerLabel = [[UILabel alloc]initWithFrame:CGRectMake(155 * W_Wide_Zoom, 23 * W_Hight_Zoom, 100 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
+    centerLabel.text = @"上传照片";
+    centerLabel.font = [UIFont systemFontOfSize:16];
+    centerLabel.textColor = [UIColor whiteColor];
+    [topView addSubview:centerLabel];
+    
+    UIButton * rightBtn = [[UIButton alloc]initWithFrame:CGRectMake(300 * W_Wide_Zoom, 24 * W_Hight_Zoom, 100 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
+    [rightBtn setTitle:@"上传" forState:UIControlStateNormal];
+    [rightBtn setTitleColor:[UIColor whiteColor ] forState:UIControlStateNormal];
+    rightBtn.titleLabel.font = [UIFont systemFontOfSize:15];
+    [topView addSubview:rightBtn];
+    [rightBtn addTarget:self action:@selector(releaseInfo:) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    
+    
+    
+    
+    
+    
+    
     _topTextView = [[UITextView alloc]initWithFrame:CGRectMake(0 * W_Wide_Zoom, 60 * W_Hight_Zoom, 375 * W_Wide_Zoom, 150 * W_Hight_Zoom)];
     _topTextView.textAlignment = NSTextAlignmentLeft;
     _topTextView.backgroundColor = [UIColor whiteColor];
@@ -111,7 +155,7 @@
     
     
 }
--(void)doLeftButtonTouch{
+-(void)doLeftButtonTouch1{
     UIAlertController * alertController = [UIAlertController alertControllerWithTitle:@"提示" message:@"您还没有发布内容，是否要退出？" preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction *action) {

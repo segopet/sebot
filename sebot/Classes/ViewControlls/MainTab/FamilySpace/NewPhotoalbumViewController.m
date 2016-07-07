@@ -21,6 +21,7 @@
 
 @property(nonatomic,strong)UIImagePickerController * imagePicker;
 
+@property (nonatomic,strong)NSString * aidStr;
 @end
 
 @implementation NewPhotoalbumViewController
@@ -117,6 +118,9 @@
         NewInformationViewController * haha = [[NewInformationViewController alloc]init];
         [self.navigationController pushViewController:haha animated:NO];
     }else{
+        NewAlbumModel * model = self.datasouce[indexPath.row];
+        _aidStr = model.aid;
+        
         [self downButttonUp];
         
     }
@@ -222,6 +226,7 @@
 //    [self.navigationController pushViewController:vC animated:YES];
     IssueViewController * issue = [[IssueViewController alloc]init];
     issue.firstImage = getImage;
+    issue.aidstr = _aidStr;
     [self presentViewController:issue animated:YES completion:nil];
     
     

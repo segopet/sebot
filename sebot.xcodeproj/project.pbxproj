@@ -250,6 +250,7 @@
 		7D3813061D25243A00C583DD /* baiquan.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D3813041D25243A00C583DD /* baiquan.png */; };
 		7D3813071D25243A00C583DD /* gouquan.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D3813051D25243A00C583DD /* gouquan.png */; };
 		7D396F861D2E31600079EE9E /* addImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D396F851D2E31600079EE9E /* addImage.png */; };
+		7D396F891D2E3F370079EE9E /* AFHttpClient+Alumb.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D396F881D2E3F370079EE9E /* AFHttpClient+Alumb.m */; };
 		7D4B10011D1291C90095D463 /* RegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D4B10001D1291C90095D463 /* RegistViewController.m */; };
 		7D4B101B1D129C860095D463 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4B101A1D129C860095D463 /* back@2x.png */; };
 		7D4B101F1D12A2950095D463 /* APPImgae.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4B101C1D12A2950095D463 /* APPImgae.png */; };
@@ -1002,6 +1003,8 @@
 		7D3813041D25243A00C583DD /* baiquan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = baiquan.png; sourceTree = "<group>"; };
 		7D3813051D25243A00C583DD /* gouquan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gouquan.png; sourceTree = "<group>"; };
 		7D396F851D2E31600079EE9E /* addImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addImage.png; sourceTree = "<group>"; };
+		7D396F871D2E3F370079EE9E /* AFHttpClient+Alumb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+Alumb.h"; sourceTree = "<group>"; };
+		7D396F881D2E3F370079EE9E /* AFHttpClient+Alumb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+Alumb.m"; sourceTree = "<group>"; };
 		7D4B0FFF1D1291C90095D463 /* RegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistViewController.h; sourceTree = "<group>"; };
 		7D4B10001D1291C90095D463 /* RegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistViewController.m; sourceTree = "<group>"; };
 		7D4B101A1D129C860095D463 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
@@ -1175,6 +1178,8 @@
 				7D2ECE7F1D192022003181A9 /* AFHttpClient+Account.m */,
 				7D72F5741D2A36060076AE67 /* AFHttpClient+Test.h */,
 				7D72F5751D2A36060076AE67 /* AFHttpClient+Test.m */,
+				7D396F871D2E3F370079EE9E /* AFHttpClient+Alumb.h */,
+				7D396F881D2E3F370079EE9E /* AFHttpClient+Alumb.m */,
 				7D2C47191D2BB93400D57C86 /* AFHttpClient+MyDevice.h */,
 				7D2C471A1D2BB93400D57C86 /* AFHttpClient+MyDevice.m */,
 				34012DA11D2BBC7600C97E1E /* AFHttpClient+DeviceInformation.h */,
@@ -2618,7 +2623,7 @@
 				TargetAttributes = {
 					57D1E5F11CFED25900BEDFF6 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 454LPD78S8;
+						DevelopmentTeam = ZMFX8728A9;
 					};
 				};
 			};
@@ -2900,6 +2905,7 @@
 				345565561D10FE6400B6E562 /* UIView+Sizes.m in Sources */,
 				34F4D2A11D1CCDE9005963CA /* InCallViewController.m in Sources */,
 				7DC627681D26086400EB2EB5 /* BSModel.m in Sources */,
+				7D396F891D2E3F370079EE9E /* AFHttpClient+Alumb.m in Sources */,
 				57D1E5F71CFED25900BEDFF6 /* main.m in Sources */,
 				7D2ECE7A1D191C11003181A9 /* LoginModel.m in Sources */,
 			);
@@ -3037,7 +3043,7 @@
 					"$(SRCROOT)/sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/include",
 				);
 				INFOPLIST_FILE = sebot/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3045,7 +3051,7 @@
 					"$(PROJECT_DIR)/sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/lib",
 					"$(PROJECT_DIR)/sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/lib/mediastreamer/plugins",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sego.sebo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sego.sebott;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -3087,7 +3093,7 @@
 					"$(SRCROOT)/sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/include",
 				);
 				INFOPLIST_FILE = sebot/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3095,7 +3101,7 @@
 					"$(PROJECT_DIR)/sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/lib",
 					"$(PROJECT_DIR)/sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/lib/mediastreamer/plugins",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sego.sebo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sego.sebott;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
