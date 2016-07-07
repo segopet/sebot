@@ -244,6 +244,7 @@
 		7D3813031D25006000C583DD /* NewAlbumModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3813021D25006000C583DD /* NewAlbumModel.m */; };
 		7D3813061D25243A00C583DD /* baiquan.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D3813041D25243A00C583DD /* baiquan.png */; };
 		7D3813071D25243A00C583DD /* gouquan.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D3813051D25243A00C583DD /* gouquan.png */; };
+		7D396F861D2E31600079EE9E /* addImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D396F851D2E31600079EE9E /* addImage.png */; };
 		7D4B10011D1291C90095D463 /* RegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D4B10001D1291C90095D463 /* RegistViewController.m */; };
 		7D4B101B1D129C860095D463 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4B101A1D129C860095D463 /* back@2x.png */; };
 		7D4B101F1D12A2950095D463 /* APPImgae.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4B101C1D12A2950095D463 /* APPImgae.png */; };
@@ -253,6 +254,7 @@
 		7D509D811D1BB685004E3059 /* NewAlumbleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D509D801D1BB685004E3059 /* NewAlumbleTableViewCell.m */; };
 		7D72F5761D2A36060076AE67 /* AFHttpClient+Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D72F5751D2A36060076AE67 /* AFHttpClient+Test.m */; };
 		7DC627681D26086400EB2EB5 /* BSModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DC627671D26086400EB2EB5 /* BSModel.m */; };
+		7DCDC9551D2CE62F000C438F /* IssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DCDC9541D2CE62F000C438F /* IssueViewController.m */; };
 		7DD7D1D11D0FE21B0002CD2E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD7D1D01D0FE21B0002CD2E /* AppDelegate.m */; };
 		7DE523941D13D53800C5B5EF /* ForegetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE523931D13D53800C5B5EF /* ForegetPasswordViewController.m */; };
 		CEB33C3D282E7125878CD13F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47642F05A36B917D69532A10 /* libPods.a */; };
@@ -984,6 +986,7 @@
 		7D3813021D25006000C583DD /* NewAlbumModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewAlbumModel.m; sourceTree = "<group>"; };
 		7D3813041D25243A00C583DD /* baiquan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = baiquan.png; sourceTree = "<group>"; };
 		7D3813051D25243A00C583DD /* gouquan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gouquan.png; sourceTree = "<group>"; };
+		7D396F851D2E31600079EE9E /* addImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addImage.png; sourceTree = "<group>"; };
 		7D4B0FFF1D1291C90095D463 /* RegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistViewController.h; sourceTree = "<group>"; };
 		7D4B10001D1291C90095D463 /* RegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistViewController.m; sourceTree = "<group>"; };
 		7D4B101A1D129C860095D463 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
@@ -998,6 +1001,8 @@
 		7D72F5751D2A36060076AE67 /* AFHttpClient+Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+Test.m"; sourceTree = "<group>"; };
 		7DC627661D26086400EB2EB5 /* BSModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSModel.h; sourceTree = "<group>"; };
 		7DC627671D26086400EB2EB5 /* BSModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSModel.m; sourceTree = "<group>"; };
+		7DCDC9531D2CE62F000C438F /* IssueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssueViewController.h; sourceTree = "<group>"; };
+		7DCDC9541D2CE62F000C438F /* IssueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssueViewController.m; sourceTree = "<group>"; };
 		7DD7D1CF1D0FE21B0002CD2E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7DD7D1D01D0FE21B0002CD2E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7DE523921D13D53800C5B5EF /* ForegetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForegetPasswordViewController.h; sourceTree = "<group>"; };
@@ -1353,6 +1358,8 @@
 				7D1AAC741D1A617800B4297E /* NewPhotoalbumViewController.m */,
 				7D509D7B1D1B86A2004E3059 /* NewInformationViewController.h */,
 				7D509D7C1D1B86A2004E3059 /* NewInformationViewController.m */,
+				7DCDC9531D2CE62F000C438F /* IssueViewController.h */,
+				7DCDC9541D2CE62F000C438F /* IssueViewController.m */,
 			);
 			path = FamilySpace;
 			sourceTree = "<group>";
@@ -2435,6 +2442,7 @@
 		7D4B10121D1297F40095D463 /* buttonImage */ = {
 			isa = PBXGroup;
 			children = (
+				7D396F851D2E31600079EE9E /* addImage.png */,
 				7D3813041D25243A00C583DD /* baiquan.png */,
 				7D3813051D25243A00C583DD /* gouquan.png */,
 				34E49DA61D21074900CF5CCB /* test11.png */,
@@ -2665,6 +2673,7 @@
 				34E4A01A1D261EF100CF5CCB /* contact-orange.png in Resources */,
 				34F4D2B31D1D234D005963CA /* right_off.png in Resources */,
 				34E4A01F1D261EF100CF5CCB /* history-orange.png in Resources */,
+				7D396F861D2E31600079EE9E /* addImage.png in Resources */,
 				34E49D9A1D20D06400CF5CCB /* person_paword@3x.png in Resources */,
 				345565121D10EF1300B6E562 /* Localizable.strings in Resources */,
 				34E4A0261D261EF100CF5CCB /* sephone-banner.png in Resources */,
@@ -2811,6 +2820,7 @@
 				7D509D811D1BB685004E3059 /* NewAlumbleTableViewCell.m in Sources */,
 				7D4B10011D1291C90095D463 /* RegistViewController.m in Sources */,
 				34E49FE81D261EF100CF5CCB /* SephoneManager.m in Sources */,
+				7DCDC9551D2CE62F000C438F /* IssueViewController.m in Sources */,
 				345565831D1139F200B6E562 /* LoginViewController.m in Sources */,
 				349263671D13FC9F006C2FD9 /* RepairPwViewController.m in Sources */,
 				7D509D7D1D1B86A2004E3059 /* NewInformationViewController.m in Sources */,
