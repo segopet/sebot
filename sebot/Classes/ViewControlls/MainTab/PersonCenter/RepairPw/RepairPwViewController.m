@@ -7,6 +7,7 @@
 //
 
 #import "RepairPwViewController.h"
+#import "AFHttpClient+ReparPassword.h"
 
 @interface RepairPwViewController ()
 
@@ -44,12 +45,12 @@
     
     if ([self.NewPsTx.text isEqualToString:self.ageinNewPsTx.text]) {
     
-    // 修改密码
-    [[AFHttpClient sharedAFHttpClient] POST:@"sebot/moblie/forward" parameters:@{@"userid" :  [AccountManager sharedAccountManager].loginModel.userid , @"objective":@"user", @"token" : @"1" , @"action" : @"modifyPassword", @"data" : @{@"userid" :  [AccountManager sharedAccountManager].loginModel.userid,@"oldpassword":self.oldPsTx.text,@"newpassword":self.NewPsTx.text}} result:^(id model) {
-        [self showSuccessHudWithHint:model[@""]];
-        [self.navigationController popViewControllerAnimated:YES];
+    NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
+   [[AFHttpClient sharedAFHttpClient]repairPs:str token:str old:self.oldPsTx.text new:self.NewPsTx.text complete:^(ResponseModel * model) {
+       
+       [self.navigationController popViewControllerAnimated:YES];
+   }];
         
-    }];
         
     }else
     {

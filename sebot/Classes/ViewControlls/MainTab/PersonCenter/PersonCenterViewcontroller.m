@@ -13,6 +13,7 @@
 #import "UIImageView+WebCache.h"
 #import "PersonModel.h"
 #import "UIImage-Extensions.h"
+#import "AFHttpClient+Person.h"
 
 @interface PersonCenterViewcontroller()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
@@ -54,21 +55,18 @@
     
    NSString * str =  [AccountManager sharedAccountManager].loginModel.userid;
     
-    
-    [[AFHttpClient sharedAFHttpClient] POST:@"sebot/moblie/forward" parameters:@{@"userid" : str , @"objective":@"user", @"token" : @"1" , @"action" : @"queryUser", @"data" : @{@"userid" : str}} result:^(id model) {
+    [[AFHttpClient sharedAFHttpClient]deciveInforamtion:str token:str  complete:^(ResponseModel * model) {
         
-        [arrTest removeAllObjects];
-       //  arrTest = model[@"retVal"];
-    //    checkModel = [PersonModel modelWithDictionary:(NSDictionary *)arrTest];
+        checkModel = [[PersonModel alloc]initWithDictionary:model.retVal error:nil];
         
         [_heandBtn sd_setImageWithURL:[NSURL URLWithString:checkModel.headportrait] placeholderImage:nil];
         _nameLabel.text = checkModel.nickname;
-        
-        NSLog(@"======%@",checkModel.headportrait);
-        
         [self.tableView reloadData];
+        
     }];
-
+    
+    
+    
     
 }
 
@@ -235,12 +233,11 @@
     NSString *  picstr = [NSString stringWithFormat:@"[{\"%@\":\"%@\",\"%@\":\"%@\"}]",@"name",picname1,@"content",pictureDataString];
     
     NSString * str =  [AccountManager sharedAccountManager].loginModel.userid;
-    [[AFHttpClient sharedAFHttpClient] POST:@"sebot/moblie/forward" parameters:@{@"userid" : str , @"objective":@"user", @"token" : @"1" , @"action" : @"modifyHeadportrait", @"data" : @{@"userid" : str,@"images":picstr}} result:^(id model) {
+    [[AFHttpClient sharedAFHttpClient]updateHead:str token:str image:picstr complete:^(ResponseModel * model) {
         
         NSLog(@"%@",model);
-    
     }];
-
+    
     
     
 }

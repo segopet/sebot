@@ -225,7 +225,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    CheckDeviceModel *checkModel = [CheckDeviceModel modelWithDictionary:(NSDictionary *)self.dataSource[indexPath.row]];
+    CheckDeviceModel *checkModel = self.dataSource[indexPath.row];
     DeviceInformationViewController * inforationVC =[[DeviceInformationViewController alloc]initWithNibName:@"DeviceInformationViewController" bundle:nil];
     inforationVC.didNumber = checkModel.did;
     [self.navigationController pushViewController:inforationVC animated:YES];
