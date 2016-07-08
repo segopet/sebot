@@ -19,4 +19,10 @@
  */
 -(void)addDevide:(NSString *)userid token:(NSString *)token deviceno:(NSString *)deviceno complete:(void (^)(ResponseModel *))completeBlock;
 
+
+/**
+ *  响应绑定
+ */
+
+-(void)responseBinding:(NSString *)userid token:(NSString *)token brid:(NSString *)brid operate:(NSString *)operate complete:(void (^)(ResponseModel *))completeBlock;
 @end

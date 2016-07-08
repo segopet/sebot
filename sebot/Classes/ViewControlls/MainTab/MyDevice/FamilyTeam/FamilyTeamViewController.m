@@ -123,7 +123,7 @@
     
     // 管理员邀请接口
     NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
-    [[AFHttpClient sharedAFHttpClient]invate:str token:str admin:str phone:_popView.numberLable.text deviceno:self.deviceNum complete:^(ResponseModel *model) {
+    [[AFHttpClient sharedAFHttpClient]invate:str token:str admin:str phone: _popView.numberTextfied.text deviceno:self.deviceNum complete:^(ResponseModel *model) {
         
         [_popView removeFromSuperview];
     }];
