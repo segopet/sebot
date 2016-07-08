@@ -71,7 +71,6 @@
     dataparms[@"brid"] = brid;
     dataparms[@"operate"] = operate;
     parms[@"data"] =dataparms;
-    
     [self POST:@"sebot/moblie/forward" parameters:parms result:^(ResponseModel * model) {
         
         model.list = [CheckDeviceModel arrayOfModelsFromDictionaries:model.list];
@@ -83,4 +82,29 @@
     }];
 }
 
+-(void)useresponseBinding:(NSString *)userid token:(NSString *)token brid:(NSString *)brid operate:(NSString *)operate complete:(void (^)(ResponseModel *))completeBlock
+
+{
+    
+    NSMutableDictionary * parms = [[NSMutableDictionary alloc]init];
+    parms[@"userid"] = userid;
+    parms[@"token"] = token;
+    parms[@"objective"] = @"device";
+    parms[@"action"] = @"inviteResponse";
+    NSMutableDictionary * dataparms = [[NSMutableDictionary alloc]init];
+    dataparms[@"brid"] = brid;
+    dataparms[@"operate"] = operate;
+    parms[@"data"] =dataparms;
+    [self POST:@"sebot/moblie/forward" parameters:parms result:^(ResponseModel * model) {
+        
+        model.list = [CheckDeviceModel arrayOfModelsFromDictionaries:model.list];
+        
+        if (model) {
+            completeBlock(model);
+        }
+        
+    }];
+
+    
+}
 @end

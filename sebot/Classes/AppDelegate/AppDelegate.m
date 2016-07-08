@@ -17,6 +17,8 @@ static BOOL isBackGroundActivateApplication;
 {
     
     NSString * strAps;
+    NSString * pushType;
+    
 }
 
 @end
@@ -73,6 +75,7 @@ static BOOL isBackGroundActivateApplication;
         [alertView show];
     }
     strAps =userInfo[@"brid"];
+    pushType =userInfo[@"type"];
     
     
     NSLog(@"%@",userInfo);
@@ -92,11 +95,23 @@ static BOOL isBackGroundActivateApplication;
         
     }else
     {
-        NSLog(@"同意");
-        [[AFHttpClient sharedAFHttpClient]responseBinding:str token:str brid:strAps operate:@"yes" complete:^(ResponseModel * model) {
-            
-        }];
+        
+        if ([pushType isEqualToString:@"T001"]) {
+            NSLog(@"同意");
+            [[AFHttpClient sharedAFHttpClient]responseBinding:str token:str brid:strAps operate:@"yes" complete:^(ResponseModel * model) {
+                
+            }];
 
+            
+        }else if([pushType isEqualToString:@"T002"]){
+            NSLog(@"同意");
+            [[AFHttpClient sharedAFHttpClient]useresponseBinding: str token:str brid:strAps operate:@"yes" complete:^(ResponseModel * model) {
+                
+            }];
+
+            
+        }
+       
     }
     
 }

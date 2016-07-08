@@ -25,4 +25,12 @@
  */
 
 -(void)responseBinding:(NSString *)userid token:(NSString *)token brid:(NSString *)brid operate:(NSString *)operate complete:(void (^)(ResponseModel *))completeBlock;
+
+/**
+ *  用户响应绑定
+ */
+
+-(void)useresponseBinding:(NSString *)userid token:(NSString *)token brid:(NSString *)brid operate:(NSString *)operate complete:(void (^)(ResponseModel *))completeBlock;
+
+
 @end
