@@ -11,6 +11,7 @@
 #import "NewAlbumAdviceModel.h"
 #import "AFHttpClient+Test.h"
 
+
 static NSString * cellId = @"newAllubmtabeleviewwcellid";
 @interface NewInformationViewController ()
 {

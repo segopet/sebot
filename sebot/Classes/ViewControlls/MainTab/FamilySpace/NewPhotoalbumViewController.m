@@ -10,8 +10,8 @@
 #import "NewInformationViewController.h"
 #import "NewAlbumModel.h"
 #import "AFHttpClient+Test.h"
-
-@interface NewPhotoalbumViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
+#import "IssueViewController.h"
+@interface NewPhotoalbumViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 @property (nonatomic,strong)NSMutableArray * datasouce;
 @property (nonatomic,strong) UICollectionView *colView;
 
@@ -19,6 +19,9 @@
 @property (nonatomic,strong)UIButton * bigBtn;
 @property (nonatomic,strong)UIView * downwitheView;
 
+@property(nonatomic,strong)UIImagePickerController * imagePicker;
+
+@property (nonatomic,strong)NSString * aidStr;
 @end
 
 @implementation NewPhotoalbumViewController
@@ -26,6 +29,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setNavTitle:@"选择相册"];
+    _imagePicker =[[UIImagePickerController alloc]init];
+    _imagePicker.delegate= self;
     _datasouce  = [NSMutableArray array];
     [UINavigationBar appearance].barTintColor=RED_COLOR;
     self.view.backgroundColor = NEW_GRAY_COLOR;
@@ -113,12 +118,15 @@
         NewInformationViewController * haha = [[NewInformationViewController alloc]init];
         [self.navigationController pushViewController:haha animated:NO];
     }else{
-        [self takePhoto];
+        NewAlbumModel * model = self.datasouce[indexPath.row];
+        _aidStr = model.aid;
+        
+        [self downButttonUp];
         
     }
 }
 
--(void)takePhoto{
+-(void)downButttonUp{
     _bigBtn = [[UIButton alloc]initWithFrame:self.view.frame];
     _bigBtn.backgroundColor = [UIColor lightGrayColor];
     _bigBtn.alpha = 0.6;
@@ -130,25 +138,109 @@
     _downwitheView = [[UIView alloc]initWithFrame:CGRectMake(0 * W_Wide_Zoom, 667 * W_Hight_Zoom, 375 * W_Wide_Zoom, 40 * W_Hight_Zoom)];
     
     [UIView animateWithDuration:0.3 animations:^{
-        _downView.frame = CGRectMake(0 * W_Wide_Zoom, 527 * W_Hight_Zoom, 375 * W_Wide_Zoom, 80 * W_Hight_Zoom);
-        _downView.backgroundColor = [UIColor blueColor];
+        _downView.frame = CGRectMake(0 * W_Wide_Zoom, 535 * W_Hight_Zoom, 375 * W_Wide_Zoom, 80 * W_Hight_Zoom);
+        _downView.backgroundColor = [UIColor whiteColor];
         [[UIApplication sharedApplication].keyWindow addSubview:_downView];
 
         _downwitheView.frame = CGRectMake(0 * W_Wide_Zoom, 627 * W_Hight_Zoom, 375 * W_Wide_Zoom, 40 * W_Hight_Zoom);
-        _downwitheView.backgroundColor = [UIColor blueColor];
+        _downwitheView.backgroundColor = [UIColor whiteColor];
         [[UIApplication sharedApplication].keyWindow addSubview:_downwitheView];
      }];
-
-    
-    
-    
+    NSArray * nameAry = @[@"拍照",@"相册"];
+    for (int i = 0 ; i < 2; i++) {
+   
+            UILabel * lineLabel = [[UILabel alloc]initWithFrame:CGRectMake(0 * W_Wide_Zoom, 40 * W_Hight_Zoom, 375 * W_Wide_Zoom, 1 * W_Hight_Zoom)];
+            lineLabel.backgroundColor = LIGHT_GRAY_COLOR;
+            [_downView addSubview:lineLabel];
+        
+        UIButton * buttones = [[UIButton alloc]initWithFrame:CGRectMake(0 * W_Wide_Zoom, 0 * W_Hight_Zoom + i * 40 * W_Hight_Zoom, 375 * W_Wide_Zoom, 40 * W_Hight_Zoom)];
+        [buttones setTitle:nameAry[i] forState:UIControlStateNormal];
+        [buttones setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        buttones.titleLabel.font = [UIFont systemFontOfSize:14];
+        [_downView addSubview:buttones];
+        buttones.tag = i + 12;
+        [buttones addTarget:self action:@selector(buttonesTouch:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    UIButton * dancelBtn = [[UIButton alloc]initWithFrame:CGRectMake(0 * W_Wide_Zoom, 0 * W_Hight_Zoom, 375 * W_Wide_Zoom, 40 * W_Hight_Zoom)];
+    [dancelBtn setTitle:@"取消" forState:UIControlStateNormal];
+    [dancelBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    dancelBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+    [_downwitheView addSubview:dancelBtn];
+    [dancelBtn addTarget:self action:@selector(bigButtonHiddin:) forControlEvents:UIControlEventTouchUpInside];
     
     
     
 }
+-(void)buttonesTouch: (UIButton *)sender{
+    if (sender.tag == 12) {
+        [self takephoto];
+    }else if (sender.tag == 13){
+        [self loacalPhoto];
+    }
+    
+}
+
+-(void)takephoto{
+    [self bigButtonHiddin:nil];
+    NSArray * mediaty = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeCamera];
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        _imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        _imagePicker.mediaTypes = @[mediaty[0]];
+        //设置相机模式：1摄像2录像
+        _imagePicker.cameraCaptureMode = UIImagePickerControllerCameraCaptureModePhoto;
+        //使用前置还是后置摄像头
+        _imagePicker.cameraDevice = UIImagePickerControllerCameraDeviceRear;
+        //闪光模式
+        _imagePicker.cameraFlashMode = UIImagePickerControllerCameraFlashModeAuto;
+        _imagePicker.allowsEditing = YES;
+    }else
+    {
+        NSLog(@"打开摄像头失败");
+    }
+    [self presentViewController:_imagePicker animated:YES completion:nil];
+
+}
+
+-(void)loacalPhoto{
+    [self bigButtonHiddin:nil];
+    NSArray * mediaTypers = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
+        _imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        _imagePicker.mediaTypes = @[mediaTypers[0],mediaTypers[1]];
+        _imagePicker.allowsEditing = YES;
+    }
+    [self presentViewController:_imagePicker animated:NO completion:nil];
+
+}
+
+//得到图片之后的处理
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    //NSMutableArray * imageArray = [[NSMutableArray alloc]init];
+    UIImage * getImage = [info objectForKey:UIImagePickerControllerOriginalImage];
+    //[imageArray addObject:getImage];
+    
+    [self dismissViewControllerAnimated:NO completion:nil];
+//    IssuePinViewController * vC = [[IssuePinViewController alloc]init];
+//    vC.firstImage = getImage;
+//    [self.navigationController pushViewController:vC animated:YES];
+    IssueViewController * issue = [[IssueViewController alloc]init];
+    issue.firstImage = getImage;
+    issue.aidstr = _aidStr;
+    [self presentViewController:issue animated:YES completion:nil];
+    
+    
+}
+
+
+
+
+
+
+
 
 -(void)bigButtonHiddin:(UIButton *)sender{
-    sender.hidden = YES;
+    _bigBtn.hidden = YES;
     [UIView animateWithDuration:0.3 animations:^{
         _downView.frame = CGRectMake(0 * W_Wide_Zoom, 667 * W_Hight_Zoom, 375 * W_Wide_Zoom, 80 * W_Hight_Zoom);
         

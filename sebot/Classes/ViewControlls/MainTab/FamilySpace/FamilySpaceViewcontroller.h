@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseTabViewController.h"
 
-@interface FamilySpaceViewcontroller : BaseViewController
+@interface FamilySpaceViewcontroller : BaseTabViewController
 
 @end
