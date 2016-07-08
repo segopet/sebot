@@ -57,7 +57,7 @@
     NSString *picname1 = [NSString stringWithFormat:@"%@.jpg",[formater stringFromDate:[NSDate date]]];
     [stingArr appendString:@"["];
     for (int i = 0; i < _imageArray.count; i++) {
-        NSString * picstr =[NSString stringWithFormat:@"{\"%@\":\"%@\",\"%@\":\"%@\"}",@"name",picname1,@"content",dataBaseArr[i]];
+        NSString * picstr =[NSString stringWithFormat:@"{\"%@\":\"%@\",\"%@\":\"%@\"}",@"name",picname1,@"pic",dataBaseArr[i]];
         [stingArr appendString:picstr];
         
         if (i != _imageArray.count-1) {
@@ -79,8 +79,11 @@
     
     [[AFHttpClient sharedAFHttpClient]issueWithuserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid aid:_aidstr coneten:_topTextView.text  photos:stingArr complete:^(ResponseModel *model) {
          [self hideHud];
+        
         if (model) {
-            
+            [self dismissViewControllerAnimated:YES completion:nil];
+             [[NSNotificationCenter defaultCenter]postNotificationName:@"shuaxinn" object:nil];
+            sender.userInteractionEnabled = YES;
         }
         
         
@@ -103,6 +106,7 @@
     UIButton * backBtn = [[UIButton alloc]initWithFrame:CGRectMake(10 * W_Wide_Zoom, 30 * W_Hight_Zoom, 15 * W_Wide_Zoom, 15 * W_Hight_Zoom  )];
     [backBtn setImage:[UIImage imageNamed:@"back@2x.png"] forState:UIControlStateNormal];
     [topView addSubview:backBtn];
+    [backBtn addTarget:self action:@selector(doLeftButtonTouch1) forControlEvents:UIControlEventTouchUpInside];
     
     UILabel * centerLabel = [[UILabel alloc]initWithFrame:CGRectMake(155 * W_Wide_Zoom, 23 * W_Hight_Zoom, 100 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
     centerLabel.text = @"上传照片";
@@ -160,7 +164,7 @@
     
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction *action) {
         // 点击按钮后的方法直接在这里面写
-        [self.navigationController popToRootViewControllerAnimated:NO];
+        [self dismissViewControllerAnimated:YES completion:nil];
     }];
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction *action) {
         NSLog(@"取消");

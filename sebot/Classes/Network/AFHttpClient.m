@@ -86,11 +86,11 @@ singleton_implementation(AFHttpClient)
 
 - (void)test {
     
-    [self POST:@"sebot/moblie/forward" parameters:@{@"userid" : @"1" , @"token" : @"1" , @"objective" : @"user" , @"action" : @"queryUser", @"data" : @{@"userid" : @"1"}} result:^(ResponseModel * model) {
-        
-        NSLog(@"%@", model);
-        
-    } ];
+//    [self POST:@"sebot/moblie/forward" parameters:@{@"userid" : @"1" , @"token" : @"1" , @"objective" : @"user" , @"action" : @"queryUser", @"data" : @{@"userid" : @"1"}} result:^(ResponseModel * model) {
+//        
+//        NSLog(@"%@", model);
+//        
+//    } ];
     
 }
 

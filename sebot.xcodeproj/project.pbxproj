@@ -241,6 +241,8 @@
 		57D1E5F71CFED25900BEDFF6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D1E5F61CFED25900BEDFF6 /* main.m */; };
 		57D1E6001CFED25900BEDFF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D1E5FE1CFED25900BEDFF6 /* Main.storyboard */; };
 		57D1E6021CFED25900BEDFF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57D1E6011CFED25900BEDFF6 /* Assets.xcassets */; };
+		7D175A4F1D2F434200828706 /* yindaoye1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7D175A4D1D2F434200828706 /* yindaoye1.jpg */; };
+		7D175A501D2F434200828706 /* yindaoye2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7D175A4E1D2F434200828706 /* yindaoye2.jpg */; };
 		7D1AAC751D1A617800B4297E /* NewPhotoalbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D1AAC741D1A617800B4297E /* NewPhotoalbumViewController.m */; };
 		7D2C471B1D2BB93400D57C86 /* AFHttpClient+MyDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C471A1D2BB93400D57C86 /* AFHttpClient+MyDevice.m */; };
 		7D2ECE7A1D191C11003181A9 /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2ECE791D191C11003181A9 /* LoginModel.m */; };
@@ -251,6 +253,7 @@
 		7D3813071D25243A00C583DD /* gouquan.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D3813051D25243A00C583DD /* gouquan.png */; };
 		7D396F861D2E31600079EE9E /* addImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D396F851D2E31600079EE9E /* addImage.png */; };
 		7D396F891D2E3F370079EE9E /* AFHttpClient+Alumb.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D396F881D2E3F370079EE9E /* AFHttpClient+Alumb.m */; };
+		7D396F8C1D2E4ACC0079EE9E /* FamilyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D396F8B1D2E4ACC0079EE9E /* FamilyTableViewCell.m */; };
 		7D4B10011D1291C90095D463 /* RegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D4B10001D1291C90095D463 /* RegistViewController.m */; };
 		7D4B101B1D129C860095D463 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4B101A1D129C860095D463 /* back@2x.png */; };
 		7D4B101F1D12A2950095D463 /* APPImgae.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4B101C1D12A2950095D463 /* APPImgae.png */; };
@@ -988,6 +991,8 @@
 		57D1E5FF1CFED25900BEDFF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		57D1E6011CFED25900BEDFF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57D1E6061CFED25900BEDFF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D175A4D1D2F434200828706 /* yindaoye1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yindaoye1.jpg; sourceTree = "<group>"; };
+		7D175A4E1D2F434200828706 /* yindaoye2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yindaoye2.jpg; sourceTree = "<group>"; };
 		7D1AAC731D1A617800B4297E /* NewPhotoalbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPhotoalbumViewController.h; sourceTree = "<group>"; };
 		7D1AAC741D1A617800B4297E /* NewPhotoalbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPhotoalbumViewController.m; sourceTree = "<group>"; };
 		7D2C47191D2BB93400D57C86 /* AFHttpClient+MyDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+MyDevice.h"; sourceTree = "<group>"; };
@@ -1005,6 +1010,8 @@
 		7D396F851D2E31600079EE9E /* addImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addImage.png; sourceTree = "<group>"; };
 		7D396F871D2E3F370079EE9E /* AFHttpClient+Alumb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+Alumb.h"; sourceTree = "<group>"; };
 		7D396F881D2E3F370079EE9E /* AFHttpClient+Alumb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+Alumb.m"; sourceTree = "<group>"; };
+		7D396F8A1D2E4ACC0079EE9E /* FamilyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FamilyTableViewCell.h; sourceTree = "<group>"; };
+		7D396F8B1D2E4ACC0079EE9E /* FamilyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FamilyTableViewCell.m; sourceTree = "<group>"; };
 		7D4B0FFF1D1291C90095D463 /* RegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistViewController.h; sourceTree = "<group>"; };
 		7D4B10001D1291C90095D463 /* RegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistViewController.m; sourceTree = "<group>"; };
 		7D4B101A1D129C860095D463 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
@@ -2514,6 +2521,8 @@
 		7D4B10131D1297F40095D463 /* guideImage */ = {
 			isa = PBXGroup;
 			children = (
+				7D175A4D1D2F434200828706 /* yindaoye1.jpg */,
+				7D175A4E1D2F434200828706 /* yindaoye2.jpg */,
 			);
 			path = guideImage;
 			sourceTree = "<group>";
@@ -2543,6 +2552,8 @@
 			children = (
 				7D509D7F1D1BB685004E3059 /* NewAlumbleTableViewCell.h */,
 				7D509D801D1BB685004E3059 /* NewAlumbleTableViewCell.m */,
+				7D396F8A1D2E4ACC0079EE9E /* FamilyTableViewCell.h */,
+				7D396F8B1D2E4ACC0079EE9E /* FamilyTableViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2623,7 +2634,7 @@
 				TargetAttributes = {
 					57D1E5F11CFED25900BEDFF6 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = ZMFX8728A9;
+						DevelopmentTeam = 454LPD78S8;
 					};
 				};
 			};
@@ -2666,6 +2677,7 @@
 				7D3813061D25243A00C583DD /* baiquan.png in Resources */,
 				34F4D2B61D1D265A005963CA /* shuping.png in Resources */,
 				34E49FE21D261EF100CF5CCB /* msg.wav in Resources */,
+				7D175A501D2F434200828706 /* yindaoye2.jpg in Resources */,
 				34E49D8F1D20C7A100CF5CCB /* tab_family_press@2x.png in Resources */,
 				34E49FE31D261EF100CF5CCB /* nowebcamCIF.jpg in Resources */,
 				34E49D811D20C37100CF5CCB /* sebot_add@3x.png in Resources */,
@@ -2748,6 +2760,7 @@
 				34E4A0241D261EF100CF5CCB /* notok.png in Resources */,
 				3492636D1D13FE8D006C2FD9 /* AboutTableViewCell.xib in Resources */,
 				349263631D13FC72006C2FD9 /* AboutViewController.xib in Resources */,
+				7D175A4F1D2F434200828706 /* yindaoye1.jpg in Resources */,
 				34E4A02F1D261EF100CF5CCB /* status-red.png in Resources */,
 				34E4A02E1D261EF100CF5CCB /* status-orange.png in Resources */,
 				7D3813071D25243A00C583DD /* gouquan.png in Resources */,
@@ -2842,6 +2855,7 @@
 				345565B81D11505E00B6E562 /* UITabBar+Badge.m in Sources */,
 				34012DAC1D2CD76400C97E1E /* AFHttpClient+ReparPassword.m in Sources */,
 				345565801D11376500B6E562 /* FamilySpaceViewcontroller.m in Sources */,
+				7D396F8C1D2E4ACC0079EE9E /* FamilyTableViewCell.m in Sources */,
 				34921D0F1D191A5D00541E41 /* SaomaoViewController.m in Sources */,
 				349263791D178EF4006C2FD9 /* OpinionViewController.m in Sources */,
 				345565D21D129EBC00B6E562 /* DeviceInformationViewController.m in Sources */,
@@ -3051,7 +3065,7 @@
 					"$(PROJECT_DIR)/sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/lib",
 					"$(PROJECT_DIR)/sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/lib/mediastreamer/plugins",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sego.sebott;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sego.sebo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -3101,7 +3115,7 @@
 					"$(PROJECT_DIR)/sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/lib",
 					"$(PROJECT_DIR)/sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/lib/mediastreamer/plugins",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sego.sebott;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sego.sebo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
