@@ -102,8 +102,9 @@
     [[AFHttpClient sharedAFHttpClient]loginWithUserName:_accountTextfield.text password:_passwordTextfield.text userid:@"" complete:^(ResponseModel *model) {
         LoginModel * loginModel = [[LoginModel alloc]initWithDictionary:model.retVal error:nil];
         NSLog(@"%@",loginModel);
-        [self updatePhone];
+       
         [[AccountManager sharedAccountManager] login:loginModel];
+         [self updatePhone];
         [[NSNotificationCenter defaultCenter] postNotificationName:NotificationLoginStateChange object:@YES];
 
     }];
@@ -120,8 +121,7 @@
 - (void)updatePhone
 {
      NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
-
-    [[AFHttpClient  sharedAFHttpClient]updatephone:str token:str channelid:[[NSUserDefaults standardUserDefaults]objectForKey:@"changeid"] type:@"ios" complete:^(ResponseModel * model) {
+     [[AFHttpClient  sharedAFHttpClient]updatephone:str token:str channelid:[[NSUserDefaults standardUserDefaults]objectForKey:@"changeid"] type:@"ios" complete:^(ResponseModel * model) {
         
     }];
     

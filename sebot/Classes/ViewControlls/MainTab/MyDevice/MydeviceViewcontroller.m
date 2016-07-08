@@ -43,8 +43,7 @@
     
     NSUserDefaults * defults =[NSUserDefaults standardUserDefaults];
     NSString * str =[defults objectForKey:@"s_m_text"];
-    
-    
+    _popView.numberTextfied.text= str;
     
     
     
@@ -157,9 +156,8 @@
 
    
     NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
-    
+    _popView.numberTextfied.text= [[NSUserDefaults standardUserDefaults]objectForKey:@"s_m_text"];
     [[AFHttpClient sharedAFHttpClient]addDevide:str token:str deviceno:_popView.numberTextfied.text complete:^(ResponseModel * model) {
-        
         [_popView removeFromSuperview];
         [self showSuccessHudWithHint:model.retDesc];
         

@@ -11,9 +11,13 @@
 #import "AppDelegate+Sephone.h"
 #import "AppDelegate+BaiduPush.h"
 #import "IQKeyboardManager.h"
-
+#import "AFHttpClient+MyDevice.h"
 static BOOL isBackGroundActivateApplication;
-@interface AppDelegate ()
+@interface AppDelegate ()<UIAlertViewDelegate>
+{
+    
+    NSString * strAps;
+}
 
 @end
 
@@ -51,7 +55,7 @@ static BOOL isBackGroundActivateApplication;
     // 应用在前台，不跳转页面，让用户选择。
     if (application.applicationState == UIApplicationStateActive) {
         NSLog(@"acitve ");
-        UIAlertView *alertView =[[UIAlertView alloc]initWithTitle:@"收到一条消息" message:userInfo[@"desc"] delegate:self cancelButtonTitle:nil otherButtonTitles:@"我知道了", nil];
+        UIAlertView *alertView =[[UIAlertView alloc]initWithTitle:@"收到一条消息" message:userInfo[@"desc"] delegate:self cancelButtonTitle:@"拒绝" otherButtonTitles:@"同意", nil];
         [alertView show];
     }
     //杀死状态下，直接跳转到跳转页面。
@@ -68,10 +72,36 @@ static BOOL isBackGroundActivateApplication;
         UIAlertView *alertView =[[UIAlertView alloc]initWithTitle:@"收到一条消息" message:userInfo[@"aps"][@"alert"] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
         [alertView show];
     }
-   
+    strAps =userInfo[@"brid"];
+    
     
     NSLog(@"%@",userInfo);
 }
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex;{
+    
+    // the user clicked OK
+     NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
+    if (buttonIndex == 0)
+    {
+        NSLog(@"拒绝");
+        [[AFHttpClient sharedAFHttpClient]responseBinding:str token:str brid:strAps operate:@"no" complete:^(ResponseModel * model) {
+            
+        }];
+        
+        
+    }else
+    {
+        NSLog(@"同意");
+        [[AFHttpClient sharedAFHttpClient]responseBinding:str token:str brid:strAps operate:@"yes" complete:^(ResponseModel * model) {
+            
+        }];
+
+    }
+    
+}
+
+
 
 
 
