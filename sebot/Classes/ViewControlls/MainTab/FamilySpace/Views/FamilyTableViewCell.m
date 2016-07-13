@@ -47,10 +47,15 @@
         _timeLabel.font = [UIFont systemFontOfSize:14];
         [self addSubview:_timeLabel];
         
+        _aixin = [[UIButton alloc]initWithFrame:CGRectMake(280 * W_Wide_Zoom, 375 * W_Hight_Zoom, 16 * W_Wide_Zoom, 15 * W_Hight_Zoom)];
+        [_aixin setImage:[UIImage imageNamed:@"dianzanzan.png"] forState:UIControlStateNormal];
+        [self addSubview:_aixin];
         
-        
-        
-        
+        _aixinLabel = [[UILabel alloc]initWithFrame:CGRectMake(300 * W_Wide_Zoom, 375 * W_Hight_Zoom , 50 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
+        _aixinLabel.font = [UIFont systemFontOfSize:14];
+        _aixinLabel.textColor = [UIColor lightGrayColor];
+        _aixinLabel.text = @"12";
+        [self addSubview:_aixinLabel];
         
         
         

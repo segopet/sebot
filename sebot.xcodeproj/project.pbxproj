@@ -259,6 +259,9 @@
 		7D4B101F1D12A2950095D463 /* APPImgae.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4B101C1D12A2950095D463 /* APPImgae.png */; };
 		7D4B10241D12A6C10095D463 /* password.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4B10221D12A6C10095D463 /* password.png */; };
 		7D4B10251D12A6C10095D463 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4B10231D12A6C10095D463 /* user.png */; };
+		7D4C6FA31D348CFC00334143 /* dianzanhou.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4C6FA01D348CFC00334143 /* dianzanhou.png */; };
+		7D4C6FA41D348CFC00334143 /* dianzanzan.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4C6FA11D348CFC00334143 /* dianzanzan.png */; };
+		7D4C6FA51D348CFC00334143 /* pinglunlun.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4C6FA21D348CFC00334143 /* pinglunlun.png */; };
 		7D509D7D1D1B86A2004E3059 /* NewInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D509D7C1D1B86A2004E3059 /* NewInformationViewController.m */; };
 		7D509D811D1BB685004E3059 /* NewAlumbleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D509D801D1BB685004E3059 /* NewAlumbleTableViewCell.m */; };
 		7D72F5761D2A36060076AE67 /* AFHttpClient+Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D72F5751D2A36060076AE67 /* AFHttpClient+Test.m */; };
@@ -1018,6 +1021,9 @@
 		7D4B101C1D12A2950095D463 /* APPImgae.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = APPImgae.png; sourceTree = "<group>"; };
 		7D4B10221D12A6C10095D463 /* password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = password.png; sourceTree = "<group>"; };
 		7D4B10231D12A6C10095D463 /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
+		7D4C6FA01D348CFC00334143 /* dianzanhou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dianzanhou.png; sourceTree = "<group>"; };
+		7D4C6FA11D348CFC00334143 /* dianzanzan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dianzanzan.png; sourceTree = "<group>"; };
+		7D4C6FA21D348CFC00334143 /* pinglunlun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pinglunlun.png; sourceTree = "<group>"; };
 		7D509D7B1D1B86A2004E3059 /* NewInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewInformationViewController.h; sourceTree = "<group>"; };
 		7D509D7C1D1B86A2004E3059 /* NewInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewInformationViewController.m; sourceTree = "<group>"; };
 		7D509D7F1D1BB685004E3059 /* NewAlumbleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewAlumbleTableViewCell.h; sourceTree = "<group>"; };
@@ -2479,6 +2485,9 @@
 		7D4B10121D1297F40095D463 /* buttonImage */ = {
 			isa = PBXGroup;
 			children = (
+				7D4C6FA01D348CFC00334143 /* dianzanhou.png */,
+				7D4C6FA11D348CFC00334143 /* dianzanzan.png */,
+				7D4C6FA21D348CFC00334143 /* pinglunlun.png */,
 				7D396F851D2E31600079EE9E /* addImage.png */,
 				7D3813041D25243A00C583DD /* baiquan.png */,
 				7D3813051D25243A00C583DD /* gouquan.png */,
@@ -2667,6 +2676,7 @@
 				34F4D2B21D1D234D005963CA /* left_on.png in Resources */,
 				34E49D8C1D20C7A100CF5CCB /* tab_device_normal@2x.png in Resources */,
 				34E49D8D1D20C7A100CF5CCB /* tab_device_press@2x.png in Resources */,
+				7D4C6FA51D348CFC00334143 /* pinglunlun.png in Resources */,
 				34E4A03F1D261EF100CF5CCB /* tapping.wav in Resources */,
 				34E49D8E1D20C7A100CF5CCB /* tab_family_normal@2x.png in Resources */,
 				34E49FE01D261EF100CF5CCB /* hold.wav in Resources */,
@@ -2767,6 +2777,7 @@
 				34F4D29C1D1A8C9E005963CA /* on_connection.png in Resources */,
 				345565B01D114C5400B6E562 /* launguide.jpg in Resources */,
 				34E4A03C1D261EF100CF5CCB /* rock.wav in Resources */,
+				7D4C6FA31D348CFC00334143 /* dianzanhou.png in Resources */,
 				34E4A0301D261EF100CF5CCB /* stopcall-red.png in Resources */,
 				34E4A0371D261EF100CF5CCB /* bigben.wav in Resources */,
 				34E4A0171D261EF100CF5CCB /* chat_message_not_delivered.png in Resources */,
@@ -2775,6 +2786,7 @@
 				34E4A0401D261EF100CF5CCB /* toy-mono.wav in Resources */,
 				34E49D9D1D20FF0F00CF5CCB /* about.png in Resources */,
 				34E49D851D20C4A700CF5CCB /* sebot_start_on@2x.png in Resources */,
+				7D4C6FA41D348CFC00334143 /* dianzanzan.png in Resources */,
 				34E49FEA1D261EF100CF5CCB /* sephonerc-factory in Resources */,
 				34E49FEC1D261EF100CF5CCB /* sephonerc~ipad in Resources */,
 				34E4A0211D261EF100CF5CCB /* hold_on.png in Resources */,

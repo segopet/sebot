@@ -103,7 +103,7 @@ static BOOL isBackGroundActivateApplication;
             }];
 
             
-        }else if([pushType isEqualToString:@"T002"]){
+        }else if([pushType isEqualToString:@"T003"]){
             NSLog(@"同意");
             [[AFHttpClient sharedAFHttpClient]useresponseBinding: str token:str brid:strAps operate:@"yes" complete:^(ResponseModel * model) {
                 
