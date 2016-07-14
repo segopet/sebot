@@ -296,7 +296,7 @@
     }else if (indexPath.row == 1)
 
     {
-        cell.inforLable.text = checkModel.phone;
+        cell.inforLable.text = checkModel.nickname;
         
         
     }else
