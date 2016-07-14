@@ -18,6 +18,8 @@ static BOOL isBackGroundActivateApplication;
     
     NSString * strAps;
     NSString * pushType;
+    BOOL isIknow;
+    
     
 }
 
@@ -52,13 +54,27 @@ static BOOL isBackGroundActivateApplication;
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
     completionHandler(UIBackgroundFetchResultNewData);
+    
+    strAps =userInfo[@"brid"];
+    pushType =userInfo[@"type"];
     // 打印到日志 textView 中
     NSLog(@"********** iOS7.0之后 background **********");
     // 应用在前台，不跳转页面，让用户选择。
     if (application.applicationState == UIApplicationStateActive) {
         NSLog(@"acitve ");
+        
+        if ([pushType isEqualToString:@"T002"] || [pushType isEqualToString:@"T004"]) {
+            isIknow = YES;
+            UIAlertView *alertView =[[UIAlertView alloc]initWithTitle:@"收到一条消息" message:userInfo[@"desc"] delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
+            [alertView show];
+
+        }else
+        {
+            isIknow =  NO;
         UIAlertView *alertView =[[UIAlertView alloc]initWithTitle:@"收到一条消息" message:userInfo[@"desc"] delegate:self cancelButtonTitle:@"拒绝" otherButtonTitles:@"同意", nil];
         [alertView show];
+            
+        }
     }
     //杀死状态下，直接跳转到跳转页面。
     if (application.applicationState == UIApplicationStateInactive && !isBackGroundActivateApplication)
@@ -74,8 +90,7 @@ static BOOL isBackGroundActivateApplication;
         UIAlertView *alertView =[[UIAlertView alloc]initWithTitle:@"收到一条消息" message:userInfo[@"aps"][@"alert"] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
         [alertView show];
     }
-    strAps =userInfo[@"brid"];
-    pushType =userInfo[@"type"];
+   
     
     
     NSLog(@"%@",userInfo);
@@ -85,34 +100,44 @@ static BOOL isBackGroundActivateApplication;
     
     // the user clicked OK
      NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
-    if (buttonIndex == 0)
-    {
-        NSLog(@"拒绝");
-        [[AFHttpClient sharedAFHttpClient]responseBinding:str token:str brid:strAps operate:@"no" complete:^(ResponseModel * model) {
-            
-        }];
-        
+    if (isIknow  ==  YES) {
         
     }else
     {
         
-        if ([pushType isEqualToString:@"T001"]) {
-            NSLog(@"同意");
-            [[AFHttpClient sharedAFHttpClient]responseBinding:str token:str brid:strAps operate:@"yes" complete:^(ResponseModel * model) {
+        if (buttonIndex == 0)
+        {
+            NSLog(@"拒绝");
+            [[AFHttpClient sharedAFHttpClient]responseBinding:str token:str brid:strAps operate:@"no" complete:^(ResponseModel * model) {
                 
             }];
-
             
-        }else if([pushType isEqualToString:@"T002"]){
-            NSLog(@"同意");
-            [[AFHttpClient sharedAFHttpClient]useresponseBinding: str token:str brid:strAps operate:@"yes" complete:^(ResponseModel * model) {
+            
+        }else
+        {
+            
+            if ([pushType isEqualToString:@"T001"]) {
+                NSLog(@"同意");
+                [[AFHttpClient sharedAFHttpClient]responseBinding:str token:str brid:strAps operate:@"yes" complete:^(ResponseModel * model) {
+                    
+                }];
                 
-            }];
-
+                
+            }else if([pushType isEqualToString:@"T003"]){
+                NSLog(@"同意");
+                [[AFHttpClient sharedAFHttpClient]useresponseBinding: str token:str brid:strAps operate:@"yes" complete:^(ResponseModel * model) {
+                    
+                }];
+                
+                
+            }
+            
             
         }
-       
+
     }
+    
+    
     
 }
 
@@ -175,6 +200,7 @@ static BOOL isBackGroundActivateApplication;
     else//杀死状态下，直接跳转到跳转页面。
     {
         
+        NSLog(@"在杀死状态下");
     }
 
 }

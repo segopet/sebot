@@ -68,4 +68,32 @@
     
 }
 
+
+-(void)repairname:(NSString *)userid token:(NSString *)token nickname:(NSString * )nickname complete:(void (^)(ResponseModel *))completeBlock
+{
+    
+    
+    NSMutableDictionary * parms = [[NSMutableDictionary alloc]init];
+    parms[@"userid"] = userid;
+    parms[@"token"] = token;
+    parms[@"objective"] = @"user";
+    parms[@"action"] = @"modifyNickname";
+    NSMutableDictionary * dataparms = [[NSMutableDictionary alloc]init];
+    dataparms[@"userid"] = userid;
+    dataparms[@"nickname"] = nickname;
+    parms[@"data"] =dataparms;
+    
+    [self POST:@"sebot/moblie/forward" parameters:parms result:^(ResponseModel * model) {
+        
+        model.list = [CheckDeviceModel arrayOfModelsFromDictionaries:model.list];
+        
+        if (model) {
+            completeBlock(model);
+        }
+        
+    }];
+
+    
+    
+}
 @end

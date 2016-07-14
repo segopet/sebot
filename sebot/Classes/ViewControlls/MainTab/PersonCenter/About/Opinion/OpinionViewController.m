@@ -26,6 +26,8 @@
     [super viewDidLoad];
     [self setNavTitle: NSLocalizedString(@"Opinion", nil)];
     self.view.backgroundColor = [UIColor whiteColor];
+    self.automaticallyAdjustsScrollViewInsets = NO;
+
 
 }
 
@@ -44,7 +46,7 @@
     _topTextfield.backgroundColor = LIGHT_GRAY_COLOR;
     _topTextfield.textAlignment = NSTextAlignmentLeft;
     _topTextfield.font = [UIFont systemFontOfSize:13];
-    _topTextfield.delegate = self;
+    _topTextfield.delegate= self;
     [self.view addSubview:_topTextfield];
     
     
@@ -83,6 +85,7 @@
 
 -(void)textViewDidBeginEditing:(UITextView *)textView{
     _placeholderLabel.text = @"";
+    
 }
 
 -(void)textViewDidEndEditing:(UITextView *)textView{
@@ -111,7 +114,7 @@
     
     [[AFHttpClient sharedAFHttpClient] POST:@"sebot/moblie/forward" parameters:@{@"userid" :  [AccountManager sharedAccountManager].loginModel.userid , @"objective":@"user", @"token" : @"1" , @"action" : @"feedback", @"data" : @{@"userid" :  [AccountManager sharedAccountManager].loginModel.userid,@"fcontent":_topTextfield.text,@"type":@"iphone",@"fphone":_downTextfield.text}} result:^(id model) {
         
-        [self showSuccessHudWithHint:model[@""]];
+        [self showSuccessHudWithHint:@"反馈成功"];
         [self.navigationController popViewControllerAnimated:YES];
         
     }];

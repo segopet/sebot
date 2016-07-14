@@ -49,6 +49,16 @@
     
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+
+{
+    [super viewWillDisappear:animated];
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"s_m_text"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    
+}
+
 
 - (void)viewDidLoad{
     [super viewDidLoad];
@@ -200,7 +210,7 @@
         cell = [[[NSBundle mainBundle]loadNibNamed:@"MyDeviceTableViewCell" owner:self options:nil]lastObject];
     }
      cell.selectionStyle = UITableViewCellSelectionStyleNone;
-     cell.numberLable.text =checkModel.deviceno;
+     cell.numberLable.text =checkModel.deviceremark;
     // 设备不存在：ds000,在线：ds001,离线：ds002,通话中：ds003
     
     if ([checkModel.status  isEqualToString:@"ds001"]) {

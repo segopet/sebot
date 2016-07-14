@@ -62,12 +62,14 @@
                 _heandBtn.image =[UIImage imageNamed:@"on_line"];
                 _startBtn.enabled = YES;
                 _startBtn.backgroundColor =RED_COLOR;
+                _cancelBtn.enabled = YES;
                 
             }else if ([str isEqualToString:@"ds002"])
                 
             {
                 _heandBtn.image =[UIImage imageNamed:@"off_line"];
                 _startBtn.enabled = YES;
+                _cancelBtn.enabled = YES;
                 
                 
                 
@@ -76,6 +78,7 @@
                 _heandBtn.image =[UIImage imageNamed:@"on_connection"];
                 
                 _startBtn.enabled = YES;
+                _cancelBtn.enabled = YES;
                 
             }
             [self.tableView reloadData];
@@ -351,7 +354,7 @@
     }else if (indexPath.row ==1)
     {
         
-       // cell.introduceLable.text = checkModel.
+        cell.inforLable.text = checkmodel.deviceremark;
     }
     
     
