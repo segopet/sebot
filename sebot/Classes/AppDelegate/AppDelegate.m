@@ -12,6 +12,8 @@
 #import "AppDelegate+BaiduPush.h"
 #import "IQKeyboardManager.h"
 #import "AFHttpClient+MyDevice.h"
+#import "MainTabViewController.h"
+#import "MydeviceViewcontroller.h"
 static BOOL isBackGroundActivateApplication;
 @interface AppDelegate ()<UIAlertViewDelegate>
 {
@@ -19,7 +21,7 @@ static BOOL isBackGroundActivateApplication;
     NSString * strAps;
     NSString * pushType;
     BOOL isIknow;
-    
+    MainTabViewController * mainVC;
     
 }
 
@@ -79,6 +81,14 @@ static BOOL isBackGroundActivateApplication;
     //杀死状态下，直接跳转到跳转页面。
     if (application.applicationState == UIApplicationStateInactive && !isBackGroundActivateApplication)
     {
+        /*
+        MydeviceViewcontroller * devideVC =[[MydeviceViewcontroller alloc]init];
+        [mainVC.selectedViewController presentViewController:devideVC animated:YES completion:nil];
+         */
+        
+        UIAlertView *alertView =[[UIAlertView alloc]initWithTitle:@"收到一条消息" message:userInfo[@"desc"] delegate:self cancelButtonTitle:@"拒绝" otherButtonTitles:@"同意", nil];
+        [alertView show];
+        
        
         
     }
@@ -210,6 +220,7 @@ static BOOL isBackGroundActivateApplication;
     {
         
         NSLog(@"在杀死状态下");
+        
     }
 
 }

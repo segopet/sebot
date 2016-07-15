@@ -66,7 +66,7 @@
         }else
         {
             
-            [self showSuccessHudWithHint:@"密码不匹配"];
+            [self showSuccessHudWithHint:@"新密码不匹配"];
         }
 
         
