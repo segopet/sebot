@@ -13,6 +13,7 @@
 #import "SaomaoViewController.h"
 #import "CheckDeviceModel.h"
 #import "AFHttpClient+MyDevice.h"
+#import "AppUtil.h"
 
 
 @interface MydeviceViewcontroller()<PopDelegate>
@@ -44,6 +45,7 @@
     NSUserDefaults * defults =[NSUserDefaults standardUserDefaults];
     NSString * str =[defults objectForKey:@"s_m_text"];
     _popView.numberTextfied.text= str;
+     [self initRefreshView];
     
     
     
@@ -74,19 +76,6 @@
    
     
     self.dataSource =[NSMutableArray array];
-   
-
-    
-    NSString * str =[AccountManager sharedAccountManager].loginModel.userid;
-    
-    [[AFHttpClient sharedAFHttpClient]checkmoel:str token:str complete:^(ResponseModel * model) {
-      
-        [self.dataSource addObjectsFromArray:model.list];
-        [self.tableView reloadData];
-        
-    } ];
-    
-    
 
 
 }
@@ -99,7 +88,38 @@
     
     [super setupView];
     
+    
 }
+
+
+// 刷新
+
+-(void)loadDataSourceWithPage:(int)page{
+    
+    NSString * str =[AccountManager sharedAccountManager].loginModel.userid;
+
+    [[AFHttpClient sharedAFHttpClient]checkmoel:str token:str complete:^(ResponseModel * model) {
+        
+        if (page == START_PAGE_INDEX) {
+            [self.dataSource removeAllObjects];
+            [self.dataSource addObjectsFromArray:model.list];
+        } else {
+            [self.dataSource addObjectsFromArray:model.list];
+        }
+        
+        if (model.list.count < REQUEST_PAGE_SIZE){
+            self.tableView.mj_footer.hidden = YES;
+        }else{
+            self.tableView.mj_footer.hidden = NO;
+        }
+        
+        [self.tableView reloadData];
+        [self handleEndRefresh];
+        
+    }];
+    
+}
+
 
 - (void)setupData
 
@@ -166,7 +186,14 @@
 
    
     NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
-    _popView.numberTextfied.text= [[NSUserDefaults standardUserDefaults]objectForKey:@"s_m_text"];
+    
+    if ([AppUtil isBlankString:_popView.numberTextfied.text]) {
+         _popView.numberTextfied.text= [[NSUserDefaults standardUserDefaults]objectForKey:@"s_m_text"];
+    }else
+    {
+        
+        
+    }
     [[AFHttpClient sharedAFHttpClient]addDevide:str token:str deviceno:_popView.numberTextfied.text complete:^(ResponseModel * model) {
         [_popView removeFromSuperview];
         [self showSuccessHudWithHint:model.retDesc];

@@ -43,33 +43,39 @@
     _imagePicker =[[UIImagePickerController alloc]init];
     _imagePicker.delegate= self;
     
-    self.dataSource =[NSMutableArray array];
-    NSArray * arr =@[@"账号",@"昵称",@"我的相册",@"修改密码",@"关于"];
-    [self.dataSource addObjectsFromArray:arr];
-    arrTest =[NSMutableArray array];
-    NSArray * arrT =@[@"13540691705",@"Tony",@"",@"",@""];
-    [arrTest addObjectsFromArray:arrT];
-    arrImage =[NSMutableArray array];
-    NSArray * arrI =@[@"acount",@"test11",@"photo",@"paword",@"about"];
-    [arrImage addObjectsFromArray:arrI];
     
+}
+
+
+-(void)loadDataSourceWithPage:(int)page{
     
-   NSString * str =  [AccountManager sharedAccountManager].loginModel.userid;
+    NSString * str =[AccountManager sharedAccountManager].loginModel.userid;
     
-    [[AFHttpClient sharedAFHttpClient]deciveInforamtion:str token:str  complete:^(ResponseModel * model) {
+   [[AFHttpClient sharedAFHttpClient]deciveInforamtion:str token:str  complete:^(ResponseModel * model) {
         
-        checkModel = [[PersonModel alloc]initWithDictionary:model.retVal error:nil];
+        if (page == START_PAGE_INDEX) {
+           
+            checkModel = [[PersonModel alloc]initWithDictionary:model.retVal error:nil];
+            [_heandBtn sd_setImageWithURL:[NSURL URLWithString:checkModel.headportrait] placeholderImage:nil];
+            _nameLabel.text = checkModel.nickname;
+            
+        } else {
+            
+        }
         
-        [_heandBtn sd_setImageWithURL:[NSURL URLWithString:checkModel.headportrait] placeholderImage:nil];
-        _nameLabel.text = checkModel.nickname;
+        if (model.list.count < REQUEST_PAGE_SIZE){
+            self.tableView.mj_footer.hidden = YES;
+        }else{
+            self.tableView.mj_footer.hidden = NO;
+        }
+        
         [self.tableView reloadData];
+        [self handleEndRefresh];
         
     }];
     
-    
-    
-    
 }
+
 
 
 - (void)setupView
@@ -120,6 +126,8 @@
         [self.tableView setLayoutMargins:UIEdgeInsetsMake(0,0,0,0)];
     }
     
+    [self  initRefreshView];
+
 
     
 }
@@ -127,6 +135,17 @@
 - (void)setupData
 {
     [super setupData];
+    
+    self.dataSource =[NSMutableArray array];
+    NSArray * arr =@[@"账号",@"昵称",@"我的相册",@"修改密码",@"关于"];
+    [self.dataSource addObjectsFromArray:arr];
+    arrTest =[NSMutableArray array];
+    NSArray * arrT =@[@"13540691705",@"Tony",@"",@"",@""];
+    [arrTest addObjectsFromArray:arrT];
+    arrImage =[NSMutableArray array];
+    NSArray * arrI =@[@"acount",@"test11",@"photo",@"paword",@"about"];
+    [arrImage addObjectsFromArray:arrI];
+
     
 }
 
@@ -375,6 +394,8 @@
     NSString * str= [AccountManager sharedAccountManager].loginModel.userid;
     [[AFHttpClient sharedAFHttpClient]repairname:str token:str nickname:textname complete:^(ResponseModel * model) {
         NSLog(@"修改昵称");
+        
+        [self initRefreshView];
     }];
     
     

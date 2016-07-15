@@ -11,6 +11,7 @@
 #import "PopView.h"
 #import "FamilyTeamModel.h"
 #import "AFHttpClient+FamilyTeam.h"
+#import "AppUtil.h"
 
 @interface FamilyTeamViewController ()<PopDelegate>
 
@@ -47,23 +48,7 @@
     _popView.saomaBtnl.hidden = YES;
     _popView.ParentView = app.window;
     _popView.delegate = self;
-    
-    // 家庭成员接口
-       
-    NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
-    
-    [[AFHttpClient sharedAFHttpClient]familyteam:str token:str did:self.did complete:^(ResponseModel * model) {
-        
-        [self.dataSource addObjectsFromArray:model.list];
-        famModel = self.dataSource[0];
-        // 管理员
-        strControl  = famModel.userid;
-        
-        [self.tableView  reloadData];
-    }];
-    
 
-    
     
 }
 
@@ -96,13 +81,48 @@
 - (void)setupView
 {
     [super setupView];
-    
-    
-   
+    [self initRefreshView];
     
     
     
 }
+
+
+-(void)loadDataSourceWithPage:(int)page{
+    
+    NSString * str =[AccountManager sharedAccountManager].loginModel.userid;
+    
+    // 家庭成员接口
+    [[AFHttpClient sharedAFHttpClient]familyteam:str token:str did:self.did complete:^(ResponseModel * model) {
+        
+       
+        
+        if (page == START_PAGE_INDEX) {
+            [self.dataSource removeAllObjects];
+            [self.dataSource addObjectsFromArray:model.list];
+            famModel = self.dataSource[0];
+            // 管理员
+            strControl  = famModel.userid;
+        } else {
+            [self.dataSource addObjectsFromArray:model.list];
+        }
+        
+        if (model.list.count < REQUEST_PAGE_SIZE){
+            self.tableView.mj_footer.hidden = YES;
+        }else{
+            self.tableView.mj_footer.hidden = NO;
+        }
+        
+        [self.tableView reloadData];
+        [self handleEndRefresh];
+        
+    }];
+    
+}
+
+
+
+
 
 /**
  *  邀请
@@ -128,12 +148,22 @@
 {
     NSLog(@"33");
     
-    // 管理员邀请接口
-    NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
-    [[AFHttpClient sharedAFHttpClient]invate:str token:str admin:str phone: _popView.numberTextfied.text deviceno:self.deviceNum complete:^(ResponseModel *model) {
+    
+    if ([AppUtil isValidateMobile:_popView.numberTextfied.text]) {
         
-        [_popView removeFromSuperview];
-    }];
+        // 管理员邀请接口
+        NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
+        [[AFHttpClient sharedAFHttpClient]invate:str token:str admin:str phone: _popView.numberTextfied.text deviceno:self.deviceNum complete:^(ResponseModel *model) {
+            
+            [_popView removeFromSuperview];
+        }];
+
+    }
+    else
+    {
+        [self showSuccessHudWithHint:@"请输入正确的手机格式"];
+        
+    }
     
 
     
@@ -233,7 +263,7 @@
         NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
         [[AFHttpClient sharedAFHttpClient]move:str token:str admin:strControl usr:famModel.userid did:famModel.did complete:^(ResponseModel * model) {
             [self showSuccessHudWithHint:model.retDesc];
-            [self.tableView reloadData];
+            [self initRefreshView];
         }];
 
         
@@ -312,9 +342,9 @@
 
             // 转让接口
         NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
-            [[AFHttpClient sharedAFHttpClient]givePowr:str token:str admin:self.dataSource[0][@"userid"] usr:famModel.userid did:famModel.did complete:^(ResponseModel * model) {
+            [[AFHttpClient sharedAFHttpClient]givePowr:str token:str admin:strControl usr:famModel.userid did:famModel.did complete:^(ResponseModel * model) {
                 [self showSuccessHudWithHint:model.retDesc];
-                [self.tableView reloadData];
+                [self initRefreshView];
             }];
         
         
