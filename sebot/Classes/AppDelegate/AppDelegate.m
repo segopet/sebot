@@ -108,9 +108,18 @@ static BOOL isBackGroundActivateApplication;
         if (buttonIndex == 0)
         {
             NSLog(@"拒绝");
+            
+             if ([pushType isEqualToString:@"T001"]) {
             [[AFHttpClient sharedAFHttpClient]responseBinding:str token:str brid:strAps operate:@"no" complete:^(ResponseModel * model) {
                 
             }];
+                 
+             }else if ([pushType isEqualToString:@"T003"])
+             {
+                 
+                   [[AFHttpClient sharedAFHttpClient]useresponseBinding: str token:str brid:strAps operate:@"no" complete:^(ResponseModel * model) {
+                   }];
+             }
             
             
         }else

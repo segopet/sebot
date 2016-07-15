@@ -108,12 +108,27 @@ static const char *kScanQRCodeQueueName = "ScanQRCodeQueue";
   
     // 以及处理了结果，下次扫描
     // pop到上级 以及结果
-    NSUserDefaults * userdefaults =[NSUserDefaults standardUserDefaults];
-    [userdefaults setValue:result forKey:@"s_m_text"];
-    [userdefaults synchronize];
+    [self isPureInt:result];
     
-    [self.navigationController popViewControllerAnimated:YES];
-    _lastResut = YES;
+    if ([self isPureInt:result]) {
+        NSUserDefaults * userdefaults =[NSUserDefaults standardUserDefaults];
+        [userdefaults setValue:result forKey:@"s_m_text"];
+        [userdefaults synchronize];
+        [self.navigationController popViewControllerAnimated:YES];
+        _lastResut = YES;
+
+    }else
+    {
+        [self showSuccessHudWithHint:@"不是设备号 请重新扫码"];
+        _lastResut = NO;
+    }
+   }
+
+
+- (BOOL)isPureInt:(NSString*)string{
+    NSScanner* scan = [NSScanner scannerWithString:string]; //定义一个NSScanner，扫描string
+    int val;
+    return[scan scanInt:&val] && [scan isAtEnd];
 }
 
 

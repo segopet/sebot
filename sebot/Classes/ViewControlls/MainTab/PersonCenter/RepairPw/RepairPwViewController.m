@@ -8,6 +8,7 @@
 
 #import "RepairPwViewController.h"
 #import "AFHttpClient+ReparPassword.h"
+#import "LoginViewController.h"
 
 @interface RepairPwViewController ()
 
@@ -54,8 +55,11 @@
         if ([self.NewPsTx.text isEqualToString:self.ageinNewPsTx.text]) {
             NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
             [[AFHttpClient sharedAFHttpClient]repairPs:str token:str old:self.oldPsTx.text new:self.NewPsTx.text complete:^(ResponseModel * model) {
+
+                [self showSuccessHudWithHint:model.retDesc];
+                LoginViewController * loginVC =[[LoginViewController alloc]init];
+                [self presentViewController:loginVC animated:YES completion:nil];
                 
-                [self.navigationController popViewControllerAnimated:YES];
             }];
             
             
@@ -66,7 +70,12 @@
         }
 
         
-    }else
+    }else if ([self.oldPsTx.text isEqualToString:self.NewPsTx.text])
+    {
+        
+        [self showSuccessHudWithHint:@"新密码与旧密码一致"];
+    }
+    else
     {
         
         [self showSuccessHudWithHint:@"原密码必须正确"];
