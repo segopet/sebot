@@ -270,6 +270,7 @@
 		7DCDC9551D2CE62F000C438F /* IssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DCDC9541D2CE62F000C438F /* IssueViewController.m */; };
 		7DD7D1D11D0FE21B0002CD2E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD7D1D01D0FE21B0002CD2E /* AppDelegate.m */; };
 		7DE523941D13D53800C5B5EF /* ForegetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE523931D13D53800C5B5EF /* ForegetPasswordViewController.m */; };
+		7DF28C3F1D387D2B00FA31C6 /* AFHttpClient+Regist.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF28C3E1D387D2B00FA31C6 /* AFHttpClient+Regist.m */; };
 		CEB33C3D282E7125878CD13F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47642F05A36B917D69532A10 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -1041,6 +1042,8 @@
 		7DD7D1D01D0FE21B0002CD2E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7DE523921D13D53800C5B5EF /* ForegetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForegetPasswordViewController.h; sourceTree = "<group>"; };
 		7DE523931D13D53800C5B5EF /* ForegetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForegetPasswordViewController.m; sourceTree = "<group>"; };
+		7DF28C3D1D387D2B00FA31C6 /* AFHttpClient+Regist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+Regist.h"; sourceTree = "<group>"; };
+		7DF28C3E1D387D2B00FA31C6 /* AFHttpClient+Regist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+Regist.m"; sourceTree = "<group>"; };
 		8FD84F7D3505BA6C0FF1433D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1194,6 +1197,8 @@
 				572DEE5C1D1162E100035228 /* AFHttpClient.m */,
 				7D2ECE7E1D192022003181A9 /* AFHttpClient+Account.h */,
 				7D2ECE7F1D192022003181A9 /* AFHttpClient+Account.m */,
+				7DF28C3D1D387D2B00FA31C6 /* AFHttpClient+Regist.h */,
+				7DF28C3E1D387D2B00FA31C6 /* AFHttpClient+Regist.m */,
 				7D72F5741D2A36060076AE67 /* AFHttpClient+Test.h */,
 				7D72F5751D2A36060076AE67 /* AFHttpClient+Test.m */,
 				7D396F871D2E3F370079EE9E /* AFHttpClient+Alumb.h */,
@@ -2886,6 +2891,7 @@
 				345565831D1139F200B6E562 /* LoginViewController.m in Sources */,
 				34012DA61D2CAD9700C97E1E /* UIButton+EnlargeTouchArea.m in Sources */,
 				349263671D13FC9F006C2FD9 /* RepairPwViewController.m in Sources */,
+				7DF28C3F1D387D2B00FA31C6 /* AFHttpClient+Regist.m in Sources */,
 				7D509D7D1D1B86A2004E3059 /* NewInformationViewController.m in Sources */,
 				345565B51D11500F00B6E562 /* BaseViewController.m in Sources */,
 				3455657D1D11374500B6E562 /* PersonCenterViewcontroller.m in Sources */,

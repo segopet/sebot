@@ -41,7 +41,7 @@
 
 
 
--(void)updatephone:(NSString *)userid token:(NSString *)token  channelid:(NSString *)channelid type:(NSString *)type complete:(void (^)(ResponseModel *))completeBlock
+-(void)updatephone:(NSString *)userid token:(NSString *)token  channelid:(NSString *)channelid type:(NSString *)type complete:(void (^)(ResponseModel * model))completeBlock
 {
     
     
