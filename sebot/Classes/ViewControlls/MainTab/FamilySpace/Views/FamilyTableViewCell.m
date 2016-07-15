@@ -47,13 +47,26 @@
         _timeLabel.font = [UIFont systemFontOfSize:14];
         [self addSubview:_timeLabel];
         
+        _aixin = [[UIButton alloc]initWithFrame:CGRectMake(250 * W_Wide_Zoom, 380 * W_Hight_Zoom, 16 * W_Wide_Zoom, 15 * W_Hight_Zoom)];
+        [_aixin setImage:[UIImage imageNamed:@"dianzanzan.png"] forState:UIControlStateNormal];
+        [self addSubview:_aixin];
         
+        _aixinLabel = [[UILabel alloc]initWithFrame:CGRectMake(280 * W_Wide_Zoom, 373 * W_Hight_Zoom , 50 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
+        _aixinLabel.font = [UIFont systemFontOfSize:14];
+        _aixinLabel.textColor = [UIColor lightGrayColor];
+        _aixinLabel.text = @"12";
+        [self addSubview:_aixinLabel];
         
+        _pinglun = [[UIButton alloc]initWithFrame:CGRectMake(310 * W_Wide_Zoom, 380 * W_Hight_Zoom, 16 * W_Wide_Zoom, 15 * W_Hight_Zoom)];
+        [_pinglun setImage:[UIImage imageNamed:@"pinglunlun.png"] forState:UIControlStateNormal];
+        [self addSubview:_pinglun];
         
+        _pinglunlabel = [[UILabel alloc]initWithFrame:CGRectMake(340 * W_Wide_Zoom, 373 * W_Hight_Zoom, 50 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
         
-        
-        
-        
+        _pinglunlabel.textColor = [UIColor lightGrayColor];
+        _pinglunlabel.font = [UIFont systemFontOfSize:14];
+        _pinglunlabel.text = @"22";
+        [self addSubview:_pinglunlabel];
         
         
         

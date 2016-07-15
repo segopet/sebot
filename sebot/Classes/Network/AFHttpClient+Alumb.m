@@ -48,7 +48,7 @@
     
     [self POST:@"sebot/moblie/forward" parameters:parms result:^(ResponseModel * model) {
         
-        
+        model.list = [FamilyquanModel arrayOfModelsFromDictionaries:model.list];
         if (model) {
             completeBlock(model);
         }

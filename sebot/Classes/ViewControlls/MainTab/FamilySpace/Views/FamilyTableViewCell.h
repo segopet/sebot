@@ -17,9 +17,9 @@
 @property (nonatomic,strong)UILabel * content;
 @property (nonatomic,strong)UILabel * lineLabel;
 @property (nonatomic,strong)UILabel * timeLabel;
-@property (nonatomic,strong)UIImageView * aixin;
+@property (nonatomic,strong)UIButton * aixin;
 @property (nonatomic,strong)UILabel * aixinLabel;
-@property (nonatomic,strong)UIImageView * pinglun;
+@property (nonatomic,strong)UIButton * pinglun;
 @property (nonatomic,strong)UILabel * pinglunlabel;
 
 
