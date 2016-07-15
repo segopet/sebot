@@ -312,7 +312,7 @@
 
             // 转让接口
         NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
-            [[AFHttpClient sharedAFHttpClient]givePowr:str token:str admin:self.dataSource[0][@"userid"] usr:famModel.userid did:famModel.did complete:^(ResponseModel * model) {
+            [[AFHttpClient sharedAFHttpClient]givePowr:str token:str admin:strControl usr:famModel.userid did:famModel.did complete:^(ResponseModel * model) {
                 [self showSuccessHudWithHint:model.retDesc];
                 [self.tableView reloadData];
             }];

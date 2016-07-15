@@ -90,7 +90,6 @@
       
         
         
-        
   
 
     
@@ -192,10 +191,67 @@
     [super setupView];
     
     
-    
+    [self initRefreshView];
     
     
 }
+
+-(void)loadDataSourceWithPage:(int)page{
+    
+    NSString * str1 =[AccountManager sharedAccountManager].loginModel.userid;
+    [[AFHttpClient sharedAFHttpClient]deciveInforamtion:str1 token:str1 did:self.didNumber complete:^(ResponseModel * model) {
+        
+        
+        NSString * str = model.retVal[@"status"];
+        
+        // 设备状态 UIbutton
+        if ([str isEqualToString:@"ds001"]) {
+            
+            _heandBtn.image =[UIImage imageNamed:@"on_line"];
+            _startBtn.enabled = YES;
+            _startBtn.backgroundColor =RED_COLOR;
+            _cancelBtn.enabled = YES;
+            
+        }else if ([str isEqualToString:@"ds002"])
+            
+        {
+            _heandBtn.image =[UIImage imageNamed:@"off_line"];
+            _startBtn.enabled = YES;
+            _cancelBtn.enabled = YES;
+            
+            
+            
+        }else
+        {
+            _heandBtn.image =[UIImage imageNamed:@"on_connection"];
+            
+            _startBtn.enabled = YES;
+            _cancelBtn.enabled = YES;
+            
+        }
+
+        
+        
+        if (page == START_PAGE_INDEX) {
+            [self.dataSource removeAllObjects];
+             checkmodel =[[CheckDeviceModel alloc]initWithDictionary:model.retVal error:nil];
+        } else {
+            checkmodel =[[CheckDeviceModel alloc]initWithDictionary:model.retVal error:nil];
+        }
+        
+        if (model.list.count < REQUEST_PAGE_SIZE){
+            self.tableView.mj_footer.hidden = YES;
+        }else{
+            self.tableView.mj_footer.hidden = NO;
+        }
+        
+        [self.tableView reloadData];
+        [self handleEndRefresh];
+        
+    }];
+    
+}
+
 
 
 - (void)setupData
@@ -292,7 +348,7 @@
   
     [[AFHttpClient sharedAFHttpClient]solvDevice:str token:str did:checkmodel.did complete:^(ResponseModel * model) {
         
-        NSLog(@"%@",model);
+        NSLog(@"%@",model.retDesc);
         
     }];
     
@@ -382,6 +438,8 @@
             [[AFHttpClient sharedAFHttpClient]repairName:str token:str did:checkmodel.did remark:userNameTextField.text complete:^(ResponseModel * model) {
                 
                   NSLog(@"======%@",model);
+                
+                [self initRefreshView];
             }];
             
 
