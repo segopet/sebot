@@ -19,6 +19,9 @@
     PopView * _popView;
     AppDelegate *app;
     FamilyTeamModel * famModel;
+    NSString * strControl;
+    BOOL  isMeControl;
+    
     
 }
 
@@ -52,6 +55,10 @@
     [[AFHttpClient sharedAFHttpClient]familyteam:str token:str did:self.did complete:^(ResponseModel * model) {
         
         [self.dataSource addObjectsFromArray:model.list];
+        famModel = self.dataSource[0];
+        // 管理员
+        strControl  = famModel.userid;
+        
         [self.tableView  reloadData];
     }];
     
@@ -166,20 +173,42 @@
     cell.nameLable.text = famModel.nickname;
     [cell.headImage sd_setImageWithURL:[NSURL URLWithString:famModel.headportrait] placeholderImage:[UIImage imageNamed:@"APPImgae"]];
     
+   
     cell.moveBtn.tag = 1000+indexPath.row;
     cell.transferBtn.tag = 2000+indexPath.row;
     [cell.moveBtn addTarget:self  action:@selector(moveMetod:) forControlEvents:UIControlEventTouchUpInside];
     [cell.transferBtn addTarget:self action:@selector(transferMethod:) forControlEvents:UIControlEventTouchUpInside];
     
-    if (indexPath.row == 0) {
-        
-    }else
-    {
-        cell.moveBtn.hidden = NO;
-        cell.transferBtn.hidden = NO;
-        cell.conterLable.hidden  = YES;
-    }
     
+    
+     if (indexPath.row == 0 && [strControl isEqualToString:[AccountManager sharedAccountManager].loginModel.userid]) {
+         cell.moveBtn.hidden = YES;
+         cell.transferBtn.hidden = YES;
+         cell.conterLable.hidden  = NO;
+         isMeControl = YES;
+         
+     }
+     else if (indexPath.row>0)
+     {
+        cell.conterLable.hidden  = YES;
+         if (isMeControl) {
+             cell.moveBtn.hidden = NO;
+             cell.transferBtn.hidden = NO;
+        
+             
+         }else
+         {
+     cell.moveBtn.hidden = YES;
+     cell.transferBtn.hidden = YES;
+     
+     
+         }
+     
+     }
+
+    
+    
+
     return cell;
     
 }
@@ -202,7 +231,7 @@
         
         // 操作为更改权限
         NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
-        [[AFHttpClient sharedAFHttpClient]move:str token:str admin:self.dataSource[0][@"userid"] usr:famModel.userid did:famModel.did complete:^(ResponseModel * model) {
+        [[AFHttpClient sharedAFHttpClient]move:str token:str admin:strControl usr:famModel.userid did:famModel.did complete:^(ResponseModel * model) {
             [self showSuccessHudWithHint:model.retDesc];
             [self.tableView reloadData];
         }];

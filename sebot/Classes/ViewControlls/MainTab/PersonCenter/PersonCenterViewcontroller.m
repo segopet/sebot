@@ -15,6 +15,7 @@
 #import "UIImage-Extensions.h"
 #import "AFHttpClient+Person.h"
 
+
 @interface PersonCenterViewcontroller()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 {
@@ -152,6 +153,14 @@
         [self getPhoto];
         
     }]];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        //点击按钮的响应事件；
+        
+      
+        
+    }]];
+
     [self presentViewController:alert animated:true completion:nil];
     
 }
@@ -287,7 +296,7 @@
     }else if (indexPath.row == 1)
 
     {
-        cell.inforLable.text = checkModel.phone;
+        cell.inforLable.text = checkModel.nickname;
         
         
     }else
@@ -314,9 +323,7 @@
         [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Sure", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             //获取第1个输入框；
             UITextField *userNameTextField = alertController.textFields.firstObject;
-            
-            // 确认之后这里会获取到 然后更正数组里的备注 要上传服务器
-            NSLog(@"备注名 = %@",userNameTextField.text);
+            [self repairName:userNameTextField.text];
             
         }]];
         
@@ -359,6 +366,21 @@
 }
 
 
+// 修改备注名
+
+- (void)repairName:(NSString *)textname
+{
+    
+    
+    NSString * str= [AccountManager sharedAccountManager].loginModel.userid;
+    [[AFHttpClient sharedAFHttpClient]repairname:str token:str nickname:textname complete:^(ResponseModel * model) {
+        NSLog(@"修改昵称");
+    }];
+    
+    
+    
+
+}
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([cell respondsToSelector:@selector(setSeparatorInset:)])

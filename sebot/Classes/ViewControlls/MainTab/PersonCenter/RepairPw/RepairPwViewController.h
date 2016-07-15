@@ -8,7 +8,7 @@
 
 #import "BaseViewController.h"
 
-@interface RepairPwViewController : BaseViewController
+@interface RepairPwViewController : BaseViewController<UITextFieldDelegate>
 
 
 @property (strong, nonatomic) IBOutlet UITextField *ageinNewPsTx;

@@ -20,5 +20,10 @@
  */
 -(void)updateHead:(NSString *)userid token:(NSString *)token image:(NSString * )image complete:(void (^)(ResponseModel *))completeBlock;
 
+/**
+ *  修改昵称
+ */
+
+-(void)repairname:(NSString *)userid token:(NSString *)token nickname:(NSString * )nickname complete:(void (^)(ResponseModel *))completeBlock;
 
 @end
