@@ -13,7 +13,7 @@
 #import "NewAlbumAdviceModel.h"
 #import "NewAlbumModel.h"
 #import "CheckDeviceModel.h"
-
+#import "FamilyquanModel.h"
 
 @interface AFHttpClient : AFHTTPSessionManager
 

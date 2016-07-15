@@ -10,7 +10,8 @@
 #import "NewPhotoalbumViewController.h"
 #import "FamilyTableViewCell.h"
 #import "AFHttpClient+Alumb.h"
-
+#import "FamilyquanModel.h"
+#import "UIImage-Extensions.h"
 
 static NSString * cellId = @"FamilyCellides";
 @implementation FamilySpaceViewcontroller
@@ -38,6 +39,7 @@ static NSString * cellId = @"FamilyCellides";
 
 -(void)loadDataSourceWithPage:(int)page{
     [[AFHttpClient sharedAFHttpClient]familyArticlesWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid page:[NSString stringWithFormat:@"%d",page] complete:^(ResponseModel *model) {
+        
         if (page == START_PAGE_INDEX) {
             [self.dataSource removeAllObjects];
             [self.dataSource addObjectsFromArray:model.list];
@@ -85,12 +87,52 @@ static NSString * cellId = @"FamilyCellides";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
+    FamilyquanModel * model = self.dataSource[indexPath.row];
     FamilyTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     //tabview隐藏点击效果和分割线
+    cell.content.text = model.content;
+    [cell.headImage.layer setMasksToBounds:YES];
+    NSString * headStr = model.headportrait;
+    NSURL * headUrl = [NSURL URLWithString:headStr];
+    [cell.headImage sd_setImageWithURL:headUrl placeholderImage:[UIImage imageNamed:@""]];
+    if (model.cutImage) {
+        cell.bigImage.image = model.cutImage;
+    }else{
+        [cell.bigImage sd_setImageWithURL:[NSURL URLWithString:model.thumbnails] placeholderImage:[UIImage imageNamed:@""] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+            if (image) {
+                cell.bigImage.image = [image imageByScalingProportionallyToSize:CGSizeMake(self.tableView.width, CGFLOAT_MAX)];
+                model.cutImage = cell.bigImage.image;
+            }
+
+        }];
+    }
+    cell.timeLabel.text = model.publishtime;
+    if ([model.praised isEqualToString:@"0"]) {
+        [cell.aixin setImage:[UIImage imageNamed:@"dianzanzan.png"] forState:UIControlStateNormal];
+    }else{
+        [cell.aixin setImage:[UIImage imageNamed:@"dianzanhou.png"] forState:UIControlStateNormal];
+    }
+    cell.aixin.tag = indexPath.row + 22;
+    [cell.aixin addTarget:self action:@selector(dianzanbttuntouch:) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
+
+-(void)dianzanbttuntouch:(UIButton *)sender{
+    NSInteger i = sender.tag - 22;
+
+    NSLog(@"%ld",i);
+
+
+
+}
+
+
+
 
 
 
