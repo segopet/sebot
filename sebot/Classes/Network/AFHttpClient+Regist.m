@@ -27,13 +27,62 @@
         if (model) {
             completeBlock(model);
         }
-        
-    }];
-
-
-
-
+}];
 
 }
+
+
+
+-(void)registWithphone:(NSString *)phone password:(NSString *)password complete:(void (^)(ResponseModel *))completeBlock{
+
+    NSMutableDictionary * params = [[NSMutableDictionary alloc]init];
+    params[@"userid"] = @"";
+    params[@"token"] = @"";
+    params[@"objective"] = @"user";
+    params[@"action"] = @"register";
+    //data里面传的东西
+    NSMutableDictionary * dataParams = [[NSMutableDictionary alloc]init];
+    dataParams[@"phone"] = phone;
+    dataParams[@"password"] = password;
+    params[@"data"] = dataParams;
+    
+    [self POST:@"sebot/moblie/forward" parameters:params result:^(ResponseModel *model) {
+        if (model) {
+            completeBlock(model);
+        }
+        NSLog(@"%@",model);
+    }];
+
+}
+
+
+
+-(void)forgetPasswordWithPhone:(NSString *)phone password:(NSString *)password complete:(void (^)(ResponseModel *))completeBlock{
+    
+    NSMutableDictionary * params = [[NSMutableDictionary alloc]init];
+    params[@"userid"] = @"";
+    params[@"token"] = @"";
+    params[@"objective"] = @"user";
+    params[@"action"] = @"forgetPassword";
+    //data里面传的东西
+    NSMutableDictionary * dataParams = [[NSMutableDictionary alloc]init];
+    dataParams[@"phone"] = phone;
+    dataParams[@"password"] = password;
+    params[@"data"] = dataParams;
+    
+    [self POST:@"sebot/moblie/forward" parameters:params result:^(ResponseModel *model) {
+        if (model) {
+            completeBlock(model);
+        }
+        NSLog(@"%@",model);
+    }];
+
+}
+
+
+
+
+
+
 
 @end
