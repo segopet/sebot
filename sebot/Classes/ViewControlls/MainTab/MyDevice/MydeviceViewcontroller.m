@@ -73,8 +73,6 @@
     _popView.center = self.view.center;
     _popView.ParentView = app.window;
     _popView.delegate = self;
-   
-    
     self.dataSource =[NSMutableArray array];
 
 
@@ -113,6 +111,15 @@
             self.tableView.mj_footer.hidden = NO;
         }
         
+        if (self.dataSource.count ==0) {
+            
+            NSLog(@"没有设备");
+            UIImageView * image =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+            image.image =[UIImage imageNamed:@"默认图片.png"];
+            [self.view addSubview:image];
+            
+            
+        }
         [self.tableView reloadData];
         [self handleEndRefresh];
         
