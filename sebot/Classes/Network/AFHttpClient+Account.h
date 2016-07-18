@@ -12,7 +12,7 @@
 
 
 
-- (void)loginWithUserName:(NSString*)userName password:(NSString*)password userid:(NSString *)userid complete:(void(^)(ResponseModel *model))completeBlock;
+- (void)loginWithUserName:(NSString*)userName password:(NSString*)password userid:(NSString *)userid channelid:(NSString *)channelid complete:(void(^)(ResponseModel *model))completeBlock;
 
 
 

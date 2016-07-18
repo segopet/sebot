@@ -241,6 +241,8 @@
 		57D1E5F71CFED25900BEDFF6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D1E5F61CFED25900BEDFF6 /* main.m */; };
 		57D1E6001CFED25900BEDFF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D1E5FE1CFED25900BEDFF6 /* Main.storyboard */; };
 		57D1E6021CFED25900BEDFF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57D1E6011CFED25900BEDFF6 /* Assets.xcassets */; };
+		7D1147031D3C7FF50080D3DE /* showPs.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D1147021D3C7FF50080D3DE /* showPs.png */; };
+		7D1147051D3C80020080D3DE /* noshowpass.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D1147041D3C80020080D3DE /* noshowpass.png */; };
 		7D175A4F1D2F434200828706 /* yindaoye1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7D175A4D1D2F434200828706 /* yindaoye1.jpg */; };
 		7D175A501D2F434200828706 /* yindaoye2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7D175A4E1D2F434200828706 /* yindaoye2.jpg */; };
 		7D1AAC751D1A617800B4297E /* NewPhotoalbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D1AAC741D1A617800B4297E /* NewPhotoalbumViewController.m */; };
@@ -1000,6 +1002,8 @@
 		57D1E5FF1CFED25900BEDFF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		57D1E6011CFED25900BEDFF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57D1E6061CFED25900BEDFF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D1147021D3C7FF50080D3DE /* showPs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = showPs.png; sourceTree = "<group>"; };
+		7D1147041D3C80020080D3DE /* noshowpass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noshowpass.png; sourceTree = "<group>"; };
 		7D175A4D1D2F434200828706 /* yindaoye1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yindaoye1.jpg; sourceTree = "<group>"; };
 		7D175A4E1D2F434200828706 /* yindaoye2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yindaoye2.jpg; sourceTree = "<group>"; };
 		7D1AAC731D1A617800B4297E /* NewPhotoalbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPhotoalbumViewController.h; sourceTree = "<group>"; };
@@ -2504,6 +2508,8 @@
 		7D4B10121D1297F40095D463 /* buttonImage */ = {
 			isa = PBXGroup;
 			children = (
+				7D1147041D3C80020080D3DE /* noshowpass.png */,
+				7D1147021D3C7FF50080D3DE /* showPs.png */,
 				7DF28C481D38E2CB00FA31C6 /* 默认头像.png */,
 				7DF28C491D38E2CB00FA31C6 /* 默认图片.png */,
 				7D4C6FA01D348CFC00334143 /* dianzanhou.png */,
@@ -2780,6 +2786,7 @@
 				34E49DA71D21074900CF5CCB /* test11.png in Resources */,
 				345565B21D114CFA00B6E562 /* Launch Screen.storyboard in Resources */,
 				34E4A0221D261EF100CF5CCB /* mic_active.png in Resources */,
+				7D1147051D3C80020080D3DE /* noshowpass.png in Resources */,
 				3492637F1D178F1B006C2FD9 /* ProductionIntroducViewController.xib in Resources */,
 				34F4D2A41D1D21B8005963CA /* round.png in Resources */,
 				34E49FEE1D261EF100CF5CCB /* shortring.caf in Resources */,
@@ -2789,6 +2796,7 @@
 				34E4A0391D261EF100CF5CCB /* oldphone-mono.wav in Resources */,
 				34E4A0161D261EF100CF5CCB /* chat_message_inprogress.png in Resources */,
 				34F4D2B11D1D234D005963CA /* left_off.png in Resources */,
+				7D1147031D3C7FF50080D3DE /* showPs.png in Resources */,
 				34E4A02A1D261EF100CF5CCB /* startcall-green.png in Resources */,
 				34E49DA31D21000900CF5CCB /* photo.png in Resources */,
 				34E49FEB1D261EF100CF5CCB /* sephonerc-factory~ipad in Resources */,

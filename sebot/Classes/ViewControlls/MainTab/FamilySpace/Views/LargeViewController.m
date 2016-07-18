@@ -134,8 +134,8 @@
     animation1.type    = kCATransitionMoveIn;
     animation1.subtype = kCATransitionMoveIn;
     [self.view.window.layer addAnimation:animation1 forKey:Nil];
-    [self dismissViewControllerAnimated:NO completion:nil];
-    
+   // [self dismissViewControllerAnimated:NO completion:nil];
+    [self.navigationController popViewControllerAnimated:NO];
 }
 
 

@@ -18,6 +18,8 @@
 @property (nonatomic,copy)NSString * achieveString;
 @property (nonatomic,copy)NSString * surePhonenumber;
 
+@property (nonatomic,strong)UIButton * passBtn;
+@property (nonatomic,strong)UIButton * suerPassBtn;
 
 @end
 
@@ -106,6 +108,11 @@
     _surePasswordTextfield.textColor= [UIColor blackColor];
     _surePasswordTextfield.font = [UIFont systemFontOfSize:14];
     [topView addSubview:_surePasswordTextfield];
+    
+    
+    
+    
+    
     
     
     
