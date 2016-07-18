@@ -12,6 +12,7 @@
 #import "AFHttpClient.h"
 #import "LoginModel.h"
 #import "AFHttpClient+Account.h"
+#import "BPush.h"
 @interface LoginViewController ()
 {
     NSMutableArray * datasouce;
@@ -72,6 +73,7 @@
     _passwordTextfield.tintColor = GRAY_COLOR;
     _passwordTextfield.textColor = [UIColor blackColor];
     _passwordTextfield.font = [UIFont systemFontOfSize:15];
+    _passwordTextfield.secureTextEntry = YES;
     [centerView addSubview:_passwordTextfield];
     
     UIButton * loginBtn = [[UIButton alloc]initWithFrame:CGRectMake(15 * W_Wide_Zoom, 450 * W_Hight_Zoom, 345 * W_Wide_Zoom, 45 * W_Hight_Zoom)];
@@ -95,14 +97,32 @@
     [self.view addSubview:forgetpasswordBtn];
     [forgetpasswordBtn addTarget:self action:@selector(forgetpasswordTouch) forControlEvents:UIControlEventTouchUpInside];
     
+    //查看密码的键
+    UIButton * secureBtn = [[UIButton alloc]initWithFrame:CGRectMake(300 * W_Wide_Zoom, 68 * W_Hight_Zoom, 18 * W_Wide_Zoom, 18 * W_Hight_Zoom)];
+    [secureBtn setImage:[UIImage imageNamed:@"showPs.png"] forState:UIControlStateNormal];
+    [secureBtn setImage:[UIImage imageNamed:@"noshowpass.png"] forState:UIControlStateSelected];
+    secureBtn.selected = YES;
+    [secureBtn addTarget:self action:@selector(secureButtonTouch:) forControlEvents:UIControlEventTouchUpInside];
+    [centerView addSubview:secureBtn];
 
-}
--(void)loginButtonTouch{
     
-    [[AFHttpClient sharedAFHttpClient]loginWithUserName:_accountTextfield.text password:_passwordTextfield.text userid:@"" complete:^(ResponseModel *model) {
+    
+    
+}
+-(void)secureButtonTouch:(UIButton *)sender{
+    
+    _passwordTextfield.secureTextEntry = !_passwordTextfield.secureTextEntry;
+    sender.selected = !sender.selected;
+    
+    
+}
+
+
+-(void)loginButtonTouch{
+     NSString *myChannel_id = [BPush getChannelId];
+    [[AFHttpClient sharedAFHttpClient]loginWithUserName:_accountTextfield.text password:_passwordTextfield.text userid:@"" channelid:myChannel_id complete:^(ResponseModel *model) {
         LoginModel * loginModel = [[LoginModel alloc]initWithDictionary:model.retVal error:nil];
-        NSLog(@"%@",loginModel);
-        
+               
         [[AccountManager sharedAccountManager] login:loginModel];
         [[NSNotificationCenter defaultCenter] postNotificationName:NotificationLoginStateChange object:@YES];
         [self updatePhone];
@@ -119,9 +139,10 @@
 
 - (void)updatePhone
 {
+     NSString *myChannel_id = [BPush getChannelId];
      NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
 
-    [[AFHttpClient  sharedAFHttpClient]updatephone:str token:str channelid:[[NSUserDefaults standardUserDefaults]objectForKey:@"changeid"] type:@"ios" complete:^(ResponseModel * model) {
+    [[AFHttpClient  sharedAFHttpClient]updatephone:str token:str channelid:myChannel_id type:@"ios" complete:^(ResponseModel * model) {
         
     }];
     

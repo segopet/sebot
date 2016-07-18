@@ -40,11 +40,15 @@
 -(void)request{
     //查询接口
     [[AFHttpClient sharedAFHttpClient]newphotoWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid complete:^(ResponseModel *model) {
-        
-        NSArray * array = model.list;
-        [self.datasouce addObject:array[0]];
-        [self.datasouce addObjectsFromArray:model.list];
-         [_colView reloadData];
+        if (model.list.count > 0) {
+            NSArray * array = model.list;
+            [self.datasouce addObject:array[0]];
+            [self.datasouce addObjectsFromArray:model.list];
+            [_colView reloadData];
+        }else{
+            //这里写一个就行了
+        }
+       
     }];
 }
 
