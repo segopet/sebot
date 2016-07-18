@@ -19,7 +19,7 @@
 //login
 "accountPlaceholder" = "请输入账号";
 "passwordPlaceholder" = "请输入密码";
-"loginIn" = "登陆";
+"loginIn" = "登录";
 "newUser" = "新用户注册";
 "forgetPassword" = "忘记密码?";
 

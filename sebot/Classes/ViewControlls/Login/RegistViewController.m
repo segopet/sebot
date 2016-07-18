@@ -140,7 +140,7 @@
 //注册
 -(void)registButtonTouch{
     if ([AppUtil isBlankString:_phoneNumberTextfield.text]) {
-        [[AppUtil appTopViewController] showHint:@"请输入帐号"];
+        [[AppUtil appTopViewController] showHint:@"请输入账号"];
         return;
     }
     if (![AppUtil isValidateMobile:_phoneNumberTextfield.text]) {
@@ -167,12 +167,6 @@
         [[AppUtil appTopViewController] showHint:@"手机号码错误"];
         return;
     }
-
-//    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid":@"",@"token":@"",@"objective":@"user",@"action":@"register",@"data":@{@"phone":_phoneNumberTextfield.text,@"password":_passwordTextfield.text}} result:^(id model) {
-//        NSLog(@"%@",model);
-//        [self.navigationController popViewControllerAnimated:NO];
-//    }];
-    
     [[AFHttpClient sharedAFHttpClient]registWithphone:_phoneNumberTextfield.text password:_passwordTextfield.text complete:^(ResponseModel *model) {
         if (model) {
             [[AppUtil appTopViewController] showHint:model.retDesc];

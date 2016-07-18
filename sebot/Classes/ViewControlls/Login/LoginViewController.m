@@ -130,12 +130,6 @@
 
 
 
-//-(void)hahaah{
-//
-//    LoginModel * loginModel11 = [LoginModel modelWithDictionary:(NSDictionary *)datasouce];
-//    [[AccountManager sharedAccountManager] login:loginModel11];
-//
-//}
 
 -(void)newuserTouch{
     RegistViewController * regist = [[RegistViewController alloc]init];

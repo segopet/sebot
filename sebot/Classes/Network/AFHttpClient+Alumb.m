@@ -54,21 +54,47 @@
         }
         
     }];
+}
 
+-(void)dianzanWithUserid:(NSString *)userid token:(NSString *)token objid:(NSString *)objid objtype:(NSString *)objtype complete:(void (^)(ResponseModel *))completeBlock{
 
+    NSMutableDictionary * parms = [[NSMutableDictionary alloc]init];
+    parms[@"userid"] = userid;
+    parms[@"token"] = token;
+    parms[@"objective"] = @"album";
+    parms[@"action"] = @"addBehavior";
+    NSMutableDictionary * dataparms = [[NSMutableDictionary alloc]init];
+    dataparms[@"userid"] = userid;
+    dataparms[@"objid"] = objid;
+    dataparms[@"objtype"] = objtype;
+    parms[@"data"] =dataparms;
+    
+    [self POST:@"sebot/moblie/forward" parameters:parms result:^(ResponseModel * model) {
+    if (model) {
+            completeBlock(model);
+        }
+    }];
+}
 
-
-
-
-
-
+-(void)lookpictureWithUserid:(NSString *)userid token:(NSString *)token aid:(NSString *)aid complete:(void (^)(ResponseModel *))completeBlock{
+    
+    NSMutableDictionary * parms = [[NSMutableDictionary alloc]init];
+    parms[@"userid"] = userid;
+    parms[@"token"] = token;
+    parms[@"objective"] = @"album";
+    parms[@"action"] = @"articlePics";
+    NSMutableDictionary * dataparms = [[NSMutableDictionary alloc]init];
+    dataparms[@"aid"] = aid;
+    parms[@"data"] =dataparms;
+    
+    [self POST:@"sebot/moblie/forward" parameters:parms result:^(ResponseModel * model) {
+        if (model) {
+            completeBlock(model);
+        }
+    }];
 
 
 }
-
-
-
-
 
 
 
