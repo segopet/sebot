@@ -65,7 +65,7 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     [self setNavTitle: NSLocalizedString(@"tabDevice", nil)];
-    self.view.backgroundColor = LIGHT_GRAY_COLOR;
+    self.view.backgroundColor = GRAY_COLOR;
     [self showBarButton:NAV_RIGHT imageName:@"sebot_add"];
     
      app = (AppDelegate *)[UIApplication sharedApplication].delegate;
@@ -114,7 +114,9 @@
         if (self.dataSource.count ==0) {
             
             NSLog(@"没有设备");
-            UIImageView * image =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+            UIImageView * image =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 375, 375)];
+            
+            image.center = self.view.center;
             image.image =[UIImage imageNamed:@"默认图片.png"];
             [self.view addSubview:image];
             
@@ -140,6 +142,7 @@
     
     self.tableView.showsVerticalScrollIndicator   = NO;
     self.tableView.showsHorizontalScrollIndicator = NO;
+    self.tableView.backgroundColor =LIGHT_GRAY_COLOR;
     
     self.tableView.tableFooterView=[[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
     self.tableView.tableHeaderView =[[UIView alloc]initWithFrame:CGRectZero];

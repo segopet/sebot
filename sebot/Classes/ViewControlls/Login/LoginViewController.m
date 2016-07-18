@@ -120,7 +120,6 @@
 - (void)updatePhone
 {
      NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
-
     [[AFHttpClient  sharedAFHttpClient]updatephone:str token:str channelid:[[NSUserDefaults standardUserDefaults]objectForKey:@"changeid"] type:@"ios" complete:^(ResponseModel * model) {
         
     }];
