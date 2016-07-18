@@ -7,6 +7,7 @@
 //
 
 #import "ForegetPasswordViewController.h"
+#import "AFHttpClient+Regist.h"
 
 @interface ForegetPasswordViewController ()
 @property (nonatomic,strong)UIButton * achieveSecurityBtn;
@@ -108,28 +109,34 @@
 }
 -(void)provied{
     [self timeout];
-    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid":[AccountManager sharedAccountManager].loginModel.userid,@"token":@"",@"objective":@"user",@"action":@"getCode",@"data":@{@"phone":_phoneNumberTextfield.text,@"type":@"modifypassword"}} result:^(id model) {
-        NSLog(@"%@",model);
-        if ([model[@"retCode"] isEqualToString:@"SUCCESS"]) {
-            _achieveString = model[@"content"];
-            _surePhonenumber = model[@"retVal"];
-            [[AppUtil appTopViewController] showHint:model[@"retDesc"]];
-        }else{
-            [[AppUtil appTopViewController] showHint:model[@"retDesc"]];
-        }
-        
-    }];
-    
+//    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid":[AccountManager sharedAccountManager].loginModel.userid,@"token":@"",@"objective":@"user",@"action":@"getCode",@"data":@{@"phone":_phoneNumberTextfield.text,@"type":@"modifypassword"}} result:^(id model) {
+//        NSLog(@"%@",model);
+//        if ([model[@"retCode"] isEqualToString:@"SUCCESS"]) {
+//            _achieveString = model[@"content"];
+//            _surePhonenumber = model[@"retVal"];
+//            [[AppUtil appTopViewController] showHint:model[@"retDesc"]];
+//        }else{
+//            [[AppUtil appTopViewController] showHint:model[@"retDesc"]];
+//        }
+//        
+//    }];
+        [[AFHttpClient sharedAFHttpClient]provedWithUserid:@"" token:@"" phone:_phoneNumberTextfield.text type:@"modifypassword" complete:^(ResponseModel *model) {
+            if (model) {
+                _achieveString = model.content;
+                _surePhonenumber = model.retDesc;
+            }
+            
+        }];
     
 }
 
 
 
 
-//注册
+//忘记密码
 -(void)registButtonTouch{
     if ([AppUtil isBlankString:_phoneNumberTextfield.text]) {
-        [[AppUtil appTopViewController] showHint:@"请输入帐号"];
+        [[AppUtil appTopViewController] showHint:@"请输入账号"];
         return;
     }
     if (![AppUtil isValidateMobile:_phoneNumberTextfield.text]) {
@@ -157,10 +164,15 @@
         return;
     }
     
-    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid":[AccountManager sharedAccountManager].loginModel.userid,@"token":@"",@"objective":@"user",@"action":@"register",@"data":@{@"phone":_phoneNumberTextfield.text,@"password":_passwordTextfield.text}} result:^(id model) {
-        NSLog(@"%@",model);
+//    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid":[AccountManager sharedAccountManager].loginModel.userid,@"token":@"",@"objective":@"user",@"action":@"register",@"data":@{@"phone":_phoneNumberTextfield.text,@"password":_passwordTextfield.text}} result:^(id model) {
+//        NSLog(@"%@",model);
+//    }];
+    [[AFHttpClient sharedAFHttpClient]forgetPasswordWithPhone:_phoneNumberTextfield.text password:_passwordTextfield.text complete:^(ResponseModel *model) {
+        if (model) {
+             [[AppUtil appTopViewController] showHint:model.retDesc];
+            [self.navigationController popViewControllerAnimated:NO];
+        }
     }];
-    
     
     
     

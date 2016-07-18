@@ -165,9 +165,31 @@
  *  退出
  */
 - (IBAction)exitBtn:(UIButton *)sender {
+//    
+//    [[NSNotificationCenter defaultCenter] postNotificationName:NotificationLoginStateChange object:@NO];
+//    [[AccountManager sharedAccountManager]logout];
+//    
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:NotificationLoginStateChange object:@NO];
-    [[AccountManager sharedAccountManager]logout];
+    
+    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您确定要退出登录吗？" preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:NotificationLoginStateChange object:@NO];
+        [[AccountManager sharedAccountManager]logout];
+        // 清除plist
+        NSUserDefaults *userDefatluts = [NSUserDefaults standardUserDefaults];
+        NSDictionary *dictionary = [userDefatluts dictionaryRepresentation];
+        for(NSString* key in [dictionary allKeys]){
+            [userDefatluts removeObjectForKey:key];
+            [userDefatluts synchronize];
+        }
+        [userDefatluts setObject:@"1" forKey:@"STARTFLAG"];
+    }]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    }]];
+    [self presentViewController:alert animated:YES completion:nil];
+
+    
     
     
 }

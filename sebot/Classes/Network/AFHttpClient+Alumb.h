@@ -16,8 +16,11 @@
 -(void)familyArticlesWithUserid:(NSString *)userid token:(NSString *)token
                            page:(NSString *)page complete:(void(^)(ResponseModel *model))completeBlock;
 
+//点赞
+-(void)dianzanWithUserid:(NSString *)userid token:(NSString *)token objid:(NSString *)objid objtype:(NSString *)objtype complete:(void(^)(ResponseModel *model))completeBlock;
 
-
+//查看照片
+-(void)lookpictureWithUserid:(NSString *)userid token:(NSString *)token aid:(NSString *)aid complete:(void(^)(ResponseModel *model))completeBlock;
 
 
 

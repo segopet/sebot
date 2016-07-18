@@ -271,6 +271,10 @@
 		7DD7D1D11D0FE21B0002CD2E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD7D1D01D0FE21B0002CD2E /* AppDelegate.m */; };
 		7DE523941D13D53800C5B5EF /* ForegetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE523931D13D53800C5B5EF /* ForegetPasswordViewController.m */; };
 		7DF28C3F1D387D2B00FA31C6 /* AFHttpClient+Regist.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF28C3E1D387D2B00FA31C6 /* AFHttpClient+Regist.m */; };
+		7DF28C451D38D87800FA31C6 /* LargeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF28C441D38D87800FA31C6 /* LargeViewController.m */; };
+		7DF28C471D38D9EA00FA31C6 /* LargeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DF28C461D38D9EA00FA31C6 /* LargeViewController.xib */; };
+		7DF28C4A1D38E2CB00FA31C6 /* 默认头像.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF28C481D38E2CB00FA31C6 /* 默认头像.png */; };
+		7DF28C4B1D38E2CB00FA31C6 /* 默认图片.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DF28C491D38E2CB00FA31C6 /* 默认图片.png */; };
 		CEB33C3D282E7125878CD13F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47642F05A36B917D69532A10 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -1044,6 +1048,11 @@
 		7DE523931D13D53800C5B5EF /* ForegetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForegetPasswordViewController.m; sourceTree = "<group>"; };
 		7DF28C3D1D387D2B00FA31C6 /* AFHttpClient+Regist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+Regist.h"; sourceTree = "<group>"; };
 		7DF28C3E1D387D2B00FA31C6 /* AFHttpClient+Regist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+Regist.m"; sourceTree = "<group>"; };
+		7DF28C431D38D87800FA31C6 /* LargeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LargeViewController.h; sourceTree = "<group>"; };
+		7DF28C441D38D87800FA31C6 /* LargeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LargeViewController.m; sourceTree = "<group>"; };
+		7DF28C461D38D9EA00FA31C6 /* LargeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LargeViewController.xib; sourceTree = "<group>"; };
+		7DF28C481D38E2CB00FA31C6 /* 默认头像.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "默认头像.png"; sourceTree = "<group>"; };
+		7DF28C491D38E2CB00FA31C6 /* 默认图片.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "默认图片.png"; sourceTree = "<group>"; };
 		8FD84F7D3505BA6C0FF1433D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -2495,6 +2504,8 @@
 		7D4B10121D1297F40095D463 /* buttonImage */ = {
 			isa = PBXGroup;
 			children = (
+				7DF28C481D38E2CB00FA31C6 /* 默认头像.png */,
+				7DF28C491D38E2CB00FA31C6 /* 默认图片.png */,
 				7D4C6FA01D348CFC00334143 /* dianzanhou.png */,
 				7D4C6FA11D348CFC00334143 /* dianzanzan.png */,
 				7D4C6FA21D348CFC00334143 /* pinglunlun.png */,
@@ -2573,6 +2584,9 @@
 				7D509D801D1BB685004E3059 /* NewAlumbleTableViewCell.m */,
 				7D396F8A1D2E4ACC0079EE9E /* FamilyTableViewCell.h */,
 				7D396F8B1D2E4ACC0079EE9E /* FamilyTableViewCell.m */,
+				7DF28C431D38D87800FA31C6 /* LargeViewController.h */,
+				7DF28C441D38D87800FA31C6 /* LargeViewController.m */,
+				7DF28C461D38D9EA00FA31C6 /* LargeViewController.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2690,6 +2704,7 @@
 				34E4A03F1D261EF100CF5CCB /* tapping.wav in Resources */,
 				34E49D8E1D20C7A100CF5CCB /* tab_family_normal@2x.png in Resources */,
 				34E49FE01D261EF100CF5CCB /* hold.wav in Resources */,
+				7DF28C471D38D9EA00FA31C6 /* LargeViewController.xib in Resources */,
 				34E4A01B1D261EF100CF5CCB /* contact_starred.png in Resources */,
 				3492635C1D13FAC6006C2FD9 /* MyphotoAlbumViewController.xib in Resources */,
 				34E4A02C1D261EF100CF5CCB /* status-green.png in Resources */,
@@ -2715,7 +2730,9 @@
 				34921D101D191A5D00541E41 /* SaomaoViewController.xib in Resources */,
 				34E4A0131D261EF100CF5CCB /* call_status_outgoing.png in Resources */,
 				345565D81D129F5200B6E562 /* MyDeviceTableViewCell.xib in Resources */,
+				7DF28C4B1D38E2CB00FA31C6 /* 默认图片.png in Resources */,
 				34E49FE61D261EF100CF5CCB /* ringback.wav in Resources */,
+				7DF28C4A1D38E2CB00FA31C6 /* 默认头像.png in Resources */,
 				7D4B101B1D129C860095D463 /* back@2x.png in Resources */,
 				345565DF1D12A5D800B6E562 /* PerInformationTableViewCell.xib in Resources */,
 				34E49D971D20D06400CF5CCB /* person_about@3x.png in Resources */,
@@ -2879,6 +2896,7 @@
 				345565801D11376500B6E562 /* FamilySpaceViewcontroller.m in Sources */,
 				7D396F8C1D2E4ACC0079EE9E /* FamilyTableViewCell.m in Sources */,
 				34921D0F1D191A5D00541E41 /* SaomaoViewController.m in Sources */,
+				7DF28C451D38D87800FA31C6 /* LargeViewController.m in Sources */,
 				349263791D178EF4006C2FD9 /* OpinionViewController.m in Sources */,
 				345565D21D129EBC00B6E562 /* DeviceInformationViewController.m in Sources */,
 				572DEE5D1D1162E100035228 /* AFHttpClient.m in Sources */,
