@@ -68,17 +68,16 @@
                 
             {
                 _heandBtn.image =[UIImage imageNamed:@"off_line"];
-                _startBtn.enabled = YES;
-                _cancelBtn.enabled = YES;
-                
+                _startBtn.enabled = NO;
+                _cancelBtn.enabled = NO;
                 
                 
             }else
             {
                 _heandBtn.image =[UIImage imageNamed:@"on_connection"];
                 
-                _startBtn.enabled = YES;
-                _cancelBtn.enabled = YES;
+                _startBtn.enabled = NO;
+                _cancelBtn.enabled = NO;
                 
             }
             [self.tableView reloadData];
@@ -216,7 +215,7 @@
             
         {
             _heandBtn.image =[UIImage imageNamed:@"off_line"];
-            _startBtn.enabled = YES;
+            _startBtn.enabled = NO;
             _cancelBtn.enabled = YES;
             
             
@@ -225,7 +224,7 @@
         {
             _heandBtn.image =[UIImage imageNamed:@"on_connection"];
             
-            _startBtn.enabled = YES;
+            _startBtn.enabled = NO;
             _cancelBtn.enabled = YES;
             
         }
@@ -309,8 +308,16 @@
 
 - (IBAction)startVideoBtn:(UIButton *)sender {
 
-
-   [self sipCall:checkmodel.deviceno sipName:nil];
+    if (sender.enabled) {
+        
+         [self sipCall:checkmodel.deviceno sipName:nil];
+    }else
+    {
+        
+        [self showSuccessHudWithHint:@"设备离线不能开启"];
+    }
+   
+  
     
     
 }
@@ -349,10 +356,13 @@
     [[AFHttpClient sharedAFHttpClient]solvDevice:str token:str did:checkmodel.did complete:^(ResponseModel * model) {
         
         NSLog(@"%@",model.retDesc);
+        [self showHint:model.retDesc];
+       
+        
         
     }];
     
-
+    [self.navigationController popViewControllerAnimated:YES];
     
 }
 

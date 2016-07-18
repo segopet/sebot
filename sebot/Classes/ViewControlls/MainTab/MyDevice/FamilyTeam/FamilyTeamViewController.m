@@ -149,12 +149,13 @@
     NSLog(@"33");
     
     
+    
     if ([AppUtil isValidateMobile:_popView.numberTextfied.text]) {
         
         // 管理员邀请接口
         NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
         [[AFHttpClient sharedAFHttpClient]invate:str token:str admin:str phone: _popView.numberTextfied.text deviceno:self.deviceNum complete:^(ResponseModel *model) {
-            
+            [self  showSuccessHudWithHint:@"邀请已发送"];
             [_popView removeFromSuperview];
         }];
 
