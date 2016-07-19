@@ -18,13 +18,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="APPImgae.png" translatesAutoresizingMaskIntoConstraints="NO" id="0uV-iX-9WR">
-                        <rect key="frame" x="8" y="4" width="51" height="51"/>
+                        <rect key="frame" x="8" y="4" width="50" height="50"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="51" id="dmN-mO-D0s"/>
+                            <constraint firstAttribute="width" constant="50" id="dmN-mO-D0s"/>
                         </constraints>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="25.5"/>
-                        </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coco" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dp6-c0-rfT">
                         <rect key="frame" x="73" y="19" width="102" height="25"/>
@@ -63,7 +60,7 @@
                     <constraint firstItem="amd-ZL-909" firstAttribute="baseline" secondItem="n3F-Bi-FAy" secondAttribute="firstBaseline" id="7Cc-Nd-Iqk"/>
                     <constraint firstAttribute="trailingMargin" secondItem="LcJ-Ol-yL6" secondAttribute="trailing" constant="8" id="Aex-mz-Ln3"/>
                     <constraint firstItem="n3F-Bi-FAy" firstAttribute="baseline" secondItem="amd-ZL-909" secondAttribute="firstBaseline" id="BR1-2h-rgb"/>
-                    <constraint firstItem="Dp6-c0-rfT" firstAttribute="leading" secondItem="0uV-iX-9WR" secondAttribute="trailing" constant="14" id="Ntw-sj-nLm"/>
+                    <constraint firstItem="Dp6-c0-rfT" firstAttribute="leading" secondItem="0uV-iX-9WR" secondAttribute="trailing" constant="15" id="Ntw-sj-nLm"/>
                     <constraint firstItem="LcJ-Ol-yL6" firstAttribute="centerY" secondItem="amd-ZL-909" secondAttribute="centerY" id="UAv-Mb-Zoz"/>
                     <constraint firstItem="n3F-Bi-FAy" firstAttribute="centerY" secondItem="Dp6-c0-rfT" secondAttribute="centerY" id="aDR-D3-9Nx"/>
                     <constraint firstItem="amd-ZL-909" firstAttribute="leading" secondItem="n3F-Bi-FAy" secondAttribute="trailing" constant="12" id="cPE-JH-ew3"/>

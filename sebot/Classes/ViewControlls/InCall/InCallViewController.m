@@ -8,6 +8,7 @@
 
 #import "InCallViewController.h"
 #import "UIButton+EnlargeTouchArea.h"
+#import "AFHttpClient+DeviceInformation.h"
 @interface InCallViewController ()
 
 {
@@ -82,6 +83,8 @@
             
             [SephoneManager terminateCurrentCallOrConference];
             NSLog(@"五分钟到时视频流自动断开");
+            
+           
         }
         
         
@@ -217,6 +220,8 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
+    [self updateDeviceUseMember];
+    
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:NO];
     if (updateTimer != nil) {
         [updateTimer invalidate];
@@ -348,12 +353,14 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 - (void)updateDeviceUseMember
 {
     // 结束通话 更新设备使用记录
-    // "object": "主叫对象(mobile 移动客户端/device 设备端)"
-    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid" : [AccountManager sharedAccountManager].loginModel.userid , @"objective":@"device", @"token" : @"1",@"action":@"addCallRecords",@"data":@{@"calling":@"1",@"called":@"9000000006",@"object":@""}} result:^(id model) {
+    NSUserDefaults * defu =[NSUserDefaults standardUserDefaults];
+    NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
+    [[AFHttpClient sharedAFHttpClient]updateDevice:str token:str did: [defu objectForKey:@"contentID"] complete:^(ResponseModel * model) {
         
-        NSLog(@"%@",model[@"retDesc"]);
+        NSLog(@"更新成功");
         
     }];
+    
     
 }
 

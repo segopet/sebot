@@ -218,6 +218,7 @@
 		34E4A0681D2649F500CF5CCB /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34E4A0671D2649F500CF5CCB /* CFNetwork.framework */; };
 		34E4A06A1D264A0300CF5CCB /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34E4A0691D264A0300CF5CCB /* Accelerate.framework */; };
 		34E4A06D1D265C1C00CF5CCB /* FamilyTeamModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E4A06C1D265C1C00CF5CCB /* FamilyTeamModel.m */; };
+		34EC5E8E1D3DFCB100CF2DEF /* AFHttpClient+MyPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 34EC5E8D1D3DFCB100CF2DEF /* AFHttpClient+MyPhoto.m */; };
 		34F4D2931D1A673C005963CA /* libBPush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34F4D2911D1A673C005963CA /* libBPush.a */; };
 		34F4D2941D1A673C005963CA /* test.caf in Resources */ = {isa = PBXBuildFile; fileRef = 34F4D2921D1A673C005963CA /* test.caf */; };
 		34F4D2971D1A679A005963CA /* AppDelegate+BaiduPush.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F4D2961D1A679A005963CA /* AppDelegate+BaiduPush.m */; };
@@ -971,6 +972,8 @@
 		34E4A0691D264A0300CF5CCB /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		34E4A06B1D265C1C00CF5CCB /* FamilyTeamModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FamilyTeamModel.h; sourceTree = "<group>"; };
 		34E4A06C1D265C1C00CF5CCB /* FamilyTeamModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FamilyTeamModel.m; sourceTree = "<group>"; };
+		34EC5E8C1D3DFCB100CF2DEF /* AFHttpClient+MyPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+MyPhoto.h"; sourceTree = "<group>"; };
+		34EC5E8D1D3DFCB100CF2DEF /* AFHttpClient+MyPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+MyPhoto.m"; sourceTree = "<group>"; };
 		34F4D2901D1A673C005963CA /* BPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPush.h; sourceTree = "<group>"; };
 		34F4D2911D1A673C005963CA /* libBPush.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBPush.a; sourceTree = "<group>"; };
 		34F4D2921D1A673C005963CA /* test.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.caf; sourceTree = "<group>"; };
@@ -1226,6 +1229,8 @@
 				34012DAB1D2CD76400C97E1E /* AFHttpClient+ReparPassword.m */,
 				34012DAD1D2CD9A000C97E1E /* AFHttpClient+FamilyTeam.h */,
 				34012DAE1D2CD9A000C97E1E /* AFHttpClient+FamilyTeam.m */,
+				34EC5E8C1D3DFCB100CF2DEF /* AFHttpClient+MyPhoto.h */,
+				34EC5E8D1D3DFCB100CF2DEF /* AFHttpClient+MyPhoto.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -2907,6 +2912,7 @@
 				7DF28C451D38D87800FA31C6 /* LargeViewController.m in Sources */,
 				349263791D178EF4006C2FD9 /* OpinionViewController.m in Sources */,
 				345565D21D129EBC00B6E562 /* DeviceInformationViewController.m in Sources */,
+				34EC5E8E1D3DFCB100CF2DEF /* AFHttpClient+MyPhoto.m in Sources */,
 				572DEE5D1D1162E100035228 /* AFHttpClient.m in Sources */,
 				345565D71D129F5200B6E562 /* MyDeviceTableViewCell.m in Sources */,
 				7D2ECE801D192022003181A9 /* AFHttpClient+Account.m in Sources */,

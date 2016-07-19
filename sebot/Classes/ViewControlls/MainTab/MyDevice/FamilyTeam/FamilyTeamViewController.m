@@ -34,8 +34,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self setNavTitle: NSLocalizedString(@"familyTeam", nil)];
-    self.view.backgroundColor = LIGHT_GRAY_COLOR;
-    [self showBarButton:NAV_RIGHT title:NSLocalizedString(@"invitation", nil) fontColor:[UIColor redColor]];
+     self.view.backgroundColor = LIGHT_GRAY_COLOR;
+    
     
     self.dataSource =[NSMutableArray array];
     
@@ -48,6 +48,8 @@
     _popView.saomaBtnl.hidden = YES;
     _popView.ParentView = app.window;
     _popView.delegate = self;
+    
+    
 
     
 }
@@ -203,6 +205,9 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.nameLable.text = famModel.nickname;
     [cell.headImage sd_setImageWithURL:[NSURL URLWithString:famModel.headportrait] placeholderImage:[UIImage imageNamed:@"APPImgae"]];
+    cell.headImage.layer.masksToBounds = YES;
+    cell.headImage.layer.cornerRadius = cell.headImage.size.width/2;
+   
     
    
     cell.moveBtn.tag = 1000+indexPath.row;
@@ -212,19 +217,30 @@
     
     
     
+    
+    if (indexPath.row ==0) {
+        
+        cell.conterLable.hidden = NO;
+        
+    }
+    
      if (indexPath.row == 0 && [strControl isEqualToString:[AccountManager sharedAccountManager].loginModel.userid]) {
          cell.moveBtn.hidden = YES;
          cell.transferBtn.hidden = YES;
          cell.conterLable.hidden  = NO;
          isMeControl = YES;
+         [self showBarButton:NAV_RIGHT title:NSLocalizedString(@"invitation", nil) fontColor:[UIColor whiteColor]];
          
-     }
+       }
      else if (indexPath.row>0)
      {
-        cell.conterLable.hidden  = YES;
+         cell.conterLable.hidden  = YES;
+         
+         
          if (isMeControl) {
              cell.moveBtn.hidden = NO;
              cell.transferBtn.hidden = NO;
+            
         
              
          }else
