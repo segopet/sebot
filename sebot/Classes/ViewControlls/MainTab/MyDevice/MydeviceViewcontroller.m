@@ -95,7 +95,7 @@
 -(void)loadDataSourceWithPage:(int)page{
     
     NSString * str =[AccountManager sharedAccountManager].loginModel.userid;
-
+    
     [[AFHttpClient sharedAFHttpClient]checkmoel:str token:str complete:^(ResponseModel * model) {
         
         if (page == START_PAGE_INDEX) {
@@ -206,12 +206,7 @@
         [self showSuccessHudWithHint:model.retDesc];
         
     }];
-    
-    
-    
-    
-    
-    
+
 }
 
 

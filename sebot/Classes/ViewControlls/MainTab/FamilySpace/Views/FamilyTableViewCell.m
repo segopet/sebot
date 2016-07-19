@@ -28,6 +28,7 @@
         
         _namelabel = [[UILabel alloc]initWithFrame:CGRectMake(55 * W_Wide_Zoom, 25 * W_Hight_Zoom, 200 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
         _namelabel.text = @"Tony";
+        _namelabel.font = [UIFont systemFontOfSize:14];
         _namelabel.textColor = [UIColor blackColor];
         [self addSubview:_namelabel];
         

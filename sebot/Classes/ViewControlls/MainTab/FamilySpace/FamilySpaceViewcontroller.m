@@ -13,8 +13,17 @@
 #import "FamilyquanModel.h"
 #import "UIImage-Extensions.h"
 #import "LargeViewController.h"
+#import "PopView.h"
 
 static NSString * cellId = @"FamilyCellides";
+@interface FamilySpaceViewcontroller ()<PopDelegate>
+{
+    PopView * _popView;
+    AppDelegate *app;
+}
+@end
+
+
 @implementation FamilySpaceViewcontroller
 
 
@@ -22,25 +31,52 @@ static NSString * cellId = @"FamilyCellides";
     [super viewDidLoad];
     [self setNavTitle: NSLocalizedString(@"tabFamily", nil)];
      self.view.backgroundColor = [UIColor whiteColor];
-    [self showBarButton:NAV_RIGHT title:NSLocalizedString(@"navUpdateimage", nil) fontColor:[UIColor redColor]];
 
+    [self showBarButton:NAV_RIGHT imageName:@"相机.png"];
+    
+    app = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    _popView = [[PopView alloc] initWithFrame:CGRectMake(0, 0,SCREEN_WIDTH ,SCREEN_HEIGHT)];
+    _popView.center = self.view.center;
+    _popView.ParentView = app.window;
+    _popView.delegate = self;
+
+    [self isbangding];
 }
 
 -(void)setupView{
     [super setupView];
-    self .tableView.frame =  CGRectMake(0, 0, self.view.width, self.view.height - NAV_BAR_HEIGHT);
-    [self.tableView registerClass:[FamilyTableViewCell class] forCellReuseIdentifier:cellId];
-    self.tableView.backgroundColor = [UIColor whiteColor];
-    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-    [self initRefreshView];
-        
-    
-    
 }
+
+-(void)isbangding{
+    NSUserDefaults * userdefalus = [NSUserDefaults standardUserDefaults];
+    NSString * iscont = [userdefalus objectForKey:@"isContent"];
+    if ([iscont isEqualToString:@"yes"]) {
+        self .tableView.frame =  CGRectMake(0, 0, self.view.width, self.view.height - NAV_BAR_HEIGHT);
+        [self.tableView registerClass:[FamilyTableViewCell class] forCellReuseIdentifier:cellId];
+        self.tableView.backgroundColor = [UIColor whiteColor];
+        [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+        [self initRefreshView];
+    }else{
+        
+        [self noBangdingView];
+    }
+}
+
+
+
+-(void)noBangdingView{
+    [[AppUtil appTopViewController] showHint:@"您还没有绑定设备，请绑定设备"];
+    UIImageView * image = [[UIImageView alloc]initWithFrame:CGRectMake(60 * W_Wide_Zoom, 200 * W_Hight_Zoom, 250 * W_Wide_Zoom, 250 * W_Hight_Zoom)];
+    image.image = [UIImage imageNamed:@"无图时.png"];
+    [self.view addSubview:image];
+    [self.view addSubview:_popView];
+}
+
+
 
 -(void)loadDataSourceWithPage:(int)page{
     [[AFHttpClient sharedAFHttpClient]familyArticlesWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid page:[NSString stringWithFormat:@"%d",page] complete:^(ResponseModel *model) {
-        
+
         if (page == START_PAGE_INDEX) {
             [self.dataSource removeAllObjects];
             [self.dataSource addObjectsFromArray:model.list];
@@ -178,10 +214,55 @@ static NSString * cellId = @"FamilyCellides";
 
 
 -(void)doRightButtonTouch{ 
-    NewPhotoalbumViewController * newVc = [[NewPhotoalbumViewController alloc]init];
-    [self.navigationController pushViewController:newVc animated:NO];
+    //NewPhotoalbumViewController * newVc = [[NewPhotoalbumViewController alloc]init];
+    //[self.navigationController pushViewController:newVc animated:NO];
+    
+      [self.view addSubview:_popView];
 }
 
+
+/**
+ *  pop 代理
+ */
+
+- (void)saomaMehod
+{
+    
+    NSLog(@"11");
+   // SaomaoViewController * saomoVC =[[SaomaoViewController alloc]initWithNibName:@"SaomaoViewController" bundle:nil];
+    //[self.navigationController pushViewController:saomoVC animated:YES];
+    
+    
+}
+- (void)cancelMehod
+{
+    
+    NSLog(@"22");
+    [_popView removeFromSuperview];
+}
+/**
+ *  绑定
+ */
+- (void)sureMehod
+{
+    
+//    
+//    NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
+//    
+//    if ([AppUtil isBlankString:_popView.numberTextfied.text]) {
+//        _popView.numberTextfied.text= [[NSUserDefaults standardUserDefaults]objectForKey:@"s_m_text"];
+//    }else
+//    {
+//        
+//        
+//    }
+//    [[AFHttpClient sharedAFHttpClient]addDevide:str token:str deviceno:_popView.numberTextfied.text complete:^(ResponseModel * model) {
+//        [_popView removeFromSuperview];
+//        [self showSuccessHudWithHint:model.retDesc];
+//        
+//    }];
+    
+}
 
 
 

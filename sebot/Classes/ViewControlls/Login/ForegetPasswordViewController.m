@@ -18,6 +18,8 @@
 @property (nonatomic,copy)NSString * achieveString;
 @property (nonatomic,copy)NSString * surePhonenumber;
 
+@property (nonatomic,strong)UIButton * passBtn;
+@property (nonatomic,strong)UIButton * suerPassBtn;
 @end
 
 @implementation ForegetPasswordViewController
@@ -86,6 +88,7 @@
     _passwordTextfield.tintColor = GRAY_COLOR;
     _passwordTextfield.textColor = [UIColor blackColor];
     _passwordTextfield.font = [UIFont systemFontOfSize:14];
+    _passwordTextfield.secureTextEntry = YES;
     [topView addSubview:_passwordTextfield];
     
     _surePasswordTextfield = [[UITextField alloc]initWithFrame:CGRectMake(100 * W_Wide_Zoom, 161 * W_Hight_Zoom, 200 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
@@ -93,9 +96,37 @@
     _surePasswordTextfield.tintColor = GRAY_COLOR;
     _surePasswordTextfield.textColor= [UIColor blackColor];
     _surePasswordTextfield.font = [UIFont systemFontOfSize:14];
+    _surePasswordTextfield.secureTextEntry = YES;
     [topView addSubview:_surePasswordTextfield];
+    
+    _passBtn = [[UIButton alloc]initWithFrame:CGRectMake(300 * W_Wide_Zoom, 118 * W_Hight_Zoom, 18 * W_Wide_Zoom, 18 * W_Hight_Zoom)];
+    [_passBtn setImage:[UIImage imageNamed:@"showPs.png"] forState:UIControlStateNormal];
+    [_passBtn setImage:[UIImage imageNamed:@"noshowpass.png"] forState:UIControlStateSelected];
+    _passBtn.selected = YES;
+    [topView addSubview:_passBtn];
+    [_passBtn addTarget:self action:@selector(passbuttontouch) forControlEvents:UIControlEventTouchUpInside];
+    
+    _suerPassBtn = [[UIButton alloc]initWithFrame:CGRectMake(300 * W_Wide_Zoom, 168 * W_Hight_Zoom, 18 * W_Wide_Zoom, 18 * W_Hight_Zoom)];
+    [_suerPassBtn setImage:[UIImage imageNamed:@"showPs.png"] forState:UIControlStateNormal];
+    [_suerPassBtn setImage:[UIImage imageNamed:@"noshowpass.png"] forState:UIControlStateSelected];
+    _suerPassBtn.selected = YES;
+    [topView addSubview:_suerPassBtn];
+    [_suerPassBtn addTarget:self action:@selector(passbuttontouch) forControlEvents:UIControlEventTouchUpInside];
+
 
 }
+-(void)passbuttontouch{
+    _passBtn.selected = !_passBtn.selected;
+    _suerPassBtn.selected = !_suerPassBtn.selected;
+    _passwordTextfield.secureTextEntry = !_passwordTextfield.secureTextEntry;
+    _surePasswordTextfield.secureTextEntry = !_surePasswordTextfield.secureTextEntry;
+    
+}
+
+
+
+
+
 -(void)yanzhengmaTouch{
     if ([AppUtil isBlankString:_phoneNumberTextfield.text]) {
         [[AppUtil appTopViewController] showHint:@"请输入帐号"];
