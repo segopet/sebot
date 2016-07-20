@@ -14,6 +14,7 @@
 #import "NewAlbumModel.h"
 #import "CheckDeviceModel.h"
 #import "FamilyquanModel.h"
+#import "CommentModel.h"
 
 @interface AFHttpClient : AFHTTPSessionManager
 

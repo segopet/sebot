@@ -14,6 +14,8 @@
 #import "UIImage-Extensions.h"
 #import "LargeViewController.h"
 #import "PopView.h"
+#import "CommentViewController.h"
+
 
 static NSString * cellId = @"FamilyCellides";
 @interface FamilySpaceViewcontroller ()<PopDelegate>
@@ -157,18 +159,37 @@ static NSString * cellId = @"FamilyCellides";
         cell.aixin.selected = NO;
     }else{
         [cell.aixin setImage:[UIImage imageNamed:@"dianzanhou.png"] forState:UIControlStateNormal];
-        cell.aixin.selected = YES;
+         cell.aixin.selected = YES;
     }
     cell.aixin.tag = indexPath.row + 22;
     [cell.aixin addTarget:self action:@selector(dianzanbttuntouch:) forControlEvents:UIControlEventTouchUpInside];
     cell.aixinLabel.text = model.praises;
     cell.pinglunlabel.text = model.comments;
 
-      //tabview隐藏点击效果和分割线
+    cell.pinglunBtn.tag = indexPath.row + 23;
+    [cell.pinglunBtn addTarget:self action:@selector(pinglunbuttonTouch:) forControlEvents:UIControlEventTouchUpInside];
+    
+    //tabview隐藏点击效果和分割线
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     tableView.separatorStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
+//评论
+-(void)pinglunbuttonTouch:(UIButton *)sender{
+    NSInteger i = sender.tag - 23;
+    NSLog(@"%ld",i);
+     FamilyquanModel * model = self.dataSource[i];
+    CommentViewController * commVc = [[CommentViewController alloc]init];
+    commVc.wid = model.aid;
+    [self.navigationController pushViewController:commVc animated:NO];
+    
+    
+    
+    
+}
+
+
+
 
 //点赞
 -(void)dianzanbttuntouch:(UIButton *)sender{
@@ -202,21 +223,13 @@ static NSString * cellId = @"FamilyCellides";
             largeVC.dataArray = array;
             [self.navigationController pushViewController:largeVC animated:YES];
         }
-       
-   
     }];
-
-
-    
-
 }
-
-
 
 -(void)doRightButtonTouch{ 
     //NewPhotoalbumViewController * newVc = [[NewPhotoalbumViewController alloc]init];
     //[self.navigationController pushViewController:newVc animated:NO];
-    
+        //这还要做个判断，根据判断来决定
       [self.view addSubview:_popView];
 }
 
@@ -229,7 +242,7 @@ static NSString * cellId = @"FamilyCellides";
 {
     
     NSLog(@"11");
-   // SaomaoViewController * saomoVC =[[SaomaoViewController alloc]initWithNibName:@"SaomaoViewController" bundle:nil];
+    // SaomaoViewController * saomoVC =[[SaomaoViewController alloc]initWithNibName:@"SaomaoViewController" bundle:nil];
     //[self.navigationController pushViewController:saomoVC animated:YES];
     
     

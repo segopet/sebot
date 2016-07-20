@@ -69,7 +69,9 @@
         _pinglunlabel.text = @"22";
         [self addSubview:_pinglunlabel];
         
-        
+        _pinglunBtn = [[UIButton alloc]initWithFrame:CGRectMake(310 * W_Wide_Zoom, 370 * W_Hight_Zoom, 60 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
+        _pinglunBtn.backgroundColor = [UIColor clearColor];
+        [self addSubview:_pinglunBtn];
         
         
         

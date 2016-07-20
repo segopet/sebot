@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BSModel.h"
+
 //新建相册里面设备列表
 @interface NewAlbumAdviceModel : BaseJSONModel
 @property (nonatomic,copy)NSString * aid;

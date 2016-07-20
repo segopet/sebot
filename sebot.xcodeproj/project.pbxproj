@@ -248,6 +248,7 @@
 		7D175A4F1D2F434200828706 /* yindaoye1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7D175A4D1D2F434200828706 /* yindaoye1.jpg */; };
 		7D175A501D2F434200828706 /* yindaoye2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7D175A4E1D2F434200828706 /* yindaoye2.jpg */; };
 		7D1AAC751D1A617800B4297E /* NewPhotoalbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D1AAC741D1A617800B4297E /* NewPhotoalbumViewController.m */; };
+		7D29F1211D3E1A020061B7DA /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D29F1201D3E1A020061B7DA /* CommentViewController.m */; };
 		7D2C471B1D2BB93400D57C86 /* AFHttpClient+MyDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C471A1D2BB93400D57C86 /* AFHttpClient+MyDevice.m */; };
 		7D2ECE7A1D191C11003181A9 /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2ECE791D191C11003181A9 /* LoginModel.m */; };
 		7D2ECE801D192022003181A9 /* AFHttpClient+Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2ECE7F1D192022003181A9 /* AFHttpClient+Account.m */; };
@@ -269,8 +270,10 @@
 		7D4C6FA51D348CFC00334143 /* pinglunlun.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4C6FA21D348CFC00334143 /* pinglunlun.png */; };
 		7D509D7D1D1B86A2004E3059 /* NewInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D509D7C1D1B86A2004E3059 /* NewInformationViewController.m */; };
 		7D509D811D1BB685004E3059 /* NewAlumbleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D509D801D1BB685004E3059 /* NewAlumbleTableViewCell.m */; };
+		7D6B22D01D3F125500A3E2BA /* AFHttpClient+Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6B22CF1D3F125500A3E2BA /* AFHttpClient+Comment.m */; };
+		7D6B22D31D3F201C00A3E2BA /* CommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6B22D21D3F201C00A3E2BA /* CommentModel.m */; };
+		7D6B22D71D3F4CF300A3E2BA /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6B22D61D3F4CF300A3E2BA /* CommentTableViewCell.m */; };
 		7D72F5761D2A36060076AE67 /* AFHttpClient+Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D72F5751D2A36060076AE67 /* AFHttpClient+Test.m */; };
-		7DC627681D26086400EB2EB5 /* BSModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DC627671D26086400EB2EB5 /* BSModel.m */; };
 		7DCDC9551D2CE62F000C438F /* IssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DCDC9541D2CE62F000C438F /* IssueViewController.m */; };
 		7DD7D1D11D0FE21B0002CD2E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD7D1D01D0FE21B0002CD2E /* AppDelegate.m */; };
 		7DE523941D13D53800C5B5EF /* ForegetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE523931D13D53800C5B5EF /* ForegetPasswordViewController.m */; };
@@ -1012,6 +1015,8 @@
 		7D175A4E1D2F434200828706 /* yindaoye2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yindaoye2.jpg; sourceTree = "<group>"; };
 		7D1AAC731D1A617800B4297E /* NewPhotoalbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewPhotoalbumViewController.h; sourceTree = "<group>"; };
 		7D1AAC741D1A617800B4297E /* NewPhotoalbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewPhotoalbumViewController.m; sourceTree = "<group>"; };
+		7D29F11F1D3E1A020061B7DA /* CommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentViewController.h; sourceTree = "<group>"; };
+		7D29F1201D3E1A020061B7DA /* CommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentViewController.m; sourceTree = "<group>"; };
 		7D2C47191D2BB93400D57C86 /* AFHttpClient+MyDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+MyDevice.h"; sourceTree = "<group>"; };
 		7D2C471A1D2BB93400D57C86 /* AFHttpClient+MyDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+MyDevice.m"; sourceTree = "<group>"; };
 		7D2ECE781D191C11003181A9 /* LoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginModel.h; sourceTree = "<group>"; };
@@ -1044,10 +1049,14 @@
 		7D509D7C1D1B86A2004E3059 /* NewInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewInformationViewController.m; sourceTree = "<group>"; };
 		7D509D7F1D1BB685004E3059 /* NewAlumbleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewAlumbleTableViewCell.h; sourceTree = "<group>"; };
 		7D509D801D1BB685004E3059 /* NewAlumbleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewAlumbleTableViewCell.m; sourceTree = "<group>"; };
+		7D6B22CE1D3F125500A3E2BA /* AFHttpClient+Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+Comment.h"; sourceTree = "<group>"; };
+		7D6B22CF1D3F125500A3E2BA /* AFHttpClient+Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+Comment.m"; sourceTree = "<group>"; };
+		7D6B22D11D3F201C00A3E2BA /* CommentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentModel.h; sourceTree = "<group>"; };
+		7D6B22D21D3F201C00A3E2BA /* CommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentModel.m; sourceTree = "<group>"; };
+		7D6B22D51D3F4CF300A3E2BA /* CommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentTableViewCell.h; sourceTree = "<group>"; };
+		7D6B22D61D3F4CF300A3E2BA /* CommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentTableViewCell.m; sourceTree = "<group>"; };
 		7D72F5741D2A36060076AE67 /* AFHttpClient+Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+Test.h"; sourceTree = "<group>"; };
 		7D72F5751D2A36060076AE67 /* AFHttpClient+Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+Test.m"; sourceTree = "<group>"; };
-		7DC627661D26086400EB2EB5 /* BSModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSModel.h; sourceTree = "<group>"; };
-		7DC627671D26086400EB2EB5 /* BSModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSModel.m; sourceTree = "<group>"; };
 		7DCDC9531D2CE62F000C438F /* IssueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssueViewController.h; sourceTree = "<group>"; };
 		7DCDC9541D2CE62F000C438F /* IssueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssueViewController.m; sourceTree = "<group>"; };
 		7DD7D1CF1D0FE21B0002CD2E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -1187,8 +1196,8 @@
 				3455656A1D11008300B6E562 /* ResponseModel.m */,
 				572204B81D2B57A60007942A /* BaseJSONModel.h */,
 				572204B91D2B57A60007942A /* BaseJSONModel.m */,
-				7DC627661D26086400EB2EB5 /* BSModel.h */,
-				7DC627671D26086400EB2EB5 /* BSModel.m */,
+				7D6B22D11D3F201C00A3E2BA /* CommentModel.h */,
+				7D6B22D21D3F201C00A3E2BA /* CommentModel.m */,
 				7D3813011D25006000C583DD /* NewAlbumModel.h */,
 				7D3813021D25006000C583DD /* NewAlbumModel.m */,
 				7D3812FE1D25003200C583DD /* NewAlbumAdviceModel.h */,
@@ -1212,6 +1221,8 @@
 			children = (
 				572DEE5B1D1162E100035228 /* AFHttpClient.h */,
 				572DEE5C1D1162E100035228 /* AFHttpClient.m */,
+				7D6B22CE1D3F125500A3E2BA /* AFHttpClient+Comment.h */,
+				7D6B22CF1D3F125500A3E2BA /* AFHttpClient+Comment.m */,
 				7D2ECE7E1D192022003181A9 /* AFHttpClient+Account.h */,
 				7D2ECE7F1D192022003181A9 /* AFHttpClient+Account.m */,
 				7DF28C3D1D387D2B00FA31C6 /* AFHttpClient+Regist.h */,
@@ -1421,6 +1432,7 @@
 		345565751D1136B200B6E562 /* FamilySpace */ = {
 			isa = PBXGroup;
 			children = (
+				7D29F11E1D3E18AF0061B7DA /* Comment */,
 				7D509D7E1D1BB663004E3059 /* Views */,
 				3455657E1D11376500B6E562 /* FamilySpaceViewcontroller.h */,
 				3455657F1D11376500B6E562 /* FamilySpaceViewcontroller.m */,
@@ -2509,6 +2521,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		7D29F11E1D3E18AF0061B7DA /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				7D6B22D41D3F4CD600A3E2BA /* Views */,
+				7D29F11F1D3E1A020061B7DA /* CommentViewController.h */,
+				7D29F1201D3E1A020061B7DA /* CommentViewController.m */,
+			);
+			path = Comment;
+			sourceTree = "<group>";
+		};
 		7D4B10121D1297F40095D463 /* buttonImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -2599,6 +2621,15 @@
 				7DF28C431D38D87800FA31C6 /* LargeViewController.h */,
 				7DF28C441D38D87800FA31C6 /* LargeViewController.m */,
 				7DF28C461D38D9EA00FA31C6 /* LargeViewController.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7D6B22D41D3F4CD600A3E2BA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7D6B22D51D3F4CF300A3E2BA /* CommentTableViewCell.h */,
+				7D6B22D61D3F4CF300A3E2BA /* CommentTableViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2912,6 +2943,7 @@
 				345565801D11376500B6E562 /* FamilySpaceViewcontroller.m in Sources */,
 				7D396F8C1D2E4ACC0079EE9E /* FamilyTableViewCell.m in Sources */,
 				34921D0F1D191A5D00541E41 /* SaomaoViewController.m in Sources */,
+				7D6B22D71D3F4CF300A3E2BA /* CommentTableViewCell.m in Sources */,
 				7DF28C451D38D87800FA31C6 /* LargeViewController.m in Sources */,
 				349263791D178EF4006C2FD9 /* OpinionViewController.m in Sources */,
 				345565D21D129EBC00B6E562 /* DeviceInformationViewController.m in Sources */,
@@ -2956,12 +2988,14 @@
 				34012DAF1D2CD9A000C97E1E /* AFHttpClient+FamilyTeam.m in Sources */,
 				345565601D10FF0700B6E562 /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
 				3492635B1D13FAC6006C2FD9 /* MyphotoAlbumViewController.m in Sources */,
+				7D29F1211D3E1A020061B7DA /* CommentViewController.m in Sources */,
 				7D3813001D25003200C583DD /* NewAlbumAdviceModel.m in Sources */,
 				345565681D10FFED00B6E562 /* AccountManager.m in Sources */,
 				345565331D10F8A600B6E562 /* AppUtil.m in Sources */,
 				345565741D1134E500B6E562 /* MainTabViewController.m in Sources */,
 				34E49DAD1D24FBC800CF5CCB /* PersonModel.m in Sources */,
 				345565E91D13A04100B6E562 /* FamilyTeamTableViewCell.m in Sources */,
+				7D6B22D31D3F201C00A3E2BA /* CommentModel.m in Sources */,
 				7DD7D1D11D0FE21B0002CD2E /* AppDelegate.m in Sources */,
 				345565DE1D12A5D800B6E562 /* PerInformationTableViewCell.m in Sources */,
 				345565861D113A7900B6E562 /* PopStartView.m in Sources */,
@@ -2970,13 +3004,13 @@
 				349263551D13E5F3006C2FD9 /* PersonTableViewCell.m in Sources */,
 				345565501D10FE4800B6E562 /* UIImage-Extensions.m in Sources */,
 				345565611D10FF0700B6E562 /* UIView+SDAutoLayout.m in Sources */,
+				7D6B22D01D3F125500A3E2BA /* AFHttpClient+Comment.m in Sources */,
 				34921D071D17C77000541E41 /* CheckDeviceModel.m in Sources */,
 				34012DA91D2CD30B00C97E1E /* AFHttpClient+Person.m in Sources */,
 				345565531D10FE5C00B6E562 /* UIViewController+HUD.m in Sources */,
 				572204BA1D2B57A60007942A /* BaseJSONModel.m in Sources */,
 				345565561D10FE6400B6E562 /* UIView+Sizes.m in Sources */,
 				34F4D2A11D1CCDE9005963CA /* InCallViewController.m in Sources */,
-				7DC627681D26086400EB2EB5 /* BSModel.m in Sources */,
 				7D396F891D2E3F370079EE9E /* AFHttpClient+Alumb.m in Sources */,
 				57D1E5F71CFED25900BEDFF6 /* main.m in Sources */,
 				7D2ECE7A1D191C11003181A9 /* LoginModel.m in Sources */,
