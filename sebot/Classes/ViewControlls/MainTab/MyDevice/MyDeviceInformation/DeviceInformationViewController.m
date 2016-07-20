@@ -16,7 +16,8 @@
 {
     
      UIImageView * _heandBtn;
-    CheckDeviceModel * checkmodel;
+     CheckDeviceModel * checkmodel;
+    NSString * strDid;
     
 }
 
@@ -311,6 +312,7 @@
     if (sender.enabled) {
         
          [self sipCall:checkmodel.deviceno sipName:nil];
+         [self addDeviceUseMember];
     }else
     {
         
@@ -337,7 +339,12 @@
     
     [[AFHttpClient sharedAFHttpClient]solvDevice:str token:str call:str called:checkmodel.did object:@"mobile" complete:^(ResponseModel *model) {
         
-        NSLog(@"%@",model);
+    
+        NSUserDefaults * user =[NSUserDefaults standardUserDefaults];
+        [user setObject:model.content forKey:@"contentID"];
+        [user synchronize];
+        
+        
         
     }];
     

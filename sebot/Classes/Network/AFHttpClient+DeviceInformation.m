@@ -113,4 +113,33 @@
 
     
 }
+
+-(void)updateDevice:(NSString *)userid token:(NSString *)token  did:(NSString *)did complete:(void (^)(ResponseModel *))completeBlock
+{
+    
+    
+    NSMutableDictionary * parms = [[NSMutableDictionary alloc]init];
+    parms[@"userid"] = userid;
+    parms[@"token"] = token;
+    parms[@"objective"] = @"device";
+    parms[@"action"] = @"updateCallRecords";
+    NSMutableDictionary * dataparms = [[NSMutableDictionary alloc]init];
+    dataparms[@"id"] = did;
+    parms[@"data"] =dataparms;
+    
+    [self POST:@"sebot/moblie/forward" parameters:parms result:^(ResponseModel * model) {
+        
+        model.list = [CheckDeviceModel arrayOfModelsFromDictionaries:model.list];
+        
+        if (model) {
+            completeBlock(model);
+        }
+        
+    }];
+
+    
+}
+
+
+
 @end

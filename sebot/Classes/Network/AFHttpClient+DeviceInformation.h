@@ -33,4 +33,13 @@
  */
 
 -(void)solvDevice:(NSString *)userid token:(NSString *)token call:(NSString *)calling  called:(NSString *)called object:(NSString *)object complete:(void (^)(ResponseModel *))completeBlock;
+
+
+/**
+ *  更新设备使用记录
+ */
+
+-(void)updateDevice:(NSString *)userid token:(NSString *)token  did:(NSString *)did complete:(void (^)(ResponseModel *))completeBlock;
+
+
 @end

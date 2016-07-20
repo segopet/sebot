@@ -23,6 +23,8 @@
     PopView * _popView;
     AppDelegate *app;
    // CheckDeviceModel * checkModel;
+    UIImageView * image;
+    
     
 
 }
@@ -68,6 +70,12 @@
     self.view.backgroundColor = GRAY_COLOR;
     [self showBarButton:NAV_RIGHT imageName:@"sebot_add"];
     
+    image =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 375, 375)];
+    image.hidden = YES;
+    image.center = self.view.center;
+    image.image =[UIImage imageNamed:@"默认图片.png"];
+    [self.view addSubview:image];
+    
      app = (AppDelegate *)[UIApplication sharedApplication].delegate;
     _popView = [[PopView alloc] initWithFrame:CGRectMake(0, 0,SCREEN_WIDTH ,SCREEN_HEIGHT)];
     _popView.center = self.view.center;
@@ -101,8 +109,10 @@
         if (page == START_PAGE_INDEX) {
             [self.dataSource removeAllObjects];
             [self.dataSource addObjectsFromArray:model.list];
+            image.hidden = YES;
         } else {
             [self.dataSource addObjectsFromArray:model.list];
+            image.hidden  =  YES;
         }
         
         if (model.list.count < REQUEST_PAGE_SIZE){
@@ -114,12 +124,9 @@
         if (self.dataSource.count ==0) {
             
             NSLog(@"没有设备");
-            UIImageView * image =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 375, 375)];
             
-            image.center = self.view.center;
-            image.image =[UIImage imageNamed:@"默认图片.png"];
-            [self.view addSubview:image];
-            
+            image.hidden = NO;
+            //[self showNoticView];
             
         }
         [self.tableView reloadData];
@@ -128,6 +135,34 @@
     }];
     
 }
+
+
+//提示框
+
+- (void)showNoticView
+{
+    UIAlertView *alertView =[[UIAlertView alloc]initWithTitle:nil message:@"你还有绑定设备,是否立即绑定" delegate:self cancelButtonTitle:@"稍后" otherButtonTitles:@"立即绑定", nil];
+    [alertView show];
+    
+    
+
+    
+}
+
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex;{
+
+    if (buttonIndex == 0) {
+        
+        
+    }else
+    {
+         [self.view addSubview:_popView];
+        
+    }
+    
+}
+
 
 
 - (void)setupData
