@@ -25,6 +25,5 @@
 @property (nonatomic,copy)NSString * thumbnails;
 @property (nonatomic,copy)NSString * type;
 @property (nonatomic,copy)NSString * userid;
-
 @property (nonatomic,strong)UIImage * cutImage;
 @end

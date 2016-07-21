@@ -7,13 +7,22 @@
 //
 
 #import "MyphotoAlbumViewController.h"
+#import "NewInformationViewController.h"
+#import "PhotoInformationViewController.h"
+#import "PhotoCollectionViewCell.h"
+#import "AFHttpClient+MyPhoto.h"
+
 
 @interface MyphotoAlbumViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
 
 {
     
     
-    int number;
+    NSMutableArray * arrData;
+    NSString * usid;
+    UICollectionView * collect;
+    
+    
     
 }
 
@@ -23,13 +32,43 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
+    usid = [AccountManager sharedAccountManager].loginModel.userid;
     [self setNavTitle: NSLocalizedString(@"MyphotoAlbum", nil)];
-     self.view.backgroundColor = LIGHT_GRAY_COLOR;
-    number = 10;
+    self.view.backgroundColor = LIGHT_GRAY_COLOR;
+    arrData = [NSMutableArray array];
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    
+    [super viewWillAppear:animated];
+    [self request];
+    
+}
+
+-(void)request{
+    //查询接口
+
+    
+    [[AFHttpClient sharedAFHttpClient]QueryMyPhoto:usid token:usid complete:^(ResponseModel * model) {
+        
+        if (model.list.count > 0) {
+                        NSArray * array = model.list;
+                        [arrData removeAllObjects];
+                        [arrData addObject:array[0]];
+                        [arrData addObjectsFromArray:model.list];
+                        [collect reloadData];
+                    }else{
+                        //这里写一个就行了
+                    }
+
+        
+    }];
     
     
 }
+
 
 
 - (void)setupData
@@ -44,22 +83,15 @@
     
     [super setupView];
     
-    //创建一个layout布局类
     UICollectionViewFlowLayout * layout = [[UICollectionViewFlowLayout alloc]init];
-    //设置布局方向为垂直流布局
-    layout.scrollDirection = UICollectionViewScrollDirectionVertical;
-    //设置每个item的大小为100*100
-    layout.itemSize = CGSizeMake(100, 100);
-    //创建collectionView 通过一个布局策略layout来创建
-    UICollectionView * collect = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 40, SCREEN_WIDTH, SCREEN_HEIGHT) collectionViewLayout:layout];
+    collect = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) collectionViewLayout:layout];
     //代理设置
+    collect.backgroundColor =GRAY_COLOR;
     collect.delegate=self;
     collect.dataSource=self;
-    //注册item类型 这里使用系统的类型
-    [collect registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cellid"];
-    
+    //注册item类型 这里使用系统的类型X
+    [collect registerClass:[PhotoCollectionViewCell class] forCellWithReuseIdentifier:@"cellid"];
     [self.view addSubview:collect];
-    
     
     
 }
@@ -80,13 +112,46 @@
 }
 //返回每个分区的item个数
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return number;
+    return arrData.count;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake(110, 110);
+}
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    return UIEdgeInsetsMake(5, 5, 0, 5);
 }
 //返回每个item
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    UICollectionViewCell * cell  = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellid" forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0 blue:arc4random()%255/255.0 alpha:1];
+    
+    NewAlbumModel * model = arrData[indexPath.row];
+    
+    PhotoCollectionViewCell * cell  = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellid" forIndexPath:indexPath];
+    
+    if (indexPath.row < 1) {
+        UIImageView * image = [[UIImageView alloc]initWithFrame:cell.bounds];
+        image.image =[UIImage imageNamed:@"add.png"];
+        [cell addSubview:image];
+        
+    }else{
+       
+        NSString * imageStr = [NSString stringWithFormat:@"%@",model.cover];
+        NSURL * imageUrl = [NSURL URLWithString:imageStr];
+
+        [cell.ImageHeader sd_setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:@"defaultPhoto.png"]];
+        cell.PhotoName.text = model.albumname;
+        cell.PhotoNumber.text = model.photonum;
+        
+        
+        
+        
+    }
+    
     return cell;
+
 }
 
 
@@ -95,8 +160,22 @@
 {
     
     NSLog(@"选中");
+     NewAlbumModel * model = arrData[indexPath.row];
+    if (indexPath.row < 1) {
+        NewInformationViewController * haha = [[NewInformationViewController alloc]init];
+        [self.navigationController pushViewController:haha animated:NO];
+    }else{
+       //相册预览
+       
+        PhotoInformationViewController * photoVC =[[PhotoInformationViewController alloc]initWithNibName:@"PhotoInformationViewController" bundle:nil];
+        photoVC.aid = model.aid;
+        [self.navigationController pushViewController:photoVC animated:YES];
+        
+    }
+
    
 }
+
 
 
 @end
