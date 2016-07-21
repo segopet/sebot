@@ -22,6 +22,7 @@
 @property (nonatomic,strong)UIButton * pinglun;
 @property (nonatomic,strong)UILabel * pinglunlabel;
 
+@property (nonatomic,strong)UIButton * pinglunBtn;
 
 
 @end

@@ -99,6 +99,7 @@
     _passwordTextfield.placeholder = @"请输入密码";
     _passwordTextfield.tintColor = GRAY_COLOR;
     _passwordTextfield.textColor = [UIColor blackColor];
+    _passwordTextfield.secureTextEntry = YES;
     _passwordTextfield.font = [UIFont systemFontOfSize:14];
     [topView addSubview:_passwordTextfield];
     
@@ -107,16 +108,37 @@
     _surePasswordTextfield.tintColor = GRAY_COLOR;
     _surePasswordTextfield.textColor= [UIColor blackColor];
     _surePasswordTextfield.font = [UIFont systemFontOfSize:14];
+    _surePasswordTextfield.secureTextEntry = YES;
     [topView addSubview:_surePasswordTextfield];
     
+    _passBtn = [[UIButton alloc]initWithFrame:CGRectMake(300 * W_Wide_Zoom, 118 * W_Hight_Zoom, 18 * W_Wide_Zoom, 18 * W_Hight_Zoom)];
+    [_passBtn setImage:[UIImage imageNamed:@"showPs.png"] forState:UIControlStateNormal];
+    [_passBtn setImage:[UIImage imageNamed:@"noshowpass.png"] forState:UIControlStateSelected];
+    _passBtn.selected = YES;
+    [topView addSubview:_passBtn];
+    [_passBtn addTarget:self action:@selector(passbuttontouch) forControlEvents:UIControlEventTouchUpInside];
     
-    
-    
-    
-    
-    
-    
+    _suerPassBtn = [[UIButton alloc]initWithFrame:CGRectMake(300 * W_Wide_Zoom, 168 * W_Hight_Zoom, 18 * W_Wide_Zoom, 18 * W_Hight_Zoom)];
+    [_suerPassBtn setImage:[UIImage imageNamed:@"showPs.png"] forState:UIControlStateNormal];
+    [_suerPassBtn setImage:[UIImage imageNamed:@"noshowpass.png"] forState:UIControlStateSelected];
+    _suerPassBtn.selected = YES;
+    [topView addSubview:_suerPassBtn];
+    [_suerPassBtn addTarget:self action:@selector(passbuttontouch) forControlEvents:UIControlEventTouchUpInside];
+  
 }
+-(void)passbuttontouch{
+    _passBtn.selected = !_passBtn.selected;
+    _suerPassBtn.selected = !_suerPassBtn.selected;
+    _passwordTextfield.secureTextEntry = !_passwordTextfield.secureTextEntry;
+    _surePasswordTextfield.secureTextEntry = !_surePasswordTextfield.secureTextEntry;
+
+}
+
+
+
+
+
+
 -(void)yanzhengmaTouch{
     if ([AppUtil isBlankString:_phoneNumberTextfield.text]) {
          [[AppUtil appTopViewController] showHint:@"请输入帐号"];

@@ -120,9 +120,16 @@
 
 -(void)loginButtonTouch{
      NSString *myChannel_id = [BPush getChannelId];
+    [self showHudInView:self.view hint:@"正在登录..."];
     [[AFHttpClient sharedAFHttpClient]loginWithUserName:_accountTextfield.text password:_passwordTextfield.text userid:@"" channelid:myChannel_id complete:^(ResponseModel *model) {
+        //判断是否绑定
+        NSString * content = model.content;
+        NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:content forKey:@"isContent"];
+        
+        //存数据
         LoginModel * loginModel = [[LoginModel alloc]initWithDictionary:model.retVal error:nil];
-               
+        [self hideHud];
         [[AccountManager sharedAccountManager] login:loginModel];
         [[NSNotificationCenter defaultCenter] postNotificationName:NotificationLoginStateChange object:@YES];
         [self updatePhone];
