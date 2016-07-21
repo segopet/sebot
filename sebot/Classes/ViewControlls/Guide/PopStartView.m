@@ -24,9 +24,10 @@
         [self addSubview:_scrollView];
         
         _pageControl = [[UIPageControl alloc]initWithFrame:CGRectMake(([UIScreen mainScreen].bounds.size.width-100)/2, [UIScreen mainScreen].bounds.size.height-90, 100, 60)];
-        [self addSubview:_pageControl];
+        //s
+        //[self addSubview:_pageControl];
         
-        _PicArray = @[@"yindaoye1.jpg",@"yindaoye2.jpg"];
+        _PicArray = @[@"yindaoye11.jpg",@"yindaoye22.jpg",@"yindaoye33.jpg"];
         _pageControl.numberOfPages = _PicArray.count;
         _pageControl.currentPage = 0;
         _pageControl.pageIndicatorTintColor = [[UIColor blackColor] colorWithAlphaComponent: 0.3f];

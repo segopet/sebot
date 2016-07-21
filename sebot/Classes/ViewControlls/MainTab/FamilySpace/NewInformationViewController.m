@@ -41,7 +41,8 @@ static NSString * cellId = @"newAllubmtabeleviewwcellid";
     NSString * str = [_adviceArray componentsJoinedByString:@","];
     
     [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid":[AccountManager sharedAccountManager].loginModel.userid,@"token":[AccountManager sharedAccountManager].loginModel.userid,@"objective":@"album",@"action":@"add",@"data":@{@"albumname":_alumbnameTextfield.text,@"userid":[AccountManager sharedAccountManager].loginModel.userid,@"dids":str}} result:^(id model) {
-        
+        [self.navigationController popViewControllerAnimated:NO];
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"newAlumb" object:nil];
         
     }];
 

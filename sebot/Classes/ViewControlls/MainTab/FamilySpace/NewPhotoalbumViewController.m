@@ -25,6 +25,14 @@
 @end
 
 @implementation NewPhotoalbumViewController
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    [self initUserface];
+    [self request];
+    
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,12 +41,12 @@
     _imagePicker.delegate= self;
     _datasouce  = [NSMutableArray array];
     [UINavigationBar appearance].barTintColor=RED_COLOR;
-    self.view.backgroundColor = NEW_GRAY_COLOR;
-    [self initUserface];
-    [self request];
+    self.view.backgroundColor = LIGHT_GRAY_COLOR;
+   
 }
 -(void)request{
     //查询接口
+    [self.datasouce removeAllObjects];
     [[AFHttpClient sharedAFHttpClient]newphotoWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid complete:^(ResponseModel *model) {
         if (model.list.count > 0) {
             NSArray * array = model.list;
@@ -54,9 +62,9 @@
 
 -(void)initUserface{
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    _colView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
+    _colView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 60, 375, 607 ) collectionViewLayout:layout];
     [_colView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"myCell"];
-    _colView.backgroundColor = [UIColor whiteColor];
+    _colView.backgroundColor = LIGHT_GRAY_COLOR;
     _colView.delegate = self;
     _colView.dataSource = self;
     [self.view addSubview:_colView];
@@ -84,19 +92,44 @@
     NewAlbumModel * model = self.datasouce[indexPath.row];
     static NSString *cellID = @"myCell";
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellID forIndexPath:indexPath];
-    
+    //我的妈，该死个人了，先删除一下，不然会重用
+    for (UIView *view in [cell.contentView subviews]) {
+        [view removeFromSuperview];
+    }
+
     if (indexPath.row < 1) {
         UIImageView * image = [[UIImageView alloc]initWithFrame:cell.bounds];
-        image.backgroundColor = [UIColor blueColor];
-        [cell addSubview:image];
+        image.image = [UIImage imageNamed:@"addImage.png"];
+        [cell.contentView addSubview:image];
 
     }else{
     NSString * imageStr = [NSString stringWithFormat:@"%@",model.cover];
     NSURL * imageUrl = [NSURL URLWithString:imageStr];
     UIImageView * image = [[UIImageView alloc]initWithFrame:cell.bounds];
-    [image sd_setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:@"APPImgae.png"]];
-    [cell addSubview:image];
+    [image sd_setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:@"morentutu.png"]];
+    [cell.contentView addSubview:image];
+    
+    UIView * downView = [[UIView alloc]initWithFrame:CGRectMake(0 * W_Wide_Zoom, 80 * W_Hight_Zoom, 110 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
+    downView.backgroundColor = [UIColor grayColor];
+    [cell.contentView addSubview:downView];
+        
+        UILabel * lable = [[UILabel alloc]initWithFrame:CGRectMake(3 * W_Wide_Zoom, 2 * W_Hight_Zoom, 80 * W_Wide_Zoom, 26 * W_Hight_Zoom)];
+        lable.font = [UIFont systemFontOfSize:14];
+        lable.text = model.albumname;
+        lable.textColor = [UIColor blackColor];
+        [downView addSubview:lable];
+        
+        UILabel * lastLabel = [[UILabel alloc]initWithFrame:CGRectMake(90 * W_Wide_Zoom, 2 * W_Hight_Zoom, 10 * W_Wide_Zoom, 26 * W_Hight_Zoom)];
+        lastLabel.font = [UIFont systemFontOfSize:14];
+        lastLabel.text = model.photonum;
+        lastLabel.textColor = [UIColor blackColor];
+        [downView addSubview:lastLabel];
     }
+   
+    
+    
+    
+    
     
     
     
@@ -106,7 +139,7 @@
 //配置每个item的size
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(110, 110);
+    return CGSizeMake(110 * W_Wide_Zoom, 110 * W_Hight_Zoom);
 }
 
 //配置item的边距
@@ -202,7 +235,7 @@
         NSLog(@"打开摄像头失败");
     }
     [self presentViewController:_imagePicker animated:YES completion:nil];
-
+    
 }
 
 -(void)loacalPhoto{
@@ -231,8 +264,8 @@
     IssueViewController * issue = [[IssueViewController alloc]init];
     issue.firstImage = getImage;
     issue.aidstr = _aidStr;
-    [self presentViewController:issue animated:YES completion:nil];
-    
+   // [self presentViewController:issue animated:YES completion:nil];
+    [self.navigationController pushViewController:issue animated:NO];
     
 }
 

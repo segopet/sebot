@@ -10,7 +10,7 @@
 
 @interface AFHttpClient (Alumb)
 //上传图片
--(void)issueWithuserid:(NSString *)userid token:(NSString *)token aid:(NSString *)aid coneten:(NSString *)content photos:(NSMutableString *)photos complete:(void(^)(ResponseModel *model))completeBlock;
+-(void)issueWithuserid:(NSString *)userid token:(NSString *)token aid:(NSString *)aid coneten:(NSString *)content photos:(NSMutableString *)photos userides:(NSString *)userids complete:(void(^)(ResponseModel *model))completeBlock;
 
 //家庭圈详情
 -(void)familyArticlesWithUserid:(NSString *)userid token:(NSString *)token
@@ -21,6 +21,13 @@
 
 //查看照片
 -(void)lookpictureWithUserid:(NSString *)userid token:(NSString *)token aid:(NSString *)aid complete:(void(^)(ResponseModel *model))completeBlock;
+
+
+//通过我的设备的接口来判断是否绑定了设备
+
+
+
+
 
 
 
