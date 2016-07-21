@@ -78,6 +78,27 @@
 		3492637A1D178EF4006C2FD9 /* OpinionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 349263781D178EF4006C2FD9 /* OpinionViewController.xib */; };
 		3492637E1D178F1B006C2FD9 /* ProductionIntroducViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3492637C1D178F1B006C2FD9 /* ProductionIntroducViewController.m */; };
 		3492637F1D178F1B006C2FD9 /* ProductionIntroducViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3492637D1D178F1B006C2FD9 /* ProductionIntroducViewController.xib */; };
+		34C4C6A41D40D8DB00075897 /* CompileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C4C6941D40D8DB00075897 /* CompileViewController.m */; };
+		34C4C6A51D40D8DB00075897 /* CompileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34C4C6951D40D8DB00075897 /* CompileViewController.xib */; };
+		34C4C6A61D40D8DB00075897 /* HeaderViewCollection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34C4C6961D40D8DB00075897 /* HeaderViewCollection.xib */; };
+		34C4C6A71D40D8DB00075897 /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C4C6981D40D8DB00075897 /* PhotoCollectionViewCell.m */; };
+		34C4C6A81D40D8DB00075897 /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34C4C6991D40D8DB00075897 /* PhotoCollectionViewCell.xib */; };
+		34C4C6A91D40D8DB00075897 /* PhotoInforamtion.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C4C69B1D40D8DB00075897 /* PhotoInforamtion.m */; };
+		34C4C6AA1D40D8DB00075897 /* PhotoInforamtion.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34C4C69C1D40D8DB00075897 /* PhotoInforamtion.xib */; };
+		34C4C6AB1D40D8DB00075897 /* PhotoInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C4C69E1D40D8DB00075897 /* PhotoInformationViewController.m */; };
+		34C4C6AC1D40D8DB00075897 /* PhotoInformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34C4C69F1D40D8DB00075897 /* PhotoInformationViewController.xib */; };
+		34C4C6AD1D40D8DB00075897 /* ShowPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C4C6A11D40D8DB00075897 /* ShowPhotoViewController.m */; };
+		34C4C6AE1D40D8DB00075897 /* ShowPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34C4C6A21D40D8DB00075897 /* ShowPhotoViewController.xib */; };
+		34C4C6AF1D40D8DB00075897 /* SQSupplementaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34C4C6A31D40D8DB00075897 /* SQSupplementaryView.xib */; };
+		34C4C6B21D40D91B00075897 /* PhotoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C4C6B11D40D91B00075897 /* PhotoModel.m */; };
+		34C4C6B51D40D96A00075897 /* ImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C4C6B41D40D96A00075897 /* ImageModel.m */; };
+		34C4C6B81D40D99E00075897 /* BaseCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C4C6B71D40D99E00075897 /* BaseCollectionViewController.m */; };
+		34C4C6BA1D40DA3F00075897 /* defaultPhoto.png in Resources */ = {isa = PBXBuildFile; fileRef = 34C4C6B91D40DA3F00075897 /* defaultPhoto.png */; };
+		34C4C6BC1D40DA6500075897 /* addImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 34C4C6BB1D40DA6500075897 /* addImage.png */; };
+		34C4C6BE1D40DB2700075897 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 34C4C6BD1D40DB2700075897 /* add.png */; };
+		34C4C6C11D40DB9A00075897 /* 选项.png in Resources */ = {isa = PBXBuildFile; fileRef = 34C4C6BF1D40DB9A00075897 /* 选项.png */; };
+		34C4C6C21D40DB9A00075897 /* 选择.png in Resources */ = {isa = PBXBuildFile; fileRef = 34C4C6C01D40DB9A00075897 /* 选择.png */; };
+		34C4C6C41D40DC6C00075897 /* more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34C4C6C31D40DC6C00075897 /* more@2x.png */; };
 		34E49D811D20C37100CF5CCB /* sebot_add@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49D801D20C37100CF5CCB /* sebot_add@3x.png */; };
 		34E49D841D20C4A700CF5CCB /* sebot_start_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49D821D20C4A700CF5CCB /* sebot_start_off@2x.png */; };
 		34E49D851D20C4A700CF5CCB /* sebot_start_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49D831D20C4A700CF5CCB /* sebot_start_on@2x.png */; };
@@ -412,6 +433,35 @@
 		3492637B1D178F1B006C2FD9 /* ProductionIntroducViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductionIntroducViewController.h; sourceTree = "<group>"; };
 		3492637C1D178F1B006C2FD9 /* ProductionIntroducViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductionIntroducViewController.m; sourceTree = "<group>"; };
 		3492637D1D178F1B006C2FD9 /* ProductionIntroducViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductionIntroducViewController.xib; sourceTree = "<group>"; };
+		34C4C6931D40D8DB00075897 /* CompileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompileViewController.h; sourceTree = "<group>"; };
+		34C4C6941D40D8DB00075897 /* CompileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompileViewController.m; sourceTree = "<group>"; };
+		34C4C6951D40D8DB00075897 /* CompileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompileViewController.xib; sourceTree = "<group>"; };
+		34C4C6961D40D8DB00075897 /* HeaderViewCollection.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderViewCollection.xib; sourceTree = "<group>"; };
+		34C4C6971D40D8DB00075897 /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		34C4C6981D40D8DB00075897 /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		34C4C6991D40D8DB00075897 /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
+		34C4C69A1D40D8DB00075897 /* PhotoInforamtion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoInforamtion.h; sourceTree = "<group>"; };
+		34C4C69B1D40D8DB00075897 /* PhotoInforamtion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoInforamtion.m; sourceTree = "<group>"; };
+		34C4C69C1D40D8DB00075897 /* PhotoInforamtion.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoInforamtion.xib; sourceTree = "<group>"; };
+		34C4C69D1D40D8DB00075897 /* PhotoInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoInformationViewController.h; sourceTree = "<group>"; };
+		34C4C69E1D40D8DB00075897 /* PhotoInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoInformationViewController.m; sourceTree = "<group>"; };
+		34C4C69F1D40D8DB00075897 /* PhotoInformationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoInformationViewController.xib; sourceTree = "<group>"; };
+		34C4C6A01D40D8DB00075897 /* ShowPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowPhotoViewController.h; sourceTree = "<group>"; };
+		34C4C6A11D40D8DB00075897 /* ShowPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowPhotoViewController.m; sourceTree = "<group>"; };
+		34C4C6A21D40D8DB00075897 /* ShowPhotoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowPhotoViewController.xib; sourceTree = "<group>"; };
+		34C4C6A31D40D8DB00075897 /* SQSupplementaryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SQSupplementaryView.xib; sourceTree = "<group>"; };
+		34C4C6B01D40D91B00075897 /* PhotoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoModel.h; sourceTree = "<group>"; };
+		34C4C6B11D40D91B00075897 /* PhotoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoModel.m; sourceTree = "<group>"; };
+		34C4C6B31D40D96A00075897 /* ImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageModel.h; sourceTree = "<group>"; };
+		34C4C6B41D40D96A00075897 /* ImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageModel.m; sourceTree = "<group>"; };
+		34C4C6B61D40D99E00075897 /* BaseCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCollectionViewController.h; sourceTree = "<group>"; };
+		34C4C6B71D40D99E00075897 /* BaseCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCollectionViewController.m; sourceTree = "<group>"; };
+		34C4C6B91D40DA3F00075897 /* defaultPhoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultPhoto.png; sourceTree = "<group>"; };
+		34C4C6BB1D40DA6500075897 /* addImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addImage.png; sourceTree = "<group>"; };
+		34C4C6BD1D40DB2700075897 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
+		34C4C6BF1D40DB9A00075897 /* 选项.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "选项.png"; sourceTree = "<group>"; };
+		34C4C6C01D40DB9A00075897 /* 选择.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "选择.png"; sourceTree = "<group>"; };
+		34C4C6C31D40DC6C00075897 /* more@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more@2x.png"; sourceTree = "<group>"; };
 		34E49D801D20C37100CF5CCB /* sebot_add@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sebot_add@3x.png"; sourceTree = "<group>"; };
 		34E49D821D20C4A700CF5CCB /* sebot_start_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sebot_start_off@2x.png"; sourceTree = "<group>"; };
 		34E49D831D20C4A700CF5CCB /* sebot_start_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sebot_start_on@2x.png"; sourceTree = "<group>"; };
@@ -1195,6 +1245,10 @@
 		345565211D10F3B700B6E562 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				34C4C6B31D40D96A00075897 /* ImageModel.h */,
+				34C4C6B41D40D96A00075897 /* ImageModel.m */,
+				34C4C6B01D40D91B00075897 /* PhotoModel.h */,
+				34C4C6B11D40D91B00075897 /* PhotoModel.m */,
 				345565691D11008300B6E562 /* ResponseModel.h */,
 				3455656A1D11008300B6E562 /* ResponseModel.m */,
 				572204B81D2B57A60007942A /* BaseJSONModel.h */,
@@ -1307,6 +1361,8 @@
 		345565281D10F46000B6E562 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				34C4C6B61D40D99E00075897 /* BaseCollectionViewController.h */,
+				34C4C6B71D40D99E00075897 /* BaseCollectionViewController.m */,
 				345565B61D11505E00B6E562 /* UITabBar+Badge.h */,
 				345565B71D11505E00B6E562 /* UITabBar+Badge.m */,
 				345565B31D11500F00B6E562 /* BaseViewController.h */,
@@ -1542,6 +1598,23 @@
 				349263581D13FAC6006C2FD9 /* MyphotoAlbumViewController.h */,
 				349263591D13FAC6006C2FD9 /* MyphotoAlbumViewController.m */,
 				3492635A1D13FAC6006C2FD9 /* MyphotoAlbumViewController.xib */,
+				34C4C6931D40D8DB00075897 /* CompileViewController.h */,
+				34C4C6941D40D8DB00075897 /* CompileViewController.m */,
+				34C4C6951D40D8DB00075897 /* CompileViewController.xib */,
+				34C4C6961D40D8DB00075897 /* HeaderViewCollection.xib */,
+				34C4C6971D40D8DB00075897 /* PhotoCollectionViewCell.h */,
+				34C4C6981D40D8DB00075897 /* PhotoCollectionViewCell.m */,
+				34C4C6991D40D8DB00075897 /* PhotoCollectionViewCell.xib */,
+				34C4C69A1D40D8DB00075897 /* PhotoInforamtion.h */,
+				34C4C69B1D40D8DB00075897 /* PhotoInforamtion.m */,
+				34C4C69C1D40D8DB00075897 /* PhotoInforamtion.xib */,
+				34C4C69D1D40D8DB00075897 /* PhotoInformationViewController.h */,
+				34C4C69E1D40D8DB00075897 /* PhotoInformationViewController.m */,
+				34C4C69F1D40D8DB00075897 /* PhotoInformationViewController.xib */,
+				34C4C6A01D40D8DB00075897 /* ShowPhotoViewController.h */,
+				34C4C6A11D40D8DB00075897 /* ShowPhotoViewController.m */,
+				34C4C6A21D40D8DB00075897 /* ShowPhotoViewController.xib */,
+				34C4C6A31D40D8DB00075897 /* SQSupplementaryView.xib */,
 			);
 			path = MyphotoPho;
 			sourceTree = "<group>";
@@ -2539,6 +2612,10 @@
 		7D4B10121D1297F40095D463 /* buttonImage */ = {
 			isa = PBXGroup;
 			children = (
+				34C4C6C31D40DC6C00075897 /* more@2x.png */,
+				34C4C6BF1D40DB9A00075897 /* 选项.png */,
+				34C4C6C01D40DB9A00075897 /* 选择.png */,
+				34C4C6BD1D40DB2700075897 /* add.png */,
 				7D1147061D3CC76C0080D3DE /* 无图时.png */,
 				7D1147071D3CC76C0080D3DE /* 相机.png */,
 				7D1147041D3C80020080D3DE /* noshowpass.png */,
@@ -2569,6 +2646,7 @@
 				34F4D2A51D1D234D005963CA /* before_off.png */,
 				34F4D2A61D1D234D005963CA /* before_on.png */,
 				34F4D2A71D1D234D005963CA /* behand_off.png */,
+				34C4C6BB1D40DA6500075897 /* addImage.png */,
 				34F4D2A81D1D234D005963CA /* behand_on.png */,
 				34F4D2A91D1D234D005963CA /* left_off.png */,
 				34F4D2AA1D1D234D005963CA /* left_on.png */,
@@ -2583,6 +2661,7 @@
 				7D4B101C1D12A2950095D463 /* APPImgae.png */,
 				7D4B10221D12A6C10095D463 /* password.png */,
 				7D4B10231D12A6C10095D463 /* user.png */,
+				34C4C6B91D40DA3F00075897 /* defaultPhoto.png */,
 			);
 			path = buttonImage;
 			sourceTree = "<group>";
@@ -2748,10 +2827,12 @@
 				34F4D2B21D1D234D005963CA /* left_on.png in Resources */,
 				34E49D8C1D20C7A100CF5CCB /* tab_device_normal@2x.png in Resources */,
 				34E49D8D1D20C7A100CF5CCB /* tab_device_press@2x.png in Resources */,
+				34C4C6A81D40D8DB00075897 /* PhotoCollectionViewCell.xib in Resources */,
 				7D4C6FA51D348CFC00334143 /* pinglunlun.png in Resources */,
 				34E4A03F1D261EF100CF5CCB /* tapping.wav in Resources */,
 				34E49D8E1D20C7A100CF5CCB /* tab_family_normal@2x.png in Resources */,
 				34E49FE01D261EF100CF5CCB /* hold.wav in Resources */,
+				34C4C6BC1D40DA6500075897 /* addImage.png in Resources */,
 				7DF28C471D38D9EA00FA31C6 /* LargeViewController.xib in Resources */,
 				34E4A01B1D261EF100CF5CCB /* contact_starred.png in Resources */,
 				3492635C1D13FAC6006C2FD9 /* MyphotoAlbumViewController.xib in Resources */,
@@ -2764,9 +2845,11 @@
 				34E49D8F1D20C7A100CF5CCB /* tab_family_press@2x.png in Resources */,
 				34E49FE31D261EF100CF5CCB /* nowebcamCIF.jpg in Resources */,
 				34E49D811D20C37100CF5CCB /* sebot_add@3x.png in Resources */,
+				34C4C6C11D40DB9A00075897 /* 选项.png in Resources */,
 				34E4A0281D261EF100CF5CCB /* sephone.png in Resources */,
 				7D4B10241D12A6C10095D463 /* password.png in Resources */,
 				7D4B101F1D12A2950095D463 /* APPImgae.png in Resources */,
+				34C4C6BA1D40DA3F00075897 /* defaultPhoto.png in Resources */,
 				34F4D2AD1D1D234D005963CA /* before_off.png in Resources */,
 				34E4A0331D261EF100CF5CCB /* hello16000.wav in Resources */,
 				34E4A0341D261EF100CF5CCB /* hello8000.wav in Resources */,
@@ -2779,17 +2862,21 @@
 				34E4A0131D261EF100CF5CCB /* call_status_outgoing.png in Resources */,
 				345565D81D129F5200B6E562 /* MyDeviceTableViewCell.xib in Resources */,
 				7DF28C4B1D38E2CB00FA31C6 /* 默认图片.png in Resources */,
+				34C4C6AE1D40D8DB00075897 /* ShowPhotoViewController.xib in Resources */,
 				7D1147081D3CC76C0080D3DE /* 无图时.png in Resources */,
 				34E49FE61D261EF100CF5CCB /* ringback.wav in Resources */,
 				7DF28C4A1D38E2CB00FA31C6 /* 默认头像.png in Resources */,
 				7D4B101B1D129C860095D463 /* back@2x.png in Resources */,
 				345565DF1D12A5D800B6E562 /* PerInformationTableViewCell.xib in Resources */,
+				34C4C6AA1D40D8DB00075897 /* PhotoInforamtion.xib in Resources */,
 				34E49D971D20D06400CF5CCB /* person_about@3x.png in Resources */,
 				345565D31D129EBC00B6E562 /* DeviceInformationViewController.xib in Resources */,
 				34F4D2AF1D1D234D005963CA /* behand_off.png in Resources */,
 				34E4A0141D261EF100CF5CCB /* chat.png in Resources */,
+				34C4C6AC1D40D8DB00075897 /* PhotoInformationViewController.xib in Resources */,
 				34E4A0311D261EF100CF5CCB /* stopcall-small.png in Resources */,
 				34E4A01C1D261EF100CF5CCB /* contact_unstarred.png in Resources */,
+				34C4C6A51D40D8DB00075897 /* CompileViewController.xib in Resources */,
 				34E49FE11D261EF100CF5CCB /* msg.caf in Resources */,
 				345565EA1D13A04100B6E562 /* FamilyTeamTableViewCell.xib in Resources */,
 				34E49D9F1D20FFB600CF5CCB /* acount.png in Resources */,
@@ -2797,6 +2884,7 @@
 				34E4A03B1D261EF100CF5CCB /* orig.wav in Resources */,
 				7D1147091D3CC76C0080D3DE /* 相机.png in Resources */,
 				34E4A03E1D261EF100CF5CCB /* synth.wav in Resources */,
+				34C4C6C41D40DC6C00075897 /* more@2x.png in Resources */,
 				3492637A1D178EF4006C2FD9 /* OpinionViewController.xib in Resources */,
 				34E49D841D20C4A700CF5CCB /* sebot_start_off@2x.png in Resources */,
 				34E4A01A1D261EF100CF5CCB /* contact-orange.png in Resources */,
@@ -2808,6 +2896,7 @@
 				34E4A0261D261EF100CF5CCB /* sephone-banner.png in Resources */,
 				34E4A0191D261EF100CF5CCB /* composing_chat.png in Resources */,
 				34F4D29D1D1A8C9E005963CA /* on_line.png in Resources */,
+				34C4C6AF1D40D8DB00075897 /* SQSupplementaryView.xib in Resources */,
 				34E4A0351D261EF100CF5CCB /* incoming_chat.wav in Resources */,
 				34E49FE41D261EF100CF5CCB /* ring.caf in Resources */,
 				34E49FE91D261EF100CF5CCB /* sephonerc in Resources */,
@@ -2834,6 +2923,7 @@
 				3492637F1D178F1B006C2FD9 /* ProductionIntroducViewController.xib in Resources */,
 				34F4D2A41D1D21B8005963CA /* round.png in Resources */,
 				34E49FEE1D261EF100CF5CCB /* shortring.caf in Resources */,
+				34C4C6A61D40D8DB00075897 /* HeaderViewCollection.xib in Resources */,
 				34E4A02B1D261EF100CF5CCB /* startcall-small.png in Resources */,
 				34E4A0111D261EF100CF5CCB /* call.png in Resources */,
 				349263681D13FC9F006C2FD9 /* RepairPwViewController.xib in Resources */,
@@ -2847,6 +2937,7 @@
 				34E4A0181D261EF100CF5CCB /* composing_active_chat.png in Resources */,
 				7D4B10251D12A6C10095D463 /* user.png in Resources */,
 				34E4A0241D261EF100CF5CCB /* notok.png in Resources */,
+				34C4C6C21D40DB9A00075897 /* 选择.png in Resources */,
 				3492636D1D13FE8D006C2FD9 /* AboutTableViewCell.xib in Resources */,
 				349263631D13FC72006C2FD9 /* AboutViewController.xib in Resources */,
 				7D175A4F1D2F434200828706 /* yindaoye1.jpg in Resources */,
@@ -2864,6 +2955,7 @@
 				34E4A03D1D261EF100CF5CCB /* sweet.wav in Resources */,
 				34E4A0401D261EF100CF5CCB /* toy-mono.wav in Resources */,
 				34E49D9D1D20FF0F00CF5CCB /* about.png in Resources */,
+				34C4C6BE1D40DB2700075897 /* add.png in Resources */,
 				34E49D851D20C4A700CF5CCB /* sebot_start_on@2x.png in Resources */,
 				7D4C6FA41D348CFC00334143 /* dianzanzan.png in Resources */,
 				34E49FEA1D261EF100CF5CCB /* sephonerc-factory in Resources */,
@@ -2956,12 +3048,14 @@
 				572DEE5D1D1162E100035228 /* AFHttpClient.m in Sources */,
 				345565D71D129F5200B6E562 /* MyDeviceTableViewCell.m in Sources */,
 				7D2ECE801D192022003181A9 /* AFHttpClient+Account.m in Sources */,
+				34C4C6B21D40D91B00075897 /* PhotoModel.m in Sources */,
 				7D509D811D1BB685004E3059 /* NewAlumbleTableViewCell.m in Sources */,
 				7D4B10011D1291C90095D463 /* RegistViewController.m in Sources */,
 				34E49FE81D261EF100CF5CCB /* SephoneManager.m in Sources */,
 				7DCDC9551D2CE62F000C438F /* IssueViewController.m in Sources */,
 				345565831D1139F200B6E562 /* LoginViewController.m in Sources */,
 				34012DA61D2CAD9700C97E1E /* UIButton+EnlargeTouchArea.m in Sources */,
+				34C4C6A41D40D8DB00075897 /* CompileViewController.m in Sources */,
 				349263671D13FC9F006C2FD9 /* RepairPwViewController.m in Sources */,
 				7DF28C3F1D387D2B00FA31C6 /* AFHttpClient+Regist.m in Sources */,
 				7D509D7D1D1B86A2004E3059 /* NewInformationViewController.m in Sources */,
@@ -2984,8 +3078,13 @@
 				345565401D10FE3E00B6E562 /* QFTableView.m in Sources */,
 				7DE523941D13D53800C5B5EF /* ForegetPasswordViewController.m in Sources */,
 				345565BF1D12533C00B6E562 /* PromptboxView.m in Sources */,
+				34C4C6A91D40D8DB00075897 /* PhotoInforamtion.m in Sources */,
+				34C4C6AD1D40D8DB00075897 /* ShowPhotoViewController.m in Sources */,
 				349263741D178EBC006C2FD9 /* AgreementViewController.m in Sources */,
 				3455654E1D10FE4800B6E562 /* UIAlertView+Blocks.m in Sources */,
+				34C4C6B51D40D96A00075897 /* ImageModel.m in Sources */,
+				34C4C6AB1D40D8DB00075897 /* PhotoInformationViewController.m in Sources */,
+				34C4C6A71D40D8DB00075897 /* PhotoCollectionViewCell.m in Sources */,
 				3492637E1D178F1B006C2FD9 /* ProductionIntroducViewController.m in Sources */,
 				3492636C1D13FE8D006C2FD9 /* AboutTableViewCell.m in Sources */,
 				349263621D13FC72006C2FD9 /* AboutViewController.m in Sources */,
@@ -3004,6 +3103,7 @@
 				7D6B22D31D3F201C00A3E2BA /* CommentModel.m in Sources */,
 				7DD7D1D11D0FE21B0002CD2E /* AppDelegate.m in Sources */,
 				345565DE1D12A5D800B6E562 /* PerInformationTableViewCell.m in Sources */,
+				34C4C6B81D40D99E00075897 /* BaseCollectionViewController.m in Sources */,
 				345565861D113A7900B6E562 /* PopStartView.m in Sources */,
 				3455653F1D10FE3E00B6E562 /* NSString+URLEncoding.m in Sources */,
 				7D72F5761D2A36060076AE67 /* AFHttpClient+Test.m in Sources */,
