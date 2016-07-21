@@ -7,6 +7,7 @@
 //
 
 #import "AFHttpClient+MyPhoto.h"
+#import "PhotoModel.h"
 
 @implementation AFHttpClient (MyPhoto)
 
@@ -25,6 +26,7 @@
     
     [self POST:@"sebot/moblie/forward" parameters:parms result:^(ResponseModel * model) {
         
+        model.list = [NewAlbumModel arrayOfModelsFromDictionaries:model.list];
         if (model) {
             completeBlock(model);
         }
@@ -49,7 +51,7 @@
     parms[@"data"] =dataparms;
     
     [self POST:@"sebot/moblie/forward" parameters:parms result:^(ResponseModel * model) {
-        
+         model.list = [PhotoModel arrayOfModelsFromDictionaries:model.list];
         if (model) {
             completeBlock(model);
         }
