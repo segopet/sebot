@@ -64,19 +64,28 @@ static NSString *kheaderIdentifier = @"headerIdentifier";
 
 - (void)datapageNum:(int)page
 {
-    [[AFHttpClient sharedAFHttpClient]QueryMyPhotos:strusid token:strusid did:self.aid page:@"1" complete:^(ResponseModel *model) {
+    [[AFHttpClient sharedAFHttpClient]QueryMyPhotos:strusid token:strusid did:self.aid page:[NSString stringWithFormat:@"%d",page] complete:^(ResponseModel *model) {
         NSLog(@"%@",model);
         
-        if (model.list.count > 0) {
+        // model.list.count > 0 &&
+        if (page==START_PAGE_INDEX) {
             [arrData removeAllObjects];
             [arrData addObjectsFromArray:model.list];
-            [self.collection reloadData];
-            [self handleEndRefresh];
+           
         }else{
             //这里写一个就行了
+            
+            if (model.list.count == 0) {
+                [self showSuccessHudWithHint:@"没有更多数据哦"];
+            }else
+            {
+                  [arrData addObjectsFromArray:model.list];
+            }
+    
         }
         
-        
+        [self.collection reloadData];
+        [self handleEndRefresh];
         
     }];
     
