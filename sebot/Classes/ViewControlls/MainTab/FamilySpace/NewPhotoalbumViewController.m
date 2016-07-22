@@ -62,7 +62,7 @@
 
 -(void)initUserface{
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    _colView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 60, 375, 607 ) collectionViewLayout:layout];
+    _colView = [[UICollectionView alloc] initWithFrame:CGRectMake(0 * W_Wide_Zoom , 60 * W_Hight_Zoom, 375 * W_Wide_Zoom, 607 * W_Hight_Zoom ) collectionViewLayout:layout];
     [_colView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"myCell"];
     _colView.backgroundColor = LIGHT_GRAY_COLOR;
     _colView.delegate = self;
