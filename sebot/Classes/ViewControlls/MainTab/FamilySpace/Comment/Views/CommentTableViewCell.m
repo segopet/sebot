@@ -36,7 +36,7 @@
         [self addSubview:_contentLabel];
         
         
-        _timelabel = [[UILabel alloc]initWithFrame:CGRectMake(70 * W_Wide_Zoom, 40 * W_Hight_Zoom, 150 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
+        _timelabel = [[UILabel alloc]init];
         _timelabel.textColor = [UIColor lightGrayColor];
         _timelabel.font = [UIFont systemFontOfSize:14];
         _timelabel.text = @"2016/15/13 17:43:12";

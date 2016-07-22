@@ -85,14 +85,26 @@ static NSString * cellId = @"commenttableviewCellides";
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    CommentModel* model = self.dataSource[indexPath.row]; 
+    CommentModel* model = self.dataSource[indexPath.row];
     
-   // return [self.tableView cellHeightForIndexPath:indexPath model:model keyPath:@"model" cellClass:[CommentTableViewCell class] contentViewWidth:SCREEN_WIDTH];
-    //_listArray = model.list;
     NSMutableArray * array = model.list;
     
-    return 90 * W_Hight_Zoom + 20 * array.count * W_Hight_Zoom;
-}
+    NSString * str1 = model.content;
+    CGSize lableSize1 = {0,0};
+    lableSize1 = [str1 sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:CGSizeMake(200.0, 5000) lineBreakMode:NSLineBreakByWordWrapping];
+    
+    if (array.count > 0 ) {
+        NSString * str123 = [NSString new];
+        for (int i = 0 ; i < array.count; i++) {
+          str123 = array[i][@"content"];
+        }
+        CGSize labelSize1112 = {0,0};
+        labelSize1112 = [str123 sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:CGSizeMake(200.0, 5000) lineBreakMode:NSLineBreakByWordWrapping];;
+         return 90 * W_Hight_Zoom + 20 * array.count * W_Hight_Zoom + lableSize1.height + labelSize1112.height;
+    }else{
+        return 90 * W_Hight_Zoom + 20 * array.count * W_Hight_Zoom + lableSize1.height;
+    }
+ }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -119,35 +131,60 @@ static NSString * cellId = @"commenttableviewCellides";
     cell.nameLabel.width = nameSize.width;
     
     
-    cell.contentLabel.frame = CGRectMake(CGRectGetMaxX(cell.nameLabel.frame) + 5 * W_Wide_Zoom, 20 * W_Hight_Zoom, 280 * W_Wide_Zoom, 30 * W_Hight_Zoom);
-    cell.contentLabel.numberOfLines = 3;
+    cell.contentLabel.frame = CGRectMake(CGRectGetMaxX(cell.nameLabel.frame) + 5 * W_Wide_Zoom, 27 * W_Hight_Zoom, 230 * W_Wide_Zoom, 30 * W_Hight_Zoom);
+   //
     cell.contentLabel.text = model.content;
-    cell.contentLabel.numberOfLines = 3;
-//    NSString * contentStr = cell.contentLabel.text;
-//    CGSize contentSize = [contentStr sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:CGSizeMake(MAXFLOAT, 30)];
-//    cell.contentLabel.width = contentSize.width;
+ //   cell.contentLabel.numberOfLines = 3;
+    NSString * str111 = model.content;
+    CGSize labelSize111 = {0,0};
+    labelSize111 = [str111 sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:CGSizeMake(200.0, 5000) lineBreakMode:NSLineBreakByWordWrapping];;
+    cell.contentLabel.numberOfLines = 0;
+    cell.contentLabel.lineBreakMode = UILineBreakModeCharacterWrap;
+    cell.contentLabel.frame = CGRectMake(cell.contentLabel.frame.origin.x, cell.contentLabel.frame.origin.y, cell.contentLabel.frame.size.width, labelSize111.height);
+    
+  
     
     
-    
+    cell.timelabel.frame = CGRectMake(70 * W_Wide_Zoom, CGRectGetMaxY(cell.contentLabel.frame), 150 * W_Wide_Zoom, 30 * W_Hight_Zoom);
     cell.timelabel.text = model.opttime;
-    
-    
-    
     //回复的东西
     
     for (int i = 0 ; i < listArray.count; i++) {
-        cell.firstname = [[UILabel alloc]initWithFrame:CGRectMake(70 * W_Wide_Zoom, 70 * W_Hight_Zoom + i * 20 * W_Hight_Zoom, 0 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
         
+        //拿出回复的内容
+        NSString * str123 = listArray[i][@"content"];
+        //计算其高度
+        CGSize labelSize1112 = {0,0};
+        labelSize1112 = [str123 sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:CGSizeMake(200.0, 5000) lineBreakMode:NSLineBreakByWordWrapping];;
+        
+        //labelSize1112.height 就是它的高度
+        
+        //计算回复内容的长度
+        int jj = [self convertToInt1:str123];
+
+        //计算行数(12个字一行－ ＝)
+        int kk = jj/12;
+        float gg = jj%12;
+        NSLog(@" ======= ======= %d,%f",kk,gg);
+        int rr;
+        if (kk>0) {
+            //行数
+            rr = kk + 1;
+        }else{
+            rr = 0;
+        }
+        //这儿的问题是：我拿到了这一行字的行数，但是只能改变这一行的位置，我想改变它下面那一行的位置，把下面那一行加上 rr * 20 ，但是写了半天，不知道怎么拿到kk>0的时候下面那一行－ ＝
+        cell.firstname = [[UILabel alloc]initWithFrame:CGRectMake(70 * W_Wide_Zoom,  CGRectGetMaxY(cell.timelabel.frame)+ i * 20 , 0 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
+
         cell.firstname.font = [UIFont systemFontOfSize:14];
         cell.firstname.textColor = RED_COLOR;
         cell.firstname.text = listArray[i][@"username"];
         NSString * strr = listArray[i][@"username"];
         CGSize titleSize = [strr sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:CGSizeMake(MAXFLOAT, 30)];
         cell.firstname.width = titleSize.width;
-        [cell addSubview:cell.firstname];
+        [cell.contentView addSubview:cell.firstname];
         
-        
-        UILabel * huifuLabel = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(cell.firstname.frame)+ 2 * W_Wide_Zoom, 70 * W_Hight_Zoom+ i * 20 * W_Hight_Zoom, 0 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
+        UILabel * huifuLabel = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(cell.firstname.frame)+ 2 * W_Wide_Zoom, CGRectGetMaxY(cell.timelabel.frame)+ i * 20 * W_Hight_Zoom , 0 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
         huifuLabel.tag = 10000+i;
         huifuLabel.textColor = [UIColor blackColor];
         huifuLabel.font = [UIFont systemFontOfSize:14];
@@ -156,24 +193,28 @@ static NSString * cellId = @"commenttableviewCellides";
         NSString * strr1 = huifuLabel.text;
         CGSize titleSize1 = [strr1 sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:CGSizeMake(MAXFLOAT, 30)];
         huifuLabel.width = titleSize1.width;
-        [cell addSubview:huifuLabel];
+        [cell.contentView addSubview:huifuLabel];
         
-        
-        UILabel * lastName = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(huifuLabel.frame) + 2 * W_Wide_Zoom, 70 * W_Hight_Zoom+ i * 20 * W_Hight_Zoom, 0 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
+        UILabel * lastName = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(huifuLabel.frame) + 2 * W_Wide_Zoom,CGRectGetMaxY(cell.timelabel.frame)+ i * 20 * W_Hight_Zoom, 0 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
+
         lastName.textColor = RED_COLOR;
         lastName.font = [UIFont systemFontOfSize:14];
         lastName.text = [NSString stringWithFormat:@"%@:",listArray[i][@"bname"]];
         NSString * strr2 = lastName.text;
          CGSize titleSize2 = [strr2 sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:CGSizeMake(MAXFLOAT, 30)];
         lastName.width = titleSize2.width;
-        [cell addSubview:lastName];
+        [cell.contentView addSubview:lastName];
         
-        
-        UILabel * lastContentlabel = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(lastName.frame) + 3 * W_Wide_Zoom, 70 * W_Hight_Zoom + i * 20 * W_Hight_Zoom, 180 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
+        UILabel * lastContentlabel = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(lastName.frame) + 3 * W_Wide_Zoom, CGRectGetMaxY(cell.timelabel.frame)+7 * W_Hight_Zoom + i * 20 * W_Hight_Zoom, 180 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
         lastContentlabel.textColor = [UIColor blackColor];
         lastContentlabel.font = [UIFont systemFontOfSize:14];
         lastContentlabel.text = listArray[i][@"content"];
-        [cell addSubview:lastContentlabel];
+       
+        lastContentlabel.numberOfLines = 0;
+        lastContentlabel.lineBreakMode = UILineBreakModeCharacterWrap;
+        lastContentlabel.frame = CGRectMake(lastContentlabel.frame.origin.x, lastContentlabel.frame.origin.y, lastContentlabel.frame.size.width, labelSize1112.height);
+        [cell.contentView addSubview:lastContentlabel];
+        
         
     }
     
@@ -186,6 +227,41 @@ static NSString * cellId = @"commenttableviewCellides";
     return cell;
 }
 
+
+-  (int)convertToInt:(NSString*)strtemp {
+    
+    int strlength = 0;
+    char* p = (char*)[strtemp cStringUsingEncoding:NSUnicodeStringEncoding];
+    for (int i=0 ; i<[strtemp lengthOfBytesUsingEncoding:NSUnicodeStringEncoding] ;i++) {
+        if (*p) {
+            p++;
+            strlength++;
+        }
+        else {
+            p++;
+        }
+    }
+    return (strlength+1)/2;
+    
+}
+
+
+-  (int)convertToInt1:(NSString*)strtemp {
+    
+    int strlength = 0;
+    char* p = (char*)[strtemp cStringUsingEncoding:NSUnicodeStringEncoding];
+    for (int i=0 ; i<[strtemp lengthOfBytesUsingEncoding:NSUnicodeStringEncoding] ;i++) {
+        if (*p) {
+            p++;
+            strlength++;
+        }
+        else {
+            p++;
+        }
+    }
+    return (strlength+1)/2;
+    
+}
 
 
 
