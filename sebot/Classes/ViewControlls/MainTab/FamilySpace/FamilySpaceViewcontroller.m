@@ -15,7 +15,8 @@
 #import "LargeViewController.h"
 #import "PopView.h"
 #import "CommentViewController.h"
-
+#import "SaomaoViewController.h"
+#import "AFHttpClient+MyDevice.h"
 
 static NSString * cellId = @"FamilyCellides";
 @interface FamilySpaceViewcontroller ()<PopDelegate>
@@ -28,6 +29,16 @@ static NSString * cellId = @"FamilyCellides";
 
 @implementation FamilySpaceViewcontroller
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(dada) name:@"shuaxinn" object:nil];
+    
+}
+-(void)dada{
+    [self initRefreshView];
+
+
+}
 
 - (void)viewDidLoad{
     [super viewDidLoad];
@@ -48,6 +59,19 @@ static NSString * cellId = @"FamilyCellides";
 -(void)setupView{
     [super setupView];
 }
+-(void)doRightButtonTouch{
+    NSUserDefaults * userdefalus = [NSUserDefaults standardUserDefaults];
+    NSString * iscont = [userdefalus objectForKey:@"isContent"];
+    if ([iscont isEqualToString:@"yes"]) {
+        NewPhotoalbumViewController * newVc = [[NewPhotoalbumViewController alloc]init];
+        [self.navigationController pushViewController:newVc animated:NO];
+    }else{
+         [self.view addSubview:_popView];
+    }
+ 
+}
+
+
 
 -(void)isbangding{
     NSUserDefaults * userdefalus = [NSUserDefaults standardUserDefaults];
@@ -67,11 +91,22 @@ static NSString * cellId = @"FamilyCellides";
 
 
 -(void)noBangdingView{
-    [[AppUtil appTopViewController] showHint:@"您还没有绑定设备，请绑定设备"];
+//    [[AppUtil appTopViewController] showHint:@"您还没有绑定设备，请绑定设备"];
     UIImageView * image = [[UIImageView alloc]initWithFrame:CGRectMake(60 * W_Wide_Zoom, 200 * W_Hight_Zoom, 250 * W_Wide_Zoom, 250 * W_Hight_Zoom)];
     image.image = [UIImage imageNamed:@"无图时.png"];
     [self.view addSubview:image];
-    [self.view addSubview:_popView];
+    
+    
+    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您还没有绑定设备，请立即绑定设备？" preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+    }]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self.view addSubview:_popView];
+    }]];
+    [self presentViewController:alert animated:YES completion:nil];
+
 }
 
 
@@ -226,24 +261,18 @@ static NSString * cellId = @"FamilyCellides";
     }];
 }
 
--(void)doRightButtonTouch{ 
-    //NewPhotoalbumViewController * newVc = [[NewPhotoalbumViewController alloc]init];
-    //[self.navigationController pushViewController:newVc animated:NO];
-        //这还要做个判断，根据判断来决定
-      [self.view addSubview:_popView];
-}
 
 
 /**
- *  pop 代理
+ * pop 代理
  */
 
 - (void)saomaMehod
 {
     
     NSLog(@"11");
-    // SaomaoViewController * saomoVC =[[SaomaoViewController alloc]initWithNibName:@"SaomaoViewController" bundle:nil];
-    //[self.navigationController pushViewController:saomoVC animated:YES];
+    SaomaoViewController * saomoVC =[[SaomaoViewController alloc]initWithNibName:@"SaomaoViewController" bundle:nil];
+    [self.navigationController pushViewController:saomoVC animated:YES];
     
     
 }
@@ -259,21 +288,22 @@ static NSString * cellId = @"FamilyCellides";
 - (void)sureMehod
 {
     
-//    
-//    NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
-//    
-//    if ([AppUtil isBlankString:_popView.numberTextfied.text]) {
-//        _popView.numberTextfied.text= [[NSUserDefaults standardUserDefaults]objectForKey:@"s_m_text"];
-//    }else
-//    {
-//        
-//        
-//    }
-//    [[AFHttpClient sharedAFHttpClient]addDevide:str token:str deviceno:_popView.numberTextfied.text complete:^(ResponseModel * model) {
-//        [_popView removeFromSuperview];
-//        [self showSuccessHudWithHint:model.retDesc];
-//        
-//    }];
+    
+    NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
+    
+    if ([AppUtil isBlankString:_popView.numberTextfied.text]) {
+        _popView.numberTextfied.text= [[NSUserDefaults standardUserDefaults]objectForKey:@"s_m_text"];
+    }else
+    {
+        
+    }
+    [[AFHttpClient sharedAFHttpClient]addDevide:str token:str deviceno:_popView.numberTextfied.text complete:^(ResponseModel * model) {
+        [_popView removeFromSuperview];
+        [self showSuccessHudWithHint:model.retDesc];
+//        NSUserDefaults * userdefalus = [NSUserDefaults standardUserDefaults];
+//        [userdefalus setObject:@"yes" forKey:@"isContent"];
+        [self isbangding];
+    }];
     
 }
 

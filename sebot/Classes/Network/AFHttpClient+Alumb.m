@@ -9,7 +9,7 @@
 #import "AFHttpClient+Alumb.h"
 
 @implementation AFHttpClient (Alumb)
--(void)issueWithuserid:(NSString *)userid token:(NSString *)token aid:(NSString *)aid coneten:(NSString *)content photos:(NSMutableString *)photos complete:(void (^)(ResponseModel *))completeBlock{
+-(void)issueWithuserid:(NSString *)userid token:(NSString *)token aid:(NSString *)aid coneten:(NSString *)content photos:(NSMutableString *)photos userides:(NSString *)userids complete:(void (^)(ResponseModel *))completeBlock{
     
     
     NSMutableDictionary * parms = [[NSMutableDictionary alloc]init];
@@ -21,6 +21,7 @@
     dataparms[@"aid"] = aid;
     dataparms[@"content"] = content;
     dataparms[@"photos"] = photos;
+    dataparms[@"userid"] = userids;
     parms[@"data"] =dataparms;
     
     [self POST:@"sebot/moblie/forward" parameters:parms result:^(ResponseModel * model) {

@@ -33,9 +33,9 @@
     _imagePicker =[[UIImagePickerController alloc]init];
     _imagePicker.delegate= self;
     //[self setTitle:@"发布"];
-    [self setNavTitle:@"发布萌宠秀"];
+    [self setNavTitle:@"发布"];
     self.automaticallyAdjustsScrollViewInsets = NO;
-    // [self showBarButton:NAV_RIGHT title:@"发布" fontColor:[UIColor blackColor]];
+     [self showBarButton:NAV_RIGHT title:@"发布" fontColor:[UIColor whiteColor]];
     self.view.backgroundColor = LIGHT_GRAY_COLOR;
 
 }
@@ -67,22 +67,15 @@
     [stingArr appendString:@"]"];
     
     [self showHudInView:self.view hint:@"正在发布..."];
-    //[[AFHttpClient sharedAFHttpClient]addSproutpetWithMid:[AccountManager sharedAccountManager].loginModel.mid content:_topTextView.text type:@"p" resources:stingArr complete:^(BaseModel *model) {
-        //  NSLog(@"hahaaha:%@",model.retCode);
-//        [self hideHud];
-//        if (model) {
-//            [self.navigationController popViewControllerAnimated:NO];
-//            [[NSNotificationCenter defaultCenter]postNotificationName:@"shuaxin" object:nil];
-//        }
-//        sender.userInteractionEnabled = YES;
-//    }];
     
-    [[AFHttpClient sharedAFHttpClient]issueWithuserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid aid:_aidstr coneten:_topTextView.text  photos:stingArr complete:^(ResponseModel *model) {
+    [[AFHttpClient sharedAFHttpClient]issueWithuserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid aid:_aidstr coneten:_topTextView.text  photos:stingArr userides:[AccountManager sharedAccountManager].loginModel.userid complete:^(ResponseModel *model) {
          [self hideHud];
         
         if (model) {
-            [self dismissViewControllerAnimated:YES completion:nil];
-             [[NSNotificationCenter defaultCenter]postNotificationName:@"shuaxinn" object:nil];
+           // [self dismissViewControllerAnimated:YES completion:nil];
+            [self.navigationController popToRootViewControllerAnimated:NO];
+
+            [[NSNotificationCenter defaultCenter]postNotificationName:@"shuaxinn" object:nil];
             sender.userInteractionEnabled = YES;
         }
         
@@ -98,35 +91,28 @@
 -(void)setupView{
     [super setupData];
     //back@2x.png
-    UIView * topView = [[UIView alloc]initWithFrame:CGRectMake(0 * W_Wide_Zoom, 0 * W_Hight_Zoom, 375 * W_Wide_Zoom, 60 * W_Hight_Zoom)];
-    topView.backgroundColor = RED_COLOR;
-    [self.view addSubview:topView];
-    
-    
-    UIButton * backBtn = [[UIButton alloc]initWithFrame:CGRectMake(10 * W_Wide_Zoom, 30 * W_Hight_Zoom, 15 * W_Wide_Zoom, 15 * W_Hight_Zoom  )];
-    [backBtn setImage:[UIImage imageNamed:@"back@2x.png"] forState:UIControlStateNormal];
-    [topView addSubview:backBtn];
-    [backBtn addTarget:self action:@selector(doLeftButtonTouch1) forControlEvents:UIControlEventTouchUpInside];
-    
-    UILabel * centerLabel = [[UILabel alloc]initWithFrame:CGRectMake(155 * W_Wide_Zoom, 23 * W_Hight_Zoom, 100 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
-    centerLabel.text = @"上传照片";
-    centerLabel.font = [UIFont systemFontOfSize:16];
-    centerLabel.textColor = [UIColor whiteColor];
-    [topView addSubview:centerLabel];
-    
-    UIButton * rightBtn = [[UIButton alloc]initWithFrame:CGRectMake(300 * W_Wide_Zoom, 24 * W_Hight_Zoom, 100 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
-    [rightBtn setTitle:@"上传" forState:UIControlStateNormal];
-    [rightBtn setTitleColor:[UIColor whiteColor ] forState:UIControlStateNormal];
-    rightBtn.titleLabel.font = [UIFont systemFontOfSize:15];
-    [topView addSubview:rightBtn];
-    [rightBtn addTarget:self action:@selector(releaseInfo:) forControlEvents:UIControlEventTouchUpInside];
-    
-    
-    
-    
-    
-    
-    
+//    UIView * topView = [[UIView alloc]initWithFrame:CGRectMake(0 * W_Wide_Zoom, 0 * W_Hight_Zoom, 375 * W_Wide_Zoom, 60 * W_Hight_Zoom)];
+//    topView.backgroundColor = RED_COLOR;
+//    [self.view addSubview:topView];
+//    
+//    
+//    UIButton * backBtn = [[UIButton alloc]initWithFrame:CGRectMake(10 * W_Wide_Zoom, 30 * W_Hight_Zoom, 15 * W_Wide_Zoom, 15 * W_Hight_Zoom  )];
+//    [backBtn setImage:[UIImage imageNamed:@"back@2x.png"] forState:UIControlStateNormal];
+//    [topView addSubview:backBtn];
+//    [backBtn addTarget:self action:@selector(doLeftButtonTouch1) forControlEvents:UIControlEventTouchUpInside];
+//    
+//    UILabel * centerLabel = [[UILabel alloc]initWithFrame:CGRectMake(155 * W_Wide_Zoom, 23 * W_Hight_Zoom, 100 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
+//    centerLabel.text = @"上传照片";
+//    centerLabel.font = [UIFont systemFontOfSize:16];
+//    centerLabel.textColor = [UIColor whiteColor];
+//    [topView addSubview:centerLabel];
+//    
+//    UIButton * rightBtn = [[UIButton alloc]initWithFrame:CGRectMake(300 * W_Wide_Zoom, 24 * W_Hight_Zoom, 100 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
+//    [rightBtn setTitle:@"上传" forState:UIControlStateNormal];
+//    [rightBtn setTitleColor:[UIColor whiteColor ] forState:UIControlStateNormal];
+//    rightBtn.titleLabel.font = [UIFont systemFontOfSize:15];
+//    [topView addSubview:rightBtn];
+//    [rightBtn addTarget:self action:@selector(releaseInfo:) forControlEvents:UIControlEventTouchUpInside];
     
     
     _topTextView = [[UITextView alloc]initWithFrame:CGRectMake(0 * W_Wide_Zoom, 60 * W_Hight_Zoom, 375 * W_Wide_Zoom, 150 * W_Hight_Zoom)];
@@ -164,7 +150,8 @@
     
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction *action) {
         // 点击按钮后的方法直接在这里面写
-        [self dismissViewControllerAnimated:YES completion:nil];
+       // [self dismissViewControllerAnimated:YES completion:nil];
+        [self.navigationController popToRootViewControllerAnimated:NO];
     }];
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction *action) {
         NSLog(@"取消");
@@ -177,7 +164,7 @@
 
 
 -(void)doRightButtonTouch{
-    
+    [self releaseInfo:nil];
 }
 
 -(void)addImageS{

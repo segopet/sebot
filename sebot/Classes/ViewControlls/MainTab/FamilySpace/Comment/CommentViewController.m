@@ -100,6 +100,15 @@ static NSString * cellId = @"commenttableviewCellides";
     NSMutableArray * listArray = model.list;
     
      CommentTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    if (cell == nil) {
+        cell = [[CommentTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+    }else{
+        while ([cell.contentView.subviews lastObject] != nil)
+        {
+            [(UIView*)[cell.contentView.subviews lastObject] removeFromSuperview];
+        }
+        
+    }
     
     [cell.headImage.layer setMasksToBounds:YES];
     [cell.headImage sd_setImageWithURL:[NSURL URLWithString:model.headportrait] placeholderImage:[UIImage imageNamed:@"默认头像.png"]];
@@ -123,12 +132,12 @@ static NSString * cellId = @"commenttableviewCellides";
     cell.timelabel.text = model.opttime;
     
     
-
+    
     //回复的东西
     
     for (int i = 0 ; i < listArray.count; i++) {
         cell.firstname = [[UILabel alloc]initWithFrame:CGRectMake(70 * W_Wide_Zoom, 70 * W_Hight_Zoom + i * 20 * W_Hight_Zoom, 0 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
-
+        
         cell.firstname.font = [UIFont systemFontOfSize:14];
         cell.firstname.textColor = RED_COLOR;
         cell.firstname.text = listArray[i][@"username"];
@@ -136,7 +145,6 @@ static NSString * cellId = @"commenttableviewCellides";
         CGSize titleSize = [strr sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:CGSizeMake(MAXFLOAT, 30)];
         cell.firstname.width = titleSize.width;
         [cell addSubview:cell.firstname];
-       
         
         
         UILabel * huifuLabel = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(cell.firstname.frame)+ 2 * W_Wide_Zoom, 70 * W_Hight_Zoom+ i * 20 * W_Hight_Zoom, 0 * W_Wide_Zoom, 30 * W_Hight_Zoom)];

@@ -177,13 +177,19 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:NotificationLoginStateChange object:@NO];
         [[AccountManager sharedAccountManager]logout];
         // 清除plist
+       
+        
+        
         NSUserDefaults *userDefatluts = [NSUserDefaults standardUserDefaults];
+         NSString * strrr = [userDefatluts objectForKey:@"changeid"];
         NSDictionary *dictionary = [userDefatluts dictionaryRepresentation];
         for(NSString* key in [dictionary allKeys]){
             [userDefatluts removeObjectForKey:key];
             [userDefatluts synchronize];
         }
         [userDefatluts setObject:@"1" forKey:@"STARTFLAG"];
+        [userDefatluts setObject:strrr forKey:@"changeid"];
+        
     }]];
     [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
     }]];

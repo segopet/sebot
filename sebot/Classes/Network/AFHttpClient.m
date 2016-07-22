@@ -74,7 +74,7 @@ singleton_implementation(AFHttpClient)
         }
 
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
+
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         
         if (result) {
