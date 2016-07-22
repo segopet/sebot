@@ -85,7 +85,7 @@ static NSString * cellId = @"commenttableviewCellides";
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    CommentModel* model = self.dataSource[indexPath.row];
+    CommentModel* model = self.dataSource[indexPath.row]; 
     
    // return [self.tableView cellHeightForIndexPath:indexPath model:model keyPath:@"model" cellClass:[CommentTableViewCell class] contentViewWidth:SCREEN_WIDTH];
     //_listArray = model.list;
