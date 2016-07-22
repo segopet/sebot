@@ -61,6 +61,8 @@
                         [collect reloadData];
                     }else{
                         //这里写一个就行了
+                        
+                        
                     }
 
         
@@ -132,11 +134,16 @@
     PhotoCollectionViewCell * cell  = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellid" forIndexPath:indexPath];
     
     if (indexPath.row < 1) {
-        UIImageView * image = [[UIImageView alloc]initWithFrame:cell.bounds];
-        image.image =[UIImage imageNamed:@"add.png"];
-        [cell addSubview:image];
+        cell.ImageHeader.image =[UIImage imageNamed:@"add.png"];
+        cell.PhotoNumber.hidden = YES;
+        cell.PhotoName.hidden = YES;
+        
+        
+        
         
     }else{
+        cell.PhotoNumber.hidden = NO;
+        cell.PhotoName.hidden = NO;
        
         NSString * imageStr = [NSString stringWithFormat:@"%@",model.cover];
         NSURL * imageUrl = [NSURL URLWithString:imageStr];
