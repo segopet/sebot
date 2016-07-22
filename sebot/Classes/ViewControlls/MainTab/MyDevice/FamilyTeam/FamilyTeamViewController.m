@@ -350,7 +350,7 @@
 {
     famModel =self.dataSource[sender];
     
-    NSString * str =[NSString stringWithFormat:@"你确认把管理员转让给%@吗",famModel.accountnumber];
+    NSString * str =[NSString stringWithFormat:@"你确认把管理员转让给%@吗",famModel.nickname];
     
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"管理员转让" message:str preferredStyle:UIAlertControllerStyleAlert];
     [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Sure", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {

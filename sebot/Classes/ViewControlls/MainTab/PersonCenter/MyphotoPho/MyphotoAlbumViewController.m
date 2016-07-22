@@ -21,6 +21,8 @@
     NSMutableArray * arrData;
     NSString * usid;
     UICollectionView * collect;
+    UIImageView * DefaultesImage;
+    
     
     
     
@@ -35,6 +37,10 @@
     usid = [AccountManager sharedAccountManager].loginModel.userid;
     [self setNavTitle: NSLocalizedString(@"MyphotoAlbum", nil)];
     self.view.backgroundColor = LIGHT_GRAY_COLOR;
+    DefaultesImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT/4, 373, 373)];
+    DefaultesImage.image =[UIImage imageNamed:@"无图时.png"];
+    DefaultesImage.hidden = YES;
+    [self.view addSubview:DefaultesImage];
     arrData = [NSMutableArray array];
     
 }
@@ -54,6 +60,7 @@
     [[AFHttpClient sharedAFHttpClient]QueryMyPhoto:usid token:usid complete:^(ResponseModel * model) {
         
         if (model.list.count > 0) {
+            DefaultesImage.hidden = YES;
                         NSArray * array = model.list;
                         [arrData removeAllObjects];
                         [arrData addObject:array[0]];
@@ -61,6 +68,9 @@
                         [collect reloadData];
                     }else{
                         //这里写一个就行了
+                        
+                        NSLog(@"222");
+                        DefaultesImage.hidden = NO;
                         
                         
                     }

@@ -22,6 +22,8 @@
     
     [self setNavTitle: NSLocalizedString(@"RepairPw", nil)];
     self.view.backgroundColor = LIGHT_GRAY_COLOR;
+    self.updateBtn.backgroundColor =  RED_COLOR ;
+    
 
 }
 

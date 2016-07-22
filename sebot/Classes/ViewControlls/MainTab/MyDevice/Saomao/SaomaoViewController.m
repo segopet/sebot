@@ -33,6 +33,7 @@ static const char *kScanQRCodeQueueName = "ScanQRCodeQueue";
     [self setNavTitle: NSLocalizedString(@"Saomao", nil)];
     self.view.backgroundColor = LIGHT_GRAY_COLOR;
     _lastResut = YES;
+    self.saomaBtn.backgroundColor = RED_COLOR;
     
     
 }
