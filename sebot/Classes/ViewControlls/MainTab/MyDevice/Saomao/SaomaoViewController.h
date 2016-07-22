@@ -9,5 +9,6 @@
 #import "BaseViewController.h"
 
 @interface SaomaoViewController : BaseViewController
+@property (strong, nonatomic) IBOutlet UIButton *saomaBtn;
 
 @end

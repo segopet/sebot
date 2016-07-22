@@ -68,8 +68,10 @@ static NSString * cellId = @"showComCell";
      NSString * str1 = [AccountManager sharedAccountManager].loginModel.userid;
     // 删除
     [[AFHttpClient sharedAFHttpClient]delePhoto:str1 token:str1 aid:self.aidName complete:^(ResponseModel *model) {
+        
         NSLog(@"%@",model.retDesc);
         [self.navigationController popViewControllerAnimated:YES];
+        
     }];
     
     
