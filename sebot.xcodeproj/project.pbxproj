@@ -277,6 +277,21 @@
 		7D6B22D31D3F201C00A3E2BA /* CommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6B22D21D3F201C00A3E2BA /* CommentModel.m */; };
 		7D6B22D71D3F4CF300A3E2BA /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6B22D61D3F4CF300A3E2BA /* CommentTableViewCell.m */; };
 		7D72F5761D2A36060076AE67 /* AFHttpClient+Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D72F5751D2A36060076AE67 /* AFHttpClient+Test.m */; };
+		7DAAEDA61D41B3C8003BD61A /* PhotoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAAEDA51D41B3C8003BD61A /* PhotoModel.m */; };
+		7DAAEDA91D41B3FE003BD61A /* BaseCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAAEDA81D41B3FE003BD61A /* BaseCollectionViewController.m */; };
+		7DAAEDB61D41B44C003BD61A /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAAEDAA1D41B44C003BD61A /* PhotoCollectionViewCell.m */; };
+		7DAAEDB71D41B44C003BD61A /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DAAEDAB1D41B44C003BD61A /* PhotoCollectionViewCell.xib */; };
+		7DAAEDB81D41B44C003BD61A /* PhotoInforamtion.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAAEDAD1D41B44C003BD61A /* PhotoInforamtion.m */; };
+		7DAAEDB91D41B44C003BD61A /* PhotoInforamtion.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DAAEDAE1D41B44C003BD61A /* PhotoInforamtion.xib */; };
+		7DAAEDBA1D41B44C003BD61A /* PhotoInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAAEDB01D41B44C003BD61A /* PhotoInformationViewController.m */; };
+		7DAAEDBB1D41B44C003BD61A /* PhotoInformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DAAEDB11D41B44C003BD61A /* PhotoInformationViewController.xib */; };
+		7DAAEDBC1D41B44C003BD61A /* ShowPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAAEDB31D41B44C003BD61A /* ShowPhotoViewController.m */; };
+		7DAAEDBD1D41B44C003BD61A /* ShowPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DAAEDB41D41B44C003BD61A /* ShowPhotoViewController.xib */; };
+		7DAAEDBE1D41B44C003BD61A /* SQSupplementaryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DAAEDB51D41B44C003BD61A /* SQSupplementaryView.xib */; };
+		7DAAEDC41D41B46B003BD61A /* CompileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAAEDC11D41B46B003BD61A /* CompileViewController.m */; };
+		7DAAEDC51D41B46B003BD61A /* CompileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DAAEDC21D41B46B003BD61A /* CompileViewController.xib */; };
+		7DAAEDC61D41B46B003BD61A /* HeaderViewCollection.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DAAEDC31D41B46B003BD61A /* HeaderViewCollection.xib */; };
+		7DAAEDC91D41B47F003BD61A /* ImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAAEDC81D41B47F003BD61A /* ImageModel.m */; };
 		7DCDC9551D2CE62F000C438F /* IssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DCDC9541D2CE62F000C438F /* IssueViewController.m */; };
 		7DD7D1D11D0FE21B0002CD2E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD7D1D01D0FE21B0002CD2E /* AppDelegate.m */; };
 		7DE523941D13D53800C5B5EF /* ForegetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE523931D13D53800C5B5EF /* ForegetPasswordViewController.m */; };
@@ -1065,6 +1080,29 @@
 		7D6B22D61D3F4CF300A3E2BA /* CommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentTableViewCell.m; sourceTree = "<group>"; };
 		7D72F5741D2A36060076AE67 /* AFHttpClient+Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+Test.h"; sourceTree = "<group>"; };
 		7D72F5751D2A36060076AE67 /* AFHttpClient+Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+Test.m"; sourceTree = "<group>"; };
+		7DAAEDA41D41B3C8003BD61A /* PhotoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoModel.h; sourceTree = "<group>"; };
+		7DAAEDA51D41B3C8003BD61A /* PhotoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoModel.m; sourceTree = "<group>"; };
+		7DAAEDA71D41B3FE003BD61A /* BaseCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCollectionViewController.h; sourceTree = "<group>"; };
+		7DAAEDA81D41B3FE003BD61A /* BaseCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCollectionViewController.m; sourceTree = "<group>"; };
+		7DAAEDAA1D41B44C003BD61A /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		7DAAEDAB1D41B44C003BD61A /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
+		7DAAEDAC1D41B44C003BD61A /* PhotoInforamtion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoInforamtion.h; sourceTree = "<group>"; };
+		7DAAEDAD1D41B44C003BD61A /* PhotoInforamtion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoInforamtion.m; sourceTree = "<group>"; };
+		7DAAEDAE1D41B44C003BD61A /* PhotoInforamtion.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoInforamtion.xib; sourceTree = "<group>"; };
+		7DAAEDAF1D41B44C003BD61A /* PhotoInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoInformationViewController.h; sourceTree = "<group>"; };
+		7DAAEDB01D41B44C003BD61A /* PhotoInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoInformationViewController.m; sourceTree = "<group>"; };
+		7DAAEDB11D41B44C003BD61A /* PhotoInformationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoInformationViewController.xib; sourceTree = "<group>"; };
+		7DAAEDB21D41B44C003BD61A /* ShowPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowPhotoViewController.h; sourceTree = "<group>"; };
+		7DAAEDB31D41B44C003BD61A /* ShowPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowPhotoViewController.m; sourceTree = "<group>"; };
+		7DAAEDB41D41B44C003BD61A /* ShowPhotoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowPhotoViewController.xib; sourceTree = "<group>"; };
+		7DAAEDB51D41B44C003BD61A /* SQSupplementaryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SQSupplementaryView.xib; sourceTree = "<group>"; };
+		7DAAEDBF1D41B460003BD61A /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		7DAAEDC01D41B46B003BD61A /* CompileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompileViewController.h; sourceTree = "<group>"; };
+		7DAAEDC11D41B46B003BD61A /* CompileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompileViewController.m; sourceTree = "<group>"; };
+		7DAAEDC21D41B46B003BD61A /* CompileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompileViewController.xib; sourceTree = "<group>"; };
+		7DAAEDC31D41B46B003BD61A /* HeaderViewCollection.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderViewCollection.xib; sourceTree = "<group>"; };
+		7DAAEDC71D41B47F003BD61A /* ImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageModel.h; sourceTree = "<group>"; };
+		7DAAEDC81D41B47F003BD61A /* ImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageModel.m; sourceTree = "<group>"; };
 		7DCDC9531D2CE62F000C438F /* IssueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IssueViewController.h; sourceTree = "<group>"; };
 		7DCDC9541D2CE62F000C438F /* IssueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssueViewController.m; sourceTree = "<group>"; };
 		7DD7D1CF1D0FE21B0002CD2E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -1200,6 +1238,10 @@
 		345565211D10F3B700B6E562 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7DAAEDC71D41B47F003BD61A /* ImageModel.h */,
+				7DAAEDC81D41B47F003BD61A /* ImageModel.m */,
+				7DAAEDA41D41B3C8003BD61A /* PhotoModel.h */,
+				7DAAEDA51D41B3C8003BD61A /* PhotoModel.m */,
 				345565691D11008300B6E562 /* ResponseModel.h */,
 				3455656A1D11008300B6E562 /* ResponseModel.m */,
 				572204B81D2B57A60007942A /* BaseJSONModel.h */,
@@ -1318,6 +1360,8 @@
 				345565B41D11500F00B6E562 /* BaseViewController.m */,
 				345565B91D1246B900B6E562 /* BaseTabViewController.h */,
 				345565BA1D1246B900B6E562 /* BaseTabViewController.m */,
+				7DAAEDA71D41B3FE003BD61A /* BaseCollectionViewController.h */,
+				7DAAEDA81D41B3FE003BD61A /* BaseCollectionViewController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1547,6 +1591,23 @@
 				349263581D13FAC6006C2FD9 /* MyphotoAlbumViewController.h */,
 				349263591D13FAC6006C2FD9 /* MyphotoAlbumViewController.m */,
 				3492635A1D13FAC6006C2FD9 /* MyphotoAlbumViewController.xib */,
+				7DAAEDAA1D41B44C003BD61A /* PhotoCollectionViewCell.m */,
+				7DAAEDAB1D41B44C003BD61A /* PhotoCollectionViewCell.xib */,
+				7DAAEDAC1D41B44C003BD61A /* PhotoInforamtion.h */,
+				7DAAEDAD1D41B44C003BD61A /* PhotoInforamtion.m */,
+				7DAAEDAE1D41B44C003BD61A /* PhotoInforamtion.xib */,
+				7DAAEDAF1D41B44C003BD61A /* PhotoInformationViewController.h */,
+				7DAAEDB01D41B44C003BD61A /* PhotoInformationViewController.m */,
+				7DAAEDB11D41B44C003BD61A /* PhotoInformationViewController.xib */,
+				7DAAEDB21D41B44C003BD61A /* ShowPhotoViewController.h */,
+				7DAAEDB31D41B44C003BD61A /* ShowPhotoViewController.m */,
+				7DAAEDB41D41B44C003BD61A /* ShowPhotoViewController.xib */,
+				7DAAEDB51D41B44C003BD61A /* SQSupplementaryView.xib */,
+				7DAAEDBF1D41B460003BD61A /* PhotoCollectionViewCell.h */,
+				7DAAEDC01D41B46B003BD61A /* CompileViewController.h */,
+				7DAAEDC11D41B46B003BD61A /* CompileViewController.m */,
+				7DAAEDC21D41B46B003BD61A /* CompileViewController.xib */,
+				7DAAEDC31D41B46B003BD61A /* HeaderViewCollection.xib */,
 			);
 			path = MyphotoPho;
 			sourceTree = "<group>";
@@ -2755,6 +2816,8 @@
 				34F4D2B21D1D234D005963CA /* left_on.png in Resources */,
 				34E49D8C1D20C7A100CF5CCB /* tab_device_normal@2x.png in Resources */,
 				34E49D8D1D20C7A100CF5CCB /* tab_device_press@2x.png in Resources */,
+				7DAAEDC51D41B46B003BD61A /* CompileViewController.xib in Resources */,
+				7DAAEDB71D41B44C003BD61A /* PhotoCollectionViewCell.xib in Resources */,
 				7D4C6FA51D348CFC00334143 /* pinglunlun.png in Resources */,
 				34E4A03F1D261EF100CF5CCB /* tapping.wav in Resources */,
 				34E49D8E1D20C7A100CF5CCB /* tab_family_normal@2x.png in Resources */,
@@ -2770,6 +2833,7 @@
 				34E49D8F1D20C7A100CF5CCB /* tab_family_press@2x.png in Resources */,
 				34E49FE31D261EF100CF5CCB /* nowebcamCIF.jpg in Resources */,
 				34E49D811D20C37100CF5CCB /* sebot_add@3x.png in Resources */,
+				7DAAEDC61D41B46B003BD61A /* HeaderViewCollection.xib in Resources */,
 				34E4A0281D261EF100CF5CCB /* sephone.png in Resources */,
 				7D4B10241D12A6C10095D463 /* password.png in Resources */,
 				7D4B101F1D12A2950095D463 /* APPImgae.png in Resources */,
@@ -2786,15 +2850,18 @@
 				345565D81D129F5200B6E562 /* MyDeviceTableViewCell.xib in Resources */,
 				7DF28C4B1D38E2CB00FA31C6 /* 默认图片.png in Resources */,
 				7D1147081D3CC76C0080D3DE /* 无图时.png in Resources */,
+				7DAAEDBD1D41B44C003BD61A /* ShowPhotoViewController.xib in Resources */,
 				34E49FE61D261EF100CF5CCB /* ringback.wav in Resources */,
 				7DF28C4A1D38E2CB00FA31C6 /* 默认头像.png in Resources */,
 				7D1BC0451D40CA0B000E1C28 /* morentutu.png in Resources */,
 				7D4B101B1D129C860095D463 /* back@2x.png in Resources */,
 				345565DF1D12A5D800B6E562 /* PerInformationTableViewCell.xib in Resources */,
+				7DAAEDB91D41B44C003BD61A /* PhotoInforamtion.xib in Resources */,
 				34E49D971D20D06400CF5CCB /* person_about@3x.png in Resources */,
 				345565D31D129EBC00B6E562 /* DeviceInformationViewController.xib in Resources */,
 				34F4D2AF1D1D234D005963CA /* behand_off.png in Resources */,
 				34E4A0141D261EF100CF5CCB /* chat.png in Resources */,
+				7DAAEDBB1D41B44C003BD61A /* PhotoInformationViewController.xib in Resources */,
 				34E4A0311D261EF100CF5CCB /* stopcall-small.png in Resources */,
 				34E4A01C1D261EF100CF5CCB /* contact_unstarred.png in Resources */,
 				34E49FE11D261EF100CF5CCB /* msg.caf in Resources */,
@@ -2816,6 +2883,7 @@
 				34E4A0191D261EF100CF5CCB /* composing_chat.png in Resources */,
 				34F4D29D1D1A8C9E005963CA /* on_line.png in Resources */,
 				34E4A0351D261EF100CF5CCB /* incoming_chat.wav in Resources */,
+				7DAAEDBE1D41B44C003BD61A /* SQSupplementaryView.xib in Resources */,
 				34E49FE41D261EF100CF5CCB /* ring.caf in Resources */,
 				34E49FE91D261EF100CF5CCB /* sephonerc in Resources */,
 				34E4A01D1D261EF100CF5CCB /* dialer-orange.png in Resources */,
@@ -2958,6 +3026,7 @@
 				7D396F8C1D2E4ACC0079EE9E /* FamilyTableViewCell.m in Sources */,
 				34921D0F1D191A5D00541E41 /* SaomaoViewController.m in Sources */,
 				7D6B22D71D3F4CF300A3E2BA /* CommentTableViewCell.m in Sources */,
+				7DAAEDBA1D41B44C003BD61A /* PhotoInformationViewController.m in Sources */,
 				7DF28C451D38D87800FA31C6 /* LargeViewController.m in Sources */,
 				349263791D178EF4006C2FD9 /* OpinionViewController.m in Sources */,
 				345565D21D129EBC00B6E562 /* DeviceInformationViewController.m in Sources */,
@@ -2978,6 +3047,7 @@
 				3455657D1D11374500B6E562 /* PersonCenterViewcontroller.m in Sources */,
 				3455656B1D11008300B6E562 /* ResponseModel.m in Sources */,
 				345565BB1D1246B900B6E562 /* BaseTabViewController.m in Sources */,
+				7DAAEDA91D41B3FE003BD61A /* BaseCollectionViewController.m in Sources */,
 				7D1AAC751D1A617800B4297E /* NewPhotoalbumViewController.m in Sources */,
 				34012DA31D2BBC7600C97E1E /* AFHttpClient+DeviceInformation.m in Sources */,
 				3455654D1D10FE4800B6E562 /* UIActionSheet+Blocks.m in Sources */,
@@ -2988,22 +3058,27 @@
 				3455657A1D11371800B6E562 /* MydeviceViewcontroller.m in Sources */,
 				345565C21D125B4500B6E562 /* PopView.m in Sources */,
 				7D3BF3FE1D37792B005C6508 /* FamilyquanModel.m in Sources */,
+				7DAAEDA61D41B3C8003BD61A /* PhotoModel.m in Sources */,
+				7DAAEDC41D41B46B003BD61A /* CompileViewController.m in Sources */,
 				34F4D2971D1A679A005963CA /* AppDelegate+BaiduPush.m in Sources */,
 				345565341D10F8A600B6E562 /* Reachability.m in Sources */,
 				345565401D10FE3E00B6E562 /* QFTableView.m in Sources */,
 				7DE523941D13D53800C5B5EF /* ForegetPasswordViewController.m in Sources */,
 				345565BF1D12533C00B6E562 /* PromptboxView.m in Sources */,
 				349263741D178EBC006C2FD9 /* AgreementViewController.m in Sources */,
+				7DAAEDB81D41B44C003BD61A /* PhotoInforamtion.m in Sources */,
 				3455654E1D10FE4800B6E562 /* UIAlertView+Blocks.m in Sources */,
 				3492637E1D178F1B006C2FD9 /* ProductionIntroducViewController.m in Sources */,
 				3492636C1D13FE8D006C2FD9 /* AboutTableViewCell.m in Sources */,
 				349263621D13FC72006C2FD9 /* AboutViewController.m in Sources */,
+				7DAAEDB61D41B44C003BD61A /* PhotoCollectionViewCell.m in Sources */,
 				3455654F1D10FE4800B6E562 /* UIButton+Blocks.m in Sources */,
 				34E49FED1D261EF100CF5CCB /* SephoneUtils.m in Sources */,
 				34012DAF1D2CD9A000C97E1E /* AFHttpClient+FamilyTeam.m in Sources */,
 				345565601D10FF0700B6E562 /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
 				3492635B1D13FAC6006C2FD9 /* MyphotoAlbumViewController.m in Sources */,
 				7D29F1211D3E1A020061B7DA /* CommentViewController.m in Sources */,
+				7DAAEDBC1D41B44C003BD61A /* ShowPhotoViewController.m in Sources */,
 				7D3813001D25003200C583DD /* NewAlbumAdviceModel.m in Sources */,
 				345565681D10FFED00B6E562 /* AccountManager.m in Sources */,
 				345565331D10F8A600B6E562 /* AppUtil.m in Sources */,
@@ -3015,6 +3090,7 @@
 				345565DE1D12A5D800B6E562 /* PerInformationTableViewCell.m in Sources */,
 				345565861D113A7900B6E562 /* PopStartView.m in Sources */,
 				3455653F1D10FE3E00B6E562 /* NSString+URLEncoding.m in Sources */,
+				7DAAEDC91D41B47F003BD61A /* ImageModel.m in Sources */,
 				7D72F5761D2A36060076AE67 /* AFHttpClient+Test.m in Sources */,
 				349263551D13E5F3006C2FD9 /* PersonTableViewCell.m in Sources */,
 				345565501D10FE4800B6E562 /* UIImage-Extensions.m in Sources */,
