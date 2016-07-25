@@ -157,7 +157,7 @@ static NSString *kheaderIdentifier = @"headerIdentifier";
     [_deleteImageV addSubview:_deleteBtn];
     
    
-    rightArr =@[@"编辑相册",@"管理相册"];
+    rightArr =@[@"管理相册",@"编辑相册"];
     tabTop =[[UITableView alloc]initWithFrame:CGRectMake(280, 60, 100, 100) style:UITableViewStylePlain];
     tabTop.hidden = YES;
     tabTop.backgroundColor =[UIColor redColor];
@@ -383,7 +383,7 @@ static NSString *kheaderIdentifier = @"headerIdentifier";
         urlstr = imageA[indexPath.row];
     }
     [cell.headImage sd_setImageWithURL:[NSURL URLWithString:urlstr] placeholderImage:[UIImage imageNamed:@"defaultPhoto.png"]];
-    
+    cell.chooseBtn.selected = NO;
     cell.headImage.backgroundColor = [UIColor blackColor];
     cell.headImage.tag = 1000*(indexPath.section+1) +indexPath.row;
     cell.headImage.userInteractionEnabled = YES;
@@ -510,16 +510,6 @@ static NSString *kheaderIdentifier = @"headerIdentifier";
         
     }else
     {
-           // 查看大图
-//            NSInteger i =imageSender.view.tag/1000;
-//            int j = imageSender.view.tag%1000;
-//            PhotoModel *model = arrData[i-1];
-//            NSString * str = model.networkaddress;
-//            NSArray * arrNetWorking =[str componentsSeparatedByString:@","];
-        
-        
-        
-        
         int i = imageSender.view.tag/1000;//分区
         int j = imageSender.view.tag%1000;
         

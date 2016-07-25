@@ -93,7 +93,7 @@
     _nameLabel.center = CGPointMake(_headView.center.x,_headView.center.y+60);
     _nameLabel.font = [UIFont systemFontOfSize:15];
     _nameLabel.textAlignment = NSTextAlignmentCenter;
-    _nameLabel.textColor = [UIColor redColor];
+    _nameLabel.textColor = [UIColor blackColor];
     [_headView addSubview:_nameLabel];
     
     // 头像
