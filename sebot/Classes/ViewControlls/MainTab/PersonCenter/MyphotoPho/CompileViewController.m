@@ -8,6 +8,8 @@
 
 #import "CompileViewController.h"
 #import "NewAlumbleTableViewCell.h"
+#import "AFHttpClient+MyPhoto.h"
+#import "MyphotoAlbumViewController.h"
 
 
 static NSString * cellId = @"showComCell";
@@ -27,6 +29,10 @@ static NSString * cellId = @"showComCell";
     self.dataSource =[NSMutableArray array];
     _adviceArray =[NSMutableArray array];
     self.view.backgroundColor = [UIColor whiteColor];
+   
+    
+       
+
 
 
     
@@ -65,12 +71,25 @@ static NSString * cellId = @"showComCell";
 - (void)onDeleBt:(UIButton *)sender
 {
     
+    NSArray * ctrlArray = self.navigationController.viewControllers;
+    for (UIViewController *ctrl in ctrlArray) {
+        
+        NSLog(@"ctrl ---- %@", ctrl);
+        
+    }
+  
+    
      NSString * str1 = [AccountManager sharedAccountManager].loginModel.userid;
+     NSMutableString *deleStr = [[NSMutableString alloc]init];
+     NSString *str = [NSString stringWithFormat:@"%@",self.aidName];
+     [deleStr appendFormat:@"'%@'",str];
     // 删除
-    [[AFHttpClient sharedAFHttpClient]delePhoto:str1 token:str1 aid:self.aidName complete:^(ResponseModel *model) {
+    [[AFHttpClient sharedAFHttpClient]delePhoto:str1 token:str1 aid:deleStr complete:^(ResponseModel *model) {
         
         NSLog(@"%@",model.retDesc);
-        [self.navigationController popViewControllerAnimated:YES];
+        [self.navigationController popToViewController:[ctrlArray objectAtIndex:1] animated:YES];
+
+      
         
     }];
     

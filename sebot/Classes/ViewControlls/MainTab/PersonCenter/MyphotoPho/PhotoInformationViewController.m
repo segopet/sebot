@@ -24,6 +24,7 @@ static NSString *kheaderIdentifier = @"headerIdentifier";
     
     
     NSMutableArray * arrData;
+    NSMutableArray * arrAid;
     NSString * strusid;
     BOOL isSlect;
     NSMutableArray * deledArr;
@@ -53,17 +54,21 @@ static NSString *kheaderIdentifier = @"headerIdentifier";
     [self showBarButton:NAV_RIGHT imageName:@"more"];
     arrData =[NSMutableArray array];
     deledArr =[NSMutableArray array];
+    arrAid =[NSMutableArray array];
     strusid= [AccountManager sharedAccountManager].loginModel.userid;
     isSlect = NO;
     [self initRefreshView];
     
-
 }
 
 
 
 - (void)datapageNum:(int)page
 {
+    
+   
+    
+    
     [[AFHttpClient sharedAFHttpClient]QueryMyPhotos:strusid token:strusid did:self.aid page:[NSString stringWithFormat:@"%d",page] complete:^(ResponseModel *model) {
         NSLog(@"%@",model);
         
@@ -105,6 +110,16 @@ static NSString *kheaderIdentifier = @"headerIdentifier";
 {
     
     [super setupData];
+  NSString  * strusid1= [AccountManager sharedAccountManager].loginModel.userid;
+    
+    [[AFHttpClient sharedAFHttpClient]QueryMyPhoto:strusid1 token:strusid1 complete:^(ResponseModel * model) {
+        
+        NSLog(@"%@",model);
+        [arrAid addObjectsFromArray:model.list];
+       
+    }];
+    
+    
 }
 
 
@@ -233,7 +248,7 @@ static NSString *kheaderIdentifier = @"headerIdentifier";
         
         CompileViewController * comVC = [[CompileViewController alloc]initWithNibName:@"CompileViewController" bundle:nil];
         comVC.photoName =albumnameStr;
-        comVC.aidName = aidName;
+        comVC.aidName = self.aid;
         
         [self.navigationController pushViewController:comVC animated:YES];
         
