@@ -272,6 +272,10 @@
 		7D2C471B1D2BB93400D57C86 /* AFHttpClient+MyDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2C471A1D2BB93400D57C86 /* AFHttpClient+MyDevice.m */; };
 		7D2ECE7A1D191C11003181A9 /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2ECE791D191C11003181A9 /* LoginModel.m */; };
 		7D2ECE801D192022003181A9 /* AFHttpClient+Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D2ECE7F1D192022003181A9 /* AFHttpClient+Account.m */; };
+		7D36FF6C1D45AC39001C8910 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D36FF6B1D45AC39001C8910 /* DetailViewController.m */; };
+		7D36FF6F1D45AE80001C8910 /* DetailCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D36FF6E1D45AE80001C8910 /* DetailCommentCell.m */; };
+		7D36FF721D45AE9C001C8910 /* DetailCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D36FF711D45AE9C001C8910 /* DetailCommentView.m */; };
+		7D36FF751D45B0E1001C8910 /* CommentInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D36FF741D45B0E1001C8910 /* CommentInputView.m */; };
 		7D3813001D25003200C583DD /* NewAlbumAdviceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3812FF1D25003200C583DD /* NewAlbumAdviceModel.m */; };
 		7D3813031D25006000C583DD /* NewAlbumModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D3813021D25006000C583DD /* NewAlbumModel.m */; };
 		7D3813061D25243A00C583DD /* baiquan.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D3813041D25243A00C583DD /* baiquan.png */; };
@@ -1076,6 +1080,14 @@
 		7D2ECE791D191C11003181A9 /* LoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginModel.m; sourceTree = "<group>"; };
 		7D2ECE7E1D192022003181A9 /* AFHttpClient+Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+Account.h"; sourceTree = "<group>"; };
 		7D2ECE7F1D192022003181A9 /* AFHttpClient+Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+Account.m"; sourceTree = "<group>"; };
+		7D36FF6A1D45AC39001C8910 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		7D36FF6B1D45AC39001C8910 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		7D36FF6D1D45AE80001C8910 /* DetailCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailCommentCell.h; sourceTree = "<group>"; };
+		7D36FF6E1D45AE80001C8910 /* DetailCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailCommentCell.m; sourceTree = "<group>"; };
+		7D36FF701D45AE9C001C8910 /* DetailCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailCommentView.h; sourceTree = "<group>"; };
+		7D36FF711D45AE9C001C8910 /* DetailCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailCommentView.m; sourceTree = "<group>"; };
+		7D36FF731D45B0E1001C8910 /* CommentInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentInputView.h; sourceTree = "<group>"; };
+		7D36FF741D45B0E1001C8910 /* CommentInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentInputView.m; sourceTree = "<group>"; };
 		7D3812FE1D25003200C583DD /* NewAlbumAdviceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewAlbumAdviceModel.h; sourceTree = "<group>"; };
 		7D3812FF1D25003200C583DD /* NewAlbumAdviceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewAlbumAdviceModel.m; sourceTree = "<group>"; };
 		7D3813011D25006000C583DD /* NewAlbumModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewAlbumModel.h; sourceTree = "<group>"; };
@@ -2609,6 +2621,8 @@
 				7D6B22D41D3F4CD600A3E2BA /* Views */,
 				7D29F11F1D3E1A020061B7DA /* CommentViewController.h */,
 				7D29F1201D3E1A020061B7DA /* CommentViewController.m */,
+				7D36FF6A1D45AC39001C8910 /* DetailViewController.h */,
+				7D36FF6B1D45AC39001C8910 /* DetailViewController.m */,
 			);
 			path = Comment;
 			sourceTree = "<group>";
@@ -2720,6 +2734,12 @@
 			children = (
 				7D6B22D51D3F4CF300A3E2BA /* CommentTableViewCell.h */,
 				7D6B22D61D3F4CF300A3E2BA /* CommentTableViewCell.m */,
+				7D36FF6D1D45AE80001C8910 /* DetailCommentCell.h */,
+				7D36FF6E1D45AE80001C8910 /* DetailCommentCell.m */,
+				7D36FF701D45AE9C001C8910 /* DetailCommentView.h */,
+				7D36FF711D45AE9C001C8910 /* DetailCommentView.m */,
+				7D36FF731D45B0E1001C8910 /* CommentInputView.h */,
+				7D36FF741D45B0E1001C8910 /* CommentInputView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -3086,12 +3106,14 @@
 				345565401D10FE3E00B6E562 /* QFTableView.m in Sources */,
 				7DE523941D13D53800C5B5EF /* ForegetPasswordViewController.m in Sources */,
 				345565BF1D12533C00B6E562 /* PromptboxView.m in Sources */,
+				7D36FF6C1D45AC39001C8910 /* DetailViewController.m in Sources */,
 				34C4C6A91D40D8DB00075897 /* PhotoInforamtion.m in Sources */,
 				34C4C6AD1D40D8DB00075897 /* ShowPhotoViewController.m in Sources */,
 				349263741D178EBC006C2FD9 /* AgreementViewController.m in Sources */,
 				3455654E1D10FE4800B6E562 /* UIAlertView+Blocks.m in Sources */,
 				34C4C6B51D40D96A00075897 /* ImageModel.m in Sources */,
 				34C4C6AB1D40D8DB00075897 /* PhotoInformationViewController.m in Sources */,
+				7D36FF751D45B0E1001C8910 /* CommentInputView.m in Sources */,
 				34C4C6A71D40D8DB00075897 /* PhotoCollectionViewCell.m in Sources */,
 				3492637E1D178F1B006C2FD9 /* ProductionIntroducViewController.m in Sources */,
 				3492636C1D13FE8D006C2FD9 /* AboutTableViewCell.m in Sources */,
@@ -3108,7 +3130,9 @@
 				345565741D1134E500B6E562 /* MainTabViewController.m in Sources */,
 				34E49DAD1D24FBC800CF5CCB /* PersonModel.m in Sources */,
 				345565E91D13A04100B6E562 /* FamilyTeamTableViewCell.m in Sources */,
+				7D36FF721D45AE9C001C8910 /* DetailCommentView.m in Sources */,
 				7D6B22D31D3F201C00A3E2BA /* CommentModel.m in Sources */,
+				7D36FF6F1D45AE80001C8910 /* DetailCommentCell.m in Sources */,
 				7DD7D1D11D0FE21B0002CD2E /* AppDelegate.m in Sources */,
 				345565DE1D12A5D800B6E562 /* PerInformationTableViewCell.m in Sources */,
 				34C4C6B81D40D99E00075897 /* BaseCollectionViewController.m in Sources */,

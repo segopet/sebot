@@ -38,10 +38,33 @@
 
 
 
--(void)addCommentWithUserid:(NSString *)userid token:(NSString *)token pid:(NSString *)pid bid:(NSString *)bid wid:(NSString *)wid bcid:(NSString *)bcid ptype:(NSString *)ptype action:(NSString *)action content:(NSString *)content complete:(void (^)(ResponseModel *))completeBlock{
+-(void)addCommentWithUserid:(NSString *)userid token:(NSString *)token pid:(NSString *)pid bid:(NSString *)bid wid:(NSString *)wid bcid:(NSString *)bcid ptype:(NSString *)ptype action:(NSString *)action content:(NSString *)content type:(NSString *)type complete:(void (^)(ResponseModel *))completeBlock{
+   
+    
+    NSMutableDictionary* params = [NSMutableDictionary dictionary];
+    params[@"userid"] = userid;
+    params[@"token"] = token;
+    params[@"objective"] = @"album";
+    params[@"action"] = @"addComment";
+    NSMutableDictionary * dataParams = [[NSMutableDictionary alloc]init];
+    dataParams[@"pid"] = pid;
+    dataParams[@"bid"] = bid;
+    dataParams[@"wid"] = wid;
+    dataParams[@"bcid"] = bcid;
+    dataParams[@"ptype"] = ptype;
+    dataParams[@"action"] = action;
+    dataParams[@"content"] = content;
+    dataParams[@"type"] = type;
+    
+    [self POST:@"sebot/moblie/forward" parameters:params result:^(ResponseModel *model) {
+        
+        if (completeBlock) {
+            completeBlock(model);
+        }
+        
+    }];
 
-
-
+    
 
 
 
