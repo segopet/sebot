@@ -55,6 +55,8 @@
     dataParams[@"action"] = action;
     dataParams[@"content"] = content;
     dataParams[@"type"] = type;
+    params[@"data"] = dataParams;
+    
     
     [self POST:@"sebot/moblie/forward" parameters:params result:^(ResponseModel *model) {
         

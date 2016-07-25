@@ -35,13 +35,23 @@ static NSString * cellId = @"FamilyCellides";
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
      [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(dada) name:@"shuaxinn" object:nil];
-    
+    //shuaxinn12
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(dada1) name:@"shuaxinn12" object:nil];
+
 }
 -(void)dada{
     [self initRefreshView];
 
 
 }
+
+-(void)dada1{
+
+
+    [self loadDataSourceWithPage:1];
+
+}
+
 
 - (void)viewDidLoad{
     [super viewDidLoad];
