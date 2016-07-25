@@ -18,6 +18,9 @@
 #import "SaomaoViewController.h"
 #import "AFHttpClient+MyDevice.h"
 
+#import "DetailViewController.h"
+
+
 static NSString * cellId = @"FamilyCellides";
 @interface FamilySpaceViewcontroller ()<PopDelegate>
 {
@@ -214,10 +217,13 @@ static NSString * cellId = @"FamilyCellides";
     NSInteger i = sender.tag - 23;
     NSLog(@"%ld",i);
      FamilyquanModel * model = self.dataSource[i];
-    CommentViewController * commVc = [[CommentViewController alloc]init];
-    commVc.wid = model.aid;
-    [self.navigationController pushViewController:commVc animated:NO];
-    
+//    CommentViewController * commVc = [[CommentViewController alloc]init];
+//    commVc.wid = model.aid;
+//    [self.navigationController pushViewController:commVc animated:NO];
+    DetailViewController * Vcc = [[DetailViewController alloc]init];
+    Vcc.wid = model.aid;
+    [self.navigationController pushViewController:Vcc animated:NO];
+
     
     
     
@@ -239,12 +245,9 @@ static NSString * cellId = @"FamilyCellides";
              [[AppUtil appTopViewController] showHint:model.retDesc];
             [self loadDataSourceWithPage:1];
         }
-        
     }];
     }
-
 }
-
 
 //点击查看大图
 -(void)lookPictureButtonTouch:(UIButton *)sender{
@@ -300,8 +303,7 @@ static NSString * cellId = @"FamilyCellides";
     [[AFHttpClient sharedAFHttpClient]addDevide:str token:str deviceno:_popView.numberTextfied.text complete:^(ResponseModel * model) {
         [_popView removeFromSuperview];
         [self showSuccessHudWithHint:model.retDesc];
-//        NSUserDefaults * userdefalus = [NSUserDefaults standardUserDefaults];
-//        [userdefalus setObject:@"yes" forKey:@"isContent"];
+
         [self isbangding];
     }];
     

@@ -44,15 +44,6 @@
         
         
         
-        //@property (nonatomic,strong)UILabel * firstname;
-        //@property (nonatomic,strong)UILabel * huifuLabel;
-        //@property (nonatomic,strong)UILabel * lastName;
-        //@property (nonatomic,strong)UILabel * lastContentlabel;
-      //  _firstname = [[UILabel alloc]init];
-//        _huifuLabel = [[UILabel alloc]init];
-//        _lastName = [[UILabel alloc]init];
-//        _lastContentlabel = [[UILabel alloc]init];
-        
        
     }
 

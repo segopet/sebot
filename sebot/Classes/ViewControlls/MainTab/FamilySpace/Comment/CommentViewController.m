@@ -10,6 +10,8 @@
 #import "AFHttpClient+Comment.h"
 #import "CommentTableViewCell.h"
 #import "CommentModel.h"
+#import "DetailCommentCell.h"
+
 
 static NSString * cellId = @"commenttableviewCellides";
 @interface CommentViewController ()
@@ -131,18 +133,14 @@ static NSString * cellId = @"commenttableviewCellides";
     cell.nameLabel.width = nameSize.width;
     
     
-    cell.contentLabel.frame = CGRectMake(CGRectGetMaxX(cell.nameLabel.frame) + 5 * W_Wide_Zoom, 27 * W_Hight_Zoom, 230 * W_Wide_Zoom, 30 * W_Hight_Zoom);
-   //
+    cell.contentLabel.frame = CGRectMake(CGRectGetMaxX(cell.nameLabel.frame) + 5 * W_Wide_Zoom, CGRectGetMinY(self.view.frame) + 27, 230 * W_Wide_Zoom, 30 * W_Hight_Zoom);
     cell.contentLabel.text = model.content;
- //   cell.contentLabel.numberOfLines = 3;
     NSString * str111 = model.content;
     CGSize labelSize111 = {0,0};
     labelSize111 = [str111 sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:CGSizeMake(200.0, 5000) lineBreakMode:NSLineBreakByWordWrapping];;
     cell.contentLabel.numberOfLines = 0;
     cell.contentLabel.lineBreakMode = UILineBreakModeCharacterWrap;
-    cell.contentLabel.frame = CGRectMake(cell.contentLabel.frame.origin.x, cell.contentLabel.frame.origin.y, cell.contentLabel.frame.size.width, labelSize111.height);
-    
-  
+    cell.contentLabel.frame = CGRectMake(cell.contentLabel.frame.origin.x, CGRectGetMinY(self.view.frame) + 27, cell.contentLabel.frame.size.width, labelSize111.height);
     
     
     cell.timelabel.frame = CGRectMake(70 * W_Wide_Zoom, CGRectGetMaxY(cell.contentLabel.frame), 150 * W_Wide_Zoom, 30 * W_Hight_Zoom);
@@ -174,15 +172,26 @@ static NSString * cellId = @"commenttableviewCellides";
             rr = 0;
         }
         //这儿的问题是：我拿到了这一行字的行数，但是只能改变这一行的位置，我想改变它下面那一行的位置，把下面那一行加上 rr * 20 ，但是写了半天，不知道怎么拿到kk>0的时候下面那一行－ ＝
+        
+        
         cell.firstname = [[UILabel alloc]initWithFrame:CGRectMake(70 * W_Wide_Zoom,  CGRectGetMaxY(cell.timelabel.frame)+ i * 20 , 0 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
 
         cell.firstname.font = [UIFont systemFontOfSize:14];
         cell.firstname.textColor = RED_COLOR;
         cell.firstname.text = listArray[i][@"username"];
+        cell.firstname.tag = 300+i;
         NSString * strr = listArray[i][@"username"];
         CGSize titleSize = [strr sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:CGSizeMake(MAXFLOAT, 30)];
         cell.firstname.width = titleSize.width;
         [cell.contentView addSubview:cell.firstname];
+        
+        
+        
+        
+        
+        
+        
+        
         
         UILabel * huifuLabel = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(cell.firstname.frame)+ 2 * W_Wide_Zoom, CGRectGetMaxY(cell.timelabel.frame)+ i * 20 * W_Hight_Zoom , 0 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
         huifuLabel.tag = 10000+i;
@@ -209,7 +218,7 @@ static NSString * cellId = @"commenttableviewCellides";
         lastContentlabel.textColor = [UIColor blackColor];
         lastContentlabel.font = [UIFont systemFontOfSize:14];
         lastContentlabel.text = listArray[i][@"content"];
-       
+
         lastContentlabel.numberOfLines = 0;
         lastContentlabel.lineBreakMode = UILineBreakModeCharacterWrap;
         lastContentlabel.frame = CGRectMake(lastContentlabel.frame.origin.x, lastContentlabel.frame.origin.y, lastContentlabel.frame.size.width, labelSize1112.height);

@@ -14,7 +14,7 @@
 
 
 //添加评论
--(void)addCommentWithUserid:(NSString *)userid token:(NSString *)token pid:(NSString *)pid bid:(NSString *)bid wid:(NSString *)wid bcid:(NSString *)bcid ptype:(NSString *)ptype action:(NSString *)action content:(NSString *)content complete:(void(^)(ResponseModel *model))completeBlock;
+-(void)addCommentWithUserid:(NSString *)userid token:(NSString *)token pid:(NSString *)pid bid:(NSString *)bid wid:(NSString *)wid bcid:(NSString *)bcid ptype:(NSString *)ptype action:(NSString *)action content:(NSString *)content type:(NSString *)type complete:(void(^)(ResponseModel *model))completeBlock;
 
 
 
