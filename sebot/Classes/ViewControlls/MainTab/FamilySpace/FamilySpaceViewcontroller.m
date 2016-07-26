@@ -38,12 +38,13 @@ static NSString * cellId = @"FamilyCellides";
      [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(dada) name:@"shuaxinn" object:nil];
     //shuaxinn12
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(dada1) name:@"shuaxinn12" object:nil];
-   
+   //bangdingshuaxin
+     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(dada3) name:@"bangdingshuaxin" object:nil];
+    
 }
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    _listArray = [NSMutableArray array];
-   
+    
 }
 
 -(void)dada{
@@ -55,12 +56,17 @@ static NSString * cellId = @"FamilyCellides";
 
 }
 
+-(void)dada3{
+    _listArray = [NSMutableArray array];
+    [self isbangding];
+}
+
 
 - (void)viewDidLoad{
     [super viewDidLoad];
     [self setNavTitle: NSLocalizedString(@"tabFamily", nil)];
      self.view.backgroundColor = [UIColor whiteColor];
-
+    
     [self showBarButton:NAV_RIGHT imageName:@"相机.png"];
     
     app = (AppDelegate *)[UIApplication sharedApplication].delegate;
@@ -68,8 +74,9 @@ static NSString * cellId = @"FamilyCellides";
     _popView.center = self.view.center;
     _popView.ParentView = app.window;
     _popView.delegate = self;
-     [self isbangding];
-    
+  
+    _listArray = [NSMutableArray array];
+    [self isbangding];
 }
 
 -(void)setupView{
@@ -88,23 +95,27 @@ static NSString * cellId = @"FamilyCellides";
  
 }
 
-
-
 -(void)isbangding{
     [[AFHttpClient sharedAFHttpClient]querMydeviceWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid complete:^(ResponseModel *model) {
         [_listArray addObjectsFromArray:model.list];
         if (_listArray.count > 0 ) {
-        self .tableView.frame =  CGRectMake(0, 0, self.view.width, self.view.height - NAV_BAR_HEIGHT);
-        [self.tableView registerClass:[FamilyTableViewCell class] forCellReuseIdentifier:cellId];
-        self.tableView.backgroundColor = [UIColor whiteColor];
-        [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-        [self initRefreshView];
+            [self bangdingView];
         }else{
             [self noBangdingView];
         }
     }];
 
 }
+
+-(void)bangdingView{
+    self .tableView.frame =  CGRectMake(0, 0, self.view.width, self.view.height - NAV_BAR_HEIGHT);
+    [self.tableView registerClass:[FamilyTableViewCell class] forCellReuseIdentifier:cellId];
+    self.tableView.backgroundColor = [UIColor whiteColor];
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+   [self initRefreshView];
+
+}
+
 -(void)noBangdingView{
     UIImageView * image = [[UIImageView alloc]initWithFrame:CGRectMake(60 * W_Wide_Zoom, 200 * W_Hight_Zoom, 250 * W_Wide_Zoom, 250 * W_Hight_Zoom)];
     image.image = [UIImage imageNamed:@"无图时.png"];
@@ -248,9 +259,10 @@ static NSString * cellId = @"FamilyCellides";
         NSLog(@"gaga");
         [[AppUtil appTopViewController] showHint:@"您已经点过赞了，不能重复点赞哦!"];
     }else{
+      [sender setImage:[UIImage imageNamed:@"dianzanhou.png"] forState:UIControlStateNormal];
     [[AFHttpClient sharedAFHttpClient]dianzanWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid objid:model.aid objtype:@"a" complete:^(ResponseModel *model) {
         if (model) {
-             [[AppUtil appTopViewController] showHint:model.retDesc];
+            [[AppUtil appTopViewController] showHint:model.retDesc];
             [self loadDataSourceWithPage:1];
         }
     }];

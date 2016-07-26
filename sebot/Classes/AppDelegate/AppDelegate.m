@@ -184,6 +184,8 @@ static BOOL isBackGroundActivateApplication;
         }
         if (result) {
             // 确认绑定成功
+             [[NSNotificationCenter defaultCenter]postNotificationName:@"bangdingshuaxin" object:nil];
+            
             if ([result[@"error_code"]intValue]!=0) {
                 return;
             }
