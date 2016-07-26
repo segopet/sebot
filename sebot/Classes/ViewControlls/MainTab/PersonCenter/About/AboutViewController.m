@@ -33,6 +33,7 @@
     
     self.dataSource =[NSMutableArray array];
     NSArray * arr =@[@"意见反馈",@"注册协议"];
+    self.exitBtn.backgroundColor =RED_COLOR;
     [self.dataSource addObjectsFromArray:arr];
     
 }

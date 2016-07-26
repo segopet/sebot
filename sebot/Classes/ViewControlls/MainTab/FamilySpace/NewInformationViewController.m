@@ -85,7 +85,7 @@ static NSString * cellId = @"newAllubmtabeleviewwcellid";
     [self.view addSubview:_alumbnameTextfield];
     
     
-    UILabel * lineLabel = [[UILabel alloc]initWithFrame:CGRectMake(0 * W_Wide_Zoom, 116 * W_Hight_Zoom, 375 * W_Wide_Zoom,1 * W_Hight_Zoom )];
+    UILabel * lineLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 116 * W_Hight_Zoom, 375 * W_Wide_Zoom,1 * W_Hight_Zoom )];
     lineLabel.backgroundColor = GRAY_COLOR;
     [self.view addSubview:lineLabel];
     
@@ -95,7 +95,7 @@ static NSString * cellId = @"newAllubmtabeleviewwcellid";
     zhidingLabel.font = [UIFont systemFontOfSize:13];
     [self.view addSubview:zhidingLabel];    
     
-    self.tableView.frame = CGRectMake(0, 180 * W_Hight_Zoom, self.view.width, self.view.height- 180);
+    self.tableView.frame = CGRectMake(0, 160 * W_Hight_Zoom, self.view.width, self.view.height- 160);
     [self.tableView registerClass:[NewAlumbleTableViewCell class] forCellReuseIdentifier:cellId];
     self.tableView.backgroundColor = [UIColor whiteColor];
     self.tableView.tableHeaderView = nil;

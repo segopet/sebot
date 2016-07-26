@@ -8,7 +8,7 @@
 
 #import "OpinionViewController.h"
 
-@interface OpinionViewController ()<UITextFieldDelegate>
+@interface OpinionViewController ()<UITextFieldDelegate,UITextViewDelegate>
 {
     
     
@@ -41,7 +41,7 @@
     [super setupView];
     
     self.view.backgroundColor = [UIColor whiteColor];
-    [self showBarButton:NAV_RIGHT title:@"发送" fontColor:[UIColor blackColor]];
+    [self showBarButton:NAV_RIGHT title:@"发送" fontColor:[UIColor whiteColor]];
     _topTextfield = [[UITextView alloc]initWithFrame:CGRectMake(20 * W_Wide_Zoom, 70 * W_Hight_Zoom, 335 * W_Wide_Zoom, 120 * W_Hight_Zoom)];
     _topTextfield.backgroundColor = LIGHT_GRAY_COLOR;
     _topTextfield.textAlignment = NSTextAlignmentLeft;
