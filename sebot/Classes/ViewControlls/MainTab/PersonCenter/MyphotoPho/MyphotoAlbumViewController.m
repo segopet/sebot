@@ -36,7 +36,7 @@
     [super viewDidLoad];
     usid = [AccountManager sharedAccountManager].loginModel.userid;
     [self setNavTitle: NSLocalizedString(@"MyphotoAlbum", nil)];
-    self.view.backgroundColor = LIGHT_GRAY_COLOR;
+    self.view.backgroundColor = [UIColor whiteColor];
     DefaultesImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT/4, 373, 373)];
     DefaultesImage.image =[UIImage imageNamed:@"无图时.png"];
     DefaultesImage.hidden = YES;
@@ -98,7 +98,7 @@
     UICollectionViewFlowLayout * layout = [[UICollectionViewFlowLayout alloc]init];
     collect = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) collectionViewLayout:layout];
     //代理设置
-    collect.backgroundColor =GRAY_COLOR;
+    collect.backgroundColor =[UIColor whiteColor];
     collect.delegate=self;
     collect.dataSource=self;
     //注册item类型 这里使用系统的类型X
@@ -144,9 +144,10 @@
     PhotoCollectionViewCell * cell  = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellid" forIndexPath:indexPath];
     
     if (indexPath.row < 1) {
-        cell.ImageHeader.image =[UIImage imageNamed:@"add.png"];
+        cell.ImageHeader.image =[UIImage imageNamed:@"addImage.png"];
         cell.PhotoNumber.hidden = YES;
         cell.PhotoName.hidden = YES;
+        cell.downImageV.hidden = YES;
         
         
         
@@ -154,6 +155,7 @@
     }else{
         cell.PhotoNumber.hidden = NO;
         cell.PhotoName.hidden = NO;
+        cell.downImageV.hidden = NO;
        
         NSString * imageStr = [NSString stringWithFormat:@"%@",model.cover];
         NSURL * imageUrl = [NSURL URLWithString:imageStr];
@@ -186,6 +188,7 @@
        
         PhotoInformationViewController * photoVC =[[PhotoInformationViewController alloc]initWithNibName:@"PhotoInformationViewController" bundle:nil];
         photoVC.aid = model.aid;
+        photoVC.albumname = model.albumname;
         [self.navigationController pushViewController:photoVC animated:YES];
         
     }

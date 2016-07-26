@@ -9,5 +9,6 @@
 #import "BaseTabViewController.h"
 
 @interface AboutViewController : BaseTabViewController
+@property (strong, nonatomic) IBOutlet UIButton *exitBtn;
 
 @end

@@ -272,7 +272,7 @@
     NSInteger num = sender.tag -1000;
     famModel =self.dataSource[num];
    // 管理员移除用户
-     NSString * str =[NSString stringWithFormat:@"你确认移除成员%@吗",famModel.accountnumber];
+     NSString * str =[NSString stringWithFormat:@"你确认移除成员%@吗",famModel.nickname];
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"成员移除" message:str preferredStyle:UIAlertControllerStyleAlert];
     [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Sure", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         
@@ -350,7 +350,7 @@
 {
     famModel =self.dataSource[sender];
     
-    NSString * str =[NSString stringWithFormat:@"你确认把管理员转让给%@吗",famModel.nickname];
+    NSString * str =[NSString stringWithFormat:@"您确认把管理员转让给%@吗",famModel.nickname];
     
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"管理员转让" message:str preferredStyle:UIAlertControllerStyleAlert];
     [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Sure", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -361,6 +361,12 @@
         NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
             [[AFHttpClient sharedAFHttpClient]givePowr:str token:str admin:strControl usr:famModel.userid did:famModel.did complete:^(ResponseModel * model) {
                 [self showSuccessHudWithHint:model.retDesc];
+                
+//                NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+//                FamilyTeamTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+//                cell.moveBtn.hidden = NO;
+//                cell.transferBtn.hidden = NO;
+//                [self.tableView reloadData];
                 [self initRefreshView];
             }];
         

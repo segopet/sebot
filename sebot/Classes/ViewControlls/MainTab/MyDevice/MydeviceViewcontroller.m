@@ -73,7 +73,7 @@
     image =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 375, 375)];
     image.hidden = YES;
     image.center = self.view.center;
-    image.image =[UIImage imageNamed:@"默认图片.png"];
+    image.image =[UIImage imageNamed:@"无图时.png"];
     [self.view addSubview:image];
     
      app = (AppDelegate *)[UIApplication sharedApplication].delegate;
@@ -284,12 +284,15 @@
         // 可以去开启视频
         
         [cell.VideoStateBtn setImage:[UIImage imageNamed:@"sebot_start_on"] forState:UIControlStateNormal];
+        cell.VideoStateBtn.enabled = YES;
         
     }else
     {
         // 灰色  不能开启
         
         [cell.VideoStateBtn setImage:[UIImage imageNamed:@"sebot_start_off"] forState:UIControlStateNormal];
+        cell.VideoStateBtn.enabled = NO;
+        
         
     }
     
@@ -305,7 +308,20 @@
     CheckDeviceModel *checkModel = self.dataSource[indexPath.row];
     DeviceInformationViewController * inforationVC =[[DeviceInformationViewController alloc]initWithNibName:@"DeviceInformationViewController" bundle:nil];
     inforationVC.didNumber = checkModel.did;
-    [self.navigationController pushViewController:inforationVC animated:YES];
+
+    MyDeviceTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    
+    if (cell.VideoStateBtn.enabled) {
+        [self.navigationController pushViewController:inforationVC animated:YES];
+    }else
+    {
+        
+        [self showSuccessHudWithHint:@"该设备暂时无法开启视频"];
+        
+    }
+    
+
+    
     
 }
 

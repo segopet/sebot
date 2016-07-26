@@ -49,7 +49,7 @@ static NSString *kheaderIdentifier = @"headerIdentifier";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setNavTitle: NSLocalizedString(@"MyphotoAlbum", nil)];
+    [self setNavTitle: self.albumname];
     self.view.backgroundColor = LIGHT_GRAY_COLOR;
     [self showBarButton:NAV_RIGHT imageName:@"more"];
     arrData =[NSMutableArray array];
@@ -150,8 +150,8 @@ static NSString *kheaderIdentifier = @"headerIdentifier";
     _deleteBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     _deleteBtn.frame = CGRectMake(_deleteImageV.center.x-15, 5, 30, 30);
     //    [_deleteBtn setImage:[UIImage imageNamed:@"delete.png"] forState:UIControlStateNormal];
-    [_deleteBtn setTitle:@"完成" forState:UIControlStateNormal];
-    [_deleteBtn setTitleColor:GREEN_COLOR forState:UIControlStateNormal];
+    [_deleteBtn setTitle:@"删除" forState:UIControlStateNormal];
+    [_deleteBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     _deleteBtn.titleLabel.font = [UIFont systemFontOfSize:13];
     [_deleteBtn addTarget:self action:@selector(onDeleBt:) forControlEvents:UIControlEventTouchUpInside];
     [_deleteImageV addSubview:_deleteBtn];
@@ -159,6 +159,8 @@ static NSString *kheaderIdentifier = @"headerIdentifier";
    
     rightArr =@[@"管理相册",@"编辑相册"];
     tabTop =[[UITableView alloc]initWithFrame:CGRectMake(280, 60, 100, 100) style:UITableViewStylePlain];
+    tabTop.layer.borderWidth = 1;
+    tabTop.layer.borderColor =GRAY_COLOR.CGColor;
     tabTop.hidden = YES;
     tabTop.backgroundColor =[UIColor redColor];
     tabTop.delegate = self;
