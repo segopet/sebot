@@ -362,9 +362,7 @@
         
         NSLog(@"%@",model.retDesc);
         [self showHint:model.retDesc];
-       
-        
-        
+    
     }];
     
     [self.navigationController popViewControllerAnimated:YES];

@@ -35,12 +35,17 @@
     // Do any additional setup after loading the view from its nib.
     [self setNavTitle: NSLocalizedString(@"familyTeam", nil)];
      self.view.backgroundColor = LIGHT_GRAY_COLOR;
-    
+    isMeControl = NO;
     
     self.dataSource =[NSMutableArray array];
     
     app = (AppDelegate *)[UIApplication sharedApplication].delegate;
     _popView = [[PopView alloc] initWithFrame:CGRectMake(0, 0,SCREEN_WIDTH ,SCREEN_HEIGHT)];
+    
+     NSString * str =[AccountManager sharedAccountManager].loginModel.userid;
+    
+    NSLog(@"%@",str);
+    
     [_popView.sureBtn setTitle:@"邀请" forState:UIControlStateNormal];
      _popView.handLable.text = @"邀请绑定";
      _popView.numberLable.text = @"手机号码:";
@@ -96,15 +101,13 @@
     
     // 家庭成员接口
     [[AFHttpClient sharedAFHttpClient]familyteam:str token:str did:self.did complete:^(ResponseModel * model) {
-        
-       
-        
         if (page == START_PAGE_INDEX) {
             [self.dataSource removeAllObjects];
             [self.dataSource addObjectsFromArray:model.list];
             famModel = self.dataSource[0];
             // 管理员
             strControl  = famModel.userid;
+            
         } else {
             [self.dataSource addObjectsFromArray:model.list];
         }
@@ -114,6 +117,7 @@
         }else{
             self.tableView.mj_footer.hidden = NO;
         }
+        
         
         [self.tableView reloadData];
         [self handleEndRefresh];
@@ -217,13 +221,11 @@
     
     
     
-    
-    if (indexPath.row ==0) {
+      if (indexPath.row ==0) {
         
         cell.conterLable.hidden = NO;
         
     }
-    
      if (indexPath.row == 0 && [strControl isEqualToString:[AccountManager sharedAccountManager].loginModel.userid]) {
          cell.moveBtn.hidden = YES;
          cell.transferBtn.hidden = YES;
@@ -236,17 +238,14 @@
      {
          cell.conterLable.hidden  = YES;
          
-         
          if (isMeControl) {
              cell.moveBtn.hidden = NO;
              cell.transferBtn.hidden = NO;
-            
-        
              
          }else
          {
-     cell.moveBtn.hidden = YES;
-     cell.transferBtn.hidden = YES;
+         cell.moveBtn.hidden = YES;
+         cell.transferBtn.hidden = YES;
      
      
          }
@@ -361,13 +360,11 @@
         NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
             [[AFHttpClient sharedAFHttpClient]givePowr:str token:str admin:strControl usr:famModel.userid did:famModel.did complete:^(ResponseModel * model) {
                 [self showSuccessHudWithHint:model.retDesc];
+                isMeControl = NO;
+                [self.navigationController popViewControllerAnimated:YES];
                 
-//                NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-//                FamilyTeamTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-//                cell.moveBtn.hidden = NO;
-//                cell.transferBtn.hidden = NO;
-//                [self.tableView reloadData];
-                [self initRefreshView];
+               
+
             }];
         
         
@@ -377,5 +374,7 @@
     [self presentViewController:alertController animated:true completion:nil];
     
 }
+
+
 
 @end
