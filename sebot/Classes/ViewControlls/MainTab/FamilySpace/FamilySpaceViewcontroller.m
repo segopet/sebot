@@ -38,8 +38,6 @@ static NSString * cellId = @"FamilyCellides";
      [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(dada) name:@"shuaxinn" object:nil];
     //shuaxinn12
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(dada1) name:@"shuaxinn12" object:nil];
-   //bangdingshuaxin
-     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(dada3) name:@"bangdingshuaxin" object:nil];
     
 }
 -(void)viewDidAppear:(BOOL)animated{
@@ -56,10 +54,6 @@ static NSString * cellId = @"FamilyCellides";
 
 }
 
--(void)dada3{
-    _listArray = [NSMutableArray array];
-    [self isbangding];
-}
 
 
 - (void)viewDidLoad{
@@ -74,7 +68,6 @@ static NSString * cellId = @"FamilyCellides";
     _popView.center = self.view.center;
     _popView.ParentView = app.window;
     _popView.delegate = self;
-  
     _listArray = [NSMutableArray array];
     [self isbangding];
 }
@@ -99,7 +92,11 @@ static NSString * cellId = @"FamilyCellides";
     [[AFHttpClient sharedAFHttpClient]querMydeviceWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid complete:^(ResponseModel *model) {
         [_listArray addObjectsFromArray:model.list];
         if (_listArray.count > 0 ) {
-            [self bangdingView];
+            self .tableView.frame =  CGRectMake(0, 0, self.view.width, self.view.height);
+            [self.tableView registerClass:[FamilyTableViewCell class] forCellReuseIdentifier:cellId];
+            self.tableView.backgroundColor = [UIColor whiteColor];
+            [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+            [self initRefreshView];
         }else{
             [self noBangdingView];
         }
@@ -108,11 +105,7 @@ static NSString * cellId = @"FamilyCellides";
 }
 
 -(void)bangdingView{
-    self .tableView.frame =  CGRectMake(0, 0, self.view.width, self.view.height - NAV_BAR_HEIGHT);
-    [self.tableView registerClass:[FamilyTableViewCell class] forCellReuseIdentifier:cellId];
-    self.tableView.backgroundColor = [UIColor whiteColor];
-    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-   [self initRefreshView];
+ 
 
 }
 
