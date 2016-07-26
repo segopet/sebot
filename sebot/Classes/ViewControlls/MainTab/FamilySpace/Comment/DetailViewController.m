@@ -109,21 +109,6 @@ NSString * const kDetailCommentCellID = @"DetailCommentCell";
     return _toolView;
 }
 
-//- (void)textFieldDidBeginEditing:(UITextField *)textField {
-//    if (textField.tag == 1980) {
-//        [IQKeyboardManager sharedManager].enable = NO;
-//        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardNotification2:) name:UIKeyboardWillChangeFrameNotification object:nil];
-//        UIButton * button = [[UIButton alloc]initWithFrame:CGRectMake(0 * W_Wide_Zoom, 0 * W_Hight_Zoom, 375 * W_Wide_Zoom, 500 * W_Hight_Zoom)];
-//        button.backgroundColor = [UIColor clearColor];
-//        [self.tableView addSubview:button];
-//        [button addTarget:self action:@selector(bianhuilai:) forControlEvents:UIControlEventTouchUpInside];
-//
-//    }else{
-//    
-//    }
-//}
-
-
 -(void)loadDataSourceWithPage:(int)page{
     [[AFHttpClient sharedAFHttpClient]quserCommentWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid wid:self.wid ptype:@"a" page:[NSString stringWithFormat:@"%d",page] complete:^(ResponseModel *model) {
         if (model) {
@@ -259,12 +244,5 @@ NSString * const kDetailCommentCellID = @"DetailCommentCell";
 -(void)doLeftButtonTouch{
     [super doLeftButtonTouch];
      [[NSNotificationCenter defaultCenter]postNotificationName:@"shuaxinn12" object:nil];
-
-
-
 }
-
-
-
-
 @end

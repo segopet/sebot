@@ -145,7 +145,7 @@
     
     
 }
--(void)doLeftButtonTouch1{
+-(void)doLeftButtonTouch{
     UIAlertController * alertController = [UIAlertController alertControllerWithTitle:@"提示" message:@"您还没有发布内容，是否要退出？" preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction *action) {
@@ -159,8 +159,12 @@
     [alertController addAction:okAction];
     [alertController addAction:cancelAction];
     [self presentViewController:alertController animated:YES completion:nil];
-    
 }
+
+
+
+
+
 
 
 -(void)doRightButtonTouch{

@@ -27,7 +27,8 @@
     [super viewDidLoad];
     self.view.backgroundColor =[UIColor blackColor];
     
-    [self setNavTitle:@"图片详情"];
+    
+    [self setNavTitle:[NSString stringWithFormat:@"1/%ld",_dataArray.count]];
     
 }
 
@@ -74,6 +75,15 @@
     
     
 }
+
+- (void)QFTableView:(QFTableView *)fanView scrollToIndex:(NSInteger)index{
+
+    [self setNavTitle:[NSString stringWithFormat:@"%ld/%ld",index + 1,_dataArray.count]];
+    
+
+}
+
+
 
 //为CotentView中的子视图控件重新赋值
 - (void)QFTableView:(QFTableView *)fanView setContentView:(UIView *)contentView ForIndex:(NSInteger)index
