@@ -311,14 +311,9 @@
 
     MyDeviceTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
     
-    if (cell.VideoStateBtn.enabled) {
+  //  if (cell.VideoStateBtn.enabled) {
         [self.navigationController pushViewController:inforationVC animated:YES];
-    }else
-    {
-        
-        [self showSuccessHudWithHint:@"该设备暂时无法开启视频"];
-        
-    }
+    
     
 
     

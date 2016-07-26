@@ -144,7 +144,7 @@
     PhotoCollectionViewCell * cell  = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellid" forIndexPath:indexPath];
     
     if (indexPath.row < 1) {
-        cell.ImageHeader.image =[UIImage imageNamed:@"addImage.png"];
+        cell.ImageHeader.image =[UIImage imageNamed:@"add.png"];
         cell.PhotoNumber.hidden = YES;
         cell.PhotoName.hidden = YES;
         cell.downImageV.hidden = YES;
