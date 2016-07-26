@@ -69,6 +69,9 @@ static BOOL isBackGroundActivateApplication;
             isIknow = YES;
             UIAlertView *alertView =[[UIAlertView alloc]initWithTitle:@"收到一条消息" message:userInfo[@"desc"] delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
             [alertView show];
+            
+            [[NSNotificationCenter defaultCenter]postNotificationName:@"bangdingshuaxin" object:nil];
+            
 
         }else
         {

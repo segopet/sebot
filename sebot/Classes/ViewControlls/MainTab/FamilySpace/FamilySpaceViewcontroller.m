@@ -38,6 +38,8 @@ static NSString * cellId = @"FamilyCellides";
      [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(dada) name:@"shuaxinn" object:nil];
     //shuaxinn12
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(dada1) name:@"shuaxinn12" object:nil];
+        //bangdingshuaxin
+     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(dada3) name:@"bangdingshuaxin" object:nil];
     
 }
 -(void)viewDidAppear:(BOOL)animated{
@@ -52,6 +54,12 @@ static NSString * cellId = @"FamilyCellides";
 
     [self loadDataSourceWithPage:1];
 
+}
+
+-(void)dada3{
+    _listArray = [NSMutableArray array];
+    [self isbangding];
+ //fuc
 }
 
 
@@ -235,14 +243,8 @@ static NSString * cellId = @"FamilyCellides";
     DetailViewController * Vcc = [[DetailViewController alloc]init];
     Vcc.wid = model.aid;
     [self.navigationController pushViewController:Vcc animated:NO];
-
-    
-    
     
 }
-
-
-
 
 //点赞
 -(void)dianzanbttuntouch:(UIButton *)sender{
