@@ -98,7 +98,24 @@
 }
 
 
+-(void)querMydeviceWithUserid:(NSString *)userid token:(NSString *)token complete:(void (^)(ResponseModel *))completeBlock{
+    NSMutableDictionary * params = [[NSMutableDictionary alloc]init];
+    params[@"userid"] = userid;
+    params[@"token"] = token;
+    params[@"objective"] = @"album";
+    params[@"action"] = @"mydevices";
+    NSMutableDictionary * dataParams = [[NSMutableDictionary alloc]init];
+    dataParams[@"userid"] = userid;
+    params[@"data"] = dataParams;
+    
+    [self POST:@"sebot/moblie/forward" parameters:params result:^(ResponseModel * model) {
+        if (model) {
+            completeBlock(model);
+        }
+    }];
+    
 
+}
 
 
 

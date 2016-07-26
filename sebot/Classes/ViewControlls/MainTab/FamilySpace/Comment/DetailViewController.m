@@ -10,14 +10,18 @@
 #import "AFHttpClient+Comment.h"
 #import "CommentInputView.h"
 #import "DetailCommentCell.h"
+#import "IQKeyboardManager.h"
 
 //按照以前的方法来写看
-@interface DetailViewController ()
+@interface DetailViewController ()<UITextFieldDelegate>
 {
     NSIndexPath *currentEditingIndexthPath;
 }
 @property (nonatomic, strong) CommentInputView *commentInputView;
 @property (nonatomic,strong)UITextField * ceishi;
+@property (nonatomic, strong) UIView* toolView;
+@property (nonatomic,strong)UITextField * downField;
+
 @end
 NSString * const kDetailCommentCellID = @"DetailCommentCell";
 @implementation DetailViewController
@@ -26,25 +30,98 @@ NSString * const kDetailCommentCellID = @"DetailCommentCell";
     [super viewDidLoad];
     [self setNavTitle:@"评论"];
     // Do any additional setup after loading the view.
+     [IQKeyboardManager sharedManager].enable = NO;
       [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardNotification:) name:UIKeyboardWillChangeFrameNotification object:nil];
 }
+
 -(void)setupView{
     [super setupView];
-    
-    
     self .tableView.frame =  CGRectMake(0, 0, self.view.width, self.view.height - NAV_BAR_HEIGHT);
     [self.tableView registerClass:[DetailCommentCell class] forCellReuseIdentifier:kDetailCommentCellID];
     self.tableView.backgroundColor = LIGHT_GRAY_COLOR;
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-     [self.view addSubview:self.commentInputView];
-    
+      [self.view addSubview:self.toolView];
+    [self.view addSubview:self.commentInputView];
     
     [self initRefreshView];
+    // [IQKeyboardManager sharedManager].enable = NO;
+    
+ 
 
     
     
-    
 }
+
+-(UIView *)toolView{
+    
+    _toolView = [[UIView alloc] initWithFrame:CGRectMake(0, 618, self.tableView.width, 49)];
+    _toolView.backgroundColor = LIGHT_GRAY_COLOR;
+    _toolView.layer.shadowColor = [UIColor blackColor].CGColor;
+    _toolView.layer.shadowOffset = CGSizeMake(0, -1);
+    _toolView.layer.shadowOpacity = 0.4;
+    _toolView.layer.shadowRadius = 2;
+    [self.view addSubview:_toolView];
+    
+    UIButton * button = [[UIButton alloc]initWithFrame:CGRectMake(3 * W_Wide_Zoom, 3 * W_Hight_Zoom, 369 * W_Wide_Zoom, 43 * W_Hight_Zoom)];
+    button.backgroundColor = [UIColor whiteColor];
+    button.layer.cornerRadius = 3;
+    button.layer.borderWidth = 0.5;
+    button.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    [_toolView addSubview:button];
+    [button handleControlEvent:UIControlEventTouchUpInside withBlock:^{
+        [self.commentInputView showWithSendCommentBlock:^(NSString *text) {
+            if (text && text.length > 0) {
+                [[AFHttpClient sharedAFHttpClient]addCommentWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid  pid:[AccountManager sharedAccountManager].loginModel.userid  bid:@"" wid:self.wid bcid:@"" ptype:@"a" action:@"p" content:text type:@"a" complete:^(ResponseModel *model) {
+                    if (model) {
+                        CommentModel* addModel = [[CommentModel alloc] init];
+                        addModel.username = [AccountManager sharedAccountManager].loginModel.nickname;
+                        addModel.content = text;
+                       // addModel.age = [AccountManager sharedAccountManager].loginModel.pet_age;
+                        //addModel.sex = [AccountManager sharedAccountManager].loginModel.pet_sex;
+                        addModel.opttime = [AppUtil getCurrentTime];
+                        //addModel.race = [AccountManager sharedAccountManager].loginModel.pet_race;
+                        addModel.wid = self.wid;
+                        addModel.cid = model.content;
+                        addModel.headportrait = [AccountManager sharedAccountManager].loginModel.headportrait;
+                        addModel.pid = [AccountManager sharedAccountManager].loginModel.userid;
+                        [self.dataSource insertObject:addModel atIndex:0];
+                        [self.tableView reloadData];
+  
+                        
+                        
+                        
+                    }
+                    
+                    
+                    
+                    
+                    
+                }];
+        
+        
+            }
+        }];
+    }];
+    
+   
+
+
+    return _toolView;
+}
+
+//- (void)textFieldDidBeginEditing:(UITextField *)textField {
+//    if (textField.tag == 1980) {
+//        [IQKeyboardManager sharedManager].enable = NO;
+//        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardNotification2:) name:UIKeyboardWillChangeFrameNotification object:nil];
+//        UIButton * button = [[UIButton alloc]initWithFrame:CGRectMake(0 * W_Wide_Zoom, 0 * W_Hight_Zoom, 375 * W_Wide_Zoom, 500 * W_Hight_Zoom)];
+//        button.backgroundColor = [UIColor clearColor];
+//        [self.tableView addSubview:button];
+//        [button addTarget:self action:@selector(bianhuilai:) forControlEvents:UIControlEventTouchUpInside];
+//
+//    }else{
+//    
+//    }
+//}
 
 
 -(void)loadDataSourceWithPage:(int)page{
@@ -94,6 +171,7 @@ NSString * const kDetailCommentCellID = @"DetailCommentCell";
     CommentModel* commentModel = self.dataSource[indexPath.row];
     DetailCommentCell* cell = [tableView dequeueReusableCellWithIdentifier:kDetailCommentCellID];
     cell.commentLableClickBlock = ^(int index){
+        self.toolView.hidden = YES;
         currentEditingIndexthPath = [self.tableView indexPathForCell:cell];
         [self.commentInputView showWithSendCommentBlock:^(NSString *text) {
             if (text && text.length > 0) {
@@ -123,6 +201,7 @@ NSString * const kDetailCommentCellID = @"DetailCommentCell";
         }];
     };
     cell.replyBlock = ^(){
+        self.toolView.hidden = YES;
         currentEditingIndexthPath = [self.tableView indexPathForCell:cell];
         [self.commentInputView showWithSendCommentBlock:^(NSString *text) {
             if (text && text.length > 0) {
@@ -154,10 +233,6 @@ NSString * const kDetailCommentCellID = @"DetailCommentCell";
     cell.model = commentModel;
     
     return cell;
-    
-
-
-    
 }
 - (CommentInputView *)commentInputView{
     
@@ -180,4 +255,16 @@ NSString * const kDetailCommentCellID = @"DetailCommentCell";
     
     self.commentInputView.frame = textFieldRect;
 }
+
+-(void)doLeftButtonTouch{
+    [super doLeftButtonTouch];
+     [[NSNotificationCenter defaultCenter]postNotificationName:@"shuaxinn12" object:nil];
+
+
+
+}
+
+
+
+
 @end

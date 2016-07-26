@@ -37,9 +37,19 @@ static NSString * cellId = @"newAllubmtabeleviewwcellid";
 }
 //新建按钮
 -(void)doRightButtonTouch{
+
+    if ([AppUtil isBlankString:_alumbnameTextfield.text]) {
+        [[AppUtil appTopViewController] showHint:@"请输入相册名称"];
+        return;
+    }
+    if (_adviceArray.count == 0) {
+        [[AppUtil appTopViewController] showHint:@"请选择至少一个设备"];
+        return;
+    }
+  
+    
     
     NSString * str = [_adviceArray componentsJoinedByString:@","];
-    
     [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid":[AccountManager sharedAccountManager].loginModel.userid,@"token":[AccountManager sharedAccountManager].loginModel.userid,@"objective":@"album",@"action":@"add",@"data":@{@"albumname":_alumbnameTextfield.text,@"userid":[AccountManager sharedAccountManager].loginModel.userid,@"dids":str}} result:^(id model) {
         
         [self.navigationController popViewControllerAnimated:YES];
@@ -57,10 +67,7 @@ static NSString * cellId = @"newAllubmtabeleviewwcellid";
     }];
 
 
-
-
 }
-
 
 -(void)setupView{
     [super  setupView];
@@ -149,10 +156,5 @@ static NSString * cellId = @"newAllubmtabeleviewwcellid";
     }
     
 }
-
-
-
-
-
 
 @end

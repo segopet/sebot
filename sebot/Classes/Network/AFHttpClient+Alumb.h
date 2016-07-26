@@ -24,8 +24,7 @@
 
 
 //通过我的设备的接口来判断是否绑定了设备
-
-
+-(void)querMydeviceWithUserid:(NSString *)userid token:(NSString * )token complete:(void(^)(ResponseModel *model))completeBlock;
 
 
 

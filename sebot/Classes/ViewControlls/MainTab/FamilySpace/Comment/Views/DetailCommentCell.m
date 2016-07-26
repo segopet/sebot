@@ -51,7 +51,8 @@
     _nameLB = [[UILabel alloc] init];
     _nameLB.font = [UIFont systemFontOfSize:15];
     _nameLB.numberOfLines = 1;
-
+    _nameLB.textColor = RED_COLOR;
+    
 //    _typeLB = [[UILabel alloc] init];
 //    _typeLB.font = [UIFont systemFontOfSize:13];
 //    _typeLB.textAlignment = NSTextAlignmentCenter;
@@ -124,7 +125,7 @@
     //_ageLB.sd_layout.leftSpaceToView(_genderLB, 8).centerYEqualToView(_genderLB).widthIs(40).heightIs(20);
     //_ageLB.sd_cornerRadiusFromWidthRatio = @(0.28);
     
-    _timeLB.sd_layout.leftEqualToView(_nameLB).topSpaceToView(_nameLB, 6).heightIs(30).rightSpaceToView(contentView, 80);
+    _timeLB.sd_layout.leftEqualToView(_nameLB).topSpaceToView(_nameLB, 0).heightIs(30).rightSpaceToView(contentView, 80);
 //    [_timeLB setSingleLineAutoResizeWithMaxWidth:contentView.width * 0.5];
     
     _replyBtn.sd_layout.centerYEqualToView(_timeLB).rightSpaceToView(contentView, 8).heightIs(30).widthIs(40);
