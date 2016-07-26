@@ -184,7 +184,7 @@ static BOOL isBackGroundActivateApplication;
         }
         if (result) {
             // 确认绑定成功
-             [[NSNotificationCenter defaultCenter]postNotificationName:@"bangdingshuaxin" object:nil];
+            
             
             if ([result[@"error_code"]intValue]!=0) {
                 return;
@@ -217,6 +217,7 @@ static BOOL isBackGroundActivateApplication;
         NSLog(@"acitve or background");
         UIAlertView *alertView =[[UIAlertView alloc]initWithTitle:@"收到一条消息" message:userInfo[@"aps"][@"desc"] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
         [alertView show];
+
     }
     else//杀死状态下，直接跳转到跳转页面。
     {
