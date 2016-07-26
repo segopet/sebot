@@ -54,6 +54,8 @@
     _popView.ParentView = app.window;
     _popView.delegate = self;
     
+    NSLog(@"......");
+    
     
 
     
