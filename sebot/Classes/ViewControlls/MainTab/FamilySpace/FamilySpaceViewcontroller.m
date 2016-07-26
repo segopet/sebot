@@ -27,6 +27,7 @@ static NSString * cellId = @"FamilyCellides";
     PopView * _popView;
     AppDelegate *app;
     NSMutableArray * _listArray;
+    UIImageView * _image;
 }
 @end
 
@@ -100,6 +101,7 @@ static NSString * cellId = @"FamilyCellides";
     [[AFHttpClient sharedAFHttpClient]querMydeviceWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid complete:^(ResponseModel *model) {
         [_listArray addObjectsFromArray:model.list];
         if (_listArray.count > 0 ) {
+            [_image removeFromSuperview];
             self .tableView.frame =  CGRectMake(0, 0, self.view.width, self.view.height);
             [self.tableView registerClass:[FamilyTableViewCell class] forCellReuseIdentifier:cellId];
             self.tableView.backgroundColor = [UIColor whiteColor];
@@ -118,9 +120,9 @@ static NSString * cellId = @"FamilyCellides";
 }
 
 -(void)noBangdingView{
-    UIImageView * image = [[UIImageView alloc]initWithFrame:CGRectMake(60 * W_Wide_Zoom, 200 * W_Hight_Zoom, 250 * W_Wide_Zoom, 250 * W_Hight_Zoom)];
-    image.image = [UIImage imageNamed:@"无图时.png"];
-    [self.view addSubview:image];
+    _image = [[UIImageView alloc]initWithFrame:CGRectMake(60 * W_Wide_Zoom, 200 * W_Hight_Zoom, 250 * W_Wide_Zoom, 250 * W_Hight_Zoom)];
+    _image.image = [UIImage imageNamed:@"无图时.png"];
+    [self.view addSubview:_image];
     
     UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您还没有绑定设备，请立即绑定设备？" preferredStyle:UIAlertControllerStyleAlert];
     
@@ -319,7 +321,7 @@ static NSString * cellId = @"FamilyCellides";
         [_popView removeFromSuperview];
         [self showSuccessHudWithHint:model.retDesc];
 
-        [self isbangding];
+      //  [self isbangding];
     }];
     
 }
