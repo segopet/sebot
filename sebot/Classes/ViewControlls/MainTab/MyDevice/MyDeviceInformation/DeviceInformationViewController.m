@@ -61,7 +61,6 @@
             if ([str isEqualToString:@"ds001"]) {
                 
                 _heandBtn.image =[UIImage imageNamed:@"on_line"];
-                _startBtn.enabled = YES;
                 _startBtn.backgroundColor =RED_COLOR;
                 _cancelBtn.enabled = YES;
                 
@@ -69,7 +68,7 @@
                 
             {
                 _heandBtn.image =[UIImage imageNamed:@"off_line"];
-                _startBtn.enabled = NO;
+          
                 _cancelBtn.enabled = NO;
                 
                 
@@ -77,7 +76,7 @@
             {
                 _heandBtn.image =[UIImage imageNamed:@"on_connection"];
                 
-                _startBtn.enabled = NO;
+
                 _cancelBtn.enabled = NO;
                 
             }
@@ -208,7 +207,7 @@
         if ([str isEqualToString:@"ds001"]) {
             
             _heandBtn.image =[UIImage imageNamed:@"on_line"];
-            _startBtn.enabled = YES;
+            _startBtn.selected = YES;
             _startBtn.backgroundColor =RED_COLOR;
             _cancelBtn.enabled = YES;
             
@@ -216,7 +215,7 @@
             
         {
             _heandBtn.image =[UIImage imageNamed:@"off_line"];
-            _startBtn.enabled = NO;
+            _startBtn.selected = NO;
             _cancelBtn.enabled = YES;
             
             
@@ -224,8 +223,7 @@
         }else
         {
             _heandBtn.image =[UIImage imageNamed:@"on_connection"];
-            
-            _startBtn.enabled = NO;
+            _startBtn.selected = NO;
             _cancelBtn.enabled = YES;
             
         }
@@ -309,7 +307,7 @@
 
 - (IBAction)startVideoBtn:(UIButton *)sender {
 
-    if (sender.enabled) {
+    if (sender.selected) {
         
          [self sipCall:checkmodel.deviceno sipName:nil];
          [self addDeviceUseMember];

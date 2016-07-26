@@ -309,7 +309,7 @@
     DeviceInformationViewController * inforationVC =[[DeviceInformationViewController alloc]initWithNibName:@"DeviceInformationViewController" bundle:nil];
     inforationVC.didNumber = checkModel.did;
 
-    MyDeviceTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+  //  MyDeviceTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
     
   //  if (cell.VideoStateBtn.enabled) {
         [self.navigationController pushViewController:inforationVC animated:YES];
