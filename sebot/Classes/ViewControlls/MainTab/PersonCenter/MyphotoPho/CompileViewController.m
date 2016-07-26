@@ -101,13 +101,14 @@ static NSString * cellId = @"showComCell";
 
 -(void)setupData{
     [super setupData];
-    [[AFHttpClient sharedAFHttpClient]testWithuserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid complete:^(ResponseModel *model) {
+    
+    NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
+    [[AFHttpClient  sharedAFHttpClient]albumdetail:str token:str aid:self.aidName complete:^(ResponseModel *model) {
+        
         [self.dataSource addObjectsFromArray:model.list];
         
         [self.tableView reloadData];
     }];
-    
-    
     
     
 }
@@ -201,8 +202,16 @@ static NSString * cellId = @"showComCell";
     
     cell.nameLabel.text = model.deviceremark;
     cell.rightBtn.tag = indexPath.row + 12;
-    cell.rightBtn.selected = NO;
+    
     [cell.rightBtn addTarget:self action:@selector(doRightButtonTouch:) forControlEvents:UIControlEventTouchUpInside];
+    
+    if ([model.chose isEqualToString:@"0"]) {
+        cell.rightBtn.selected = NO;
+    }else
+    {
+        cell.rightBtn.selected = YES;
+        
+    }
     
     return cell;
 }
