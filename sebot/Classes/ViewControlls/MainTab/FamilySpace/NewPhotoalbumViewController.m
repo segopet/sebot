@@ -99,7 +99,7 @@
 
     if (indexPath.row < 1) {
         UIImageView * image = [[UIImageView alloc]initWithFrame:cell.bounds];
-        image.image = [UIImage imageNamed:@"addImage.png"];
+        image.image = [UIImage imageNamed:@"albumAdd.png"];
         [cell.contentView addSubview:image];
 
     }else{
@@ -110,19 +110,23 @@
     [cell.contentView addSubview:image];
     
     UIView * downView = [[UIView alloc]initWithFrame:CGRectMake(0 * W_Wide_Zoom, 80 * W_Hight_Zoom, 110 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
-    downView.backgroundColor = [UIColor grayColor];
+    downView.backgroundColor = [UIColor clearColor];
     [cell.contentView addSubview:downView];
         
+        UIImageView * mengcengImage = [[UIImageView alloc]initWithFrame:downView.bounds];
+        mengcengImage.image = [UIImage imageNamed:@"蒙层.png"];
+        [downView addSubview:mengcengImage];
+        
         UILabel * lable = [[UILabel alloc]initWithFrame:CGRectMake(3 * W_Wide_Zoom, 2 * W_Hight_Zoom, 80 * W_Wide_Zoom, 26 * W_Hight_Zoom)];
-        lable.font = [UIFont systemFontOfSize:14];
+        lable.font = [UIFont systemFontOfSize:13];
         lable.text = model.albumname;
-        lable.textColor = [UIColor blackColor];
+        lable.textColor = [UIColor whiteColor];
         [downView addSubview:lable];
         
         UILabel * lastLabel = [[UILabel alloc]initWithFrame:CGRectMake(90 * W_Wide_Zoom, 2 * W_Hight_Zoom, 10 * W_Wide_Zoom, 26 * W_Hight_Zoom)];
-        lastLabel.font = [UIFont systemFontOfSize:14];
+        lastLabel.font = [UIFont systemFontOfSize:13];
         lastLabel.text = model.photonum;
-        lastLabel.textColor = [UIColor blackColor];
+        lastLabel.textColor = [UIColor whiteColor];
         [downView addSubview:lastLabel];
     }
    
@@ -145,7 +149,7 @@
 //配置item的边距
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-    return UIEdgeInsetsMake(9, 9, 0, 9);
+    return UIEdgeInsetsMake(13, 11 , 0, 11);
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath

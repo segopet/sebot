@@ -26,6 +26,7 @@ static NSString * cellId = @"FamilyCellides";
 {
     PopView * _popView;
     AppDelegate *app;
+    NSMutableArray * _listArray;
 }
 @end
 
@@ -37,16 +38,18 @@ static NSString * cellId = @"FamilyCellides";
      [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(dada) name:@"shuaxinn" object:nil];
     //shuaxinn12
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(dada1) name:@"shuaxinn12" object:nil];
-
+   
 }
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    _listArray = [NSMutableArray array];
+   
+}
+
 -(void)dada{
     [self initRefreshView];
-
-
 }
-
 -(void)dada1{
-
 
     [self loadDataSourceWithPage:1];
 
@@ -65,17 +68,18 @@ static NSString * cellId = @"FamilyCellides";
     _popView.center = self.view.center;
     _popView.ParentView = app.window;
     _popView.delegate = self;
-
-    [self isbangding];
+     [self isbangding];
+    
 }
 
 -(void)setupView{
     [super setupView];
+    
+    
 }
 -(void)doRightButtonTouch{
-    NSUserDefaults * userdefalus = [NSUserDefaults standardUserDefaults];
-    NSString * iscont = [userdefalus objectForKey:@"isContent"];
-    if ([iscont isEqualToString:@"yes"]) {
+
+    if (_listArray.count > 0) {
         NewPhotoalbumViewController * newVc = [[NewPhotoalbumViewController alloc]init];
         [self.navigationController pushViewController:newVc animated:NO];
     }else{
@@ -87,28 +91,24 @@ static NSString * cellId = @"FamilyCellides";
 
 
 -(void)isbangding{
-    NSUserDefaults * userdefalus = [NSUserDefaults standardUserDefaults];
-    NSString * iscont = [userdefalus objectForKey:@"isContent"];
-    if ([iscont isEqualToString:@"yes"]) {
+    [[AFHttpClient sharedAFHttpClient]querMydeviceWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid complete:^(ResponseModel *model) {
+        [_listArray addObjectsFromArray:model.list];
+        if (_listArray.count > 0 ) {
         self .tableView.frame =  CGRectMake(0, 0, self.view.width, self.view.height - NAV_BAR_HEIGHT);
         [self.tableView registerClass:[FamilyTableViewCell class] forCellReuseIdentifier:cellId];
         self.tableView.backgroundColor = [UIColor whiteColor];
         [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
         [self initRefreshView];
-    }else{
-        
-        [self noBangdingView];
-    }
+        }else{
+            [self noBangdingView];
+        }
+    }];
+
 }
-
-
-
 -(void)noBangdingView{
-//    [[AppUtil appTopViewController] showHint:@"您还没有绑定设备，请绑定设备"];
     UIImageView * image = [[UIImageView alloc]initWithFrame:CGRectMake(60 * W_Wide_Zoom, 200 * W_Hight_Zoom, 250 * W_Wide_Zoom, 250 * W_Hight_Zoom)];
     image.image = [UIImage imageNamed:@"无图时.png"];
     [self.view addSubview:image];
-    
     
     UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您还没有绑定设备，请立即绑定设备？" preferredStyle:UIAlertControllerStyleAlert];
     
@@ -119,10 +119,7 @@ static NSString * cellId = @"FamilyCellides";
         [self.view addSubview:_popView];
     }]];
     [self presentViewController:alert animated:YES completion:nil];
-
 }
-
-
 
 -(void)loadDataSourceWithPage:(int)page{
     [[AFHttpClient sharedAFHttpClient]familyArticlesWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid page:[NSString stringWithFormat:@"%d",page] complete:^(ResponseModel *model) {
@@ -182,6 +179,7 @@ static NSString * cellId = @"FamilyCellides";
     NSString * headStr = model.headportrait;
     NSURL * headUrl = [NSURL URLWithString:headStr];
     [cell.headImage sd_setImageWithURL:headUrl placeholderImage:[UIImage imageNamed:@"默认头像.png"]];
+    //这里不仅要这样写，cell里面要把这个图片的 contentMode = UIViewContentModeCenter，layer.masksToBounds = YES;
     if (model.cutImage) {
         cell.bigImage.image = model.cutImage;
     }else{

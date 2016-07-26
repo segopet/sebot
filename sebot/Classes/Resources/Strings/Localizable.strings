@@ -54,8 +54,9 @@
  "RepairHead" = "修改头像";
  "compilephoto" = "编辑相册";
 
-
-
+//album
+"photograph" = "拍照";
+"photoalbum" = "相册";
 
 
 

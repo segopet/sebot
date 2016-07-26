@@ -18,11 +18,13 @@
         [self addSubview:_topView];
             
         _bigImage = [[UIImageView alloc]initWithFrame:CGRectMake(0 * W_Wide_Zoom, 65 * W_Hight_Zoom, 375 * W_Wide_Zoom, 270 * W_Hight_Zoom)];
-        _bigImage.backgroundColor =[UIColor blueColor];
+        _bigImage.backgroundColor =[UIColor clearColor];
+        _bigImage.layer.masksToBounds = YES;
+        _bigImage.contentMode = UIViewContentModeCenter;
         [self addSubview:_bigImage];
         
         _headImage= [[UIImageView alloc]initWithFrame:CGRectMake(10 * W_Wide_Zoom, 17 * W_Hight_Zoom,40 * W_Wide_Zoom, 40 * W_Hight_Zoom)];
-        _headImage.backgroundColor = [UIColor blackColor];
+        _headImage.backgroundColor = [UIColor clearColor];
         _headImage.layer.cornerRadius = _headImage.width/2;
         [self addSubview:_headImage];
         
