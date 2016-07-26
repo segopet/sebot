@@ -25,4 +25,11 @@
 -(void)delePhoto:(NSString *)userid token:(NSString *)token  aid:(NSString *)aid complete:(void(^)(ResponseModel *model))completeBlock;
 
 
+/*
+ * 编辑相册
+ */
+
+-(void)albumdetail:(NSString *)userid token:(NSString *)token  aid:(NSString *)aid complete:(void(^)(ResponseModel *model))completeBlock;
+
+
 @end

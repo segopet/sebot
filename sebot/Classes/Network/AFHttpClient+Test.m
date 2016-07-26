@@ -115,7 +115,32 @@
 }
 
 
+-(void)albumdetail:(NSString *)userid token:(NSString *)token  aid:(NSString *)aid complete:(void(^)(ResponseModel *model))completeBlock
+{
 
+    NSMutableDictionary * parms = [[NSMutableDictionary alloc]init];
+    parms[@"userid"] = userid;
+    parms[@"token"] = token;
+    parms[@"objective"] = @"album";
+    parms[@"action"] = @"albumdetail";
+    NSMutableDictionary * dataparms = [[NSMutableDictionary alloc]init];
+    dataparms[@"userid"] = userid;
+    dataparms[@"aid"] = aid;
+    parms[@"data"] =dataparms;
+    
+    [self POST:@"sebot/moblie/forward" parameters:parms result:^(ResponseModel * model) {
+        
+        model.list = [NewAlbumAdviceModel arrayOfModelsFromDictionaries:model.list];
+        
+        if (model) {
+            completeBlock(model);
+        }
+        
+    }];
+
+    
+    
+}
 
 
 
