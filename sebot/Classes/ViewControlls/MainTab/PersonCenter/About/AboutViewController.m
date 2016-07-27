@@ -74,7 +74,7 @@
     [_headView addSubview:_heandBtn];
     
     
-    self.tableView.frame = CGRectMake(0, 60, SCREEN_WIDTH, 330);
+    self.tableView.frame = CGRectMake(0, 60, SCREEN_WIDTH, 330*W_Hight_Zoom);
     self.tableView.scrollEnabled = NO;
     
     self.tableView.tableHeaderView =_headView;

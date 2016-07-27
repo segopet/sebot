@@ -23,7 +23,7 @@
                         <constraint firstAttribute="height" constant="43" id="sDb-na-t74"/>
                     </constraints>
                     <state key="normal" title="退出">
-                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="6"/>
