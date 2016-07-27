@@ -356,20 +356,34 @@
 
 - (IBAction)cancelDeviceBtn:(UIButton *)sender {
     
-    NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
-  
-    [[AFHttpClient sharedAFHttpClient]solvDevice:str token:str did:checkmodel.did complete:^(ResponseModel * model) {
-        
-        NSLog(@"%@",model.retDesc);
-        [self showHint:model.retDesc];
-        //发送个通知，让主界面刷一次
-          [[NSNotificationCenter defaultCenter]postNotificationName:@"bangdingshuaxin" object:nil];
-    
-    }];
-    
-    [self.navigationController popViewControllerAnimated:YES];
+    UIAlertView *alertView =[[UIAlertView alloc]initWithTitle:nil message:@"你确定解除绑定吗" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"取消", nil];
+    [alertView show];
     
 }
+
+
+
+
+
+
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex;{
+    
+    if (buttonIndex == 0) {
+        
+        NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
+        [[AFHttpClient sharedAFHttpClient]solvDevice:str token:str did:checkmodel.did complete:^(ResponseModel * model) {
+            NSLog(@"%@",model.retDesc);
+            [self showHint:model.retDesc];
+            
+        }];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+        
+}
+
+
+
 
 
 
