@@ -70,7 +70,7 @@
     self.view.backgroundColor = GRAY_COLOR;
     [self showBarButton:NAV_RIGHT imageName:@"sebot_add"];
     
-    image =[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 375, 375)];
+    image =[[UIImageView alloc]initWithFrame:CGRectMake(60 * W_Wide_Zoom, 200 * W_Hight_Zoom, 250 * W_Wide_Zoom, 250 * W_Hight_Zoom)];
     image.hidden = YES;
     image.center = self.view.center;
     image.image =[UIImage imageNamed:@"无图时.png"];

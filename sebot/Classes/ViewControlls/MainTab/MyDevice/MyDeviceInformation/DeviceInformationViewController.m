@@ -362,6 +362,8 @@
         
         NSLog(@"%@",model.retDesc);
         [self showHint:model.retDesc];
+        //发送个通知，让主界面刷一次
+          [[NSNotificationCenter defaultCenter]postNotificationName:@"bangdingshuaxin" object:nil];
     
     }];
     
