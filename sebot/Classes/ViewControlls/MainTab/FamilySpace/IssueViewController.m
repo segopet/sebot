@@ -43,6 +43,11 @@
 -(void)releaseInfo:(UIButton *)sender{
     sender.userInteractionEnabled = NO;
     [_imageArray removeLastObject];
+    if (_imageArray.count < 1) {
+         [[AppUtil appTopViewController] showHint:@"请至少选择一张图片"];
+        return;
+    }
+    
     NSMutableString * stingArr =[[NSMutableString alloc]init];
     NSDateFormatter * formater =[[NSDateFormatter alloc]init];
     NSMutableArray * dataBaseArr =[[NSMutableArray alloc]init];
@@ -65,6 +70,8 @@
         }
     }
     [stingArr appendString:@"]"];
+    
+    
     
     [self showHudInView:self.view hint:@"正在发布..."];
     
