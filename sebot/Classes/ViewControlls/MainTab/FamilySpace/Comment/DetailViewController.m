@@ -54,7 +54,7 @@ NSString * const kDetailCommentCellID = @"DetailCommentCell";
 
 -(UIView *)toolView{
     
-    _toolView = [[UIView alloc] initWithFrame:CGRectMake(0, 618, self.tableView.width, 49)];
+    _toolView = [[UIView alloc] initWithFrame:CGRectMake(0 * W_Wide_Zoom, 618 * W_Hight_Zoom, self.tableView.width, 49 * W_Hight_Zoom)];
     _toolView.backgroundColor = LIGHT_GRAY_COLOR;
     _toolView.layer.shadowColor = [UIColor blackColor].CGColor;
     _toolView.layer.shadowOffset = CGSizeMake(0, -1);
