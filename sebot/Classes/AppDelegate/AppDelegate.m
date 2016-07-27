@@ -23,6 +23,8 @@ static BOOL isBackGroundActivateApplication;
     BOOL isIknow;
     MainTabViewController * mainVC;
     
+    //45230482D344858E2A2DCFEB1B5DBA52DF4D82FE
+    
 }
 
 @end
