@@ -27,8 +27,12 @@
     [super viewDidLoad];
     self.view.backgroundColor =[UIColor blackColor];
     
-    
-    [self setNavTitle:[NSString stringWithFormat:@"1/%ld",_dataArray.count]];
+    if (_dataArray.count > 0) {
+         [self setNavTitle:[NSString stringWithFormat:@"1/%ld",_dataArray.count]];
+    }else{
+        [self setNavTitle:@"0"];
+    }
+   
     
 }
 
@@ -78,7 +82,13 @@
 
 - (void)QFTableView:(QFTableView *)fanView scrollToIndex:(NSInteger)index{
 
-    [self setNavTitle:[NSString stringWithFormat:@"%ld/%ld",index + 1,_dataArray.count]];
+    if (_dataArray.count > 0) {
+         [self setNavTitle:[NSString stringWithFormat:@"%ld/%ld",index + 1,_dataArray.count]];
+    }else{
+    
+        [self setNavTitle:@"0"];
+    }
+   
     
 
 }
