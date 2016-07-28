@@ -66,8 +66,11 @@ singleton_implementation(AFHttpClient)
                 result(model);
             }
         }else{
-            [[AppUtil appTopViewController] showHint:model.retDesc];
             
+            [[AppUtil appTopViewController] showHint:model.retDesc];
+            [[NSNotificationCenter defaultCenter]postNotificationName:@"haha" object:nil];
+            
+
             if (result) {
                 result(nil);
             }

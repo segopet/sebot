@@ -14,6 +14,8 @@
 #import "CheckDeviceModel.h"
 #import "AFHttpClient+MyDevice.h"
 #import "AppUtil.h"
+#import "InCallViewController.h"
+#import "AFHttpClient+DeviceInformation.h"
 
 
 @interface MydeviceViewcontroller()<PopDelegate>
@@ -48,8 +50,20 @@
     NSString * str =[defults objectForKey:@"s_m_text"];
     _popView.numberTextfied.text= str;
      [self initRefreshView];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(callUpdate:) name:kSephoneCallUpdate object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(registrationUpdate:) name:kSephoneRegistrationUpdate object:nil];
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(pass) name:@"haha" object:nil];
     
     
+
+}
+
+- (void)pass
+
+{
+    
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
     
 }
 
@@ -60,8 +74,77 @@
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"s_m_text"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kSephoneCallUpdate object:nil];
+    
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:kSephoneRegistrationUpdate object:nil];
+    
     
 }
+
+// 注册消息处理
+- (void)registrationUpdate:(NSNotification *)notif {
+    SephoneRegistrationState state = [[notif.userInfo objectForKey:@"state"] intValue];
+    SephoneProxyConfig *cfg = [[notif.userInfo objectForKey:@"cfg"] pointerValue];
+    // Only report bad credential issue
+    
+    
+    
+    
+    
+    switch (state) {
+            
+        case SephoneRegistrationNone:
+            
+            NSLog(@"======开始");
+            break;
+        case SephoneRegistrationProgress:
+            NSLog(@"=====注册进行");
+            break;
+        case SephoneRegistrationOk:
+            
+            NSLog(@"=======成功");
+            break;
+        case SephoneRegistrationCleared:
+            NSLog(@"======注销成功")
+            break;
+        case SephoneRegistrationFailed:
+            NSLog(@"========OK 以外都是失败");
+            break;
+            
+        default:
+            break;
+    }
+    
+}
+
+
+// 通话状态处理
+- (void)callUpdate:(NSNotification *)notif {
+    SephoneCall *call = [[notif.userInfo objectForKey:@"call"] pointerValue];
+    SephoneCallState state = [[notif.userInfo objectForKey:@"state"] intValue];
+    
+    switch (state) {
+        case SephoneCallOutgoingInit:{
+            // 成功
+            InCallViewController *   _incallVC =[[InCallViewController alloc]initWithNibName:@"InCallViewController" bundle:nil];
+            [_incallVC setCall:call];
+            [self presentViewController:_incallVC animated:YES completion:nil];
+            break;
+        }
+            
+        case SephoneCallStreamsRunning: {
+            break;
+        }
+        case SephoneCallUpdatedByRemote: {
+            break;
+        }
+            
+        default:
+            break;
+    }
+}
+
+
 
 
 - (void)viewDidLoad{
@@ -82,6 +165,10 @@
     _popView.ParentView = app.window;
     _popView.delegate = self;
     self.dataSource =[NSMutableArray array];
+    
+    
+    [SephoneManager addProxyConfig:[AccountManager sharedAccountManager].loginModel.sipno password:[AccountManager sharedAccountManager].loginModel.sippw domain:@"www.segosip001.cn"];
+
     
     
 }
@@ -223,6 +310,7 @@
 {
     
     NSLog(@"22");
+    
     [_popView removeFromSuperview];
 }
 /**
@@ -230,20 +318,21 @@
  */
 - (void)sureMehod
 {
-
-   
+    
     NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
     
     if ([AppUtil isBlankString:_popView.numberTextfied.text]) {
          _popView.numberTextfied.text= [[NSUserDefaults standardUserDefaults]objectForKey:@"s_m_text"];
     }else
     {
-        
+        MBProgressHUD *hud=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.mode=MBProgressHUDAnimationFade;//枚举类型不同的效果
+        hud.labelText=@"loading.......";
+        [_popView removeFromSuperview];
         
     }
     [[AFHttpClient sharedAFHttpClient]addDevide:str token:str deviceno:_popView.numberTextfied.text complete:^(ResponseModel * model) {
-        [_popView removeFromSuperview];
-        [self showSuccessHudWithHint:model.retDesc];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
         
     }];
 
@@ -286,15 +375,16 @@
         // 可以去开启视频
         
         [cell.VideoStateBtn setImage:[UIImage imageNamed:@"sebot_start_on"] forState:UIControlStateNormal];
+        cell.VideoStateBtn.tag = 1000+indexPath.row;
+        [cell.VideoStateBtn addTarget:self action:@selector(showWaitViewSu:) forControlEvents:UIControlEventTouchUpInside];
         cell.VideoStateBtn.enabled = YES;
-        
     }else
     {
         // 灰色  不能开启
         
         [cell.VideoStateBtn setImage:[UIImage imageNamed:@"sebot_start_off"] forState:UIControlStateNormal];
-        cell.VideoStateBtn.enabled = NO;
-        
+        [cell.VideoStateBtn addTarget:self action:@selector(showWaitView) forControlEvents:UIControlEventTouchUpInside];
+        cell.VideoStateBtn.enabled = YES;
         
     }
     
@@ -303,6 +393,55 @@
     return cell;
     
 }
+
+- (void)showWaitView
+{
+    
+    
+    [self showYuLei:@"设备离线不能开启"];
+    
+    
+}
+
+
+- (void)showWaitViewSu:(UIButton *)sender
+{
+    NSLog(@"成功是直接开启");
+    NSInteger i  = sender.tag -1000;
+    
+    CheckDeviceModel *checkModel = self.dataSource[i];
+    [self sipCall:checkModel.deviceno sipName:nil];
+    [self addDeviceUseMember:checkModel.did];
+    
+}
+
+
+/**
+ * 添加设备使用记录
+ */
+
+- (void)addDeviceUseMember:(NSString *)str1
+
+{
+    
+    // "object": "主叫对象(mobile 移动客户端/device 设备端)"
+    
+    NSString  * str = [AccountManager sharedAccountManager].loginModel.userid;
+    
+    [[AFHttpClient sharedAFHttpClient]solvDevice:str token:str call:str called:str1 object:@"mobile" complete:^(ResponseModel *model) {
+        
+        NSUserDefaults * user =[NSUserDefaults standardUserDefaults];
+        [user setObject:model.content forKey:@"contentID"];
+        [user synchronize];
+        
+        
+        
+    }];
+    
+    
+    
+}
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -336,6 +475,17 @@
 }
 
 
+- (void)sipCall:(NSString*)dialerNumber sipName:(NSString *)sipName
+{
+    
+    NSString *  displayName  =nil;
+    //
+    //    [[SephoneManager instance] call:dialerNumber displayName:displayName transfer:FALSE];
+    
+    [[SephoneManager instance]call:dialerNumber displayName:displayName transfer:FALSE highDefinition:FALSE];
+    
+    
+}
 
 
 @end

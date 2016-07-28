@@ -37,7 +37,7 @@
     usid = [AccountManager sharedAccountManager].loginModel.userid;
     [self setNavTitle: NSLocalizedString(@"MyphotoAlbum", nil)];
     self.view.backgroundColor = [UIColor whiteColor];
-    DefaultesImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT/4, 373, 373)];
+    DefaultesImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT/4, 373*W_Wide_Zoom, 373*W_Hight_Zoom)];
     DefaultesImage.image =[UIImage imageNamed:@"无图时.png"];
     DefaultesImage.hidden = YES;
     [self.view addSubview:DefaultesImage];
