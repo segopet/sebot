@@ -120,6 +120,8 @@ static NSString * cellId = @"FamilyCellides";
 }
 
 -(void)noBangdingView{
+    [self.tableView removeFromSuperview];
+    
     _image = [[UIImageView alloc]initWithFrame:CGRectMake(60 * W_Wide_Zoom, 200 * W_Hight_Zoom, 250 * W_Wide_Zoom, 250 * W_Hight_Zoom)];
     _image.image = [UIImage imageNamed:@"无图时.png"];
     [self.view addSubview:_image];

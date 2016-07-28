@@ -375,7 +375,8 @@
         [[AFHttpClient sharedAFHttpClient]solvDevice:str token:str did:checkmodel.did complete:^(ResponseModel * model) {
             NSLog(@"%@",model.retDesc);
             [self showHint:model.retDesc];
-            
+            [[NSNotificationCenter defaultCenter]postNotificationName:@"bangdingshuaxin" object:nil];
+
         }];
         [self.navigationController popViewControllerAnimated:YES];
     }

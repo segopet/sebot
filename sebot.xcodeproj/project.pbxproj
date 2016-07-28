@@ -1136,6 +1136,7 @@
 		7DD7D1D01D0FE21B0002CD2E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7DE523921D13D53800C5B5EF /* ForegetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForegetPasswordViewController.h; sourceTree = "<group>"; };
 		7DE523931D13D53800C5B5EF /* ForegetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForegetPasswordViewController.m; sourceTree = "<group>"; };
+		7DECAF4F1D48A433009ED61C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		7DF28C3D1D387D2B00FA31C6 /* AFHttpClient+Regist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+Regist.h"; sourceTree = "<group>"; };
 		7DF28C3E1D387D2B00FA31C6 /* AFHttpClient+Regist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+Regist.m"; sourceTree = "<group>"; };
 		7DF28C431D38D87800FA31C6 /* LargeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LargeViewController.h; sourceTree = "<group>"; };
@@ -3170,6 +3171,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				57D1E5FF1CFED25900BEDFF6 /* Base */,
+				7DECAF4F1D48A433009ED61C /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

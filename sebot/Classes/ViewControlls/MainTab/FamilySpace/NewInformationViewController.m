@@ -95,9 +95,9 @@ static NSString * cellId = @"newAllubmtabeleviewwcellid";
     zhidingLabel.font = [UIFont systemFontOfSize:13];
     [self.view addSubview:zhidingLabel];    
     
-    self.tableView.frame = CGRectMake(0, 160 * W_Hight_Zoom, self.view.width, self.view.height- 160);
+    self.tableView.frame = CGRectMake(0, 175 * W_Hight_Zoom, self.view.width, self.view.height- 175);
     [self.tableView registerClass:[NewAlumbleTableViewCell class] forCellReuseIdentifier:cellId];
-    self.tableView.backgroundColor = [UIColor whiteColor];
+    self.tableView.backgroundColor = LIGHT_GRAY_COLOR;
     self.tableView.tableHeaderView = nil;
     self.tableView.showsVerticalScrollIndicator = NO;
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];

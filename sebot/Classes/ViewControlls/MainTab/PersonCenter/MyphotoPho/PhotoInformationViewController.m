@@ -158,7 +158,7 @@ static NSString *kheaderIdentifier = @"headerIdentifier";
     
    
     rightArr =@[@"管理相册",@"编辑相册"];
-    tabTop =[[UITableView alloc]initWithFrame:CGRectMake(280, 60, 100, 100) style:UITableViewStylePlain];
+    tabTop =[[UITableView alloc]initWithFrame:CGRectMake(280 * W_Wide_Zoom, 60 * W_Hight_Zoom, 100 * W_Wide_Zoom, 100 * W_Hight_Zoom) style:UITableViewStylePlain];
     tabTop.layer.borderWidth = 1;
     tabTop.layer.borderColor =GRAY_COLOR.CGColor;
     tabTop.hidden = YES;

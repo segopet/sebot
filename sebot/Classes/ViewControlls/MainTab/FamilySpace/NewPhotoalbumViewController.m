@@ -143,13 +143,13 @@
 //配置每个item的size
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(110 * W_Wide_Zoom, 110 * W_Hight_Zoom);
+   return CGSizeMake(110 * W_Wide_Zoom, 110 * W_Hight_Zoom);
 }
 
 //配置item的边距
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-    return UIEdgeInsetsMake(13, 11 , 0, 11);
+     return UIEdgeInsetsMake(13, 11 , 0, 11);
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath

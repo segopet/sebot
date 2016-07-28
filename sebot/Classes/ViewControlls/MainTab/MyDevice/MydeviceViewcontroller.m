@@ -67,7 +67,7 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     [self setNavTitle: NSLocalizedString(@"tabDevice", nil)];
-    self.view.backgroundColor = GRAY_COLOR;
+    self.view.backgroundColor = [UIColor whiteColor];
     [self showBarButton:NAV_RIGHT imageName:@"sebot_add"];
     
     image =[[UIImageView alloc]initWithFrame:CGRectMake(60 * W_Wide_Zoom, 200 * W_Hight_Zoom, 250 * W_Wide_Zoom, 250 * W_Hight_Zoom)];
@@ -76,14 +76,14 @@
     image.image =[UIImage imageNamed:@"无图时.png"];
     [self.view addSubview:image];
     
-     app = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    app = (AppDelegate *)[UIApplication sharedApplication].delegate;
     _popView = [[PopView alloc] initWithFrame:CGRectMake(0, 0,SCREEN_WIDTH ,SCREEN_HEIGHT)];
     _popView.center = self.view.center;
     _popView.ParentView = app.window;
     _popView.delegate = self;
     self.dataSource =[NSMutableArray array];
-
-
+    
+    
 }
 
 /**
@@ -177,7 +177,7 @@
     
     self.tableView.showsVerticalScrollIndicator   = NO;
     self.tableView.showsHorizontalScrollIndicator = NO;
-    self.tableView.backgroundColor =LIGHT_GRAY_COLOR;
+    self.tableView.backgroundColor =[UIColor whiteColor];
     
     self.tableView.tableFooterView=[[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
     self.tableView.tableHeaderView =[[UIView alloc]initWithFrame:CGRectZero];
