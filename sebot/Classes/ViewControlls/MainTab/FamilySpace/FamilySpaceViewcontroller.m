@@ -319,11 +319,12 @@ static NSString * cellId = @"FamilyCellides";
     {
         
     }
+    [self showHudInView:self.view hint:@"正在绑定中..."];
     [[AFHttpClient sharedAFHttpClient]addDevide:str token:str deviceno:_popView.numberTextfied.text complete:^(ResponseModel * model) {
         [_popView removeFromSuperview];
         [self showSuccessHudWithHint:model.retDesc];
+         [self hideHud];
 
-      //  [self isbangding];
     }];
     
 }
