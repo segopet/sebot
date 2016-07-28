@@ -401,7 +401,7 @@ ORTP_PUBLIC void rtp_session_rtcp_process_send(struct _RtpSession *s);
 ORTP_PUBLIC void rtp_session_rtcp_process_recv(struct _RtpSession *s);
 
 // 与LOSS_RATE_MIN_INTERVAL同步，原值5000
-#define RTCP_DEFAULT_REPORT_INTERVAL 3000 /* in milliseconds */
+#define RTCP_DEFAULT_REPORT_INTERVAL 1500 /* in milliseconds */
 
 
 /* packet parsing api */

@@ -136,7 +136,7 @@ typedef struct _SephoneManagerSounds {
 - (void)addPushCallId:(NSString*) callid;
 - (void)configurePushTokenForProxyConfig: (SephoneProxyConfig*)cfg;
 - (BOOL)popPushCallID:(NSString*) callId;
-- (SephoneCall *)acceptCallForCallId:(NSString*)callid;
+- (SephoneCall *)acceptCallForCallId:(NSString*)callid highDefinition:(BOOL)hd;
 - (void)cancelLocalNotifTimerForCallId:(NSString*)callid;
 
 + (BOOL)langageDirectionIsRTL;
@@ -155,8 +155,8 @@ typedef struct _SephoneManagerSounds {
 + (NSString*)documentFile:(NSString*)file;
 + (NSString*)cacheDirectory;
 
-- (void)acceptCall:(SephoneCall *)call;
-- (void)call:(NSString *)address displayName:(NSString*)displayName transfer:(BOOL)transfer;
+- (void)acceptCall:(SephoneCall *)call highDefinition:(BOOL)hd;
+- (void)call:(NSString *)address displayName:(NSString*)displayName transfer:(BOOL)transfer highDefinition:(BOOL)hd;
 
 
 +(id)getMessageAppDataForKey:(NSString*)key inMessage:(SephoneChatMessage*)msg;

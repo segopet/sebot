@@ -33,12 +33,14 @@ nortp_timeout=30
 
 [video]
 display=1
-capture=0
+capture=1
 show_local=0
 enabled=1
-size=qvga
+size=wqvga
 automatically_initiate=1
 automatically_accept=1
+freeze_on_error=1
+auto_decide_vsize=1
 
 [net]
 firewall_policy=0
@@ -49,9 +51,22 @@ upload_bw=250
 playback_dev_id=AU: Audio Unit Receiver
 capture_dev_id=AU: Audio Unit Receiver
 eq_active=0
-echolimiter=1
-el_type=full
+playback_gain_db=0.0
+mic_gain_db=0.0
+agc=0
+speaker_agc_enabled=0
+el_speed=0.05
+el_downspeed=0.005
 noisegate=1
+ng_thres=0.02
+mic_ng_thres=0.02
+ng_sustain=400
+dc_removal=0
+echolimiter=1
+el_type=Full
+el_thres=0.02
+el_force=25
+el_sustain=200
 
 [app]
 preview_preference=0
@@ -79,7 +94,6 @@ transport=tls
 sharing_server=https://www.sego-phone.org:444/upload.php
 ice=1
 stun=stun.sego-phone.org
-
 
 [misc]
 history_max_size=0

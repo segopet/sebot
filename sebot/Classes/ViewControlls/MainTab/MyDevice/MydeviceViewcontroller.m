@@ -191,6 +191,8 @@
     }
 
     
+    self.tableView.scrollEnabled =NO;
+    
     
 }
 

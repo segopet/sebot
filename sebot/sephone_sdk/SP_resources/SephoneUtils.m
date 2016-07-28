@@ -21,7 +21,6 @@
 #import "SephoneUtils.h"
 #include "sephone/sephonecore.h"
 
-
 @implementation SephoneLogger
 
 

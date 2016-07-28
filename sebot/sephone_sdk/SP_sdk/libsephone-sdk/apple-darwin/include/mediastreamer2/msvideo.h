@@ -29,8 +29,8 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #define MS_VIDEO_SIZE_SQCIF_W 128
 #define MS_VIDEO_SIZE_SQCIF_H 96
 
-#define MS_VIDEO_SIZE_WQCIF_W 256
-#define MS_VIDEO_SIZE_WQCIF_H 144
+//#define MS_VIDEO_SIZE_WQCIF_W 256
+//#define MS_VIDEO_SIZE_WQCIF_H 144
 
 #define MS_VIDEO_SIZE_QCIF_W 176
 #define MS_VIDEO_SIZE_QCIF_H 144
@@ -125,6 +125,20 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 #define MS_VIDEO_SIZE_UXGA_W 1600
 #define MS_VIDEO_SIZE_UXGA_H 1200
 
+// 适用于宽屏手机的分辨率
+//@ xr 2016/4/25 分辨率高宽必须被8整除，否则android捕捉时会在边缘多出一条绿线，
+// 显示时会出现yuv缓区不对齐16字节(8*2 RGB565)而花屏。
+#define MS_VIDEO_SIZE_WQCIF_W 176 // 216 // 240
+#define MS_VIDEO_SIZE_WQCIF_H 96 // 120 // 136
+
+#define MS_VIDEO_SIZE_WCIF_W 352 // 424 // 480
+#define MS_VIDEO_SIZE_WCIF_H 200 // 240 // 272
+
+#define MS_VIDEO_SIZE_WQVGA_W 320
+#define MS_VIDEO_SIZE_WQVGA_H 176 // 184
+
+#define MS_VIDEO_SIZE_WVGA_W 640
+#define MS_VIDEO_SIZE_WVGA_H 360
 
 
 
@@ -176,6 +190,14 @@ typedef struct _MSVideoConfiguration MSVideoConfiguration;
 #define MS_VIDEO_SIZE_SXGA_MINUS (MSVideoSize){ MS_VIDEO_SIZE_SXGA_MINUS_W, MS_VIDEO_SIZE_SXGA_MINUS_H }
 
 #define MS_VIDEO_SIZE_UXGA (MSVideoSize){ MS_VIDEO_SIZE_UXGA_W, MS_VIDEO_SIZE_UXGA_H }
+
+// 适用于宽屏手机的分辨率
+#define MS_VIDEO_SIZE_WCIF (MSVideoSize){MS_VIDEO_SIZE_WCIF_W,MS_VIDEO_SIZE_WCIF_H}
+#define MS_VIDEO_SIZE_WQCIF (MSVideoSize){MS_VIDEO_SIZE_WQCIF_W,MS_VIDEO_SIZE_WQCIF_H}
+#define MS_VIDEO_SIZE_WQVGA (MSVideoSize){MS_VIDEO_SIZE_WQVGA_W,MS_VIDEO_SIZE_WQVGA_H}
+#define MS_VIDEO_SIZE_HVGA (MSVideoSize){MS_VIDEO_SIZE_HVGA_W,MS_VIDEO_SIZE_HVGA_H}
+#define MS_VIDEO_SIZE_WVGA (MSVideoSize){MS_VIDEO_SIZE_WVGA_W,MS_VIDEO_SIZE_WVGA_H}
+
 
 #ifdef _MSC_VER
 #define MS_VIDEO_SIZE_ASSIGN(vsize,name) \
@@ -392,6 +414,8 @@ MS2_PUBLIC bool_t ms_video_update_average_fps(MSAverageFPS* afps, uint32_t curre
  */
 MS2_PUBLIC MSVideoConfiguration ms_video_find_best_configuration_for_bitrate(const MSVideoConfiguration *vconf_list, int bitrate, int cpucount);
 
+MS2_PUBLIC MSVideoConfiguration ms_video_find_best_configuration_for_bitrate_aspect(const MSVideoConfiguration *vconf_list, int bitrate, bool_t widely);
+
 /**
  * Find the best video configuration from a list of configuration according to a given video size.
  * @param[in] vconf_list The list of video configurations to choose from.
@@ -423,5 +447,7 @@ MS2_PUBLIC MSVideoConfiguration ms_video_find_best_configuration_for_size(const 
 
 #define MS_FILTER_ENCODER_START_RECORD	MS_FILTER_BASE_METHOD(111,const char)
 #define MS_FILTER_ENCODER_STOP_RECORD		MS_FILTER_BASE_METHOD_NO_ARG(112)
+
+#define MS_FILTER_SET_MIRROR		MS_FILTER_BASE_METHOD(113,int)
 
 #endif

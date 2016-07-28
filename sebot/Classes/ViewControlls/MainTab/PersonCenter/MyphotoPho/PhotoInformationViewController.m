@@ -331,7 +331,7 @@ static NSString *kheaderIdentifier = @"headerIdentifier";
     
         [[AFHttpClient sharedAFHttpClient]Deletephoto:strusid token:strusid  pids:deleStr complete:^(ResponseModel * model) {
             
-            [self showSuccessHudWithHint:model.retCode];
+            [self showSuccessHudWithHint:model.retDesc];
             [self initRefreshView];
             
         }];
@@ -451,7 +451,7 @@ static NSString *kheaderIdentifier = @"headerIdentifier";
         }
         
         NSArray *timeTtile =[model.createtime componentsSeparatedByString:@","];
-        label.text =timeTtile[indexPath.row];
+        label.text =[NSString stringWithFormat:@" %@",timeTtile[indexPath.row]];
         
         
         

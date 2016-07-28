@@ -29,6 +29,7 @@ static NSString * cellId = @"showComCell";
     self.dataSource =[NSMutableArray array];
     _adviceArray =[NSMutableArray array];
     self.view.backgroundColor = [UIColor whiteColor];
+    self.automaticallyAdjustsScrollViewInsets = NO;
    
     
        
@@ -163,11 +164,20 @@ static NSString * cellId = @"showComCell";
     
     
     
-    self.tableView.frame = CGRectMake(0, 180 * W_Hight_Zoom, self.view.width, self.view.height- 180);
+    self.tableView.frame = CGRectMake(0, 155 * W_Hight_Zoom, self.view.width, self.view.height);
+    self.tableView.scrollEnabled = NO;
     [self.tableView registerClass:[NewAlumbleTableViewCell class] forCellReuseIdentifier:cellId];
-    self.tableView.backgroundColor = [UIColor whiteColor];
+    self.tableView.backgroundColor = GRAY_COLOR;
     self.tableView.tableHeaderView = nil;
     self.tableView.showsVerticalScrollIndicator = NO;
+    if ([self.tableView respondsToSelector:@selector(setSeparatorInset:)]) {
+        [self.tableView setSeparatorInset:UIEdgeInsetsMake(0,0,0,0)];
+    }
+    
+    if ([self.tableView respondsToSelector:@selector(setLayoutMargins:)]) {
+        [self.tableView setLayoutMargins:UIEdgeInsetsMake(0,0,0,0)];
+    }
+
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
 
     
