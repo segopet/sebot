@@ -15,11 +15,12 @@
 #import "CompileViewController.h"
 
 
+
 static NSString *kfooterIdentifier = @"footerIdentifier";
 static NSString *kheaderIdentifier = @"headerIdentifier";
 
 
-@interface PhotoInformationViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface PhotoInformationViewController ()<UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate>
 {
     
     
@@ -57,10 +58,43 @@ static NSString *kheaderIdentifier = @"headerIdentifier";
     arrAid =[NSMutableArray array];
     strusid= [AccountManager sharedAccountManager].loginModel.userid;
     isSlect = NO;
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handletapPressGesture:)];
+    tapGesture.delegate = self;
+    
+   [self.view addGestureRecognizer:tapGesture];
+    
+    
     [self initRefreshView];
     
 }
 
+
+-(BOOL)gestureRecognizer:(UIGestureRecognizer*)gestureRecognizer shouldReceiveTouch:(UITouch*)touch {
+    
+    
+    NSLog(@"%@",touch.view);
+    if ([NSStringFromClass([touch.view class])    isEqualToString:@"UITableViewCellContentView"]) {
+        //返回为NO则屏蔽手势事件
+        return NO;
+    }
+    return YES;
+    
+}
+
+
+-(void)handletapPressGesture:(UITapGestureRecognizer*)sender{
+    
+    
+    tabTop.hidden = YES;
+    
+}
+
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+   
+}
 
 
 - (void)datapageNum:(int)page
@@ -162,6 +196,7 @@ static NSString *kheaderIdentifier = @"headerIdentifier";
     tabTop.layer.borderWidth = 1;
     tabTop.layer.borderColor =GRAY_COLOR.CGColor;
     tabTop.hidden = YES;
+    tabTop.userInteractionEnabled = YES;
     tabTop.backgroundColor =[UIColor redColor];
     tabTop.delegate = self;
     tabTop.dataSource = self;

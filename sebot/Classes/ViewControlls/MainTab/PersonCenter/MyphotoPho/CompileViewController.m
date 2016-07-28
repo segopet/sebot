@@ -44,13 +44,17 @@ static NSString * cellId = @"showComCell";
     // 完成上传修改
     
     NSMutableString *deleStr = [[NSMutableString alloc]init];
+    if (_adviceArray.count == 0) {
+        
+        [self.navigationController popViewControllerAnimated:YES];
+    }else{
     NSString *str = [NSString stringWithFormat:@"%@",_adviceArray[0]];
     [deleStr appendFormat:@"%@",str];
-    deleStr =[NSMutableString stringWithFormat:@"'%@'",deleStr];
+    deleStr =[NSMutableString stringWithFormat:@"%@",deleStr];
     
     for (int i=1; i<_adviceArray.count; i++) {
         NSString *str = [NSString stringWithFormat:@"%@",_adviceArray[i]];
-        [deleStr appendFormat:@",'%@'",str];
+        [deleStr appendFormat:@",%@",str];
         
     }
     NSString * str1 = [AccountManager sharedAccountManager].loginModel.userid;
@@ -64,6 +68,7 @@ static NSString * cellId = @"showComCell";
     }];
     
     
+    }
   
     
 }
@@ -157,14 +162,14 @@ static NSString * cellId = @"showComCell";
     _deleteBtn.userInteractionEnabled = YES;
     _deleteBtn.frame = CGRectMake(_deleteImageV.center.x-15, 5, 30, 30);
     [_deleteBtn setTitle:@"删除" forState:UIControlStateNormal];
-    [_deleteBtn setTitleColor:GREEN_COLOR forState:UIControlStateNormal];
+    [_deleteBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     _deleteBtn.titleLabel.font = [UIFont systemFontOfSize:13];
     [_deleteBtn addTarget:self action:@selector(onDeleBt:) forControlEvents:UIControlEventTouchUpInside];
     [_deleteImageV addSubview:_deleteBtn];
     
     
     
-    self.tableView.frame = CGRectMake(0, 155 * W_Hight_Zoom, self.view.width, self.view.height);
+    self.tableView.frame = CGRectMake(0, 170 * W_Hight_Zoom, self.view.width, self.view.height);
     self.tableView.scrollEnabled = NO;
     [self.tableView registerClass:[NewAlumbleTableViewCell class] forCellReuseIdentifier:cellId];
     self.tableView.backgroundColor = GRAY_COLOR;
