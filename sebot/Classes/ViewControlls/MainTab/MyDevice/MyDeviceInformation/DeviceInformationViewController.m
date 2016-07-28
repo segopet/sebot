@@ -528,7 +528,11 @@
 {
     
     NSString *  displayName  =nil;
-    [[SephoneManager instance] call:dialerNumber displayName:displayName transfer:FALSE];
+//    
+//    [[SephoneManager instance] call:dialerNumber displayName:displayName transfer:FALSE];
+    
+    [[SephoneManager instance]call:dialerNumber displayName:displayName transfer:FALSE highDefinition:FALSE];
+    
     
 }
 

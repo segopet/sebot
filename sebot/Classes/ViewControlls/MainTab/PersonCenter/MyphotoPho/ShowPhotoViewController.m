@@ -54,7 +54,7 @@
 
 - (CGFloat)QFTableView:(QFTableView *)fanView widthForIndex:(NSInteger)index
 {
-    return 375;
+    return 375*W_Wide_Zoom;
 }
 
 

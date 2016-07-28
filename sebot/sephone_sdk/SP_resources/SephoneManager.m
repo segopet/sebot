@@ -752,7 +752,7 @@ static void sephone_iphone_display_status(struct _SephoneCore * lc, const char *
 			if(log == NULL || sephone_call_log_get_status(log) == SephoneCallMissed) {
 				UILocalNotification *notification = [[UILocalNotification alloc] init];
 				notification.repeatInterval = 0;
-				notification.alertBody =  [NSString stringWithFormat:NSLocalizedString(@"You missed a call from %@", nil), address];
+				notification.alertBody = [NSString stringWithFormat:NSLocalizedString(@"You missed a call from %@", nil), address];
 				notification.alertAction = NSLocalizedString(@"Show", nil);
 				notification.userInfo = [NSDictionary dictionaryWithObject:[NSString stringWithUTF8String:sephone_call_log_get_call_id(log)] forKey:@"callLog"];
 				[[UIApplication sharedApplication] presentLocalNotificationNow:notification];
@@ -1360,19 +1360,7 @@ static SephoneCoreVTable sephonec_vtable = {
 		}
 
 	}
-//        {
-//            PayloadType *pt=sephone_core_find_payload_type(theSephoneCore,"vp8",90000,-1);
-//            if (pt) {
-//                sephone_core_enable_payload_type(theSephoneCore,pt,FALSE);
-//            }
-//        }
-//        {
-//            PayloadType *pt=sephone_core_find_payload_type(theSephoneCore,"h264",90000,-1);
-//            if (pt) {
-//                sephone_core_enable_payload_type(theSephoneCore,pt,TRUE);
-//            }
-//        }
-    
+
 	if (![SephoneManager isNotIphone3G]){
 		PayloadType *pt=sephone_core_find_payload_type(theSephoneCore,"SILK",24000,-1);
 		if (pt) {
@@ -1560,12 +1548,12 @@ static int comp_call_id(const SephoneCall* call , const char *callid) {
     }
 }
 
-- (SephoneCall *)acceptCallForCallId:(NSString*)callid {
+- (SephoneCall *)acceptCallForCallId:(NSString*)callid highDefinition:(BOOL)hd {
     //first, make sure this callid is not already involved in a call
     MSList* calls = (MSList*)sephone_core_get_calls(theSephoneCore);
     MSList* call = ms_list_find_custom(calls, (MSCompareFunc)comp_call_id, [callid UTF8String]);
     if (call != NULL) {
-        [self acceptCall:(SephoneCall*)call->data];
+        [self acceptCall:(SephoneCall*)call->data highDefinition:hd];
         return (SephoneCall*)call->data;
     };
     return NULL;
@@ -1869,7 +1857,59 @@ static void audioRouteChangeListenerCallback (
 
 #pragma mark - Call Functions
 
-- (void)acceptCall:(SephoneCall *)call {
+- (void)decideVsize:(BOOL)hd {
+    SephoneCore *lc=[SephoneManager getLc];
+    MSVideoSize vsize;
+    int bw;
+//    id<IASKSettingsStore> settingsStore = [[SephoneCoreSettingsStore alloc] init];
+//    int index = [settingsStore integerForKey:@"video_preferred_size_preference"];
+    //@ xr 2016/5/30 使用sephone配置video.size替代应用配置video_preferred_size_preference。
+    MSVideoSize xsize = sephone_core_get_preferred_video_size(lc);
+    int index;
+    if ((xsize.width == MS_VIDEO_SIZE_720P_W) && (xsize.height == MS_VIDEO_SIZE_720P_H)) {
+        index = 0;
+    } else if ((xsize.width == MS_VIDEO_SIZE_VGA_W) && (xsize.height == MS_VIDEO_SIZE_VGA_H)) {
+        index = 1;
+    } else if ((xsize.width == MS_VIDEO_SIZE_WVGA_W) && (xsize.height == MS_VIDEO_SIZE_WVGA_H)) {
+        index = 2;
+    } else if ((xsize.width == MS_VIDEO_SIZE_QVGA_W) && (xsize.height == MS_VIDEO_SIZE_QVGA_H)) {
+        index = 3;
+    } else if ((xsize.width == MS_VIDEO_SIZE_WQVGA_W) && (xsize.height == MS_VIDEO_SIZE_WQVGA_H)) {
+        index = 4;
+    } else if ((xsize.width == MS_VIDEO_SIZE_QCIF_W) && (xsize.height == MS_VIDEO_SIZE_QCIF_H)) {
+        index = 5;
+    } else if ((xsize.width == MS_VIDEO_SIZE_WQCIF_W) && (xsize.height == MS_VIDEO_SIZE_WQCIF_H)) {
+        index = 6;
+    } else {
+        index = 3;
+    }
+
+    // wifi network
+    // See: SephoneCoreSettingsStore.synchronize
+    if (self.connectivity == wifi || hd) {
+        if ((index % 2) != 0) {
+            MS_VIDEO_SIZE_ASSIGN(vsize, VGA);
+        } else {
+            MS_VIDEO_SIZE_ASSIGN(vsize, WVGA);
+        }
+        bw = 350;
+    }
+    // wwan network: 3g/4g
+    else {
+        if ((index % 2) != 0) {
+            MS_VIDEO_SIZE_ASSIGN(vsize, QVGA);
+        } else {
+            MS_VIDEO_SIZE_ASSIGN(vsize, WQVGA);
+        }
+        bw = 210;
+    }
+    sephone_core_set_preferred_video_size(lc, vsize);
+    sephone_core_set_upload_bandwidth(lc, bw);
+    sephone_core_set_download_bandwidth(lc, bw);
+}
+
+- (void)acceptCall:(SephoneCall *)call highDefinition:(BOOL)hd {
+    [self decideVsize:hd];
 	SephoneCallParams* lcallParams = sephone_core_create_call_params(theSephoneCore,call);
 	if([self spConfigBoolForKey:@"edge_opt_preference"]) {
 		bool low_bandwidth = self.network == network_2g;
@@ -1882,7 +1922,7 @@ static void audioRouteChangeListenerCallback (
 	sephone_core_accept_call_with_params(theSephoneCore,call, lcallParams);
 }
 
-- (void)call:(NSString *)address displayName:(NSString*)displayName transfer:(BOOL)transfer {
+- (void)call:(NSString *)address displayName:(NSString*)displayName transfer:(BOOL)transfer highDefinition:(BOOL)hd {
 	if (!sephone_core_is_network_reachable(theSephoneCore)) {
 		UIAlertView* error = [[UIAlertView alloc]	initWithTitle:NSLocalizedString(@"Network Error",nil)
 														message:NSLocalizedString(@"There is no network connection available, enable WIFI or WWAN prior to place a call",nil)
@@ -1912,6 +1952,7 @@ static void audioRouteChangeListenerCallback (
 	SephoneProxyConfig* proxyCfg;
 	//get default proxy
 	sephone_core_get_default_proxy(theSephoneCore,&proxyCfg);
+	[self decideVsize:hd];
 	SephoneCallParams* lcallParams = sephone_core_create_default_call_parameters(theSephoneCore);
 	if([self spConfigBoolForKey:@"edge_opt_preference"]) {
 		bool low_bandwidth = self.network == network_2g;

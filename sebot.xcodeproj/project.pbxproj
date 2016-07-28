@@ -167,56 +167,6 @@
 		34E4A00C1D261EF100CF5CCB /* libmsopenh264.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34E49FA31D261EF000CF5CCB /* libmsopenh264.a */; };
 		34E4A00D1D261EF100CF5CCB /* libmssilk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34E49FA41D261EF000CF5CCB /* libmssilk.a */; };
 		34E4A00E1D261EF100CF5CCB /* nowebcamCIF.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FA71D261EF000CF5CCB /* nowebcamCIF.jpg */; };
-		34E4A00F1D261EF100CF5CCB /* active_chat.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FAA1D261EF000CF5CCB /* active_chat.png */; };
-		34E4A0101D261EF100CF5CCB /* addcall-green.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FAB1D261EF000CF5CCB /* addcall-green.png */; };
-		34E4A0111D261EF100CF5CCB /* call.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FAC1D261EF000CF5CCB /* call.png */; };
-		34E4A0121D261EF100CF5CCB /* call_status_incoming.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FAD1D261EF000CF5CCB /* call_status_incoming.png */; };
-		34E4A0131D261EF100CF5CCB /* call_status_outgoing.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FAE1D261EF000CF5CCB /* call_status_outgoing.png */; };
-		34E4A0141D261EF100CF5CCB /* chat.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FAF1D261EF000CF5CCB /* chat.png */; };
-		34E4A0151D261EF100CF5CCB /* chat_message_delivered.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FB01D261EF000CF5CCB /* chat_message_delivered.png */; };
-		34E4A0161D261EF100CF5CCB /* chat_message_inprogress.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FB11D261EF000CF5CCB /* chat_message_inprogress.png */; };
-		34E4A0171D261EF100CF5CCB /* chat_message_not_delivered.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FB21D261EF000CF5CCB /* chat_message_not_delivered.png */; };
-		34E4A0181D261EF100CF5CCB /* composing_active_chat.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FB31D261EF000CF5CCB /* composing_active_chat.png */; };
-		34E4A0191D261EF100CF5CCB /* composing_chat.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FB41D261EF000CF5CCB /* composing_chat.png */; };
-		34E4A01A1D261EF100CF5CCB /* contact-orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FB51D261EF000CF5CCB /* contact-orange.png */; };
-		34E4A01B1D261EF100CF5CCB /* contact_starred.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FB61D261EF000CF5CCB /* contact_starred.png */; };
-		34E4A01C1D261EF100CF5CCB /* contact_unstarred.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FB71D261EF000CF5CCB /* contact_unstarred.png */; };
-		34E4A01D1D261EF100CF5CCB /* dialer-orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FB81D261EF000CF5CCB /* dialer-orange.png */; };
-		34E4A01E1D261EF100CF5CCB /* dialer.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FB91D261EF000CF5CCB /* dialer.png */; };
-		34E4A01F1D261EF100CF5CCB /* history-orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FBA1D261EF000CF5CCB /* history-orange.png */; };
-		34E4A0201D261EF100CF5CCB /* hold_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FBB1D261EF000CF5CCB /* hold_off.png */; };
-		34E4A0211D261EF100CF5CCB /* hold_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FBC1D261EF000CF5CCB /* hold_on.png */; };
-		34E4A0221D261EF100CF5CCB /* mic_active.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FBD1D261EF000CF5CCB /* mic_active.png */; };
-		34E4A0231D261EF100CF5CCB /* mic_muted.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FBE1D261EF000CF5CCB /* mic_muted.png */; };
-		34E4A0241D261EF100CF5CCB /* notok.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FBF1D261EF000CF5CCB /* notok.png */; };
-		34E4A0251D261EF100CF5CCB /* ok.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FC01D261EF000CF5CCB /* ok.png */; };
-		34E4A0261D261EF100CF5CCB /* sephone-banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FC11D261EF000CF5CCB /* sephone-banner.png */; };
-		34E4A0271D261EF100CF5CCB /* sephone.icns in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FC21D261EF000CF5CCB /* sephone.icns */; };
-		34E4A0281D261EF100CF5CCB /* sephone.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FC31D261EF000CF5CCB /* sephone.png */; };
-		34E4A0291D261EF100CF5CCB /* speaker.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FC41D261EF000CF5CCB /* speaker.png */; };
-		34E4A02A1D261EF100CF5CCB /* startcall-green.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FC51D261EF000CF5CCB /* startcall-green.png */; };
-		34E4A02B1D261EF100CF5CCB /* startcall-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FC61D261EF000CF5CCB /* startcall-small.png */; };
-		34E4A02C1D261EF100CF5CCB /* status-green.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FC71D261EF000CF5CCB /* status-green.png */; };
-		34E4A02D1D261EF100CF5CCB /* status-offline.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FC81D261EF000CF5CCB /* status-offline.png */; };
-		34E4A02E1D261EF100CF5CCB /* status-orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FC91D261EF000CF5CCB /* status-orange.png */; };
-		34E4A02F1D261EF100CF5CCB /* status-red.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FCA1D261EF000CF5CCB /* status-red.png */; };
-		34E4A0301D261EF100CF5CCB /* stopcall-red.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FCB1D261EF000CF5CCB /* stopcall-red.png */; };
-		34E4A0311D261EF100CF5CCB /* stopcall-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FCC1D261EF000CF5CCB /* stopcall-small.png */; };
-		34E4A0321D261EF100CF5CCB /* rootca.pem in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FCE1D261EF000CF5CCB /* rootca.pem */; };
-		34E4A0331D261EF100CF5CCB /* hello16000.wav in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FD11D261EF100CF5CCB /* hello16000.wav */; };
-		34E4A0341D261EF100CF5CCB /* hello8000.wav in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FD21D261EF100CF5CCB /* hello8000.wav */; };
-		34E4A0351D261EF100CF5CCB /* incoming_chat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FD31D261EF100CF5CCB /* incoming_chat.wav */; };
-		34E4A0361D261EF100CF5CCB /* ringback.wav in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FD41D261EF100CF5CCB /* ringback.wav */; };
-		34E4A0371D261EF100CF5CCB /* bigben.wav in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FD61D261EF100CF5CCB /* bigben.wav */; };
-		34E4A0381D261EF100CF5CCB /* oldphone-mono-30s.caf in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FD71D261EF100CF5CCB /* oldphone-mono-30s.caf */; };
-		34E4A0391D261EF100CF5CCB /* oldphone-mono.wav in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FD81D261EF100CF5CCB /* oldphone-mono.wav */; };
-		34E4A03A1D261EF100CF5CCB /* oldphone.wav in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FD91D261EF100CF5CCB /* oldphone.wav */; };
-		34E4A03B1D261EF100CF5CCB /* orig.wav in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FDA1D261EF100CF5CCB /* orig.wav */; };
-		34E4A03C1D261EF100CF5CCB /* rock.wav in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FDB1D261EF100CF5CCB /* rock.wav */; };
-		34E4A03D1D261EF100CF5CCB /* sweet.wav in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FDC1D261EF100CF5CCB /* sweet.wav */; };
-		34E4A03E1D261EF100CF5CCB /* synth.wav in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FDD1D261EF100CF5CCB /* synth.wav */; };
-		34E4A03F1D261EF100CF5CCB /* tapping.wav in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FDE1D261EF100CF5CCB /* tapping.wav */; };
-		34E4A0401D261EF100CF5CCB /* toy-mono.wav in Resources */ = {isa = PBXBuildFile; fileRef = 34E49FDF1D261EF100CF5CCB /* toy-mono.wav */; };
 		34E4A0421D26490C00CF5CCB /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34E4A0411D26490C00CF5CCB /* CoreData.framework */; };
 		34E4A0441D26491C00CF5CCB /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 34E4A0431D26491C00CF5CCB /* libsqlite3.0.tbd */; };
 		34E4A0461D26492800CF5CCB /* libz.1.1.3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 34E4A0451D26492700CF5CCB /* libz.1.1.3.tbd */; };
@@ -239,6 +189,56 @@
 		34E4A0681D2649F500CF5CCB /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34E4A0671D2649F500CF5CCB /* CFNetwork.framework */; };
 		34E4A06A1D264A0300CF5CCB /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34E4A0691D264A0300CF5CCB /* Accelerate.framework */; };
 		34E4A06D1D265C1C00CF5CCB /* FamilyTeamModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 34E4A06C1D265C1C00CF5CCB /* FamilyTeamModel.m */; };
+		34EA795E1D49AE9E00F8F22F /* hello8000.wav in Resources */ = {isa = PBXBuildFile; fileRef = 34EA795A1D49AE9E00F8F22F /* hello8000.wav */; };
+		34EA795F1D49AE9E00F8F22F /* hello16000.wav in Resources */ = {isa = PBXBuildFile; fileRef = 34EA795B1D49AE9E00F8F22F /* hello16000.wav */; };
+		34EA79601D49AE9E00F8F22F /* incoming_chat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 34EA795C1D49AE9E00F8F22F /* incoming_chat.wav */; };
+		34EA79611D49AE9E00F8F22F /* ringback.wav in Resources */ = {isa = PBXBuildFile; fileRef = 34EA795D1D49AE9E00F8F22F /* ringback.wav */; };
+		34EA796C1D49AEB500F8F22F /* bigben.wav in Resources */ = {isa = PBXBuildFile; fileRef = 34EA79621D49AEB400F8F22F /* bigben.wav */; };
+		34EA796D1D49AEB500F8F22F /* oldphone-mono-30s.caf in Resources */ = {isa = PBXBuildFile; fileRef = 34EA79631D49AEB400F8F22F /* oldphone-mono-30s.caf */; };
+		34EA796E1D49AEB500F8F22F /* oldphone-mono.wav in Resources */ = {isa = PBXBuildFile; fileRef = 34EA79641D49AEB400F8F22F /* oldphone-mono.wav */; };
+		34EA796F1D49AEB500F8F22F /* oldphone.wav in Resources */ = {isa = PBXBuildFile; fileRef = 34EA79651D49AEB400F8F22F /* oldphone.wav */; };
+		34EA79701D49AEB500F8F22F /* orig.wav in Resources */ = {isa = PBXBuildFile; fileRef = 34EA79661D49AEB500F8F22F /* orig.wav */; };
+		34EA79711D49AEB500F8F22F /* rock.wav in Resources */ = {isa = PBXBuildFile; fileRef = 34EA79671D49AEB500F8F22F /* rock.wav */; };
+		34EA79721D49AEB500F8F22F /* sweet.wav in Resources */ = {isa = PBXBuildFile; fileRef = 34EA79681D49AEB500F8F22F /* sweet.wav */; };
+		34EA79731D49AEB500F8F22F /* synth.wav in Resources */ = {isa = PBXBuildFile; fileRef = 34EA79691D49AEB500F8F22F /* synth.wav */; };
+		34EA79741D49AEB500F8F22F /* tapping.wav in Resources */ = {isa = PBXBuildFile; fileRef = 34EA796A1D49AEB500F8F22F /* tapping.wav */; };
+		34EA79751D49AEB500F8F22F /* toy-mono.wav in Resources */ = {isa = PBXBuildFile; fileRef = 34EA796B1D49AEB500F8F22F /* toy-mono.wav */; };
+		34EA79771D49AEFE00F8F22F /* rootca.pem in Resources */ = {isa = PBXBuildFile; fileRef = 34EA79761D49AEFE00F8F22F /* rootca.pem */; };
+		34EA799B1D49AF2600F8F22F /* active_chat.png in Resources */ = {isa = PBXBuildFile; fileRef = 34EA79781D49AF2600F8F22F /* active_chat.png */; };
+		34EA799C1D49AF2600F8F22F /* addcall-green.png in Resources */ = {isa = PBXBuildFile; fileRef = 34EA79791D49AF2600F8F22F /* addcall-green.png */; };
+		34EA799D1D49AF2600F8F22F /* call_status_incoming.png in Resources */ = {isa = PBXBuildFile; fileRef = 34EA797A1D49AF2600F8F22F /* call_status_incoming.png */; };
+		34EA799E1D49AF2600F8F22F /* call_status_outgoing.png in Resources */ = {isa = PBXBuildFile; fileRef = 34EA797B1D49AF2600F8F22F /* call_status_outgoing.png */; };
+		34EA799F1D49AF2600F8F22F /* call.png in Resources */ = {isa = PBXBuildFile; fileRef = 34EA797C1D49AF2600F8F22F /* call.png */; };
+		34EA79A01D49AF2600F8F22F /* chat_message_delivered.png in Resources */ = {isa = PBXBuildFile; fileRef = 34EA797D1D49AF2600F8F22F /* chat_message_delivered.png */; };
+		34EA79A11D49AF2600F8F22F /* chat_message_inprogress.png in Resources */ = {isa = PBXBuildFile; fileRef = 34EA797E1D49AF2600F8F22F /* chat_message_inprogress.png */; };
+		34EA79A21D49AF2600F8F22F /* chat_message_not_delivered.png in Resources */ = {isa = PBXBuildFile; fileRef = 34EA797F1D49AF2600F8F22F /* chat_message_not_delivered.png */; };
+		34EA79A31D49AF2600F8F22F /* chat.png in Resources */ = {isa = PBXBuildFile; fileRef = 34EA79801D49AF2600F8F22F /* chat.png */; };
+		34EA79A41D49AF2600F8F22F /* composing_active_chat.png in Resources */ = {isa = PBXBuildFile; fileRef = 34EA79811D49AF2600F8F22F /* composing_active_chat.png */; };
+		34EA79A51D49AF2600F8F22F /* composing_chat.png in Resources */ = {isa = PBXBuildFile; fileRef = 34EA79821D49AF2600F8F22F /* composing_chat.png */; };
+		34EA79A61D49AF2600F8F22F /* contact_starred.png in Resources */ = {isa = PBXBuildFile; fileRef = 34EA79831D49AF2600F8F22F /* contact_starred.png */; };
+		34EA79A71D49AF2600F8F22F /* contact_unstarred.png in Resources */ = {isa = PBXBuildFile; fileRef = 34EA79841D49AF2600F8F22F /* contact_unstarred.png */; };
+		34EA79A81D49AF2600F8F22F /* contact-orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 34EA79851D49AF2600F8F22F /* contact-orange.png */; };
+		34EA79A91D49AF2600F8F22F /* dialer-orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 34EA79861D49AF2600F8F22F /* dialer-orange.png */; };
+		34EA79AA1D49AF2600F8F22F /* dialer.png in Resources */ = {isa = PBXBuildFile; fileRef = 34EA79871D49AF2600F8F22F /* dialer.png */; };
+		34EA79AB1D49AF2600F8F22F /* history-orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 34EA79881D49AF2600F8F22F /* history-orange.png */; };
+		34EA79AC1D49AF2600F8F22F /* hold_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 34EA79891D49AF2600F8F22F /* hold_off.png */; };
+		34EA79AD1D49AF2600F8F22F /* hold_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 34EA798A1D49AF2600F8F22F /* hold_on.png */; };
+		34EA79AE1D49AF2600F8F22F /* linphone-banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 34EA798B1D49AF2600F8F22F /* linphone-banner.png */; };
+		34EA79AF1D49AF2600F8F22F /* linphone.icns in Resources */ = {isa = PBXBuildFile; fileRef = 34EA798C1D49AF2600F8F22F /* linphone.icns */; };
+		34EA79B01D49AF2600F8F22F /* linphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 34EA798D1D49AF2600F8F22F /* linphone.png */; };
+		34EA79B11D49AF2600F8F22F /* mic_active.png in Resources */ = {isa = PBXBuildFile; fileRef = 34EA798E1D49AF2600F8F22F /* mic_active.png */; };
+		34EA79B21D49AF2600F8F22F /* mic_muted.png in Resources */ = {isa = PBXBuildFile; fileRef = 34EA798F1D49AF2600F8F22F /* mic_muted.png */; };
+		34EA79B31D49AF2600F8F22F /* notok.png in Resources */ = {isa = PBXBuildFile; fileRef = 34EA79901D49AF2600F8F22F /* notok.png */; };
+		34EA79B41D49AF2600F8F22F /* ok.png in Resources */ = {isa = PBXBuildFile; fileRef = 34EA79911D49AF2600F8F22F /* ok.png */; };
+		34EA79B51D49AF2600F8F22F /* speaker.png in Resources */ = {isa = PBXBuildFile; fileRef = 34EA79921D49AF2600F8F22F /* speaker.png */; };
+		34EA79B61D49AF2600F8F22F /* startcall-green.png in Resources */ = {isa = PBXBuildFile; fileRef = 34EA79931D49AF2600F8F22F /* startcall-green.png */; };
+		34EA79B71D49AF2600F8F22F /* startcall-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 34EA79941D49AF2600F8F22F /* startcall-small.png */; };
+		34EA79B81D49AF2600F8F22F /* status-green.png in Resources */ = {isa = PBXBuildFile; fileRef = 34EA79951D49AF2600F8F22F /* status-green.png */; };
+		34EA79B91D49AF2600F8F22F /* status-offline.png in Resources */ = {isa = PBXBuildFile; fileRef = 34EA79961D49AF2600F8F22F /* status-offline.png */; };
+		34EA79BA1D49AF2600F8F22F /* status-orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 34EA79971D49AF2600F8F22F /* status-orange.png */; };
+		34EA79BB1D49AF2600F8F22F /* status-red.png in Resources */ = {isa = PBXBuildFile; fileRef = 34EA79981D49AF2600F8F22F /* status-red.png */; };
+		34EA79BC1D49AF2600F8F22F /* stopcall-red.png in Resources */ = {isa = PBXBuildFile; fileRef = 34EA79991D49AF2600F8F22F /* stopcall-red.png */; };
+		34EA79BD1D49AF2600F8F22F /* stopcall-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 34EA799A1D49AF2600F8F22F /* stopcall-small.png */; };
 		34EC5E8E1D3DFCB100CF2DEF /* AFHttpClient+MyPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 34EC5E8D1D3DFCB100CF2DEF /* AFHttpClient+MyPhoto.m */; };
 		34F4D2931D1A673C005963CA /* libBPush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34F4D2911D1A673C005963CA /* libBPush.a */; };
 		34F4D2941D1A673C005963CA /* test.caf in Resources */ = {isa = PBXBuildFile; fileRef = 34F4D2921D1A673C005963CA /* test.caf */; };
@@ -962,56 +962,6 @@
 		34E49FA31D261EF000CF5CCB /* libmsopenh264.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmsopenh264.a; sourceTree = "<group>"; };
 		34E49FA41D261EF000CF5CCB /* libmssilk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmssilk.a; sourceTree = "<group>"; };
 		34E49FA71D261EF000CF5CCB /* nowebcamCIF.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nowebcamCIF.jpg; sourceTree = "<group>"; };
-		34E49FAA1D261EF000CF5CCB /* active_chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = active_chat.png; sourceTree = "<group>"; };
-		34E49FAB1D261EF000CF5CCB /* addcall-green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "addcall-green.png"; sourceTree = "<group>"; };
-		34E49FAC1D261EF000CF5CCB /* call.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = call.png; sourceTree = "<group>"; };
-		34E49FAD1D261EF000CF5CCB /* call_status_incoming.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = call_status_incoming.png; sourceTree = "<group>"; };
-		34E49FAE1D261EF000CF5CCB /* call_status_outgoing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = call_status_outgoing.png; sourceTree = "<group>"; };
-		34E49FAF1D261EF000CF5CCB /* chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat.png; sourceTree = "<group>"; };
-		34E49FB01D261EF000CF5CCB /* chat_message_delivered.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat_message_delivered.png; sourceTree = "<group>"; };
-		34E49FB11D261EF000CF5CCB /* chat_message_inprogress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat_message_inprogress.png; sourceTree = "<group>"; };
-		34E49FB21D261EF000CF5CCB /* chat_message_not_delivered.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat_message_not_delivered.png; sourceTree = "<group>"; };
-		34E49FB31D261EF000CF5CCB /* composing_active_chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = composing_active_chat.png; sourceTree = "<group>"; };
-		34E49FB41D261EF000CF5CCB /* composing_chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = composing_chat.png; sourceTree = "<group>"; };
-		34E49FB51D261EF000CF5CCB /* contact-orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "contact-orange.png"; sourceTree = "<group>"; };
-		34E49FB61D261EF000CF5CCB /* contact_starred.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contact_starred.png; sourceTree = "<group>"; };
-		34E49FB71D261EF000CF5CCB /* contact_unstarred.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contact_unstarred.png; sourceTree = "<group>"; };
-		34E49FB81D261EF000CF5CCB /* dialer-orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dialer-orange.png"; sourceTree = "<group>"; };
-		34E49FB91D261EF000CF5CCB /* dialer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dialer.png; sourceTree = "<group>"; };
-		34E49FBA1D261EF000CF5CCB /* history-orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "history-orange.png"; sourceTree = "<group>"; };
-		34E49FBB1D261EF000CF5CCB /* hold_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hold_off.png; sourceTree = "<group>"; };
-		34E49FBC1D261EF000CF5CCB /* hold_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hold_on.png; sourceTree = "<group>"; };
-		34E49FBD1D261EF000CF5CCB /* mic_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mic_active.png; sourceTree = "<group>"; };
-		34E49FBE1D261EF000CF5CCB /* mic_muted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mic_muted.png; sourceTree = "<group>"; };
-		34E49FBF1D261EF000CF5CCB /* notok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notok.png; sourceTree = "<group>"; };
-		34E49FC01D261EF000CF5CCB /* ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ok.png; sourceTree = "<group>"; };
-		34E49FC11D261EF000CF5CCB /* sephone-banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sephone-banner.png"; sourceTree = "<group>"; };
-		34E49FC21D261EF000CF5CCB /* sephone.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = sephone.icns; sourceTree = "<group>"; };
-		34E49FC31D261EF000CF5CCB /* sephone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sephone.png; sourceTree = "<group>"; };
-		34E49FC41D261EF000CF5CCB /* speaker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speaker.png; sourceTree = "<group>"; };
-		34E49FC51D261EF000CF5CCB /* startcall-green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "startcall-green.png"; sourceTree = "<group>"; };
-		34E49FC61D261EF000CF5CCB /* startcall-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "startcall-small.png"; sourceTree = "<group>"; };
-		34E49FC71D261EF000CF5CCB /* status-green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-green.png"; sourceTree = "<group>"; };
-		34E49FC81D261EF000CF5CCB /* status-offline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-offline.png"; sourceTree = "<group>"; };
-		34E49FC91D261EF000CF5CCB /* status-orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-orange.png"; sourceTree = "<group>"; };
-		34E49FCA1D261EF000CF5CCB /* status-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-red.png"; sourceTree = "<group>"; };
-		34E49FCB1D261EF000CF5CCB /* stopcall-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stopcall-red.png"; sourceTree = "<group>"; };
-		34E49FCC1D261EF000CF5CCB /* stopcall-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stopcall-small.png"; sourceTree = "<group>"; };
-		34E49FCE1D261EF000CF5CCB /* rootca.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rootca.pem; sourceTree = "<group>"; };
-		34E49FD11D261EF100CF5CCB /* hello16000.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hello16000.wav; sourceTree = "<group>"; };
-		34E49FD21D261EF100CF5CCB /* hello8000.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hello8000.wav; sourceTree = "<group>"; };
-		34E49FD31D261EF100CF5CCB /* incoming_chat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = incoming_chat.wav; sourceTree = "<group>"; };
-		34E49FD41D261EF100CF5CCB /* ringback.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ringback.wav; sourceTree = "<group>"; };
-		34E49FD61D261EF100CF5CCB /* bigben.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bigben.wav; sourceTree = "<group>"; };
-		34E49FD71D261EF100CF5CCB /* oldphone-mono-30s.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "oldphone-mono-30s.caf"; sourceTree = "<group>"; };
-		34E49FD81D261EF100CF5CCB /* oldphone-mono.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "oldphone-mono.wav"; sourceTree = "<group>"; };
-		34E49FD91D261EF100CF5CCB /* oldphone.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = oldphone.wav; sourceTree = "<group>"; };
-		34E49FDA1D261EF100CF5CCB /* orig.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = orig.wav; sourceTree = "<group>"; };
-		34E49FDB1D261EF100CF5CCB /* rock.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = rock.wav; sourceTree = "<group>"; };
-		34E49FDC1D261EF100CF5CCB /* sweet.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sweet.wav; sourceTree = "<group>"; };
-		34E49FDD1D261EF100CF5CCB /* synth.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = synth.wav; sourceTree = "<group>"; };
-		34E49FDE1D261EF100CF5CCB /* tapping.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tapping.wav; sourceTree = "<group>"; };
-		34E49FDF1D261EF100CF5CCB /* toy-mono.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "toy-mono.wav"; sourceTree = "<group>"; };
 		34E4A0411D26490C00CF5CCB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		34E4A0431D26491C00CF5CCB /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		34E4A0451D26492700CF5CCB /* libz.1.1.3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.1.3.tbd; path = usr/lib/libz.1.1.3.tbd; sourceTree = SDKROOT; };
@@ -1035,6 +985,56 @@
 		34E4A0691D264A0300CF5CCB /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		34E4A06B1D265C1C00CF5CCB /* FamilyTeamModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FamilyTeamModel.h; sourceTree = "<group>"; };
 		34E4A06C1D265C1C00CF5CCB /* FamilyTeamModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FamilyTeamModel.m; sourceTree = "<group>"; };
+		34EA795A1D49AE9E00F8F22F /* hello8000.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = hello8000.wav; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/sounds/linphone/hello8000.wav"; sourceTree = SOURCE_ROOT; };
+		34EA795B1D49AE9E00F8F22F /* hello16000.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = hello16000.wav; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/sounds/linphone/hello16000.wav"; sourceTree = SOURCE_ROOT; };
+		34EA795C1D49AE9E00F8F22F /* incoming_chat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = incoming_chat.wav; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/sounds/linphone/incoming_chat.wav"; sourceTree = SOURCE_ROOT; };
+		34EA795D1D49AE9E00F8F22F /* ringback.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = ringback.wav; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/sounds/linphone/ringback.wav"; sourceTree = SOURCE_ROOT; };
+		34EA79621D49AEB400F8F22F /* bigben.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = bigben.wav; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/sounds/linphone/rings/bigben.wav"; sourceTree = SOURCE_ROOT; };
+		34EA79631D49AEB400F8F22F /* oldphone-mono-30s.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "oldphone-mono-30s.caf"; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/sounds/linphone/rings/oldphone-mono-30s.caf"; sourceTree = SOURCE_ROOT; };
+		34EA79641D49AEB400F8F22F /* oldphone-mono.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "oldphone-mono.wav"; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/sounds/linphone/rings/oldphone-mono.wav"; sourceTree = SOURCE_ROOT; };
+		34EA79651D49AEB400F8F22F /* oldphone.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = oldphone.wav; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/sounds/linphone/rings/oldphone.wav"; sourceTree = SOURCE_ROOT; };
+		34EA79661D49AEB500F8F22F /* orig.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = orig.wav; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/sounds/linphone/rings/orig.wav"; sourceTree = SOURCE_ROOT; };
+		34EA79671D49AEB500F8F22F /* rock.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = rock.wav; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/sounds/linphone/rings/rock.wav"; sourceTree = SOURCE_ROOT; };
+		34EA79681D49AEB500F8F22F /* sweet.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = sweet.wav; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/sounds/linphone/rings/sweet.wav"; sourceTree = SOURCE_ROOT; };
+		34EA79691D49AEB500F8F22F /* synth.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = synth.wav; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/sounds/linphone/rings/synth.wav"; sourceTree = SOURCE_ROOT; };
+		34EA796A1D49AEB500F8F22F /* tapping.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = tapping.wav; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/sounds/linphone/rings/tapping.wav"; sourceTree = SOURCE_ROOT; };
+		34EA796B1D49AEB500F8F22F /* toy-mono.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "toy-mono.wav"; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/sounds/linphone/rings/toy-mono.wav"; sourceTree = SOURCE_ROOT; };
+		34EA79761D49AEFE00F8F22F /* rootca.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = rootca.pem; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/linphone/rootca.pem"; sourceTree = SOURCE_ROOT; };
+		34EA79781D49AF2600F8F22F /* active_chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = active_chat.png; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/pixmaps/linphone/active_chat.png"; sourceTree = SOURCE_ROOT; };
+		34EA79791D49AF2600F8F22F /* addcall-green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "addcall-green.png"; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/pixmaps/linphone/addcall-green.png"; sourceTree = SOURCE_ROOT; };
+		34EA797A1D49AF2600F8F22F /* call_status_incoming.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = call_status_incoming.png; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/pixmaps/linphone/call_status_incoming.png"; sourceTree = SOURCE_ROOT; };
+		34EA797B1D49AF2600F8F22F /* call_status_outgoing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = call_status_outgoing.png; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/pixmaps/linphone/call_status_outgoing.png"; sourceTree = SOURCE_ROOT; };
+		34EA797C1D49AF2600F8F22F /* call.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = call.png; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/pixmaps/linphone/call.png"; sourceTree = SOURCE_ROOT; };
+		34EA797D1D49AF2600F8F22F /* chat_message_delivered.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = chat_message_delivered.png; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/pixmaps/linphone/chat_message_delivered.png"; sourceTree = SOURCE_ROOT; };
+		34EA797E1D49AF2600F8F22F /* chat_message_inprogress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = chat_message_inprogress.png; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/pixmaps/linphone/chat_message_inprogress.png"; sourceTree = SOURCE_ROOT; };
+		34EA797F1D49AF2600F8F22F /* chat_message_not_delivered.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = chat_message_not_delivered.png; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/pixmaps/linphone/chat_message_not_delivered.png"; sourceTree = SOURCE_ROOT; };
+		34EA79801D49AF2600F8F22F /* chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = chat.png; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/pixmaps/linphone/chat.png"; sourceTree = SOURCE_ROOT; };
+		34EA79811D49AF2600F8F22F /* composing_active_chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = composing_active_chat.png; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/pixmaps/linphone/composing_active_chat.png"; sourceTree = SOURCE_ROOT; };
+		34EA79821D49AF2600F8F22F /* composing_chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = composing_chat.png; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/pixmaps/linphone/composing_chat.png"; sourceTree = SOURCE_ROOT; };
+		34EA79831D49AF2600F8F22F /* contact_starred.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = contact_starred.png; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/pixmaps/linphone/contact_starred.png"; sourceTree = SOURCE_ROOT; };
+		34EA79841D49AF2600F8F22F /* contact_unstarred.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = contact_unstarred.png; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/pixmaps/linphone/contact_unstarred.png"; sourceTree = SOURCE_ROOT; };
+		34EA79851D49AF2600F8F22F /* contact-orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "contact-orange.png"; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/pixmaps/linphone/contact-orange.png"; sourceTree = SOURCE_ROOT; };
+		34EA79861D49AF2600F8F22F /* dialer-orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dialer-orange.png"; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/pixmaps/linphone/dialer-orange.png"; sourceTree = SOURCE_ROOT; };
+		34EA79871D49AF2600F8F22F /* dialer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dialer.png; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/pixmaps/linphone/dialer.png"; sourceTree = SOURCE_ROOT; };
+		34EA79881D49AF2600F8F22F /* history-orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "history-orange.png"; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/pixmaps/linphone/history-orange.png"; sourceTree = SOURCE_ROOT; };
+		34EA79891D49AF2600F8F22F /* hold_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hold_off.png; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/pixmaps/linphone/hold_off.png"; sourceTree = SOURCE_ROOT; };
+		34EA798A1D49AF2600F8F22F /* hold_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hold_on.png; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/pixmaps/linphone/hold_on.png"; sourceTree = SOURCE_ROOT; };
+		34EA798B1D49AF2600F8F22F /* linphone-banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "linphone-banner.png"; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/pixmaps/linphone/linphone-banner.png"; sourceTree = SOURCE_ROOT; };
+		34EA798C1D49AF2600F8F22F /* linphone.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = linphone.icns; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/pixmaps/linphone/linphone.icns"; sourceTree = SOURCE_ROOT; };
+		34EA798D1D49AF2600F8F22F /* linphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = linphone.png; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/pixmaps/linphone/linphone.png"; sourceTree = SOURCE_ROOT; };
+		34EA798E1D49AF2600F8F22F /* mic_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mic_active.png; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/pixmaps/linphone/mic_active.png"; sourceTree = SOURCE_ROOT; };
+		34EA798F1D49AF2600F8F22F /* mic_muted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mic_muted.png; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/pixmaps/linphone/mic_muted.png"; sourceTree = SOURCE_ROOT; };
+		34EA79901D49AF2600F8F22F /* notok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = notok.png; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/pixmaps/linphone/notok.png"; sourceTree = SOURCE_ROOT; };
+		34EA79911D49AF2600F8F22F /* ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ok.png; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/pixmaps/linphone/ok.png"; sourceTree = SOURCE_ROOT; };
+		34EA79921D49AF2600F8F22F /* speaker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = speaker.png; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/pixmaps/linphone/speaker.png"; sourceTree = SOURCE_ROOT; };
+		34EA79931D49AF2600F8F22F /* startcall-green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "startcall-green.png"; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/pixmaps/linphone/startcall-green.png"; sourceTree = SOURCE_ROOT; };
+		34EA79941D49AF2600F8F22F /* startcall-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "startcall-small.png"; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/pixmaps/linphone/startcall-small.png"; sourceTree = SOURCE_ROOT; };
+		34EA79951D49AF2600F8F22F /* status-green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "status-green.png"; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/pixmaps/linphone/status-green.png"; sourceTree = SOURCE_ROOT; };
+		34EA79961D49AF2600F8F22F /* status-offline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "status-offline.png"; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/pixmaps/linphone/status-offline.png"; sourceTree = SOURCE_ROOT; };
+		34EA79971D49AF2600F8F22F /* status-orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "status-orange.png"; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/pixmaps/linphone/status-orange.png"; sourceTree = SOURCE_ROOT; };
+		34EA79981D49AF2600F8F22F /* status-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "status-red.png"; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/pixmaps/linphone/status-red.png"; sourceTree = SOURCE_ROOT; };
+		34EA79991D49AF2600F8F22F /* stopcall-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "stopcall-red.png"; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/pixmaps/linphone/stopcall-red.png"; sourceTree = SOURCE_ROOT; };
+		34EA799A1D49AF2600F8F22F /* stopcall-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "stopcall-small.png"; path = "sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/share/pixmaps/linphone/stopcall-small.png"; sourceTree = SOURCE_ROOT; };
 		34EC5E8C1D3DFCB100CF2DEF /* AFHttpClient+MyPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+MyPhoto.h"; sourceTree = "<group>"; };
 		34EC5E8D1D3DFCB100CF2DEF /* AFHttpClient+MyPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+MyPhoto.m"; sourceTree = "<group>"; };
 		34F4D2901D1A673C005963CA /* BPush.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPush.h; sourceTree = "<group>"; };
@@ -2443,41 +2443,41 @@
 		34E49FA91D261EF000CF5CCB /* sephone */ = {
 			isa = PBXGroup;
 			children = (
-				34E49FAA1D261EF000CF5CCB /* active_chat.png */,
-				34E49FAB1D261EF000CF5CCB /* addcall-green.png */,
-				34E49FAC1D261EF000CF5CCB /* call.png */,
-				34E49FAD1D261EF000CF5CCB /* call_status_incoming.png */,
-				34E49FAE1D261EF000CF5CCB /* call_status_outgoing.png */,
-				34E49FAF1D261EF000CF5CCB /* chat.png */,
-				34E49FB01D261EF000CF5CCB /* chat_message_delivered.png */,
-				34E49FB11D261EF000CF5CCB /* chat_message_inprogress.png */,
-				34E49FB21D261EF000CF5CCB /* chat_message_not_delivered.png */,
-				34E49FB31D261EF000CF5CCB /* composing_active_chat.png */,
-				34E49FB41D261EF000CF5CCB /* composing_chat.png */,
-				34E49FB51D261EF000CF5CCB /* contact-orange.png */,
-				34E49FB61D261EF000CF5CCB /* contact_starred.png */,
-				34E49FB71D261EF000CF5CCB /* contact_unstarred.png */,
-				34E49FB81D261EF000CF5CCB /* dialer-orange.png */,
-				34E49FB91D261EF000CF5CCB /* dialer.png */,
-				34E49FBA1D261EF000CF5CCB /* history-orange.png */,
-				34E49FBB1D261EF000CF5CCB /* hold_off.png */,
-				34E49FBC1D261EF000CF5CCB /* hold_on.png */,
-				34E49FBD1D261EF000CF5CCB /* mic_active.png */,
-				34E49FBE1D261EF000CF5CCB /* mic_muted.png */,
-				34E49FBF1D261EF000CF5CCB /* notok.png */,
-				34E49FC01D261EF000CF5CCB /* ok.png */,
-				34E49FC11D261EF000CF5CCB /* sephone-banner.png */,
-				34E49FC21D261EF000CF5CCB /* sephone.icns */,
-				34E49FC31D261EF000CF5CCB /* sephone.png */,
-				34E49FC41D261EF000CF5CCB /* speaker.png */,
-				34E49FC51D261EF000CF5CCB /* startcall-green.png */,
-				34E49FC61D261EF000CF5CCB /* startcall-small.png */,
-				34E49FC71D261EF000CF5CCB /* status-green.png */,
-				34E49FC81D261EF000CF5CCB /* status-offline.png */,
-				34E49FC91D261EF000CF5CCB /* status-orange.png */,
-				34E49FCA1D261EF000CF5CCB /* status-red.png */,
-				34E49FCB1D261EF000CF5CCB /* stopcall-red.png */,
-				34E49FCC1D261EF000CF5CCB /* stopcall-small.png */,
+				34EA79781D49AF2600F8F22F /* active_chat.png */,
+				34EA79791D49AF2600F8F22F /* addcall-green.png */,
+				34EA797A1D49AF2600F8F22F /* call_status_incoming.png */,
+				34EA797B1D49AF2600F8F22F /* call_status_outgoing.png */,
+				34EA797C1D49AF2600F8F22F /* call.png */,
+				34EA797D1D49AF2600F8F22F /* chat_message_delivered.png */,
+				34EA797E1D49AF2600F8F22F /* chat_message_inprogress.png */,
+				34EA797F1D49AF2600F8F22F /* chat_message_not_delivered.png */,
+				34EA79801D49AF2600F8F22F /* chat.png */,
+				34EA79811D49AF2600F8F22F /* composing_active_chat.png */,
+				34EA79821D49AF2600F8F22F /* composing_chat.png */,
+				34EA79831D49AF2600F8F22F /* contact_starred.png */,
+				34EA79841D49AF2600F8F22F /* contact_unstarred.png */,
+				34EA79851D49AF2600F8F22F /* contact-orange.png */,
+				34EA79861D49AF2600F8F22F /* dialer-orange.png */,
+				34EA79871D49AF2600F8F22F /* dialer.png */,
+				34EA79881D49AF2600F8F22F /* history-orange.png */,
+				34EA79891D49AF2600F8F22F /* hold_off.png */,
+				34EA798A1D49AF2600F8F22F /* hold_on.png */,
+				34EA798B1D49AF2600F8F22F /* linphone-banner.png */,
+				34EA798C1D49AF2600F8F22F /* linphone.icns */,
+				34EA798D1D49AF2600F8F22F /* linphone.png */,
+				34EA798E1D49AF2600F8F22F /* mic_active.png */,
+				34EA798F1D49AF2600F8F22F /* mic_muted.png */,
+				34EA79901D49AF2600F8F22F /* notok.png */,
+				34EA79911D49AF2600F8F22F /* ok.png */,
+				34EA79921D49AF2600F8F22F /* speaker.png */,
+				34EA79931D49AF2600F8F22F /* startcall-green.png */,
+				34EA79941D49AF2600F8F22F /* startcall-small.png */,
+				34EA79951D49AF2600F8F22F /* status-green.png */,
+				34EA79961D49AF2600F8F22F /* status-offline.png */,
+				34EA79971D49AF2600F8F22F /* status-orange.png */,
+				34EA79981D49AF2600F8F22F /* status-red.png */,
+				34EA79991D49AF2600F8F22F /* stopcall-red.png */,
+				34EA799A1D49AF2600F8F22F /* stopcall-small.png */,
 			);
 			path = sephone;
 			sourceTree = "<group>";
@@ -2485,7 +2485,7 @@
 		34E49FCD1D261EF000CF5CCB /* sephone */ = {
 			isa = PBXGroup;
 			children = (
-				34E49FCE1D261EF000CF5CCB /* rootca.pem */,
+				34EA79761D49AEFE00F8F22F /* rootca.pem */,
 			);
 			path = sephone;
 			sourceTree = "<group>";
@@ -2501,10 +2501,10 @@
 		34E49FD01D261EF000CF5CCB /* sephone */ = {
 			isa = PBXGroup;
 			children = (
-				34E49FD11D261EF100CF5CCB /* hello16000.wav */,
-				34E49FD21D261EF100CF5CCB /* hello8000.wav */,
-				34E49FD31D261EF100CF5CCB /* incoming_chat.wav */,
-				34E49FD41D261EF100CF5CCB /* ringback.wav */,
+				34EA795A1D49AE9E00F8F22F /* hello8000.wav */,
+				34EA795B1D49AE9E00F8F22F /* hello16000.wav */,
+				34EA795C1D49AE9E00F8F22F /* incoming_chat.wav */,
+				34EA795D1D49AE9E00F8F22F /* ringback.wav */,
 				34E49FD51D261EF100CF5CCB /* rings */,
 			);
 			path = sephone;
@@ -2513,16 +2513,16 @@
 		34E49FD51D261EF100CF5CCB /* rings */ = {
 			isa = PBXGroup;
 			children = (
-				34E49FD61D261EF100CF5CCB /* bigben.wav */,
-				34E49FD71D261EF100CF5CCB /* oldphone-mono-30s.caf */,
-				34E49FD81D261EF100CF5CCB /* oldphone-mono.wav */,
-				34E49FD91D261EF100CF5CCB /* oldphone.wav */,
-				34E49FDA1D261EF100CF5CCB /* orig.wav */,
-				34E49FDB1D261EF100CF5CCB /* rock.wav */,
-				34E49FDC1D261EF100CF5CCB /* sweet.wav */,
-				34E49FDD1D261EF100CF5CCB /* synth.wav */,
-				34E49FDE1D261EF100CF5CCB /* tapping.wav */,
-				34E49FDF1D261EF100CF5CCB /* toy-mono.wav */,
+				34EA79621D49AEB400F8F22F /* bigben.wav */,
+				34EA79631D49AEB400F8F22F /* oldphone-mono-30s.caf */,
+				34EA79641D49AEB400F8F22F /* oldphone-mono.wav */,
+				34EA79651D49AEB400F8F22F /* oldphone.wav */,
+				34EA79661D49AEB500F8F22F /* orig.wav */,
+				34EA79671D49AEB500F8F22F /* rock.wav */,
+				34EA79681D49AEB500F8F22F /* sweet.wav */,
+				34EA79691D49AEB500F8F22F /* synth.wav */,
+				34EA796A1D49AEB500F8F22F /* tapping.wav */,
+				34EA796B1D49AEB500F8F22F /* toy-mono.wav */,
 			);
 			path = rings;
 			sourceTree = "<group>";
@@ -2855,141 +2855,142 @@
 			buildActionMask = 2147483647;
 			files = (
 				34F4D2941D1A673C005963CA /* test.caf in Resources */,
-				34E4A0291D261EF100CF5CCB /* speaker.png in Resources */,
-				34E4A0361D261EF100CF5CCB /* ringback.wav in Resources */,
+				34EA79A91D49AF2600F8F22F /* dialer-orange.png in Resources */,
+				34EA799E1D49AF2600F8F22F /* call_status_outgoing.png in Resources */,
 				34F4D2B21D1D234D005963CA /* left_on.png in Resources */,
 				34E49D8C1D20C7A100CF5CCB /* tab_device_normal@2x.png in Resources */,
 				7D64D4B11D470A2C0092D193 /* 蒙层.png in Resources */,
+				34EA79B91D49AF2600F8F22F /* status-offline.png in Resources */,
+				34EA79BC1D49AF2600F8F22F /* stopcall-red.png in Resources */,
 				34E49D8D1D20C7A100CF5CCB /* tab_device_press@2x.png in Resources */,
 				7DAAEDCE1D41B6AD003BD61A /* yindaoye22.jpg in Resources */,
 				34C4C6A81D40D8DB00075897 /* PhotoCollectionViewCell.xib in Resources */,
 				7D4C6FA51D348CFC00334143 /* pinglunlun.png in Resources */,
-				34E4A03F1D261EF100CF5CCB /* tapping.wav in Resources */,
+				34EA79B51D49AF2600F8F22F /* speaker.png in Resources */,
 				34E49D8E1D20C7A100CF5CCB /* tab_family_normal@2x.png in Resources */,
 				34E49FE01D261EF100CF5CCB /* hold.wav in Resources */,
 				34C4C6BC1D40DA6500075897 /* addImage.png in Resources */,
 				7DF28C471D38D9EA00FA31C6 /* LargeViewController.xib in Resources */,
-				34E4A01B1D261EF100CF5CCB /* contact_starred.png in Resources */,
 				3492635C1D13FAC6006C2FD9 /* MyphotoAlbumViewController.xib in Resources */,
-				34E4A02C1D261EF100CF5CCB /* status-green.png in Resources */,
+				34EA79A51D49AF2600F8F22F /* composing_chat.png in Resources */,
 				34E49D991D20D06400CF5CCB /* person_number@3x.png in Resources */,
 				7D3813061D25243A00C583DD /* baiquan.png in Resources */,
 				34F4D2B61D1D265A005963CA /* shuping.png in Resources */,
 				34E49FE21D261EF100CF5CCB /* msg.wav in Resources */,
 				34E49D8F1D20C7A100CF5CCB /* tab_family_press@2x.png in Resources */,
+				34EA79A81D49AF2600F8F22F /* contact-orange.png in Resources */,
 				34E49FE31D261EF100CF5CCB /* nowebcamCIF.jpg in Resources */,
+				34EA79BA1D49AF2600F8F22F /* status-orange.png in Resources */,
+				34EA79711D49AEB500F8F22F /* rock.wav in Resources */,
 				34E49D811D20C37100CF5CCB /* sebot_add@3x.png in Resources */,
+				34EA79B61D49AF2600F8F22F /* startcall-green.png in Resources */,
 				34C4C6C11D40DB9A00075897 /* 选项.png in Resources */,
-				34E4A0281D261EF100CF5CCB /* sephone.png in Resources */,
 				7D4B10241D12A6C10095D463 /* password.png in Resources */,
 				7D4B101F1D12A2950095D463 /* APPImgae.png in Resources */,
 				34C4C6BA1D40DA3F00075897 /* defaultPhoto.png in Resources */,
 				34F4D2AD1D1D234D005963CA /* before_off.png in Resources */,
-				34E4A0331D261EF100CF5CCB /* hello16000.wav in Resources */,
-				34E4A0341D261EF100CF5CCB /* hello8000.wav in Resources */,
 				34E4A00E1D261EF100CF5CCB /* nowebcamCIF.jpg in Resources */,
 				34E49D981D20D06400CF5CCB /* person_acount@3x.png in Resources */,
+				34EA796C1D49AEB500F8F22F /* bigben.wav in Resources */,
+				34EA799D1D49AF2600F8F22F /* call_status_incoming.png in Resources */,
+				34EA799F1D49AF2600F8F22F /* call.png in Resources */,
 				34E49D901D20C7A100CF5CCB /* tab_person_normal@2x.png in Resources */,
-				34E4A0251D261EF100CF5CCB /* ok.png in Resources */,
-				34E4A0321D261EF100CF5CCB /* rootca.pem in Resources */,
+				34EA795E1D49AE9E00F8F22F /* hello8000.wav in Resources */,
 				34921D101D191A5D00541E41 /* SaomaoViewController.xib in Resources */,
-				34E4A0131D261EF100CF5CCB /* call_status_outgoing.png in Resources */,
+				34EA79751D49AEB500F8F22F /* toy-mono.wav in Resources */,
 				345565D81D129F5200B6E562 /* MyDeviceTableViewCell.xib in Resources */,
+				34EA796D1D49AEB500F8F22F /* oldphone-mono-30s.caf in Resources */,
+				34EA799C1D49AF2600F8F22F /* addcall-green.png in Resources */,
 				7DF28C4B1D38E2CB00FA31C6 /* 默认图片.png in Resources */,
 				34C4C6AE1D40D8DB00075897 /* ShowPhotoViewController.xib in Resources */,
 				7D1147081D3CC76C0080D3DE /* 无图时.png in Resources */,
+				34EA79B41D49AF2600F8F22F /* ok.png in Resources */,
 				34E49FE61D261EF100CF5CCB /* ringback.wav in Resources */,
+				34EA79B01D49AF2600F8F22F /* linphone.png in Resources */,
 				7DF28C4A1D38E2CB00FA31C6 /* 默认头像.png in Resources */,
 				7D4B101B1D129C860095D463 /* back@2x.png in Resources */,
 				345565DF1D12A5D800B6E562 /* PerInformationTableViewCell.xib in Resources */,
 				34C4C6AA1D40D8DB00075897 /* PhotoInforamtion.xib in Resources */,
 				34E49D971D20D06400CF5CCB /* person_about@3x.png in Resources */,
 				345565D31D129EBC00B6E562 /* DeviceInformationViewController.xib in Resources */,
+				34EA79A61D49AF2600F8F22F /* contact_starred.png in Resources */,
 				34F4D2AF1D1D234D005963CA /* behand_off.png in Resources */,
-				34E4A0141D261EF100CF5CCB /* chat.png in Resources */,
+				34EA799B1D49AF2600F8F22F /* active_chat.png in Resources */,
+				34EA79B31D49AF2600F8F22F /* notok.png in Resources */,
 				34C4C6AC1D40D8DB00075897 /* PhotoInformationViewController.xib in Resources */,
-				34E4A0311D261EF100CF5CCB /* stopcall-small.png in Resources */,
-				34E4A01C1D261EF100CF5CCB /* contact_unstarred.png in Resources */,
 				34C4C6A51D40D8DB00075897 /* CompileViewController.xib in Resources */,
+				34EA79BD1D49AF2600F8F22F /* stopcall-small.png in Resources */,
+				34EA79A31D49AF2600F8F22F /* chat.png in Resources */,
 				34E49FE11D261EF100CF5CCB /* msg.caf in Resources */,
 				345565EA1D13A04100B6E562 /* FamilyTeamTableViewCell.xib in Resources */,
 				34E49D9F1D20FFB600CF5CCB /* acount.png in Resources */,
+				34EA79A21D49AF2600F8F22F /* chat_message_not_delivered.png in Resources */,
 				34F4D29B1D1A8C9E005963CA /* off_line.png in Resources */,
-				34E4A03B1D261EF100CF5CCB /* orig.wav in Resources */,
 				7D1147091D3CC76C0080D3DE /* 相机.png in Resources */,
-				34E4A03E1D261EF100CF5CCB /* synth.wav in Resources */,
+				34EA79B11D49AF2600F8F22F /* mic_active.png in Resources */,
 				34C4C6C41D40DC6C00075897 /* more@2x.png in Resources */,
 				3492637A1D178EF4006C2FD9 /* OpinionViewController.xib in Resources */,
 				34E49D841D20C4A700CF5CCB /* sebot_start_off@2x.png in Resources */,
-				34E4A01A1D261EF100CF5CCB /* contact-orange.png in Resources */,
 				7DAAEDD11D41B79F003BD61A /* morentutu.png in Resources */,
 				34F4D2B31D1D234D005963CA /* right_off.png in Resources */,
-				34E4A01F1D261EF100CF5CCB /* history-orange.png in Resources */,
 				7D396F861D2E31600079EE9E /* addImage.png in Resources */,
 				34E49D9A1D20D06400CF5CCB /* person_paword@3x.png in Resources */,
 				345565121D10EF1300B6E562 /* Localizable.strings in Resources */,
-				34E4A0261D261EF100CF5CCB /* sephone-banner.png in Resources */,
-				34E4A0191D261EF100CF5CCB /* composing_chat.png in Resources */,
+				34EA79731D49AEB500F8F22F /* synth.wav in Resources */,
 				34F4D29D1D1A8C9E005963CA /* on_line.png in Resources */,
+				34EA79AF1D49AF2600F8F22F /* linphone.icns in Resources */,
 				34C4C6AF1D40D8DB00075897 /* SQSupplementaryView.xib in Resources */,
-				34E4A0351D261EF100CF5CCB /* incoming_chat.wav in Resources */,
 				34E49FE41D261EF100CF5CCB /* ring.caf in Resources */,
 				34E49FE91D261EF100CF5CCB /* sephonerc in Resources */,
-				34E4A01D1D261EF100CF5CCB /* dialer-orange.png in Resources */,
 				57D1E6021CFED25900BEDFF6 /* Assets.xcassets in Resources */,
 				349263751D178EBC006C2FD9 /* AgreementViewController.xib in Resources */,
 				7D64D4AF1D4708110092D193 /* albumAdd.png in Resources */,
 				57D1E6001CFED25900BEDFF6 /* Main.storyboard in Resources */,
-				34E4A03A1D261EF100CF5CCB /* oldphone.wav in Resources */,
 				349263561D13E5F3006C2FD9 /* PersonTableViewCell.xib in Resources */,
-				34E4A0381D261EF100CF5CCB /* oldphone-mono-30s.caf in Resources */,
 				7DAAEDCD1D41B6AD003BD61A /* yindaoye11.jpg in Resources */,
-				34E4A0121D261EF100CF5CCB /* call_status_incoming.png in Resources */,
 				34E49D911D20C7A100CF5CCB /* tab_person_press@2x.png in Resources */,
-				34E4A01E1D261EF100CF5CCB /* dialer.png in Resources */,
+				34EA79B21D49AF2600F8F22F /* mic_muted.png in Resources */,
 				34F4D2A21D1CCDE9005963CA /* InCallViewController.xib in Resources */,
-				34E4A02D1D261EF100CF5CCB /* status-offline.png in Resources */,
-				34E4A0201D261EF100CF5CCB /* hold_off.png in Resources */,
 				345565E51D139DB200B6E562 /* FamilyTeamViewController.xib in Resources */,
 				34E49DA11D20FFDC00CF5CCB /* number.png in Resources */,
-				34E4A0271D261EF100CF5CCB /* sephone.icns in Resources */,
+				34EA796F1D49AEB500F8F22F /* oldphone.wav in Resources */,
 				34E49DA71D21074900CF5CCB /* test11.png in Resources */,
 				345565B21D114CFA00B6E562 /* Launch Screen.storyboard in Resources */,
-				34E4A0221D261EF100CF5CCB /* mic_active.png in Resources */,
 				7D1147051D3C80020080D3DE /* noshowpass.png in Resources */,
 				3492637F1D178F1B006C2FD9 /* ProductionIntroducViewController.xib in Resources */,
 				34F4D2A41D1D21B8005963CA /* round.png in Resources */,
+				34EA79721D49AEB500F8F22F /* sweet.wav in Resources */,
+				34EA79AA1D49AF2600F8F22F /* dialer.png in Resources */,
+				34EA795F1D49AE9E00F8F22F /* hello16000.wav in Resources */,
+				34EA79A71D49AF2600F8F22F /* contact_unstarred.png in Resources */,
 				34E49FEE1D261EF100CF5CCB /* shortring.caf in Resources */,
+				34EA79AC1D49AF2600F8F22F /* hold_off.png in Resources */,
+				34EA79AB1D49AF2600F8F22F /* history-orange.png in Resources */,
 				34C4C6A61D40D8DB00075897 /* HeaderViewCollection.xib in Resources */,
-				34E4A02B1D261EF100CF5CCB /* startcall-small.png in Resources */,
-				34E4A0111D261EF100CF5CCB /* call.png in Resources */,
+				34EA79701D49AEB500F8F22F /* orig.wav in Resources */,
+				34EA79BB1D49AF2600F8F22F /* status-red.png in Resources */,
 				349263681D13FC9F006C2FD9 /* RepairPwViewController.xib in Resources */,
-				34E4A0391D261EF100CF5CCB /* oldphone-mono.wav in Resources */,
-				34E4A0161D261EF100CF5CCB /* chat_message_inprogress.png in Resources */,
+				34EA79741D49AEB500F8F22F /* tapping.wav in Resources */,
+				34EA79A11D49AF2600F8F22F /* chat_message_inprogress.png in Resources */,
 				34F4D2B11D1D234D005963CA /* left_off.png in Resources */,
 				7D1147031D3C7FF50080D3DE /* showPs.png in Resources */,
-				34E4A02A1D261EF100CF5CCB /* startcall-green.png in Resources */,
+				34EA79A01D49AF2600F8F22F /* chat_message_delivered.png in Resources */,
+				34EA79611D49AE9E00F8F22F /* ringback.wav in Resources */,
 				34E49DA31D21000900CF5CCB /* photo.png in Resources */,
 				34E49FEB1D261EF100CF5CCB /* sephonerc-factory~ipad in Resources */,
-				34E4A0181D261EF100CF5CCB /* composing_active_chat.png in Resources */,
 				7D4B10251D12A6C10095D463 /* user.png in Resources */,
-				34E4A0241D261EF100CF5CCB /* notok.png in Resources */,
 				34C4C6C21D40DB9A00075897 /* 选择.png in Resources */,
+				34EA796E1D49AEB500F8F22F /* oldphone-mono.wav in Resources */,
 				3492636D1D13FE8D006C2FD9 /* AboutTableViewCell.xib in Resources */,
+				34EA79601D49AE9E00F8F22F /* incoming_chat.wav in Resources */,
 				349263631D13FC72006C2FD9 /* AboutViewController.xib in Resources */,
-				34E4A02F1D261EF100CF5CCB /* status-red.png in Resources */,
-				34E4A02E1D261EF100CF5CCB /* status-orange.png in Resources */,
 				7D3813071D25243A00C583DD /* gouquan.png in Resources */,
 				34F4D29C1D1A8C9E005963CA /* on_connection.png in Resources */,
 				345565B01D114C5400B6E562 /* launguide.jpg in Resources */,
-				34E4A03C1D261EF100CF5CCB /* rock.wav in Resources */,
+				34EA79B71D49AF2600F8F22F /* startcall-small.png in Resources */,
+				34EA79B81D49AF2600F8F22F /* status-green.png in Resources */,
 				7D4C6FA31D348CFC00334143 /* dianzanhou.png in Resources */,
-				34E4A0301D261EF100CF5CCB /* stopcall-red.png in Resources */,
-				34E4A0371D261EF100CF5CCB /* bigben.wav in Resources */,
-				34E4A0171D261EF100CF5CCB /* chat_message_not_delivered.png in Resources */,
 				34E49FE51D261EF100CF5CCB /* ring.wav in Resources */,
-				34E4A03D1D261EF100CF5CCB /* sweet.wav in Resources */,
-				34E4A0401D261EF100CF5CCB /* toy-mono.wav in Resources */,
 				7DAAEDCF1D41B6AD003BD61A /* yindaoye33.jpg in Resources */,
 				34E49D9D1D20FF0F00CF5CCB /* about.png in Resources */,
 				34C4C6BE1D40DB2700075897 /* add.png in Resources */,
@@ -2997,16 +2998,15 @@
 				7D4C6FA41D348CFC00334143 /* dianzanzan.png in Resources */,
 				34E49FEA1D261EF100CF5CCB /* sephonerc-factory in Resources */,
 				34E49FEC1D261EF100CF5CCB /* sephonerc~ipad in Resources */,
-				34E4A0211D261EF100CF5CCB /* hold_on.png in Resources */,
-				34E4A0101D261EF100CF5CCB /* addcall-green.png in Resources */,
 				34E49D9B1D20D06400CF5CCB /* person_photo@3x.png in Resources */,
-				34E4A0231D261EF100CF5CCB /* mic_muted.png in Resources */,
-				34E4A0151D261EF100CF5CCB /* chat_message_delivered.png in Resources */,
+				34EA79AE1D49AF2600F8F22F /* linphone-banner.png in Resources */,
 				34921D0A1D18DDC700541E41 /* se_saomao@2x.png in Resources */,
 				34E49FE71D261EF100CF5CCB /* rootca.pem in Resources */,
 				34F4D2B41D1D234D005963CA /* right_on.png in Resources */,
+				34EA79AD1D49AF2600F8F22F /* hold_on.png in Resources */,
 				34F4D2B01D1D234D005963CA /* behand_on.png in Resources */,
-				34E4A00F1D261EF100CF5CCB /* active_chat.png in Resources */,
+				34EA79771D49AEFE00F8F22F /* rootca.pem in Resources */,
+				34EA79A41D49AF2600F8F22F /* composing_active_chat.png in Resources */,
 				34E49DA51D21002400CF5CCB /* paword.png in Resources */,
 				34F4D2AE1D1D234D005963CA /* before_on.png in Resources */,
 			);

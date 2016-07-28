@@ -39,5 +39,6 @@
  */
 - (void)showMessageWarring:(NSString *)message view:(UIView *)view;
 
+- (void)showYuLei:(NSString *)hint;
 
 @end

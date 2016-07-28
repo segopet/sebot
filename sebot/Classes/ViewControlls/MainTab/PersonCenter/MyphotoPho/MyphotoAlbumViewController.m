@@ -37,13 +37,29 @@
     usid = [AccountManager sharedAccountManager].loginModel.userid;
     [self setNavTitle: NSLocalizedString(@"MyphotoAlbum", nil)];
     self.view.backgroundColor = [UIColor whiteColor];
-    DefaultesImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT/4, 373, 373)];
-    DefaultesImage.image =[UIImage imageNamed:@"无图时.png"];
+    DefaultesImage = [[UIImageView alloc]initWithFrame:CGRectMake(15, 60*W_Hight_Zoom, 110*W_Wide_Zoom, 110*W_Hight_Zoom)];
+    DefaultesImage.image =[UIImage imageNamed:@"add.png"];
     DefaultesImage.hidden = YES;
+    DefaultesImage.userInteractionEnabled = YES;
     [self.view addSubview:DefaultesImage];
+    UITapGestureRecognizer* singleRecognizer;
+    singleRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleSingleTapFromT:)];
+    singleRecognizer.numberOfTapsRequired = 1; // 单击
+    [DefaultesImage addGestureRecognizer:singleRecognizer];
+    
     arrData = [NSMutableArray array];
     
 }
+
+
+- (void)handleSingleTapFromT:(UITapGestureRecognizer *)recognizer {
+    
+    NewInformationViewController * haha = [[NewInformationViewController alloc]init];
+    [self.navigationController pushViewController:haha animated:YES];
+    
+}
+
+
 
 -(void)viewWillAppear:(BOOL)animated
 {
@@ -134,7 +150,7 @@
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-    return UIEdgeInsetsMake(15,11, 0, 11);
+    return UIEdgeInsetsMake(13,11, 0, 11);
 }
 //返回每个item
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
