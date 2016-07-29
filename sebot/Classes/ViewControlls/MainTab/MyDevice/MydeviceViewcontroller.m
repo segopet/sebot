@@ -161,6 +161,7 @@
     
     app = (AppDelegate *)[UIApplication sharedApplication].delegate;
     _popView = [[PopView alloc] initWithFrame:CGRectMake(0, 0,SCREEN_WIDTH ,SCREEN_HEIGHT)];
+    
     _popView.center = self.view.center;
     _popView.ParentView = app.window;
     _popView.delegate = self;

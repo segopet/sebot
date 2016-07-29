@@ -263,6 +263,7 @@
 		57D1E5F71CFED25900BEDFF6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D1E5F61CFED25900BEDFF6 /* main.m */; };
 		57D1E6001CFED25900BEDFF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57D1E5FE1CFED25900BEDFF6 /* Main.storyboard */; };
 		57D1E6021CFED25900BEDFF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57D1E6011CFED25900BEDFF6 /* Assets.xcassets */; };
+		7D009E811D4B0B08000F8788 /* AFHttpClient+About.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D009E801D4B0B08000F8788 /* AFHttpClient+About.m */; };
 		7D1147031D3C7FF50080D3DE /* showPs.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D1147021D3C7FF50080D3DE /* showPs.png */; };
 		7D1147051D3C80020080D3DE /* noshowpass.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D1147041D3C80020080D3DE /* noshowpass.png */; };
 		7D1147081D3CC76C0080D3DE /* 无图时.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D1147061D3CC76C0080D3DE /* 无图时.png */; };
@@ -1068,6 +1069,8 @@
 		57D1E5FF1CFED25900BEDFF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		57D1E6011CFED25900BEDFF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57D1E6061CFED25900BEDFF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D009E7F1D4B0B08000F8788 /* AFHttpClient+About.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+About.h"; sourceTree = "<group>"; };
+		7D009E801D4B0B08000F8788 /* AFHttpClient+About.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+About.m"; sourceTree = "<group>"; };
 		7D1147021D3C7FF50080D3DE /* showPs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = showPs.png; sourceTree = "<group>"; };
 		7D1147041D3C80020080D3DE /* noshowpass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noshowpass.png; sourceTree = "<group>"; };
 		7D1147061D3CC76C0080D3DE /* 无图时.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "无图时.png"; sourceTree = "<group>"; };
@@ -1321,6 +1324,8 @@
 				34012DAE1D2CD9A000C97E1E /* AFHttpClient+FamilyTeam.m */,
 				34EC5E8C1D3DFCB100CF2DEF /* AFHttpClient+MyPhoto.h */,
 				34EC5E8D1D3DFCB100CF2DEF /* AFHttpClient+MyPhoto.m */,
+				7D009E7F1D4B0B08000F8788 /* AFHttpClient+About.h */,
+				7D009E801D4B0B08000F8788 /* AFHttpClient+About.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -3080,6 +3085,7 @@
 				7D6B22D71D3F4CF300A3E2BA /* CommentTableViewCell.m in Sources */,
 				7DF28C451D38D87800FA31C6 /* LargeViewController.m in Sources */,
 				349263791D178EF4006C2FD9 /* OpinionViewController.m in Sources */,
+				7D009E811D4B0B08000F8788 /* AFHttpClient+About.m in Sources */,
 				345565D21D129EBC00B6E562 /* DeviceInformationViewController.m in Sources */,
 				34EC5E8E1D3DFCB100CF2DEF /* AFHttpClient+MyPhoto.m in Sources */,
 				572DEE5D1D1162E100035228 /* AFHttpClient.m in Sources */,

@@ -222,7 +222,7 @@ static BOOL isBackGroundActivateApplication;
         NSLog(@"acitve or background");
         UIAlertView *alertView =[[UIAlertView alloc]initWithTitle:@"收到一条消息" message:userInfo[@"aps"][@"desc"] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
         [alertView show];
-
+          [[NSNotificationCenter defaultCenter]postNotificationName:@"bangdingshuaxin" object:nil];
     }
     else//杀死状态下，直接跳转到跳转页面。
     {
