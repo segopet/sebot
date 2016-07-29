@@ -8,6 +8,8 @@
 
 #import "BaseTabViewController.h"
 
+
+
 @interface CompileViewController :BaseTabViewController
 
 @property (nonatomic,strong)NSString * photoName;

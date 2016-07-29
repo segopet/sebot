@@ -61,6 +61,19 @@
     
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(pass) name:@"haha" object:nil];
+    
+}
+- (void)pass
+
+{
+    
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    
+}
 
 - (void)setupData
 {
@@ -156,7 +169,10 @@
 {
     NSLog(@"33");
     
-    
+    MBProgressHUD *hud=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode=MBProgressHUDAnimationFade;//枚举类型不同的效果
+    hud.labelText=@"加载中.......";
+    [_popView removeFromSuperview];
     
     if ([AppUtil isValidateMobile:_popView.numberTextfied.text]) {
         
@@ -164,13 +180,14 @@
         NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
         [[AFHttpClient sharedAFHttpClient]invate:str token:str admin:str phone: _popView.numberTextfied.text deviceno:self.deviceNum complete:^(ResponseModel *model) {
             [self  showSuccessHudWithHint:@"邀请已发送"];
-            [_popView removeFromSuperview];
+            
         }];
 
     }
     else
     {
         [self showSuccessHudWithHint:@"请输入正确的手机格式"];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
         
     }
     
@@ -361,7 +378,8 @@
             // 转让接口
         NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
             [[AFHttpClient sharedAFHttpClient]givePowr:str token:str admin:strControl usr:famModel.userid did:famModel.did complete:^(ResponseModel * model) {
-                [self showSuccessHudWithHint:model.retDesc];
+                 [[AppUtil appTopViewController] showHint:model.retDesc];
+                
                 isMeControl = NO;
                 [self.navigationController popViewControllerAnimated:YES];
                 

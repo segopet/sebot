@@ -34,14 +34,14 @@
                         <constraint firstAttribute="height" constant="1" id="aOn-y6-sIv"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIl-xQ-aXw">
                     <rect key="frame" x="0.0" y="170" width="320" height="1"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ty6-bj-8Z4">
@@ -51,7 +51,7 @@
                         <constraint firstAttribute="height" constant="1" id="iPS-yT-uWR"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新密码：" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMp-vf-K1e">
@@ -60,13 +60,13 @@
                         <constraint firstAttribute="height" constant="33" id="ljc-An-MiP"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="确认密码：" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFd-kw-SWH">
                     <rect key="frame" x="8" y="184" width="95" height="33"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入新密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w7u-zs-q4o">
@@ -87,23 +87,23 @@
                         <action selector="updateBtn:" destination="-1" eventType="touchUpInside" id="XWF-sS-iEP"/>
                     </connections>
                 </button>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请再次确认新密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vol-eE-iml">
-                    <rect key="frame" x="100" y="186" width="151" height="31"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="31" id="VCr-Mn-gya"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="原密码：" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R8P-0D-nHT">
                     <rect key="frame" x="13" y="72" width="95" height="33"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="95" id="k3N-EO-nEs"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请再次确认新密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vol-eE-iml">
+                    <rect key="frame" x="92" y="185" width="151" height="31"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="31" id="VCr-Mn-gya"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -120,20 +120,20 @@
                 <constraint firstItem="eMp-vf-K1e" firstAttribute="centerY" secondItem="w7u-zs-q4o" secondAttribute="centerY" id="Cd1-so-JlR"/>
                 <constraint firstItem="w7u-zs-q4o" firstAttribute="trailing" secondItem="Zst-UO-xPL" secondAttribute="trailing" id="LvL-sd-mDi"/>
                 <constraint firstItem="tIl-xQ-aXw" firstAttribute="leading" secondItem="eMp-vf-K1e" secondAttribute="leading" constant="-13" id="Mwt-iU-glY"/>
-                <constraint firstAttribute="trailing" secondItem="vol-eE-iml" secondAttribute="trailing" constant="69" id="VaY-sh-tbq"/>
+                <constraint firstAttribute="trailing" secondItem="vol-eE-iml" secondAttribute="trailing" constant="77" id="VaY-sh-tbq"/>
                 <constraint firstItem="eMp-vf-K1e" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="13" id="cHv-iV-u9m"/>
-                <constraint firstItem="vol-eE-iml" firstAttribute="centerY" secondItem="FFd-kw-SWH" secondAttribute="centerY" constant="1" id="cgp-pd-yQt"/>
+                <constraint firstItem="vol-eE-iml" firstAttribute="centerY" secondItem="FFd-kw-SWH" secondAttribute="centerY" id="cgp-pd-yQt"/>
                 <constraint firstItem="eMp-vf-K1e" firstAttribute="trailing" secondItem="FFd-kw-SWH" secondAttribute="trailing" constant="5" id="dFF-X6-rLo"/>
                 <constraint firstItem="R8P-0D-nHT" firstAttribute="trailing" secondItem="eMp-vf-K1e" secondAttribute="trailing" id="gDz-OZ-T1S"/>
                 <constraint firstItem="Tmn-2D-a9Y" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="24" id="i2P-tJ-4on"/>
-                <constraint firstItem="ty6-bj-8Z4" firstAttribute="top" secondItem="vol-eE-iml" secondAttribute="bottom" constant="8" id="kHT-lO-M89"/>
+                <constraint firstItem="ty6-bj-8Z4" firstAttribute="top" secondItem="vol-eE-iml" secondAttribute="bottom" constant="9" id="kHT-lO-M89"/>
                 <constraint firstItem="FFd-kw-SWH" firstAttribute="top" secondItem="tIl-xQ-aXw" secondAttribute="bottom" constant="13" id="kvY-Y7-zeY"/>
                 <constraint firstItem="tIl-xQ-aXw" firstAttribute="trailing" secondItem="sA8-Tq-thv" secondAttribute="trailing" id="mGg-7h-Sik"/>
                 <constraint firstItem="ty6-bj-8Z4" firstAttribute="trailing" secondItem="tIl-xQ-aXw" secondAttribute="trailing" id="n29-t7-ZHc"/>
                 <constraint firstItem="w7u-zs-q4o" firstAttribute="leading" secondItem="Zst-UO-xPL" secondAttribute="leading" id="nVy-oS-duZ"/>
                 <constraint firstItem="ty6-bj-8Z4" firstAttribute="top" secondItem="FFd-kw-SWH" secondAttribute="bottom" constant="8" id="ni0-Ne-24V"/>
-                <constraint firstItem="w7u-zs-q4o" firstAttribute="centerX" secondItem="vol-eE-iml" secondAttribute="centerX" constant="-11" id="ojO-rs-dWd"/>
-                <constraint firstItem="vol-eE-iml" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="100" id="paf-Rd-JKI"/>
+                <constraint firstItem="w7u-zs-q4o" firstAttribute="centerX" secondItem="vol-eE-iml" secondAttribute="centerX" constant="-3" id="ojO-rs-dWd"/>
+                <constraint firstItem="vol-eE-iml" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="92" id="paf-Rd-JKI"/>
                 <constraint firstItem="Tmn-2D-a9Y" firstAttribute="top" secondItem="ty6-bj-8Z4" secondAttribute="bottom" constant="59" id="tPs-oH-N3O"/>
                 <constraint firstItem="sA8-Tq-thv" firstAttribute="top" secondItem="R8P-0D-nHT" secondAttribute="bottom" constant="10" id="twJ-y9-XaF"/>
                 <constraint firstItem="sA8-Tq-thv" firstAttribute="leading" secondItem="eMp-vf-K1e" secondAttribute="leading" constant="-13" id="tzt-73-0E4"/>

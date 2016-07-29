@@ -314,7 +314,7 @@
     }else
     {
         
-        [self showSuccessHudWithHint:@"设备离线不能开启"];
+        [self showSuccessHudWithHint:@"设备暂不能开启"];
     }
    
   
@@ -374,7 +374,9 @@
         NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
         [[AFHttpClient sharedAFHttpClient]solvDevice:str token:str did:checkmodel.did complete:^(ResponseModel * model) {
             NSLog(@"%@",model.retDesc);
-            [self showHint:model.retDesc];
+         
+            
+             [[AppUtil appTopViewController] showHint:model.retDesc];
             [[NSNotificationCenter defaultCenter]postNotificationName:@"bangdingshuaxin" object:nil];
 
         }];

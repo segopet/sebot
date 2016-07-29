@@ -14,6 +14,7 @@
 {
     NSTimer *updateTimer;
     NSTimer * moveTimer;
+    BOOL isLeft;
     
 }
 @property (nonatomic, assign) SephoneCall *call;
@@ -291,6 +292,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 - (IBAction)upTopBtn:(UIButton *)sender {
 }
 - (IBAction)uptop_start_btn:(UIButton *)sender {
+    
 }
 
 - (IBAction)upDownBtn:(UIButton *)sender {
@@ -327,6 +329,8 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 {
     
     NSString * msg =[NSString stringWithFormat:@"control_servo,0,0,1,%d,200",[sender.userInfo intValue]];
+    
+    // 左右   "control_servo,0,0,2," + to + ",1000" 1  2
     [self sendMessage:msg];
     
     

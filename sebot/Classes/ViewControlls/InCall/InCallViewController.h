@@ -16,5 +16,6 @@
 - (void)setCall:(SephoneCall *)acall;
 
 @property (strong, nonatomic) IBOutlet UIButton *updownBtn;
+@property (strong, nonatomic) IBOutlet UINavigationBar *titleBar;
 
 @end
