@@ -129,7 +129,7 @@
 
 -(void)yanzhengmaTouch{
     if ([AppUtil isBlankString:_phoneNumberTextfield.text]) {
-        [[AppUtil appTopViewController] showHint:@"请输入帐号"];
+        [[AppUtil appTopViewController] showHint:@"请输入账号"];
         return;
     }
     if (![AppUtil isValidateMobile:_phoneNumberTextfield.text]) {

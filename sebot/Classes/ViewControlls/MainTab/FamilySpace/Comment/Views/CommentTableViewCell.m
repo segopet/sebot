@@ -21,7 +21,7 @@
         _headImage.backgroundColor = [UIColor blackColor];
         [self addSubview:_headImage];
         
-       // _nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(70 * W_Wide_Zoom, 20 * W_Hight_Zoom, 0 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
+        // _nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(70 * W_Wide_Zoom, 20 * W_Hight_Zoom, 0 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
         
         _nameLabel = [[UILabel alloc]init];
         _nameLabel.textColor = RED_COLOR;
@@ -29,7 +29,7 @@
         [self addSubview:_nameLabel];
         
         
-      //  _contentLabel = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_nameLabel.frame) + 5 * W_Wide_Zoom, 20 * W_Hight_Zoom, 0 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
+        //  _contentLabel = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_nameLabel.frame) + 5 * W_Wide_Zoom, 20 * W_Hight_Zoom, 0 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
         _contentLabel = [[UILabel alloc]init];
         _contentLabel.textColor = [UIColor blackColor];
         _contentLabel.font = [UIFont systemFontOfSize:14];

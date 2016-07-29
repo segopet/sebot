@@ -55,6 +55,11 @@
             [_colView reloadData];
         }else{
             //这里写一个就行了
+            //如果数组是空的，就造一个，让那个加号建显示出来就行了
+            NSArray * array = @[@{@"aid":@"",@"albumname":@"",@"cover":@"",@"did":@"",@"photonum":@"",@"userid":@""}];
+            [self.datasouce addObjectsFromArray:array];
+            [_colView reloadData];
+        
         }
        
     }];
@@ -123,10 +128,13 @@
         lable.textColor = [UIColor whiteColor];
         [downView addSubview:lable];
         
-        UILabel * lastLabel = [[UILabel alloc]initWithFrame:CGRectMake(90 * W_Wide_Zoom, 2 * W_Hight_Zoom, 10 * W_Wide_Zoom, 26 * W_Hight_Zoom)];
+        UILabel * lastLabel = [[UILabel alloc]initWithFrame:CGRectMake(77 * W_Wide_Zoom, 2 * W_Hight_Zoom, 30 * W_Wide_Zoom, 26 * W_Hight_Zoom)];
         lastLabel.font = [UIFont systemFontOfSize:13];
         lastLabel.text = model.photonum;
         lastLabel.textColor = [UIColor whiteColor];
+       // lastLabel.backgroundColor = [UIColor redColor];
+        lastLabel.textAlignment = NSTextAlignmentRight;
+        
         [downView addSubview:lastLabel];
     }
    
@@ -276,16 +284,13 @@
 
 
 
-
-
-
-
 -(void)bigButtonHiddin:(UIButton *)sender{
     _bigBtn.hidden = YES;
     [UIView animateWithDuration:0.3 animations:^{
         _downView.frame = CGRectMake(0 * W_Wide_Zoom, 667 * W_Hight_Zoom, 375 * W_Wide_Zoom, 80 * W_Hight_Zoom);
         
-        _downwitheView.frame = CGRectMake(0 * W_Wide_Zoom, 667 * W_Hight_Zoom, 375 * W_Wide_Zoom, 40 * W_Hight_Zoom);
+    _downwitheView.frame = CGRectMake(0 * W_Wide_Zoom, 667 * W_Hight_Zoom,  375 * W_Wide_Zoom, 40 * W_Hight_Zoom);
+        
     }];
 
 }

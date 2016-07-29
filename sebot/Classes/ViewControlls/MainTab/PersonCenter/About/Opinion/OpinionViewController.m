@@ -114,7 +114,7 @@
     
     [[AFHttpClient sharedAFHttpClient] POST:@"sebot/moblie/forward" parameters:@{@"userid" :  [AccountManager sharedAccountManager].loginModel.userid , @"objective":@"user", @"token" : @"1" , @"action" : @"feedback", @"data" : @{@"userid" :  [AccountManager sharedAccountManager].loginModel.userid,@"fcontent":_topTextfield.text,@"type":@"iphone",@"fphone":_downTextfield.text}} result:^(id model) {
         
-        [self showSuccessHudWithHint:@"反馈成功"];
+        //这里接口也要改一下
         [self.navigationController popViewControllerAnimated:YES];
         
     }];

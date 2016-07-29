@@ -9,6 +9,7 @@
 #import "RegistViewController.h"
 #import "AFHttpClient.h"
 #import "AFHttpClient+Regist.h"
+#import "AgreementViewController.h"
 @interface RegistViewController ()
 @property (nonatomic,strong)UIButton * achieveSecurityBtn;
 @property (nonatomic,strong)UITextField * phoneNumberTextfield;
@@ -79,6 +80,7 @@
     [xieyiBtn setTitleColor:RED_COLOR forState:UIControlStateNormal];
     xieyiBtn.titleLabel.font = [UIFont systemFontOfSize:12];
     [self.view  addSubview:xieyiBtn];
+    [xieyiBtn addTarget:self action:@selector(zhucexieyiyi) forControlEvents:UIControlEventTouchUpInside];
     
     _phoneNumberTextfield = [[UITextField alloc]initWithFrame:CGRectMake(100 * W_Wide_Zoom, 11 * W_Hight_Zoom, 200 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
     //_phoneNumberTextfield.backgroundColor = [UIColor redColor];
@@ -141,7 +143,7 @@
 
 -(void)yanzhengmaTouch{
     if ([AppUtil isBlankString:_phoneNumberTextfield.text]) {
-         [[AppUtil appTopViewController] showHint:@"请输入帐号"];
+         [[AppUtil appTopViewController] showHint:@"请输入账号"];
         return;
     }
     if (![AppUtil isValidateMobile:_phoneNumberTextfield.text]) {
@@ -242,6 +244,12 @@
     
 }
 
+-(void)zhucexieyiyi{
+    AgreementViewController * vc = [[AgreementViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+
+
+}
 
 
 

@@ -13,7 +13,7 @@
 
 
 static NSString * cellId = @"newAllubmtabeleviewwcellid";
-@interface NewInformationViewController ()
+@interface NewInformationViewController ()<UITextFieldDelegate>
 {
     BOOL  ischange;
     BOOL  firstBtn;
@@ -79,10 +79,12 @@ static NSString * cellId = @"newAllubmtabeleviewwcellid";
     
     _alumbnameTextfield = [[UITextField alloc]initWithFrame:CGRectMake(95 * W_Wide_Zoom, 76 * W_Hight_Zoom, 200 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
     _alumbnameTextfield.tintColor = GRAY_COLOR;
+    _alumbnameTextfield.delegate = self;
     _alumbnameTextfield.placeholder = @"请输入相册名称";
     _alumbnameTextfield.font = [UIFont systemFontOfSize:15];
     _alumbnameTextfield.textColor = [UIColor blackColor];
     [self.view addSubview:_alumbnameTextfield];
+    [_alumbnameTextfield addTarget:self action:@selector(textFieldDidChange:)  forControlEvents:UIControlEventEditingChanged];
     
     
     UILabel * lineLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 116 * W_Hight_Zoom, 375 * W_Wide_Zoom,1 * W_Hight_Zoom )];
@@ -167,5 +169,26 @@ static NSString * cellId = @"newAllubmtabeleviewwcellid";
     }
     
 }
+//- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+//{
+//    if (textField == _alumbnameTextfield) {
+//        if (textField.text.length > 10) {
+//            [[AppUtil appTopViewController] showHint:@"您最多只能输入10个字"];
+//            return NO;
+//        }
+//    }
+//
+//    return YES;
+//}
+
+- (void)textFieldDidChange:(UITextField *)textField
+{
+    if (textField == _alumbnameTextfield) {
+        if (textField.text.length > 10) {
+            textField.text = [textField.text substringToIndex:10];
+        }
+    }
+}
+
 
 @end
