@@ -47,38 +47,67 @@
     
     
     
-    if ([self.oldPsTx.text  isEqualToString:@""] || [self.NewPsTx.text isEqualToString:@"" ] || [self.ageinNewPsTx.text isEqualToString:@"" ]) {
-        
-        
-        [self showSuccessHudWithHint:@"不能为空"];
+//    if ([self.oldPsTx.text  isEqualToString:@""] || [self.NewPsTx.text isEqualToString:@"" ] || [self.ageinNewPsTx.text isEqualToString:@"" ]) {
+//        
+//        
+//        [self showSuccessHudWithHint:@"不能为空"];
+//        return;
+//    }
+    if ([AppUtil isBlankString:self.oldPsTx.text]) {
+         [self showSuccessHudWithHint:@"请输入旧密码"];
         return;
     
-    }else if ([self.oldPsTx.text isEqualToString: [AccountManager sharedAccountManager].loginModel.password] || [self.oldPsTx.text isEqualToString:self.NewPsTx.text])
+    }
+    
+    if (![self.oldPsTx.text isEqualToString:[AccountManager sharedAccountManager].loginModel.password])
     {
-        
-          [self showSuccessHudWithHint:@"新密码与旧密码一致"];
-        
+        [self showSuccessHudWithHint:@"旧密码输入错误"];
+        return;
+    }
+    
+    if ([AppUtil isBlankString:self.NewPsTx.text]) {
+        [self showSuccessHudWithHint:@"请输入新密码"];
+        return;
+    }
+    
+ 
+    if ([self.oldPsTx.text isEqualToString:self.NewPsTx.text]) {
+        [self showSuccessHudWithHint:@"旧密码与新密码不能相同"];
         return;
         
-    }else if ([self.NewPsTx.text isEqualToString:self.ageinNewPsTx.text])
-    {
-        
-            NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
-            [[AFHttpClient sharedAFHttpClient]repairPs:str token:str old:self.oldPsTx.text new:self.NewPsTx.text complete:^(ResponseModel * model) {
+    }
+    
+    if (![self.NewPsTx.text isEqualToString:self.ageinNewPsTx.text]) {
+        [self showSuccessHudWithHint:@"两次输入的密码不一致"];
+        return;
+    }
+    
+    
+    NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
+        [[AFHttpClient sharedAFHttpClient]repairPs:str token:str old:self.oldPsTx.text new:self.NewPsTx.text complete:^(ResponseModel * model) {
                 
                 [self showSuccessHudWithHint:model.retDesc];
-                LoginViewController * loginVC =[[LoginViewController alloc]init];
-                [self presentViewController:loginVC animated:YES completion:nil];
+                
+                //退出登录
+                [[NSNotificationCenter defaultCenter] postNotificationName:NotificationLoginStateChange object:@NO];
+                [[AccountManager sharedAccountManager]logout];
+                // 清除plist
+                
+                NSUserDefaults *userDefatluts = [NSUserDefaults standardUserDefaults];
+                NSString * strrr = [userDefatluts objectForKey:@"changeid"];
+                NSDictionary *dictionary = [userDefatluts dictionaryRepresentation];
+                for(NSString* key in [dictionary allKeys]){
+                    [userDefatluts removeObjectForKey:key];
+                    [userDefatluts synchronize];
+                }
+                //引导页和chanlied不能被清除了
+                [userDefatluts setObject:@"1" forKey:@"STARTFLAG"];
+                [userDefatluts setObject:strrr forKey:@"changeid"];
                 
             }];
         
-    }
-    else
-    {
-        
-        [self showSuccessHudWithHint:@"原密码必须正确"];
-        
-    }
+    
+   
     
     
 

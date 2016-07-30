@@ -84,7 +84,7 @@ static NSString * cellId = @"showComCell";
 
 - (void)onDeleBt:(UIButton *)sender
 {
-    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"确认删除照片吗"
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"确认删除照片吗?"
                                                        delegate:self
                                               cancelButtonTitle:@"取消"
                                          destructiveButtonTitle:nil
