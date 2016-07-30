@@ -132,7 +132,7 @@
         lastLabel.text = model.photonum;
         lastLabel.textColor = [UIColor whiteColor];
         lastLabel.textAlignment = NSTextAlignmentRight;
-        
+        //
         [downView addSubview:lastLabel];
     }
    
