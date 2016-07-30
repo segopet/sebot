@@ -46,7 +46,7 @@
     _lineView.alpha = 0.7;
     
     _iconIV = [[UIImageView alloc] init];
-    _iconIV.backgroundColor = [UIColor redColor];
+    _iconIV.backgroundColor = [UIColor clearColor];
     
     _nameLB = [[UILabel alloc] init];
     _nameLB.font = [UIFont systemFontOfSize:15];

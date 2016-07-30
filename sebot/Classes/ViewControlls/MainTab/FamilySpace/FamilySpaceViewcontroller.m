@@ -28,6 +28,7 @@ static NSString * cellId = @"FamilyCellides";
     AppDelegate *app;
     NSMutableArray * _listArray;
     UIImageView * _image;
+    UIImageView * _noShujuImage;
 }
 @end
 
@@ -98,14 +99,15 @@ static NSString * cellId = @"FamilyCellides";
 }
 
 -(void)isbangding{
-    [[AFHttpClient sharedAFHttpClient]querMydeviceWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid complete:^(ResponseModel *model) {
+       [[AFHttpClient sharedAFHttpClient]querMydeviceWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid complete:^(ResponseModel *model) {
         [_listArray addObjectsFromArray:model.list];
         if (_listArray.count > 0 ) {
-            [_image removeFromSuperview];
+              [_image removeFromSuperview];
             self .tableView.frame =  CGRectMake(0, 0, self.view.width, self.view.height);
             [self.tableView registerClass:[FamilyTableViewCell class] forCellReuseIdentifier:cellId];
             self.tableView.backgroundColor = [UIColor whiteColor];
             [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+
             [self initRefreshView];
         }else{
             [self noBangdingView];
@@ -114,10 +116,7 @@ static NSString * cellId = @"FamilyCellides";
 
 }
 
--(void)bangdingView{
- 
 
-}
 
 -(void)noBangdingView{
     [self.tableView removeFromSuperview];
@@ -155,11 +154,25 @@ static NSString * cellId = @"FamilyCellides";
         
         [self.tableView reloadData];
         [self handleEndRefresh];
-
+        [_image removeFromSuperview];
+        if (model.list.count == 0) {
+            [self noShuju];
+        }
+        
+        
     }];
 
 }
 
+-(void)noShuju{
+
+    NSLog(@"heheh");
+    _image = [[UIImageView alloc]initWithFrame:CGRectMake(60 * W_Wide_Zoom, 200 * W_Hight_Zoom, 250 * W_Wide_Zoom, 250 * W_Hight_Zoom)];
+    _image.image = [UIImage imageNamed:@"无图时.png"];
+    [self.tableView addSubview:_image];
+
+
+}
 
 
 -(void)setupData{
