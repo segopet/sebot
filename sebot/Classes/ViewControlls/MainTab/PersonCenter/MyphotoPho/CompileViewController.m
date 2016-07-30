@@ -46,7 +46,7 @@ static NSString * cellId = @"showComCell";
     
     if([AppUtil isBlankString:_alumbnameTextfield.text])
     {
-        [[AppUtil appTopViewController] showHint:@"相册名字为空"];
+        [[AppUtil appTopViewController] showHint:@"相册名称不能为空"];
         
     }else
     {
