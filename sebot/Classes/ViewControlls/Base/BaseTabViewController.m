@@ -47,7 +47,6 @@
 - (void)initRefreshView
 {
     __typeof (&*self) __weak weakSelf = self;
-    
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         weakSelf.pageIndex = START_PAGE_INDEX;
         [weakSelf loadDataSourceWithPage:weakSelf.pageIndex];

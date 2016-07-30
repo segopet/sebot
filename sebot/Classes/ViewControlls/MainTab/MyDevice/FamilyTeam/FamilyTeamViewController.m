@@ -179,15 +179,17 @@
         // 管理员邀请接口
         NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
         [[AFHttpClient sharedAFHttpClient]invate:str token:str admin:str phone: _popView.numberTextfied.text deviceno:self.deviceNum complete:^(ResponseModel *model) {
-            [self  showSuccessHudWithHint:@"邀请已发送"];
+            [[AppUtil appTopViewController] showHint:@"邀请已发送"];
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
             
         }];
 
     }
     else
     {
-        [self showSuccessHudWithHint:@"请输入正确的手机格式"];
         [MBProgressHUD hideHUDForView:self.view animated:YES];
+        [self showSuccessHudWithHint:@"请输入正确的手机格式"];
+        
         
     }
     
