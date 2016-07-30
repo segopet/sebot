@@ -8,7 +8,7 @@
 
 #import "BaseViewController.h"
 
-@interface IssueViewController : BaseViewController
+@interface IssueViewController : UIViewController
 @property (nonatomic,strong)UIImage * firstImage;
 @property (nonatomic,strong)NSString * aidstr;
 @end

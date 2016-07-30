@@ -117,7 +117,6 @@
     UIView * downView = [[UIView alloc]initWithFrame:CGRectMake(0 * W_Wide_Zoom, 80 * W_Hight_Zoom, 110 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
     downView.backgroundColor = [UIColor clearColor];
     [cell.contentView addSubview:downView];
-        
         UIImageView * mengcengImage = [[UIImageView alloc]initWithFrame:downView.bounds];
         mengcengImage.image = [UIImage imageNamed:@"蒙层.png"];
         [downView addSubview:mengcengImage];
@@ -132,7 +131,6 @@
         lastLabel.font = [UIFont systemFontOfSize:13];
         lastLabel.text = model.photonum;
         lastLabel.textColor = [UIColor whiteColor];
-       // lastLabel.backgroundColor = [UIColor redColor];
         lastLabel.textAlignment = NSTextAlignmentRight;
         
         [downView addSubview:lastLabel];
@@ -169,6 +167,8 @@
     }else{
         NewAlbumModel * model = self.datasouce[indexPath.row];
         _aidStr = model.aid;
+        NSUserDefaults * userdefaults = [NSUserDefaults standardUserDefaults];
+        [userdefaults setObject:model.albumname forKey:@"albuumname"];
         
         [self downButttonUp];
         
@@ -276,7 +276,7 @@
     IssueViewController * issue = [[IssueViewController alloc]init];
     issue.firstImage = getImage;
     issue.aidstr = _aidStr;
-   // [self presentViewController:issue animated:YES completion:nil];
+
     [self.navigationController pushViewController:issue animated:NO];
     
 }

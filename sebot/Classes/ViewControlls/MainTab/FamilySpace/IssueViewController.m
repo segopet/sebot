@@ -21,6 +21,7 @@
 
 @property(nonatomic,strong)UIView * bigView;
 
+@property (nonatomic,strong)UIButton * leftButton;
 
 @end
 
@@ -32,16 +33,91 @@
     self.view.backgroundColor = [UIColor grayColor];
     _imagePicker =[[UIImagePickerController alloc]init];
     _imagePicker.delegate= self;
-    //[self setTitle:@"发布"];
-    [self setNavTitle:@"发布"];
+    CGSize titleSize =self.navigationController.navigationBar.bounds.size;
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, titleSize.width/2,titleSize.height)];
+    label.backgroundColor = [UIColor clearColor];
+    label.textColor = [UIColor whiteColor];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.text=@"发布";
+    self.navigationItem.titleView=label;
+
     self.automaticallyAdjustsScrollViewInsets = NO;
-     [self showBarButton:NAV_RIGHT title:@"发布" fontColor:[UIColor whiteColor]];
+    // [self showBarButton:NAV_RIGHT title:@"发布" fontColor:[UIColor whiteColor]];
     self.view.backgroundColor = LIGHT_GRAY_COLOR;
 
+    UIButton *releaseButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 50, 30)];
+    [releaseButton setTitle:@"发布" forState:normal];
+    [releaseButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    releaseButton.titleLabel.font = [UIFont systemFontOfSize:14];
+    [releaseButton addTarget:self action:@selector(releaseInfo:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *releaseButtonItem = [[UIBarButtonItem alloc] initWithCustomView:releaseButton];
+    self.navigationItem.rightBarButtonItem = releaseButtonItem;
+    
+    
+    _leftButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
+    [_leftButton setImage:[UIImage imageNamed:@"back@2x.png"] forState:UIControlStateNormal];
+    [_leftButton addTarget:self action:@selector(doLeftButtonTouch) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *releaseButtonItem2 = [[UIBarButtonItem alloc] initWithCustomView:_leftButton];
+    [_leftButton setTitleEdgeInsets:UIEdgeInsetsMake(-1, -18, 0, 0)];
+    [_leftButton setImageEdgeInsets:UIEdgeInsetsMake(-1, -18, 0, 0)];
+    
+    self.navigationItem.leftBarButtonItem = releaseButtonItem2;
+    
+    
+
+    _topTextView = [[UITextView alloc]initWithFrame:CGRectMake(0 * W_Wide_Zoom, 60 * W_Hight_Zoom, 375 * W_Wide_Zoom, 150 * W_Hight_Zoom)];
+    _topTextView.textAlignment = NSTextAlignmentLeft;
+    _topTextView.backgroundColor = [UIColor whiteColor];
+    _topTextView.delegate = self;
+    _topTextView.font = [UIFont systemFontOfSize:13];
+    [self.view addSubview:_topTextView];
+    
+    _placeholderLabel = [[UILabel alloc]initWithFrame:CGRectMake(0 * W_Wide_Zoom, 60 * W_Hight_Zoom, 100 * W_Wide_Zoom, 35 * W_Hight_Zoom)];
+    _placeholderLabel.textColor = [UIColor grayColor];
+    _placeholderLabel.backgroundColor = [UIColor clearColor];
+    _placeholderLabel.text = @"请输入内容";
+    _placeholderLabel.font = _topTextView.font;
+    _placeholderLabel.layer.cornerRadius = 5;
+    [self.view addSubview:_placeholderLabel];
+    
+    
+    
+    _imageArray = [[NSMutableArray alloc]init];
+    [_imageArray addObject:_firstImage];
+    
+    [self addImageS];
+    
+    UIView * centerView = [[UIView alloc]initWithFrame:CGRectMake(0 * W_Wide_Zoom, 222 * W_Hight_Zoom, 375 * W_Wide_Zoom, 50 * W_Hight_Zoom)];
+    centerView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:centerView];
+    NSUserDefaults * userdefaults = [NSUserDefaults standardUserDefaults];
+    NSString * strrr = [userdefaults objectForKey:@"albuumname"];
+    
+    
+    UILabel * shancghuandao = [[UILabel alloc]initWithFrame:CGRectMake(10 * W_Wide_Zoom, 10 * W_Hight_Zoom, 100 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
+    shancghuandao.text = @"上传到:";
+    shancghuandao.textColor = [UIColor blackColor];
+    shancghuandao.font = [UIFont systemFontOfSize:15];
+    [centerView addSubview:shancghuandao];
+    
+    UILabel * nameLabel = [[UILabel alloc]initWithFrame:CGRectMake(200 * W_Wide_Zoom, 10 * W_Hight_Zoom, 163 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
+    nameLabel.textColor = [UIColor blackColor];
+    nameLabel.textAlignment = NSTextAlignmentRight;
+    nameLabel.text = strrr;
+    nameLabel.font = [UIFont systemFontOfSize:15];
+    [centerView addSubview:nameLabel];
+    
+    
+    
+    
 }
 
+
 -(void)releaseInfo:(UIButton *)sender{
-    sender.userInteractionEnabled = NO;
+
+     sender.userInteractionEnabled = NO;
+    _leftButton.userInteractionEnabled = NO;
     [_imageArray removeLastObject];
     if (_imageArray.count < 1) {
          [[AppUtil appTopViewController] showHint:@"请至少选择一张图片"];
@@ -71,87 +147,25 @@
     }
     [stingArr appendString:@"]"];
     
-    
-    
+
     [self showHudInView:self.view hint:@"正在发布..."];
-    
+
     [[AFHttpClient sharedAFHttpClient]issueWithuserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid aid:_aidstr coneten:_topTextView.text  photos:stingArr userides:[AccountManager sharedAccountManager].loginModel.userid complete:^(ResponseModel *model) {
-         [self hideHud];
-        
+ 
         if (model) {
            // [self dismissViewControllerAnimated:YES completion:nil];
             [self.navigationController popToRootViewControllerAnimated:NO];
 
             [[NSNotificationCenter defaultCenter]postNotificationName:@"shuaxinn" object:nil];
-            sender.userInteractionEnabled = YES;
+         
         }
-        
-        
+         sender.userInteractionEnabled = YES;
+        _leftButton.userInteractionEnabled = YES;
     }];
-    
-    
-    
-    
+
 }
 
 
--(void)setupView{
-    [super setupData];
-    //back@2x.png
-//    UIView * topView = [[UIView alloc]initWithFrame:CGRectMake(0 * W_Wide_Zoom, 0 * W_Hight_Zoom, 375 * W_Wide_Zoom, 60 * W_Hight_Zoom)];
-//    topView.backgroundColor = RED_COLOR;
-//    [self.view addSubview:topView];
-//    
-//    
-//    UIButton * backBtn = [[UIButton alloc]initWithFrame:CGRectMake(10 * W_Wide_Zoom, 30 * W_Hight_Zoom, 15 * W_Wide_Zoom, 15 * W_Hight_Zoom  )];
-//    [backBtn setImage:[UIImage imageNamed:@"back@2x.png"] forState:UIControlStateNormal];
-//    [topView addSubview:backBtn];
-//    [backBtn addTarget:self action:@selector(doLeftButtonTouch1) forControlEvents:UIControlEventTouchUpInside];
-//    
-//    UILabel * centerLabel = [[UILabel alloc]initWithFrame:CGRectMake(155 * W_Wide_Zoom, 23 * W_Hight_Zoom, 100 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
-//    centerLabel.text = @"上传照片";
-//    centerLabel.font = [UIFont systemFontOfSize:16];
-//    centerLabel.textColor = [UIColor whiteColor];
-//    [topView addSubview:centerLabel];
-//    
-//    UIButton * rightBtn = [[UIButton alloc]initWithFrame:CGRectMake(300 * W_Wide_Zoom, 24 * W_Hight_Zoom, 100 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
-//    [rightBtn setTitle:@"上传" forState:UIControlStateNormal];
-//    [rightBtn setTitleColor:[UIColor whiteColor ] forState:UIControlStateNormal];
-//    rightBtn.titleLabel.font = [UIFont systemFontOfSize:15];
-//    [topView addSubview:rightBtn];
-//    [rightBtn addTarget:self action:@selector(releaseInfo:) forControlEvents:UIControlEventTouchUpInside];
-    
-    
-    _topTextView = [[UITextView alloc]initWithFrame:CGRectMake(0 * W_Wide_Zoom, 60 * W_Hight_Zoom, 375 * W_Wide_Zoom, 150 * W_Hight_Zoom)];
-    _topTextView.textAlignment = NSTextAlignmentLeft;
-    _topTextView.backgroundColor = [UIColor whiteColor];
-    _topTextView.delegate = self;
-    _topTextView.font = [UIFont systemFontOfSize:13];
-    [self.view addSubview:_topTextView];
-    
-    _placeholderLabel = [[UILabel alloc]initWithFrame:CGRectMake(0 * W_Wide_Zoom, 60 * W_Hight_Zoom, 100 * W_Wide_Zoom, 35 * W_Hight_Zoom)];
-    _placeholderLabel.textColor = [UIColor grayColor];
-    _placeholderLabel.backgroundColor = [UIColor clearColor];
-    _placeholderLabel.text = @"请输入内容";
-    _placeholderLabel.font = _topTextView.font;
-    _placeholderLabel.layer.cornerRadius = 5;
-    [self.view addSubview:_placeholderLabel];
-    
-    
-    
-    _imageArray = [[NSMutableArray alloc]init];
-    [_imageArray addObject:_firstImage];
-    
-    [self addImageS];
-    
-}
-
--(void)setupData{
-    [super setupData];
-    
-    
-    
-}
 -(void)doLeftButtonTouch{
     UIAlertController * alertController = [UIAlertController alertControllerWithTitle:@"提示" message:@"您还没有发布内容，是否要退出？" preferredStyle:UIAlertControllerStyleAlert];
     
@@ -169,17 +183,8 @@
 }
 
 
-
-
-
-
-
--(void)doRightButtonTouch{
-    [self releaseInfo:nil];
-}
-
 -(void)addImageS{
-    _bigView = [[UIView alloc]initWithFrame:CGRectMake(0 * W_Wide_Zoom, 220 * W_Hight_Zoom, 375 * W_Wide_Zoom, 200 * W_Hight_Zoom)];
+    _bigView = [[UIView alloc]initWithFrame:CGRectMake(0 * W_Wide_Zoom, 285 * W_Hight_Zoom, 375 * W_Wide_Zoom, 200 * W_Hight_Zoom)];
     _bigView.backgroundColor = LIGHT_GRAY_COLOR;
     [self.view addSubview:_bigView];
     [_imageArray addObject:[UIImage imageNamed:@"addImage.png"]];
@@ -233,11 +238,11 @@
 //删除照片后重新排序
 -(void)paixuImageButton{
     
-    _bigView = [[UIView alloc]initWithFrame:CGRectMake(0 * W_Wide_Zoom, 220 * W_Hight_Zoom, 375 * W_Wide_Zoom, 200 * W_Hight_Zoom)];
+    _bigView = [[UIView alloc]initWithFrame:CGRectMake(0 * W_Wide_Zoom, 285 * W_Hight_Zoom, 375 * W_Wide_Zoom, 200 * W_Hight_Zoom)];
     _bigView.backgroundColor = LIGHT_GRAY_COLOR;
     [self.view addSubview:_bigView];
     for (int i = 0 ; i < _imageArray.count; i++) {
-        _imageButtones = [[UIButton alloc]initWithFrame:CGRectMake(12.5 * W_Wide_Zoom + i * 90 * W_Wide_Zoom, 220 * W_Hight_Zoom, 80 * W_Wide_Zoom, 80 * W_Hight_Zoom)];
+        _imageButtones = [[UIButton alloc]initWithFrame:CGRectMake(12.5 * W_Wide_Zoom + i * 90 * W_Wide_Zoom, 285 * W_Hight_Zoom, 80 * W_Wide_Zoom, 80 * W_Hight_Zoom)];
         [_imageButtones setImage:_imageArray[i] forState:UIControlStateNormal];
         [self.view addSubview:_imageButtones];
         _imageButtones.tag = i;
