@@ -17,7 +17,8 @@
     
      UIImageView * _heandBtn;
      CheckDeviceModel * checkmodel;
-    NSString * strDid;
+     NSString * strDid;
+    NSString * strName;
     
 }
 
@@ -165,6 +166,7 @@
         case SephoneCallOutgoingInit:{
             // 成功
          InCallViewController *   _incallVC =[[InCallViewController alloc]initWithNibName:@"InCallViewController" bundle:nil];
+            _incallVC.titileStr = strName;
             [_incallVC setCall:call];
             [self presentViewController:_incallVC animated:YES completion:nil];
             break;
@@ -507,6 +509,7 @@
     {
         
         cell.inforLable.text = checkmodel.deviceremark;
+        strName =checkmodel.deviceremark;
     }
     
     

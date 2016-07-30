@@ -44,10 +44,18 @@ static NSString * cellId = @"showComCell";
     
     // 完成上传修改
     
+    if([AppUtil isBlankString:_alumbnameTextfield.text])
+    {
+        [[AppUtil appTopViewController] showHint:@"相册名字为空"];
+        
+    }else
+    {
     NSMutableString *deleStr = [[NSMutableString alloc]init];
     if (_adviceArray.count == 0) {
         
-        [self.navigationController popViewControllerAnimated:YES];
+     //   [self.navigationController popViewControllerAnimated:YES];
+         [[AppUtil appTopViewController] showHint:@"至少选择一个设备"];
+        
     }else{
     NSString *str = [NSString stringWithFormat:@"%@",_adviceArray[0]];
     [deleStr appendFormat:@"%@",str];
@@ -66,7 +74,6 @@ static NSString * cellId = @"showComCell";
         
         [[NSNotificationCenter defaultCenter]postNotificationName:@"titile" object:_alumbnameTextfield.text];
         
-
         [self.navigationController popViewControllerAnimated:YES];
         
         
@@ -75,6 +82,7 @@ static NSString * cellId = @"showComCell";
     
     }
   
+    }
     
 }
 

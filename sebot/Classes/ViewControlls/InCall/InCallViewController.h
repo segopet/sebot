@@ -17,5 +17,8 @@
 
 @property (strong, nonatomic) IBOutlet UIButton *updownBtn;
 @property (strong, nonatomic) IBOutlet UINavigationBar *titleBar;
+@property (nonatomic,strong)NSString * titileStr;
+
+@property (strong, nonatomic) IBOutlet UINavigationItem *repairTitle;
 
 @end

@@ -51,6 +51,8 @@
     
     
     
+    
+    
 }
 
 
@@ -175,12 +177,10 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-  //  [self setNavTitle: NSLocalizedString(@"tabDevice", nil)];
     
     self.view.backgroundColor =[UIColor whiteColor];
-    
-   
+    self.repairTitle.title = self.titileStr;
+
     
     
 }
