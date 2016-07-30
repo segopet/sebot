@@ -45,14 +45,7 @@
 // 提交
 - (IBAction)updateBtn:(UIButton *)sender {
     
-    
-    
-//    if ([self.oldPsTx.text  isEqualToString:@""] || [self.NewPsTx.text isEqualToString:@"" ] || [self.ageinNewPsTx.text isEqualToString:@"" ]) {
-//        
-//        
-//        [self showSuccessHudWithHint:@"不能为空"];
-//        return;
-//    }
+
     if ([AppUtil isBlankString:self.oldPsTx.text]) {
          [self showSuccessHudWithHint:@"请输入旧密码"];
         return;

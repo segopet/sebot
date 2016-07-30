@@ -112,9 +112,10 @@
     [self showHudInView:self.view hint:@"正在发送..."];
     
     
-    [[AFHttpClient sharedAFHttpClient] POST:@"sebot/moblie/forward" parameters:@{@"userid" :  [AccountManager sharedAccountManager].loginModel.userid , @"objective":@"user", @"token" : @"1" , @"action" : @"feedback", @"data" : @{@"userid" :  [AccountManager sharedAccountManager].loginModel.userid,@"fcontent":_topTextfield.text,@"type":@"iphone",@"fphone":_downTextfield.text}} result:^(id model) {
+    [[AFHttpClient sharedAFHttpClient] POST:@"sebot/moblie/forward" parameters:@{@"userid" :  [AccountManager sharedAccountManager].loginModel.userid , @"objective":@"user", @"token" : @"1" , @"action" : @"feedback", @"data" : @{@"userid" :  [AccountManager sharedAccountManager].loginModel.userid,@"fcontent":_topTextfield.text,@"type":@"iphone",@"fphone":_downTextfield.text}} result:^(ResponseModel * model) {
         
-        //这里接口也要改一下
+        [[AppUtil appTopViewController]showHint:model.retDesc];
+
         [self.navigationController popViewControllerAnimated:YES];
         
     }];

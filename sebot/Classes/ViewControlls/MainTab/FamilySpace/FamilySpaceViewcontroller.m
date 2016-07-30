@@ -102,14 +102,18 @@ static NSString * cellId = @"FamilyCellides";
        [[AFHttpClient sharedAFHttpClient]querMydeviceWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid complete:^(ResponseModel *model) {
         [_listArray addObjectsFromArray:model.list];
         if (_listArray.count > 0 ) {
-              [_image removeFromSuperview];
+            [_image removeFromSuperview];
             self .tableView.frame =  CGRectMake(0, 0, self.view.width, self.view.height);
             [self.tableView registerClass:[FamilyTableViewCell class] forCellReuseIdentifier:cellId];
             self.tableView.backgroundColor = [UIColor whiteColor];
             [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-
             [self initRefreshView];
         }else{
+            self .tableView.frame =  CGRectMake(0, 0, self.view.width, self.view.height);
+            [self.tableView registerClass:[FamilyTableViewCell class] forCellReuseIdentifier:cellId];
+            self.tableView.backgroundColor = [UIColor whiteColor];
+            [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+             [self initRefreshView];
             [self noBangdingView];
         }
     }];
@@ -119,11 +123,11 @@ static NSString * cellId = @"FamilyCellides";
 
 
 -(void)noBangdingView{
-    [self.tableView removeFromSuperview];
+   // [self.tableView removeFromSuperview];
     
     _image = [[UIImageView alloc]initWithFrame:CGRectMake(60 * W_Wide_Zoom, 200 * W_Hight_Zoom, 250 * W_Wide_Zoom, 250 * W_Hight_Zoom)];
     _image.image = [UIImage imageNamed:@"无图时.png"];
-    [self.view addSubview:_image];
+    [self.tableView addSubview:_image];
     
     UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您还没有绑定设备，请立即绑定设备？" preferredStyle:UIAlertControllerStyleAlert];
     
@@ -138,7 +142,6 @@ static NSString * cellId = @"FamilyCellides";
 
 -(void)loadDataSourceWithPage:(int)page{
     [[AFHttpClient sharedAFHttpClient]familyArticlesWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid page:[NSString stringWithFormat:@"%d",page] complete:^(ResponseModel *model) {
-
         if (page == START_PAGE_INDEX) {
             [self.dataSource removeAllObjects];
             [self.dataSource addObjectsFromArray:model.list];
