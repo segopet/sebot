@@ -328,7 +328,7 @@
     {
         MBProgressHUD *hud=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
         hud.mode=MBProgressHUDAnimationFade;//枚举类型不同的效果
-        hud.labelText=@"loading.......";
+        hud.labelText=@"加载中.......";
         [_popView removeFromSuperview];
         
     }
@@ -397,11 +397,7 @@
 
 - (void)showWaitView
 {
-    
-    
-    [self showYuLei:@"设备离线不能开启"];
-    
-    
+    [self showYuLei:@"设备暂不能开启"];
 }
 
 
@@ -413,7 +409,6 @@
     CheckDeviceModel *checkModel = self.dataSource[i];
     [self sipCall:checkModel.deviceno sipName:nil];
     [self addDeviceUseMember:checkModel.did];
-    
 }
 
 
@@ -434,7 +429,6 @@
         NSUserDefaults * user =[NSUserDefaults standardUserDefaults];
         [user setObject:model.content forKey:@"contentID"];
         [user synchronize];
-        
         
         
     }];

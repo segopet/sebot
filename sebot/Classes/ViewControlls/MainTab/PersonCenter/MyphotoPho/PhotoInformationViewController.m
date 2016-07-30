@@ -36,6 +36,7 @@ static NSString *kheaderIdentifier = @"headerIdentifier";
     NSArray * rightArr;
     NSString * albumnameStr;
     NSString * aidName;
+   
     
     
     
@@ -48,9 +49,12 @@ static NSString *kheaderIdentifier = @"headerIdentifier";
 
 @implementation PhotoInformationViewController
 
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setNavTitle: self.albumname];
+  
     self.view.backgroundColor = LIGHT_GRAY_COLOR;
     [self showBarButton:NAV_RIGHT imageName:@"more"];
     arrData =[NSMutableArray array];
@@ -61,12 +65,30 @@ static NSString *kheaderIdentifier = @"headerIdentifier";
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handletapPressGesture:)];
     tapGesture.delegate = self;
     
-   [self.view addGestureRecognizer:tapGesture];
     
-    
+    [self.view addGestureRecognizer:tapGesture];
     [self initRefreshView];
     
 }
+
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self setNavTitle: self.albumname];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(repairValue:) name:@"titile" object:nil];
+    tabTop.hidden = YES;
+    
+}
+
+
+- (void)repairValue:(NSNotification *)sender
+{
+      NSString * str = sender.object;
+      [self setNavTitle: str];
+    
+}
+
 
 
 -(BOOL)gestureRecognizer:(UIGestureRecognizer*)gestureRecognizer shouldReceiveTouch:(UITouch*)touch {
@@ -284,14 +306,11 @@ static NSString *kheaderIdentifier = @"headerIdentifier";
         
         
         CompileViewController * comVC = [[CompileViewController alloc]initWithNibName:@"CompileViewController" bundle:nil];
-        comVC.photoName =albumnameStr;
+        comVC.photoName =self.albumname;
         comVC.aidName = self.aid;
-        
         [self.navigationController pushViewController:comVC animated:YES];
         
-        
-        
-        
+
     }
     
     
@@ -352,6 +371,21 @@ static NSString *kheaderIdentifier = @"headerIdentifier";
         }
          */
         
+        
+        for (int i=0; i<arrData.count; i++) {
+            PhotoModel *model = arrData[i];
+            NSArray *imageA = [model.networkaddress componentsSeparatedByString:@","];
+            for (int j=0; j<imageA.count; j++) {
+                PhotoInforamtion *cell = (PhotoInforamtion *)[self.collection cellForItemAtIndexPath:[NSIndexPath indexPathForRow:j inSection:i]];
+                cell.chooseBtn.hidden = YES;
+                cell.chooseBtn.selected = NO;
+            }
+        }
+
+        
+    
+        
+        
         _deleteImageV.hidden = YES;
         NSMutableString *deleStr = [[NSMutableString alloc]init];
         NSString *str = [NSString stringWithFormat:@"%@",deledArr[0]];
@@ -366,6 +400,8 @@ static NSString *kheaderIdentifier = @"headerIdentifier";
     
         [[AFHttpClient sharedAFHttpClient]Deletephoto:strusid token:strusid  pids:deleStr complete:^(ResponseModel * model) {
             
+            
+        
             [self showSuccessHudWithHint:model.retDesc];
             [self initRefreshView];
             
@@ -411,8 +447,9 @@ static NSString *kheaderIdentifier = @"headerIdentifier";
     PhotoModel * model;
      model = arrData[indexPath.section];
      NSArray *imageA = [model.networkaddress componentsSeparatedByString:@","];
-    albumnameStr = model.albumname;
-    aidName = model.aid;
+     albumnameStr = model.albumname;
+    
+     aidName = model.aid;
     
      PhotoInforamtion *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"imageId" forIndexPath:indexPath];
      NSString *urlstr = @"";

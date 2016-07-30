@@ -7,14 +7,15 @@
 //
 
 #import "BaseViewController.h"
+#import "HWWeakTimer.h"
 
 @interface InCallViewController : BaseViewController
 @property (strong, nonatomic) IBOutlet UIView *otherView;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *ActView;
-@property (strong, nonatomic) IBOutlet UIButton *leftBtn;
-@property (strong, nonatomic) IBOutlet UIButton *RightBtn;
+
 - (void)setCall:(SephoneCall *)acall;
 
 @property (strong, nonatomic) IBOutlet UIButton *updownBtn;
+@property (strong, nonatomic) IBOutlet UINavigationBar *titleBar;
 
 @end

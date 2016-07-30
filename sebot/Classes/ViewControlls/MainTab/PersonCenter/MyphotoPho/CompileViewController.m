@@ -12,8 +12,9 @@
 #import "MyphotoAlbumViewController.h"
 
 
+
 static NSString * cellId = @"showComCell";
-@interface CompileViewController ()
+@interface CompileViewController ()<UIActionSheetDelegate>
 
 @property (nonatomic,strong)NSMutableArray * adviceArray;
 @property (nonatomic,strong)UITextField * alumbnameTextfield;
@@ -57,12 +58,16 @@ static NSString * cellId = @"showComCell";
         [deleStr appendFormat:@",%@",str];
         
     }
+
     NSString * str1 = [AccountManager sharedAccountManager].loginModel.userid;
     
     [[AFHttpClient sharedAFHttpClient]compliePhoto:str1 token:str1 albumname:_alumbnameTextfield.text dids:deleStr aid:self.aidName complete:^(ResponseModel *model) {
         NSLog(@"%@",model.retDesc);
-        [self.navigationController popViewControllerAnimated:YES];
         
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"titile" object:_alumbnameTextfield.text];
+        
+
+        [self.navigationController popViewControllerAnimated:YES];
         
         
     }];
@@ -72,37 +77,50 @@ static NSString * cellId = @"showComCell";
   
     
 }
+
+
+
 
 
 - (void)onDeleBt:(UIButton *)sender
 {
-    
-    NSArray * ctrlArray = self.navigationController.viewControllers;
-    for (UIViewController *ctrl in ctrlArray) {
-        
-        NSLog(@"ctrl ---- %@", ctrl);
-        
-    }
-  
-    
-     NSString * str1 = [AccountManager sharedAccountManager].loginModel.userid;
-     NSMutableString *deleStr = [[NSMutableString alloc]init];
-     NSString *str = [NSString stringWithFormat:@"%@",self.aidName];
-     [deleStr appendFormat:@"'%@'",str];
-    // 删除
-    [[AFHttpClient sharedAFHttpClient]delePhoto:str1 token:str1 aid:deleStr complete:^(ResponseModel *model) {
-        
-        NSLog(@"%@",model.retDesc);
-        [self.navigationController popToViewController:[ctrlArray objectAtIndex:1] animated:YES];
-
-      
-        
-    }];
-    
-    
-    
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"确认删除照片吗"
+                                                       delegate:self
+                                              cancelButtonTitle:@"取消"
+                                         destructiveButtonTitle:nil
+                                              otherButtonTitles:@"确认", nil];
+    [sheet showInView:self.view];
 }
 
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 0) {//保存图片
+      
+        NSArray * ctrlArray = self.navigationController.viewControllers;
+        for (UIViewController *ctrl in ctrlArray) {
+            
+            NSLog(@"ctrl ---- %@", ctrl);
+            
+        }
+        NSString * str1 = [AccountManager sharedAccountManager].loginModel.userid;
+        NSMutableString *deleStr = [[NSMutableString alloc]init];
+        NSString *str = [NSString stringWithFormat:@"%@",self.aidName];
+        [deleStr appendFormat:@"'%@'",str];
+        // 删除
+        [[AFHttpClient sharedAFHttpClient]delePhoto:str1 token:str1 aid:deleStr complete:^(ResponseModel *model) {
+            NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+            NewAlumbleTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+             
+
+             [[AppUtil appTopViewController] showHint:model.retDesc];
+             [self.navigationController popToViewController:[ctrlArray objectAtIndex:1] animated:YES];
+            
+        }];
+        
+    }
+    
+}
 
 
 -(void)setupData{
@@ -182,7 +200,6 @@ static NSString * cellId = @"showComCell";
     if ([self.tableView respondsToSelector:@selector(setLayoutMargins:)]) {
         [self.tableView setLayoutMargins:UIEdgeInsetsMake(0,0,0,0)];
     }
-
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
 
     
@@ -225,6 +242,7 @@ static NSString * cellId = @"showComCell";
     }else
     {
         cell.rightBtn.selected = YES;
+        [_adviceArray addObject:model.did];
         
     }
     

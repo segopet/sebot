@@ -9,10 +9,13 @@
 #import "BaseViewController.h"
 #import "BaseCollectionViewController.h"
 
+
 @interface PhotoInformationViewController :BaseCollectionViewController
 
 @property (nonatomic,strong)NSString * aid;
 @property (nonatomic,strong)NSString * albumname;
+
+
 
 
 @end

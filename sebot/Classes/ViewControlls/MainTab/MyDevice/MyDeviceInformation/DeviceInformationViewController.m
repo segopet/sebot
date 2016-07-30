@@ -188,14 +188,78 @@
 {
     
     [super setupView];
+    [self request];
     
     
-    [self initRefreshView];
+}
+
+
+- (void)request
+{
+    
+    
+    NSString * str1 =[AccountManager sharedAccountManager].loginModel.userid;
+    [[AFHttpClient sharedAFHttpClient]deciveInforamtion:str1 token:str1 did:self.didNumber complete:^(ResponseModel * model) {
+        
+        [self.dataSource removeAllObjects];
+        checkmodel =[[CheckDeviceModel alloc]initWithDictionary:model.retVal error:nil];
+        
+        NSString * str = model.retVal[@"status"];
+        
+        // 设备状态 UIbutton
+        if ([str isEqualToString:@"ds001"]) {
+            
+            _heandBtn.image =[UIImage imageNamed:@"on_line"];
+            _startBtn.selected = YES;
+            _startBtn.backgroundColor =RED_COLOR;
+            _cancelBtn.enabled = YES;
+            
+        }else if ([str isEqualToString:@"ds002"])
+            
+        {
+            _heandBtn.image =[UIImage imageNamed:@"off_line"];
+            _startBtn.selected = NO;
+            _cancelBtn.enabled = YES;
+            
+            
+            
+        }else
+        {
+            _heandBtn.image =[UIImage imageNamed:@"on_connection"];
+            _startBtn.selected = NO;
+            _cancelBtn.enabled = YES;
+            
+        }
+        
+        
+        
+//        if (page == START_PAGE_INDEX) {
+            [self.dataSource removeAllObjects];
+            checkmodel =[[CheckDeviceModel alloc]initWithDictionary:model.retVal error:nil];
+//        } else {
+//            checkmodel =[[CheckDeviceModel alloc]initWithDictionary:model.retVal error:nil];
+//        }
+        
+//        if (model.list.count < REQUEST_PAGE_SIZE){
+//            self.tableView.mj_footer.hidden = YES;
+//        }else{
+//            self.tableView.mj_footer.hidden = NO;
+//        }
+        
+        [self.tableView reloadData];
+        [self handleEndRefresh];
+
+        
+    }];
+    
+    
     
     
 }
 
 -(void)loadDataSourceWithPage:(int)page{
+    
+   
     
     NSString * str1 =[AccountManager sharedAccountManager].loginModel.userid;
     [[AFHttpClient sharedAFHttpClient]deciveInforamtion:str1 token:str1 did:self.didNumber complete:^(ResponseModel * model) {
@@ -314,7 +378,7 @@
     }else
     {
         
-        [self showSuccessHudWithHint:@"设备离线不能开启"];
+        [self showSuccessHudWithHint:@"设备暂不能开启"];
     }
    
   
@@ -356,7 +420,7 @@
 
 - (IBAction)cancelDeviceBtn:(UIButton *)sender {
     
-    UIAlertView *alertView =[[UIAlertView alloc]initWithTitle:nil message:@"你确定解除绑定吗" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"取消", nil];
+    UIAlertView *alertView =[[UIAlertView alloc]initWithTitle:nil message:@"你确定解除绑定吗？" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"取消", nil];
     [alertView show];
     
 }
@@ -374,7 +438,9 @@
         NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
         [[AFHttpClient sharedAFHttpClient]solvDevice:str token:str did:checkmodel.did complete:^(ResponseModel * model) {
             NSLog(@"%@",model.retDesc);
-            [self showHint:model.retDesc];
+         
+            
+             [[AppUtil appTopViewController] showHint:model.retDesc];
             [[NSNotificationCenter defaultCenter]postNotificationName:@"bangdingshuaxin" object:nil];
 
         }];

@@ -14,6 +14,7 @@
 {
     NSTimer *updateTimer;
     NSTimer * moveTimer;
+    BOOL isLeft;
     
 }
 @property (nonatomic, assign) SephoneCall *call;
@@ -104,11 +105,16 @@
     
     
 }
+-(void)dealloc {
+    [moveTimer invalidate];
+    NSLog(@"%@ dealloc", NSStringFromClass([self class]));
+}
 
 - (void)RefreshCellForLiveId
 {
     
     [SephoneManager terminateCurrentCallOrConference];
+    [moveTimer invalidate];
     [self dismissViewControllerAnimated:YES completion:nil];
     
     
@@ -245,10 +251,11 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
  */
 - (IBAction)leftBtn:(UIButton *)sender {
       [self overTime];
+    
    
 }
 - (IBAction)left_Start_btn:(UIButton *)sender {
-    
+
      [self moveRobot:@"2"];
      NSLog(@"这是在往左走");
 }
@@ -260,7 +267,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 
 
 - (IBAction)right_start_btn:(UIButton *)sender {
-    
+   
      [self moveRobot:@"1"];
      NSLog(@"这是在往右走");
     
@@ -271,13 +278,14 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     
 }
 - (IBAction)top_start_btn:(UIButton *)sender {
+  
      [self moveRobot:@"4"];
      NSLog(@"这是在往上走");
 }
 
 
 - (IBAction)test:(UIButton *)sender {
-    
+  
     [self moveRobot:@"3"];
 }
 
@@ -289,22 +297,29 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 // 头部
 
 - (IBAction)upTopBtn:(UIButton *)sender {
+     [self overTime];
+  
 }
 - (IBAction)uptop_start_btn:(UIButton *)sender {
+    
+      [self moverobot:@"1"]; // 上
+  
 }
 
 - (IBAction)upDownBtn:(UIButton *)sender {
+    
+    [self overTime];
+   
 }
-- (IBAction)updown_start_btn:(UIButton *)sender {
+
+- (IBAction)stratBtnDown:(UIButton *)sender {
+    
+    [self moverobot:@"2"]; // 下
 }
 
 - (void)overTime
 {
-    if (moveTimer != nil) {
-        [moveTimer invalidate];
-        moveTimer = nil;
-    }
-    
+     [moveTimer invalidate];
     
 }
 
@@ -314,19 +329,40 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 - (void)moveRobot:(NSString *)str
 {
     
-    if (moveTimer != nil) {
-        [moveTimer invalidate];
-        moveTimer = nil;
-    }else{
-        moveTimer = [NSTimer scheduledTimerWithTimeInterval:1.0*0.2 target:self selector:@selector(sendInfomation:) userInfo:str repeats:YES];
-    }
+    moveTimer = [HWWeakTimer scheduledTimerWithTimeInterval:1.0*0.2 block:^(id userInfo) {
+        
+        [self sendInfomation:str];
+    } userInfo:@"Fire" repeats:YES];
+    [moveTimer fire];
     
 }
 
-- (void)sendInfomation:(NSTimer *)sender
+// 左右
+
+-(void)moverobot:(NSString *)str
+{
+    moveTimer = [HWWeakTimer scheduledTimerWithTimeInterval:1.0*0.2 block:^(id userInfo) {
+        
+        [self sendInfomationL:str];
+    } userInfo:@"Fire" repeats:YES];
+    [moveTimer fire];
+
+    
+}
+
+
+- (void)sendInfomationL:(NSString *)sender
 {
     
-    NSString * msg =[NSString stringWithFormat:@"control_servo,0,0,1,%d,200",[sender.userInfo intValue]];
+   NSString * msg =[NSString stringWithFormat:@"control_servo,0,0,2,%d,1000",[sender intValue]];
+    NSLog(@"我走");
+    [self sendMessage:msg];
+}
+
+- (void)sendInfomation:(NSString *)sender
+{
+ 
+    NSString * msg =[NSString stringWithFormat:@"control_servo,0,0,1,%d,200",[sender intValue]];
     [self sendMessage:msg];
     
     

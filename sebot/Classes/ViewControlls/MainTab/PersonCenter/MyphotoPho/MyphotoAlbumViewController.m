@@ -37,7 +37,7 @@
     usid = [AccountManager sharedAccountManager].loginModel.userid;
     [self setNavTitle: NSLocalizedString(@"MyphotoAlbum", nil)];
     self.view.backgroundColor = [UIColor whiteColor];
-    DefaultesImage = [[UIImageView alloc]initWithFrame:CGRectMake(15, 60*W_Hight_Zoom, 110*W_Wide_Zoom, 110*W_Hight_Zoom)];
+    DefaultesImage = [[UIImageView alloc]initWithFrame:CGRectMake(15, 80*W_Hight_Zoom, 110*W_Wide_Zoom, 110*W_Hight_Zoom)];
     DefaultesImage.image =[UIImage imageNamed:@"add.png"];
     DefaultesImage.hidden = YES;
     DefaultesImage.userInteractionEnabled = YES;
@@ -82,10 +82,11 @@
                         [arrData addObject:array[0]];
                         [arrData addObjectsFromArray:model.list];
                         [collect reloadData];
-                    }else{
+                    }else if(model.list == nil) {
                         //这里写一个就行了
-                        
+                        [arrData removeAllObjects];
                         NSLog(@"222");
+                        [collect reloadData];
                         DefaultesImage.hidden = NO;
                         
                         
@@ -178,6 +179,7 @@
 
         [cell.ImageHeader sd_setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:@"defaultPhoto.png"]];
         cell.PhotoName.text = model.albumname;
+        
         cell.PhotoNumber.text = model.photonum;
         
         
@@ -203,6 +205,7 @@
        //相册预览
        
         PhotoInformationViewController * photoVC =[[PhotoInformationViewController alloc]initWithNibName:@"PhotoInformationViewController" bundle:nil];
+        
         photoVC.aid = model.aid;
         photoVC.albumname = model.albumname;
         [self.navigationController pushViewController:photoVC animated:YES];
