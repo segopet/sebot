@@ -63,14 +63,14 @@
                 
                 _heandBtn.image =[UIImage imageNamed:@"on_line"];
                 _startBtn.backgroundColor =RED_COLOR;
-                _cancelBtn.enabled = YES;
+             //   _cancelBtn.enabled = YES;
                 
             }else if ([str isEqualToString:@"ds002"])
                 
             {
                 _heandBtn.image =[UIImage imageNamed:@"off_line"];
           
-                _cancelBtn.enabled = NO;
+               // _cancelBtn.enabled = NO;
                 
                 
             }else
@@ -78,7 +78,7 @@
                 _heandBtn.image =[UIImage imageNamed:@"on_connection"];
                 
 
-                _cancelBtn.enabled = NO;
+               // _cancelBtn.enabled = NO;
                 
             }
             [self.tableView reloadData];
@@ -214,14 +214,14 @@
             _heandBtn.image =[UIImage imageNamed:@"on_line"];
             _startBtn.selected = YES;
             _startBtn.backgroundColor =RED_COLOR;
-            _cancelBtn.enabled = YES;
+           // _cancelBtn.enabled = YES;
             
         }else if ([str isEqualToString:@"ds002"])
             
         {
             _heandBtn.image =[UIImage imageNamed:@"off_line"];
             _startBtn.selected = NO;
-            _cancelBtn.enabled = YES;
+           // _cancelBtn.enabled = YES;
             
             
             
@@ -229,7 +229,7 @@
         {
             _heandBtn.image =[UIImage imageNamed:@"on_connection"];
             _startBtn.selected = NO;
-            _cancelBtn.enabled = YES;
+          //  _cancelBtn.enabled = YES;
             
         }
         
@@ -275,14 +275,14 @@
             _heandBtn.image =[UIImage imageNamed:@"on_line"];
             _startBtn.selected = YES;
             _startBtn.backgroundColor =RED_COLOR;
-            _cancelBtn.enabled = YES;
+          //  _cancelBtn.enabled = YES;
             
         }else if ([str isEqualToString:@"ds002"])
             
         {
             _heandBtn.image =[UIImage imageNamed:@"off_line"];
             _startBtn.selected = NO;
-            _cancelBtn.enabled = YES;
+          //  _cancelBtn.enabled = YES;
             
             
             
@@ -290,7 +290,7 @@
         {
             _heandBtn.image =[UIImage imageNamed:@"on_connection"];
             _startBtn.selected = NO;
-            _cancelBtn.enabled = YES;
+           // _cancelBtn.enabled = YES;
             
         }
 
@@ -442,7 +442,7 @@
             NSLog(@"%@",model.retDesc);
          
             
-             [[AppUtil appTopViewController] showHint:model.retDesc];
+            [[AppUtil appTopViewController] showHint:model.retDesc];
             [[NSNotificationCenter defaultCenter]postNotificationName:@"bangdingshuaxin" object:nil];
 
         }];

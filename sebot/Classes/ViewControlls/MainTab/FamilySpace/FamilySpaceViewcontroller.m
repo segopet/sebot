@@ -59,8 +59,8 @@ static NSString * cellId = @"FamilyCellides";
 }
 
 -(void)dada3{
-    _listArray = [NSMutableArray array];
-    [self isbangding];
+  
+   // [self isbangding];
  
 }
 
@@ -78,69 +78,59 @@ static NSString * cellId = @"FamilyCellides";
     _popView.center = self.view.center;
     _popView.ParentView = app.window;
     _popView.delegate = self;
-    _listArray = [NSMutableArray array];
-    [self isbangding];
+    
+    
+   // [self isbangding];
 }
 
 -(void)setupView{
     [super setupView];
-    
+   // self.tableView.hidden = NO;
+    self .tableView.frame =  CGRectMake(0, 0, self.view.width, self.view.height);
+    [self.tableView registerClass:[FamilyTableViewCell class] forCellReuseIdentifier:cellId];
+    self.tableView.backgroundColor = [UIColor whiteColor];
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    [self initRefreshView];
+
     
 }
 -(void)doRightButtonTouch{
-
-    if (_listArray.count > 0) {
-        NewPhotoalbumViewController * newVc = [[NewPhotoalbumViewController alloc]init];
-        [self.navigationController pushViewController:newVc animated:NO];
-    }else{
-         [self.view addSubview:_popView];
-    }
- 
-}
-
--(void)isbangding{
-       [[AFHttpClient sharedAFHttpClient]querMydeviceWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid complete:^(ResponseModel *model) {
+        _listArray = [NSMutableArray array];
+    [[AFHttpClient sharedAFHttpClient]querMydeviceWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid complete:^(ResponseModel *model) {
+        
         [_listArray addObjectsFromArray:model.list];
         if (_listArray.count > 0 ) {
-            [_image removeFromSuperview];
-            self .tableView.frame =  CGRectMake(0, 0, self.view.width, self.view.height);
-            [self.tableView registerClass:[FamilyTableViewCell class] forCellReuseIdentifier:cellId];
-            self.tableView.backgroundColor = [UIColor whiteColor];
-            [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-            [self initRefreshView];
-        }else{
-            self .tableView.frame =  CGRectMake(0, 0, self.view.width, self.view.height);
-            [self.tableView registerClass:[FamilyTableViewCell class] forCellReuseIdentifier:cellId];
-            self.tableView.backgroundColor = [UIColor whiteColor];
-            [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-             [self initRefreshView];
-            [self noBangdingView];
+            NewPhotoalbumViewController * newVc = [[NewPhotoalbumViewController alloc]init];
+            [self.navigationController pushViewController:newVc animated:NO];
+
+        }else {
+            [self.view addSubview:_popView];
         }
     }];
 
+    
+    
+    
+}
+-(void)initTabview{
+    [_image removeFromSuperview];
+   
+    self.tableView.hidden = NO;
+    self .tableView.frame =  CGRectMake(0, 0, self.view.width, self.view.height);
+    [self.tableView registerClass:[FamilyTableViewCell class] forCellReuseIdentifier:cellId];
+    self.tableView.backgroundColor = [UIColor whiteColor];
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    [self initRefreshView];
+
 }
 
+-(void)setupData{
+    [super setupData];
 
-
--(void)noBangdingView{
-   //[self.tableView removeFromSuperview];
-    [self loadDataSourceWithPage:1];
-    _image = [[UIImageView alloc]initWithFrame:CGRectMake(60 * W_Wide_Zoom, 200 * W_Hight_Zoom, 250 * W_Wide_Zoom, 250 * W_Hight_Zoom)];
-    _image.image = [UIImage imageNamed:@"无图时.png"];
-    [self.tableView addSubview:_image];
-    
-    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您还没有绑定设备，请立即绑定设备？" preferredStyle:UIAlertControllerStyleAlert];
-    
-    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
-    }]];
-    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [self.view addSubview:_popView];
-    }]];
-    [self presentViewController:alert animated:YES completion:nil];
 }
-
 -(void)loadDataSourceWithPage:(int)page{
+    [_noShujuImage removeFromSuperview];
+    _noShujuImage.hidden = YES;
     [[AFHttpClient sharedAFHttpClient]familyArticlesWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid page:[NSString stringWithFormat:@"%d",page] complete:^(ResponseModel *model) {
         if (page == START_PAGE_INDEX) {
             [self.dataSource removeAllObjects];
@@ -148,20 +138,17 @@ static NSString * cellId = @"FamilyCellides";
         } else {
             [self.dataSource addObjectsFromArray:model.list];
         }
-        
+
         if (model.list.count < REQUEST_PAGE_SIZE){
             self.tableView.mj_footer.hidden = YES;
         }else{
             self.tableView.mj_footer.hidden = NO;
         }
-        
         [self.tableView reloadData];
         [self handleEndRefresh];
-        [_image removeFromSuperview];
         if (model.list.count == 0) {
             [self noShuju];
         }
-        
         
     }];
 
@@ -170,18 +157,13 @@ static NSString * cellId = @"FamilyCellides";
 -(void)noShuju{
 
     NSLog(@"heheh");
-    _image = [[UIImageView alloc]initWithFrame:CGRectMake(60 * W_Wide_Zoom, 200 * W_Hight_Zoom, 250 * W_Wide_Zoom, 250 * W_Hight_Zoom)];
-    _image.image = [UIImage imageNamed:@"无图时.png"];
-    [self.tableView addSubview:_image];
+    _noShujuImage = [[UIImageView alloc]initWithFrame:CGRectMake(60 * W_Wide_Zoom, 136 * W_Hight_Zoom, 250 * W_Wide_Zoom, 250 * W_Hight_Zoom)];
+    _noShujuImage.image = [UIImage imageNamed:@"无图时.png"];
+    [self.tableView addSubview:_noShujuImage];
 
 
 }
 
-
--(void)setupData{
-    [super setupData];
-
-}
 
 #pragma mark - TableView的代理函数
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

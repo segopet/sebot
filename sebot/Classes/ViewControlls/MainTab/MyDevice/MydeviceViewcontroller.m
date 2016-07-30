@@ -159,7 +159,7 @@
     
     image =[[UIImageView alloc]initWithFrame:CGRectMake(60 * W_Wide_Zoom, 200 * W_Hight_Zoom, 250 * W_Wide_Zoom, 250 * W_Hight_Zoom)];
     image.hidden = YES;
-    image.center = self.view.center;
+    //image.center = self.view.center;
     image.image =[UIImage imageNamed:@"无图时.png"];
     [self.view addSubview:image];
     

@@ -72,7 +72,7 @@ static BOOL isBackGroundActivateApplication;
             UIAlertView *alertView =[[UIAlertView alloc]initWithTitle:@"收到一条消息" message:userInfo[@"desc"] delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
             [alertView show];
             
-            [[NSNotificationCenter defaultCenter]postNotificationName:@"bangdingshuaxin" object:nil];
+            //[[NSNotificationCenter defaultCenter]postNotificationName:@"bangdingshuaxin" object:nil];
             
 
         }else
@@ -143,14 +143,14 @@ static BOOL isBackGroundActivateApplication;
             if ([pushType isEqualToString:@"T001"]) {
                 NSLog(@"同意");
                 [[AFHttpClient sharedAFHttpClient]responseBinding:str token:str brid:strAps operate:@"yes" complete:^(ResponseModel * model) {
-                    
+                    // [[NSNotificationCenter defaultCenter]postNotificationName:@"bangdingshuaxin" object:nil];
                 }];
                 
                 
             }else if([pushType isEqualToString:@"T003"]){
                 NSLog(@"同意");
                 [[AFHttpClient sharedAFHttpClient]useresponseBinding: str token:str brid:strAps operate:@"yes" complete:^(ResponseModel * model) {
-                    
+                    [[NSNotificationCenter defaultCenter]postNotificationName:@"bangdingshuaxin" object:nil];
                 }];
                 
                 
@@ -222,7 +222,8 @@ static BOOL isBackGroundActivateApplication;
         NSLog(@"acitve or background");
         UIAlertView *alertView =[[UIAlertView alloc]initWithTitle:@"收到一条消息" message:userInfo[@"aps"][@"desc"] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
         [alertView show];
-          [[NSNotificationCenter defaultCenter]postNotificationName:@"bangdingshuaxin" object:nil];
+        
+        //  [[NSNotificationCenter defaultCenter]postNotificationName:@"bangdingshuaxin" object:nil];
     }
     else//杀死状态下，直接跳转到跳转页面。
     {
