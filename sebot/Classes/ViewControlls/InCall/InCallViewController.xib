@@ -10,6 +10,7 @@
             <connections>
                 <outlet property="ActView" destination="95n-9c-RUC" id="7Uc-UV-Mht"/>
                 <outlet property="otherView" destination="dP5-cU-Jb3" id="RF9-xJ-sGH"/>
+                <outlet property="repairTitle" destination="v2d-ev-VOZ" id="7Me-uJ-3Kp"/>
                 <outlet property="titleBar" destination="2b0-1x-SEk" id="hlq-bm-01I"/>
                 <outlet property="updownBtn" destination="0E9-fd-LQy" id="QTH-I0-8HH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -112,6 +113,9 @@
                         <constraint firstAttribute="width" constant="320" id="fO1-LK-cdm"/>
                     </constraints>
                     <color key="barTintColor" red="1" green="0.31271801760000001" blue="0.26396912760000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <textAttributes key="titleTextAttributes">
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </textAttributes>
                     <items>
                         <navigationItem title="100000" id="v2d-ev-VOZ">
                             <barButtonItem key="leftBarButtonItem" style="plain" id="iQz-fX-4s3">

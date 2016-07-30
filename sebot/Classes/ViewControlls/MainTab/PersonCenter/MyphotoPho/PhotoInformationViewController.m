@@ -36,6 +36,8 @@ static NSString *kheaderIdentifier = @"headerIdentifier";
     NSArray * rightArr;
     NSString * albumnameStr;
     NSString * aidName;
+    
+    NSString * strName;
    
     
     
@@ -54,7 +56,7 @@ static NSString *kheaderIdentifier = @"headerIdentifier";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-  
+    [self setNavTitle: self.albumname];
     self.view.backgroundColor = LIGHT_GRAY_COLOR;
     [self showBarButton:NAV_RIGHT imageName:@"more"];
     arrData =[NSMutableArray array];
@@ -75,7 +77,6 @@ static NSString *kheaderIdentifier = @"headerIdentifier";
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self setNavTitle: self.albumname];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(repairValue:) name:@"titile" object:nil];
     tabTop.hidden = YES;
     
@@ -84,8 +85,8 @@ static NSString *kheaderIdentifier = @"headerIdentifier";
 
 - (void)repairValue:(NSNotification *)sender
 {
-      NSString * str = sender.object;
-      [self setNavTitle: str];
+      strName = sender.object;
+      [self setNavTitle: strName];
     
 }
 
@@ -306,7 +307,16 @@ static NSString *kheaderIdentifier = @"headerIdentifier";
         
         
         CompileViewController * comVC = [[CompileViewController alloc]initWithNibName:@"CompileViewController" bundle:nil];
-        comVC.photoName =self.albumname;
+        
+        
+        if (strName == nil) {
+              comVC.photoName =self.albumname;
+        }else
+        {
+            
+            comVC.photoName = strName;
+        }
+      
         comVC.aidName = self.aid;
         [self.navigationController pushViewController:comVC animated:YES];
         

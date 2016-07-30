@@ -27,6 +27,9 @@
    // CheckDeviceModel * checkModel;
     UIImageView * image;
     
+    NSString * titleStr;
+    
+    
     
 
 }
@@ -127,6 +130,7 @@
         case SephoneCallOutgoingInit:{
             // 成功
             InCallViewController *   _incallVC =[[InCallViewController alloc]initWithNibName:@"InCallViewController" bundle:nil];
+           _incallVC.titileStr = titleStr;
             [_incallVC setCall:call];
             [self presentViewController:_incallVC animated:YES completion:nil];
             break;
@@ -407,6 +411,8 @@
     NSInteger i  = sender.tag -1000;
     
     CheckDeviceModel *checkModel = self.dataSource[i];
+    
+    titleStr = checkModel.deviceremark;
     [self sipCall:checkModel.deviceno sipName:nil];
     [self addDeviceUseMember:checkModel.did];
 }
@@ -474,9 +480,6 @@
 {
     
     NSString *  displayName  =nil;
-    //
-    //    [[SephoneManager instance] call:dialerNumber displayName:displayName transfer:FALSE];
-    
     [[SephoneManager instance]call:dialerNumber displayName:displayName transfer:FALSE highDefinition:FALSE];
     
     
