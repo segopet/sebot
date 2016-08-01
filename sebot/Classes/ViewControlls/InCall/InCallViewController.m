@@ -354,7 +354,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 - (void)sendInfomationL:(NSString *)sender
 {
     
-   NSString * msg =[NSString stringWithFormat:@"control_servo,0,0,2,%d,1000",[sender intValue]];
+   NSString * msg =[NSString stringWithFormat:@"control_servo,0,0,2,%d,200",[sender intValue]];
     NSLog(@"我走");
     [self sendMessage:msg];
 }

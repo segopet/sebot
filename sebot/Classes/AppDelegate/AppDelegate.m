@@ -91,9 +91,9 @@ static BOOL isBackGroundActivateApplication;
         [mainVC.selectedViewController presentViewController:devideVC animated:YES completion:nil];
          */
         
-        UIAlertView *alertView =[[UIAlertView alloc]initWithTitle:@"收到一条消息" message:userInfo[@"desc"] delegate:self cancelButtonTitle:@"拒绝" otherButtonTitles:@"同意", nil];
+        UIAlertView *alertView =[[UIAlertView alloc]initWithTitle:@"收到一条消息" message:userInfo[@"desc"] delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
         [alertView show];
-        
+    
        
         
     }

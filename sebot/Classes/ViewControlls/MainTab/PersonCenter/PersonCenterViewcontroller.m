@@ -14,6 +14,7 @@
 #import "PersonModel.h"
 #import "UIImage-Extensions.h"
 #import "AFHttpClient+Person.h"
+#import "AFHttpClient+Alumb.h"
 
 
 @interface PersonCenterViewcontroller()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
@@ -358,8 +359,18 @@
     else if (indexPath.row == 2)
     {
         
-        MyphotoAlbumViewController * Myphot0VC =[[MyphotoAlbumViewController alloc]initWithNibName:@"MyphotoAlbumViewController" bundle:nil];
-        [self.navigationController pushViewController:Myphot0VC animated:YES];
+      NSMutableArray *  _listArray = [NSMutableArray array];
+        [[AFHttpClient sharedAFHttpClient]querMydeviceWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid complete:^(ResponseModel *model) {
+            
+            [_listArray addObjectsFromArray:model.list];
+            if (_listArray.count > 0 ) {
+                MyphotoAlbumViewController * Myphot0VC =[[MyphotoAlbumViewController alloc]initWithNibName:@"MyphotoAlbumViewController" bundle:nil];
+                [self.navigationController pushViewController:Myphot0VC animated:YES];
+                
+            }else {
+                [[AppUtil appTopViewController] showHint:@"你还没有绑定设备"];            }
+        }];
+
         
     }
     else if (indexPath.row == 3)
