@@ -132,7 +132,13 @@ static NSString * cellId = @"FamilyCellides";
     [_noShujuImage removeFromSuperview];
     _noShujuImage.hidden = YES;
     [[AFHttpClient sharedAFHttpClient]familyArticlesWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid page:[NSString stringWithFormat:@"%d",page] complete:^(ResponseModel *model) {
+        
+      
+        //else{
         if (page == START_PAGE_INDEX) {
+            if (model.list.count == 0) {
+                [self noShuju];
+            }
             [self.dataSource removeAllObjects];
             [self.dataSource addObjectsFromArray:model.list];
         } else {
@@ -146,9 +152,7 @@ static NSString * cellId = @"FamilyCellides";
         }
         [self.tableView reloadData];
         [self handleEndRefresh];
-        if (model.list.count == 0) {
-            [self noShuju];
-        }
+      //  }
         
     }];
 
@@ -274,9 +278,13 @@ static NSString * cellId = @"FamilyCellides";
     [[AFHttpClient sharedAFHttpClient]lookpictureWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid aid:model.aid complete:^(ResponseModel *model) {
         if (model) {
              NSArray * array = model.list;
+            if (array.count == 0 ) {
+                [[AppUtil appTopViewController]showHint:@"照片已删除"];
+            }else{
              LargeViewController * largeVC =[[LargeViewController alloc]initWithNibName:@"LargeViewController" bundle:nil];
             largeVC.dataArray = array;
             [self.navigationController pushViewController:largeVC animated:YES];
+            }
         }
     }];
 }
