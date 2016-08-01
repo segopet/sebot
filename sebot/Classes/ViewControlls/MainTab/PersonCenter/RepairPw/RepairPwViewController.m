@@ -47,14 +47,14 @@
     
 
     if ([AppUtil isBlankString:self.oldPsTx.text]) {
-         [self showSuccessHudWithHint:@"请输入旧密码"];
+         [self showSuccessHudWithHint:@"请输入原密码"];
         return;
     
     }
     
     if (![self.oldPsTx.text isEqualToString:[AccountManager sharedAccountManager].loginModel.password])
     {
-        [self showSuccessHudWithHint:@"旧密码输入错误"];
+        [self showSuccessHudWithHint:@"原密码输入错误"];
         return;
     }
     
@@ -65,7 +65,7 @@
     
  
     if ([self.oldPsTx.text isEqualToString:self.NewPsTx.text]) {
-        [self showSuccessHudWithHint:@"旧密码与新密码不能相同"];
+        [self showSuccessHudWithHint:@"原密码与新密码不能相同"];
         return;
         
     }
@@ -79,8 +79,8 @@
     NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
         [[AFHttpClient sharedAFHttpClient]repairPs:str token:str old:self.oldPsTx.text new:self.NewPsTx.text complete:^(ResponseModel * model) {
                 
-                [self showSuccessHudWithHint:model.retDesc];
-                
+               // [self showSuccessHudWithHint:model.retDesc];
+            [[AppUtil appTopViewController]showHint:model.retDesc];
                 //退出登录
                 [[NSNotificationCenter defaultCenter] postNotificationName:NotificationLoginStateChange object:@NO];
                 [[AccountManager sharedAccountManager]logout];
