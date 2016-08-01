@@ -337,6 +337,7 @@
         
     }
     [[AFHttpClient sharedAFHttpClient]addDevide:str token:str deviceno:_popView.numberTextfied.text complete:^(ResponseModel * model) {
+        [[AppUtil appTopViewController] showHint:model.retDesc];
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         
     }];
