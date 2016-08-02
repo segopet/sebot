@@ -17,7 +17,7 @@
 #import "AFHttpClient+Alumb.h"
 
 
-@interface PersonCenterViewcontroller()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+@interface PersonCenterViewcontroller()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate>
 
 {
     
@@ -27,6 +27,7 @@
     UILabel *_nameLabel;
     
     PersonModel *checkModel;
+    UITextField *_userNameTextField;
     
     
 }
@@ -342,8 +343,11 @@
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"repairName", nil) message:nil preferredStyle:UIAlertControllerStyleAlert];
         [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Sure", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             //获取第1个输入框；
-            UITextField *userNameTextField = alertController.textFields.firstObject;
-            [self repairName:userNameTextField.text];
+            _userNameTextField = alertController.textFields.firstObject;
+            _userNameTextField.delegate = self;
+            [self repairName:_userNameTextField.text];
+    
+            [_userNameTextField addTarget:self action:@selector(textFieldDidChange1:)  forControlEvents:UIControlEventEditingChanged];
             
         }]];
         
@@ -401,16 +405,16 @@
 - (void)repairName:(NSString *)textname
 {
     
-    
+    if (textname.length > 10) {
+        [[AppUtil appTopViewController]showHint:@"您最多只能输入10个字"];
+        textname = [textname substringToIndex:10];
+        }
     NSString * str= [AccountManager sharedAccountManager].loginModel.userid;
     [[AFHttpClient sharedAFHttpClient]repairname:str token:str nickname:textname complete:^(ResponseModel * model) {
         NSLog(@"修改昵称");
         
         [self initRefreshView];
     }];
-    
-    
-    
 
 }
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -424,5 +428,16 @@
         [cell setLayoutMargins:UIEdgeInsetsZero];
     }
 }
+
+
+- (void)textFieldDidChange1:(UITextField *)textField
+{
+    if (textField == _userNameTextField) {
+        if (textField.text.length > 10) {
+            textField.text = [textField.text substringToIndex:10];
+        }
+    }
+}
+
 
 @end
