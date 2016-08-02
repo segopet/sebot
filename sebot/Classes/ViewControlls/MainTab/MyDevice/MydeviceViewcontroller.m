@@ -270,14 +270,11 @@
     self.tableView.showsVerticalScrollIndicator   = NO;
     self.tableView.showsHorizontalScrollIndicator = NO;
     self.tableView.backgroundColor =[UIColor whiteColor];
-    
     self.tableView.tableFooterView=[[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
     self.tableView.tableHeaderView =[[UIView alloc]initWithFrame:CGRectZero];
-    
     if ([self.tableView respondsToSelector:@selector(setSeparatorInset:)]) {
         [self.tableView setSeparatorInset:UIEdgeInsetsMake(0,0,0,0)];
     }
-    
     if ([self.tableView respondsToSelector:@selector(setLayoutMargins:)]) {
         [self.tableView setLayoutMargins:UIEdgeInsetsMake(0,0,0,0)];
     }
