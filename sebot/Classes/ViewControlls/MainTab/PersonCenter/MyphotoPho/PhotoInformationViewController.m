@@ -133,10 +133,8 @@ static NSString *kheaderIdentifier = @"headerIdentifier";
         if (page==START_PAGE_INDEX) {
             [arrData removeAllObjects];
             [arrData addObjectsFromArray:model.list];
-           
         }else{
             //这里写一个就行了
-            
             if (model.list.count == 0) {
                 [self showSuccessHudWithHint:@"没有更多数据哦"];
             }else
