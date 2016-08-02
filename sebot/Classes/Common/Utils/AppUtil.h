@@ -48,7 +48,7 @@
 #define REQUEST_PAGE_SIZE           10
 #define START_PAGE_INDEX            1
 
-#define BASE_URL @"http://180.97.80.227:8081"
+#define BASE_URL @"http://180.97.80.227:15114"
 //#define BASE_URL @"http://192.168.1.107:8080/sebot_api"
 @interface AppUtil : NSObject
 
