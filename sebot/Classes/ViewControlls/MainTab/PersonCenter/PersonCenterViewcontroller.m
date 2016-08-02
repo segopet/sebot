@@ -342,7 +342,8 @@
         
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"repairName", nil) message:nil preferredStyle:UIAlertControllerStyleAlert];
         [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Sure", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            //获取第1个输入框；
+            //获取第1个输入框；)
+            _userNameTextField = [[UITextField alloc]init];
             _userNameTextField = alertController.textFields.firstObject;
             _userNameTextField.delegate = self;
             [self repairName:_userNameTextField.text];
@@ -406,9 +407,10 @@
 {
     
     if (textname.length > 10) {
-        [[AppUtil appTopViewController]showHint:@"您最多只能输入10个字"];
+        [[AppUtil appTopViewController]showHint:@"昵称只能10字以内"];
         textname = [textname substringToIndex:10];
         }
+    
     NSString * str= [AccountManager sharedAccountManager].loginModel.userid;
     [[AFHttpClient sharedAFHttpClient]repairname:str token:str nickname:textname complete:^(ResponseModel * model) {
         NSLog(@"修改昵称");
