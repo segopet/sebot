@@ -83,11 +83,8 @@
     {
         int duration = sephone_call_get_duration(calltime);
         if (duration >= 300) {
-            
             [SephoneManager terminateCurrentCallOrConference];
             NSLog(@"五分钟到时视频流自动断开");
-            
-           
         }
         
         
@@ -281,6 +278,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
   
      [self moveRobot:@"4"];
      NSLog(@"这是在往上走");
+    
 }
 
 
@@ -320,6 +318,12 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 - (void)overTime
 {
      [moveTimer invalidate];
+    self.up_btn.userInteractionEnabled = YES;
+    self.down_btn.userInteractionEnabled = YES;
+    self.left_btn.userInteractionEnabled = YES;
+    self.right_btn.userInteractionEnabled = YES;
+    self.left_up_btn.userInteractionEnabled = YES;
+    self.left_down_btn.userInteractionEnabled = YES;
     
 }
 
@@ -328,7 +332,48 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 
 - (void)moveRobot:(NSString *)str
 {
-    
+    NSInteger i = [str integerValue];
+    switch (i) {
+        case 4:
+            // 上
+            self.up_btn.userInteractionEnabled = YES;
+            self.down_btn.userInteractionEnabled = NO;
+            self.left_btn.userInteractionEnabled = NO;
+            self.right_btn.userInteractionEnabled = NO;
+            self.left_up_btn.userInteractionEnabled = NO;
+            self.left_down_btn.userInteractionEnabled = NO;
+            break;
+        case 3:
+             //下
+            self.down_btn.userInteractionEnabled = YES;
+            self.up_btn.userInteractionEnabled = NO;
+            self.left_btn.userInteractionEnabled = NO;
+            self.right_btn.userInteractionEnabled = NO;
+            self.left_up_btn.userInteractionEnabled = NO;
+            self.left_down_btn.userInteractionEnabled = NO;
+            break;
+        case 2:
+            //左
+            self.left_btn.userInteractionEnabled = YES;
+            self.right_btn.userInteractionEnabled = NO;
+            self.down_btn.userInteractionEnabled = NO;
+            self.up_btn.userInteractionEnabled = NO;
+            self.left_up_btn.userInteractionEnabled = NO;
+            self.left_down_btn.userInteractionEnabled = NO;
+            break;
+        case 1:
+            // 右
+            self.right_btn.userInteractionEnabled = YES;
+            self.left_btn.userInteractionEnabled = NO;
+            self.up_btn.userInteractionEnabled = NO;
+            self.down_btn.userInteractionEnabled = NO;
+            self.left_up_btn.userInteractionEnabled = NO;
+            self.left_down_btn.userInteractionEnabled = NO;
+            break;
+            
+        default:
+            break;
+    }
     moveTimer = [HWWeakTimer scheduledTimerWithTimeInterval:1.0*0.2 block:^(id userInfo) {
         
         [self sendInfomation:str];
@@ -341,6 +386,31 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 
 -(void)moverobot:(NSString *)str
 {
+     NSInteger i = [str integerValue];
+    switch (i) {
+        case 1:
+            self.right_btn.userInteractionEnabled = NO;
+            self.left_btn.userInteractionEnabled = NO;
+            self.up_btn.userInteractionEnabled = NO;
+            self.down_btn.userInteractionEnabled = NO;
+            self.left_up_btn.userInteractionEnabled = YES;
+            self.left_down_btn.userInteractionEnabled = NO;
+            break;
+            
+        case 2:
+            self.right_btn.userInteractionEnabled = NO;
+            self.left_btn.userInteractionEnabled = NO;
+            self.up_btn.userInteractionEnabled = NO;
+            self.down_btn.userInteractionEnabled = NO;
+            self.left_up_btn.userInteractionEnabled = NO;
+            self.left_down_btn.userInteractionEnabled = YES;
+            
+            break;
+        default:
+            break;
+    }
+    
+    
     moveTimer = [HWWeakTimer scheduledTimerWithTimeInterval:1.0*0.2 block:^(id userInfo) {
         
         [self sendInfomationL:str];

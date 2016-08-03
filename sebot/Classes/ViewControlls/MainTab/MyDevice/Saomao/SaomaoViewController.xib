@@ -7,8 +7,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SaomaoViewController">
             <connections>
-                <outlet property="sanFrameView" destination="BR5-if-1wc" id="7dZ-zM-6UF"/>
-                <outlet property="saomaBtn" destination="1Bm-7U-Amc" id="nI5-dX-wZo"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,36 +14,7 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Bm-7U-Amc">
-                    <rect key="frame" x="62" y="414" width="196" height="51"/>
-                    <color key="backgroundColor" red="1" green="0.31271801760000001" blue="0.26396912760000002" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="51" id="lJY-7F-O1B"/>
-                    </constraints>
-                    <state key="normal" title="扫码"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="6"/>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <action selector="saomaoBtn:" destination="-1" eventType="touchUpInside" id="mBh-gW-KoX"/>
-                    </connections>
-                </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BR5-if-1wc">
-                    <rect key="frame" x="40" y="160" width="237" height="235"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
-            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstItem="BR5-if-1wc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="1zK-IW-g9g"/>
-                <constraint firstAttribute="bottom" secondItem="1Bm-7U-Amc" secondAttribute="bottom" constant="103" id="9Zd-Os-dEp"/>
-                <constraint firstAttribute="trailing" secondItem="BR5-if-1wc" secondAttribute="trailing" constant="43" id="Evn-H9-M4G"/>
-                <constraint firstItem="1Bm-7U-Amc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="XiI-rb-2Js"/>
-                <constraint firstItem="BR5-if-1wc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="160" id="gZQ-QL-ewG"/>
-                <constraint firstItem="1Bm-7U-Amc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="62" id="k1S-bG-P3i"/>
-                <constraint firstItem="1Bm-7U-Amc" firstAttribute="top" secondItem="BR5-if-1wc" secondAttribute="bottom" constant="19" id="lvG-fK-bnk"/>
-            </constraints>
             <point key="canvasLocation" x="253" y="247"/>
         </view>
     </objects>

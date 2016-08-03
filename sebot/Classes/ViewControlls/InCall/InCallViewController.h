@@ -21,4 +21,15 @@
 
 @property (strong, nonatomic) IBOutlet UINavigationItem *repairTitle;
 
+
+@property (strong, nonatomic) IBOutlet UIButton *up_btn;
+@property (strong, nonatomic) IBOutlet UIButton *left_btn;
+@property (strong, nonatomic) IBOutlet UIButton *down_btn;
+@property (strong, nonatomic) IBOutlet UIButton *right_btn;
+
+// button
+
+@property (strong, nonatomic) IBOutlet UIButton *left_up_btn;
+@property (strong, nonatomic) IBOutlet UIButton *left_down_btn;
+
 @end

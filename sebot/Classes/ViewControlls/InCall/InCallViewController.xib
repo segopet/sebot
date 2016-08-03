@@ -9,9 +9,15 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InCallViewController">
             <connections>
                 <outlet property="ActView" destination="95n-9c-RUC" id="7Uc-UV-Mht"/>
+                <outlet property="down_btn" destination="0E9-fd-LQy" id="Aw2-Ga-fxV"/>
+                <outlet property="left_btn" destination="WwM-Xz-fcU" id="xYl-C2-ooR"/>
+                <outlet property="left_down_btn" destination="76J-wo-Y2k" id="Nmr-Zw-aMp"/>
+                <outlet property="left_up_btn" destination="hHl-TC-ONA" id="FPw-Wm-q0K"/>
                 <outlet property="otherView" destination="dP5-cU-Jb3" id="RF9-xJ-sGH"/>
                 <outlet property="repairTitle" destination="v2d-ev-VOZ" id="7Me-uJ-3Kp"/>
+                <outlet property="right_btn" destination="YEb-rF-qaJ" id="8Zj-rv-4Jc"/>
                 <outlet property="titleBar" destination="2b0-1x-SEk" id="hlq-bm-01I"/>
+                <outlet property="up_btn" destination="Vur-lj-MuI" id="2MB-5W-OJZ"/>
                 <outlet property="updownBtn" destination="0E9-fd-LQy" id="QTH-I0-8HH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
