@@ -144,7 +144,7 @@
             NSLog(@"=======成功");
             break;
         case SephoneRegistrationCleared:
-            NSLog(@"======注销成功")
+            NSLog(@"======注销成功");
             break;
         case SephoneRegistrationFailed:
             NSLog(@"========OK 以外都是失败");
