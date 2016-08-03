@@ -8,10 +8,6 @@
 
 #import "SaomaoViewController.h"
 #import <AVFoundation/AVFoundation.h>
-
-static const char *kScanQRCodeQueueName = "ScanQRCodeQueue";
-
-
 @interface SaomaoViewController ()<AVCaptureMetadataOutputObjectsDelegate>
 
 {

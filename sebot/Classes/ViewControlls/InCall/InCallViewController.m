@@ -49,11 +49,14 @@
     // 创建定时器更新通话时间 (以及创建时间显示)
     updateTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateViews) userInfo:nil repeats:YES];
     
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillResignActive:)name:UIApplicationWillResignActiveNotification object:nil]; //监听是否触发home键挂起程序.
     
     
     
 }
+
+
+
 
 
 - (void)callStream:(SephoneCall *)calls
@@ -86,8 +89,6 @@
             [SephoneManager terminateCurrentCallOrConference];
             NSLog(@"五分钟到时视频流自动断开");
         }
-        
-        
     }
     if (call == NULL) {
         return;
@@ -101,6 +102,7 @@
 {
     
     [self RefreshCellForLiveId];
+    
     
     
 }
@@ -230,6 +232,8 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
         [updateTimer invalidate];
         updateTimer = nil;
     }
+    
+    [moveTimer invalidate];
     
     // Clear windows
     //  必须清除，否则会因为arc导致再次视频通话时crash。
@@ -374,6 +378,8 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
         default:
             break;
     }
+    
+   
     moveTimer = [HWWeakTimer scheduledTimerWithTimeInterval:1.0*0.2 block:^(id userInfo) {
         
         [self sendInfomation:str];

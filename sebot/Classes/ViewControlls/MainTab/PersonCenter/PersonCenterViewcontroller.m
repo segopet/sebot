@@ -344,13 +344,10 @@
         
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"repairName", nil) message:nil preferredStyle:UIAlertControllerStyleAlert];
         [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Sure", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            //获取第1个输入框；)
-            _userNameTextField = [[UITextField alloc]init];
+            //获取第1个输入框；
             _userNameTextField = alertController.textFields.firstObject;
             _userNameTextField.delegate = self;
             [self repairName:_userNameTextField.text];
-    
-            [_userNameTextField addTarget:self action:@selector(textFieldDidChange1:)  forControlEvents:UIControlEventEditingChanged];
             
         }]];
         
@@ -375,7 +372,8 @@
                 [self.navigationController pushViewController:Myphot0VC animated:YES];
                 
             }else {
-                [[AppUtil appTopViewController] showHint:@"你还没有绑定设备"];            }
+                [[AppUtil appTopViewController] showHint:@"你还没有绑定设备"];
+            }
         }];
 
         
@@ -408,10 +406,18 @@
 - (void)repairName:(NSString *)textname
 {
     
+    if (textname.length == 0)
+    {
+        [[AppUtil appTopViewController]showHint:@"昵称不能为空"];
+        return;
+    }
     if (textname.length > 10) {
         [[AppUtil appTopViewController]showHint:@"昵称只能10字以内"];
-        textname = [textname substringToIndex:10];
+       // textname = [textname substringToIndex:10];
+        return;
         }
+
+    
     
     NSString * str= [AccountManager sharedAccountManager].loginModel.userid;
     [[AFHttpClient sharedAFHttpClient]repairname:str token:str nickname:textname complete:^(ResponseModel * model) {
@@ -420,6 +426,8 @@
         [AccountManager sharedAccountManager].loginModel.nickname = textname;
         [self initRefreshView];
     }];
+        
+    
 
 }
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -435,14 +443,6 @@
 }
 
 
-- (void)textFieldDidChange1:(UITextField *)textField
-{
-    if (textField == _userNameTextField) {
-        if (textField.text.length > 10) {
-            textField.text = [textField.text substringToIndex:10];
-        }
-    }
-}
 
 
 @end
