@@ -140,17 +140,7 @@
 }
 -(void)provied{
     [self timeout];
-//    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid":[AccountManager sharedAccountManager].loginModel.userid,@"token":@"",@"objective":@"user",@"action":@"getCode",@"data":@{@"phone":_phoneNumberTextfield.text,@"type":@"modifypassword"}} result:^(id model) {
-//        NSLog(@"%@",model);
-//        if ([model[@"retCode"] isEqualToString:@"SUCCESS"]) {
-//            _achieveString = model[@"content"];
-//            _surePhonenumber = model[@"retVal"];
-//            [[AppUtil appTopViewController] showHint:model[@"retDesc"]];
-//        }else{
-//            [[AppUtil appTopViewController] showHint:model[@"retDesc"]];
-//        }
-//        
-//    }];
+
         [[AFHttpClient sharedAFHttpClient]provedWithUserid:@"" token:@"" phone:_phoneNumberTextfield.text type:@"modifypassword" complete:^(ResponseModel *model) {
             if (model) {
                 _achieveString = model.content;
