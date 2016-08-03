@@ -3341,7 +3341,7 @@
 					"$(PROJECT_DIR)/sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/lib",
 					"$(PROJECT_DIR)/sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/lib/mediastreamer/plugins",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sego.sebo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sego.sebot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -3391,7 +3391,7 @@
 					"$(PROJECT_DIR)/sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/lib",
 					"$(PROJECT_DIR)/sebot/sephone_sdk/SP_sdk/libsephone-sdk/apple-darwin/lib/mediastreamer/plugins",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sego.sebo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sego.sebot;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
