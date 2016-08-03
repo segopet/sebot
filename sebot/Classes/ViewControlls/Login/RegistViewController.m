@@ -170,7 +170,7 @@
 
 //注册
 -(void)registButtonTouch:(UIButton *)sender{
-    sender.userInteractionEnabled = NO;
+  
     if ([AppUtil isBlankString:_phoneNumberTextfield.text]) {
         [[AppUtil appTopViewController] showHint:@"请输入账号"];
         return;
@@ -199,6 +199,7 @@
         [[AppUtil appTopViewController] showHint:@"手机号码错误"];
         return;
     }
+      sender.userInteractionEnabled = NO;
     [self showHudInView:self.view hint:@"正在注册..."];
     [[AFHttpClient sharedAFHttpClient]registWithphone:_phoneNumberTextfield.text password:_passwordTextfield.text complete:^(ResponseModel *model) {
         if (model) {

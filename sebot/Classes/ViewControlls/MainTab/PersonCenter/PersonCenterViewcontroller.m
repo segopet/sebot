@@ -414,7 +414,8 @@
     NSString * str= [AccountManager sharedAccountManager].loginModel.userid;
     [[AFHttpClient sharedAFHttpClient]repairname:str token:str nickname:textname complete:^(ResponseModel * model) {
         NSLog(@"修改昵称");
-        
+        //这里要把model里面的值刷新
+        [AccountManager sharedAccountManager].loginModel.nickname = textname;
         [self initRefreshView];
     }];
 

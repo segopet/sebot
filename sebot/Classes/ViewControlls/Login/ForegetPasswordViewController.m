@@ -65,7 +65,7 @@
     [doneBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     doneBtn.layer.cornerRadius = 5;
     [self.view addSubview:doneBtn];
-    [doneBtn addTarget:self action:@selector(registButtonTouch) forControlEvents:UIControlEventTouchUpInside];
+    [doneBtn addTarget:self action:@selector(registButtonTouch:) forControlEvents:UIControlEventTouchUpInside];
     
 
     _phoneNumberTextfield = [[UITextField alloc]initWithFrame:CGRectMake(100 * W_Wide_Zoom, 11 * W_Hight_Zoom, 200 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
@@ -155,7 +155,8 @@
 
 
 //忘记密码
--(void)registButtonTouch{
+-(void)registButtonTouch:(UIButton *)sender{
+   
     if ([AppUtil isBlankString:_phoneNumberTextfield.text]) {
         [[AppUtil appTopViewController] showHint:@"请输入账号"];
         return;
@@ -184,15 +185,16 @@
         [[AppUtil appTopViewController] showHint:@"手机号码错误"];
         return;
     }
-    
-//    [[AFHttpClient sharedAFHttpClient]POST:@"sebot/moblie/forward" parameters:@{@"userid":[AccountManager sharedAccountManager].loginModel.userid,@"token":@"",@"objective":@"user",@"action":@"register",@"data":@{@"phone":_phoneNumberTextfield.text,@"password":_passwordTextfield.text}} result:^(id model) {
-//        NSLog(@"%@",model);
-//    }];
+     sender.userInteractionEnabled = NO;
+    [self showHudInView:self.view hint:@"正在修改..."];
     [[AFHttpClient sharedAFHttpClient]forgetPasswordWithPhone:_phoneNumberTextfield.text password:_passwordTextfield.text complete:^(ResponseModel *model) {
         if (model) {
+            
+            sender.userInteractionEnabled = YES;
              [[AppUtil appTopViewController] showHint:model.retDesc];
             [self.navigationController popViewControllerAnimated:NO];
         }
+         [self hideHud];
     }];
     
     

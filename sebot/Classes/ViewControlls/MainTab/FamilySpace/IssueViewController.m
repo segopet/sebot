@@ -115,9 +115,7 @@
 
 
 -(void)releaseInfo:(UIButton *)sender{
-
-     sender.userInteractionEnabled = NO;
-    _leftButton.userInteractionEnabled = NO;
+ 
     [_imageArray removeLastObject];
     if (_imageArray.count < 1) {
          [[AppUtil appTopViewController] showHint:@"请至少选择一张图片"];
@@ -147,7 +145,8 @@
     }
     [stingArr appendString:@"]"];
     
-
+    sender.userInteractionEnabled = NO;
+    _leftButton.userInteractionEnabled = NO;
     [self showHudInView:self.view hint:@"正在发布..."];
 
     [[AFHttpClient sharedAFHttpClient]issueWithuserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid aid:_aidstr coneten:_topTextView.text  photos:stingArr userides:[AccountManager sharedAccountManager].loginModel.userid complete:^(ResponseModel *model) {
