@@ -112,17 +112,17 @@ static NSString * cellId = @"FamilyCellides";
     
     
 }
--(void)initTabview{
-    [_image removeFromSuperview];
-   
-    self.tableView.hidden = NO;
-    self .tableView.frame =  CGRectMake(0, 0, self.view.width, self.view.height);
-    [self.tableView registerClass:[FamilyTableViewCell class] forCellReuseIdentifier:cellId];
-    self.tableView.backgroundColor = [UIColor whiteColor];
-    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-    [self initRefreshView];
-
-}
+//-(void)initTabview{
+//    [_image removeFromSuperview];
+//   
+//    self.tableView.hidden = NO;
+//    self .tableView.frame =  CGRectMake(0, 0, self.view.width, self.view.height);
+//    [self.tableView registerClass:[FamilyTableViewCell class] forCellReuseIdentifier:cellId];
+//    self.tableView.backgroundColor = [UIColor whiteColor];
+//    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+//    [self initRefreshView];
+//
+//}
 
 -(void)setupData{
     [super setupData];
@@ -132,9 +132,7 @@ static NSString * cellId = @"FamilyCellides";
     [_noShujuImage removeFromSuperview];
     _noShujuImage.hidden = YES;
     [[AFHttpClient sharedAFHttpClient]familyArticlesWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid page:[NSString stringWithFormat:@"%d",page] complete:^(ResponseModel *model) {
-        
-      
-        //else{
+    
         if (page == START_PAGE_INDEX) {
             if (model.list.count == 0) {
                 [self noShuju];
@@ -152,7 +150,6 @@ static NSString * cellId = @"FamilyCellides";
         }
         [self.tableView reloadData];
         [self handleEndRefresh];
-      //  }
         
     }];
 
