@@ -151,7 +151,7 @@ static BOOL isBackGroundActivateApplication;
             if ([pushType isEqualToString:@"T001"]) {
                 NSLog(@"同意");
                 [[AFHttpClient sharedAFHttpClient]responseBinding:str token:str brid:strAps operate:@"yes" complete:^(ResponseModel * model) {
-                    // [[NSNotificationCenter defaultCenter]postNotificationName:@"bangdingshuaxin" object:nil];
+
                 }];
                 
                 
@@ -263,7 +263,7 @@ static BOOL isBackGroundActivateApplication;
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    // Called when the application is about to terminate. Save data8 if appropriate. See also applicationDidEnterBackground:.
 }
 
 @end
