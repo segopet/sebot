@@ -373,7 +373,8 @@
                 [self.navigationController pushViewController:Myphot0VC animated:YES];
                 
             }else {
-                [[AppUtil appTopViewController] showHint:@"你还没有绑定设备"];            }
+                [[AppUtil appTopViewController] showHint:@"你还没有绑定设备"];
+            }
         }];
 
         

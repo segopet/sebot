@@ -89,8 +89,6 @@
             [SephoneManager terminateCurrentCallOrConference];
             NSLog(@"五分钟到时视频流自动断开");
         }
-        
-        
     }
     if (call == NULL) {
         return;
