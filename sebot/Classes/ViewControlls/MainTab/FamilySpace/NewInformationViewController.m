@@ -27,6 +27,7 @@ static NSString * cellId = @"newAllubmtabeleviewwcellid";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+  
     [self setNavTitle:@"新建相册"];
     [UINavigationBar appearance].barTintColor=RED_COLOR;
     _adviceArray = [NSMutableArray array];
@@ -35,6 +36,8 @@ static NSString * cellId = @"newAllubmtabeleviewwcellid";
 
     self.automaticallyAdjustsScrollViewInsets = NO;
 }
+
+
 //新建按钮
 -(void)doRightButtonTouch{
 
@@ -46,7 +49,12 @@ static NSString * cellId = @"newAllubmtabeleviewwcellid";
         [[AppUtil appTopViewController] showHint:@"请选择至少一个设备"];
         return;
     }
-  
+    if (_alumbnameTextfield.text.length > 10) {
+         [[AppUtil appTopViewController] showHint:@"相册名称只能10字以内哦"];
+        return;
+    }
+    
+    
     
     
     NSString * str = [_adviceArray componentsJoinedByString:@","];
@@ -84,7 +92,7 @@ static NSString * cellId = @"newAllubmtabeleviewwcellid";
     _alumbnameTextfield.font = [UIFont systemFontOfSize:15];
     _alumbnameTextfield.textColor = [UIColor blackColor];
     [self.view addSubview:_alumbnameTextfield];
-    [_alumbnameTextfield addTarget:self action:@selector(textFieldDidChange:)  forControlEvents:UIControlEventEditingChanged];
+ //   [_alumbnameTextfield addTarget:self action:@selector(textFieldDidChange:)  forControlEvents:UIControlEventEditingChanged];
     
     
     UILabel * lineLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 116 * W_Hight_Zoom, 375 * W_Wide_Zoom,1 * W_Hight_Zoom )];
@@ -181,14 +189,14 @@ static NSString * cellId = @"newAllubmtabeleviewwcellid";
 //    return YES;
 //}
 
-- (void)textFieldDidChange:(UITextField *)textField
-{
-    if (textField == _alumbnameTextfield) {
-        if (textField.text.length > 10) {
-            textField.text = [textField.text substringToIndex:10];
-        }
-    }
-}
+//- (void)textFieldDidChange:(UITextField *)textField
+//{
+//    if (textField == _alumbnameTextfield) {
+//        if (textField.text.length > 10) {
+//            textField.text = [textField.text substringToIndex:10];
+//        }
+//    }
+//}
 
 
 @end

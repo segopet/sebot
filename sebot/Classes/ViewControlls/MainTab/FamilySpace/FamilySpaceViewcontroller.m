@@ -44,10 +44,28 @@ static NSString * cellId = @"FamilyCellides";
      [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(dada3) name:@"bangdingshuaxin" object:nil];
     
 }
+
+
+
+
+
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
+    NSUserDefaults * defults =[NSUserDefaults standardUserDefaults];
+    NSString * str =[defults objectForKey:@"s_m_text"];
+    _popView.numberTextfied.text= str;
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(pass) name:@"haha" object:nil];
+
+}
+- (void)pass
+
+{
+    
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
     
 }
+
+
 
 -(void)dada{
     [self initRefreshView];
@@ -223,6 +241,7 @@ static NSString * cellId = @"FamilyCellides";
          cell.aixin.selected = YES;
     }
     cell.aixin.tag = indexPath.row + 22;
+    cell.aixin.userInteractionEnabled = YES;
     [cell.aixin addTarget:self action:@selector(dianzanbttuntouch:) forControlEvents:UIControlEventTouchUpInside];
     cell.aixinLabel.text = model.praises;
     cell.pinglunlabel.text = model.comments;
@@ -251,24 +270,29 @@ static NSString * cellId = @"FamilyCellides";
 
 //点赞
 -(void)dianzanbttuntouch:(UIButton *)sender{
+    sender.userInteractionEnabled = NO;
     NSInteger i = sender.tag - 22;
     FamilyquanModel * model = self.dataSource[i];
     if (sender.selected == YES) {
         NSLog(@"gaga");
+         sender.userInteractionEnabled = YES;
         [[AppUtil appTopViewController] showHint:@"您已经点过赞了，不能重复点赞哦!"];
     }else{
-      [sender setImage:[UIImage imageNamed:@"dianzanhou.png"] forState:UIControlStateNormal];
+    [sender setImage:[UIImage imageNamed:@"dianzanhou.png"] forState:UIControlStateNormal];
     [[AFHttpClient sharedAFHttpClient]dianzanWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid objid:model.aid objtype:@"a" complete:^(ResponseModel *model) {
         if (model) {
             [[AppUtil appTopViewController] showHint:model.retDesc];
             [self loadDataSourceWithPage:1];
         }
+        
     }];
     }
+    
 }
 
 //点击查看大图
 -(void)lookPictureButtonTouch:(UIButton *)sender{
+    sender.userInteractionEnabled = NO;
     NSInteger i = sender.tag - 21;
     NSLog(@"%ld",i);
     FamilyquanModel * model = self.dataSource[i];
@@ -281,6 +305,7 @@ static NSString * cellId = @"FamilyCellides";
              LargeViewController * largeVC =[[LargeViewController alloc]initWithNibName:@"LargeViewController" bundle:nil];
             largeVC.dataArray = array;
             [self.navigationController pushViewController:largeVC animated:YES];
+                sender.userInteractionEnabled = YES;
             }
         }
     }];
@@ -317,18 +342,21 @@ static NSString * cellId = @"FamilyCellides";
     NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
     
     if ([AppUtil isBlankString:_popView.numberTextfied.text]) {
-        _popView.numberTextfied.text= [[NSUserDefaults standardUserDefaults]objectForKey:@"s_m_text"];
-    }else
-    {
-        
+        [self showSuccessHudWithHint:@"请输入设备号"];
+        return;
     }
-    [self showHudInView:self.view hint:@"正在绑定中..."];
+    //[self showHudInView:self.view hint:@"正在绑定中..."];
+    MBProgressHUD *hud=[MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode=MBProgressHUDAnimationFade;//枚举类型不同的效果
+    hud.labelText=@"加载中.......";
+    [_popView removeFromSuperview];
+    
     [[AFHttpClient sharedAFHttpClient]addDevide:str token:str deviceno:_popView.numberTextfied.text complete:^(ResponseModel * model) {
         [_popView removeFromSuperview];
-        [self showSuccessHudWithHint:model.retDesc];
-         [self hideHud];
-
+        [[AppUtil appTopViewController] showHint:model.retDesc];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
     }];
+   
     
 }
 
