@@ -15,12 +15,6 @@
     
     //Sephone  单向无须做太多操作(考虑到以后)
       [[SephoneManager instance]	startSephoneCore];
-    
-    
-    
-    
-    
-    
-    
+
 }
 @end

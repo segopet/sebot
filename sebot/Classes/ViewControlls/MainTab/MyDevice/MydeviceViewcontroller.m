@@ -372,7 +372,7 @@
      cell.selectionStyle = UITableViewCellSelectionStyleNone;
      cell.numberLable.text =checkModel.deviceremark;
     // 设备不存在：ds000,在线：ds001,离线：ds002,通话中：ds003
-    
+    cell.VideoStateBtn.hidden = YES;
     if ([checkModel.status  isEqualToString:@"ds001"]) {
         // 可以去开启视频
         
