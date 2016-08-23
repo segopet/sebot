@@ -24,7 +24,14 @@
         _centerImage.backgroundColor = [UIColor blackColor];
         [self addSubview:_centerImage];
         
-        UILabel * fromLabel = [[UILabel alloc]initWithFrame:CGRectMake(10 * W_Wide_Zoom, 15 * W_Hight_Zoom, 50 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
+
+        UIImageView * mengceng = [[UIImageView alloc]initWithFrame:_centerImage.frame];
+        mengceng.image = [UIImage imageNamed:@"mengcengceng.png"];
+        [self addSubview:mengceng];
+        
+        
+        
+        UILabel * fromLabel = [[UILabel alloc]initWithFrame:CGRectMake(7 * W_Wide_Zoom, 15 * W_Hight_Zoom, 50 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
         fromLabel.text = @"From:";
         fromLabel.textColor = [UIColor whiteColor];
         fromLabel.font = [UIFont systemFontOfSize:15];
@@ -42,6 +49,11 @@
         [self addSubview:_timeLabel];
         
         
+        _leftdownImage = [[UIImageView alloc]initWithFrame:CGRectMake(7 * W_Wide_Zoom, 157 * W_Hight_Zoom, 35 * W_Wide_Zoom, 35 * W_Hight_Zoom)];
+        _leftdownImage.image = [UIImage imageNamed:@"playplay.png"];
+        [self addSubview:_leftdownImage];
+        
+       
         
         
         

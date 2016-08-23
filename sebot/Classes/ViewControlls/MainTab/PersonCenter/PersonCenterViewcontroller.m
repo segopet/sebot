@@ -267,7 +267,8 @@
     [[AFHttpClient sharedAFHttpClient]updateHead:str token:str image:picstr complete:^(ResponseModel * model) {
         
         NSLog(@"%@",model);
-        [AccountManager sharedAccountManager].loginModel.headportrait = picstr;
+        [AccountManager sharedAccountManager].loginModel.headportrait = model.content;
+
     }];
     
     

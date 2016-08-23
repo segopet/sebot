@@ -83,13 +83,12 @@ NSString * const kDetailCommentCellID = @"DetailCommentCell";
                         addModel.wid = self.wid;
                         addModel.cid = model.content;
                         addModel.headportrait = [AccountManager sharedAccountManager].loginModel.headportrait;
+                        
                         addModel.pid = [AccountManager sharedAccountManager].loginModel.userid;
                         [self.dataSource insertObject:addModel atIndex:0];
                         [self.tableView reloadData];
   
-                        
-                        
-                        
+        
                     }
                     
                     

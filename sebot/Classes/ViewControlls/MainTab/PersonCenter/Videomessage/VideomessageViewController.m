@@ -14,7 +14,9 @@
 #import <MediaPlayer/MediaPlayer.h>
 static NSString * cellId = @"videomessagetableviewcellid";
 @interface VideomessageViewController ()
-
+{
+   UIImageView * _noShujuImage;
+}
 @end
 
 @implementation VideomessageViewController
@@ -41,12 +43,12 @@ static NSString * cellId = @"videomessagetableviewcellid";
 }
 
 -(void)loadDataSourceWithPage:(int)page{
-    [[AFHttpClient sharedAFHttpClient]getVideomessageWithUserid:@"UI1608000016944" token:@"UI1608000016944" page:[NSString stringWithFormat:@"%d",page]complete:^(ResponseModel *model) {
+    [[AFHttpClient sharedAFHttpClient]getVideomessageWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid page:[NSString stringWithFormat:@"%d",page]complete:^(ResponseModel *model) {
         
         if (page == START_PAGE_INDEX) {
-//            if (model.list.count == 0) {
-//                [self noShuju];
-//            }
+            if (model.list.count == 0) {
+                [self noShuju];
+            }
             [self.dataSource removeAllObjects];
             [self.dataSource addObjectsFromArray:model.list];
         } else {
@@ -60,11 +62,21 @@ static NSString * cellId = @"videomessagetableviewcellid";
         }
         [self.tableView reloadData];
         [self handleEndRefresh];
-
+            
         
     }];
 
 
+}
+
+-(void)noShuju{
+    
+    NSLog(@"heheh");
+    _noShujuImage = [[UIImageView alloc]initWithFrame:CGRectMake(60 * W_Wide_Zoom, 136 * W_Hight_Zoom, 250 * W_Wide_Zoom, 250 * W_Hight_Zoom)];
+    _noShujuImage.image = [UIImage imageNamed:@"无图时.png"];
+    [self.tableView addSubview:_noShujuImage];
+    
+    
 }
 
 #pragma mark - TableView的代理函数

@@ -14,6 +14,7 @@
 @property (nonatomic,strong)UIImageView * centerImage;
 @property (nonatomic,strong)UIImageView * leftdownImage;
 @property (nonatomic,strong)UILabel * nameLabel;
+@property (nonatomic,strong)UIView * mengcengView;
 
 
 @end
