@@ -15,6 +15,7 @@
 #import "CheckDeviceModel.h"
 #import "FamilyquanModel.h"
 #import "CommentModel.h"
+#import "VideoMessageModel.h"
 
 @interface AFHttpClient : AFHTTPSessionManager
 

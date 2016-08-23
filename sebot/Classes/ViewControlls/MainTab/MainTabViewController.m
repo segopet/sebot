@@ -35,7 +35,12 @@
     app= (AppDelegate *)[UIApplication sharedApplication].delegate;
     
     [self setupSubviews];
+    
+
 }
+
+
+
 
 - (void)viewWillAppear:(BOOL)animated
 {

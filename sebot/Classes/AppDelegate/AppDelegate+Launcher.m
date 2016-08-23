@@ -66,6 +66,7 @@
             popStartV.ParentView = self.window;
             [self.window addSubview:popStartV];
             
+            
         }else {//不是第一次启动软件
             [self enterLoginVC];
             
