@@ -93,16 +93,36 @@ static BOOL isBackGroundActivateApplication;
          if ([pushType isEqualToString:@"T001"]) {
              UIAlertView *alertView =[[UIAlertView alloc]initWithTitle:@"收到一条消息" message:userInfo[@"desc"] delegate:self cancelButtonTitle:@"拒绝" otherButtonTitles:@"同意", nil];
              [alertView show];
+             
+             return;
     
-         }else
+         }
+        if ([pushType isEqualToString:@"T002"]) {
+            
+            UIAlertView *alertView =[[UIAlertView alloc]initWithTitle:@"收到一条消息" message:userInfo[@"desc"] delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
+            [alertView show];
+            return;
+
+        }
+        
+        if ([pushType isEqualToString:@"T003"]) {
+            
+            UIAlertView *alertView =[[UIAlertView alloc]initWithTitle:@"收到一条消息" message:userInfo[@"desc"] delegate:self cancelButtonTitle:@"拒绝" otherButtonTitles:@"同意", nil];
+            [alertView show];
+            return;
+            
+        }
+        
+         else  if ([pushType isEqualToString:@"T004"])
          {
              
              UIAlertView *alertView =[[UIAlertView alloc]initWithTitle:@"收到一条消息" message:userInfo[@"desc"] delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
              [alertView show];
+             return;
 
              
          }
-       
+        
         
     }
     // 应用在后台。当后台设置aps字段里的 content-available 值为 1 并开启远程通知激活应用的选项

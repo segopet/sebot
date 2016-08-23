@@ -371,6 +371,8 @@
     }
      cell.selectionStyle = UITableViewCellSelectionStyleNone;
      cell.numberLable.text =checkModel.deviceremark;
+    
+    cell.VideoStateBtn.hidden = YES;
     // 设备不存在：ds000,在线：ds001,离线：ds002,通话中：ds003
     
     if ([checkModel.status  isEqualToString:@"ds001"]) {

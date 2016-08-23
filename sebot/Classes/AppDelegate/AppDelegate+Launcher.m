@@ -109,16 +109,12 @@
  *  进入登陆界面
  */
 - (void)enterLoginVC{
-    
     if (self.mainTabVC) {
         self.mainTabVC = nil;
     }
-    
     self.loginVC = [[LoginViewController alloc]init];
-    
     UINavigationController * loginNaVc = [[UINavigationController alloc]initWithRootViewController:self.loginVC];
     self.window.rootViewController = loginNaVc;
-    
     [self.window makeKeyAndVisible];
 }
 

@@ -31,7 +31,6 @@
     
     
 }
-
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     // Set observer
@@ -87,7 +86,7 @@
         int duration = sephone_call_get_duration(calltime);
         if (duration >= 300) {
             [SephoneManager terminateCurrentCallOrConference];
-            NSLog(@"五分钟到时视频流自动断开");
+           // NSLog(@"五分钟到时视频流自动断开");
         }
     }
     if (call == NULL) {
@@ -108,7 +107,7 @@
 }
 -(void)dealloc {
     [moveTimer invalidate];
-    NSLog(@"%@ dealloc", NSStringFromClass([self class]));
+    //  NSLog(@"%@ dealloc", NSStringFromClass([self class]));
 }
 
 - (void)RefreshCellForLiveId
@@ -154,6 +153,7 @@
     SephoneCallState state = [[notif.userInfo objectForKey:@"state"] intValue];
     [self callUpdate:call_ state:state animated:TRUE];
 }
+
 
 
 
@@ -258,7 +258,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 - (IBAction)left_Start_btn:(UIButton *)sender {
 
      [self moveRobot:@"2"];
-     NSLog(@"这是在往左走");
+   //  NSLog(@"这是在往左走");
 }
 
 - (IBAction)rightBtn:(UIButton *)sender {
@@ -270,7 +270,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 - (IBAction)right_start_btn:(UIButton *)sender {
    
      [self moveRobot:@"1"];
-     NSLog(@"这是在往右走");
+    // NSLog(@"这是在往右走");
     
 }
 
@@ -281,7 +281,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 - (IBAction)top_start_btn:(UIButton *)sender {
   
      [self moveRobot:@"4"];
-     NSLog(@"这是在往上走");
+     //NSLog(@"这是在往上走");
     
 }
 
@@ -304,7 +304,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 }
 - (IBAction)uptop_start_btn:(UIButton *)sender {
     
-      [self moverobot:@"1"]; // 上
+    [self moverobot:@"1"]; // 上
   
 }
 
@@ -393,7 +393,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
 -(void)moverobot:(NSString *)str
 {
      NSInteger i = [str integerValue];
-    switch (i) {
+     switch (i) {
         case 1:
             self.right_btn.userInteractionEnabled = NO;
             self.left_btn.userInteractionEnabled = NO;
@@ -469,7 +469,7 @@ static void hideSpinner(SephoneCall *call, void *user_data) {
     NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
     [[AFHttpClient sharedAFHttpClient]updateDevice:str token:str did: [defu objectForKey:@"contentID"] complete:^(ResponseModel * model) {
         
-        NSLog(@"更新成功");
+      //  NSLog(@"更新成功");
         
     }];
     

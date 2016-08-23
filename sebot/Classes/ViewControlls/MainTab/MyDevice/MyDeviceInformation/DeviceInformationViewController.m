@@ -45,7 +45,57 @@
     NSArray * arrName =@[NSLocalizedString(@"deviceNumber", nil),NSLocalizedString(@"repairName", nil),NSLocalizedString(@"familyTeam", nil)];
     [self.dicSource addObjectsFromArray:arrName];
 
-   
+    
+    AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+    switch (status) {
+        case AVAuthorizationStatusNotDetermined:{
+            // 许可对话没有出现，发起授权许可
+            
+            [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
+                
+                if (granted) {
+                    //第一次用户接受
+                }else{
+                    //用户拒绝
+                }
+            }];
+            break;
+        }
+        case AVAuthorizationStatusAuthorized:{
+            // 已经开启授权，可继续
+            
+            break;
+        }
+        case AVAuthorizationStatusDenied:
+        case AVAuthorizationStatusRestricted:
+            // 用户明确地拒绝授权，或者相机设备无法访问
+            
+            break;
+        default:
+            break;
+    }
+    
+    
+
+    //麦克风
+    
+    [[AVAudioSession sharedInstance] requestRecordPermission:^(BOOL granted) {
+        
+        if (granted) {
+            
+            // 用户同意获取麦克风
+             NSLog(@"用户同意获取麦克风");
+            
+        } else {
+            
+            // 用户不同意获取麦克风
+            NSLog(@"用户不同意");
+            
+        }
+        
+    }];
+    
+    
         
     
    
@@ -439,7 +489,7 @@
         
         NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
         [[AFHttpClient sharedAFHttpClient]solvDevice:str token:str did:checkmodel.did complete:^(ResponseModel * model) {
-            NSLog(@"%@",model.retDesc);
+           // NSLog(@"%@",model.retDesc);
          
             
             [[AppUtil appTopViewController] showHint:model.retDesc];
@@ -492,8 +542,6 @@
     }
 
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
-    
     cell.introduceLable.text = self.dicSource[indexPath.row];
     
     if (indexPath.row ==1 || indexPath.row ==2) {
@@ -531,12 +579,12 @@
             UITextField *userNameTextField = alertController.textFields.firstObject;
             
             // 确认之后这里会获取到 然后更正数组里的备注 要上传服务器
-            NSLog(@"备注名 = %@",userNameTextField.text);
+          //  NSLog(@"备注名 = %@",userNameTextField.text);
             NSString * str= [AccountManager sharedAccountManager].loginModel.userid;
             
             [[AFHttpClient sharedAFHttpClient]repairName:str token:str did:checkmodel.did remark:userNameTextField.text complete:^(ResponseModel * model) {
                 
-                  NSLog(@"======%@",model);
+                 // NSLog(@"======%@",model);
                 
                 [self initRefreshView];
             }];
@@ -597,9 +645,6 @@
 {
     
     NSString *  displayName  =nil;
-//    
-//    [[SephoneManager instance] call:dialerNumber displayName:displayName transfer:FALSE];
-    
     [[SephoneManager instance]call:dialerNumber displayName:displayName transfer:FALSE highDefinition:FALSE];
     
     
