@@ -12,6 +12,7 @@
 		34012DA91D2CD30B00C97E1E /* AFHttpClient+Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 34012DA81D2CD30B00C97E1E /* AFHttpClient+Person.m */; };
 		34012DAC1D2CD76400C97E1E /* AFHttpClient+ReparPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 34012DAB1D2CD76400C97E1E /* AFHttpClient+ReparPassword.m */; };
 		34012DAF1D2CD9A000C97E1E /* AFHttpClient+FamilyTeam.m in Sources */ = {isa = PBXBuildFile; fileRef = 34012DAE1D2CD9A000C97E1E /* AFHttpClient+FamilyTeam.m */; };
+		341733111D6C4D1E00391281 /* VideoMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 341733101D6C4D1E00391281 /* VideoMessageModel.m */; };
 		345565121D10EF1300B6E562 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 345565111D10EF1300B6E562 /* Localizable.strings */; };
 		345565181D10F10700B6E562 /* AppDelegate+Launcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565171D10F10700B6E562 /* AppDelegate+Launcher.m */; };
 		3455651B1D10F13200B6E562 /* AppDelegate+ShareSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 3455651A1D10F13200B6E562 /* AppDelegate+ShareSDK.m */; };
@@ -285,6 +286,8 @@
 		34012DAB1D2CD76400C97E1E /* AFHttpClient+ReparPassword.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+ReparPassword.m"; sourceTree = "<group>"; };
 		34012DAD1D2CD9A000C97E1E /* AFHttpClient+FamilyTeam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+FamilyTeam.h"; sourceTree = "<group>"; };
 		34012DAE1D2CD9A000C97E1E /* AFHttpClient+FamilyTeam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+FamilyTeam.m"; sourceTree = "<group>"; };
+		3417330F1D6C4D1E00391281 /* VideoMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoMessageModel.h; sourceTree = "<group>"; };
+		341733101D6C4D1E00391281 /* VideoMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoMessageModel.m; sourceTree = "<group>"; };
 		345565111D10EF1300B6E562 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		345565151D10F06700B6E562 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		345565161D10F10700B6E562 /* AppDelegate+Launcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Launcher.h"; sourceTree = "<group>"; };
@@ -765,6 +768,8 @@
 		345565211D10F3B700B6E562 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3417330F1D6C4D1E00391281 /* VideoMessageModel.h */,
+				341733101D6C4D1E00391281 /* VideoMessageModel.m */,
 				34C4C6B31D40D96A00075897 /* ImageModel.h */,
 				34C4C6B41D40D96A00075897 /* ImageModel.m */,
 				34C4C6B01D40D91B00075897 /* PhotoModel.h */,
@@ -1805,6 +1810,7 @@
 				7D509D7D1D1B86A2004E3059 /* NewInformationViewController.m in Sources */,
 				345565B51D11500F00B6E562 /* BaseViewController.m in Sources */,
 				3455657D1D11374500B6E562 /* PersonCenterViewcontroller.m in Sources */,
+				341733111D6C4D1E00391281 /* VideoMessageModel.m in Sources */,
 				3455656B1D11008300B6E562 /* ResponseModel.m in Sources */,
 				345565BB1D1246B900B6E562 /* BaseTabViewController.m in Sources */,
 				7D1AAC751D1A617800B4297E /* NewPhotoalbumViewController.m in Sources */,
