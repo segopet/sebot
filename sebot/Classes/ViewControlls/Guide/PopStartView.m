@@ -14,6 +14,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+     
         
         _scrollView = [[UIScrollView alloc]initWithFrame:self.bounds];
         _scrollView.showsHorizontalScrollIndicator = NO;

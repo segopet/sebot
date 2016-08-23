@@ -15,6 +15,7 @@
 #import "UIImage-Extensions.h"
 #import "AFHttpClient+Person.h"
 #import "AFHttpClient+Alumb.h"
+#import "VideomessageViewController.h"
 
 
 @interface PersonCenterViewcontroller()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate>
@@ -139,13 +140,13 @@
     [super setupData];
     
     self.dataSource =[NSMutableArray array];
-    NSArray * arr =@[@"账号",@"昵称",@"我的相册",@"修改密码",@"关于"];
+    NSArray * arr =@[@"账号",@"昵称",@"我的相册",@"视频留言",@"修改密码",@"关于"];
     [self.dataSource addObjectsFromArray:arr];
     arrTest =[NSMutableArray array];
     NSArray * arrT =@[@"13540691705",@"Tony",@"",@"",@""];
     [arrTest addObjectsFromArray:arrT];
     arrImage =[NSMutableArray array];
-    NSArray * arrI =@[@"acount",@"test11",@"photo",@"paword",@"about"];
+    NSArray * arrI =@[@"acount",@"test11",@"photo",@"videoliuyan",@"paword",@"about"];
     [arrImage addObjectsFromArray:arrI];
 
     
@@ -380,24 +381,26 @@
     }
     else if (indexPath.row == 3)
     {
+        VideomessageViewController * videoVc = [[VideomessageViewController alloc]init];
+        [self.navigationController pushViewController:videoVc animated:YES];
         
-        RepairPwViewController  * repaVC =[[RepairPwViewController alloc]initWithNibName:@"RepairPwViewController" bundle:nil];
         
-        [self.navigationController pushViewController:repaVC animated:YES];
         
     }
     
     else if (indexPath.row == 4)
         
     {
+        RepairPwViewController  * repaVC =[[RepairPwViewController alloc]initWithNibName:@"RepairPwViewController" bundle:nil];
         
+        [self.navigationController pushViewController:repaVC animated:YES];
+    }
+    else if (indexPath.row == 5){
         AboutViewController * aboutVC =[[AboutViewController alloc]initWithNibName:@"AboutViewController" bundle:nil];
         [self.navigationController pushViewController:aboutVC animated:YES];
-        
-        
-        
     }
     
+
 }
 
 
@@ -428,7 +431,6 @@
     }];
         
     
-
 }
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -441,6 +443,8 @@
         [cell setLayoutMargins:UIEdgeInsetsZero];
     }
 }
+
+
 
 
 

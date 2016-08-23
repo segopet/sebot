@@ -58,9 +58,12 @@
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(pass) name:@"haha" object:nil];
     
-    
+   
+
 
 }
+
+
 
 - (void)pass
 
@@ -173,6 +176,14 @@
     
     [SephoneManager addProxyConfig:[AccountManager sharedAccountManager].loginModel.sipno password:[AccountManager sharedAccountManager].loginModel.sippw domain:@"www.segosip001.cn"];
 
+    NSUserDefaults * firstUserdefaults = [NSUserDefaults standardUserDefaults];
+//    if () {
+//        
+//    }
+    
+    
+    
+    
     
     
 }

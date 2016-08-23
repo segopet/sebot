@@ -45,6 +45,7 @@
     otherView.transform = CGAffineTransformScale(self.otherView.transform, 1.2, 1.0);
     // 视频
     sephone_core_set_native_video_window_id([SephoneManager getLc], (unsigned long)otherView);
+  
     [self.ActView startAnimating];
     // 创建定时器更新通话时间 (以及创建时间显示)
     updateTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateViews) userInfo:nil repeats:YES];
