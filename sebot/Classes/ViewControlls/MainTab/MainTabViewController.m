@@ -67,11 +67,10 @@
     self.tabBar.layer.shadowRadius = 2;
     
     
-    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:GRAY_COLOR, UITextAttributeTextColor,
-                                                       nil] forState:UIControlStateNormal];
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:GRAY_COLOR, UITextAttributeTextColor,nil] forState:UIControlStateNormal];
+    
     UIColor *titleHighlightedColor =RED_COLOR;
-    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-                                                       titleHighlightedColor, UITextAttributeTextColor,
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:titleHighlightedColor, UITextAttributeTextColor,
                                                        nil] forState:UIControlStateSelected];
     
     [UINavigationBar appearance].barTintColor=RED_COLOR;

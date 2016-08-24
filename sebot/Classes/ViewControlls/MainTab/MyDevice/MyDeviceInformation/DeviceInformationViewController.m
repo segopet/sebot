@@ -18,7 +18,7 @@
      UIImageView * _heandBtn;
      CheckDeviceModel * checkmodel;
      NSString * strDid;
-    NSString * strName;
+     NSString * strName;
     
 }
 
@@ -28,7 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+   
     
     
     // sip登陆。
@@ -97,7 +97,7 @@
     
     
         
-    
+    /*
    
     // 查询设备信息
         NSString * str1 =[AccountManager sharedAccountManager].loginModel.userid;
@@ -136,7 +136,7 @@
         }];
         
         
-        
+        */
       
         
         
@@ -173,13 +173,8 @@
 // 注册消息处理
 - (void)registrationUpdate:(NSNotification *)notif {
     SephoneRegistrationState state = [[notif.userInfo objectForKey:@"state"] intValue];
-    SephoneProxyConfig *cfg = [[notif.userInfo objectForKey:@"cfg"] pointerValue];
+    // SephoneProxyConfig *cfg = [[notif.userInfo objectForKey:@"cfg"] pointerValue];
     // Only report bad credential issue
-    
-    
-    
-    
-    
     switch (state) {
             
         case SephoneRegistrationNone:
@@ -244,12 +239,8 @@
     
     
 }
-
-
 - (void)request
 {
-    
-    
     NSString * str1 =[AccountManager sharedAccountManager].loginModel.userid;
     [[AFHttpClient sharedAFHttpClient]deciveInforamtion:str1 token:str1 did:self.didNumber complete:^(ResponseModel * model) {
         
@@ -264,25 +255,18 @@
             _heandBtn.image =[UIImage imageNamed:@"on_line"];
             _startBtn.selected = YES;
             _startBtn.backgroundColor =RED_COLOR;
-           // _cancelBtn.enabled = YES;
             
         }else if ([str isEqualToString:@"ds002"])
             
         {
             _heandBtn.image =[UIImage imageNamed:@"off_line"];
             _startBtn.selected = NO;
-           // _cancelBtn.enabled = YES;
-            
-            
-            
         }else
         {
             _heandBtn.image =[UIImage imageNamed:@"on_connection"];
             _startBtn.selected = NO;
-          //  _cancelBtn.enabled = YES;
             
         }
-        
         
         
 //        if (page == START_PAGE_INDEX) {
@@ -315,37 +299,24 @@
     
     NSString * str1 =[AccountManager sharedAccountManager].loginModel.userid;
     [[AFHttpClient sharedAFHttpClient]deciveInforamtion:str1 token:str1 did:self.didNumber complete:^(ResponseModel * model) {
-        
-        
         NSString * str = model.retVal[@"status"];
-        
         // 设备状态 UIbutton
         if ([str isEqualToString:@"ds001"]) {
-            
             _heandBtn.image =[UIImage imageNamed:@"on_line"];
             _startBtn.selected = YES;
             _startBtn.backgroundColor =RED_COLOR;
-          //  _cancelBtn.enabled = YES;
             
         }else if ([str isEqualToString:@"ds002"])
             
         {
             _heandBtn.image =[UIImage imageNamed:@"off_line"];
             _startBtn.selected = NO;
-          //  _cancelBtn.enabled = YES;
-            
-            
-            
         }else
         {
             _heandBtn.image =[UIImage imageNamed:@"on_connection"];
             _startBtn.selected = NO;
-           // _cancelBtn.enabled = YES;
-            
         }
 
-        
-        
         if (page == START_PAGE_INDEX) {
             [self.dataSource removeAllObjects];
              checkmodel =[[CheckDeviceModel alloc]initWithDictionary:model.retVal error:nil];
@@ -375,12 +346,8 @@
     UIView  * _headView = [[UIView alloc]initWithFrame:CGRectMake(0* W_Wide_Zoom, 0 * W_Hight_Zoom, 375 * W_Wide_Zoom, 260 * W_Hight_Zoom)];
     _headView.backgroundColor =GRAY_COLOR;
     [self.view addSubview:_headView];
-    
-    // 头像
     _heandBtn =[[UIImageView alloc]initWithFrame:CGRectMake(0, 80, 375, 150)];
     [_headView addSubview:_heandBtn];
-
-    
     self.tableView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 430*W_Hight_Zoom);
     self.tableView.scrollEnabled = NO;
     
@@ -412,11 +379,6 @@
     
 }
 
-
-
-
-
-
 /**
  *  开始视频
  */
@@ -433,9 +395,6 @@
         [self showSuccessHudWithHint:@"设备暂不能开启"];
     }
    
-  
-    
-    
 }
 
 
@@ -448,22 +407,12 @@
 {
     
    // "object": "主叫对象(mobile 移动客户端/device 设备端)"
-    
     NSString  * str = [AccountManager sharedAccountManager].loginModel.userid;
-    
     [[AFHttpClient sharedAFHttpClient]solvDevice:str token:str call:str called:checkmodel.did object:@"mobile" complete:^(ResponseModel *model) {
-        
-    
         NSUserDefaults * user =[NSUserDefaults standardUserDefaults];
         [user setObject:model.content forKey:@"contentID"];
         [user synchronize];
-        
-        
-        
     }];
-    
-    
-    
 }
 
 /**
@@ -477,21 +426,12 @@
     
 }
 
-
-
-
-
-
-
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex;{
     
     if (buttonIndex == 0) {
         
         NSString * str = [AccountManager sharedAccountManager].loginModel.userid;
         [[AFHttpClient sharedAFHttpClient]solvDevice:str token:str did:checkmodel.did complete:^(ResponseModel * model) {
-           // NSLog(@"%@",model.retDesc);
-         
-            
             [[AppUtil appTopViewController] showHint:model.retDesc];
             [[NSNotificationCenter defaultCenter]postNotificationName:@"bangdingshuaxin" object:nil];
 
