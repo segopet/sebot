@@ -16,6 +16,7 @@
 #import "AFHttpClient+Person.h"
 #import "AFHttpClient+Alumb.h"
 #import "VideomessageViewController.h"
+#import "MainTabViewController.h"
 
 @interface PersonCenterViewcontroller()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate>
 
@@ -380,9 +381,11 @@
     }
     else if (indexPath.row == 3)
     {
+        //MainTabViewController * man = [[MainTabViewController alloc]init];
         VideomessageViewController * videoVc = [[VideomessageViewController alloc]init];
-        [self.navigationController pushViewController:videoVc animated:YES];
-        
+        UINavigationController * navc = [[UINavigationController alloc]initWithRootViewController:videoVc];
+
+        [self presentViewController:navc animated:NO completion:nil];
     }
     
     else if (indexPath.row == 4)

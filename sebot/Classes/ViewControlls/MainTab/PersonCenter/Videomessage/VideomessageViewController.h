@@ -9,5 +9,6 @@
 #import "BaseTabViewController.h"
 
 @interface VideomessageViewController : BaseTabViewController
+@property (nonatomic,strong)NSString * panduan;
 
 @end

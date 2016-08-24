@@ -71,7 +71,8 @@ static BOOL isBackGroundActivateApplication;
         
         if ([pushType isEqualToString:@"V001"]) {
         VideomessageViewController * video = [[VideomessageViewController alloc]init];
-            [self.window.rootViewController presentViewController:video animated:NO completion:^{
+            UINavigationController * naVc = [[UINavigationController alloc]initWithRootViewController:video];
+            [self.window.rootViewController presentViewController:naVc animated:NO completion:^{
                 
             }];
             
@@ -105,10 +106,10 @@ static BOOL isBackGroundActivateApplication;
         
         if ([pushType isEqualToString:@"V001"]) {
             VideomessageViewController * video = [[VideomessageViewController alloc]init];
-            [self.window.rootViewController presentViewController:video animated:NO completion:^{
+            UINavigationController * naVc = [[UINavigationController alloc]initWithRootViewController:video];
+            [self.window.rootViewController presentViewController:naVc animated:NO completion:^{
                 
-            }];
-            
+            }];            
             return;
             
         }

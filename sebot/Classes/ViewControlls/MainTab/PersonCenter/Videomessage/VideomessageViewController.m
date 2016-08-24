@@ -17,6 +17,7 @@ static NSString * cellId = @"videomessagetableviewcellid";
 {
    UIImageView * _noShujuImage;
 }
+@property (nonatomic,strong)UIButton * leftButton;
 @end
 
 @implementation VideomessageViewController
@@ -24,7 +25,22 @@ static NSString * cellId = @"videomessagetableviewcellid";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setNavTitle:@"视频留言"];
+    
+    _leftButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
+    [_leftButton setImage:[UIImage imageNamed:@"back@2x.png"] forState:UIControlStateNormal];
+    [_leftButton addTarget:self action:@selector(doLeftButtonTouch) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *releaseButtonItem2 = [[UIBarButtonItem alloc] initWithCustomView:_leftButton];
+    [_leftButton setTitleEdgeInsets:UIEdgeInsetsMake(-1, -18, 0, 0)];
+    [_leftButton setImageEdgeInsets:UIEdgeInsetsMake(-1, -18, 0, 0)];
+    
+    self.navigationItem.leftBarButtonItem = releaseButtonItem2;
+
+    
 }
+-(void)doLeftButtonTouch{
+    [self dismissViewControllerAnimated:NO completion:nil];
+}
+
 
 -(void)setupView{
     [super setupView];
