@@ -428,8 +428,7 @@
     }
     // textname =  [self disable_emoji:textname];
     
-    NSCharacterSet *set = [NSCharacterSet characterSetWithCharactersInString:@"@／：；（）¥「」＂、,?？。、，[]{}#%-*+=_\\|~＜＞$€^•'@#$%^&*()_+'\""];
-    
+    NSCharacterSet *set = [NSCharacterSet characterSetWithCharactersInString:@"@／：；（）¥「」＂、,?？！!。、，[]{}#%-*+=_\\|~＜＞$€^•'@#$%^&*()_+'\""];
     textname =  [textname stringByTrimmingCharactersInSet:set];
     
     

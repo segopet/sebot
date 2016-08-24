@@ -14,6 +14,7 @@
 #import "AFHttpClient+MyDevice.h"
 #import "MainTabViewController.h"
 #import "MydeviceViewcontroller.h"
+#import "VideomessageViewController.h"
 static BOOL isBackGroundActivateApplication;
 @interface AppDelegate ()<UIAlertViewDelegate>
 {
@@ -34,6 +35,7 @@ static BOOL isBackGroundActivateApplication;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    mainVC =[[MainTabViewController alloc]init];
     
     //点击背景收起键盘
     [[IQKeyboardManager sharedManager]setShouldResignOnTouchOutside:YES];
@@ -67,6 +69,17 @@ static BOOL isBackGroundActivateApplication;
     if (application.applicationState == UIApplicationStateActive) {
         NSLog(@"acitve ");
         
+        if ([pushType isEqualToString:@"V001"]) {
+        VideomessageViewController * video = [[VideomessageViewController alloc]init];
+            [self.window.rootViewController presentViewController:video animated:NO completion:^{
+                
+            }];
+            
+            return;
+            
+        }
+
+        
         if ([pushType isEqualToString:@"T002"] || [pushType isEqualToString:@"T004"]) {
             isIknow = YES;
             UIAlertView *alertView =[[UIAlertView alloc]initWithTitle:@"收到一条消息" message:userInfo[@"desc"] delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
@@ -75,19 +88,34 @@ static BOOL isBackGroundActivateApplication;
             //[[NSNotificationCenter defaultCenter]postNotificationName:@"bangdingshuaxin" object:nil];
             
 
-        }else
-        {
+        }else          {
             isIknow =  NO;
         UIAlertView *alertView =[[UIAlertView alloc]initWithTitle:@"收到一条消息" message:userInfo[@"desc"] delegate:self cancelButtonTitle:@"拒绝" otherButtonTitles:@"同意", nil];
         [alertView show];
+            return;
             
         }
+        
+        
+        
     }
     //杀死状态下，直接跳转到跳转页面。
     if (application.applicationState == UIApplicationStateInactive && !isBackGroundActivateApplication)
     {
+        
+        if ([pushType isEqualToString:@"V001"]) {
+            VideomessageViewController * video = [[VideomessageViewController alloc]init];
+            [self.window.rootViewController presentViewController:video animated:NO completion:^{
+                
+            }];
+            
+            return;
+            
+        }
+
+        
         /*
-        MydeviceViewcontroller * devideVC =[[MydeviceViewcontroller alloc]init];
+         MydeviceViewcontroller * devideVC =[[MydeviceViewcontroller alloc]init];
         [mainVC.selectedViewController presentViewController:devideVC animated:YES completion:nil];
          */
          if ([pushType isEqualToString:@"T001"]) {
@@ -113,7 +141,7 @@ static BOOL isBackGroundActivateApplication;
             
         }
         
-         else  if ([pushType isEqualToString:@"T004"])
+           if ([pushType isEqualToString:@"T004"])
          {
              
              UIAlertView *alertView =[[UIAlertView alloc]initWithTitle:@"收到一条消息" message:userInfo[@"desc"] delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
@@ -122,7 +150,6 @@ static BOOL isBackGroundActivateApplication;
 
              
          }
-        
         
     }
     // 应用在后台。当后台设置aps字段里的 content-available 值为 1 并开启远程通知激活应用的选项

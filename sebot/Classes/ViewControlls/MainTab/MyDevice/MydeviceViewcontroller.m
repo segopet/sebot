@@ -24,13 +24,8 @@
     
     PopView * _popView;
     AppDelegate *app;
-   // CheckDeviceModel * checkModel;
     UIImageView * image;
-    
     NSString * titleStr;
-    
-    
-    
 
 }
 
@@ -57,9 +52,6 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(registrationUpdate:) name:kSephoneRegistrationUpdate object:nil];
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(pass) name:@"haha" object:nil];
-    
-   
-
 
 }
 
@@ -90,13 +82,6 @@
 // 注册消息处理
 - (void)registrationUpdate:(NSNotification *)notif {
     SephoneRegistrationState state = [[notif.userInfo objectForKey:@"state"] intValue];
-    SephoneProxyConfig *cfg = [[notif.userInfo objectForKey:@"cfg"] pointerValue];
-    // Only report bad credential issue
-    
-    
-    
-    
-    
     switch (state) {
             
         case SephoneRegistrationNone:
@@ -161,7 +146,6 @@
     
     image =[[UIImageView alloc]initWithFrame:CGRectMake(60 * W_Wide_Zoom, 200 * W_Hight_Zoom, 250 * W_Wide_Zoom, 250 * W_Hight_Zoom)];
     image.hidden = YES;
-    //image.center = self.view.center;
     image.image =[UIImage imageNamed:@"无图时.png"];
     [self.view addSubview:image];
     
@@ -175,16 +159,6 @@
     
     
     [SephoneManager addProxyConfig:[AccountManager sharedAccountManager].loginModel.sipno password:[AccountManager sharedAccountManager].loginModel.sippw domain:@"www.segosip001.cn"];
-
-    NSUserDefaults * firstUserdefaults = [NSUserDefaults standardUserDefaults];
-//    if () {
-//        
-//    }
-    
-    
-    
-    
-    
     
 }
 
@@ -245,10 +219,7 @@
 {
     UIAlertView *alertView =[[UIAlertView alloc]initWithTitle:nil message:@"你还有绑定设备,是否立即绑定" delegate:self cancelButtonTitle:@"稍后" otherButtonTitles:@"立即绑定", nil];
     [alertView show];
-    
-    
 
-    
 }
 
 
@@ -274,9 +245,6 @@
     [super setupData];
     
     self.tableView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-   // self.tableView.scrollEnabled = NO;
-    
-    
     self.tableView.showsVerticalScrollIndicator   = NO;
     self.tableView.showsHorizontalScrollIndicator = NO;
     self.tableView.backgroundColor =[UIColor whiteColor];
@@ -288,11 +256,7 @@
     if ([self.tableView respondsToSelector:@selector(setLayoutMargins:)]) {
         [self.tableView setLayoutMargins:UIEdgeInsetsMake(0,0,0,0)];
     }
-
-    
     self.tableView.scrollEnabled =NO;
-    
-    
 }
 
 - (void)doRightButtonTouch
@@ -312,7 +276,6 @@
 - (void)saomaMehod
 {
     
-    NSLog(@"11");
     SaomaoViewController * saomoVC =[[SaomaoViewController alloc]initWithNibName:@"SaomaoViewController" bundle:nil];
     [self.navigationController pushViewController:saomoVC animated:YES];
     
@@ -320,8 +283,6 @@
 }
 - (void)cancelMehod
 {
-    
-    NSLog(@"22");
     
     [_popView removeFromSuperview];
 }
@@ -419,9 +380,7 @@
 {
     NSLog(@"成功是直接开启");
     NSInteger i  = sender.tag -1000;
-    
     CheckDeviceModel *checkModel = self.dataSource[i];
-    
     titleStr = checkModel.deviceremark;
     [self sipCall:checkModel.deviceno sipName:nil];
     [self addDeviceUseMember:checkModel.did];
@@ -437,7 +396,6 @@
 {
     
     // "object": "主叫对象(mobile 移动客户端/device 设备端)"
-    
     NSString  * str = [AccountManager sharedAccountManager].loginModel.userid;
     
     [[AFHttpClient sharedAFHttpClient]solvDevice:str token:str call:str called:str1 object:@"mobile" complete:^(ResponseModel *model) {
@@ -446,11 +404,7 @@
         [user setObject:model.content forKey:@"contentID"];
         [user synchronize];
         
-        
     }];
-    
-    
-    
 }
 
 
@@ -460,15 +414,7 @@
     CheckDeviceModel *checkModel = self.dataSource[indexPath.row];
     DeviceInformationViewController * inforationVC =[[DeviceInformationViewController alloc]initWithNibName:@"DeviceInformationViewController" bundle:nil];
     inforationVC.didNumber = checkModel.did;
-
-  //  MyDeviceTableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-    
-  //  if (cell.VideoStateBtn.enabled) {
-        [self.navigationController pushViewController:inforationVC animated:YES];
-    
-    
-
-    
+    [self.navigationController pushViewController:inforationVC animated:YES];
     
 }
 
