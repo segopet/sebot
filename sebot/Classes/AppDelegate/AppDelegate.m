@@ -70,14 +70,30 @@ static BOOL isBackGroundActivateApplication;
         NSLog(@"acitve ");
         
         if ([pushType isEqualToString:@"V001"]) {
-        VideomessageViewController * video = [[VideomessageViewController alloc]init];
+
+            
+            UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"收到一条视频留言" preferredStyle:UIAlertControllerStyleAlert];
+            
+            [alert addAction:[UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                
+                
+            }]];
+            [alert addAction:[UIAlertAction actionWithTitle:@"查看" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                
+                VideomessageViewController * video = [[VideomessageViewController alloc]init];
+
+
             UINavigationController * naVc = [[UINavigationController alloc]initWithRootViewController:video];
             [self.window.rootViewController presentViewController:naVc animated:NO completion:^{
                 
             }];
-            
+                
+                
+                
+            }]];
+            [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
             return;
-            
+    
         }
 
         
@@ -105,15 +121,32 @@ static BOOL isBackGroundActivateApplication;
     {
         
         if ([pushType isEqualToString:@"V001"]) {
-            VideomessageViewController * video = [[VideomessageViewController alloc]init];
-            UINavigationController * naVc = [[UINavigationController alloc]initWithRootViewController:video];
-            [self.window.rootViewController presentViewController:naVc animated:NO completion:^{
+            
+            
+            UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"收到一条视频留言" preferredStyle:UIAlertControllerStyleAlert];
+            
+            [alert addAction:[UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                 
-            }];            
+                
+            }]];
+            [alert addAction:[UIAlertAction actionWithTitle:@"查看" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                
+                VideomessageViewController * video = [[VideomessageViewController alloc]init];
+                
+                
+                UINavigationController * naVc = [[UINavigationController alloc]initWithRootViewController:video];
+                [self.window.rootViewController presentViewController:naVc animated:NO completion:^{
+                    
+                }];
+                
+                
+                
+            }]];
+            [self.window.rootViewController presentViewController:alert animated:YES completion:nil];
             return;
             
         }
-
+        
         
         /*
          MydeviceViewcontroller * devideVC =[[MydeviceViewcontroller alloc]init];
