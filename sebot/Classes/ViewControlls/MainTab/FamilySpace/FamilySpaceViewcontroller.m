@@ -234,10 +234,11 @@ static NSString * cellId = @"FamilyCellides";
     
     cell.timeLabel.text = model.publishtime;
     if ([model.praised isEqualToString:@"0"]) {
-        [cell.aixin setImage:[UIImage imageNamed:@"dianzanzan.png"] forState:UIControlStateNormal];
+//        [cell.aixin setImage:[UIImage imageNamed:@"dianzanzan.png"] forState:UIControlStateNormal];
         cell.aixin.selected = NO;
+        //cell.aixin.selected = NO;
     }else{
-        [cell.aixin setImage:[UIImage imageNamed:@"dianzanhou.png"] forState:UIControlStateNormal];
+      //  [cell.aixin setImage:[UIImage imageNamed:@"dianzanhou.png"] forState:UIControlStateNormal];
          cell.aixin.selected = YES;
     }
     cell.aixin.tag = indexPath.row + 22;
@@ -272,20 +273,24 @@ static NSString * cellId = @"FamilyCellides";
 -(void)dianzanbttuntouch:(UIButton *)sender{
     sender.userInteractionEnabled = NO;
     NSInteger i = sender.tag - 22;
-    FamilyquanModel * model = self.dataSource[i];
+    FamilyquanModel * model1 = self.dataSource[i];
     if (sender.selected == YES) {
-        NSLog(@"gaga");
          sender.userInteractionEnabled = YES;
         [[AppUtil appTopViewController] showHint:@"您已经点过赞了，不能重复点赞哦!"];
     }else{
-    [sender setImage:[UIImage imageNamed:@"dianzanhou.png"] forState:UIControlStateNormal];
-    [[AFHttpClient sharedAFHttpClient]dianzanWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid objid:model.aid objtype:@"a" complete:^(ResponseModel *model) {
+    [[AFHttpClient sharedAFHttpClient]dianzanWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid objid:model1.aid objtype:@"a" complete:^(ResponseModel *model) {
         if (model) {
             [[AppUtil appTopViewController] showHint:model.retDesc];
-            [self loadDataSourceWithPage:1];
+            //给model重新赋值
+            model1.praised = @"1";
+            NSInteger k = [model1.praises integerValue];
+            NSInteger kk = k + 1;
+            model1.praises = [NSString stringWithFormat:@"%ld",kk];
+            [self.tableView reloadData];
         }
         
     }];
+        
     }
     
 }
