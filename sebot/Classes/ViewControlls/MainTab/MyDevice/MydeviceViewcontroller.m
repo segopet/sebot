@@ -144,10 +144,10 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self showBarButton:NAV_RIGHT imageName:@"sebot_add"];
     
-    image =[[UIImageView alloc]initWithFrame:CGRectMake(60 * W_Wide_Zoom, 200 * W_Hight_Zoom, 250 * W_Wide_Zoom, 250 * W_Hight_Zoom)];
-    image.hidden = YES;
-    image.image =[UIImage imageNamed:@"无图时.png"];
-    [self.view addSubview:image];
+//    image =[[UIImageView alloc]initWithFrame:CGRectMake(60 * W_Wide_Zoom, 200 * W_Hight_Zoom, 250 * W_Wide_Zoom, 250 * W_Hight_Zoom)];
+//    image.hidden = YES;
+//    image.image =[UIImage imageNamed:@"无图时.png"];
+//    [self.view addSubview:image];
     
     app = (AppDelegate *)[UIApplication sharedApplication].delegate;
     _popView = [[PopView alloc] initWithFrame:CGRectMake(0, 0,SCREEN_WIDTH ,SCREEN_HEIGHT)];
@@ -177,7 +177,7 @@
 // 刷新
 
 -(void)loadDataSourceWithPage:(int)page{
-    
+    [image removeFromSuperview];
     NSString * str =[AccountManager sharedAccountManager].loginModel.userid;
     
     [[AFHttpClient sharedAFHttpClient]checkmoel:str token:str complete:^(ResponseModel * model) {
@@ -198,12 +198,8 @@
         }
         
         if (self.dataSource.count ==0) {
-            
             NSLog(@"没有设备");
-            
-            image.hidden = NO;
-            //[self showNoticView];
-            
+            [self noshuju];
         }
         [self.tableView reloadData];
         [self handleEndRefresh];
@@ -211,7 +207,13 @@
     }];
     
 }
+-(void)noshuju{
+    image = [[UIImageView alloc]initWithFrame:CGRectMake(60 * W_Wide_Zoom, 136 * W_Hight_Zoom, 250 * W_Wide_Zoom, 250 * W_Hight_Zoom)];
+    image.image = [UIImage imageNamed:@"无图时.png"];
+    [self.tableView addSubview:image];
 
+
+}
 
 //提示框
 

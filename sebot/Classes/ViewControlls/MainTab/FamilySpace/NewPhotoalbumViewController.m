@@ -103,9 +103,6 @@
     }
 
     if (indexPath.row < 1) {
-//        UIImageView * image = [[UIImageView alloc]initWithFrame:cell.bounds];
-//        image.image = [UIImage imageNamed:@"addphoto.png"];
-//        [cell.contentView addSubview:image];
         UIView * whiteView = [[UIView alloc]initWithFrame:cell.bounds];
         whiteView.backgroundColor = [UIColor whiteColor];
         [cell.contentView addSubview:whiteView];

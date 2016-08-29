@@ -87,7 +87,6 @@ static NSString * cellId = @"videomessagetableviewcellid";
 
 -(void)noShuju{
     
-    NSLog(@"heheh");
     _noShujuImage = [[UIImageView alloc]initWithFrame:CGRectMake(60 * W_Wide_Zoom, 136 * W_Hight_Zoom, 250 * W_Wide_Zoom, 250 * W_Hight_Zoom)];
     _noShujuImage.image = [UIImage imageNamed:@"无图时.png"];
     [self.tableView addSubview:_noShujuImage];
@@ -104,7 +103,7 @@ static NSString * cellId = @"videomessagetableviewcellid";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.dataSource.count;
-    //return 5;
+
 }
 
 
@@ -151,7 +150,6 @@ static NSString * cellId = @"videomessagetableviewcellid";
 
 
 }
-
 
 
 

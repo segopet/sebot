@@ -66,6 +66,15 @@ NSString * const kDetailCommentCellID = @"DetailCommentCell";
     button.backgroundColor = [UIColor whiteColor];
     button.layer.cornerRadius = 3;
     button.layer.borderWidth = 0.5;
+    [button setTitle:@"请输入评论" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    button.titleLabel.font = [UIFont systemFontOfSize:14];
+   // button.titleLabel.textAlignment = NSTextAlignmentLeft;
+    //button文字左对齐，上面的方法没得卵用
+    button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    //往右边一点点
+    button.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
+    
     button.layer.borderColor = [UIColor lightGrayColor].CGColor;
     [_toolView addSubview:button];
     [button handleControlEvent:UIControlEventTouchUpInside withBlock:^{

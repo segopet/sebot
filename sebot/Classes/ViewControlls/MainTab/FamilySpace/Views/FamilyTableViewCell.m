@@ -52,6 +52,8 @@
         
         _aixin = [[UIButton alloc]initWithFrame:CGRectMake(250 * W_Wide_Zoom, 380 * W_Hight_Zoom, 16 * W_Wide_Zoom, 15 * W_Hight_Zoom)];
         [_aixin setImage:[UIImage imageNamed:@"dianzanzan.png"] forState:UIControlStateNormal];
+        [_aixin setImage:[UIImage imageNamed:@"dianzanhou.png"] forState:UIControlStateSelected];
+
         [self addSubview:_aixin];
         
         _aixinLabel = [[UILabel alloc]initWithFrame:CGRectMake(280 * W_Wide_Zoom, 373 * W_Hight_Zoom , 50 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
