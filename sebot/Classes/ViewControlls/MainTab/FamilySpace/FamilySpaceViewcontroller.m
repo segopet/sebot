@@ -122,7 +122,19 @@ static NSString * cellId = @"FamilyCellides";
             [self.navigationController pushViewController:newVc animated:NO];
 
         }else {
-            [self.view addSubview:_popView];
+            UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您还没有绑定设备，是否立即绑定？" preferredStyle:UIAlertControllerStyleAlert];
+            
+            [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                
+                
+            }]];
+            [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                
+                [self.view addSubview:_popView];
+            }]];
+            [self presentViewController:alert animated:YES completion:nil];
+            
+    
         }
     }];
 
@@ -130,18 +142,6 @@ static NSString * cellId = @"FamilyCellides";
     
     
 }
-//-(void)initTabview{
-//    [_image removeFromSuperview];
-//   
-//    self.tableView.hidden = NO;
-//    self .tableView.frame =  CGRectMake(0, 0, self.view.width, self.view.height);
-//    [self.tableView registerClass:[FamilyTableViewCell class] forCellReuseIdentifier:cellId];
-//    self.tableView.backgroundColor = [UIColor whiteColor];
-//    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-//    [self initRefreshView];
-//
-//}
-
 -(void)setupData{
     [super setupData];
 
@@ -179,8 +179,23 @@ static NSString * cellId = @"FamilyCellides";
     _noShujuImage = [[UIImageView alloc]initWithFrame:CGRectMake(60 * W_Wide_Zoom, 136 * W_Hight_Zoom, 250 * W_Wide_Zoom, 250 * W_Hight_Zoom)];
     _noShujuImage.image = [UIImage imageNamed:@"无图时.png"];
     [self.tableView addSubview:_noShujuImage];
-
-
+    
+    
+    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"您还没有绑定设备，是否立即绑定？" preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        
+    }]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        [self.view addSubview:_popView];
+    }]];
+    [self presentViewController:alert animated:YES completion:nil];
+    
+    
+    
+    
 }
 
 

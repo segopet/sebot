@@ -186,7 +186,7 @@
     _bigView = [[UIView alloc]initWithFrame:CGRectMake(0 * W_Wide_Zoom, 285 * W_Hight_Zoom, 375 * W_Wide_Zoom, 200 * W_Hight_Zoom)];
     _bigView.backgroundColor = LIGHT_GRAY_COLOR;
     [self.view addSubview:_bigView];
-    [_imageArray addObject:[UIImage imageNamed:@"addImage.png"]];
+    [_imageArray addObject:[UIImage imageNamed:@"addImage11.png"]];
     for (int i = 0 ; i < _imageArray.count; i++) {
         _imageButtones = [[UIButton alloc]initWithFrame:CGRectMake(12.5 * W_Wide_Zoom + i * 90 * W_Wide_Zoom, 0 * W_Hight_Zoom, 80 * W_Wide_Zoom, 80 * W_Hight_Zoom)];
         [_imageButtones setImage:_imageArray[i] forState:UIControlStateNormal];
@@ -373,10 +373,23 @@
     }else{
         _placeholderLabel.text = @"";
     }
-    
-    
 }
+- (void)textViewDidChange:(UITextView *)textView {
+     NSInteger number = [textView.text length];
+    if (number > 30) {
+          textView.text = [textView.text substringToIndex:30];
+        UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"字符个数不能大于30" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+           
+            
+        }]];
+        [self presentViewController:alert animated:YES completion:nil];
 
+    }
+
+
+
+}
 
 
 @end

@@ -262,6 +262,7 @@
 		7D4C6FA51D348CFC00334143 /* pinglunlun.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4C6FA21D348CFC00334143 /* pinglunlun.png */; };
 		7D509D7D1D1B86A2004E3059 /* NewInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D509D7C1D1B86A2004E3059 /* NewInformationViewController.m */; };
 		7D509D811D1BB685004E3059 /* NewAlumbleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D509D801D1BB685004E3059 /* NewAlumbleTableViewCell.m */; };
+		7D5BCF321D74161300C83F83 /* addImage11.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D5BCF311D74161200C83F83 /* addImage11.png */; };
 		7D64D4AF1D4708110092D193 /* albumAdd.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D64D4AE1D4708110092D193 /* albumAdd.png */; };
 		7D64D4B11D470A2C0092D193 /* 蒙层.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D64D4B01D470A2C0092D193 /* 蒙层.png */; };
 		7D6B22D01D3F125500A3E2BA /* AFHttpClient+Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6B22CF1D3F125500A3E2BA /* AFHttpClient+Comment.m */; };
@@ -638,6 +639,7 @@
 		7D509D7C1D1B86A2004E3059 /* NewInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewInformationViewController.m; sourceTree = "<group>"; };
 		7D509D7F1D1BB685004E3059 /* NewAlumbleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewAlumbleTableViewCell.h; sourceTree = "<group>"; };
 		7D509D801D1BB685004E3059 /* NewAlumbleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewAlumbleTableViewCell.m; sourceTree = "<group>"; };
+		7D5BCF311D74161200C83F83 /* addImage11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addImage11.png; sourceTree = "<group>"; };
 		7D64D4AE1D4708110092D193 /* albumAdd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = albumAdd.png; sourceTree = "<group>"; };
 		7D64D4B01D470A2C0092D193 /* 蒙层.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "蒙层.png"; sourceTree = "<group>"; };
 		7D6B22CE1D3F125500A3E2BA /* AFHttpClient+Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+Comment.h"; sourceTree = "<group>"; };
@@ -1061,9 +1063,9 @@
 				3455657E1D11376500B6E562 /* FamilySpaceViewcontroller.h */,
 				3455657F1D11376500B6E562 /* FamilySpaceViewcontroller.m */,
 				7D1AAC731D1A617800B4297E /* NewPhotoalbumViewController.h */,
-				7D509D7B1D1B86A2004E3059 /* NewInformationViewController.h */,
 				7D1AAC741D1A617800B4297E /* NewPhotoalbumViewController.m */,
 				7D509D7C1D1B86A2004E3059 /* NewInformationViewController.m */,
+				7D509D7B1D1B86A2004E3059 /* NewInformationViewController.h */,
 				7DCDC9531D2CE62F000C438F /* IssueViewController.h */,
 				7DCDC9541D2CE62F000C438F /* IssueViewController.m */,
 			);
@@ -1420,6 +1422,7 @@
 		7D4B10121D1297F40095D463 /* buttonImage */ = {
 			isa = PBXGroup;
 			children = (
+				7D5BCF311D74161200C83F83 /* addImage11.png */,
 				341733241D6C55A500391281 /* mengcengceng.png */,
 				341733251D6C55A500391281 /* morentutu.png */,
 				3417331C1D6C559800391281 /* addphoto.png */,
@@ -1744,6 +1747,7 @@
 				7D1147031D3C7FF50080D3DE /* showPs.png in Resources */,
 				34E49DA31D21000900CF5CCB /* photo.png in Resources */,
 				34E49FEB1D261EF100CF5CCB /* sephonerc-factory~ipad in Resources */,
+				7D5BCF321D74161300C83F83 /* addImage11.png in Resources */,
 				7D4B10251D12A6C10095D463 /* user.png in Resources */,
 				34C4C6C21D40DB9A00075897 /* 选择.png in Resources */,
 				3492636D1D13FE8D006C2FD9 /* AboutTableViewCell.xib in Resources */,
