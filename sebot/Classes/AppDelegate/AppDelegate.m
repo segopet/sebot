@@ -265,6 +265,8 @@ static BOOL isBackGroundActivateApplication;
     [application registerForRemoteNotifications];
     
     
+    
+
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
