@@ -214,11 +214,14 @@ static NSString * cellId = @"FamilyCellides";
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 400*W_Hight_Zoom;
+    
+    
+    
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     FamilyquanModel * model = self.dataSource[indexPath.row];
     FamilyTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     cell.namelabel.text = model.nickname;

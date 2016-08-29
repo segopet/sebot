@@ -40,7 +40,7 @@
         _content.font = [UIFont systemFontOfSize:14];
         [self addSubview:_content];
         
-        _lineLabel = [[UILabel alloc]initWithFrame:CGRectMake(0 * W_Wide_Zoom, 367 * W_Hight_Zoom, 375 * W_Wide_Zoom, 1 * W_Hight_Zoom)];
+        _lineLabel = [[UILabel alloc]initWithFrame:CGRectMake(0 * W_Wide_Zoom, CGRectGetMaxY(_content.frame)+5, 375 * W_Wide_Zoom, 1 * W_Hight_Zoom)];
         _lineLabel.backgroundColor = LIGHT_GRAY_COLOR;
         [self addSubview:_lineLabel];
         
