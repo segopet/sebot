@@ -429,6 +429,7 @@ static NSString *kheaderIdentifier = @"headerIdentifier";
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return arrData.count;
     
+    
 }
 //返回每个分区的item个数
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
@@ -438,16 +439,18 @@ static NSString *kheaderIdentifier = @"headerIdentifier";
     }
     NSArray *imageA = [model.networkaddress componentsSeparatedByString:@","];
     return imageA.count;
+    
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(110, 110);
+    return CGSizeMake(90, 90);
+    
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-    return UIEdgeInsetsMake(5, 5, 0, 5);
+    return UIEdgeInsetsMake(9, 9, 9, 9);
 }
 //返回每个item
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -524,14 +527,13 @@ static NSString *kheaderIdentifier = @"headerIdentifier";
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]){
         UILabel *label = (UILabel *)[view viewWithTag:2222];
         view.backgroundColor =[UIColor whiteColor];
-        
         PhotoModel *model;
         if (arrData.count>0) {
             model = arrData[indexPath.section];
         }
-        
         NSArray *timeTtile =[model.createtime componentsSeparatedByString:@","];
-        label.text =[NSString stringWithFormat:@" %@",timeTtile[indexPath.row]];
+        label.text =[NSString stringWithFormat:@"  %@",timeTtile[indexPath.row]];
+        
         
         
         

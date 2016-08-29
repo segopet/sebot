@@ -96,52 +96,6 @@
     }];
     
     
-        
-    /*
-   
-    // 查询设备信息
-        NSString * str1 =[AccountManager sharedAccountManager].loginModel.userid;
-        [[AFHttpClient sharedAFHttpClient]deciveInforamtion:str1 token:str1 did:self.didNumber complete:^(ResponseModel * model) {
-            
-          checkmodel =[[CheckDeviceModel alloc]initWithDictionary:model.retVal error:nil];
-            
-        
-            NSString * str = model.retVal[@"status"];
-
-            // 设备状态 UIbutton
-            if ([str isEqualToString:@"ds001"]) {
-                
-                _heandBtn.image =[UIImage imageNamed:@"on_line"];
-                _startBtn.backgroundColor =RED_COLOR;
-             //   _cancelBtn.enabled = YES;
-                
-            }else if ([str isEqualToString:@"ds002"])
-                
-            {
-                _heandBtn.image =[UIImage imageNamed:@"off_line"];
-          
-               // _cancelBtn.enabled = NO;
-                
-                
-            }else
-            {
-                _heandBtn.image =[UIImage imageNamed:@"on_connection"];
-                
-
-               // _cancelBtn.enabled = NO;
-                
-            }
-            [self.tableView reloadData];
-            
-        }];
-        
-        
-        */
-      
-        
-        
-  
-
     
 }
 
@@ -346,9 +300,9 @@
     UIView  * _headView = [[UIView alloc]initWithFrame:CGRectMake(0* W_Wide_Zoom, 0 * W_Hight_Zoom, 375 * W_Wide_Zoom, 260 * W_Hight_Zoom)];
     _headView.backgroundColor =GRAY_COLOR;
     [self.view addSubview:_headView];
-    _heandBtn =[[UIImageView alloc]initWithFrame:CGRectMake(0, 80, 375, 150)];
+    _heandBtn =[[UIImageView alloc]initWithFrame:CGRectMake(0, 80*W_Wide_Zoom, 375*W_Hight_Zoom, 150*W_Hight_Zoom)];
     [_headView addSubview:_heandBtn];
-    self.tableView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 430*W_Hight_Zoom);
+    self.tableView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 425*W_Hight_Zoom);
     self.tableView.scrollEnabled = NO;
     
     self.tableView.tableHeaderView =_headView;
