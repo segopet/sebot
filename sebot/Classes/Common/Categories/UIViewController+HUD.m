@@ -173,7 +173,7 @@ static const void *HttpRequestHUDKey = &HttpRequestHUDKey;
     hud.detailsLabelText = NSLocalizedString(hint, nil);
     hud.yOffset = - SCREEN_HEIGHT/2+200; //IS_IPHONE_5?-100.f:-50.f;
     hud.removeFromSuperViewOnHide = YES;
-    [hud hide:YES afterDelay:2];
+    [hud hide:YES afterDelay:3];
 }
 
 - (void)showHint:(NSString *)hint afterTime:(float) time{

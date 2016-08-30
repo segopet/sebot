@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
+    [[AppUtil appTopViewController] showHint:@"无法显示iCloud上图片，如需上传iCloud图片，请在相册中下载之后重新尝试"];
 }
 
 - (instancetype)init{
