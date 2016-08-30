@@ -84,7 +84,7 @@
     
     
     _imageArray = [[NSMutableArray alloc]init];
-    [_imageArray addObject:_firstImage];
+    [_imageArray addObjectsFromArray:_choseeImage];
     
     [self addImageS];
     

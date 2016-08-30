@@ -226,6 +226,22 @@ static NSString * cellId = @"FamilyCellides";
     FamilyTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     cell.namelabel.text = model.nickname;
     cell.content.text = model.content;
+
+    
+//   cell.content.frame = CGRectMake(CGRectGetMinX(cell.timeLabel.frame), CGRectGetMaxY(cell.bigImage.frame), 360 * W_Wide_Zoom, 30 * W_Hight_Zoom);
+//    cell.content.text = model.content;
+//    NSString * str111 = model.content;
+//    CGSize labelSize111 = {0,0};
+//    labelSize111 = [str111 sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:CGSizeMake(200.0, 5000) lineBreakMode:NSLineBreakByWordWrapping];;
+//    cell.content.numberOfLines = 0;
+//    cell.content.lineBreakMode = UILineBreakModeCharacterWrap;
+//    cell.content.frame = CGRectMake(cell.content.frame.origin.x,  CGRectGetMaxY(cell.bigImage.frame), cell.content.frame.size.width, labelSize111.height);
+//    
+//
+//    cell.lineLabel.frame = CGRectMake(0 * W_Wide_Zoom, CGRectGetMaxY(cell.content.frame)+5, 375 * W_Wide_Zoom, 1 * W_Hight_Zoom);
+//
+//  
+    
     [cell.headImage.layer setMasksToBounds:YES];
     NSString * headStr = model.headportrait;
     NSURL * headUrl = [NSURL URLWithString:headStr];

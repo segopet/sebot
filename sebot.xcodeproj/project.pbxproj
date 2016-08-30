@@ -265,6 +265,18 @@
 		7D5BCF321D74161300C83F83 /* addImage11.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D5BCF311D74161200C83F83 /* addImage11.png */; };
 		7D64D4AF1D4708110092D193 /* albumAdd.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D64D4AE1D4708110092D193 /* albumAdd.png */; };
 		7D64D4B11D470A2C0092D193 /* 蒙层.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D64D4B01D470A2C0092D193 /* 蒙层.png */; };
+		7D6AC2DD1D75259A00CB2FF6 /* sg_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D6AC2CD1D75259A00CB2FF6 /* sg_normal@2x.png */; };
+		7D6AC2DE1D75259A00CB2FF6 /* sg_seleted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D6AC2CE1D75259A00CB2FF6 /* sg_seleted@2x.png */; };
+		7D6AC2DF1D75259A00CB2FF6 /* SGAssetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6AC2D01D75259A00CB2FF6 /* SGAssetModel.m */; };
+		7D6AC2E01D75259A00CB2FF6 /* SGAssetsGroupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6AC2D21D75259A00CB2FF6 /* SGAssetsGroupController.m */; };
+		7D6AC2E11D75259A00CB2FF6 /* SGCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6AC2D41D75259A00CB2FF6 /* SGCollectionController.m */; };
+		7D6AC2E21D75259A00CB2FF6 /* SGGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6AC2D61D75259A00CB2FF6 /* SGGroupCell.m */; };
+		7D6AC2E31D75259A00CB2FF6 /* SGImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6AC2D81D75259A00CB2FF6 /* SGImagePickerController.m */; };
+		7D6AC2E41D75259A00CB2FF6 /* SGPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6AC2DA1D75259A00CB2FF6 /* SGPhotoBrowser.m */; };
+		7D6AC2E51D75259A00CB2FF6 /* SGTip.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6AC2DC1D75259A00CB2FF6 /* SGTip.m */; };
+		7D6AC2E71D75273900CB2FF6 /* hehedada.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D6AC2E61D75273900CB2FF6 /* hehedada.png */; };
+		7D6AC2EA1D752F4E00CB2FF6 /* red_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D6AC2E81D752F4E00CB2FF6 /* red_normal.png */; };
+		7D6AC2EB1D752F4E00CB2FF6 /* red_seleted.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D6AC2E91D752F4E00CB2FF6 /* red_seleted.png */; };
 		7D6B22D01D3F125500A3E2BA /* AFHttpClient+Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6B22CF1D3F125500A3E2BA /* AFHttpClient+Comment.m */; };
 		7D6B22D31D3F201C00A3E2BA /* CommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6B22D21D3F201C00A3E2BA /* CommentModel.m */; };
 		7D6B22D71D3F4CF300A3E2BA /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6B22D61D3F4CF300A3E2BA /* CommentTableViewCell.m */; };
@@ -642,6 +654,25 @@
 		7D5BCF311D74161200C83F83 /* addImage11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addImage11.png; sourceTree = "<group>"; };
 		7D64D4AE1D4708110092D193 /* albumAdd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = albumAdd.png; sourceTree = "<group>"; };
 		7D64D4B01D470A2C0092D193 /* 蒙层.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "蒙层.png"; sourceTree = "<group>"; };
+		7D6AC2CD1D75259A00CB2FF6 /* sg_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sg_normal@2x.png"; sourceTree = "<group>"; };
+		7D6AC2CE1D75259A00CB2FF6 /* sg_seleted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sg_seleted@2x.png"; sourceTree = "<group>"; };
+		7D6AC2CF1D75259A00CB2FF6 /* SGAssetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGAssetModel.h; sourceTree = "<group>"; };
+		7D6AC2D01D75259A00CB2FF6 /* SGAssetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGAssetModel.m; sourceTree = "<group>"; };
+		7D6AC2D11D75259A00CB2FF6 /* SGAssetsGroupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGAssetsGroupController.h; sourceTree = "<group>"; };
+		7D6AC2D21D75259A00CB2FF6 /* SGAssetsGroupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGAssetsGroupController.m; sourceTree = "<group>"; };
+		7D6AC2D31D75259A00CB2FF6 /* SGCollectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGCollectionController.h; sourceTree = "<group>"; };
+		7D6AC2D41D75259A00CB2FF6 /* SGCollectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGCollectionController.m; sourceTree = "<group>"; };
+		7D6AC2D51D75259A00CB2FF6 /* SGGroupCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGGroupCell.h; sourceTree = "<group>"; };
+		7D6AC2D61D75259A00CB2FF6 /* SGGroupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGGroupCell.m; sourceTree = "<group>"; };
+		7D6AC2D71D75259A00CB2FF6 /* SGImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGImagePickerController.h; sourceTree = "<group>"; };
+		7D6AC2D81D75259A00CB2FF6 /* SGImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGImagePickerController.m; sourceTree = "<group>"; };
+		7D6AC2D91D75259A00CB2FF6 /* SGPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPhotoBrowser.h; sourceTree = "<group>"; };
+		7D6AC2DA1D75259A00CB2FF6 /* SGPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPhotoBrowser.m; sourceTree = "<group>"; };
+		7D6AC2DB1D75259A00CB2FF6 /* SGTip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGTip.h; sourceTree = "<group>"; };
+		7D6AC2DC1D75259A00CB2FF6 /* SGTip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGTip.m; sourceTree = "<group>"; };
+		7D6AC2E61D75273900CB2FF6 /* hehedada.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hehedada.png; sourceTree = "<group>"; };
+		7D6AC2E81D752F4E00CB2FF6 /* red_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_normal.png; sourceTree = "<group>"; };
+		7D6AC2E91D752F4E00CB2FF6 /* red_seleted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_seleted.png; sourceTree = "<group>"; };
 		7D6B22CE1D3F125500A3E2BA /* AFHttpClient+Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+Comment.h"; sourceTree = "<group>"; };
 		7D6B22CF1D3F125500A3E2BA /* AFHttpClient+Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHttpClient+Comment.m"; sourceTree = "<group>"; };
 		7D6B22D11D3F201C00A3E2BA /* CommentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentModel.h; sourceTree = "<group>"; };
@@ -1064,10 +1095,11 @@
 				3455657F1D11376500B6E562 /* FamilySpaceViewcontroller.m */,
 				7D1AAC731D1A617800B4297E /* NewPhotoalbumViewController.h */,
 				7D1AAC741D1A617800B4297E /* NewPhotoalbumViewController.m */,
-				7D509D7C1D1B86A2004E3059 /* NewInformationViewController.m */,
 				7D509D7B1D1B86A2004E3059 /* NewInformationViewController.h */,
+				7D509D7C1D1B86A2004E3059 /* NewInformationViewController.m */,
 				7DCDC9531D2CE62F000C438F /* IssueViewController.h */,
 				7DCDC9541D2CE62F000C438F /* IssueViewController.m */,
+				7D6AC2CC1D75259A00CB2FF6 /* SGImagePickerController */,
 			);
 			path = FamilySpace;
 			sourceTree = "<group>";
@@ -1422,6 +1454,9 @@
 		7D4B10121D1297F40095D463 /* buttonImage */ = {
 			isa = PBXGroup;
 			children = (
+				7D6AC2E81D752F4E00CB2FF6 /* red_normal.png */,
+				7D6AC2E91D752F4E00CB2FF6 /* red_seleted.png */,
+				7D6AC2E61D75273900CB2FF6 /* hehedada.png */,
 				7D5BCF311D74161200C83F83 /* addImage11.png */,
 				341733241D6C55A500391281 /* mengcengceng.png */,
 				341733251D6C55A500391281 /* morentutu.png */,
@@ -1534,6 +1569,29 @@
 				7DF28C461D38D9EA00FA31C6 /* LargeViewController.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		7D6AC2CC1D75259A00CB2FF6 /* SGImagePickerController */ = {
+			isa = PBXGroup;
+			children = (
+				7D6AC2CD1D75259A00CB2FF6 /* sg_normal@2x.png */,
+				7D6AC2CE1D75259A00CB2FF6 /* sg_seleted@2x.png */,
+				7D6AC2CF1D75259A00CB2FF6 /* SGAssetModel.h */,
+				7D6AC2D01D75259A00CB2FF6 /* SGAssetModel.m */,
+				7D6AC2D11D75259A00CB2FF6 /* SGAssetsGroupController.h */,
+				7D6AC2D21D75259A00CB2FF6 /* SGAssetsGroupController.m */,
+				7D6AC2D31D75259A00CB2FF6 /* SGCollectionController.h */,
+				7D6AC2D41D75259A00CB2FF6 /* SGCollectionController.m */,
+				7D6AC2D51D75259A00CB2FF6 /* SGGroupCell.h */,
+				7D6AC2D61D75259A00CB2FF6 /* SGGroupCell.m */,
+				7D6AC2D71D75259A00CB2FF6 /* SGImagePickerController.h */,
+				7D6AC2D81D75259A00CB2FF6 /* SGImagePickerController.m */,
+				7D6AC2D91D75259A00CB2FF6 /* SGPhotoBrowser.h */,
+				7D6AC2DA1D75259A00CB2FF6 /* SGPhotoBrowser.m */,
+				7D6AC2DB1D75259A00CB2FF6 /* SGTip.h */,
+				7D6AC2DC1D75259A00CB2FF6 /* SGTip.m */,
+			);
+			path = SGImagePickerController;
 			sourceTree = "<group>";
 		};
 		7D6B22D41D3F4CD600A3E2BA /* Views */ = {
@@ -1698,6 +1756,7 @@
 				345565D31D129EBC00B6E562 /* DeviceInformationViewController.xib in Resources */,
 				341733211D6C559800391281 /* albumAdd.png in Resources */,
 				34F4D2AF1D1D234D005963CA /* behand_off.png in Resources */,
+				7D6AC2EB1D752F4E00CB2FF6 /* red_seleted.png in Resources */,
 				34C4C6AC1D40D8DB00075897 /* PhotoInformationViewController.xib in Resources */,
 				341733231D6C559800391281 /* videoliuyan.png in Resources */,
 				34C4C6A51D40D8DB00075897 /* CompileViewController.xib in Resources */,
@@ -1717,6 +1776,7 @@
 				34E49D9A1D20D06400CF5CCB /* person_paword@3x.png in Resources */,
 				345565121D10EF1300B6E562 /* Localizable.strings in Resources */,
 				34F4D29D1D1A8C9E005963CA /* on_line.png in Resources */,
+				7D6AC2DE1D75259A00CB2FF6 /* sg_seleted@2x.png in Resources */,
 				341733271D6C55A500391281 /* morentutu.png in Resources */,
 				34DF24FF1D4B3CCA007CEFCE /* 开启视频_05.png in Resources */,
 				34C4C6AF1D40D8DB00075897 /* SQSupplementaryView.xib in Resources */,
@@ -1726,6 +1786,7 @@
 				349263751D178EBC006C2FD9 /* AgreementViewController.xib in Resources */,
 				7D64D4AF1D4708110092D193 /* albumAdd.png in Resources */,
 				57D1E6001CFED25900BEDFF6 /* Main.storyboard in Resources */,
+				7D6AC2EA1D752F4E00CB2FF6 /* red_normal.png in Resources */,
 				349263561D13E5F3006C2FD9 /* PersonTableViewCell.xib in Resources */,
 				7DAAEDCD1D41B6AD003BD61A /* yindaoye11.jpg in Resources */,
 				34DF25111D4B47F0007CEFCE /* 下.png in Resources */,
@@ -1733,6 +1794,7 @@
 				34F4D2A21D1CCDE9005963CA /* InCallViewController.xib in Resources */,
 				345565E51D139DB200B6E562 /* FamilyTeamViewController.xib in Resources */,
 				34E49DA11D20FFDC00CF5CCB /* number.png in Resources */,
+				7D6AC2DD1D75259A00CB2FF6 /* sg_normal@2x.png in Resources */,
 				34E49DA71D21074900CF5CCB /* test11.png in Resources */,
 				345565B21D114CFA00B6E562 /* Launch Screen.storyboard in Resources */,
 				7D1147051D3C80020080D3DE /* noshowpass.png in Resources */,
@@ -1751,6 +1813,7 @@
 				7D4B10251D12A6C10095D463 /* user.png in Resources */,
 				34C4C6C21D40DB9A00075897 /* 选择.png in Resources */,
 				3492636D1D13FE8D006C2FD9 /* AboutTableViewCell.xib in Resources */,
+				7D6AC2E71D75273900CB2FF6 /* hehedada.png in Resources */,
 				349263631D13FC72006C2FD9 /* AboutViewController.xib in Resources */,
 				7D3813071D25243A00C583DD /* gouquan.png in Resources */,
 				34F4D29C1D1A8C9E005963CA /* on_connection.png in Resources */,
@@ -1836,6 +1899,7 @@
 				3455651B1D10F13200B6E562 /* AppDelegate+ShareSDK.m in Sources */,
 				345565B81D11505E00B6E562 /* UITabBar+Badge.m in Sources */,
 				34012DAC1D2CD76400C97E1E /* AFHttpClient+ReparPassword.m in Sources */,
+				7D6AC2E11D75259A00CB2FF6 /* SGCollectionController.m in Sources */,
 				345565801D11376500B6E562 /* FamilySpaceViewcontroller.m in Sources */,
 				7D396F8C1D2E4ACC0079EE9E /* FamilyTableViewCell.m in Sources */,
 				34921D0F1D191A5D00541E41 /* SaomaoViewController.m in Sources */,
@@ -1875,6 +1939,7 @@
 				3455657A1D11371800B6E562 /* MydeviceViewcontroller.m in Sources */,
 				345565C21D125B4500B6E562 /* PopView.m in Sources */,
 				7D3BF3FE1D37792B005C6508 /* FamilyquanModel.m in Sources */,
+				7D6AC2E01D75259A00CB2FF6 /* SGAssetsGroupController.m in Sources */,
 				34F4D2971D1A679A005963CA /* AppDelegate+BaiduPush.m in Sources */,
 				345565341D10F8A600B6E562 /* Reachability.m in Sources */,
 				345565401D10FE3E00B6E562 /* QFTableView.m in Sources */,
@@ -1890,6 +1955,7 @@
 				34C4C6B51D40D96A00075897 /* ImageModel.m in Sources */,
 				34C4C6AB1D40D8DB00075897 /* PhotoInformationViewController.m in Sources */,
 				7D36FF751D45B0E1001C8910 /* CommentInputView.m in Sources */,
+				7D6AC2E21D75259A00CB2FF6 /* SGGroupCell.m in Sources */,
 				34C4C6A71D40D8DB00075897 /* PhotoCollectionViewCell.m in Sources */,
 				3492637E1D178F1B006C2FD9 /* ProductionIntroducViewController.m in Sources */,
 				3492636C1D13FE8D006C2FD9 /* AboutTableViewCell.m in Sources */,
@@ -1897,6 +1963,7 @@
 				3455654F1D10FE4800B6E562 /* UIButton+Blocks.m in Sources */,
 				34E49FED1D261EF100CF5CCB /* SephoneUtils.m in Sources */,
 				34012DAF1D2CD9A000C97E1E /* AFHttpClient+FamilyTeam.m in Sources */,
+				7D6AC2E41D75259A00CB2FF6 /* SGPhotoBrowser.m in Sources */,
 				345565601D10FF0700B6E562 /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
 				3492635B1D13FAC6006C2FD9 /* MyphotoAlbumViewController.m in Sources */,
 				7D29F1211D3E1A020061B7DA /* CommentViewController.m in Sources */,
@@ -1904,6 +1971,7 @@
 				345565681D10FFED00B6E562 /* AccountManager.m in Sources */,
 				345565331D10F8A600B6E562 /* AppUtil.m in Sources */,
 				345565741D1134E500B6E562 /* MainTabViewController.m in Sources */,
+				7D6AC2E31D75259A00CB2FF6 /* SGImagePickerController.m in Sources */,
 				34E49DAD1D24FBC800CF5CCB /* PersonModel.m in Sources */,
 				345565E91D13A04100B6E562 /* FamilyTeamTableViewCell.m in Sources */,
 				7D36FF721D45AE9C001C8910 /* DetailCommentView.m in Sources */,
@@ -1926,8 +1994,10 @@
 				572204BA1D2B57A60007942A /* BaseJSONModel.m in Sources */,
 				345565561D10FE6400B6E562 /* UIView+Sizes.m in Sources */,
 				34F4D2A11D1CCDE9005963CA /* InCallViewController.m in Sources */,
+				7D6AC2E51D75259A00CB2FF6 /* SGTip.m in Sources */,
 				7D396F891D2E3F370079EE9E /* AFHttpClient+Alumb.m in Sources */,
 				57D1E5F71CFED25900BEDFF6 /* main.m in Sources */,
+				7D6AC2DF1D75259A00CB2FF6 /* SGAssetModel.m in Sources */,
 				7D2ECE7A1D191C11003181A9 /* LoginModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
