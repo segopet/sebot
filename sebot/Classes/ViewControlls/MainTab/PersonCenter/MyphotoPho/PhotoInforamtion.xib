@@ -8,28 +8,38 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageId" id="gTV-IL-0wX" customClass="PhotoInforamtion">
-            <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
+            <rect key="frame" x="0.0" y="0.0" width="91" height="90"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
+                <rect key="frame" x="0.0" y="0.0" width="91" height="90"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dhE-gQ-NOn">
-                        <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dhE-gQ-NOn">
+                        <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                     </imageView>
-                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aaw-J0-8il">
-                        <rect key="frame" x="84" y="4" width="20" height="20"/>
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aaw-J0-8il">
+                        <rect key="frame" x="63" y="8" width="20" height="20"/>
                         <state key="normal" image="选项.png"/>
                         <state key="selected" image="选择.png"/>
                     </button>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
-            <size key="customSize" width="87" height="89"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="dhE-gQ-NOn" secondAttribute="trailing" id="5tF-DP-6Ta"/>
+                <constraint firstItem="Aaw-J0-8il" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="EBx-7p-XAq"/>
+                <constraint firstItem="dhE-gQ-NOn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="FfE-Ks-hb2"/>
+                <constraint firstAttribute="bottom" secondItem="dhE-gQ-NOn" secondAttribute="bottom" id="XoG-J2-lYs"/>
+                <constraint firstItem="dhE-gQ-NOn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="a3T-bk-7Ru"/>
+                <constraint firstAttribute="trailing" secondItem="Aaw-J0-8il" secondAttribute="trailing" constant="8" id="il3-LM-fbP"/>
+                <constraint firstItem="Aaw-J0-8il" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="63" id="jN5-7E-xGp"/>
+                <constraint firstAttribute="bottom" secondItem="Aaw-J0-8il" secondAttribute="bottom" constant="62" id="vhJ-UM-HeF"/>
+            </constraints>
+            <size key="customSize" width="68" height="69"/>
             <connections>
                 <outlet property="chooseBtn" destination="Aaw-J0-8il" id="F8Z-ad-lDl"/>
                 <outlet property="headImage" destination="dhE-gQ-NOn" id="L9q-3G-9ja"/>
             </connections>
-            <point key="canvasLocation" x="179" y="210"/>
+            <point key="canvasLocation" x="169.5" y="200"/>
         </collectionViewCell>
     </objects>
     <resources>
