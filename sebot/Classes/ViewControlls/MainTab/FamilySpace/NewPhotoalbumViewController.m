@@ -11,6 +11,7 @@
 #import "NewAlbumModel.h"
 #import "AFHttpClient+Test.h"
 #import "IssueViewController.h"
+#import "SGImagePickerController.h"
 @interface NewPhotoalbumViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 @property (nonatomic,strong)NSMutableArray * datasouce;
 @property (nonatomic,strong) UICollectionView *colView;
@@ -262,31 +263,45 @@
 
 -(void)loacalPhoto{
     [self bigButtonHiddin:nil];
-    NSArray * mediaTypers = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
-        _imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-        _imagePicker.mediaTypes = @[mediaTypers[0],mediaTypers[1]];
-        _imagePicker.allowsEditing = YES;
-    }
-    [self presentViewController:_imagePicker animated:NO completion:nil];
+//    NSArray * mediaTypers = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+//    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
+//        _imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+//        _imagePicker.mediaTypes = @[mediaTypers[0],mediaTypers[1]];
+//        _imagePicker.allowsEditing = YES;
+//    }
+//    [self presentViewController:_imagePicker animated:NO completion:nil];
+    SGImagePickerController *picker = [[SGImagePickerController alloc] init];
+    picker.maxCount = 4;
+    //返回选中的原图
+    [picker setDidFinishSelectImages:^(NSMutableArray *images) {
+        NSLog(@"原图%@",images);
+          IssueViewController * issue = [[IssueViewController alloc]init];
+         issue.aidstr = _aidStr;
+        issue.choseeImage = images;
+        [self.navigationController pushViewController:issue animated:NO];
 
+    }];
+    [self presentViewController:picker animated:YES completion:nil];
+
+    
+    
+    
 }
 
 //得到图片之后的处理
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    //NSMutableArray * imageArray = [[NSMutableArray alloc]init];
+    NSMutableArray * imageArray = [[NSMutableArray alloc]init];
     UIImage * getImage = [info objectForKey:UIImagePickerControllerOriginalImage];
-    //[imageArray addObject:getImage];
+    [imageArray addObject:getImage];
     
     [self dismissViewControllerAnimated:NO completion:nil];
-//    IssuePinViewController * vC = [[IssuePinViewController alloc]init];
-//    vC.firstImage = getImage;
-//    [self.navigationController pushViewController:vC animated:YES];
+    
     IssueViewController * issue = [[IssueViewController alloc]init];
-    issue.firstImage = getImage;
+    issue.choseeImage = imageArray;
+    
     issue.aidstr = _aidStr;
-
+    
     [self.navigationController pushViewController:issue animated:NO];
     
 }

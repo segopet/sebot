@@ -11,4 +11,7 @@
 @interface IssueViewController : UIViewController
 @property (nonatomic,strong)UIImage * firstImage;
 @property (nonatomic,strong)NSString * aidstr;
+@property (nonatomic,strong)NSMutableArray * choseeImage;
+
+
 @end

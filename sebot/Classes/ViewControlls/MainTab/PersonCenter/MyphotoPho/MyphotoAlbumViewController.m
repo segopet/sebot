@@ -159,26 +159,27 @@
     NewAlbumModel * model = arrData[indexPath.row];
     
     PhotoCollectionViewCell * cell  = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellid" forIndexPath:indexPath];
-    
+   
+
     if (indexPath.row < 1) {
-       // cell.ImageHeader.image =[UIImage imageNamed:@"add.png"];
+        cell.ImageHeader.image =[UIImage imageNamed:@"hehedada.png"];
         cell.PhotoNumber.hidden = YES;
         cell.PhotoName.hidden = YES;
         cell.downImageV.hidden = YES;
-        UIView * whiteView = [[UIView alloc]initWithFrame:cell.bounds];
-        whiteView.backgroundColor = [UIColor whiteColor];
-        [cell.contentView addSubview:whiteView];
-        
-        UIImageView * centerImage = [[UIImageView alloc]initWithFrame:CGRectMake(CGRectGetMinX(whiteView.frame) + 30, CGRectGetMinY(whiteView.frame) + 20, 50 * W_Wide_Zoom, 50 * W_Hight_Zoom)];
-        centerImage.image = [UIImage imageNamed:@"addphoto.png"];
-        [whiteView addSubview:centerImage];
-        
-        UILabel * newAlubmLabel =[[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMinX(whiteView.frame) + 30, CGRectGetMaxY(centerImage.frame) + 5 ,200 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
-        //newAlubmLabel.backgroundColor = [UIColor blackColor];
-        newAlubmLabel.text = @"新建相册";
-        newAlubmLabel.textColor = [UIColor blackColor];
-        newAlubmLabel.font = [UIFont systemFontOfSize:13];
-        [whiteView addSubview:newAlubmLabel];
+//        UIView * whiteView = [[UIView alloc]initWithFrame:cell.bounds];
+//        whiteView.backgroundColor = [UIColor whiteColor];
+//        [cell.contentView addSubview:whiteView];
+//        
+//        UIImageView * centerImage = [[UIImageView alloc]initWithFrame:CGRectMake(CGRectGetMinX(whiteView.frame) + 30, CGRectGetMinY(whiteView.frame) + 20, 50 * W_Wide_Zoom, 50 * W_Hight_Zoom)];
+//        centerImage.image = [UIImage imageNamed:@"addphoto.png"];
+//        [whiteView addSubview:centerImage];
+//        
+//        UILabel * newAlubmLabel =[[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMinX(whiteView.frame) + 30, CGRectGetMaxY(centerImage.frame) + 5 ,200 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
+//        //newAlubmLabel.backgroundColor = [UIColor blackColor];
+//        newAlubmLabel.text = @"新建相册";
+//        newAlubmLabel.textColor = [UIColor blackColor];
+//        newAlubmLabel.font = [UIFont systemFontOfSize:13];
+//        [whiteView addSubview:newAlubmLabel];
         
         
         

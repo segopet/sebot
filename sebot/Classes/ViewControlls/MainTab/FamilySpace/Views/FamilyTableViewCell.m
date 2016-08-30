@@ -34,13 +34,19 @@
         _namelabel.textColor = [UIColor blackColor];
         [self addSubview:_namelabel];
         
-        _content = [[UILabel alloc]initWithFrame:CGRectMake(10 * W_Wide_Zoom, 337 * W_Hight_Zoom, 300 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
+        _content = [[UILabel alloc]initWithFrame:CGRectMake(10 * W_Wide_Zoom, 337 * W_Hight_Zoom, 365 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
         _content.text = @"和朋友们相聚";
         _content.textColor = [UIColor blackColor];
-        _content.font = [UIFont systemFontOfSize:14];
+        _content.font = [UIFont systemFontOfSize:12];
+        [self addSubview:_content];
+      // _content = [[UILabel alloc]init];
+      //  _content.textColor = [UIColor blackColor];
+        //_content.font = [UIFont systemFontOfSize:14];
         [self addSubview:_content];
         
-        _lineLabel = [[UILabel alloc]initWithFrame:CGRectMake(0 * W_Wide_Zoom, 367 * W_Hight_Zoom, 375 * W_Wide_Zoom, 1 * W_Hight_Zoom)];
+
+        _lineLabel = [[UILabel alloc]initWithFrame:CGRectMake(0 * W_Wide_Zoom, CGRectGetMaxY(_content.frame)+5, 375 * W_Wide_Zoom, 1 * W_Hight_Zoom)];
+       // _lineLabel = [[UILabel alloc]init];
         _lineLabel.backgroundColor = LIGHT_GRAY_COLOR;
         [self addSubview:_lineLabel];
         

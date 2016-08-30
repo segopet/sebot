@@ -121,8 +121,8 @@
     if (array.count > 1) {
         UIButton *leftbutton = [UIButton buttonWithType:UIButtonTypeCustom];
         leftbutton.frame = CGRectMake(0, 0, 30, 30);
-        [leftbutton setTitleEdgeInsets:UIEdgeInsetsMake(-1, -18, 0, 0)];
-        [leftbutton setImageEdgeInsets:UIEdgeInsetsMake(-1, -18, 0, 0)];
+        [leftbutton setTitleEdgeInsets:UIEdgeInsetsMake(-1, -25, 0, 0)];
+        [leftbutton setImageEdgeInsets:UIEdgeInsetsMake(-1, -25, 0, 0)];
 
         [leftbutton setImage:[UIImage imageNamed:@"back@2x.png"] forState:UIControlStateNormal];
         self.tabBarController.tabBar.hidden= YES;
