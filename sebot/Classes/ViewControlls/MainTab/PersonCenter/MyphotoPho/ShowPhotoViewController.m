@@ -30,7 +30,7 @@
 {
     [super setupView];
     self.automaticallyAdjustsScrollViewInsets = NO;
-    mytableView = [[QFTableView alloc] initWithFrame:CGRectMake(0, 40, SCREEN_WIDTH, SCREEN_HEIGHT)];
+    mytableView = [[QFTableView alloc] initWithFrame:CGRectMake(0, 40*W_Hight_Zoom, SCREEN_WIDTH, SCREEN_HEIGHT)];
     mytableView.delegate   = self;
     mytableView.dataSource = self;
     mytableView.backgroundColor =[UIColor blackColor];
@@ -82,7 +82,7 @@
     
     strUrl = imageArray[index];
     
-    UIImageView *imageV = [[UIImageView alloc] initWithFrame:CGRectMake(0,0, 375, [UIScreen mainScreen].bounds.size.height - 108)];
+    UIImageView *imageV = [[UIImageView alloc] initWithFrame:CGRectMake(0,0, SCREEN_WIDTH, [UIScreen mainScreen].bounds.size.height - 108)];
     imageV.userInteractionEnabled = YES;
     imageV.backgroundColor = [UIColor blackColor];
     imageV.contentMode = UIViewContentModeScaleAspectFit;
@@ -153,9 +153,7 @@
 {
     if (buttonIndex == 0) {//保存图片
         NSArray *imageArray = [self.model.imagename componentsSeparatedByString:@","];
-        
         NSURL *url = [NSURL URLWithString:imageArray[0]];
-        
         NSData *resultData = [NSData dataWithContentsOfURL:url];
         UIImage *img = [UIImage imageWithData:resultData];
         UIImageWriteToSavedPhotosAlbum(img, self, @selector(imageSavedToPhotosAlbum:didFinishSavingWithError:contextInfo:), nil);
