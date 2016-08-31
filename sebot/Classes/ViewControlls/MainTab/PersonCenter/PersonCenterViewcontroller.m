@@ -431,9 +431,25 @@
     }
     // textname =  [self disable_emoji:textname];
     
-    NSCharacterSet *set = [NSCharacterSet characterSetWithCharactersInString:@"@／：；（）¥「」＂、,?？！!。、，[]{}#%-*+=_\\|~＜＞$€^•'@#$%^&*()_+'\""];
-    textname =  [textname stringByTrimmingCharactersInSet:set];
+ //   NSCharacterSet *set = [NSCharacterSet characterSetWithCharactersInString:@"@／：；（）¥「」＂、,?？！!。、，[]{}#%-*+=_\\|~＜＞$€^•'@#$%^&*()_+'\""];
+  //  textname =  [textname stringByTrimmingCharactersInSet:set];
     
+    /*
+     NSString * str1  = @"[\u4e00-\u9fa5]";//中文
+     NSString * str2  = @"[a-zA-Z] ";
+     NSString * str3 = @"[0-9]";
+     NSPredicate *   pred = [NSPredicate predicateWithFormat:@"%@", str1];
+     BOOL isU = [pred evaluateWithObject:self];
+    */
+    
+    NSString *regex = @"[a-zA-Z\u4e00-\u9fa5][a-zA-Z0-9\u4e00-\u9fa5]+";
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
+    if(![pred evaluateWithObject: textname])
+    {
+        
+         [[AppUtil appTopViewController]showHint:@"只能输入中文 英语 数字"];
+        return;
+    }
     
     
     NSString * str= [AccountManager sharedAccountManager].loginModel.userid;

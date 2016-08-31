@@ -162,7 +162,7 @@
    
 
     if (indexPath.row < 1) {
-        cell.ImageHeader.image =[UIImage imageNamed:@"hehedada.png"];
+        cell.ImageHeader.image =[UIImage imageNamed:@"hehedada.jpg"];
         cell.PhotoNumber.hidden = YES;
         cell.PhotoName.hidden = YES;
         cell.downImageV.hidden = YES;
