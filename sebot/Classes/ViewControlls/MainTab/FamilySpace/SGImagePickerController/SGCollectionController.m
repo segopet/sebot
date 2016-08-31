@@ -165,7 +165,6 @@ static NSString * const reuseIdentifier = @"Cell";
     //因为冲用的问题,不能根据选中状态来记录
     if (sender.selected == YES) {//选中了记录
         if (self.maxCount <= 0) {
-           // [SGTip loadTipWithContent:@"已超出最大数目" InView:self.view];
            [[AppUtil appTopViewController] showHint:@"您最多只能选择4张图片"];
             sender.selected = NO;
         }else{
