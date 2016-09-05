@@ -177,6 +177,7 @@
         self.navigationController.interactivePopGestureRecognizer.delegate = nil;
     }else if (NAV_RIGHT == position){
         [button addTarget:self action:@selector(doRightButtonTouch) forControlEvents:UIControlEventTouchUpInside];
+         [button setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, -20)];
         self.navigationItem.rightBarButtonItem = nil;
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     }

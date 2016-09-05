@@ -46,9 +46,10 @@
     self.view.backgroundColor = LIGHT_GRAY_COLOR;
 
     UIButton *releaseButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 50, 30)];
-    [releaseButton setTitle:@"发布" forState:normal];
+    //[releaseButton setTitle:@"发布" forState:normal];
+    [releaseButton setImage:[UIImage imageNamed:@"new_upload.png"] forState:UIControlStateNormal];
     [releaseButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    
+    [releaseButton setImageEdgeInsets:UIEdgeInsetsMake(0, 0, -6, -20)];
     releaseButton.titleLabel.font = [UIFont systemFontOfSize:14];
     [releaseButton addTarget:self action:@selector(releaseInfo:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *releaseButtonItem = [[UIBarButtonItem alloc] initWithCustomView:releaseButton];
@@ -59,8 +60,8 @@
     [_leftButton setImage:[UIImage imageNamed:@"back@2x.png"] forState:UIControlStateNormal];
     [_leftButton addTarget:self action:@selector(doLeftButtonTouch) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *releaseButtonItem2 = [[UIBarButtonItem alloc] initWithCustomView:_leftButton];
-    [_leftButton setTitleEdgeInsets:UIEdgeInsetsMake(-1, -18, 0, 0)];
-    [_leftButton setImageEdgeInsets:UIEdgeInsetsMake(-1, -18, 0, 0)];
+    [_leftButton setTitleEdgeInsets:UIEdgeInsetsMake(-1, -25, 0, 0)];
+    [_leftButton setImageEdgeInsets:UIEdgeInsetsMake(-1, -25, 0, 0)];
     
     self.navigationItem.leftBarButtonItem = releaseButtonItem2;
     
@@ -76,7 +77,7 @@
     _placeholderLabel = [[UILabel alloc]initWithFrame:CGRectMake(0 * W_Wide_Zoom, 60 * W_Hight_Zoom, 100 * W_Wide_Zoom, 35 * W_Hight_Zoom)];
     _placeholderLabel.textColor = [UIColor grayColor];
     _placeholderLabel.backgroundColor = [UIColor clearColor];
-    _placeholderLabel.text = @"请输入内容";
+    _placeholderLabel.text = @"  请输入内容";
     _placeholderLabel.font = _topTextView.font;
     _placeholderLabel.layer.cornerRadius = 5;
     [self.view addSubview:_placeholderLabel];
@@ -369,7 +370,7 @@
 
 -(void)textViewDidEndEditing:(UITextView *)textView{
     if (_topTextView.text.length == 0) {
-        _placeholderLabel.text = @"请输入内容";
+        _placeholderLabel.text = @"  请输入内容";
     }else{
         _placeholderLabel.text = @"";
     }

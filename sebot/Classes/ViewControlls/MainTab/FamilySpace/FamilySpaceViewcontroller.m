@@ -215,9 +215,6 @@ static NSString * cellId = @"FamilyCellides";
 {
     return 400*W_Hight_Zoom;
     
-    
-    
-    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -315,7 +312,7 @@ static NSString * cellId = @"FamilyCellides";
     [[AFHttpClient sharedAFHttpClient]dianzanWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid objid:model1.aid objtype:@"a" complete:^(ResponseModel *model) {
         if (model) {
             [[AppUtil appTopViewController] showHint:model.retDesc];
-            //给model重新赋值
+            //给model重新赋值再刷新tabview
             model1.praised = @"1";
             NSInteger k = [model1.praises integerValue];
             NSInteger kk = k + 1;
@@ -338,6 +335,7 @@ static NSString * cellId = @"FamilyCellides";
     [[AFHttpClient sharedAFHttpClient]lookpictureWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid aid:model.aid complete:^(ResponseModel *model) {
         if (model) {
              NSArray * array = model.list;
+            
             if (array.count == 0 ) {
                 [[AppUtil appTopViewController]showHint:@"照片已删除"];
             }else{
