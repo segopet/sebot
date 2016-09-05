@@ -22,7 +22,6 @@
 		341733231D6C559800391281 /* videoliuyan.png in Resources */ = {isa = PBXBuildFile; fileRef = 3417331F1D6C559800391281 /* videoliuyan.png */; };
 		341733261D6C55A500391281 /* mengcengceng.png in Resources */ = {isa = PBXBuildFile; fileRef = 341733241D6C55A500391281 /* mengcengceng.png */; };
 		341733271D6C55A500391281 /* morentutu.png in Resources */ = {isa = PBXBuildFile; fileRef = 341733251D6C55A500391281 /* morentutu.png */; };
-		341733291D7675A000391281 /* hehedada.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 341733281D7675A000391281 /* hehedada.jpg */; };
 		345565121D10EF1300B6E562 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 345565111D10EF1300B6E562 /* Localizable.strings */; };
 		345565181D10F10700B6E562 /* AppDelegate+Launcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 345565171D10F10700B6E562 /* AppDelegate+Launcher.m */; };
 		3455651B1D10F13200B6E562 /* AppDelegate+ShareSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 3455651A1D10F13200B6E562 /* AppDelegate+ShareSDK.m */; };
@@ -275,6 +274,7 @@
 		7D6AC2E31D75259A00CB2FF6 /* SGImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6AC2D81D75259A00CB2FF6 /* SGImagePickerController.m */; };
 		7D6AC2E41D75259A00CB2FF6 /* SGPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6AC2DA1D75259A00CB2FF6 /* SGPhotoBrowser.m */; };
 		7D6AC2E51D75259A00CB2FF6 /* SGTip.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6AC2DC1D75259A00CB2FF6 /* SGTip.m */; };
+		7D6AC2E71D75273900CB2FF6 /* hehedada.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7D6AC2E61D75273900CB2FF6 /* hehedada.jpg */; };
 		7D6AC2EA1D752F4E00CB2FF6 /* red_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D6AC2E81D752F4E00CB2FF6 /* red_normal.png */; };
 		7D6AC2EB1D752F4E00CB2FF6 /* red_seleted.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D6AC2E91D752F4E00CB2FF6 /* red_seleted.png */; };
 		7D6B22D01D3F125500A3E2BA /* AFHttpClient+Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6B22CF1D3F125500A3E2BA /* AFHttpClient+Comment.m */; };
@@ -287,6 +287,7 @@
 		7DAAEDD11D41B79F003BD61A /* morentutu.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DAAEDD01D41B79F003BD61A /* morentutu.png */; };
 		7DCDC9551D2CE62F000C438F /* IssueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DCDC9541D2CE62F000C438F /* IssueViewController.m */; };
 		7DD7D1D11D0FE21B0002CD2E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD7D1D01D0FE21B0002CD2E /* AppDelegate.m */; };
+		7DE308091D75869C00A7E682 /* new_upload.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DE308081D75869C00A7E682 /* new_upload.png */; };
 		7DE523941D13D53800C5B5EF /* ForegetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE523931D13D53800C5B5EF /* ForegetPasswordViewController.m */; };
 		7DF28C3F1D387D2B00FA31C6 /* AFHttpClient+Regist.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF28C3E1D387D2B00FA31C6 /* AFHttpClient+Regist.m */; };
 		7DF28C451D38D87800FA31C6 /* LargeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF28C441D38D87800FA31C6 /* LargeViewController.m */; };
@@ -322,7 +323,6 @@
 		3417331F1D6C559800391281 /* videoliuyan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = videoliuyan.png; sourceTree = "<group>"; };
 		341733241D6C55A500391281 /* mengcengceng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mengcengceng.png; sourceTree = "<group>"; };
 		341733251D6C55A500391281 /* morentutu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = morentutu.png; sourceTree = "<group>"; };
-		341733281D7675A000391281 /* hehedada.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hehedada.jpg; sourceTree = "<group>"; };
 		345565111D10EF1300B6E562 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		345565151D10F06700B6E562 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		345565161D10F10700B6E562 /* AppDelegate+Launcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Launcher.h"; sourceTree = "<group>"; };
@@ -671,6 +671,7 @@
 		7D6AC2DA1D75259A00CB2FF6 /* SGPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPhotoBrowser.m; sourceTree = "<group>"; };
 		7D6AC2DB1D75259A00CB2FF6 /* SGTip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGTip.h; sourceTree = "<group>"; };
 		7D6AC2DC1D75259A00CB2FF6 /* SGTip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGTip.m; sourceTree = "<group>"; };
+		7D6AC2E61D75273900CB2FF6 /* hehedada.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hehedada.jpg; sourceTree = "<group>"; };
 		7D6AC2E81D752F4E00CB2FF6 /* red_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_normal.png; sourceTree = "<group>"; };
 		7D6AC2E91D752F4E00CB2FF6 /* red_seleted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_seleted.png; sourceTree = "<group>"; };
 		7D6B22CE1D3F125500A3E2BA /* AFHttpClient+Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHttpClient+Comment.h"; sourceTree = "<group>"; };
@@ -689,6 +690,7 @@
 		7DCDC9541D2CE62F000C438F /* IssueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IssueViewController.m; sourceTree = "<group>"; };
 		7DD7D1CF1D0FE21B0002CD2E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7DD7D1D01D0FE21B0002CD2E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7DE308081D75869C00A7E682 /* new_upload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = new_upload.png; sourceTree = "<group>"; };
 		7DE523921D13D53800C5B5EF /* ForegetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForegetPasswordViewController.h; sourceTree = "<group>"; };
 		7DE523931D13D53800C5B5EF /* ForegetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForegetPasswordViewController.m; sourceTree = "<group>"; };
 		7DECAF4F1D48A433009ED61C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -1454,9 +1456,10 @@
 		7D4B10121D1297F40095D463 /* buttonImage */ = {
 			isa = PBXGroup;
 			children = (
-				341733281D7675A000391281 /* hehedada.jpg */,
+				7DE308081D75869C00A7E682 /* new_upload.png */,
 				7D6AC2E81D752F4E00CB2FF6 /* red_normal.png */,
 				7D6AC2E91D752F4E00CB2FF6 /* red_seleted.png */,
+				7D6AC2E61D75273900CB2FF6 /* hehedada.jpg */,
 				7D5BCF311D74161200C83F83 /* addImage11.png */,
 				341733241D6C55A500391281 /* mengcengceng.png */,
 				341733251D6C55A500391281 /* morentutu.png */,
@@ -1757,9 +1760,9 @@
 				341733211D6C559800391281 /* albumAdd.png in Resources */,
 				34F4D2AF1D1D234D005963CA /* behand_off.png in Resources */,
 				7D6AC2EB1D752F4E00CB2FF6 /* red_seleted.png in Resources */,
-				341733291D7675A000391281 /* hehedada.jpg in Resources */,
 				34C4C6AC1D40D8DB00075897 /* PhotoInformationViewController.xib in Resources */,
 				341733231D6C559800391281 /* videoliuyan.png in Resources */,
+				7DE308091D75869C00A7E682 /* new_upload.png in Resources */,
 				34C4C6A51D40D8DB00075897 /* CompileViewController.xib in Resources */,
 				34E49FE11D261EF100CF5CCB /* msg.caf in Resources */,
 				345565EA1D13A04100B6E562 /* FamilyTeamTableViewCell.xib in Resources */,
@@ -1814,6 +1817,7 @@
 				7D4B10251D12A6C10095D463 /* user.png in Resources */,
 				34C4C6C21D40DB9A00075897 /* 选择.png in Resources */,
 				3492636D1D13FE8D006C2FD9 /* AboutTableViewCell.xib in Resources */,
+				7D6AC2E71D75273900CB2FF6 /* hehedada.jpg in Resources */,
 				349263631D13FC72006C2FD9 /* AboutViewController.xib in Resources */,
 				7D3813071D25243A00C583DD /* gouquan.png in Resources */,
 				34F4D29C1D1A8C9E005963CA /* on_connection.png in Resources */,
