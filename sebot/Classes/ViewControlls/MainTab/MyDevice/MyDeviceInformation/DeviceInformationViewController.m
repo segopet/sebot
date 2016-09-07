@@ -19,6 +19,7 @@
      CheckDeviceModel * checkmodel;
      NSString * strDid;
      NSString * strName;
+     dispatch_source_t timer3;
     
 }
 
@@ -29,8 +30,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    
-    
-    
     // sip登陆。
     
     [SephoneManager addProxyConfig:[AccountManager sharedAccountManager].loginModel.sipno password:[AccountManager sharedAccountManager].loginModel.sippw domain:@"www.segosip001.cn"];
@@ -95,7 +94,7 @@
         
     }];
     
-    
+
     
 }
 
@@ -193,8 +192,34 @@
     
     
 }
+
+
+
 - (void)request
 {
+    NSTimeInterval period = 10.0; //设置时间间隔
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    timer3 = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
+    dispatch_source_set_timer(timer3, dispatch_walltime(NULL, 0), period * NSEC_PER_SEC, 0); //每秒执行
+    dispatch_source_set_event_handler(timer3, ^{
+        
+        [self requestMain];
+        
+    });
+    dispatch_resume(timer3);
+    
+    
+  
+    
+    
+    
+}
+
+
+
+- (void)requestMain
+{
+    
     NSString * str1 =[AccountManager sharedAccountManager].loginModel.userid;
     [[AFHttpClient sharedAFHttpClient]deciveInforamtion:str1 token:str1 did:self.didNumber complete:^(ResponseModel * model) {
         
@@ -223,34 +248,31 @@
         }
         
         
-//        if (page == START_PAGE_INDEX) {
-            [self.dataSource removeAllObjects];
-            checkmodel =[[CheckDeviceModel alloc]initWithDictionary:model.retVal error:nil];
-//        } else {
-//            checkmodel =[[CheckDeviceModel alloc]initWithDictionary:model.retVal error:nil];
-//        }
+        //        if (page == START_PAGE_INDEX) {
+        [self.dataSource removeAllObjects];
+        checkmodel =[[CheckDeviceModel alloc]initWithDictionary:model.retVal error:nil];
+        //        } else {
+        //            checkmodel =[[CheckDeviceModel alloc]initWithDictionary:model.retVal error:nil];
+        //        }
         
-//        if (model.list.count < REQUEST_PAGE_SIZE){
-//            self.tableView.mj_footer.hidden = YES;
-//        }else{
-//            self.tableView.mj_footer.hidden = NO;
-//        }
+        //        if (model.list.count < REQUEST_PAGE_SIZE){
+        //            self.tableView.mj_footer.hidden = YES;
+        //        }else{
+        //            self.tableView.mj_footer.hidden = NO;
+        //        }
         
         [self.tableView reloadData];
         [self handleEndRefresh];
-
+        
         
     }];
     
     
-    
-    
 }
 
+
+
 -(void)loadDataSourceWithPage:(int)page{
-    
-   
-    
     NSString * str1 =[AccountManager sharedAccountManager].loginModel.userid;
     [[AFHttpClient sharedAFHttpClient]deciveInforamtion:str1 token:str1 did:self.didNumber complete:^(ResponseModel * model) {
         NSString * str = model.retVal[@"status"];
@@ -261,7 +283,6 @@
             _startBtn.backgroundColor =RED_COLOR;
             
         }else if ([str isEqualToString:@"ds002"])
-            
         {
             _heandBtn.image =[UIImage imageNamed:@"off_line"];
             _startBtn.selected = NO;
