@@ -203,8 +203,7 @@ static NSString *kheaderIdentifier = @"headerIdentifier";
     [self.view addSubview:_deleteImageV];
     
     _deleteBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    _deleteBtn.frame = CGRectMake(_deleteImageV.center.x-15, 5, 30, 30);
-    //    [_deleteBtn setImage:[UIImage imageNamed:@"delete.png"] forState:UIControlStateNormal];
+    _deleteBtn.frame = CGRectMake(0, 5, 375*W_Wide_Zoom, 30*W_Hight_Zoom);
     [_deleteBtn setTitle:@"删除" forState:UIControlStateNormal];
     [_deleteBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     _deleteBtn.titleLabel.font = [UIFont systemFontOfSize:13];

@@ -426,7 +426,7 @@
   
     if ([PersonCenterViewcontroller isContainsEmoji:textname]) {
         
-       [[AppUtil appTopViewController]showHint:@"不能输入表情"];
+       [[AppUtil appTopViewController]showHint:@"只能输入汉字、英文字母、数字"];
         return;
     }
     // textname =  [self disable_emoji:textname];

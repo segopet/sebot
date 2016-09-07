@@ -113,9 +113,7 @@
     
     
     [[AFHttpClient sharedAFHttpClient] POST:@"sebot/moblie/forward" parameters:@{@"userid" :  [AccountManager sharedAccountManager].loginModel.userid , @"objective":@"user", @"token" : @"1" , @"action" : @"feedback", @"data" : @{@"userid" :  [AccountManager sharedAccountManager].loginModel.userid,@"fcontent":_topTextfield.text,@"type":@"iphone",@"fphone":_downTextfield.text}} result:^(ResponseModel * model) {
-        
         [[AppUtil appTopViewController]showHint:model.retDesc];
-
         [self.navigationController popViewControllerAnimated:YES];
         
     }];

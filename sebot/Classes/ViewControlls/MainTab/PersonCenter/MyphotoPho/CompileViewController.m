@@ -12,7 +12,7 @@
 #import "MyphotoAlbumViewController.h"
 
 
-#define kMaxLength 4
+#define kMaxLength 10
 static NSString * cellId = @"showComCell";
 @interface CompileViewController ()<UIActionSheetDelegate,UITextFieldDelegate>
 
@@ -233,7 +233,7 @@ static NSString * cellId = @"showComCell";
     
     UIButton *   _deleteBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     _deleteBtn.userInteractionEnabled = YES;
-    _deleteBtn.frame = CGRectMake(_deleteImageV.center.x-15, 5, 30, 30);
+    _deleteBtn.frame = CGRectMake(0, 5, 375*W_Wide_Zoom, 30*W_Hight_Zoom);
     [_deleteBtn setTitle:@"删除" forState:UIControlStateNormal];
     [_deleteBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     _deleteBtn.titleLabel.font = [UIFont systemFontOfSize:13];

@@ -472,10 +472,16 @@
             //获取第1个输入框；
             UITextField *userNameTextField = alertController.textFields.firstObject;
             
-            // 确认之后这里会获取到 然后更正数组里的备注 要上传服务器
-          //  NSLog(@"备注名 = %@",userNameTextField.text);
+            if (userNameTextField.text.length > 10) {
+                userNameTextField.text = [userNameTextField.text substringToIndex:10];
+                
+            }else if ([AppUtil isBlankString:userNameTextField.text])
+            {
+                
+                [self showSuccessHudWithHint:@"不能为空"];
+                return ;
+            }
             NSString * str= [AccountManager sharedAccountManager].loginModel.userid;
-            
             [[AFHttpClient sharedAFHttpClient]repairName:str token:str did:checkmodel.did remark:userNameTextField.text complete:^(ResponseModel * model) {
                 
                  // NSLog(@"======%@",model);
