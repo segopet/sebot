@@ -22,6 +22,14 @@ static NSString * cellId = @"videomessagetableviewcellid";
 
 @implementation VideomessageViewController
 
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+       [self initRefreshView];
+
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setNavTitle:@"视频留言"];
@@ -48,7 +56,7 @@ static NSString * cellId = @"videomessagetableviewcellid";
     [self.tableView registerClass:[VideoMessageTableViewCell class] forCellReuseIdentifier:cellId];
     self.tableView.backgroundColor = [UIColor whiteColor];
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-    [self initRefreshView];
+ 
 
 
 }
@@ -59,6 +67,7 @@ static NSString * cellId = @"videomessagetableviewcellid";
 }
 
 -(void)loadDataSourceWithPage:(int)page{
+    [_noShujuImage removeFromSuperview];
     [[AFHttpClient sharedAFHttpClient]getVideomessageWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid page:[NSString stringWithFormat:@"%d",page]complete:^(ResponseModel *model) {
         
         if (page == START_PAGE_INDEX) {
