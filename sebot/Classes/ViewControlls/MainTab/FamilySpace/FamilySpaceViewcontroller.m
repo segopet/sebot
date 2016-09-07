@@ -110,10 +110,10 @@ static NSString * cellId = @"FamilyCellides";
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     [self initRefreshView];
 
-    
+
 }
 -(void)doRightButtonTouch{
-        _listArray = [NSMutableArray array];
+    _listArray = [NSMutableArray array];
     [[AFHttpClient sharedAFHttpClient]querMydeviceWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid complete:^(ResponseModel *model) {
         
         [_listArray addObjectsFromArray:model.list];
@@ -341,7 +341,7 @@ static NSString * cellId = @"FamilyCellides";
             }else{
              LargeViewController * largeVC =[[LargeViewController alloc]initWithNibName:@"LargeViewController" bundle:nil];
             largeVC.dataArray = array;
-            [self.navigationController pushViewController:largeVC animated:YES];
+            [self.navigationController pushViewController:largeVC animated:NO];
                 sender.userInteractionEnabled = YES;
             }
         }

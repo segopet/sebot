@@ -120,10 +120,19 @@
 
 -(void)loginButtonTouch{
   //   NSString *myChannel_id = [BPush getChannelId];
+    if ([AppUtil isBlankString:_accountTextfield.text]) {
+        [[AppUtil appTopViewController] showHint:@"请输入账号"];
+        return;
+    }
+    if ([AppUtil isBlankString:_passwordTextfield.text]) {
+        [[AppUtil appTopViewController]showHint:@"请输入密码"];
+        return;
+    }
+    
     
     NSUserDefaults * defaltus = [NSUserDefaults standardUserDefaults];
     NSString * strrr = [defaltus objectForKey:@"changeid"];
-
+    
     [self showHudInView:self.view hint:@"正在登录..."];
     [[AFHttpClient sharedAFHttpClient]loginWithUserName:_accountTextfield.text password:_passwordTextfield.text userid:@"" channelid:strrr complete:^(ResponseModel *model) {
         //判断是否绑定

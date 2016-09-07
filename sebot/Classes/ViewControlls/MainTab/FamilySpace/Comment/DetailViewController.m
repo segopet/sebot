@@ -82,22 +82,22 @@ NSString * const kDetailCommentCellID = @"DetailCommentCell";
             if (text && text.length > 0) {
                 [[AFHttpClient sharedAFHttpClient]addCommentWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid  pid:[AccountManager sharedAccountManager].loginModel.userid  bid:@"" wid:self.wid bcid:@"" ptype:@"a" action:@"p" content:text type:@"a" complete:^(ResponseModel *model) {
                     if (model) {
-                        CommentModel* addModel = [[CommentModel alloc] init];
-                        addModel.username = [AccountManager sharedAccountManager].loginModel.nickname;
-                        addModel.content = text;
-                       // addModel.age = [AccountManager sharedAccountManager].loginModel.pet_age;
-                        //addModel.sex = [AccountManager sharedAccountManager].loginModel.pet_sex;
-                        addModel.opttime = [AppUtil getCurrentTime];
-                        //addModel.race = [AccountManager sharedAccountManager].loginModel.pet_race;
-                        addModel.wid = self.wid;
-                        addModel.cid = model.content;
-                        addModel.headportrait = [AccountManager sharedAccountManager].loginModel.headportrait;
-                        
-                        addModel.pid = [AccountManager sharedAccountManager].loginModel.userid;
-                        [self.dataSource insertObject:addModel atIndex:0];
-                        [self.tableView reloadData];
-  
-        
+//                        CommentModel* addModel = [[CommentModel alloc] init];
+//                        addModel.username = [AccountManager sharedAccountManager].loginModel.nickname;
+//                        addModel.content = text;
+//                       // addModel.age = [AccountManager sharedAccountManager].loginModel.pet_age;
+//                        //addModel.sex = [AccountManager sharedAccountManager].loginModel.pet_sex;
+//                        addModel.opttime = [AppUtil getCurrentTime];
+//                        //addModel.race = [AccountManager sharedAccountManager].loginModel.pet_race;
+//                        addModel.wid = self.wid;
+//                        addModel.cid = model.content;
+//                        addModel.headportrait = [AccountManager sharedAccountManager].loginModel.headportrait;
+//                        
+//                        addModel.pid = [AccountManager sharedAccountManager].loginModel.userid;
+//                        [self.dataSource insertObject:addModel atIndex:0];
+//                        [self.tableView reloadData];
+//
+                        [self initRefreshView];
                     }
                     
                     
@@ -162,6 +162,7 @@ NSString * const kDetailCommentCellID = @"DetailCommentCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     CommentModel* commentModel = self.dataSource[indexPath.row];
+    
     DetailCommentCell* cell = [tableView dequeueReusableCellWithIdentifier:kDetailCommentCellID];
     cell.commentLableClickBlock = ^(int index){
         self.toolView.hidden = YES;
@@ -170,7 +171,7 @@ NSString * const kDetailCommentCellID = @"DetailCommentCell";
             if (text && text.length > 0) {
                 //回复评论的model
                 CommentModel* replayCommentModel = commentModel.list[index];
-                [[AFHttpClient sharedAFHttpClient]addCommentWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid  pid:[AccountManager sharedAccountManager].loginModel.userid bid:replayCommentModel.pid  wid:self.wid bcid:commentModel.cid ptype:@"r" action:@"h" content:text type:@"a" complete:^(ResponseModel *model) {
+                [[AFHttpClient sharedAFHttpClient]addCommentWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid  pid:[AccountManager sharedAccountManager].loginModel.userid bid:replayCommentModel.pid  wid:self.wid bcid:replayCommentModel.cid ptype:@"r" action:@"h" content:text type:@"a" complete:^(ResponseModel *model) {
                     if (model) {
                 CommentModel* addModel = [[CommentModel alloc] init];
                 addModel.username = [AccountManager sharedAccountManager].loginModel.nickname;
@@ -186,9 +187,6 @@ NSString * const kDetailCommentCellID = @"DetailCommentCell";
                 [self.tableView reloadRowsAtIndexPaths:@[currentEditingIndexthPath] withRowAnimation:UITableViewRowAnimationNone];
                 
             }
-
-                    
-                
                 }];
             }
         }];
@@ -201,18 +199,18 @@ NSString * const kDetailCommentCellID = @"DetailCommentCell";
 
                 [[AFHttpClient sharedAFHttpClient]addCommentWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid  pid:[AccountManager sharedAccountManager].loginModel.userid bid:commentModel.pid  wid:self.wid bcid:commentModel.cid ptype:@"r" action:@"h" content:text type:@"a" complete:^(ResponseModel *model) {
                     if (model) {
-                        CommentModel* addModel = [[CommentModel alloc] init];
-                        addModel.username = [AccountManager sharedAccountManager].loginModel.nickname;
-                        addModel.content = text;
-                        addModel.opttime = [AppUtil getCurrentTime];
-                        addModel.wid = self.wid;
-                        addModel.cid = model.content;
-                        addModel.bcid = commentModel.cid;
-                        //addModel.img = [AccountManager sharedAccountManager].loginModel.headportrait;
-                        addModel.pid = [AccountManager sharedAccountManager].loginModel.userid;
-
-                        [commentModel.list addObject:addModel];
-                        [self.tableView reloadRowsAtIndexPaths:@[currentEditingIndexthPath] withRowAnimation:UITableViewRowAnimationNone];
+//                        CommentModel* addModel = [[CommentModel alloc] init];
+//                        addModel.username = [AccountManager sharedAccountManager].loginModel.nickname;
+//                        addModel.content = text;
+//                        addModel.opttime = [AppUtil getCurrentTime];
+//                        addModel.wid = self.wid;
+//                        addModel.cid = model.content;
+//                        addModel.bcid = commentModel.cid;
+//                        addModel.pid = [AccountManager sharedAccountManager].loginModel.userid;
+//                        [commentModel.list addObject:addModel];
+//                        [self.tableView reloadRowsAtIndexPaths:@[currentEditingIndexthPath] withRowAnimation:UITableViewRowAnimationNone];
+//                        
+                        [self initRefreshView];
                     }
                 }];
                 
