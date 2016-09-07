@@ -217,8 +217,9 @@
                 _achieveSecurityBtn.backgroundColor = RED_COLOR;
             });
         }else{
-            int seconds = timeout % 60;
-            NSString *strTime = [NSString stringWithFormat:@"%.2d", seconds];
+            //int seconds = timeout % 60;
+            NSString *strTime = [NSString stringWithFormat:@"%0.2d", timeout];
+            
             dispatch_async(dispatch_get_main_queue(), ^{
                 //  NSLog(@"————————%@",strTime);
                 [UIView beginAnimations:nil context:nil];
