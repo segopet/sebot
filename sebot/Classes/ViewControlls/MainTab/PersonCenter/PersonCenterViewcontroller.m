@@ -29,7 +29,7 @@
     
     PersonModel *checkModel;
     UITextField *_userNameTextField;
-    
+    NSMutableArray *  _listArray;
     
 }
 @property(nonatomic,strong)UIImagePickerController * imagePicker;
@@ -47,7 +47,20 @@
     _imagePicker.delegate= self;
     
     
+    
 }
+
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    _listArray = [NSMutableArray array];
+    [[AFHttpClient sharedAFHttpClient]querMydeviceWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid complete:^(ResponseModel *model) {
+       [_listArray addObjectsFromArray:model.list];
+    
+    }];
+
+}
+
 
 
 -(void)loadDataSourceWithPage:(int)page{
@@ -364,28 +377,28 @@
     else if (indexPath.row == 2)
     {
         
-      NSMutableArray *  _listArray = [NSMutableArray array];
-        [[AFHttpClient sharedAFHttpClient]querMydeviceWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid complete:^(ResponseModel *model) {
-            
-            [_listArray addObjectsFromArray:model.list];
+//        _listArray = [NSMutableArray array];
+//        [[AFHttpClient sharedAFHttpClient]querMydeviceWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid complete:^(ResponseModel *model) {
+//            
+        
             if (_listArray.count > 0 ) {
                 MyphotoAlbumViewController * Myphot0VC =[[MyphotoAlbumViewController alloc]initWithNibName:@"MyphotoAlbumViewController" bundle:nil];
-                [self.navigationController pushViewController:Myphot0VC animated:YES];
+                [self.navigationController pushViewController:Myphot0VC animated:NO];
                 
             }else {
                 [[AppUtil appTopViewController] showHint:@"你还没有绑定设备"];
             }
-        }];
+       // }];
 
         
     }
     else if (indexPath.row == 3)
     {
     
-        NSMutableArray *  _listArray = [NSMutableArray array];
-        [[AFHttpClient sharedAFHttpClient]querMydeviceWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid complete:^(ResponseModel *model) {
-            
-            [_listArray addObjectsFromArray:model.list];
+//        _listArray = [NSMutableArray array];
+//        [[AFHttpClient sharedAFHttpClient]querMydeviceWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid complete:^(ResponseModel *model) {
+//            
+//            [_listArray addObjectsFromArray:model.list];
             if (_listArray.count > 0 ) {
                 VideomessageViewController * videoVc = [[VideomessageViewController alloc]init];
                 UINavigationController * navc = [[UINavigationController alloc]initWithRootViewController:videoVc];
@@ -395,7 +408,7 @@
             }else {
                 [[AppUtil appTopViewController] showHint:@"你还没有绑定设备"];
             }
-        }];
+        //}];
     
     
     

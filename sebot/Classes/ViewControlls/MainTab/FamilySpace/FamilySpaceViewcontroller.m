@@ -43,6 +43,13 @@ static NSString * cellId = @"FamilyCellides";
         //bangdingshuaxin
      [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(dada3) name:@"bangdingshuaxin" object:nil];
     
+        _listArray = [NSMutableArray array];
+        [[AFHttpClient sharedAFHttpClient]querMydeviceWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid complete:^(ResponseModel *model) {
+    
+            [_listArray addObjectsFromArray:model.list];
+        
+        }];
+    
 }
 
 
@@ -110,10 +117,10 @@ static NSString * cellId = @"FamilyCellides";
 
 }
 -(void)doRightButtonTouch{
-    _listArray = [NSMutableArray array];
-    [[AFHttpClient sharedAFHttpClient]querMydeviceWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid complete:^(ResponseModel *model) {
-        
-        [_listArray addObjectsFromArray:model.list];
+//    _listArray = [NSMutableArray array];
+//    [[AFHttpClient sharedAFHttpClient]querMydeviceWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid complete:^(ResponseModel *model) {
+//        
+//        [_listArray addObjectsFromArray:model.list];
         if (_listArray.count > 0 ) {
             NewPhotoalbumViewController * newVc = [[NewPhotoalbumViewController alloc]init];
             [self.navigationController pushViewController:newVc animated:NO];
@@ -133,8 +140,8 @@ static NSString * cellId = @"FamilyCellides";
             
     
         }
-    }];
-
+//    }];
+//
     
     
     
@@ -293,6 +300,7 @@ static NSString * cellId = @"FamilyCellides";
 //    [self.navigationController pushViewController:commVc animated:NO];
     DetailViewController * Vcc = [[DetailViewController alloc]init];
     Vcc.wid = model.aid;
+    Vcc.indexnumber = i;
     [self.navigationController pushViewController:Vcc animated:NO];
     
 }

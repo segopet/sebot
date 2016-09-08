@@ -37,11 +37,25 @@
     usid = [AccountManager sharedAccountManager].loginModel.userid;
     [self setNavTitle: NSLocalizedString(@"MyphotoAlbum", nil)];
     self.view.backgroundColor = [UIColor whiteColor];
-    DefaultesImage = [[UIImageView alloc]initWithFrame:CGRectMake(15, 80*W_Hight_Zoom, 110*W_Wide_Zoom, 110*W_Hight_Zoom)];
-    DefaultesImage.image =[UIImage imageNamed:@"add.png"];
+    DefaultesImage = [[UIImageView alloc]initWithFrame:CGRectMake(15*W_Wide_Zoom, 80*W_Hight_Zoom, 110*W_Wide_Zoom, 110*W_Hight_Zoom)];
+   // DefaultesImage.image =[UIImage imageNamed:@"add.png"];
+    DefaultesImage.backgroundColor = [UIColor whiteColor];
     DefaultesImage.hidden = YES;
     DefaultesImage.userInteractionEnabled = YES;
     [self.view addSubview:DefaultesImage];
+    
+    UIImageView * centerImage = [[UIImageView alloc]initWithFrame:CGRectMake(30 * W_Wide_Zoom, 20 * W_Hight_Zoom, 50 * W_Wide_Zoom, 50 * W_Hight_Zoom)];
+    centerImage.image = [UIImage imageNamed:@"addphoto.png"];
+    [DefaultesImage addSubview:centerImage];
+    
+    UILabel * newAlubmLabel =[[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMinX(DefaultesImage.frame) + 12, CGRectGetMaxY(centerImage.frame) + 5 ,200 * W_Wide_Zoom, 30 * W_Hight_Zoom)];
+    //newAlubmLabel.backgroundColor = [UIColor blackColor];
+    newAlubmLabel.text = @"新建相册";
+    newAlubmLabel.textColor = [UIColor blackColor];
+    newAlubmLabel.font = [UIFont systemFontOfSize:13];
+    [DefaultesImage addSubview:newAlubmLabel];
+
+    
     UITapGestureRecognizer* singleRecognizer;
     singleRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleSingleTapFromT:)];
     singleRecognizer.numberOfTapsRequired = 1; // 单击
