@@ -10,4 +10,5 @@
 
 @interface DetailViewController : BaseTabViewController
 @property (nonatomic,copy)NSString * wid;
+@property (nonatomic,assign)NSInteger indexnumber;
 @end
