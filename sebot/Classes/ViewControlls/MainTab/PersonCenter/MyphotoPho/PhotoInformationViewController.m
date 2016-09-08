@@ -443,13 +443,13 @@ static NSString *kheaderIdentifier = @"headerIdentifier";
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(80*W_Wide_Zoom, 80*W_Hight_Zoom);
+    return CGSizeMake(80*W_Wide_Zoom, 100*W_Hight_Zoom);
     
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {   // 上左下右
-    return UIEdgeInsetsMake(1, 13, 0, 1);
+    return UIEdgeInsetsMake(11, 11, 1, 1);
 }
 //返回每个item
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
