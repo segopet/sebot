@@ -98,7 +98,7 @@
     NewAlbumModel * model = self.datasouce[indexPath.row];
     static NSString *cellID = @"myCell";
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellID forIndexPath:indexPath];
-    //我的妈，该死个人了，先删除一下，不然会重用
+    //我的妈，改死个人了，先删除一下，不然会重用
     for (UIView *view in [cell.contentView subviews]) {
         [view removeFromSuperview];
     }

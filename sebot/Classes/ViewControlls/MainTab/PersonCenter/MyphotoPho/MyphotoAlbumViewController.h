@@ -10,4 +10,7 @@
 
 @interface MyphotoAlbumViewController : BaseViewController
 
+
+
+
 @end

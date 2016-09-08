@@ -381,11 +381,25 @@
     }
     else if (indexPath.row == 3)
     {
-        //MainTabViewController * man = [[MainTabViewController alloc]init];
-        VideomessageViewController * videoVc = [[VideomessageViewController alloc]init];
-        UINavigationController * navc = [[UINavigationController alloc]initWithRootViewController:videoVc];
-
-        [self presentViewController:navc animated:NO completion:nil];
+    
+        NSMutableArray *  _listArray = [NSMutableArray array];
+        [[AFHttpClient sharedAFHttpClient]querMydeviceWithUserid:[AccountManager sharedAccountManager].loginModel.userid token:[AccountManager sharedAccountManager].loginModel.userid complete:^(ResponseModel *model) {
+            
+            [_listArray addObjectsFromArray:model.list];
+            if (_listArray.count > 0 ) {
+                VideomessageViewController * videoVc = [[VideomessageViewController alloc]init];
+                UINavigationController * navc = [[UINavigationController alloc]initWithRootViewController:videoVc];
+                
+                [self presentViewController:navc animated:NO completion:nil];
+                
+            }else {
+                [[AppUtil appTopViewController] showHint:@"你还没有绑定设备"];
+            }
+        }];
+    
+    
+    
+    
     }
     
     else if (indexPath.row == 4)

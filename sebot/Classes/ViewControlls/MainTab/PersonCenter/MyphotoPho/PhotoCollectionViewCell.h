@@ -14,4 +14,9 @@
 @property (strong, nonatomic) IBOutlet UILabel *PhotoNumber;
 @property (strong, nonatomic) IBOutlet UIImageView *downImageV;
 
+@property (nonatomic,strong)UIView * whiteView;
+@property (nonatomic,strong)UIImageView * firstImage;
+@property (nonatomic,strong)UILabel * firstLabel;
+
+
 @end

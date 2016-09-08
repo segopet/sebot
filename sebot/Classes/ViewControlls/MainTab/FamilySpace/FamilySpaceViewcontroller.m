@@ -46,9 +46,6 @@ static NSString * cellId = @"FamilyCellides";
 }
 
 
-
-
-
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     NSUserDefaults * defults =[NSUserDefaults standardUserDefaults];
