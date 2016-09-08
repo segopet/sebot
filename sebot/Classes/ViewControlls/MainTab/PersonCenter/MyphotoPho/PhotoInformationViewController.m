@@ -346,7 +346,7 @@ static NSString *kheaderIdentifier = @"headerIdentifier";
     
     if (deledArr.count>0) {//有所需要删除的数据
         
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"你确定要删除所选图片!" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"你确定要删除所选图片？" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
         
         [alert show];
         
@@ -443,13 +443,13 @@ static NSString *kheaderIdentifier = @"headerIdentifier";
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(90, 90);
+    return CGSizeMake(80*W_Wide_Zoom, 80*W_Hight_Zoom);
     
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
-{
-    return UIEdgeInsetsMake(9, 9, 9, 9);
+{   // 上左下右
+    return UIEdgeInsetsMake(1, 13, 0, 1);
 }
 //返回每个item
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{

@@ -119,6 +119,7 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self name:kSephoneCallUpdate object:nil];
     
     [[NSNotificationCenter defaultCenter]removeObserver:self name:kSephoneRegistrationUpdate object:nil];
+     dispatch_source_cancel(timer3);
     
     
 }
@@ -204,8 +205,13 @@
     dispatch_source_set_event_handler(timer3, ^{
         
         [self requestMain];
+        NSLog(@"sure");
+    });
+    dispatch_source_set_cancel_handler(timer3, ^{
+        NSLog(@"cancel");
         
     });
+    
     dispatch_resume(timer3);
     
     
